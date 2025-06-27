@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="document-title" content="Independent line numbering in table columns – Antenna House, Inc.">
+  <meta name="displaydoctitle" content="true">
+  <meta name="keywords" content="line-number">
+  <meta name="author" content="Antenna House, Inc.">
+  <title>Independent line numbering in table columns – Antenna House, Inc.</title>
+  <style>
+    @page {
+      size: 210mm 150mm;
+      margin: 10mm 20mm 10mm 20mm;
+      @bottom-right {
+        content: "Antenna House, Inc.";
+        font-size: 0.8em;
+        color: green;
+        text-align: right;
+        -ah-link: url("https://www.antennahouse.com/");
+        -ah-link-alt-text: "Antenna House, Inc.";
+      }
+    }
+    body {
+      font-family: serif;
+      font-size: 10pt;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      -ah-hyphenate-hyphenated-word: false;
+      hyphens: auto;
+    }
+    .region-body {
+      margin-top: 0;
+      margin-bottom: 20mm;
+      width: 170mm;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .heading {
+      font-family: sans-serif;
+      font-size: 2em;
+      font-weight: bold;
+      background-color: #EEEEEE;
+      padding: 0.3em 0;
+      margin: 1em 0;
+      line-height: 1.4;
+    }
+    .heading .inner {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+    .bordered-box {
+      border: 1pt solid #9999FF;
+      margin: 1em 0;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      padding: 0.5em;
+      text-align: justify;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    col.left-column {
+      -ah-line-number: show;
+      -ah-line-number-interval: 5;
+      -ah-line-number-start: 5;
+      -ah-line-number-reset: none;
+      -ah-line-number-offset: 5pt;
+      -ah-line-number-position: start;
+      -ah-line-number-display-align: auto;
+      -ah-line-number-color: red;
+      -ah-line-number-background-color: transparent;
+    }
+    col.right-column {
+      -ah-line-number: show;
+      -ah-line-number-interval: 10;
+      -ah-line-number-start: 10;
+      -ah-line-number-reset: none;
+      -ah-line-number-offset: 5pt;
+      -ah-line-number-position: end;
+      -ah-line-number-display-align: auto;
+      -ah-line-number-color: blue;
+      -ah-line-number-background-color: lightblue;
+    }
+    td {
+      vertical-align: top;
+      padding: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="region-body">
+    <div class="heading">
+      <div class="inner">Independent line numbering in table columns</div>
+    </div>
+    <div class="bordered-box">
+      Line numbering can be independently applied to a table column by specifying ‘<a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.line-number" style="text-decoration:underline; color:blue;">-ah-line-number</a>’ on the table column. All of the line numbering properties that can be used on a page-sequence are available. In this example, line numbers are shown every 5 lines in the left-hand column and every 10 lines in the right-hand column. The line numbers are not being reset on each page.
+    </div>
+    <table>
+      <col class="left-column" style="width:8cm;">
+      <col style="width:0cm;">
+      <col class="right-column" style="width:8cm;">
+      <tbody>
+        <tr>
+          <td style="text-align:justify; line-height:1.6;" lang="ja">
+            <div style="text-indent:1em;">電子ファイルの形式としてのPDFを大雑把にいうと紙のページを電子的に表現したものである。</div>
+            <div style="text-indent:1em;">人間が一枚の白紙の紙に鉛筆で文字を書いたり、線を引くときは、頭の中でどの位置に、どんな大きさで、どんな文字や絵を描こうかと考え、考えたとおりに手を動かして、文字と絵を書く。</div>
+            <div style="text-indent:1em;">これと同じようにPDF のファイルの中には、頭の中で考えた状態と同じような情報がプログラムへの「命令」として記述されている。</div>
+            <div style="text-indent:1em;">即ち、PDFファイルには1 枚の紙の左上を原点にして、下方向と右方向に座標軸をとってできる平面を定義し、その平面のどこに、どんな大きさで、なんという文字を書くか、どんな太さで、どんな種類（直線、点線、…）の線を引くか、どんな画像をどこにどんな大きさで配置するか、といった命令が１ページ毎に記録されている。</div>
+            <div style="text-indent:1em;">電子ファイルの形式としてのPDFを大雑把にいうと紙のページを電子的に表現したものである。</div>
+            <div style="text-indent:1em;">人間が一枚の白紙の紙に鉛筆で文字を書いたり、線を引くときは、頭の中でどの位置に、どんな大きさで、どんな文字や絵を描こうかと考え、考えたとおりに手を動かして、文字と絵を書く。</div>
+            <div style="text-indent:1em;">これと同じようにPDF のファイルの中には、頭の中で考えた状態と同じような情報がプログラムへの「命令」として記述されている。</div>
+          </td>
+          <td style="width:0cm;"></td>
+          <td style="text-align:justify; line-height:1.4;" lang="en">
+            <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum. Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Nullam purus. In porttitor, dui eget placerat pretium, mauris arcu ultrices nisl, quis mattis nisi turpis in velit. Cras et tellus quis nulla ultricies tristique. Ut at lacus at nibh cursus vestibulum. Praesent nec dui. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vivamus vehicula malesuada leo. Pellentesque eu nunc ac lectus viverra pretium. Nunc nibh purus, adipiscing et, vehicula vel, feugiat nec, elit. Praesent nisi. Sed tincidunt.</div>
+            <div style="text-indent:1em;">Aliquam erat volutpat. Aenean lacus. Suspendisse id ligula. Nulla facilisi. Sed et orci. Curabitur imperdiet odio non nisl. Sed mauris ante, laoreet eget, egestas ac, bibendum quis, quam. Nullam tincidunt vulputate leo. Cras orci purus, eleifend et, aliquet sed, tempor id, neque. Nam vulputate, tortor a congue pulvinar, pede lacus ornare erat, vel euismod felis tortor eu libero. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos.</div>
+            <div style="text-indent:1em;">Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vivamus vehicula malesuada leo.</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

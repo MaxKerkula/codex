@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<title>Creating regions in a body region</title>
+			<style>
+@page {
+  size: A4;
+  margin: 10mm 20mm 10mm 20mm;
+  
+  @footnote {
+  border-top: solid;
+  -ah-float: page bottom;
+  }
+}
+@page :right {
+  @bottom-right {
+    content: "Antenna House, Inc.";
+    font-size: 0.8em;
+    color: green;
+    text-align: right;
+    -ah-outside-align: outside; /* On right pages, this will be the outside edge */
+  }
+}
+
+@page :left {
+  @bottom-left {
+    content: "Antenna House, Inc.";
+    font-size: 0.8em;
+    color: green;
+    text-align: left;
+    -ah-outside-align: outside; /* On left pages, this will be the outside edge */
+  }
+}
+
+.before-float-content {
+  -ah-float: page top;
+  background-color: #00EEAA;
+  color: black;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: left;
+  margin: 5px;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: #EEEEEE;
+  text-align: center;
+  margin: 1em 0;
+}
+
+.desc {
+  border: 1px solid #9999FF; 
+  padding: 0.5em;
+  margin: 1em 0;
+  text-align: justify;
+  text-indent: 0;
+  display: block;
+}
+
+body {
+  font-family: serif;
+  font-size: 10pt;
+  line-height: 1.4;
+  padding: 0;
+  text-align: justify;
+  hyphens: auto;
+  
+}
+
+.column {
+  column-count: 3;
+  column-gap: 20px;
+  column-rule: 1pt solid #9999FF;
+  -ah-column-fill: balance;
+}
+
+.float-start {
+  float: left;
+  width: 5em;
+  background-color: #EEEE00;
+  padding: 0 0.25em;
+  margin-right: 0.5em;
+}
+
+.float-end {
+  float: right;
+  width: 5em;
+  background-color: #AAAAEE;
+  padding: 0 0.25em;
+  margin-left: 0.5em;
+}
+
+.footnote {
+  -ah-float: footnote;
+  display: block;
+  font-size: 0.8em;
+  background-color: #00EEEE;
+  padding: 5px;
+  margin-top: 10px;
+}
+			</style>
+		</head>
+		<body>
+			<h1>Creating regions in a body region, combination of columns, footnotes and floats</h1>
+			<div class="desc">Various regions can be created in the body region according to the text and contents. This sample is a combination of columns, float region and footnote region.</div>
+			<div class="column">
+				<p>1. Unicode not only defines a coded character set, but also provides other specifications.<span class="footnote">footnote: For example, The Bidirectional Algorithm</span>.</p>
+				<p>2. A is here.<span class="before-float-content">A. This is a content of the before-float.</span> Unicode not only defines a coded character set but also provides other specifications.</p>
+				<p>
+					<span class="float-start">This is a content of the start float.</span>3. Unicode not only defines a coded character set but also provides other specifications.</p>
+				<p>
+					<span class="float-end">This is a content of the end float.</span>4. Unicode not only defines a coded character set but also provides other specifications</p>
+				<p>5. Unicode not only defines a coded character set but also provides other specifications.</p>
+				<p>6. Unicode not only defines a coded character set but also provides other specifications.</p>
+				<p>
+					<span class="float-start">This is a content of the start float.</span>7. Unicode not only defines a coded character set but also provides other specifications.</p>
+				<p>
+					<span class="float-end">This is a content of the end float.</span>8. Unicode not only defines a coded character set but also provides other specifications</p>
+				<p>9. Unicode not only defines a coded character set but also provides other specifications<span class="footnote">footnote: For example, The Bidirectional Algorithm</span>.</p>
+				<p>10. B is here.<span class="before-float-content">B. This is a content of the before-float.</span> Unicode not only defines a coded character set but also provides other specifications...</p>
+				<p>11. Unicode not only defines a coded character set but also provides other specifications.</p>
+				<p>12. Unicode not only defines a coded character set but also provides other specifications<span class="footnote">footnote: For example, The Bidirectional Algorithm</span>.</p>
+				<p>13. C is here.<span class="before-float-content">C. This is a content of the before-float.</span> Unicode not only defines a coded character set but also provides other specifications.</p>
+				<p>
+					<span class="float-start">This is a content of the start float.</span>14. Unicode not only defines a coded character set but also provides other specifications.</p>
+				<p>
+					<span class="float-end">This is a content of the end float.</span>15. Unicode not only defines a coded character set but also provides other specifications.</p>
+					
+			</div>
+		</body>
+	</html>

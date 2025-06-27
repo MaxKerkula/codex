@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="document-title" content="Adjusts the space at the end of the last line – Antenna House, Inc.">
+  <meta name="displaydoctitle" content="true">
+  <meta name="keywords" content="flush-zone">
+  <meta name="author" content="Antenna House, Inc.">
+  <title>Adjusts the space at the end of the last line – Antenna House, Inc.</title>
+  <style>
+    @page {
+      size: 210mm 297mm;
+      margin: 10mm 20mm 10mm 20mm;
+      @bottom-right {
+        content: "Antenna House, Inc.";
+        font-size: 0.8em;
+        color: green;
+        text-align: right;
+        -ah-link: url("https://www.antennahouse.com/");
+        -ah-link-alt-text: "Antenna House, Inc.";
+      }
+    }
+    body {
+      font-family: serif;
+      font-size: 10pt;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      -ah-hyphenate-hyphenated-word: false;
+      hyphens: auto;
+    }
+    .region-body {
+      width: 170mm;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10mm;
+    }
+    .main-heading {
+      font-family: sans-serif;
+      font-size: 2em;
+      font-weight: bold;
+      background-color: #EEEEEE;
+      margin: 1em 0;
+      padding: 0.3em 0;
+    }
+    .main-heading .inner {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+    .bordered-box {
+      border: 1pt solid #9999FF;
+      margin: 1em 0;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      padding: 0.5em;
+      text-align: justify;
+    }
+    .compare-block {
+      font-size: 1.2em;
+      text-align: justify;
+      -ah-hyphenate-hyphenated-word: false;
+      margin: 1em auto;
+      position: relative;
+      width: 100%;
+      max-width: 170mm;
+    }
+    .thin-border {
+      border: thin solid #edd;
+      border-inline-end-width: 0;
+      margin: 0.5em 0;
+      padding: 0.3em;
+      text-align: justify;
+    }
+    .colored-flush-zone {
+      -ah-flush-zone: 15mm;
+      text-align: justify;
+    }
+    .small-text {
+      font-size: 10pt;
+      margin-top: 0.5em;
+    }
+    .visual-guide {
+      position: absolute;
+      z-index: -1;
+      top: 2.1em;
+      right: 0;
+      bottom: 0;
+      width: 15mm;
+      background-color: #edd;
+    }
+  </style>
+</head>
+<body>
+  <div class="region-body">
+    <div class="main-heading">
+      <div class="inner">Adjusts the space at the end of the last line</div>
+    </div>
+    <div class="bordered-box">
+      Adjusts the space at the end of the last line. If a value (&lt;length&gt; or &lt;percentage&gt;) is specified
+      for '<a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.flush-zone" style="text-decoration: underline; color: blue;">-ah-flush-zone</a>', text-align="justify" is specified but text-align-last="justify" is not specified,
+      and the space at the end of the last line is less than or equal to the specified value, the last line is processed
+      as if text-align-last="justify" is specified. This feature is available in AH Formatter V7.0 or later.
+    </div>
+    <div style="margin-top: 2.5em;">
+      The following block shows the comparison result without '-ah-flush-zone' and with -ah-flush-zone="15mm".
+      The background at the end of the line is colored for the specified width. If the space at the end of the line
+      is less than or equal to the value of '-ah-flush-zone', the last line is justified.
+    </div>
+    <div class="compare-block">
+      <div class="visual-guide"></div>
+      <div style="margin-top:1em;">'-ah-flush-zone' is not specified:</div>
+      <div class="thin-border">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, et magna aliqua. Excepteur sint occaecat cupidatat
+        non proident, sunt in culpa qui officia deserunt mollit anim id xxx xxx est laborum.
+      </div>
+      <div style="margin-top:1em;">-ah-flush-zone="15mm" is specified:</div>
+      <div class="thin-border colored-flush-zone">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, et magna aliqua. Excepteur sint occaecat cupidatat
+        non proident, sunt in culpa qui officia deserunt mollit anim id xxx xxx est laborum.
+      </div>
+      <div class="small-text">
+        The space at the end of this line is less than the '-ah-flush-zone' value. Therefore it is justified.
+      </div>
+      <div style="margin-top:1em;">'-ah-flush-zone' is not specified:</div>
+      <div class="thin-border">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, et magna aliqua. Excepteur sint occaecat cupidatat
+        non proident, sunt in culpa qui officia deserunt mollit anim id xxx est laborum.
+      </div>
+      <div style="margin-top:1em;">-ah-flush-zone="15mm" is specified:</div>
+      <div class="thin-border colored-flush-zone">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, et magna aliqua. Excepteur sint occaecat cupidatat
+        non proident, sunt in culpa qui officia deserunt mollit anim id xxx est laborum.
+      </div>
+      <div class="small-text">
+        The space at the end of this line is larger than the '-ah-flush-zone' value. Therefore it is not justified.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

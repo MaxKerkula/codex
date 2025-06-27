@@ -1,0 +1,65 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-break-page-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+					font-size: 18pt;
+					color: green;
+					margin-bottom: 3em;
+					@bottom-left
+					{
+						content: "Page. " counter(page);	
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Page breaks at even or odd pages from the top of the document
+		</div>
+		<div class="subheading">
+			By specifying <span class = "codePrint">break-after</span> and <span class = "codePrint">break-before</span> with ‘even-document’ or ‘odd-document’ will cause page breaks on even or odd pages counting from the top of the document. For more details on <span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.break-after">break-after</a></span> <span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.break-before">break-before</a></span>, please refer to the Online Manual. This feature is available with Antenna House Formatter V7.3 or later.
+		</div>
+		<div style = "page-break-before: always;">
+			Here is another new page.
+		</div>
+		<div style="break-before: even-page;">
+			‘break-before="even-page"’ is specified for this block. Moves to even-page.
+		</div>
+		<div style = "break-before: even-document;">
+			‘break-before="even-document"’ is specified for this block. Moves to even pages counting from the top of the document.
+		</div>
+		<div>
+			This is useful when the content begins on the left page of the spread.。
+		</div>
+		<diV style = "break-before: odd-document;">
+
+		</diV>
+	</body>
+
+</html>

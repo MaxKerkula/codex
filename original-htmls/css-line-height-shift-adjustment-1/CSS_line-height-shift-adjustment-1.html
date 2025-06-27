@@ -1,0 +1,81 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_line-height-shift-adjustment-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			line-height-shift-adjustment
+		</div>
+		<div class="subheading">
+			The ‘line-height-shift-adjustment’ property specifies whether to consider the position of superscript and subscript characters (text that has a ‘baseline-shift’) in the line when determining the line height. When <span class = "codePrint">-ah-line-height-shift-adjustment: consider-shifts</span> (default) is specified, the adjusted top edge of superscript characters and bottom edge of subscript characters affect the calculation of the line height. When <span class = "codePrint">-ah-line-height-shift-adjustment: disregard-shifts</span> is specified, their ‘baseline-shift’ has no effect. Note that <span class = "codePrint">-ah-line-height-shift-adjustment: disregard-shifts</span> does not affect the line height only for ‘baseline-shift’. If there is a factor other than ‘baseline-shift’ that affects the line height, the line height will change even if the property is specified. For example, when ‘font-size’ of the character to be shifted is larger than the base text, etc.
+		</div>
+		<div>
+			<h2>
+				No superscript and subscript characters to be shifted
+			</h2>
+			<div style="width: 260pt; text-align-last: justify;">
+				<div style="-ah-margin-before: 10pt; font-size: 40pt; line-height: 2; -ah-line-height-shift-adjustment: consider-shifts; background-color: gray;">
+					<span style="background-color: yellow;">Sample Test</span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2>
+				-ah-line-height-shift-adjustment: consider-shifts (default)
+			</h2>
+			<div style="width: 260pt; text-align-last: justify;">
+				<div style="-ah-margin-before: 10pt; font-size: 40pt; line-height: 2; -ah-line-height-shift-adjustment: consider-shifts; background-color: gray;">
+					<span style="background-color: yellow;">Sample<span style="background-color: aqua;"><sup>®</sup></span> Test<span style="background-color: aqua;"><sub>©</sub></span></span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2>
+				-ah-line-height-shift-adjustment: disregard-shifts</h2>
+			<div style="width: 290pt; text-align-last: justify;">
+				<div style="-ah-margin-before: 10pt; font-size: 40pt; line-height: 2; -ah-line-height-shift-adjustment: disregard-shifts; background-color: gray;">
+					<span style="background-color: yellow;">Sample<span style="background-color: aqua;"><sup>®</sup></span> Test<span style="background-color: aqua;"><sub>©</sub></span></span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2>
+				-ah-line-height-shift-adjustment: disregard-shifts, font size to be shifted: 1.5em
+			</h2>
+			<div style="width: 290pt; text-align-last: justify;">
+				<div style="-ah-margin-before: 10pt; font-size: 40pt; line-height: 2; -ah-line-height-shift-adjustment: disregard-shifts; background-color: gray;">
+					<span style="background-color: yellow;">Sample<span style="background-color: aqua; font-size: 1.5em;"><sup>®</sup></span> Test<span style="background-color: aqua; font-size: 1.5em;"><sub>©</sub></span></span>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

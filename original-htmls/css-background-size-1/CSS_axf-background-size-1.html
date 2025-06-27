@@ -1,0 +1,215 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.imgContainer
+				{
+					border: thin solid transparent;
+					margin: 10pt;
+					height: 100pt;
+					width: 80pt;
+					text-align: center;
+					display: inline-block;
+					margin-left: 1em;
+
+				}
+				table
+				{
+					width: 100%
+				}
+				#iC_0
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+				}
+				#iC_1
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-size: contain;
+				}
+				#iC_2
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-size: cover;
+				}
+				#iC_3
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-size: 100%;
+				}
+				#iC_4
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-size: auto 100%;
+				}
+				#iC_5
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-size: 100% 100%;
+				}
+				#iC_6
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-size: 50%;
+				}
+				#iC_7
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-size: auto 50%;
+				}
+				#iC_8
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-size: 50% 50%;
+				}
+				#iC_9
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-size: 50% 100%;
+				}
+				#iC_10
+				{
+					border: thin solid #003D19;
+					padding: 2pt;
+					-ah-background-image: url('background-size-background.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-size: 100% 50%;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Background image size
+		</div>
+		<div class="subheading">
+			<span class = "codePrint">-ah-background-image:</span> specifies the size of the background image. An explicit size for one or both of the horizontal and vertical dimensions may be specified, or the <span class = "codePrint">contain</span> or <span class = "codePrint">cover</span> keyword may be specified to automatically scale the image. It is available in AH Formatter V6.6 or later.
+		</div>
+		<div>
+			<span class = "codePrint">contain</span> scales the image, while preserving its aspect ratio, to the largest size such that the image fits within the background positioning area. <span class = "codePrint">cover</span> scales the image, while preserving its aspect ratio, to the smallest size such that both its width and its height cover the background positioning area. When the value is one or two lengths or percentages, the first value gives the width of the image, and the second value, if present, gives the height. Any missing value is treated as ‘auto’. An ‘auto’ value is resolved using the aspect ratio of the image and its other dimension or, failing that, by treating it as 100%. If both values are ‘auto’, then the intrinsic size of the image should be used. If the image has an intrinsic size in only one dimension, then the other dimension is treated as ‘auto’. If the image has neither an intrinsic width or intrinsic height, then its size is determined as for ‘contain’.
+		</div>
+		<table>
+			<tr>
+				<td>
+					<div class = "imgContainer">
+					<img src = "background-size-background.svg"><br>
+					Image used as a non-repeating background image
+					</div>
+				</td>
+				<td>
+					<div class = "imgContainer" id = "iC_0">
+					</div>
+				</td>
+				<td>
+					<div class = "imgContainer" id = "iC_1">
+						contain
+					</div>
+				</td>
+				<td>
+					<div class = "imgContainer" id = "iC_2">
+						cover
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class = "imgContainer" id = "iC_3">
+						100%
+					</div>
+				</td>
+				<td>
+					<div class = "imgContainer" id = "iC_4">
+						auto 100%
+					</div>
+				</td>
+				<td>
+					<div class = "imgContainer" id = "iC_5">
+						100% 100%
+					</div>
+				</td>
+				<td>
+					<div class = "imgContainer" id = "iC_6">
+						50%
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class = "imgContainer" id = "iC_7">
+						auto 50%
+					</div>
+				</td>
+				<td>
+					<div class = "imgContainer" id = "iC_8">
+						50% 50%
+					</div>
+				</td>
+				<td>
+					<div class = "imgContainer" id = "iC_9">
+						50% 100%
+					</div>
+				</td>
+				<td>
+					<div class = "imgContainer" id = "iC_10">
+						100% 50%
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

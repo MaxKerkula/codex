@@ -1,0 +1,74 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-overflow-2]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBox
+				{
+					width: 50%;
+					height: 2em;
+					-ah-display-align: center;
+					border: solid thin;
+					font-size: 14pt;
+					overflow: condense;
+					-ah-overflow-condense: font-size font-stretch;
+					-ah-overflow-condense-limit-font-size: 10pt;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Specifying multiple condensing processes when text overflows
+		</div>
+		<div class="subheading">
+			Specifies how to condense the overflowed text into the area by <span class = "codePrint">-ah-overflow-condense</span>. Possible values are <span class = "codePrint">font-size, font-stretch, line-height</span> and <span class = "codePrint">letter-spacing</span>. You can specify multiple condensing processes such as <span class = "codePrint">-ah-overflow: font-size font-stretch</span>. Usually you will often use <span class = "codePrint">-ah-overflow-condense-limit-font-size</span> or <span class = "codePrint">-ah-overflow-condense-limit-font-stretch</span> etc. in combination with the setting of the lower limit of each value. When condensing text with multiple values, if the overflow is not resolved by the first specified condensing process, then the next specified condensing process is attempted. The setting of multiple condensing processes is available from AH Formatter V7.1.
+		</div>
+		<div>
+			In this sample, multiple condensing processes with <span class = "codePrint">-ah-overflow-condense: font-size font-stretch;</span> and the lower limit value with <span class = "codePrint">-ah-overflow-condense-limit-font-size: 10pt;</span> are specified. If the first ‘font-size’ condensing does not resolve the overflow even with the lower limit of 10pt, then the condensing by ‘font-stretch’ will be attempted.
+		</div>
+		<p>
+			If the number of characters is small and does not overflow, the specified font size will be used.
+		</p>
+		<div class = "demoBox">
+			Copyright © 1999-2021 Antenna House, Inc.
+		</div>
+		<p>
+			When text overflows from the area, it is condensed so that it does not exceed the lower limit specified by -ah-overflow-condense-limit-font-size.
+		</p>
+		<div class = "demoBox">
+			Copyright © 1999-2021 Antenna House, Inc. Sample.
+		</div>
+		<p>
+			If text overflows even with the lower limit specified by -ah-overflow-condense-limit-font-size, -ah-overflow-condense: font-size font-stretch will further condense it.
+		</p>
+		<div class = "demoBox">
+			Copyright © 1999-2021 Antenna House, Inc. All rights reserved. Sample Data.
+		</div>
+	</body>
+
+</html>

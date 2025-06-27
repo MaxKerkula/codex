@@ -1,0 +1,62 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-line-continued-mark-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.continueMarkDemo
+				{
+					-ah-line-continued-mark: "-";
+					-ah-line-continued-mark-font-family: Arial;
+					-ah-line-continued-mark-font-size: 1.2em;
+					-ah-line-continued-mark-font-style: normal;
+					-ah-line-continued-mark-color: black;
+					-ah-line-continued-mark-background-color: #99FFFF;
+					-ah-line-continued-mark-font-weight: 500;
+					-ah-line-continued-mark-offset: 0.2em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Line continued mark
+		</div>
+		<div class="subheading">
+			A line continued mark can be added by using ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.line-continued-mark">-ah-line-continued-mark</a></span>'. A line continued mark can be added with block-level element as a unit. "-" (hyphenation) is specified in this case. Also, you may specify a line continued mark’s color by ‘-ah-line-continued-mark-color’, ‘-ah-line-continued-mark-font-family’, etc., and the background color of a new paragraph by ‘-ah-line-continued-mark-background-color’.
+		</div>
+		<div class = "continueMarkDemo">
+			<div>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur.
+			</div>
+			<div style="text-indent: 1em;">
+				Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus.
+			</div>
+		</div>
+	</body>
+
+</html>

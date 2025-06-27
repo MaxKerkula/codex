@@ -1,0 +1,155 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-column-with-container-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.textBlockDemo
+				{
+					-ah-margin-before: 0.5em;
+					start-indent: 20pt;
+					end-indent: 20pt;
+					border: solid #7777FF 4pt;
+					padding: 4pt;
+					width: 100%;
+				}
+				#tbD_0
+				{
+					column-count: 3;
+					column-gap: 8pt;
+				}
+				#tbD_1
+				{
+					column-count: 3;
+					column-gap: 8pt;
+					-ah-column-rule-style: solid;
+					-ah-column-rule-width: 1.5pt;
+					-ah-column-rule-color: #AAAAFF;
+					-ah-column-rule-length: 100%;
+					-ah-column-rule-align: center;
+				}
+				#tbD_2
+				{
+					column-count: 3;
+					column-gap: 8pt;
+					height: 1.5in;
+					-ah-column-rule-display: gap;
+					-ah-column-rule-style: solid;
+					-ah-column-rule-width: 1.5pt;
+					-ah-column-rule-color: #AAAAFF;
+					-ah-column-rule-length: 100%;
+					-ah-column-rule-align: center;
+				}
+				#tbD_3
+				{
+					column-count: 3;
+					column-gap: 8pt;
+					height: 1.5in;
+					-ah-column-rule-display: all;
+					-ah-column-rule-style: solid;
+					-ah-column-rule-width: 1.5pt;
+					-ah-column-rule-color: #AAAAFF;
+					-ah-column-rule-length: 100%;
+					-ah-column-rule-align: center;
+				}
+				#tbD_4
+				{
+					column-count: 3;
+					column-gap: 8pt;
+					height: 1.5in;
+					-ah-column-rule-display: all;
+					-ah-column-rule-style: solid;
+					-ah-column-rule-width: 1.5pt;
+					-ah-column-rule-color: #AAAAFF;
+					-ah-column-rule-length: 70%;
+					-ah-column-rule-align: after;
+				}
+				
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Block-containers with multiple columns
+		</div>
+		<div class="subheading">
+				You can define multiple columns for a &lt;div&gt; similar to how you would for the body. You can also add a column rule (a vertical line) between these columns as demonstrated below.
+		</div>
+		<p style = "font-size: 1.2em;">Normal block-container</p>
+		<div class = "textBlockDemo">
+			<p style = "-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</p>
+			<p>
+				Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus. Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae.
+			</p>
+		</div>
+		
+		<p style = "font-size: 1.2em;">Three-column segment with a 8pt-column-gap using: <span class = "codePrint">-ah-column-count: 3; -ah-column-gap: 8pt;</span> </p>
+		<div class = "textBlockDemo" id = "tbD_0">
+			<p style = "-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</p>
+			<p>
+				Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus. Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae.
+			</p>
+		</div>
+		
+		<p style = "font-size: 1.2em;">Three-column segment with column rules using: <span class = "codePrint">-ah-column-rule-style: solid; -ah-column-rule-width: 1.5pt; -ah-column-rule-color: #AAAAFF; -ah-column-rule-length: 100%; -ah-column-rule-align: center;</span> </p>
+		<div class = "textBlockDemo" id = "tbD_1" style = "page-break-after: always;">
+			<p style = "-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</p>
+			<p>
+				Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus. Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae.
+			</p>
+		</div>
+		
+		<p style = "font-size: 1.2em;">With -ah-column-rule-display, you may specify whether or not a column rule should be drawn where there is no block. The following shows an example of not drawing a rule by <span class = "codePrint">-ah-column-rule-display: gap;</span> (default value).</p>
+		<div class = "textBlockDemo" id = "tbD_2">
+			<p style = "-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</p>
+		</div>
+		
+		<p style = "font-size: 1.2em;">An example of drawing a column rule in a position where there is no block by specifying <span class = "codePrint">-ah-column-rule-display: all;</span></p>
+		<div class = "textBlockDemo" id = "tbD_3">
+			<p style = "-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</p>
+		</div>
+		
+		<p style = "font-size: 1.2em;">When <span class = "codePrint">-ah-column-rule-length:</span> is not 100%, <span class = "codePrint">-ah-column-rule-align</span> specifies how to align the column rule vertically within the column. This example shows 70% length column rules that are aligned with the ‘after’ edge.</p>
+		<div class = "textBlockDemo" id = "tbD_4">
+			<p style = "-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</p>
+		</div>
+		
+		
+	</body>
+
+</html>

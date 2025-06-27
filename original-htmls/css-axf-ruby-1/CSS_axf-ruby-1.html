@@ -1,0 +1,89 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-ruby-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Ruby
+		</div>
+		<div class="subheading">
+			Ruby can be expressed by <span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ruby.html#axf.ruby">-ah-display: ruby</a></span>, <span class = "codePrint">-ah-display: ruby-base</span> and <span class = "codePrint">-ah-display: ruby-text</span>. <span class = "codePrint">-ah-display: ruby-base</span> maps to one <span class = "codePrint">-ah-display: ruby-text</span>. A pair of one <span class = "codePrint">-ah-display: ruby-base</span> and <span class = "codePrint">-ah-display: ruby-text</span> is called the ruby container and multiple ruby containter are set within <span class = "codePrint">-ah-display: ruby-base</span>. A ruby has 3 forms, and it's classified as follows.
+		</div>
+		<div>
+			<h2 style="font-family: sans-serif;">
+				Mono-ruby
+			</h2>
+			<div style="-ah-margin-after: 0.5em;">
+				The ruby container of mono-ruby is independent and ruby characters never overhang the base character of the adjacent ruby. 
+			</div>
+			<div style="line-height: 2; font-size: 2.5em;">
+				<ruby><rb>京</rb><rt>きよう</rt></ruby>
+				<ruby><rb>都</rb><rt>と</rt></ruby>
+				<ruby><rb>府</rb><rt>ふ</rt></ruby>
+			</div>
+		</div>
+		<div>
+			<h2 style="font-family: sans-serif;">
+				Group-ruby
+			</h2>
+			<div style="-ah-margin-after: 0.5em;">
+				Group-ruby consists of one ruby container. Group-ruby is evenly arranged to the entire base characters. 
+			</div>
+			<div style="line-height: 2; font-size: 2.5em;">
+				<ruby>
+					<rb>京都府</rb><rt>きようとふ</rt>
+				</ruby>
+			</div>
+		</div>
+		<div>
+			<h2 style="font-family: sans-serif;">
+				Jukugo (kanji compound word) - ruby
+			</h2>
+			<div style="-ah-margin-after: 0.5em;">
+				Jyukugo-ruby consists of one or more ruby containers. when the ruby text is wider than the ruby base characters, ruby text is allowed to partially overhang any adjacent text in addition to its own base to adjust its position. 
+			</div>
+			<div style="line-height: 2; font-size: 2.5em;">
+				<ruby>
+					<rb>京</rb><rt>きよう</rt><rb>都</rb><rt>と</rt><rb>府</rb><rt>ふ</rt>
+				</ruby>
+				<div style="-ah-space-before: 1em;">
+					<div style="width: 65mm;">
+						鬼門の方角を
+						<ruby>
+							<rb>凝</rb><rt>ぎよう</rt><rb>視</rb><rt>し</rt>
+						</ruby>する。
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

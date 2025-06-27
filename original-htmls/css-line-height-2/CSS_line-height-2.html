@@ -1,0 +1,106 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_line-height-2]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.tableContent
+				{
+					background-color: yellow;
+					-ah-line-stacking-strategy: line-height;
+				}
+				table
+				{
+					border: thin solid black;
+					line-height: 1.4;
+					border-collapse: collapse;
+					width: 100%;
+				}
+				td 
+				{
+					border: 1px solid #ddd;
+					padding: 8px;
+					text-align: center;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			line-height-shift-adjustment and line-stacking-strategy
+		</div>
+		<div class="subheading">
+			‘line-height-shift-adjustment’ and ‘line-stacking-strategy’ both affect how affect how lines are positioned relative to each other.  ‘line-height-shift-adjustment’ controls whether the line-height is adjusted for content that has a baseline-shift, such as superscripted text. Its values are: ‘consider-shifts’ (default: top-edge and bottom-edge of shifted characters affect line-height calculations); and ‘disregard-shifts’ (unshifted top-edge and bottom-edge of shifted characters are used in line-height calculations).  ‘line-stacking-strategy’ selects the strategy for positioning lines relative to each other.  Its values are: ‘line-height’ (CSS-style line box stacking with half-leading included in line-area height); ‘font-height’ (line-area height is based on font of block-area so that baseline-to-baseline spacing is constant); and ‘max-height’ (default: each line-area’s height is the minimum required to enclose its inline areas and there is constant space between line-areas).
+		</div>
+		<div>
+			For ‘line-stacking-strategy’ and ‘line-height-shift-adjustment’, see also “line-stacking-strategy (line-height, line-stacking-strategy)”, “line-height-shift-adjustment (line-height, line-height-shift-adjustment)” in Lines.
+		</div>
+	
+	<table>
+    <tr>
+        <td rowspan="2">'line-height-shift-adjustment'</td>
+        <td colspan="3" style = "text-align: center;">'line-stacking-strategy'</td>
+    </tr>
+    <tr>
+        <td>'line-height'</td>
+        <td>'font-height'</td>
+        <td>'max-height' (default)</td>
+    </tr>
+    <tr style = "-ah-line-height-shift-adjustment: consider-shifts;">
+        <td>'consider-shifts' (default)</td>
+        <td style = "background-color: lightgray;">
+			<div style = "-ah-line-stacking-strategy: line-height;">
+				<span style = "background-color: yellow;">Lorem<span style = "-ah-baseline-shift: super; font-size: 0.8em;">®</span> ipsum dolor <span style = "-ah-baseline-shift: sub;">sit</span><br>amet, <span style = "font-size: 1.6em;">consectetur</span> adipiscing <span style = "font-size: 1.3em;">elit</span>. Aliquam <span style = "font-size: 0.7em;">bibendum tincidunt pharetra.</span></span>
+			</div>
+		</td>
+        <td style = "background-color: lightgray;">
+			<div style = "-ah-line-stacking-strategy: font-height;">
+				<span style = "background-color: yellow;">Lorem<span style = "-ah-baseline-shift: super; font-size: 0.8em;">®</span> ipsum dolor <span style = "-ah-baseline-shift: sub;">sit</span><br>amet, <span style = "font-size: 1.6em;">consectetur</span> adipiscing <span style = "font-size: 1.3em;">elit</span>. Aliquam <span style = "font-size: 0.7em;">bibendum tincidunt pharetra.</span></span>
+			</div></td>
+        <td style = "background-color: lightgray;">
+			<div style = "-ah-line-stacking-strategy: max-height;">
+				<span style = "background-color: yellow;">Lorem<span style = "-ah-baseline-shift: super; font-size: 0.8em;">®</span> ipsum dolor <span style = "-ah-baseline-shift: sub;">sit</span><br>amet, <span style = "font-size: 1.6em;">consectetur</span> adipiscing <span style = "font-size: 1.3em;">elit</span>. Aliquam <span style = "font-size: 0.7em;">bibendum tincidunt pharetra.</span></span>
+			</div></td>
+    </tr>
+    <tr>
+        <td>'disregard-shifts'</td>
+        <td style = "background-color: lightgray;">
+			<div style = "-ah-line-stacking-strategy: line-height; -ah-line-height-shift-adjustment: disregard-shifts;">
+				<span style = "background-color: yellow;">Lorem<span style = "-ah-baseline-shift: super; font-size: 0.8em;">®</span> ipsum dolor <span style = "-ah-baseline-shift: sub;">sit</span><br>amet, <span style = "font-size: 1.6em;">consectetur</span> adipiscing <span style = "font-size: 1.3em;">elit</span>. Aliquam <span style = "font-size: 0.7em;">bibendum tincidunt pharetra.</span></span>
+			</div></td>
+        <td style = "background-color: lightgray;">
+			<div style = "-ah-line-stacking-strategy: font-height; -ah-line-height-shift-adjustment: disregard-shifts;">
+				<span style = "background-color: yellow;">Lorem<span style = "-ah-baseline-shift: super; font-size: 0.8em;">®</span> ipsum dolor <span style = "-ah-baseline-shift: sub;">sit</span><br>amet, <span style = "font-size: 1.6em;">consectetur</span> adipiscing <span style = "font-size: 1.3em;">elit</span>. Aliquam <span style = "font-size: 0.7em;">bibendum tincidunt pharetra.</span></span>
+			</div></td>
+        <td style = "background-color: lightgray;">
+			<div style = "-ah-line-stacking-strategy: max-height; -ah-line-height-shift-adjustment: disregard-shifts;">
+				<span style = "background-color: yellow;">Lorem<span style = "-ah-baseline-shift: super; font-size: 0.8em;">®</span> ipsum dolor <span style = "-ah-baseline-shift: sub;">sit</span><br>amet, <span style = "font-size: 1.6em;">consectetur</span> adipiscing <span style = "font-size: 1.3em;">elit</span>. Aliquam <span style = "font-size: 0.7em;">bibendum tincidunt pharetra.</span></span>
+			</div></td>
+    </tr>
+</table>
+
+
+</html>

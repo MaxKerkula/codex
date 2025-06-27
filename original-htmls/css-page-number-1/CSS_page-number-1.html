@@ -1,0 +1,80 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[page-number-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+					@bottom-center 
+					{
+						text-align: center;
+						font-size: small;
+						content: "- " counter(page) " -";
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Page numbers
+		</div>
+		<div class="subheading">
+				To add page numbers in CSS, utilize the <span class ="codePrint">@page</span> rule combined with pseudo-elements. Define the style and position, then use the <span class ="codePrint">counter(page)</span> function within the <span class ="codePrint">content</span> property. This will automatically generate and display the current page number in the specified position and style on each page. This example uses the following CSS code: <span class ="codePrint">content: "- " counter(page) " -"</span>
+		</div>
+		<h1 style = "border-bottom: 2px solid black; width: 100%; page-break-before: always;" >
+			Contents 1 Sample
+		</h1>
+		<h2>
+			Contents 1-1 sample-01
+		</h2>
+		<h3>
+			Contents 1-1-1
+		</h3>
+		
+		<p style = "-ah-margin-after: 0.5em; text-indent: 25px;">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur.
+		</p>
+		<p style = "text-indent: 25px; page-break-after: always;">
+			Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus. Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae.
+		</p>
+		<h3>
+			Contents 1-1-2
+		</h3>
+		<p style = "-ah-margin-after: 0.5em; text-indent: 25px;">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur.
+		</p>
+		<h2>
+			Contents 1-2 sample-02
+		</h2>
+		<p style = "text-indent: 25px;">
+			Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa.
+		</p>
+		<p style = "text-indent: 25px;"> 
+			Sed sed auctor purus. Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae.
+		</p>
+	</body>
+
+</html>

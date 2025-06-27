@@ -1,0 +1,112 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-justify-rowspan-height-1]
+	-->
+
+	<head>
+		<link rel="stylesheet" href="src/AH_Style.css">
+		<style>
+				@page
+				{
+					
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				table
+				{
+					border: 3pt double;
+					border-collapse: collapse;
+					width: 75%;
+					margin: auto;
+				}
+				tr,td
+				{
+					border: 3pt double;
+					padding: 3pt;
+				}
+				img
+				{
+					max-width: 75%;
+					height: auto;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Justify the height of table cells
+		</div>
+		<div class="subheading">
+			If 'justify-rowspan-height' is true in the Option Setting File, then when a cell spans multiple rows and the height of the cell is higher than the height of the contents of the spanned rows, the height of each spanned row is made as even as possible. 'justify-rowspan-height' is available in AH Formatter V6.6
+		</div>
+		<div>
+			<span style = "color:red;">This feature is specified in the Option Setting File. It applies to all tables in the document</span>
+			<p>
+				The height of a cell may be increased, depending on the contents of a cell that spans that table row. See example table below.
+			</p>
+		</div>
+		<table>
+			<thead style = "background-color: #E9FFA5;">
+				<td>
+					Table Header1		
+				</td>
+				<td style = "text-align: center;">
+					Table Header2
+				</td>
+			</thead>
+			<tfoot style = "background-color: #FF97C2;">
+				<td>
+					Table Footer1
+				</td>
+				<td style = "text-align: center;">
+					Table Footer2
+				</td>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>
+						1-1
+					</td>
+					<td rowspan="3" style = "font-size: 12pt; padding: 3pt;">
+						AH Formatter V6.6 is software to format XML/HTML documents and output them to paged media such as PDF, XPS and paper. It supports page layouts specified using both XSL-FO (Extensible Stylesheet Language - Formatting Objects) and CSS (Cascading Style Sheets) including CSS3 (Cascading Style Sheets Level 3), which is under development by W3C.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						2-1
+					</td>
+				</tr>
+				<tr>
+					<td>
+						3-1
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div style = "margin-top: 1em;">
+			The total height of cells 1-1 to 3-1 on the left side is the height of the cell on the right side that spans the three rows (because the heights of the cells and rows are not fixed). If justify-rowspan-height="false" is specified, or if using AH Formatter V6.5 or earlier, only cell 3-1 has increased height. In AH Formatter V6.6 or later, you can even out the row heights by specifying justify-rowspan-height="true" in the Option Setting File.
+		</div>
+		<div style="text-align: center; font-weight: bold; margin-top: 1em;">
+			justify-rowspan-height: false;
+			<img src = "justify-rowspan-false.jpg"><br>
+			justify-rowspan-height: true;
+			<img src="justify-rowspan-true.jpg">
+		</div>
+	</body>
+
+</html>

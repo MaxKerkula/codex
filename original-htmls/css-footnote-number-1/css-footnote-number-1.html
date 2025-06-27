@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Creating a footnote number and specifying a default value</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 10mm 20mm;
+      @bottom-center {
+        content: element(footer);
+      }
+    }
+
+    @page :first {
+      @bottom-center {
+        content: element(first-footer);
+      }
+    }
+
+    body {
+      font-family: serif;
+      font-size: 10pt;
+      line-height: 1.4;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 2em;
+      font-weight: bold;
+      padding: 0.3em 1em;
+      margin: 1em 0;
+      background-color: #EEE;
+    }
+
+    .intro {
+      margin: 1em 0;
+      border: 1pt solid #9999FF;
+      padding: 0.5em;
+      text-align: justify; 
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    .footnote {
+      -ah-float: footnote;
+      font-size: 0.8em;
+    }
+
+    .footnote::footnote-call {
+      content: counter(footnote, lower-alpha);
+      font-size: 0.8em;
+      vertical-align: super;
+    }
+
+    .footnote::footnote-marker {
+      content: counter(footnote, lower-alpha);
+      font-size: 0.8em;
+      vertical-align: super;
+    }
+
+    #second-page {
+      page: new-page;
+      counter-reset: footnote 9;
+    }
+
+    #second-page .footnote::footnote-call {
+      content: "*" counter(footnote);
+    }
+
+    #second-page .footnote::footnote-marker {
+      content: "*" counter(footnote);
+    }
+
+    #footer {
+      position: running(footer);
+      font-size: 0.8em;
+      text-align: right;
+      color: green;
+    }
+
+    #first-footer {
+      position: running(first-footer);
+      font-size: 0.8em;
+      text-align: right;
+      color: green;
+    }
+
+    pre {
+      background-color: #f7f7f7;
+      border-radius: 4px;
+      padding: 10px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div id="first-footer">
+    <a href="https://www.antennahouse.com/">Antenna House, Inc.</a>
+  </div>
+
+  <h1>Creating a footnote number and specifying a default value</h1>
+
+  <div class="intro">
+    You can create and cite footnotes using CSS for Paged Media. Normally, the footnote numbering is automatically handled, but by using CSS counters, you can control the numbering format and start value for footnotes on each page. This sample demonstrates customizing footnote numbers using standard CSS.
+  </div>
+
+  <p>
+    This sample demonstrates footnotes in action. Here's the first footnote
+    <span class="footnote">This footnote explains the usage of CSS counters for customizing footnote numbering.</span>
+    and here's the second one
+    <span class="footnote">This footnote provides additional context on footnote customization.</span>.
+  </p>
+
+  <p>
+    By default, footnotes are numbered sequentially. However, we can change the numbering style and start value using CSS counters.
+  </p>
+
+  <div id="second-page">
+    <p>
+      On this second page, we've customized the footnote numbering to demonstrate the flexibility provided by CSS. For instance,
+      <span class="footnote">This footnote, with a customized number, shows how you can start numbering from a specific value.</span>
+      and <span class="footnote">this demonstrates continued custom numbering.</span>.
+    </p>
+  </div>
+
+  <div id="footer">
+    <a href="https://www.antennahouse.com/">Antenna House, Inc.</a>  
+  </div>
+
+  <h2>CSS Code</h2>
+  <pre>
+@page {
+  size: A4;
+  margin: 10mm 20mm;
+  @bottom-center {
+    content: element(footer);
+  }
+}
+
+@page :first {
+  @bottom-center {
+    content: element(first-footer);
+  }
+}
+
+body {
+  font-family: serif;
+  font-size: 10pt;
+  line-height: 1.4;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 0.3em 1em;
+  margin: 1em 0;
+  background-color: #EEE;
+}
+
+.intro {
+  margin: 1em 0;
+  border: 1pt solid #9999FF;
+  padding: 0.5em;
+  text-align: justify; 
+}
+
+p {
+  text-align: justify;
+}
+
+.footnote {
+  -ah-float: footnote;
+  font-size: 0.8em;
+}
+
+.footnote::footnote-call {
+  content: counter(footnote, lower-alpha);
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.footnote::footnote-marker {
+  content: counter(footnote, lower-alpha);
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+#second-page {
+  page: new-page;
+  counter-reset: footnote 9;
+}
+
+#second-page .footnote::footnote-call {
+  content: "*" counter(footnote);
+}
+
+#second-page .footnote::footnote-marker {
+  content: "*" counter(footnote);
+}
+
+#footer {
+  position: running(footer);
+  font-size: 0.8em;
+  text-align: right;
+  color: green;
+}
+
+#first-footer {
+  position: running(first-footer);
+  font-size: 0.8em;
+  text-align: right;
+  color: green;
+}
+  </pre>
+
+  <h2>Body Code</h2>
+  <pre>
+&lt;body&gt;
+  &lt;div id="first-footer"&gt;
+    &lt;a href="https://www.antennahouse.com/"&gt;Antenna House, Inc.&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;h1&gt;Creating a footnote number and specifying a default value&lt;/h1&gt;
+
+  &lt;div class="intro"&gt;
+    You can create and cite footnotes using CSS for Paged Media. Normally, the footnote numbering is automatically handled, but by using CSS counters, you can control the numbering format and start value for footnotes on each page. This sample demonstrates customizing footnote numbers using standard CSS.
+  &lt;/div&gt;
+
+  &lt;p&gt;
+    This sample demonstrates footnotes in action. Here's the first footnote
+    &lt;span class="footnote"&gt;This footnote explains the usage of CSS counters for customizing footnote numbering.&lt;/span&gt;
+    and here's the second one
+    &lt;span class="footnote"&gt;This footnote provides additional context on footnote customization.&lt;/span&gt;.
+  &lt;/p&gt;
+
+  &lt;p&gt;
+    By default, footnotes are numbered sequentially. However, we can change the numbering style and start value using CSS counters.
+  &lt;/p&gt;
+
+  &lt;div id="second-page"&gt;
+    &lt;p&gt;
+      On this second page, we've customized the footnote numbering to demonstrate the flexibility provided by CSS. For instance,
+      &lt;span class="footnote"&gt;This footnote, with a customized number, shows how you can start numbering from a specific value.&lt;/span&gt;
+      and &lt;span class="footnote"&gt;this demonstrates continued custom numbering.&lt;/span&gt;.
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div id="footer"&gt;
+    &lt;a href="https://www.antennahouse.com/"&gt;Antenna House, Inc.&lt;/a&gt;  
+  &lt;/div&gt;
+&lt;/body&gt;
+  </pre>
+</body>
+</html>

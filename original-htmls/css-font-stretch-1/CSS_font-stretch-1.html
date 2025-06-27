@@ -1,0 +1,163 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[font-stretch-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.two-column-list 
+				{
+					column-count: 2;
+					list-style-type: decimal;
+					padding: 0;
+					margin: 0;
+					font-size: 1.2em;
+					text-align: center;
+					border: thin solid gray;
+					background: lightgray;
+				}
+				.two-column-list li 
+				{
+					margin-bottom: 10px;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Using the CSS Font-stretch property
+		</div>
+		<div class="subheading">
+				Here is an example of making a font to be condenced or extended with font stretch. In Antenna House Formatter, percentage and numerical values are extended as specifiable values. i.e. <span style = "codePrint">font-stretch: 50%;</span>
+		</div>
+		<h3>Absolute keyword values have the following ordering, from narrowest to widest :</h3>
+		<ol class = "two-column-list">
+			<li>ultra-condensed</li>
+			<li>extra-condensed</li>
+			<li>condensed</li>
+			<li>semi-condensed</li>
+			<li>normal</li>
+			<li>semi-expanded</li>
+			<li>expanded</li>
+			<li>extra-expanded</li>
+			<li>ultra-expanded</li>
+		</ol>
+		<h4>font-family: serif;</h4>
+		<ol class = "two-column-list" style = "column-count:1; text-align: justify; text-indent: 0.5em; font-family: serif;">
+			<li style = "font-stretch: ultra-condensed;">Peaceful World.</li>
+			<li style = "font-stretch: extra-condensed;">Peaceful World.</li>
+			<li style = "font-stretch: condensed;">Peaceful World.</li>
+			<li style = "font-stretch: semi-condensed;">Peaceful World.</li>
+			<li style = "font-stretch: normal;">Peaceful World.</li>
+			<li style = "font-stretch: semi-expanded;">Peaceful World.</li>
+			<li style = "font-stretch: expanded;">Peaceful World.</li>
+			<li style = "font-stretch: extra-expanded;">Peaceful World.</li>
+			<li style = "font-stretch: ultra-expanded;">Peaceful World.</li>
+		</ol>
+		<ol class = "two-column-list" style = "column-count:1; text-align: justify; text-indent: 0.5em; font-family: sans-serif;">
+			<li style = "font-stretch: ultra-condensed;">Peaceful World.</li>
+			<li style = "font-stretch: extra-condensed;">Peaceful World.</li>
+			<li style = "font-stretch: condensed;">Peaceful World.</li>
+			<li style = "font-stretch: semi-condensed;">Peaceful World.</li>
+			<li style = "font-stretch: normal;">Peaceful World.</li>
+			<li style = "font-stretch: semi-expanded;">Peaceful World.</li>
+			<li style = "font-stretch: expanded;">Peaceful World.</li>
+			<li style = "font-stretch: extra-expanded;">Peaceful World.</li>
+			<li style = "font-stretch: ultra-expanded;">Peaceful World.</li>
+		</ol>
+		<h3 style = " page-break-before: always;">The relative keyword values :</h3>
+		<ol class = "two-column-list">
+			<li>normal</li>
+			<li>wider</li>
+			<li>wider*wider</li>
+			<li>narrower</li>
+			<li>narrower*narrower</li>
+		</ol>
+		<h4>font-family: serif;</h4>
+		<ol class = "two-column-list" style = "column-count:1; text-align: justify; text-indent: 0.5em; font-family: serif;">
+			<li style = "font-stretch: normal;">Peaceful World.</li>
+			<li style = "font-stretch: wider;">Peaceful World.</li>
+			<li style = "font-stretch: wider;">Peaceful World.</li>
+			<li style = "font-stretch: narrower;">Peaceful World.</li>
+			<li style = "font-stretch: narrower;">Peaceful World.</li>
+		</ol>
+		<h4>font-family: sans-serif;</h4>
+		<ol class = "two-column-list" style = "column-count:1; text-align: justify; text-indent: 0.5em; font-family: serif;">
+			<li style = "font-stretch: normal;">Peaceful World.</li>
+			<li style = "font-stretch: wider;">Peaceful World.</li>
+			<li style = "font-stretch: wider;">Peaceful World.</li>
+			<li style = "font-stretch: narrower;">Peaceful World.</li>
+			<li style = "font-stretch: narrower;">Peaceful World.</li>
+		</ol>
+		<h3>The percentage keyword values :</h3>
+		<ol class = "two-column-list">
+			<li>50%</li>
+			<li>75%</li>
+			<li>100%</li>
+			<li>150%</li>
+			<li>200%</li>
+		</ol>
+		<h4>font-family: serif;</h4>
+		<ol class = "two-column-list" style = "column-count:1; text-align: justify; text-indent: 0.5em; font-family: serif;">
+			<li style = "font-stretch: 50%;">Peaceful World.</li>
+			<li style = "font-stretch: 75%;">Peaceful World.</li>
+			<li style = "font-stretch: 100%;">Peaceful World.</li>
+			<li style = "font-stretch: 150%;">Peaceful World.</li>
+			<li style = "font-stretch: 200%;">Peaceful World.</li>
+		</ol>
+		<h4>font-family: sans-serif;</h4>
+		<ol class = "two-column-list" style = "column-count:1; text-align: justify; text-indent: 0.5em; font-family: serif;">
+			<li style = "font-stretch: 50%;">Peaceful World.</li>
+			<li style = "font-stretch: 75%;">Peaceful World.</li>
+			<li style = "font-stretch: 100%;">Peaceful World.</li>
+			<li style = "font-stretch: 150%;">Peaceful World.</li>
+			<li style = "font-stretch: 200%;">Peaceful World.</li>
+		</ol>
+		<h3>The number keyword values :</h3>
+		<ol class = "two-column-list">
+			<li>0.5</li>
+			<li>0.75</li>
+			<li>1.0</li>
+			<li>1.5</li>
+			<li>2.0</li>
+		</ol>
+		<h4>font-family: serif;</h4>
+		<ol class = "two-column-list" style = "column-count:1; text-align: justify; text-indent: 0.5em; font-family: serif;">
+			<li style = "font-stretch: 0.5;">Peaceful World.</li>
+			<li style = "font-stretch: 0.75;">Peaceful World.</li>
+			<li style = "font-stretch: 1.0;">Peaceful World.</li>
+			<li style = "font-stretch: 1.5;">Peaceful World.</li>
+			<li style = "font-stretch: 2.0;">Peaceful World.</li>
+		</ol>
+		<ol class = "two-column-list" style = "column-count:1; text-align: justify; text-indent: 0.5em; font-family: sans-serif;">
+			<li style = "font-stretch: 0.5;">Peaceful World.</li>
+			<li style = "font-stretch: 0.75;">Peaceful World.</li>
+			<li style = "font-stretch: 1.0;">Peaceful World.</li>
+			<li style = "font-stretch: 1.5;">Peaceful World.</li>
+			<li style = "font-stretch: 2.0;">Peaceful World.</li>
+		</ol>
+	</body>
+
+</html>

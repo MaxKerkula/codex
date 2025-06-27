@@ -1,0 +1,182 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_table-within-page-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				table
+				{
+					border: thin solid black;
+					border-collapse: collapse;
+					width: 100%;
+					margin-bottom: 6em;
+				}
+				td, tr
+				{
+					border: thin solid black;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Controlling a page break in a table row
+		</div>
+		<div class="subheading">
+			Whether a table row should break or not can be controlled by specifying keep-together.within-page: always; within &lt;tr&gt;
+		</div>
+		<div>
+			<h2>The page breaks in a table row</h2>
+			<p style = "text-align: center;">This is a title of the table.</p>
+			<table style = "-ah-table-omit-footer-at-break: true; -ah-table-omit-header-at-break: true;">
+				<colgroup>
+					<col span = "1" style = "column-width: 75mm;">
+					<col span = "2" style = "column-width: 75mm;">
+				</colgroup>
+				<thead style = "background-color: #DDDDDD; text-align: center;">
+					 <td>
+						Column 1 Header	
+					 </td>
+					 <td>
+						Column 2 Header
+					 </td>
+				</thead>
+				<tr style = "-ah-linefeed-treatment: preserve; text-align: center;">
+					<td>
+						1. Cell text in single table
+						2. Cell text in single table
+						3. Cell text in single table
+						4. Cell text in single table
+						5. Cell text in single table
+						6. Cell text in single table
+					</td>
+					<td>
+						1. Cell text in single table
+						2. Cell text in single table
+						3. Cell text in single table
+						4. Cell text in single table
+						5. Cell text in single table
+						6. Cell text in single table
+					</td>
+				</tr>
+				<tr style = "-ah-linefeed-treatment: preserve; text-align: center;">
+					<td>
+						7. Cell text in single table
+						8. Cell text in single table
+						9. Cell text in single table
+						10. Cell text in single table
+						11. Cell text in single table
+						12. Cell text in single table
+						13. Cell text in single table
+					</td>
+					<td>
+						7. Cell text in single table
+						8. Cell text in single table
+						9. Cell text in single table
+						10. Cell text in single table
+						11. Cell text in single table
+						12. Cell text in single table
+						13. Cell text in single table
+					</td>
+				</tr>
+				<tfoot style = "background-color: #DDDDDD; text-align: center;">
+					<td>
+						Column 1 Footer	
+					 </td>
+					 <td>
+						Column 2 Footer
+					 </td>
+				</tfoot>
+			</table>
+		</div>
+		<div>
+			<h2>The page doesn't breaks in a table row</h2>
+			<p style = "text-align: center;">This is a title of the table.</p>
+			<table style = "-ah-table-omit-footer-at-break: true; -ah-table-omit-header-at-break: true;">
+				<colgroup>
+					<col span = "1" style = "column-width: 75mm;">
+					<col span = "2" style = "column-width: 75mm;">
+				</colgroup>
+				<thead style = "background-color: #DDDDDD; text-align: center;">
+					 <td>
+						Column 1 Header	
+					 </td>
+					 <td>
+						Column 2 Header
+					 </td>
+				</thead>
+				<tr style = "-ah-linefeed-treatment: preserve; text-align: center;">
+					<td>
+						1. Cell text in single table
+						2. Cell text in single table
+						3. Cell text in single table
+						4. Cell text in single table
+						5. Cell text in single table
+						6. Cell text in single table
+					</td>
+					<td>
+						1. Cell text in single table
+						2. Cell text in single table
+						3. Cell text in single table
+						4. Cell text in single table
+						5. Cell text in single table
+						6. Cell text in single table
+					</td>
+				</tr>
+				<tr style = "-ah-linefeed-treatment: preserve; text-align: center; -ah-keep-together.within-page: always;">
+					<td>
+						7. Cell text in single table
+						8. Cell text in single table
+						9. Cell text in single table
+						10. Cell text in single table
+						11. Cell text in single table
+						12. Cell text in single table
+						13. Cell text in single table
+					</td>
+					<td>
+						7. Cell text in single table
+						8. Cell text in single table
+						9. Cell text in single table
+						10. Cell text in single table
+						11. Cell text in single table
+						12. Cell text in single table
+						13. Cell text in single table
+					</td>
+				</tr>
+				<tfoot style = "background-color: #DDDDDD; text-align: center;">
+					<td>
+						Column 1 Footer	
+					 </td>
+					 <td>
+						Column 2 Footer
+					 </td>
+				</tfoot>
+			</table>
+		</div>
+	</body>
+
+</html>

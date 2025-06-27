@@ -1,0 +1,76 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_graphics-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					@bottom-right
+					{
+						content: "";
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				img
+				{
+					border: thin dotted;
+				}
+				.img1
+				{
+					width: 6.0cm;
+					height: 3.0cm;
+					-ah-content-width: 5cm;
+					-ah-content-height: 3.5cm;
+				}
+				.img2
+				{	
+					width: 9.0cm;
+					height: 6.0cm;
+					-ah-content-width: 5.0cm;
+					-ah-content-height: 3.5cm;
+					display-align: center;
+					text-align: center;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Loading external graphics
+		</div>
+		<div class="subheading">
+			It’s possible to load the external graphics by specifying <span class = "codePrint">&lt;img src = "PATH/NAME"&gt;</span>. The width and the height of the loaded graphics can be specified by content-width and content-height. Antenna House Formatter supports loading the image formats of BMP, JPEG, JPEG2000, PNG, TIFF, GIF, WMF, EMF, EPS, SVG, MathML, CGM and WebP. AH Formatter V7.0 or later supports WebP image format.
+		</div>
+		
+		<p class = "codePrint">No settings to content-width, content-height</p>
+		<div><img src = "sunflower.jpg"></div>
+		
+		<p class = "codePrint">-ah-content-width: 5.0cm; -ah-content-height: 3.5cm;</p>
+		<div><img class = "img1" src = "sunflower.jpg"></div>
+		
+		<p>The arrangement of the loaded graphics in an element can be adjusted by display-align, text-align. The following example shows the center arrangement by specifying <span class = "codePrint">display-align: center;, text-align: center;</span>.</p>
+		<div><img class = "img2" src = "sunflower.jpg"></div>
+		
+		
+	</body>
+
+</html>

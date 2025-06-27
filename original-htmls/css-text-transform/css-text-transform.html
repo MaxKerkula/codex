@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-transform extended values example</title>
+    <meta name="author" content="Alex Critchfield, Antenna House">
+    <meta name="keywords" content="extensions, value, text-transform">
+    <meta name="description" content="text-transform extended values">
+    <style>
+@page {
+    size: 8.5in 11in;
+    margin-top: 1in;
+    margin-left: .75in;
+    margin-right: .75in;
+    margin-bottom: 1in;
+
+    @bottom-right {
+        height: 30mm;
+        content: 'Antenna House, Inc.';
+        font-size: 0.8em;
+        text-align: right;
+        color: green;
+        -ah-link: url('https://www.antennahouse.com/');
+        -ah-link-alt-text: 'Antenna House, Inc.';
+        -ah-pdftag: Artifact;
+        -ah-link-annotation-contents: 'Antenna House, Inc.';
+    }
+}
+
+html {
+    font-family: "Arial Unicode MS";
+    font-size: 12pt;
+}
+
+p {
+    -ah-margin-before: 0;
+    -ah-margin-after: 0;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.example-block {
+  
+    -ah-margin-before: 10mm; 
+    border: 2pt solid black;
+    padding: 5pt;
+    text-align-last: center;
+}
+
+.tt-capitalize-lowercase {
+    text-transform: capitalize-lowercase;
+}
+
+.tt-fullwidth {
+    text-transform: fullwidth;
+}
+    </style>
+</head>
+<body>
+    <div class="main-text-container">
+        <p><span class="bold-text">text-transform</span> property is used to control the capitalization of an element's text.</p>
+        <p>These properties have been extended to allow for a values of "capitalize-lowercase", "fullwidth", "fullwidth-if-vertical", and "fullsize-kana". The value of "capitalize-lowercase" will make the first letter of each word uppercase and the rest as lowercase.</p>
+        <p>The full-width, full-width-if-vertical, and fullsize-kana properties are used for formatting CJK text. The full-width and fullwidth-if-vertical properties are used to convert half-width punctuation into full-width. The fullsize-kana property converts full-width small kana into regular kana.</p>
+    </div>
+
+    <div class="example-block">
+        <p class="example-title">text-transform="none" (default)</p>
+        <p class="example-content">The quick brown fox jumps over the lazy dog.</p>
+    </div>
+
+    <div class="example-block">
+        <p class="example-title">text-transform="capitalize-lowercase" (default)</p>
+        <p class="example-content tt-capitalize-lowercase">The quick brown fox jumps over the lazy dog.</p>
+    </div>
+
+    <div class="example-block">
+        <p class="example-title">text-transform="none" (default)</p>
+        <p class="example-content">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+    </div>
+
+    <div class="example-block">
+        <p class="example-title">text-transform="fullwidth" (default)</p>
+        <p class="example-content tt-fullwidth">!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+    </div>
+</body>
+</html> 

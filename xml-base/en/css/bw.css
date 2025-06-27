@@ -1,0 +1,105 @@
+@page Index:left {
+  /* 章の左ページ */
+  @left-middle {
+      background-color: var(--grayscale-30) !important;
+  }
+}
+
+@page Index:right {
+  /* 章の左ページ */
+  @right-middle {
+      background-color: var(--grayscale-30) !important;
+  }
+}
+
+li::marker {
+  color: var(--grayscale-20) !important;
+}
+
+pre {
+  background-color: var(--grayscale-90) !important;
+}
+
+b {
+  background-color: var(--grayscale-70) !important;
+}
+
+/* Style sheet provides description of <b> style. */
+b.sample {
+  content: "bold text with a gray background" !important;
+}
+
+b:lang(ja) {
+  font-weight: normal;
+}
+b:lang(ja).sample {
+  content: "灰色の背景のテキスト" !important;
+}
+
+p.tab {
+    background-color: var(--grayscale-85) !important;
+}
+
+.Chapter h2 {
+    color: var(--grayscale-00) !important;
+}
+
+.Chapter h2:before {
+    color: var(--grayscale-20) !important;
+}
+
+.Chapter h3 {
+    background-color: var(--grayscale-90) !important;
+}
+
+.Chapter h3::before {
+  color: var(--grayscale-30) !important;
+}
+
+.Chapter h4::before {
+  color: var(--grayscale-40) !important;
+}
+
+.Preface h2,
+.Introduction h2,
+.Appendix h2,
+.References h2,
+.Index h2{
+  color: var(--grayscale-20) !important;
+}
+
+.TOCSample li.TocLevel1,
+.TOC li.TocLevel1 > a {
+    background-color: var(--grayscale-92) !important;
+}
+
+table.StdTable thead tr {
+    background-color: transparent !important;
+}
+
+div.SampleTitle {
+    background-color: var(--grayscale-90) !important;
+}
+
+span.Property {
+  color: var(--grayscale-25) !important;
+}
+
+a[href] {
+    color: var(--grayscale-00) !important;
+}
+
+table.TableSample th {
+    background-color: var(--grayscale-90) !important;
+}
+
+.BorderSample {
+  border-color: var(--grayscale-25) !important;
+  background-color: var(--grayscale-90) !important;
+}
+div.VerticalTextBlock {
+  border-color: var(--grayscale-25) !important;
+}
+span:lang(ja).isbn {
+content: "ISBN 	978-4-900552-63-0" !important;
+}

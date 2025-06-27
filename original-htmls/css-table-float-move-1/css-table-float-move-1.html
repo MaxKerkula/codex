@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Float move examples – Antenna House, Inc.</title>
+  <!--
+    This HTML/CSS replicates the original FO structure and text,
+    but uses AH Formatter CSS extensions for paged media
+    instead of fo:* references.
+  -->
+  <style>
+    /********************************************************************
+     * Page Setup (210mm x 150mm, margins top=10mm, left=20mm, right=20mm, bottom=10mm)
+     ********************************************************************/
+    @page {
+      size: 210mm 150mm;
+      margin: 10mm 20mm 10mm 20mm;
+
+      /* region-after (15mm high) → approximate with bottom-right margin box */
+      @bottom-right {
+        content: "Antenna House, Inc.";
+        color: green;
+        font-size: 0.8em;
+        text-align: right;
+        -ah-link: url("https://www.antennahouse.com/");
+        -ah-link-alt-text: "Antenna House, Inc.";
+        -ah-link-show-annotation: true;
+      }
+    }
+
+    body {
+      /* from original: font-family="serif" font-size="10pt" line-height="1.4" */
+      font-family: serif;
+      font-size: 10pt;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      /* from original: axf:hyphenate-hyphenated-word="false" hyphenate="true" */
+      -ah-hyphenate-hyphenated-word: false;
+      hyphens: auto;
+    }
+
+    /********************************************************************
+     * Heading blocks
+     ********************************************************************/
+    /* 
+      The big heading that originally said:
+      <block span="all" font-family="sans-serif" font-size="2em" font-weight="bold" ...>
+        <block start-indent="1em" end-indent="1em" axf:pdftag="H1">Float move examples</block>
+    */
+    .big-heading {
+      font-family: sans-serif;
+      font-size: 2em;
+      font-weight: bold;
+      padding: 0.3em 0;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      background-color: #EEEEEE;
+    }
+    .big-heading .inner {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+
+    /* The H2-like headings:
+       space-before="1em", font-size="1.2em", font-weight="bold", etc.
+    */
+    .section-heading {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-family: sans-serif;
+      font-size: 1.2em;
+      font-weight: bold;
+      clear: both; /* replicate clear="both" from FO */
+    }
+
+    /********************************************************************
+     * Bordered Box
+     ********************************************************************/
+    /* 
+      The block with border="1pt solid #9999FF", start-indent="0.5em", end-indent="0.5em",
+      padding="0.5em", text-align="justify"
+    */
+    .bordered-box {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      padding: 0.5em;
+      border: 1pt solid #9999FF;
+      text-align: justify;
+    }
+
+    /********************************************************************
+     * Page Breaks
+     ********************************************************************/
+    .page-break {
+      page-break-after: always;
+      -ah-break-after: page;
+    }
+
+    /********************************************************************
+     * Table Styles
+     ********************************************************************/
+    table.example-table {
+      border-collapse: collapse;
+      width: auto; /* replicate inline-progression-dimension="auto" */
+      margin: 1em 0;
+    }
+    table.example-table td {
+      border: 0.2mm solid #000; /* from border-style="solid" border-width="0.2mm" */
+      padding: 4px;
+      vertical-align: middle;
+    }
+
+    /********************************************************************
+     * Floats (-ah-float) & auto-move / auto-next
+     ********************************************************************/
+    /* 
+      In FO: <float float="start" axf:float-move="auto-next"> 
+      => we replicate with .float-start-auto-next 
+    */
+    .float-start-auto-next {
+      -ah-float: left;
+      -ah-float-move: auto-next;
+      margin-bottom: 1em;
+      display: block;
+      clear: both;
+    }
+    /* 
+      In FO: <float float="start" axf:float-move="auto-move"> 
+      => we replicate with .float-start-auto-move 
+    */
+    .float-start-auto-move {
+      -ah-float: left;
+      -ah-float-move: auto-move;
+      margin-bottom: 1em;
+      display: block;
+      clear: both;
+    }
+    /* For empty <float float="start" /> */
+    .float-empty {
+      -ah-float: left;
+      width: 0;
+      height: 0;
+      clear: both;
+    }
+
+    /********************************************************************
+     * Additional Blocks (line-height=2, etc.)
+     ********************************************************************/
+    .larger-line-height {
+      line-height: 2;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      font-family: sans-serif;
+      font-size: 1.2em;
+      font-weight: bold;
+      clear: both;
+    }
+
+    /* Pre-like block for the snippet showing usage */
+    .preserve-lines {
+      white-space: pre;
+      line-height: 1.4;
+      font-family: monospace;
+      margin: 0.5em 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1) Big heading, substituting "fo:float" references in the text with HTML/CSS references, 
+         but preserving the line structure. -->
+  <div class="big-heading">
+    <div class="inner">Float move examples</div>
+  </div>
+
+  <!-- 2) Bordered box text, substituting "fo:float" with "the container with -ah-float" 
+         & "axf:float-move" with "-ah-float-move," etc. 
+         EXACT lines, no omissions. -->
+  <div class="bordered-box">
+    If a table starts in the middle of the page but doesn’t fit within its page, the table is split into two parts:
+    the first part stays on the first page and the second part is sent to the next page.  There is a way to avoid
+    that happening by using the container with -ah-float.  First, enclose the entire table within the container
+    with -ah-float. In addition, you can move the table enclosed within the container with -ah-float to its next
+    page (or column) by specifying -ah-float-move with the value auto-next or move the table to its next page
+    only if it would be split if on its current page by using auto-move.  The following page explains -ah-float-move
+    and its values, and the third and following pages are illustrative examples.
+  </div>
+
+  <!-- <fo:block break-after="page"></fo:block> -->
+  <div class="page-break"></div>
+
+  <!-- 3) Next heading: "the container with -ah-float move='auto-next'" -->
+  <div class="section-heading">the container with -ah-float having -ah-float-move="auto-next"</div>
+  <p>
+    If there isn’t enough space to place the table on the current page, the table is moved to the next page.
+    The table is moved to the next page regardless of white-space even when a large amount of white-space
+    is left on the page.
+  </p>
+
+  <!-- 4) Next heading: "the container with -ah-float move='auto-move'" -->
+  <div class="section-heading">the container with -ah-float having -ah-float-move="auto-move"</div>
+  <p>
+    The table is moved to the next page if there isn’t enough space to place it on the page. When a large amount
+    of white-space would be left on the page because of moving the table, the table is not moved to the next page
+    and the text surrounding the container with -ah-float containing the table is moved to the next page instead.
+  </p>
+
+  <!-- 5) Next heading: "the container with -ah-float and -ah-float-move examples" -->
+  <div class="section-heading">the container with -ah-float and -ah-float-move examples</div>
+  <p style="margin-bottom:0.5em; text-align:justify;">
+    the container with -ah-float and -ah-float-move are applied as follows. Adding an empty container with
+    -ah-float and float="start" after a table enclosed within the container with -ah-float prevents a block that
+    comes after the table appearing before the table when the table is moved to the next page.
+  </p>
+
+  <!-- linefeed-treatment="preserve", replicate as <pre> -->
+  <div class="preserve-lines">
+ &lt;div class="float-start-auto-next"&gt;
+    &lt;table&gt; ... &lt;/table&gt;
+ &lt;/div&gt;
+ &lt;div class="float-empty"&gt;&lt;/div&gt;
+ &lt;div&gt;Text after table&lt;/div&gt;
+  </div>
+
+  <!-- 6) Next heading: "Normal table placement" -->
+  <div class="section-heading">Normal table placement</div>
+  <p>
+    A table that doesn’t fit on one page is split across pages and output as separate areas.
+  </p>
+  <p>Automatic formatting of the example table is as follows.</p>
+
+  <!-- The actual table content from the original FO, but referencing an HTML table. -->
+  <table class="example-table">
+    <tbody>
+      <tr style="text-align:center; background-color:#CCBB22;">
+        <td>Item 1</td>
+        <td>Item 2</td>
+        <td>Item 3</td>
+        <td>Item 4</td>
+        <td>Item 5</td>
+        <td>Amount</td>
+        <td>Content 1</td>
+        <td>Content 2</td>
+      </tr>
+      <tr style="text-align:center;">
+        <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm; text-align:right;">680</td>
+        <td style="padding:1mm;">ABC-DE</td>
+        <td style="padding:1mm;">FGH-IJ</td>
+      </tr>
+      <tr>
+        <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm; text-align:right;">680</td>
+        <td style="padding:1mm;">ABC-DE</td>
+        <td style="padding:1mm;">FGH-IJ</td>
+      </tr>
+      <tr>
+        <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm; text-align:right;">680</td>
+        <td style="padding:1mm;">ABC-DE</td>
+        <td style="padding:1mm;">FGH-IJ</td>
+      </tr>
+      <tr>
+        <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm; text-align:right;">680</td>
+        <td style="padding:1mm;">ABC-DE</td>
+        <td style="padding:1mm;">FGH-IJ</td>
+      </tr>
+      <tr>
+        <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm; text-align:right;">680</td>
+        <td style="padding:1mm;">ABC-DE</td>
+        <td style="padding:1mm;">FGH-IJ</td>
+      </tr>
+      <tr>
+        <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm; text-align:right;">680</td>
+        <td style="padding:1mm;">ABC-DE</td>
+        <td style="padding:1mm;">FGH-IJ</td>
+      </tr>
+      <tr>
+        <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm; text-align:right;">680</td>
+        <td style="padding:1mm;">ABC-DE</td>
+        <td style="padding:1mm;">FGH-IJ</td>
+      </tr>
+      <tr>
+        <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm; text-align:right;">680</td>
+        <td style="padding:1mm;">ABC-DE</td>
+        <td style="padding:1mm;">FGH-IJ</td>
+      </tr>
+      <tr>
+        <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm;">Number-ABCDE</td>
+        <td style="padding:1mm; text-align:right;">680</td>
+        <td style="padding:1mm;">ABC-DE</td>
+        <td style="padding:1mm;">FGH-IJ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- Next heading EXACT: "Table within the container with -ah-float having -ah-float-move="auto-next" example 1" -->
+  <div class="section-heading">Table within the container with -ah-float having -ah-float-move="auto-next" example 1</div>
+  <p style="text-align:justify; margin-bottom:1em;">
+    When there is no enough space to place the table on the page, the table is moved to the next page.
+    The table that is moved to the next page is placed at the top.
+  </p>
+  <p>Automatic formatting of the example table is as follows.</p>
+
+  <div class="float-start-auto-next">
+    <table class="example-table">
+      <tbody>
+        <tr style="background-color:#CCBB22; text-align:center;">
+          <td>Item 1</td>
+          <td>Item 2</td>
+          <td>Item 3</td>
+          <td>Item 4</td>
+          <td>Item 5</td>
+          <td>Amount</td>
+          <td>Content 1</td>
+          <td>Content 2</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="float-empty"></div>
+
+  <!-- FO: break-after="page" -->
+  <div class="page-break"></div>
+
+  <!-- EXACT heading: "Table within the container with -ah-float having -ah-float-move='auto-next' example 2" -->
+  <div class="section-heading">Table within the container with -ah-float having -ah-float-move="auto-next" example 2</div>
+  <p style="margin-bottom:0.5em; text-align:justify;">
+    If there isn’t enough space to place the table on the page, the table is moved to the next page.
+    The table that is moved to the next page is placed at the top.  If the table doesn’t fit on the page
+    where it was placed at the top then the table is split at the page when it is output.
+  </p>
+  <p>Automatic formatting of the example table is as follows.</p>
+
+  <div class="float-start-auto-next">
+    <table class="example-table" style="width:auto;">
+      <tbody>
+        <tr style="background-color:#CCBB22; text-align:center;">
+          <td>Item 1</td>
+          <td>Item 2</td>
+          <td>Item 3</td>
+          <td>Item 4</td>
+          <td>Item 5</td>
+          <td>Amount</td>
+          <td>Content 1</td>
+          <td>Content 2</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="float-empty"></div>
+
+  <!-- Next page break: "fo:block span='all' break-before='page' space-before='1em' ..." -->
+  <div class="page-break"></div>
+
+  <!-- EXACT text: "Table within the container with -ah-float having -ah-float-move='auto-move' example 1" -->
+  <div class="larger-line-height">Table within the container with -ah-float having -ah-float-move="auto-move" example 1</div>
+  <div style="text-align:justify; margin-bottom:0.5em;">
+    If there isn’t enough space to place the table on the page, the table is moved to the next page.
+  </div>
+
+  <!-- 9 lines of Lorem ipsum from FO -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.</p>
+  <p style="margin-bottom:1em;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.</p>
+  <p>The table follows.</p>
+
+  <!-- FO: <float float="start" axf:float-move="auto-move"> -->
+  <div class="float-start-auto-move">
+    <table class="example-table">
+      <tbody>
+        <tr style="background-color:#CCBB22; text-align:center;">
+          <td>Item 1</td>
+          <td>Item 2</td>
+          <td>Item 3</td>
+          <td>Item 4</td>
+          <td>Item 5</td>
+          <td>Amount</td>
+          <td>Content 1</td>
+          <td>Content 2</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="float-empty"></div>
+
+  <div class="page-break"></div>
+
+  <!-- EXACT text: "Table within the container with -ah-float having -ah-float-move='auto-move' example 2" -->
+  <div class="larger-line-height">Table within the container with -ah-float having -ah-float-move="auto-move" example 2</div>
+  <div style="text-align:justify;">
+    If there isn’t enough space to place the table and if the table is moved to the next page it will print without 
+    moving the table because the white-space has increased. However, as shown below, the block of text located just 
+    before the table that is within the container with -ah-float is now on the next page, after the table.
+  </div>
+  <div style="margin-bottom:0.5em;"></div>
+  <p>The table follows.</p>
+
+  <!-- FO: <float float="start" axf:float-move="auto-move"> table-and-caption w="100%" -->
+  <div class="float-start-auto-move" style="width:auto;">
+    <table class="example-table" style="width:100%;">
+      <tbody>
+        <tr style="background-color:#CCBB22; text-align:center;">
+          <td>Item 1</td>
+          <td>Item 2</td>
+          <td>Item 3</td>
+          <td>Item 4</td>
+          <td>Item 5</td>
+          <td>Amount</td>
+          <td>Content 1</td>
+          <td>Content 2</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+        <tr>
+          <td style="padding:1mm;"><div>Product A</div><div>Product B</div></td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm;">Number-ABCDE</td>
+          <td style="padding:1mm; text-align:right;">680</td>
+          <td style="padding:1mm;">ABC-DE</td>
+          <td style="padding:1mm;">FGH-IJ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="float-empty"></div>
+
+  <!-- End, with a final break-after="page" if needed -->
+</body>
+</html>

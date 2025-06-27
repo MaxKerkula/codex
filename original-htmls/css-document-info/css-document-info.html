@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document-info extension demonstration</title>
+    <meta name="author" content="Alex Critchfield, Antenna House">
+    <meta name="keywords" content="extensions, document-info">
+    <meta name="description" content="document-info extension">
+    <style>
+        @page {
+            margin-top: .5in;
+            margin-left: .5in;
+            margin-right: .5in;
+            margin-bottom: 42.7mm;
+        }
+
+        @page {
+            @bottom-right {
+                height: 30mm;
+                content: 'Antenna House, Inc.';
+                font-size: 0.8em;
+                text-align: right;
+                color: green;
+                -ah-link: url('https://www.antennahouse.com/');
+                -ah-link-alt-text: 'Antenna House, Inc.';
+                -ah-pdftag: Artifact;
+                -ah-link-annotation-contents: 'Antenna House, Inc.';
+            }
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: serif;
+        }
+
+        .block-monospace-sa20mm {
+            font-family: monospace;
+            -ah-margin-after: 20mm;
+            -ah-margin-before: 0;
+            -ah-margin-start: 0;
+            -ah-margin-end: 0;
+            padding: 0;
+        }
+
+        .block-sa1em {
+            -ah-margin-after: 1em;
+            -ah-margin-before: 0;
+            display: block;
+        }
+        
+        .block-empty-newline {
+             display: block;
+             min-height: 1em;
+             -ah-margin-after: 0.2em;
+        }
+
+        .block-container-bordered {
+            font-family: sans-serif;
+            font-size: 14pt;
+            margin: 0;
+            width: 100%;
+            border: 1mm solid black;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .list-block-ordered {
+            font-family: sans-serif;
+            font-size: 14pt;
+        }
+
+        .list-item-custom {
+            -ah-margin-after: 0.3em;
+            -ah-margin-before: 0;
+        }
+        
+        .block-container-inner-block {
+            padding: 0.1em;
+            -ah-margin-before: 0;
+            -ah-margin-after: 0;
+        }
+
+        .code-example {
+            font-family: monospace;
+            display: block;
+            -ah-margin-before: 0.1em;
+            -ah-margin-after: 0.1em;
+            white-space: pre;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="block-monospace-sa20mm">
+        Document metadata (like Title, Author, Keywords, Subject/Description) is typically defined in the &lt;head&gt; section of an HTML document using &lt;title&gt; and &lt;meta&gt; tags.
+        <div class="block-sa1em"></div>
+        <span class="code-example">&lt;title&gt;document-info extension demonstration&lt;/title&gt;</span>
+        <span class="code-example">&lt;meta name="author" content="Alex Critchfield, Antenna House"&gt;</span>
+        <span class="code-example">&lt;meta name="keywords" content="extensions, document-info"&gt;</span>
+        <span class="code-example">&lt;meta name="description" content="document-info extension"&gt;</span>
+    </div>
+
+    <div class="block-container-bordered">
+        <div class="block-container-inner-block">
+            <ol class="list-block-ordered">
+                <li class="list-item-custom">To view document properties, format this HTML (with embedded CSS) into a PDF using Antenna House Formatter.</li>
+                <li class="list-item-custom">Open the PDF with Adobe Reader.</li>
+                <li class="list-item-custom">In the Adobe Reader File menu select 'Document Properties'.</li>
+                <li class="list-item-custom">Select 'Description' and view the document metadata (like Author, Title, Keywords, Description/Subject) that were set in the HTML's &lt;head&gt; section.</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html> 

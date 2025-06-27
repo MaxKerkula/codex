@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="author" content="Maxim Kerkula, Antenna House">
+<meta name="keywords" content="leader-alignment">
+<meta name="subject" content="leader-alignment">
+<title>leader-alignment extended values example</title>
+<style>
+@page main {
+    size: A4;
+    margin-top: 1in;
+    margin-bottom: 1in;
+    margin-left: 0.75in;
+    margin-right: 0.75in;
+}
+
+body {
+    font-family: "Arial";
+    font-size: 12pt;
+}
+
+.wrapper_1 {
+    font-weight: bold;
+}
+
+.block_2 {
+    -ah-margin-before: 10mm;
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    padding-left: 5pt;
+    padding-right: 5pt;
+}
+
+.table_1 {
+    display: table;
+    width: 100%;
+    border: 2pt solid black;
+    -ah-border-collapse: collapse;
+}
+
+.table-column_1 {
+    display: table-column;
+    width: 25%;
+}
+
+.table-column_2 {
+    display: table-column;
+    width: 75%;
+}
+
+.table-body_1 {
+    display: table-row-group;
+}
+
+.table-row_1 {
+    display: table-row;
+}
+
+.table-cell_1 {
+    display: table-cell;
+    vertical-align: top;
+}
+
+
+.block_4 {
+    font-size: 100pt;
+    text-align-last: justify;
+}
+
+.leader_1::before {
+    content: leader(".");
+}
+
+.leader_2::before {
+    content: leader(".");
+    -ah-leader-alignment: start;
+}
+
+.leader_3::before {
+    content: leader(".");
+    -ah-leader-alignment: end;
+}
+
+.leader_4::before {
+    content: leader(".");
+    -ah-leader-alignment: center;
+}
+
+</style>
+</head>
+<body>
+<div class="block_1">
+The <span class="wrapper_1">leader-alignment</span> property of the HTML span element styled as a leader is used to determine the positioning of the glyphs that make up a leader. Antenna House has extended the value of this property to add the values center, start, and end using the <code>-ah-leader-alignment</code> CSS property.
+</div>
+<div class="block_2">
+<div class="table_1">
+<span class="table-column_1"></span>
+<span class="table-column_2"></span>
+<div class="table-body_1">
+<div class="table-row_1">
+<div class="table-cell_1"><div class="block_3">CSS: default <code>leader()</code> behavior</div></div>
+<div class="table-cell_1"><div class="block_4">A<span class="leader_1"></span>B</div></div>
+</div>
+<div class="table-row_1">
+<div class="table-cell_1"><div class="block_3">CSS: -ah-leader-alignment: start;</div></div>
+<div class="table-cell_1"><div class="block_4">A<span class="leader_2"></span>B</div></div>
+</div>
+<div class="table-row_1">
+<div class="table-cell_1"><div class="block_3">CSS: -ah-leader-alignment: end;</div></div>
+<div class="table-cell_1"><div class="block_4">A<span class="leader_3"></span>B</div></div>
+</div>
+<div class="table-row_1">
+<div class="table-cell_1"><div class="block_3">CSS: -ah-leader-alignment: center;</div></div>
+<div class="table-cell_1"><div class="block_4">A<span class="leader_4"></span>B</div></div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html> 

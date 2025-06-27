@@ -1,0 +1,222 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_background-repeat-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					@bottom-right
+					{
+						content: "";
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.imageBox
+				{
+					margin: 5.5pt;
+					padding: 2pt;
+					height: 60pt;
+					width: 100pt;
+					border: thin solid rgb(0,61,25);
+					background-image: url('background-size-background.png');
+					background-repeat: no-repeat;
+					vertical-align: top;
+					text-align: left;
+				}
+				#iB_0
+				{
+					background-repeat: repeat-x;
+				}
+				#iB_1
+				{
+					background-repeat: space no-repeat;
+				}
+				#iB_2
+				{
+					background-repeat: round no-repeat;
+				}
+				#iB_3
+				{
+					background-repeat: repeat-y;
+				}
+				#iB_4
+				{
+					background-repeat: repeat;
+				}
+				#iB_5
+				{
+					background-repeat: space repeat;
+				}
+				#iB_6
+				{
+					background-repeat: round repeat;
+				}
+				#iB_7
+				{
+					background-repeat: no-repeat space;
+				}
+				#iB_8
+				{
+					background-repeat: repeat space;
+				}
+				#iB_9
+				{
+					background-repeat: space;
+				}
+				#iB_10
+				{
+					background-repeat: round space;
+				}
+				#iB_11
+				{
+					background-repeat: no-repeat round;
+				}
+				#iB_12
+				{
+					background-repeat: repeat round;
+				}
+				#iB_13
+				{
+					background-repeat: space round;
+				}
+				#iB_14
+				{
+					background-repeat: round;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Repetitions of a background image
+		</div>
+		<div class="subheading">
+				<span class = "codePrint">background-repeat</span> if or how a background image is tiled. Tiling is applied after <span class = "codePrint">background-size</span> and <span class = "codePrint">background-position</span> have been applied. background-repeat may be defined in terms of four keywords (‘repeat’, ‘space’, ‘round’, and ‘no-repeat’). These keywords may be specified once or twice, in any combination. Antenna House Formatter also supports a ‘paginate’ value for using successive pages from an external PDF file as the background image on successive pages of the current document.
+		</div>
+		<p>
+			When there are two keywords, the first keyword applies to the horizontal direction and the second applies to the vertical direction.
+		</p>
+		<ul>
+			<li>
+				‘repeat’ : Image is repeated in this direction as often as needed to cover the background painting area.
+			</li>
+			<li>
+				‘space’ : Image is repeated in this direction as often as will fit in the background positioning area and then the images are spaced out to fill the area.  The first and last images touch the edges of the area.
+			</li>
+			<li>
+				‘round’ : Image is repeated in this direction as often as will fit without being clipped.
+			</li>
+			<li>
+				‘no-repeat’ : Image is not repeated in this direction.
+			</li>
+		</ul>
+		<p>
+			The single-keyword values, including the ‘repeat-x’ and ‘repeat-y’ keywords from XSL 1.1, are defined in terms of those keywords:
+		</p>
+		<ul>
+			<li>
+				‘repeat-x’ : Image is repeated horizontally only. Equivalent to ‘repeat no-repeat’.
+			</li>
+			<li>
+				‘repeat-y’ : Image is repeated vertically only. Equivalent to ‘no-repeat repeat’.
+			</li>
+			<li>
+				‘repeat’ : Image is repeated both horizontally and vertically. Equivalent to ‘repeat repeat’.
+			</li>
+			<li>
+				‘space’ : Equivalent to ‘space space’.
+			</li>
+			<li>
+				‘round’ : Equivalent to ‘round round’. This is the default.
+			</li>
+			<li>
+				‘no-repeat’ : Image is not repeated: only one copy is drawn. Equivalent to ‘no-repeat no-repeat’.
+			</li>
+		</ul>
+		<div>
+			<p>
+				The text in the following examples indicates the ‘background-repeat’ value.
+			</p>
+			The examples use this background image: <img src = "background-size-background.png">
+		</div>
+		<table>
+			<tr>
+				<td class = "imageBox">
+					no-repeat
+				</td>
+				<td class = "imageBox" id = "iB_0">
+					repeat-x
+				</td>
+				<td class = "imageBox" id = "iB_1">
+					space no-repeat
+				</td>
+				<td class = "imageBox" id = "iB_2">
+					round no-repeat
+				</td>
+			</tr>
+			<tr>
+				<td class = "imageBox" id = "iB_3">
+					repeat-y
+				</td>
+				<td class = "imageBox" id = "iB_4">
+					repeat
+				</td>
+				<td class = "imageBox" id = "iB_5">
+					space repeat
+				</td>
+				<td class = "imageBox" id = "iB_6">
+					round repeat
+				</td>
+			</tr>
+			<tr>
+				<td class = "imageBox" id = "iB_7">
+					no-repeat space
+				</td>
+				<td class = "imageBox" id = "iB_8">
+					repeat space
+				</td>
+				<td class = "imageBox" id = "iB_9">
+					space
+				</td>
+				<td class = "imageBox" id = "iB_10">
+					round space
+				</td>
+			</tr>
+			<tr>
+				<td class = "imageBox" id = "iB_11">
+					no-repeat round
+				</td>
+				<td class = "imageBox" id = "iB_12">
+					repeat round
+				</td>
+				<td class = "imageBox" id = "iB_13">
+					space round
+				</td>
+				<td class = "imageBox" id = "iB_14">
+					round
+				</td>
+			</tr>
+			
+		</table>
+	</body>
+
+</html>

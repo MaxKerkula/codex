@@ -1,0 +1,129 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-text-emphasis-style-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Ruby and emphasis marks
+		</div>
+		<div class="subheading">
+			It’s possible to add emphasis marks to text using <span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.text-emphasis-style">-ah-text-emphasis-style</a></span>. The space from the base character, font and size of the emphasis marks can be specified. Emphasis marks can  be applied only to the script of Latn, Cyrl, Grek and Zyyy besides CJK. Emphasis marks can be put on the base characters of ruby, but they cannot be put on ruby characters.
+		</div>
+		<div>
+			<h3 style = "font-family: sans-serif;">
+				Emphasis marks
+			</h3>
+			<div style = "font-size: 1.5em; -ah-margin-before: 0.5em; -ah-text-emphasis-style: circle; -ah-text-emphasis-font-size: 0.5;">
+				<div>
+					ルビと圏点
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3 style = "font-family: sans-serif;">
+				Style of Emphasis marks
+			</h3>
+			You can specify the style of emphasis marks with dot, circle, double-circle, triangle and sesame. You can also specify filled to fill the emphasis marks or open to make them outlined. Additionally, you can specify any text as an emphasis mark.
+			<div style = "font-size: 1.5em; -ah-margin-before: 0.5em;">
+				<div>
+					<span style = "-ah-text-emphasis-style: filled circle; -ah-text-emphasis-font-size: 0.5;">圏点</span>
+					<span style = "-ah-text-emphasis-style: open circle; -ah-text-emphasis-font-size: 0.5;">圏点</span>
+					<span style = "-ah-text-emphasis-style: filled triangle; -ah-text-emphasis-font-size: 0.5;">圏点</span>
+					<span style = "-ah-text-emphasis-style: open triangle; -ah-text-emphasis-font-size: 0.5;">圏点</span>
+					<span style = "-ah-text-emphasis-style: filled sesame; -ah-text-emphasis-font-size: 0.5;">圏点</span>
+					<span style = "-ah-text-emphasis-style: open sesame; -ah-text-emphasis-font-size: 0.5;">圏点</span>
+					<span style = "-ah-text-emphasis-style: 'A'; -ah-text-emphasis-font-size: 0.5;">圏点</span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3 style = "font-family: sans-serif;">
+				Using ruby and emphasis marks together		
+			</h3>
+			Ruby and emphasis marks can be used together. When the ruby and emphasis marks are put on the same side, emphasis marks will be put outside of ruby.
+			<div style = "font-size: 1.5em; -ah-margin-before: 1em; -ah-text-emphasis-style: circle; -ah-text-emphasis-font-size: 0.5;">
+				<div>
+					ルビと<ruby>
+						<rb>
+							圏点
+						</rb>
+						<rt>
+							けんてん
+						</rt>
+					</ruby>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3 style = "font-family: sans-serif;">
+				Using ruby and emphasis marks together (Align emphasis marks)
+			</h3>
+			Emphasis marks can be aligned by the setting of -ah-text-emphasis-offset.
+			<div style = "font-size: 1.5em; -ah-margin-before: 1em; -ah-text-emphasis-style: circle; -ah-text-emphasis-font-size: 0.5; -ah-text-emphasis-offset: 0.5em">
+				<div>
+					ルビと<ruby>
+						<rb>
+							圏点
+						</rb>
+						<rt>
+							けんてん
+						</rt>
+					</ruby>
+				</div>
+			</div>
+		</div>
+		
+		<div>
+			<h3 style = "font-family: sans-serif;">
+				Placement of emphasis marks
+			</h3>
+			With <span class = "codePrint">-ah-text-emphasis-position</span>, you can specify where to place emphasis marks. When ‘before’ is specified, emphasis marks will be placed on the before side of its base character, and when ‘after’ is specified, emphasis marks will be placed on the after side of its base character.
+			<div style = "font-size: 1.5em; -ah-margin-before: 1em; -ah-text-emphasis-style: circle; -ah-text-emphasis-font-size: 0.5; -ah-text-emphasis-offset: 0.5em">
+				<div>
+					<span style = "-ah-text-emphasis-style: circle; -ah-text-emphasis-font-size: 0.5; -ah-text-emphasis-position: before;">圏点</span>
+					<span style = "-ah-text-emphasis-style: circle; -ah-text-emphasis-font-size: 0.5; -ah-text-emphasis-position: after;">圏点</span>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3 style = "font-family: sans-serif;">
+				Skipping emphasis marks
+			</h3>
+			With ‘axf:text-emphasis-skip’, you can specify to which characters you do not apply emphasis marks. You can skip emphasis marks with spaces, punctuation, symbols and narrow (half-width letters, etc.).
+			<div style = "font-size: 1.5em; -ah-margin-before: 1em; -ah-text-emphasis-style: dot; -ah-text-emphasis-font-size: 1.0; -ah-text-emphasis-skip: narrow punctuation;">
+				<div>
+					圏点（AAA）
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

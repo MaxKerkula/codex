@@ -1,0 +1,159 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_keep-with-next-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+					@bottom-right
+					{
+						content: "";
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.questionBody
+				{
+					-ah-margin-before: 0.5em;
+					-ah-margin-after: 1.5em;
+				}
+				.lastPageContent
+				{
+					column-count: 2;
+				}
+				p
+				{
+					margin-bottom: -0.5pt;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Keep adjacent blocks on the same page
+		</div>
+		<div class="subheading">
+			Ordinarily, a page break occurs only when the text extends to the bottom of the page. However, it is possible to impose keep conditions relative to different blocks and place them in the same page. There placed Q3 in the end of the second page and A relative to Q3 is placed at the top of the third page. This is an ordinary placement. In contrast, on page 4 and page 5, A and relative  Q is placed in the same page without fail. By using <span class = "codePrint">-ah-keep-together.within-page: always;</span>, or <span class = "codePrint">-ah-keep-together.within-column: always;</span>. It’s possible to impose keep conditions relative to different blocks and place them in the same page.
+		</div>
+		<p style = "font-size: 1.2em; font-weight: bold; line-height: 2; page-break-before: always;">
+			Blocks with background color with no settings (default value)
+		</p>
+		<div class = "questionBody">
+			<p style = "font-size: 1.5em; font-weight: bold;">
+			Q1. Question Title
+			</p>
+			<p>
+			Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1.
+			</p>
+			<span style = "font-size: 1.5em;">A</span> Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1.
+		</div>
+		<div class = "questionBody">
+			<p style = "font-size: 1.5em; font-weight: bold;">
+			Q2. Question Title
+			</p>
+			<p>
+			Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2.
+			</p>
+			<span style = "font-size: 1.5em;">B</span> Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2.
+		</div>
+		<div class = "questionBody" style = "background-color: #FFFFAF;">
+			<p style = "font-size: 1.5em; font-weight: bold;">
+			Q3. Question Title
+			</p>
+			<p>
+			Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3.
+			</p>
+			<span style = "font-size: 1.5em;">C</span> Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3.
+		</div>
+		
+		<p style = "font-size: 1.2em; font-weight: bold; line-height: 2; page-break-before: always;">
+			Blocks with background color have keep-with-next="always"
+		</p>
+		<div class = "questionBody">
+			<p style = "font-size: 1.5em; font-weight: bold;">
+			Q1. Question Title
+			</p>
+			<p>
+			Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1.
+			</p>
+			<span style = "font-size: 1.5em;">A</span> Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1.
+		</div>
+		<div class = "questionBody">
+			<p style = "font-size: 1.5em; font-weight: bold;">
+			Q2. Question Title
+			</p>
+			<p>
+			Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2.
+			</p>
+			<span style = "font-size: 1.5em;">B</span> Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2.
+		</div>
+		<div class = "questionBody" style = "background-color: #FFFFAF; -ah-keep-together.within-page: always;">
+			<p style = "font-size: 1.5em; font-weight: bold;">
+			Q3. Question Title
+			</p>
+			<p>
+			Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3.
+			</p>
+			<span style = "font-size: 1.5em;">C</span> Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3.
+		</div>
+		
+		<div class = "title" style = "page-break-before: always; background-color: darkgreen;">
+			Place adjacent blocks in the same column
+		</div>
+		<div class = "subheading" style = "top: -4.5em;">
+			By specifying <span class = "codePrint">-ah-keep-together.within-column:always;</span>, blocks are placed on the same column. No setting is applied to Q2. Setting is applied to Q3.
+		</div>
+		
+		<div class = "lastPageContent">
+			<div class = "questionBody">
+				<p style = "font-size: 1.5em; font-weight: bold;">
+				Q1. Question Title
+				</p>
+				<p>
+				Here is a block of the answer sentence of Q1.
+				</p>
+				<span style = "font-size: 1.5em;">A</span> Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1. Here is a block of the answer sentence of Q1.
+			</div>
+			<div class = "questionBody">
+				<p style = "font-size: 1.5em; font-weight: bold;">
+				Q2. Question Title
+				</p>
+				<p>
+				Here is a block of the answer sentence of Q2.
+				</p>
+				<span style = "font-size: 1.5em;">B</span> Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2. Here is a block of the answer sentence of Q2.
+			</div>
+			<div class = "questionBody" style = "background-color: #FFFFAF; -ah-keep-together.within-column: always;">
+				<p style = "font-size: 1.5em; font-weight: bold;">
+				Q3. Question Title
+				</p>
+				<p>
+				Here is a block of the answer sentence of Q3.
+				</p>
+				<span style = "font-size: 1.5em;">C</span> Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3. Here is a block of the answer sentence of Q3.
+			</div>
+		</div>
+		
+	</body>
+
+</html>

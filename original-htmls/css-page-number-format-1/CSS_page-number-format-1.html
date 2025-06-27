@@ -1,0 +1,135 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_page-number-format-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-width: 210mm;
+					page-height: 150mm;
+				}
+				before-leader
+				{
+					display: inline;
+				}
+				leader-content
+				{
+					display: inline;
+					content: leader(".")
+				}
+				after-leader
+				{
+					display: inline;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoTOC
+				{
+					break-before: page;
+					border-style: inset;
+					border-width: thin;
+					-ah-border-before-width.conditionality: retain;
+					border-color: black;
+					background-color: #EEEEEE;
+					padding: 1em;
+					start-indent: 1em;
+					end-indent: 1em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Page number format and initial page number
+		</div>
+		<div class="subheading">
+			The format of a page number can be set using the ‘format’ property of fo:page-number. Also, the initial page number of page-sequence can be specified using <span class = "codePrint">initial-page-number</span>.
+		</div>
+		<ul>
+			<li>
+				In the Table of Contents on the next page, the page number format is set to “i” (Roman numerals). The initial page number is set to 1.
+			</li>
+			<li>
+				In the body pages that follow, the page number format is set to “1”, “2”, … (Arabic numerals). Page numbers also start again from 1.
+			</li>
+		</ul>
+		<div class = "demoTOC">
+			<div style="font-size: 1.2em; font-weight: bold; -ah-margin-before: 0.5em; -ah-margin-after: 0.5em;">
+				Table of Contents
+			</div>
+			<div style="text-align-last: justify; margin-left: 0em; -ah-margin-before: 0em; font-size: 1em; font-weight: bold;">
+				<before-leader>Contents 1 Sample</before-leader><leader-content/><after-leader>1</after-leader>
+				<div style = "text-align-last: justify; margin-left: 1em; -ah-margin-before: 0.3em; font-size: 0.8em; font-weight: bold;">
+					<before-leader>Contents 1-1 sample-01</before-leader><leader-content/><after-leader>1</after-leader>
+				</div>
+				<div style = "text-align-last: justify; margin-left: 2em; -ah-margin-before: 0.1em; font-size: 0.8em;">
+					<before-leader>Contents 1-1-1</before-leader><leader-content/><after-leader>1</after-leader>
+				</div>
+				<div style = "text-align-last: justify; margin-left: 2em; -ah-margin-before: 0.1em; font-size: 0.8em;">
+					<before-leader>Contents 1-1-2</before-leader><leader-content/><after-leader>2</after-leader>
+				</div>
+			</div>
+			<div style="text-align-last: justify; margin-left: 1em; -ah-margin-before: 0.3em; font-size: 0.8em; font-weight: bold;">
+				<before-leader>Contents 1-2 Sample-02</before-leader><leader-content/><after-leader>2</after-leader>
+			</div>
+		</div>
+		<div>
+			<div style = "font-size: 2.4em; font-weight: bold; -ah-margin-after: 0.5em; break-before: page; border-after-style: solid; border-after-width: 0.5mm;">
+				Contents 1 Sample
+			</div>
+			<div style = "font-size: 1.6em; font-weight: bold; -ah-margin-before: 1em; -ah-margin-after: 0.5em;">
+				Contents 1-1 sample-01
+			</div>
+			<div style = "font-size: 1.2em; font-weight: bold; -ah-margin-before: 0.5em;">
+				Contents 1-1-1
+			</div>
+			<div style="-ah-margin-after: 0.5em; -ah-margin-before: 0.5em; text-align: justify; text-indent: 1em;">
+				<div>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur.
+				</div>
+				<br>
+				<div>
+					Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus. Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae.
+				</div>
+			</div>
+		</div>
+		<div>
+			<div style = "font-size: 1.2em; font-weight: bold; -ah-margin-after: 0.5em; break-before: page;">
+				Contents 1-1-2
+			</div>
+			<div style = "text-indent: 1em; -ah-margin-before: 0.5em; -ah-margin-after: 0.5em; text-align: justify;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur.
+			</div>
+			<div style = "font-size: 1.6em; font-weight: bold; -ah-margin-before: 1em; -ah-margin-after: 0.5em;">
+				Contents 1-2 sample-02
+			</div>
+			<div style = "text-indent: 1em; -ah-margin-before: 0.5em; -ah-margin-after: 0.5em; text-align: justify;">
+				<div style = "-ah-margin-after: 0.5em;">
+					Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa.
+				</div>
+				<div>
+					Sed sed auctor purus. Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae. 
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

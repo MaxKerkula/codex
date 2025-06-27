@@ -1,0 +1,71 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_cell repeat marker]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+					
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				table
+				{
+					border: thin solid black;
+					border-collapse: collapse;
+					table-layout: fixed;
+					width: 4in;
+				}
+				tr, td
+				{
+					border: thin solid black; 
+					text-align: center;
+					padding: 5pt;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Repeating Cell Markers
+		</div>
+		<div class="subheading">
+				This page has a table that breaks across columns.  The cell thats that are broken display the contents of the repeat marker after the break.
+		</div>
+		<table>
+			<tr>
+				<td style = "-ah-repeat-cell-content-at-break: true;">
+					cell with continued marker <span style = "position: running(table-cell-repeated-marker);">[[see previous page]]</span>
+				</td>
+				<td style = "-ah-repeat-cell-content-at-break: true;">
+					cell without continued marker
+				</td>
+				<td>
+					cell without repeat cell contents at break property  cell without repeat cell contents at break property  cell without repeat cell contents at break property  cell without repeat cell contents at break property  cell without repeat cell contents at break property  cell without repeat cell contents at break property  cell without repeat cell contents at break property  cell without repeat cell contents at break property  cell without repeat cell contents at break property  cell without repeat cell contents at break property 
+				</td>
+				
+			</tr>
+		</table>
+	</body>
+
+</html>

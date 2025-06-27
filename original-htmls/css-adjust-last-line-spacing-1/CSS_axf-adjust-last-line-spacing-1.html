@@ -1,0 +1,108 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congletonis a setting to adjust the space at the end of the last line, but if the result of adjusting the space by specifying ‘axf:adjust-last-line-spacing’ satisfies the condition of ‘axf:flush-zone’, ‘axf:flush-zone’ will be applied
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-adjust-last-line-spacing-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					@footnote
+					{
+						border-top: thin solid;
+						-ah-float: bottom;
+					}
+					@bottom-right
+					{
+						content: " ";
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBox
+				{
+					font-size: 2em;
+					hyphens: false;
+					border: 0.5pt solid lightgray;
+					text-align: justify;
+					-ah-line-break: bpil;
+					margin-bottom: 1em;
+				}
+				span.footnote
+				{
+					-ah-float: footnote;
+					font-size: 10pt;
+					font-family: 'Times New Roman', Times, serif;
+				}
+				h3
+				{
+					font-family: sans-serif;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Adjusting the space on the last line
+		</div>
+		<div class="subheading">
+			You can adjust the space on the last line with <span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.adjust-last-line-spacing">-ah-adjust-last-line-spacing</a></span>. When adjusting with <span class = "codePrint">text-align: justify</span>, there may be a difference in the space between words on the last line and the immediately preceding line. In such a case, you can specify ‘true’ for ‘axf:adjust-last-line-spacing’ to reduce the difference in the space between the last line and the previous line. The default value is ‘false’ and does nothing. Note that this processing is applied when all the following three conditions are met: ‘text-align’ is ‘justify’; ‘text-align-last’ is not ‘justify’ and Breaking Paragraphs into Lines (BPIL)<span class = "footnote">See also “Breaking Paragraphs into Lines (BPIL)” in “<a href="https://www.antennahouse.com/xsl-fo-samples#line">Lines</a>” for more details.</span> algorithms such as <span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.line-break"></a>-ah-line-break: bpil</span>
+		</div>
+		<div>
+			<div>
+				<h3 style = "font-family: sans-serif;">
+					-ah-adjust-last-line-spacing: false;
+				</h3>
+			</div>
+			<div class = "demoBox" style = "-ah-adjust-last-line-spacing: false;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing. Pellentesque sapien sapien. Morbi in pharetra antesed tincidunt ni si cur sus luctus.
+			</div>
+		</div>
+		<div>
+			<div>
+				<h3 style = "font-family: sans-serif;">
+					-ah-adjust-last-line-spacing: true;
+				</h3>
+				<div>
+					You can specify ‘true’ to widen the word spacing on the third line so that the difference between the word spacing on the last third line and the second line immediately before is smaller.
+				</div>
+			</div>
+			<div class = "demoBox" style = "-ah-adjust-last-line-spacing: true;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing. Pellentesque sapien sapien. Morbi in pharetra antesed tincidunt ni si cur sus luctus.
+			</div>
+		</div>
+		<div>
+			<div>
+				<h3 style = "font-family: sans-serif;">
+					Behavior when <span class = "codePrint">-ah-flush-zone</span> is specified
+				</h3>
+				<diV>
+					<span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.flush-zone">-ah-flush-zone</a></span><span class = "footnote">See also “Adjust the space at the end of the last line (axf:flush-zone)” in “<a href="https://www.antennahouse.com/xsl-fo-samples#line">Lines</a>" for more details.</span> is a setting to adjust the space at the end of the last line, but if the result of adjusting the space by specifying -ah-adjust-last-line-spacing satisfies the condition of -ah-flush-zone, -ah-flush-zone will be applied
+				</diV>
+				<h3>
+					-ah-adjust-last-line-spacing: true, -ah-flush-zone: 2em;
+				</h3>
+			</div>
+			<div class = "demoBox" style = "-ah-adjust-last-line-spacing: false;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing. Pellentesque sapien sapien. Morbi in pharetra antesed tincidunt ni si cur sus luctus.
+			</div>
+		</div>
+	</body>
+
+</html>

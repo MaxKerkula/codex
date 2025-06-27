@@ -1,0 +1,125 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>formdemo.fo converted for Antenna House Formatter</title>
+<style>
+body {
+  font-size: 12pt;
+  font-family: Arial;
+  -ah-hyphenation-push-character-count: 1;
+  -ah-hyphenation-remain-character-count: 1;
+  margin: 1in;
+}
+
+.formdemo-form {
+  -ah-margin-before: 0;
+  -ah-margin-after: 0;
+}
+
+.formdemo-block {
+  -ah-margin-before: 0;
+  -ah-margin-after: 0;
+}
+
+.input-text {
+  color: black;
+  width: 20em;
+  height: 1.2em;
+  border: 1pt solid black;
+}
+.input-radio, .input-checkbox {
+  width: 1em;
+  height: 1em;
+  border: 1pt solid black;
+}
+
+.select-combobox {
+  width: 20em;
+  height: 1.2em;
+  border: 1pt solid black;
+}
+.select-listbox {
+  width: 20em;
+  height: 3.6em;
+  border: 1pt solid black;
+}
+.input-password {
+  width: 20em;
+  height: 1.2em;
+  border: 1pt solid black;
+}
+.textarea-multiline {
+  width: 20em;
+  height: 3.6em;
+  border: 1pt solid black;
+}
+.button-submit {
+  width: 5em;
+  background-color: #eee;
+  border: 2px silver outset;
+}
+
+@page {
+  @bottom-right {
+    height: 30mm;
+    content: 'Antenna House, Inc.';
+    font-size: 0.8em;
+    text-align: right;
+    color: green;
+    -ah-link: url('https://www.antennahouse.com/');
+    -ah-link-alt-text: 'Antenna House, Inc.';
+    -ah-pdftag: Artifact;
+    -ah-link-annotation-contents: 'Antenna House, Inc.';
+  }
+}
+</style>
+</head>
+<body>
+<form class="formdemo-form" action="http://some-fake-addess.com" method="get">
+  <div class="formdemo-block">Text Box</div>
+  <div class="formdemo-block">
+    <input class="input-text" type="text" name="textfield" />
+  </div>
+  <div class="formdemo-block">Radio Buttons</div>
+  <div class="formdemo-block">
+    Option 1 <input class="input-radio" type="radio" name="Radio" value="Option1" checked />
+    Option 2 <input class="input-radio" type="radio" name="Radio" value="Option2" />
+  </div>
+  <div class="formdemo-block">Checkbox</div>
+  <div class="formdemo-block">
+    <input class="input-checkbox" type="checkbox" checked />
+  </div>
+  <div class="formdemo-block">Dropdown List</div>
+  <div class="formdemo-block">
+    <select class="select-combobox" name="combobox">
+      <option value="1">option1</option>
+      <option value="2">option2</option>
+      <option value="3">option3</option>
+    </select>
+  </div>
+  <div class="formdemo-block">List Box</div>
+  <div class="formdemo-block">
+    <select class="select-listbox" name="listbox" size="6">
+      <option value="1">option1</option>
+      <option value="2">option2</option>
+      <option value="3">option3</option>
+      <option value="4">option4</option>
+      <option value="5">option5</option>
+      <option value="6">option6</option>
+    </select>
+  </div>
+  <div class="formdemo-block">Password Box</div>
+  <div class="formdemo-block">
+    <input class="input-password" type="password" maxlength="50" />
+  </div>
+  <div class="formdemo-block">Text Area</div>
+  <div class="formdemo-block">
+    <textarea class="textarea-multiline" maxlength="500">text area</textarea>
+  </div>
+  <div class="formdemo-block">Submit Button</div>
+  <div class="formdemo-block">
+    <button class="button-submit" name="SubmitButton" type="submit">Submit</button>
+  </div>
+</form>
+</body>
+</html> 

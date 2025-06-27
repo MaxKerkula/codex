@@ -1,0 +1,95 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.doubleBorderBox
+				{
+					border-style: double;
+					padding: 0.5em;
+					margin-bottom: 2em;
+				}
+				#dBB_0
+				{
+					-ah-border-double-thickness: 1;
+				}
+				#dBB_1
+				{
+					-ah-border-double-thickness: 3pt;
+				}
+				#dBB_2
+				{
+					-ah-border-double-thickness: 3pt 3pt 3pt;
+				}
+				#dBB_3
+				{
+					-ah-border-double-thickness: 3pt 1pt 3pt;
+				}
+				#dBB_4
+				{
+					-ah-border-double-thickness: 3pt 1pt 1pt;
+				}
+				#dBB_5
+				{
+					-ah-border-double-thickness: 1pt 3pt 1pt;
+				}
+				
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Thickness of double-border lines
+		</div>
+		<div class="subheading">
+				The line thickness of <span class = "codePrint">border-style: double;</span> can be specified by using <span class = "codePrint">-ah-border-double-thickness</span>. For instance, the thickness can be specified like <span class = "codePrint">-ah-border-double-thickness: 1pt 1pt 1pt</span>. The three values in order from left to right are: outside line width, spacing and inside line width. If a value is omitted, it is regarded as equivalent to the preceding value. Negative values are not available.  Borders with double lines is available in AH Formatter V6.3 and later.
+		</div>
+		<div class = "doubleBorderBox">
+			<span class = "codePrint">border-style: double;</span>
+		</div>
+		<div class = "doubleBorderBox" id = "dBB_0">
+			<span class = "codePrint">border-style: double; -ah-border-double-thickness: 1;</span>
+		</div>
+		<div class = "doubleBorderBox" id = "dBB_1">
+			<span class = "codePrint">border-style: double; -ah-border-double-thickness: 3pt;</span>
+		</div>
+		<div class = "doubleBorderBox" id = "dBB_2">
+			<span class = "codePrint">border-style: double; -ah-border-double-thickness: 3pt 3pt 3pt;</span>
+		</div>
+		<div class = "doubleBorderBox" id = "dBB_3">
+			<span class = "codePrint">border-style: double; -ah-border-double-thickness: 3pt 1pt 3pt;</span>
+		</div>
+		<div class = "doubleBorderBox" id = "dBB_4">
+			<span class = "codePrint">border-style: double; -ah-border-double-thickness: 3pt 1pt 1pt;</span>
+		</div>
+		<div class = "doubleBorderBox" id = "dBB_5">
+			<span class = "codePrint">border-style: double; -ah-border-double-thickness: 1pt 3pt 1pt;</span>
+		</div>
+		
+	</body>
+
+</html>

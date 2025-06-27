@@ -1,0 +1,71 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_hyphenate-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBox
+				{
+					border: 1pt solid gray;
+					font-size: 1.6em;
+					text-align: justify;
+					line-height: 1em;
+					margin-bottom: 2em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Hyphenation processing and SOFT HYPHEN
+		</div>
+		<div class="subheading">
+			SOFT HYPHEN (U+00AD) is used to arbitrarily specify the position of the hyphen in the word. If hyphenation does not occur, SOFT HYPHEN does not affect the display result. You can extend ‘hyphenate’ to specify whether to hyphenate by SOFT HYPHEN. The setting of <span class = "codePrint">hyphens: true;</span> is available from AH Formatter V7.2.
+		</div>
+		<div>
+			If hyphenate: true; is specified, normal hyphenation will occur. Hyphenation by dictionary and hyphenation by SOFT HYPHEN are preformed.
+			<div class = "demoBox" style = "hyphens: true;">
+				<p>sample padding padding padding padding padding padding padding <span style = "color: red;">hyphenated</span></p>
+				<p>sample padding padding padding padding padding padding padding <span style = "color: red;">hyphenated</span></p>
+			</div>
+		</div>
+		<div>
+			If hyphenate: false; (default) is specified, hyphenation by the dictionary is not performed, but hyphenation by SOFT HYPHEN is performed.
+			<div class = "demoBox" style = "hyphens: false;">
+				<p>sample padding padding padding padding padding padding padding <span style = "color: red;">hyphenated</span></p>
+				<p>sample padding padding padding padding padding padding padding <span style = "color: red;">hyphenated</span></p>
+			</div>
+		</div>
+		<div>
+			If hyphenate: none; is specified, neither hyphenation by dictionary nor hyphenation by SOFT HYPHEN is performed.
+			<div class = "demoBox" style = "hyphens: none;">
+				<p>sample padding padding padding padding padding padding padding <span style = "color: red;">hyphenated</span></p>
+				<p>sample padding padding padding padding padding padding padding <span style = "color: red;">hyphenated</span></p>
+			</div>
+		</div>
+	</body>
+
+</html>

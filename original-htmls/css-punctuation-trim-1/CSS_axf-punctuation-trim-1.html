@@ -1,0 +1,123 @@
+<html lang = "ja">
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-punctuation-trim]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.jPrint
+				{
+					-ah-margin-after: 0.5em;
+					font-size: 1.3em;
+					width: 20em;
+					background-color: orange;
+				}
+				.demoBlock
+				{
+					margin-bottom: 2em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Trimming Japanese full-width punctuation
+		</div>
+		<div class="subheading">
+			If ‘all’ is specified, all parentheses, middle dots, and punctuations of full width are trimmed and treated as half width. &lt;string&gt; behaves the same as all, but only the character included in the character strings specified here is treated as a half width. See also ‘axf:punctuation-trim’ in the online manual for more character strings available.
+		</div>
+		<div class = "demoBlock">
+			<span class = "codePrint">'none'</span>
+			<div class = "jPrint" style = "-ah-punctuation-trim: none;">
+				（あいうえお）
+			</div>
+			<span class = "codePrint">'start'</span>
+			<div class = "jPrint" style = "-ah-punctuation-trim: start;">
+				（あいうえお）
+			</div>
+			<span class = "codePrint">'end'</span>
+			<div class = "jPrint" style = "-ah-punctuation-trim: end;">
+				（あいうえお）
+			</div>
+		</div>
+		
+		
+		<div class = "demoBlock">
+			<span class = "codePrint">'start-except-first'</span>
+			It’s same as ‘start’, but punctuations in the first line or the line right after the forcible line break are excluded.
+			<div class = "jPrint" style = "-ah-punctuation-trim: start-except-first;">
+				（あいうえ（お））
+			</div>
+			<span class = "codePrint">'allow-end'</span>
+			If the full-width punctuation comes at the end of a line and it fits in a line, it’s kept as full-width, if it does not fit in a line, it’s made half-width.
+			<div class = "jPrint" style = "-ah-punctuation-trim: allow-end;">
+				（あいうえおか）きくけこ）
+			</div>
+			<span class = "codePrint">'end-except-fullstop'</span>
+			It is same as ‘end’, but U+3002 (。) and U+FF0E (．) are excluded.
+			<div class = "jPrint" style = "-ah-punctuation-trim: end-except-fullstop;">
+				（あいうえお）（かきくけこ。
+			</div>
+		</div>
+		
+		
+		<div class = "demoBlock">
+			<span class = "codePrint">'adjacent'</span>
+			Trim the amount of the space between the full-width punctuation and the full-width character. (e.g. full-width opening parenthesis) The combination of the ajacent character strings before and after the space can be found in ‘-ah-punctuation-trim’ in the online manual 
+			<span class = "codePrint">'-ah-punctuation-trim: none;'</span>
+	
+			<div class = "jPrint" style = "-ah-punctuation-trim: none;">
+				（（あいう）；かき）、けこ
+			</div>
+			<span class = "codePrint">'-ah-punctuation-trim: adjacent'</span>
+			It is same as ‘end’, but U+3002 (。) and U+FF0E (．) are excluded.
+			<div class = "jPrint" style = "-ah-punctuation-trim: adjacent;">
+				（（あいう）；かき）、けこ
+			</div>
+		</div>
+		
+		
+		<div class = "demoBlock">
+			<span class = "codePrint">'all', &lt;string&gt;</span>
+			If ‘all’ is specified, all parentheses, middle dots, and punctuations of full width are trimmed and treated as half width. &lt;string&gt; behaves the same as all, but only the character included in the character strings specified here is treated as a half width. See also ‘-ah-punctuation-trim’ in the online manual for more character strings available.
+			<span class = "codePrint">'-ah-punctuation-trim: none;'</span>
+			<div class = "jPrint" style = "-ah-punctuation-trim: none;">
+				【あ（あ“あ：あ〈・〉あ、あ”あ）あ】
+			</div>
+			<span class = "codePrint">'-ah-punctuation-trim: all'</span>
+			<div class = "jPrint" style = "-ah-punctuation-trim: adjacent;">
+				【あ（あ“あ：あ〈・〉あ、あ”あ）あ】
+			</div>
+			<span class = "codePrint">'-ah-punctuation-trim: 〉,、,”,）,】'</span>
+			<div class = "jPrint" >
+				【あ（あ“あ：あ〈・〉あ、あ”あ）あ】
+			</div>
+		</div>
+		
+		
+		
+	</body>
+
+</html>

@@ -1,0 +1,416 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_table-border-conflict-resolution-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					@footnote
+					{
+						border-top: solid thin;
+						-ah-float: page bottom;
+					}
+				}
+				@page :first
+				{
+					@bottom-right
+					{
+						content: "";
+					}
+				}
+				span.footnote
+				{
+					-ah-float: footnote;
+					font-size: 8pt;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				table
+				{
+					width: 100%;
+					-ah-margin-before: 1em;
+					-ah-margin-after: 1em;
+					table-layout: fixed;
+					text-align: center;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Border conflict-resolution
+		</div>
+		<div class="subheading">
+			In the collapsing border model, borders at every edge of every cell may be specified by border properties on a variety of elements that meet at that edge (cells, rows, row groups, columns, column groups, and the table itself), and these borders may vary in width, style, and color. 17.6.2.1 Border conflict resolution rules determine which border style "wins" in case of a conflict. (A part of the explanation of this sample is quoted from the relevant site.)
+		</div>
+		<div>
+			<h3>
+				<span class = "codePrint">border-collapse: collapse</span>
+			</h3>
+			<p>
+				Borders with the <span class = "codePrint">border-style</span> of <span class = "codePrint">hidden</span> take precedence over all other conflicting borders. Any border with this value suppresses all borders at this location.
+			</p>
+		</div>
+		<table style = "border-collapse: collapse;">
+			<tr>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt hidden;">
+					border: 5pt hidden;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt hidden;">
+					border: 5pt hidden;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+			</tr>
+		</table>
+		<div>
+			Borders with a style of ‘none’ have the lowest priority. Only if the border properties of all the elements meeting at this edge are ‘none’ will the border be omitted (but note that ‘none’ is the default value for the border style.)
+		</div>
+		<table style = "border-collapse: collapse;">
+			<tr>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt none;">
+					border: 5pt none;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt none;
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt none;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt hidden;">
+					border: 5pt none;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+			</tr>
+		</table>
+		<div>
+			If none of the styles are ‘hidden’ and at least one of them is not ‘none’, then narrow borders are discarded in favor of wider ones. 
+		</div>
+		<table style = "border-collapse: collapse;">
+			<tr>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 10pt solid;">
+					border: 10pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 15pt solid;">
+					border: 15pt solid;
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 1pt solid;">
+					border: 1pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 5pt solid;
+				</td>
+				<td style = "border: 5pt solid;">
+					border: 1pt solid;
+				</td>
+			</tr>
+		</table>
+		<div>
+			If several have the same 'border-width' then styles are preferred in this order: 'double', 'solid', 'dashed', 'dotted', 'ridge', 'outset', 'groove', and the lowest: 'inset'.<span class = "footnote">Antenna House Formatter has the other extension value (‘dot-dash’, ‘dot-dot-dash’, ‘wave’). Refer to Online Manual (Extended Values) for the priority.</span>
+		</div>
+		<table style = "border-collapse: collapse;">
+			<tr>
+				<td style = "border: 3pt double;">
+					double
+				</td>
+				<td style = "border: 3pt solid;">
+					solid
+				</td>
+				<td style = "border: 3pt dashed;">
+					dashed
+				</td>
+				<td style = "border: 3pt dotted;">
+					dotted
+				</td>
+				<td style = "border: 3pt ridge;">
+					ridge
+				</td>
+				<td style = "border: 3pt outset;">
+					outset
+				</td>
+				<td style = "border: 3pt groove;">
+					groove
+				</td>
+				<td style = "border: 3pt inset;">
+					inset
+				</td>	
+			</tr>
+			<tr>
+				<td style = "border: 3pt inset;">
+					inset
+				</td>
+				<td style = "border: 3pt groove;">
+					groove
+				</td>
+				<td style = "border: 3pt outset;">
+					outset
+				</td>
+				<td style = "border: 3pt ridge;">
+					ridge
+				</td>
+				<td style = "border: 3pt dotted;">
+					dotted
+				</td>
+				<td style = "border: 3pt dashed;">
+					dashed
+				</td>
+				<td style = "border: 3pt solid;">
+					solid
+				</td>
+				<td style = "border: 3pt double;">
+					double
+				</td>	
+			</tr>
+		</table>
+		<div>
+			If border styles differ only in color, then a style set on a cell wins over one on a row, which wins over a row group, column, column group and, lastly, table. When two elements of the same type conflict, then the one further to the left (if the table’s 'direction' is 'ltr'; right, if it is 'rtl') and further to the top wins. <br><br>
+		</div>
+		<div>
+			In the following example, border="5pt solid yellow" is specified to fo:table, border="3pt solid black" is specified to &lt;fo:table-column&gt; of column-number="1", other &lt;fo:table-cell&gt; has the different border value.
+		</div>
+		<table style = "border-collapse: collapse; border: 5pt solid yellow;">
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 5pt dashed blue;">
+					5pt dashed blue
+				</td>
+				<td style = "border: 5pt solid green">
+					5pt solid green
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+			</tr>
+		</table>
+		<div class = "subheading" style = "page-break-before: always;">
+			The value ‘collapse-with-precedence’ selects the collapsing borders model and the use of the border precedence properties for conflict resolution. border-before-precedence/border-after-precedence/border-start-precedence/border-end-precedence property has ‘force’, ‘&lt;integer&gt;’, or ‘inherit’ as the value. When ‘force’ is specified, the precedence is higher than any ‘&lt;integer&gt;’. The initial value are different for every table object: fo:table: 6, fo:table-cell: 5, fo:table-column: 4, fo:table-row: 3, fo:table-body: 2, fo:table-header: 1, fo:table-footer: 0.
+		</div>
+		<h3>
+			border-collapse: collapse-with-precedence;
+		</h3>
+		<div class = "codePrint">
+			border-collapse: collapse;
+		</div>
+		<table style = "border-collapse: collapse; border: 5pt solid yellow;">
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 5pt dashed blue;">
+					5pt dashed blue
+				</td>
+				<td style = "border: 5pt solid green;">
+					5pt solid green
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+			</tr>
+		</table>
+		<div class = "codePrint">
+			border-collapse: collapse-with-precedence;
+		</div>
+		<table style = "border-collapse: collapse-with-precedence; border: 5pt solid yellow;">
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 5pt dashed blue;">
+					5pt dashed blue
+				</td>
+				<td style = "border: 5pt solid green;">
+					5pt solid green
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+			</tr>
+		</table>
+		<div>
+			fo:table-column column-number="1" border="3pt solid black" border-before-precedence="10" border-after-precedence="10" border-start-precedence="10" border-end-precedence="10"
+		</div>
+		<table>
+			<tr style = "border: 3pt solid black;">
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 5pt dashed blue;">
+					5pt dashed blue
+				</td>
+				<td style = "border: 5pt solid green;">
+					5pt solid green
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+				<td style = "border: 1pt solid red;">
+					1pt solid red
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

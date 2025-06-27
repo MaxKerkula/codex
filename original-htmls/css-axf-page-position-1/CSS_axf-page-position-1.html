@@ -1,0 +1,65 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+					
+					@bottom-center
+					{
+						content: counter(page) " of " counter(pages);
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				@page :nth(2)
+				{
+					background-color: beige;
+				}
+				@page :nth(4)
+				{
+					background-color: pink;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Page Styles with Specific Sequence
+		</div>
+		<div class="subheading">
+				In CSS, it's possible to target a specific page in the print layout using the @page rule combined with the :nth-child pseudo-class. For instance, to style the second page, you can use the <span class="codePrint">@page :nth-child(2)</span> rule. This example showcases setting the background colors for the second and fourth pages to beige and pink, respectively.
+		</div>
+		<p style = "white-space: pre;">
+			<p>In this example, the second page is targeted using the <span class="codePrint">@page :nth(2)</span> rule, and its background color is set to "beige".</p>
+  
+		<p style = "page-break-before: always;">
+			<p>This is the content of the second page.</p>
+		<p style = "page-break-before:always;"></p>
+		<p style = "page-break-after:always;">In CSS, to differentiate between odd and even pages, you can use the :nth-child pseudo-class. Here, the second page and odd-numbered pages are styled with a "beige" background, while even-numbered pages are styled with a "pink" background.</p>
+		<p style = "page-break-before:always;">This is the second page</p>
+
+	</body>
+
+</html>

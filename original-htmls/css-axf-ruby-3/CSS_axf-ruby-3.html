@@ -1,0 +1,229 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-ruby-3]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Ruby alignment
+		</div>
+		<div class="subheading">
+			With <span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ruby.html#axf.ruby-align">-ah-ruby-align</a></span>, you can specify the ruby alignment. Also you can specify the ruby alignment against its base character with <span class = "codePrint">-ah-ruby-position</span>, spacing between ruby and its base  character with <span class = "codePrint">-ah-ruby-offset</span>, and whether to permit the use of a small kana as ruby for its base character with <span class = "codePrint">-ah-ruby-small-kana</span>.
+		</div>
+		<div>
+			<h3 style = "font-family: sans-serif;">
+				-ah-ruby-align (to specify ruby alignment)
+			</h3>
+			<div>
+				Example of aligning ruby with ‘start’ (left-aligned), ‘center’ (centering) and ‘end’ (right-aligned) of its base character:
+			</div>
+			<div style="column-count: 3; column-gap: 8pt;">
+				<div>
+					-ah-ruby-align: start;
+					<div style="line-height: 2; font-size: 2.5em;">
+						<ruby style = "-ah-ruby-align: start;">
+							<rb>
+								地
+							</rb>
+							<rt>
+								ち
+							</rt>
+						</ruby>
+					</div>
+				</div>
+				<div>
+					-ah-ruby-align: center;
+					<div style="line-height: 2; font-size: 2.5em;">
+						<ruby style = "-ah-ruby-align: center;">
+							<rb>
+								地
+							</rb>
+							<rt>
+								ち
+							</rt>
+						</ruby>
+					</div>
+				</div>
+				<div>
+					-ah-ruby-align: end;
+					<div style="line-height: 2; font-size: 2.5em;">
+						<ruby style = "-ah-ruby-align: end;">
+							<rb>
+								地
+							</rb>
+							<rt>
+								ち
+							</rt>
+						</ruby>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div style = "-ah-margin-before: 1.5em;">
+				Example of aligning  ruby with distribute-space (a white space is given before and after ruby) and with distribute-letter (no white space is given before and after ruby):
+				<div style = "column-count: 3; column-gap: 8pt;">
+					<div>
+						ruby-align: distribute-space;<br><br>
+						<ruby style = "ruby-align: distribute-space; font-size: 2.5em;">
+							<rb>
+								紫陽花
+							</rb>
+							<rt>
+								あじさい
+							</rt>
+						</ruby>
+					</div>
+					<div>
+						ruby-align: distribute-letter;<br><br>
+						<ruby style="ruby-align: distribute-letter; font-size: 2.5em;">
+							<rb>
+								紫陽花
+							</rb>
+							<rt>
+								あじさい
+							</rt>
+						</ruby>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<h3 style = "font-family: sans-serif;">
+					-ah-ruby-position (to specify the ruby alignment against its base character)
+				</h3>
+				<div>
+					Example of aligning a ruby with ‘before’ (on the before side of its base character) and ‘after’ (on the after side of its base character):
+				</div>
+				<div style = "column-count: 3; column-gap: 8pt;">
+					<diV>
+						-ah-ruby-position: before; (Initial)
+						<div style = "line-height: 2; font-size: 2.5em;">
+							<ruby style = "-ah-ruby-position: before;">
+								<rb>
+									紫陽花
+								</rb>
+								<rt>
+									あじさい
+								</rt>
+							</ruby>
+						</div>
+					</diV>
+					<diV>
+						-ah-ruby-position: after; (Initial)
+						<div style = "line-height: 2; font-size: 2.5em;">
+							<ruby style = "-ah-ruby-position: after;">
+								<rb>
+									紫陽花
+								</rb>
+								<rt>
+									あじさい
+								</rt>
+							</ruby>
+						</div>
+					</diV>
+				</div>
+			</div>
+			
+			<div>
+				<h3 style = "font-family: sans-serif;">
+					-ah-ruby-offset (to specify spacing between ruby and a parent character)
+				</h3>
+				<div>
+					Example of specifying spacing between ruby and a parent character with number (a value multiplied with font size of ruby), length (specified length) and percentage (a value multiplied with font size):
+				</div>
+				<div style = "column-count: 3; column-gap: 8pt; margin-bottom: 2em;">
+					<diV>
+						-ah-ruby -ah-ruby-offset: 0pt; (Initial)
+						<div style = "line-height: 2; font-size: 2.5em;">
+							<ruby style = "-ah-ruby-offset: 0pt;">
+								<rb>
+									紫陽花
+								</rb>
+								<rt>
+									あじさい
+								</rt>
+							</ruby>
+						</div>
+					</diV>
+					<diV>
+						-ah-ruby -ah-ruby-offset: 5pt;
+						<div style = "line-height: 2; font-size: 2.5em;">
+							<ruby style = "-ah-ruby-offset: 5pt;">
+								<rb>
+									紫陽花
+								</rb>
+								<rt>
+									あじさい
+								</rt>
+							</ruby>
+						</div>
+					</diV>
+				</div>
+			</div>
+			
+			<div>
+				<h3 style = "font-family: sans-serif;">
+					-ah-ruby-small-kana (to specify to permit the use of a small kana as ruby)
+				</h3>
+				<div>
+					Example of specifying ‘auto’ (small letters are permitted) and ‘convert’ (small letters are converted to regular-sized letters):
+				</div>
+				<div style = "column-count: 3; column-gap: 8pt; margin-bottom: 2em;">
+					<diV>
+						-ah-ruby-small-kana: auto; (Initial)
+						<div style = "line-height: 2; font-size: 2.5em;">
+							<ruby style = "-ah-ruby-small-kana: auto;">
+								<rb>
+									一寸
+								</rb>
+								<rt>
+									ちょっと
+								</rt>
+							</ruby>
+						</div>
+					</diV>
+					<diV>
+						-ah-ruby-small-kana: convert;
+						<div style = "line-height: 2; font-size: 2.5em;">
+							<ruby style = "-ah-ruby-small-kana: convert;">
+								<rb>
+									一寸
+								</rb>
+								<rt>
+									ちょっと
+								</rt>
+							</ruby>
+						</div>
+					</diV>
+				</div>
+			</div>
+	</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change-bar with child float example</title>
+    <meta name="author" content="Alex Critchfield, Antenna House">
+    <meta name="keywords" content="extensions, change-bar">
+    <meta name="subject" content="change-bar extension">
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 1in 0.75in;
+        }
+
+        body {
+            font-family: serif;
+            font-size: 12pt;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-content {
+            margin: 0;
+        }
+
+        .link {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .changed1::before {
+            -ah-change-bar-class: abc;
+            -ah-change-bar-style: solid;
+            -ah-change-bar-color: black;
+            -ah-change-bar-offset: 4em;
+            -ah-change-bar-side: left;
+            content: "This is a change log.";
+            font-size: 0.8em;
+            width: 3.5em;
+            background-color: lightpink;
+            margin-left: 0;
+            position: absolute;
+            left: -3.5em;
+        }
+        .changed1::after {
+            content: '';
+            -ah-change-bar-class: abc;
+        }
+
+        /* Change bar without note styles */
+        .changed2::before {
+            -ah-change-bar-class: def;
+            -ah-change-bar-style: solid;
+            -ah-change-bar-color: lightblue;
+            -ah-change-bar-width: 4pt;
+            -ah-change-bar-offset: 1em;
+            -ah-change-bar-side: left;
+            content: " ";
+            font-size: 0.8em;
+            width: 2.5em;
+            background-color: lightpink;
+            margin-left: 0;
+            position: absolute;
+            left: -3.5em;
+        }
+        .changed2::after {
+            content: '';
+            -ah-change-bar-class: def;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <p>
+            In Antenna House Formatter, you can use CSS classes and pseudo-elements to create change bars and notes. For example, the <code>.changed1</code> class with a <code>::before</code> pseudo-element can be used to add a change bar and a note in the margin. The <code>-ah-change-bar-*</code> properties control the appearance and positioning of the change bar, and standard CSS properties are used to style the note content and adjust the layout.
+        </p>
+
+        <div class="spacer"></div>
+
+        <div class="changed1">
+            <pre>
+&lt;div class="changed1"&gt;
+    &lt;!-- ...content... --&gt;
+&lt;/div&gt;
+
+.changed1 {
+}
+.changed1::before {
+    -ah-change-bar-class: abc;
+    -ah-change-bar-style: solid;
+    -ah-change-bar-color: black;
+    -ah-change-bar-offset: 4em;
+    -ah-change-bar-side: left;
+    content: "This is a change log.";
+    font-size: 0.8em;
+    width: 2.5em;
+    background-color: lightpink;
+    left: -3.5em;
+}
+.changed1::after {
+    content: '';
+    -ah-change-bar-class: abc;
+}
+            </pre>
+        </div>
+
+        <div class="spacer"></div>
+
+        <p>
+            This text has no changes so there is no change bar. 
+        </p>
+
+        <p class="changed2">
+            This text has changes so there is a change bar without a note. 
+        </p>
+
+        <div class="spacer"></div>
+
+        <p>
+            In HTML/CSS for Antenna House Formatter, <code>.changed1::before</code> acts as the change bar start (with the note and all <code>-ah-change-bar-*</code> properties), and <code>.changed1::after</code> acts as the change bar end. These pseudo-elements, together with the <code>-ah-change-bar-class</code>, <code>-ah-change-bar-style</code>, <code>-ah-change-bar-color</code>, <code>-ah-change-bar-offset</code>, and related properties, provide the same effect as <code>&lt;fo:change-bar-begin&gt;</code> and <code>&lt;fo:change-bar-end&gt;</code> in XSL-FO.
+        </p>
+    </div>
+</body>
+</html>

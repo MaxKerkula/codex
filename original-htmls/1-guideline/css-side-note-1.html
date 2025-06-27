@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html data-cat="nomenu" data-order="44" data-ver="6.3" lang="en" data-prefix="sn1">
+<head>
+<title>Title</title>
+<meta charset="UTF-8"/>
+<meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, -ah-float, @sidenote"/>
+<s:keyword xmlns="http://www.w3.org/1999/xhtml" xmlns:s="http://www.antennahouse.com/names/XSL/Sample">@sidenote</s:keyword>
+<meta name="specification" content="CSS3-GCPM"/>
+<link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+<link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+<link rel="stylesheet" href="../../css/css-sample-en.css"/>
+<style>
+   /* First page does not have any sidenotes. */
+     @page sn1:first {
+     margin-left: var(--page-margin-inside);
+     margin-right: var(--page-margin-outside);
+    @bottom-left {
+    margin-left: 0;
+    }
+    @bottom-right {
+    margin-right: 0;
+    }
+}
+
+@page sn1:left {
+     margin-left: 50mm;
+  @sidenote {
+    -ah-float: outside;
+    -ah-float-offset-x: -35mm;
+    width: 30mm;
+  }
+
+    @bottom-left {
+    margin-left: calc(var(--page-margin-outside) - 50mm);
+    }
+}
+
+@page sn1:right {
+     margin-right: 50mm;
+  @sidenote {
+    -ah-float: outside;
+    -ah-float-offset-x: -35mm;
+    width: 30mm;
+    }
+
+    @bottom-right {
+    margin-right: calc(var(--page-margin-outside) - 50mm);
+    }
+}
+
+@page sn1-before-after {
+  counter-reset: sidenote;
+}
+
+@page sn1-before-after:left {
+     margin-left: 50mm;
+  @sidenote {
+    -ah-float: outside before;
+    -ah-float-offset-x: -35mm;
+    width: 30mm;
+  }
+
+    @bottom-left {
+    margin-left: calc(var(--page-margin-outside) - 50mm);
+    }
+}
+
+@page sn1-before-after:right {
+     margin-right: 50mm;
+  @sidenote {
+    -ah-float: outside after;
+    -ah-float-offset-x: -35mm;
+    width: 30mm;
+    }
+
+    @bottom-right {
+    margin-right: calc(var(--page-margin-outside) - 50mm);
+    }
+}
+
+.sn1 {
+  page: sn1;
+}
+
+.sn1.before-after {
+  page: sn1-before-after;
+}
+
+.sn1-sidenote {
+  -ah-float: sidenote;
+  width: 30mm;
+  font-size: var(--note-font-size);
+  /* Three sidenote lines are height of two regular lines. */
+  line-height: calc(var(--body-line-height) * 2 div 3);
+  text-indent: 0;
+}
+  
+.sn1-sidenote::sidenote-call {
+  content: counter(sidenote, decimal);
+  font-size: 60%;
+  vertical-align: super;
+}
+
+.sn1-sidenote::sidenote-marker {
+  content: counter(sidenote, decimal);
+  font-size: var(--note-marker-font-size);;
+}
+
+.sn1-pagebreak {
+  break-before: page;
+}
+  </style>
+
+</head>
+<body class="sn1">
+<div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
+<h1 lang="en">Sidenote</h1>
+<div class="description" lang="en">
+        <p>Making sidenotes is possible using the <span class="property"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#ah-float">-ah-float</a></span> and <span class="property"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.htm#ah-float">-ah-float-offset-x</a></span> extension properties. This first page shows ordinary footnotes that do not use these properties. The following pages show sidenotes generated from elements that do use these properties.</p>
+        <p>Sidenotes are positioned using <span class="rule">@sidenote</span> rules within <span class="rule">@page</span> rules. Even-numbered pages have sidenotes in the left-hand margin and odd-numbered pages have sidenotes in the right-hand margin.</p>
+ </div>
+<div class="source" lang="en">
+    <article>
+        <p>Antenna House Formatter is a most powerful formatting and printing software<span class="Footnote">Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.</span> using XSL-FO and XML/HTML with CSS.<span class="Footnote">XSL-FO and CSS cannot be mixed.</span>
+        </p>
+        <p>This software supports paged-media formatting with the layout specified by CSS,<span class="Footnote">See also <a href="https://www.antenna.co.jp/AHF/help/en/ahf-css6.html">CSS Conformance</a> in the online manual.</span> which is a series of specifications being formulated by W3C. Also it supports page formatting with the layout setting by XSL-FO, which is the XML vocabulary for specifying formatting semantics from the XSL 1.1 Recommendation that was also developed by W3C.</p>
+    </article>
+    <div class="sn1-pagebreak"/>
+    <div class="description">
+        <p>These pages show examples of sidenotes using <code>-ah-float: sidenote</code>. The horizontal position of the sidenotes is controlled using <code>-ah-float-offset-x</code> in the <code>@page</code> rules for left and right pages.</p>
+        <p>Sidenotes are positioned relative to their anchor in the text flow. The vertical position and width of the sidenotes are specified in the <code>@sidenote</code> page margin box in the <code>@page</code> rules.</p>
+    </div>
+    <article>
+        <p>Antenna House Formatter is a most powerful formatting and printing software<span class="sn1-sidenote">Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.</span> using XSL-FO and XML/HTML with CSS.<span class="sn1-sidenote">XSL-FO and CSS cannot be mixed.</span>
+        </p>
+        <p>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample.</p>
+        <p>This software supports paged-media formatting with the layout specified by CSS,<span class="sn1-sidenote">See also <a href="https://www.antenna.co.jp/AHF/help/en/ahf-css6.html">CSS Conformance</a> in the online manual.</span> which is a series of specifications being formulated by W3C. Also it supports page formatting with the layout setting by XSL-FO, which is the XML vocabulary for specifying formatting semantics from the XSL 1.1 Recommendation that was also developed by W3C.</p>
+    </article>
+    <div class="sn1-pagebreak"/>
+    <article>
+        <p>Antenna House Formatter is a most powerful formatting and printing software<span class="sn1-sidenote">Antenna House Formatter is a most powerful formatting and printing software</span> using XSL-FO and XML/HTML with CSS.<span class="sn1-sidenote">XSL-FO and CSS cannot be mixed.</span>
+        </p>
+        <p>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample.</p>
+        <p>This software supports paged-media formatting with the layout specified by CSS,<span class="sn1-sidenote">See also <a href="https://www.antenna.co.jp/AHF/help/en/ahf-css6.html">CSS Conformance</a> in the online manual.</span> which is a series of specifications being formulated by W3C. Also it supports page formatting with the layout setting by XSL-FO, which is the XML vocabulary for specifying formatting semantics from the XSL 1.1 Recommendation that was also developed by W3C.</p>
+    </article>
+    <article class="sn1 before-after">
+      <div class="description"><p>By specifying <span class="value">before</span> or <span class="value">after</span> for <span class="property">-ah-float</span> in the <span class="rule">@sidenote</span> rule, these sidenotes are arranged close to the before side on even pages and close to the after side on odd pages.</p>
+      <p>By specifying <code class="css">counter-reset: sidenote;</code> on the <span class="rule">@page</span> rule, sidenote numbers restart on each page.</p></div>
+
+        <p>Antenna House Formatter is a most powerful formatting and printing software<span class="sn1-sidenote">Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.</span> using XSL-FO and XML/HTML with CSS.<span class="sn1-sidenote">XSL-FO and CSS cannot be mixed.</span>
+        </p>
+        <p>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample.</p>
+        <p>This software supports paged-media formatting with the layout specified by CSS,<span class="sn1-sidenote">See also <a href="https://www.antenna.co.jp/AHF/help/en/ahf-css6.html">CSS Conformance</a> in the online manual.</span> which is a series of specifications being formulated by W3C. Also it supports page formatting with the layout setting by XSL-FO, which is the XML vocabulary for specifying formatting semantics from the XSL 1.1 Recommendation that was also developed by W3C.</p>
+    <div class="sn1-pagebreak"/>
+        <p>Antenna House Formatter is a most powerful formatting and printing software<span class="sn1-sidenote">Antenna House Formatter is a most powerful formatting and printing software</span> using XSL-FO and XML/HTML with CSS.<span class="sn1-sidenote">XSL-FO and CSS cannot be mixed.</span>
+        </p>
+        <p>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample.</p>
+        <p>This software supports paged-media formatting with the layout specified by CSS,<span class="sn1-sidenote">See also <a href="https://www.antenna.co.jp/AHF/help/en/ahf-css6.html">CSS Conformance</a> in the online manual.</span> which is a series of specifications being formulated by W3C. Also it supports page formatting with the layout setting by XSL-FO, which is the XML vocabulary for specifying formatting semantics from the XSL 1.1 Recommendation that was also developed by W3C.</p>
+    </article>
+  </div></body></html>

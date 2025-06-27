@@ -1,0 +1,508 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_table-width-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				table
+				{
+					border: 0.2mm solid black;
+					border-collapse: collapse;
+					margin-bottom: 1em;
+				}
+				tr, td
+				{
+					border: 0.2mm solid black;
+					padding: 1mm;
+
+				}
+				thead
+				{
+					text-align: center;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Column width
+		</div>
+		<div class="subheading">
+			The table column widths can be specified with either automatic or fixed table layout. Fixed table layout is used only when <span class = "codePrint">table-layout</span> is <span class = "codePrint">fixed</span> and <span class = "codePrint">-ah-inline-progression-dimension</span> (or <span class = "codePrint">width</span>) is a length or a percentage. Otherwise, automatic table layout is used. <span class = "codePrint">proportional-column-width()</span> can be used to specify relative column widths. The ability to use <span class = "codePrint">proportional-column-width()</span> with automatic table layout is an Antenna House Formatter extension.
+		</div>
+		<h2 style = "font-family: sans-serif;">
+			Automatic table layout
+		</h2>
+		<div>
+			<div class = "codePrint">
+				&lt;table style = "-ah-inline-progression-dimension: auto; table-layout: auto;"&gt;
+			</div>
+			<div style = "-ah-inline-progression-dimension: auto; table-layout: auto; -ah-keep-together.within-page: always;">
+				Column Widths are not specified
+				<table>
+					<colgroup>
+					</colgroup>
+					<thead style = "background-color: #CCBB22;">
+						<td>
+							Item 1	
+						</td>
+						<td>
+							Item 2
+						</td>
+						<td>
+							Amount
+						</td>
+						<td>
+							Content
+						</td>
+					</thead>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+
+						</td>
+						<td>
+							Unit: billion yen
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Product A<br>
+							Product B
+						</td>
+						<td>
+							Model number
+						</td>
+						<td style = "text-align: right;">
+							680
+						</td>
+						<td style = "text-align: left;">
+							ABC-DE
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				The first two columns specify <span class = "codePrint">width: 35mm;</span>, and the other columns specify <span class = "codePrint">width: 50mm;</span>.
+				<table style = "-ah-inline-progression-dimension: auto; table-layout: auto; -ah-keep-together.within-page: always;">
+					<colgroup>
+						<col span = "1" style="width: 35mm;">
+						<col span = "1" style="width: 35mm;">
+						<col span = "1" style="width: 50mm;">
+						<col span = "1" style="width: 50mm;">
+					</colgroup>
+					<thead style = "background-color: #CCBB22;">
+						<td>
+							Item 1	
+						</td>
+						<td>
+							Item 2
+						</td>
+						<td>
+							Amount
+						</td>
+						<td>
+							Content
+						</td>
+					</thead>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+
+						</td>
+						<td>
+							Unit: billion yen
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Product A<br>
+							Product B
+						</td>
+						<td>
+							Model number
+						</td>
+						<td style = "text-align: right;">
+							680
+						</td>
+						<td style = "text-align: left;">
+							ABC-DE
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div>
+			<div class = "codePrint">
+				&lt;table style = "-ah-inline-progression-dimension: 150mm; table-layout: auto;"&gt;
+			</div>
+			<div style = "-ah-keep-together.within-page: always;">
+				Column Widths are not specified
+				<table style = "-ah-inline-progression-dimension: 150mm; table-layout: auto;">
+					<colgroup>
+					</colgroup>
+					<thead style = "background-color: #CCBB22;">
+						<td>
+							Item 1	
+						</td>
+						<td>
+							Item 2
+						</td>
+						<td>
+							Amount
+						</td>
+						<td>
+							Content
+						</td>
+					</thead>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+
+						</td>
+						<td>
+							Unit: billion yen
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Product A<br>
+							Product B
+						</td>
+						<td>
+							Model number
+						</td>
+						<td style = "text-align: right;">
+							680
+						</td>
+						<td style = "text-align: left;">
+							ABC-DE
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				The first two columns specify <span class = "codePrint">width: 35mm;</span>, and the other columns specify <span class = "codePrint">width: 50mm;</span>.
+				<table style = "-ah-inline-progression-dimension: 150mm; table-layout: auto; -ah-keep-together.within-page: always;">
+					<colgroup>
+						<col span = "1" style="width: 35mm;">
+						<col span = "1" style="width: 35mm;">
+						<col span = "1" style="width: 50mm;">
+						<col span = "1" style="width: 50mm;">
+					</colgroup>
+					<thead style = "background-color: #CCBB22;">
+						<td>
+							Item 1	
+						</td>
+						<td>
+							Item 2
+						</td>
+						<td>
+							Amount
+						</td>
+						<td>
+							Content
+						</td>
+					</thead>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+
+						</td>
+						<td>
+							Unit: billion yen
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Product A<br>
+							Product B
+						</td>
+						<td>
+							Model number
+						</td>
+						<td style = "text-align: right;">
+							680
+						</td>
+						<td style = "text-align: left;">
+							ABC-DE
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				The width of the first column is not specified, the second column specifies: <span class = "codePrint">width: 35mm;</span>, and the other columns specify <span class = "codePrint">width: 50mm;</span>.
+				<table style = "-ah-inline-progression-dimension: 150mm; table-layout: auto; -ah-keep-together.within-page: always;">
+					<colgroup>
+						<col span = "1">
+						<col span = "1" style="width: 35mm;">
+						<col span = "1" style="width: 50mm;">
+						<col span = "1" style="width: 50mm;">
+					</colgroup>
+					<thead style = "background-color: #CCBB22;">
+						<td>
+							Item 1	
+						</td>
+						<td>
+							Item 2
+						</td>
+						<td>
+							Amount
+						</td>
+						<td>
+							Content
+						</td>
+					</thead>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+
+						</td>
+						<td>
+							Unit: billion yen
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Product A<br>
+							Product B
+						</td>
+						<td>
+							Model number
+						</td>
+						<td style = "text-align: right;">
+							680
+						</td>
+						<td style = "text-align: left;">
+							ABC-DE
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		<h2 style = "font-family: sans-serif;">
+			Fixed table layout
+		</h2>
+		<div>
+			<div class = "codePrint">
+				&lt;table style = "-ah-inline-progression-dimension: auto; table-layout: fixed;"&gt;
+			</div>
+			<div style = "-ah-inline-progression-dimension: auto; table-layout: fixed; -ah-keep-together.within-page: always;">
+				Column Widths are not specified
+				<table>
+					<colgroup>
+					</colgroup>
+					<thead style = "background-color: #CCBB22;">
+						<td>
+							Item 1	
+						</td>
+						<td>
+							Item 2
+						</td>
+						<td>
+							Amount
+						</td>
+						<td>
+							Content
+						</td>
+					</thead>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+
+						</td>
+						<td>
+							Unit: billion yen
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Product A<br>
+							Product B
+						</td>
+						<td>
+							Model number
+						</td>
+						<td style = "text-align: right;">
+							680
+						</td>
+						<td style = "text-align: left;">
+							ABC-DE
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class = "codePrint">
+				&lt;table style = "-ah-inline-progression-dimension: 150mm; table-layout: fixed;"&gt;
+			</div>
+			<div>
+				Column widths are not specified.
+				<table style = "-ah-inline-progression-dimension: 150mm; table-layout: fixed; -ah-keep-together.within-page: always;">
+					<thead style = "background-color: #CCBB22;">
+						<td>
+							Item 1	
+						</td>
+						<td>
+							Item 2
+						</td>
+						<td>
+							Amount
+						</td>
+						<td>
+							Content
+						</td>
+					</thead>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+
+						</td>
+						<td>
+							Unit: billion yen
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Product A<br>
+							Product B
+						</td>
+						<td>
+							Model number
+						</td>
+						<td style = "text-align: right;">
+							680
+						</td>
+						<td style = "text-align: left;">
+							ABC-DE
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div>
+			<div class = "codePrint">
+				&lt;table style = "-ah-inline-progression-dimension: 150mm; table-layout: fixed;"&gt;
+			</div>
+			<div style = "-ah-keep-together.within-page: always;">
+				The column widths are 30mm, 30mm, 20mm, 70mm
+				<table style = "-ah-inline-progression-dimension: 150mm; table-layout: auto;">
+					<colgroup>
+						<col span = "1" style="width: 30mm;">
+						<col span = "1" style="width: 30mm;">
+						<col span = "1" style="width: 20mm;">
+						<col span = "1" style="width: 70mm;">
+					</colgroup>
+					<thead style = "background-color: #CCBB22;">
+						<td>
+							Item 1	
+						</td>
+						<td>
+							Item 2
+						</td>
+						<td>
+							Amount
+						</td>
+						<td>
+							Content
+						</td>
+					</thead>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+
+						</td>
+						<td>
+							Unit: billion yen
+						</td>
+						<td>
+
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Product A<br>
+							Product B
+						</td>
+						<td>
+							Model number
+						</td>
+						<td style = "text-align: right;">
+							680
+						</td>
+						<td style = "text-align: left;">
+							ABC-DE
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,76 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-display-alttext-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.borderBox
+				{
+					-ah-margin-before: 0.5em;
+					-ah-margin-after: 1.5em;
+					-ah-margin-start: 0.5em;
+					-ah-margin-end: 0.5em;
+					padding: 0.5em;
+					text-align: justify;
+					border: solid thin lightgray;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Display the alternate text of an image
+		</div>
+		<div class="subheading">
+			Using ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.display-alttext">-ah-display-alttext</a></span>’, specifies whether to display the alternate text of an image. This feature is available in AH Formatter V7.0 or later.
+		</div>
+		<div class = "borderBox">
+			<div>
+				The following specifications are commonly used in this sample.
+			</div>
+			<div class="codePrint">
+				-ah-alttext: 'this content shows up if the parent image is missing'
+			</div>
+			<div>
+				<span class = "codePrint">src="img/button-none.png"</span> is specified in &lt;img&gt; tag, but the image is missing. The alternate text is displayed instead.
+			</div>
+		</div>
+		<div style="-ah-margin-before: 1em;">
+			<span class = "codePrint" style="font-size: 1.2em;">-ah-display-alttext: true</span>: The alternate text is displayed, the image is not displayed. <br>
+			<img src="img/button-none.png" style="-ah-display-alttext: true; -ah-alttext: 'This content shows up if the parent image is missing'; color: red;">
+		</div>
+		<div style="-ah-margin-before: 1em;">
+			<span class = "codePrint" style="font-size: 1.2em;">-ah-display-alttext: false</span>: The alternate text is not displayed.<br>
+			<img src="img/button-none.png" style="-ah-display-alttext: false; -ah-alttext: 'This content shows up if the parent image is missing'; color: red;">
+		</div>
+		<div style="-ah-margin-before: 1em;">
+			<span class = "codePrint" style="font-size: 1.2em;">-ah-display-alttext: auto</span>: The value specified by <a href="https://www.antenna.co.jp/AHF/help/en/ahf-optset.html#display-alttext">display-alttext</a> in the Option Setting File is adopted.<br>
+			<img src="img/button-none.png" style="-ah-display-alttext: auto; -ah-alttext: 'This content shows up if the parent image is missing'; color: red;">
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,90 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBox
+				{
+					border: 1pt solid gray;
+					text-align: justify;
+					hyphens: true;
+					font-size: 1.6em;
+					line-height: 1.5em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Specifying the character count and zone of the word to be hyphenated
+		</div>
+		<div class="subheading">
+			The minimum character count (integral value of 1 or more) of the word to be hyphenated can be specified by <span class = "codePrint">-ah-hyphenation-minimum-character-count</span>. The available range to be hyphenated can be controlled by <span class = "codePrint">-ah-hyphenation-zone</span>. With <span class = "codePrint">-ah-hyphenation-zone</span>, if the length from the end of a word to the end of line is less or equal to the specified value, the following word is not hyphenated. It is invalid when 0 or less value is specified. 
+		</div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				No setting of <span class = "codePrint">-ah-hyphenation-minimum-character-count</span>
+			</h2>
+			<div class = "demoBox">
+				a sample sample sample sample sample sample sample sample <span style = "color: red">hyphenation</span> sample sample sample sample
+			</div>
+		</div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				<span class = "codePrint">-ah-hyphenation-minimum-character-count: 12;</span>
+			</h2>
+			<div class = "demoBox" style = "-ah-hyphenation-minimum-character-count: 12;">
+				a sample sample sample sample sample sample sample sample <span style = "color: red">hyphenation</span> sample sample sample sample
+			</div>
+		</div>
+		<div style = "margin-top: 4em;">
+			<h2 style = "font-family: sans-serif;">
+				<span class = "codePrint">-ah-hyphenation-zone: none;</span>
+			</h2>
+			<div class = "demoBox" style = "-ah-hyphenation-zone: none;">
+				a sample sample sample sample sample sample sample sample <span style = "color: red">hyphenation</span> sample sample sample sample
+			</div>
+		</div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				<span class = "codePrint">-ah-hyphenation-zone: 4em;</span>
+			</h2>
+			<div class = "demoBox" style = "-ah-hyphenation-zone: 4em;">
+				a sample sample sample sample sample sample sample sample <span style = "color: red">hyphenation</span> sample sample sample sample
+			</div>
+		</div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				<span class = "codePrint">-ah-hyphenation-zone: 5em;</span>
+			</h2>
+			<div class = "demoBox" style = "-ah-hyphenation-zone: 5em;">
+				a sample sample sample sample sample sample sample sample <span style = "color: red">hyphenation</span> sample sample sample sample
+			</div>
+		</div>
+	</body>
+
+</html>

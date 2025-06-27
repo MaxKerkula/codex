@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Zoom Document</title>
+  <meta name="displaydoctitle" content="true">
+	<meta name="keywords" content="zoom, openaction">
+	<meta name="author" content="Antenna House, Inc.">
+  <meta name="openaction" content="#zoom=200">
+
+  <style>
+    @page {
+      margin: 0.5in;
+    }
+    
+    body {
+      -ah-hyphenation-push-character-count: 1;
+      -ah-hyphenation-remain-character-count: 1;
+    }
+    
+    .main-block {
+      font-family: monospace;
+      -ah-margin-after: 20mm;
+    }
+    
+    .sub-block {
+      -ah-margin-after: 1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-block">
+    This document will zoom in to 200% when it is opened
+    <div class="sub-block"></div>
+    
+    &lt;meta name="openaction" content="#zoom=200"/&gt;
+    <div></div>
+  </div>
+</body>
+</html> 

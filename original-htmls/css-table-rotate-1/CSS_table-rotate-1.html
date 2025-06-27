@@ -1,0 +1,216 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_table-rotate-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				table
+				{
+					border: solid thin black;
+					border-collapse: collapse;
+					text-align: center;
+				}
+				tr, td
+				{
+					border: solid thin black;
+					padding: 1mm;
+					border-width: 0.2mm;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Rotating table
+		</div>
+		<div class="subheading">
+			By putting a table in fo:block-container where ‘reference-orientation’ is specified, it’s possible to rotate the entire table. The following shows examples of rotating a table by 90 degrees and 270 degrees.
+		</div>
+		<div>
+			<h2>
+				Rotating a table by 90 degrees
+			</h2>
+			<span class = "codePrint">-ah-reference-orientation: 90;</span>
+		</div>
+		<table style = "-ah-reference-orientation: 90;">
+			<tr>
+				<td style = "background-color: #CCBB22;">
+					Item 1
+				</td>
+				<td style = "background-color: #CCBB22;">
+					Item 2
+				</td>
+				<td style = "background-color: #CCBB22;">
+					Amount
+				</td>
+				<td style = "background-color: #CCBB22;">
+					Content
+				</td>
+			</tr>
+			<tr>
+				<td>
+				
+				</td>
+				<td>
+				
+				</td>
+				<td>
+					Unit: billion Yen
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Product A<br>
+					Product B
+				</td>
+				<td>
+					Model number
+				</td>
+				<td style = "text-align: right;">
+					680
+				</td>
+				<td>
+					ABC-DE
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Product A<br>
+					Product B
+				</td>
+				<td>
+					Model number
+				</td>
+				<td style = "text-align: right;">
+					980
+				</td>
+				<td>
+					ABC-DE
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Product A<br>
+					Product B
+				</td>
+				<td>
+					Model number
+				</td>
+				<td style = "text-align: right;">
+					1280
+				</td>
+				<td>
+					ABC-DE
+				</td>
+			</tr>
+		</table>
+		<div>
+			<h2>
+				Rotating a table by 270 degrees
+			</h2>
+			<span class = "codePrint">-ah-reference-orientation: 270;</span>
+		</div>
+		<table style = "-ah-reference-orientation: 270;">
+			<tr>
+				<td style = "background-color: #CCBB22;">
+					Item 1
+				</td>
+				<td style = "background-color: #CCBB22;">
+					Item 2
+				</td>
+				<td style = "background-color: #CCBB22;">
+					Amount
+				</td>
+				<td style = "background-color: #CCBB22;">
+					Content
+				</td>
+			</tr>
+			<tr>
+				<td>
+				
+				</td>
+				<td>
+				
+				</td>
+				<td>
+					Unit: billion Yen
+				</td>
+				<td>
+				
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Product A<br>
+					Product B
+				</td>
+				<td>
+					Model number
+				</td>
+				<td style = "text-align: right;">
+					680
+				</td>
+				<td>
+					ABC-DE
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Product A<br>
+					Product B
+				</td>
+				<td>
+					Model number
+				</td>
+				<td style = "text-align: right;">
+					980
+				</td>
+				<td>
+					ABC-DE
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Product A<br>
+					Product B
+				</td>
+				<td>
+					Model number
+				</td>
+				<td style = "text-align: right;">
+					1280
+				</td>
+				<td>
+					ABC-DE
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

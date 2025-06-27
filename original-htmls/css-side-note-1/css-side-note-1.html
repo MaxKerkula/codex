@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            <title>Sidenote – Antenna House, Inc.</title>
+            <meta name="author"
+                  content="Antenna House, Inc.">
+                <style>
+@page {
+  size: 210mm 297mm; 
+  @footnote {
+    border-top: 1px solid #ccc;
+    padding-top: 0.5em;
+  }
+}
+
+@page:first {
+  size: 210mm 297mm;
+  margin: 10mm 20mm; 
+  @top-center {
+    content: element(title);
+  }
+}
+
+@page:left {
+  margin: 10mm 20mm 10mm 50mm;
+            @bottom-left {
+				content: 'Antenna House, Inc.';
+				font-size: 8pt;
+				color: green;
+				text-align: left;
+				-ah-link: url('https://www.antennahouse.com/');
+				-ah-link-alt-text: 'Antenna House, Inc.';
+				-ah-link-show-annotation: true;
+			}  @sidenote {
+    -ah-float: left;
+    -ah-float-offset-x: -35mm;
+    width: 30mm;
+  }
+}
+
+@page:right {
+  margin: 10mm 50mm 10mm 20mm;
+			@bottom-right {
+				content: 'Antenna House, Inc.';
+				font-size: 8pt;
+				color: green;
+				text-align: right;
+				-ah-link: url('https://www.antennahouse.com/');
+				-ah-link-alt-text: 'Antenna House, Inc.';
+				-ah-link-show-annotation: true;
+			}
+  @sidenote {
+    -ah-float: right;
+    -ah-float-offset-x: -35mm;
+    width: 30mm;
+  }
+}
+
+body {
+  font-family: serif;
+  font-size: 10pt;
+  line-height: 1.4;
+  -ah-hyphens: auto;
+  counter-reset: sidenote;
+}
+
+article {
+  margin-top: 10mm;
+  margin-bottom: 10mm;
+}
+
+.title {
+  font-family: sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 0.3em 1em;
+  margin: 1em 0;
+  background-color: #EEE;
+  -ah-hyphens: none;
+  string-set: title content();
+}
+
+.intro {
+  margin: 1em 0;
+  padding: 0.5em;
+  text-indent: 0;
+  text-align: justify;
+  border: 1pt solid #9999FF;
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.footnote {
+  -ah-float: footnote;
+  font-size: 0.8em;
+}
+
+.footnote::footnote-call {
+  content: counter(footnote);
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.footnote::footnote-marker {
+  content: counter(footnote);
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.sidenote {
+  -ah-float: sidenote;
+  width: 30mm;
+  counter-increment: sidenote;
+}
+
+.sidenote::before {
+  content: counter(sidenote);
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.pagebreak {
+  -ah-break-before: page;
+}
+
+  </style>
+            </head><body>
+    <div id="title">
+        <div class="title">Sidenote</div>
+    </div>
+    <div class="intro">
+        <p>Making sidenotes is possible using the <a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#ah-float">-ah-float</a> and <a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.htm#ah-float">-ah-float-offset-x</a> CSS properties. This first page shows ordinary footnotes that do not use these properties. The following pages show sidenotes generated from elements that do use these properties.</p>
+        <p>Sidenotes are positioned using the <code>@sidenote</code> page margin box selector on <code>@page</code> rules. Even-numbered pages have sidenotes on the left-hand side and odd-numbered pages have sidenotes on the right-hand side.</p>
+    </div>
+    <article>
+        <p>Antenna House Formatter is a most powerful formatting and printing software<span class="footnote">Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.</span> using XSL-FO and XML/HTML with CSS.<span class="footnote">XSL-FO and CSS cannot be mixed.</span>
+        </p>
+        <p>This software conforms to XSL 1.1,<span class="footnote">See also [XSL-FO Conformance] in the online manual.</span> which is a specification for displaying / printing XML documents in a fine manner. Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under development by the CSS Working Group.</p>
+    </article>
+    <div class="pagebreak"/>
+    <div class="intro">
+        <p>These pages show examples of sidenotes using <code>-ah-float: sidenote</code>. The horizontal position of the sidenotes is controlled using <code>-ah-float-offset-x</code> in the <code>@page</code> rules for left and right pages.</p>
+        <p>Sidenotes are positioned relative to their anchor in the text flow. The vertical position and width of the sidenotes are specified in the <code>@sidenote</code> page margin box in the <code>@page</code> rules.</p>
+    </div>
+    <article>
+        <p>Antenna House Formatter is a most powerful formatting and printing software<span class="sidenote">Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.</span> using XSL-FO and XML/HTML with CSS.<span class="sidenote">XSL-FO and CSS cannot be mixed.</span>
+        </p>
+        <p>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample.</p>
+        <p>This software conforms to XSL 1.1,<span class="sidenote">See also [XSL-FO Conformance] in the online manual.</span> which is a specification for displaying / printing XML documents in a fine manner. Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under development by the CSS Working Group.</p>
+    </article>
+    <div class="pagebreak"/>
+    <article>
+        <p>Antenna House Formatter is a most powerful formatting and printing software<span class="sidenote">Antenna House Formatter is a most powerful formatting and printing software</span> using XSL-FO and XML/HTML with CSS.<span class="sidenote">XSL-FO and CSS cannot be mixed.</span>
+        </p>
+        <p>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample.</p>
+        <p>This software conforms to XSL 1.1,<span class="sidenote">See also [XSL-FO Conformance] in the online manual.</span> which is a specification for displaying / printing XML documents in a fine manner. Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under development by the CSS Working Group.</p>
+    </article>
+    <div class="pagebreak"/>
+    <article>
+        <p>Antenna House Formatter is a most powerful formatting and printing software<span class="sidenote">Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.</span> using XSL-FO and XML/HTML with CSS.<span class="sidenote">XSL-FO and CSS cannot be mixed.</span>
+        </p>
+        <p>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample.</p>
+        <p>This software conforms to XSL 1.1,<span class="sidenote">See also [XSL-FO Conformance] in the online manual.</span> which is a specification for displaying / printing XML documents in a fine manner. Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under development by the CSS Working Group.</p>
+    </article>
+    <div class="pagebreak"/>
+    <article>
+        <p>Antenna House Formatter is a most powerful formatting and printing software<span class="sidenote">Antenna House Formatter is a most powerful formatting and printing software</span> using XSL-FO and XML/HTML with CSS.<span class="sidenote">XSL-FO and CSS cannot be mixed.</span>
+        </p>
+        <p>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample.</p>
+        <p>This software conforms to XSL 1.1,<span class="sidenote">See also [XSL-FO Conformance] in the online manual.</span> which is a specification for displaying / printing XML documents in a fine manner. Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under development by the CSS Working Group.</p>
+    </article>
+</body>
+</html>

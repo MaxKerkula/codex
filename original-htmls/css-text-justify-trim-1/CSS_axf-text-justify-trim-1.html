@@ -1,0 +1,98 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-text-justify-trim-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				}
+				body
+				{
+					font-family: 'Arial Unicode MS';
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBox
+				{
+					-ah-margin-after: 0.5em;
+					font-size: 1.3em;
+					width: 10em;
+					background-color: orange;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Trimming text at the end of line
+		</div>
+		<div class="subheading">
+			Specify whether to trim the text or not. If <span class = "codePrint">none</span> is specified to <span class = "codePrint">-ah-text-justify-trim</span>, the text is not trimmed. Japanese full-width parentheses, middle dots, and punctuations are also trimmed by specifying <span class = "codePrint">punctuation</span>. Spaces between Hiragana and Katakana are trimmed by specifying <span class = "codePrint">kana</span>, spaces between Kanji and Kana are trimmed by specifying <span class = "codePrint">ideograph</span> and spaces between Western words can also be trimmed by specifying <span class = "codePrint">inter-word</span>.
+		</div>
+		<div style = "text-align: justify;">
+			<span class = "codePrint">none</span>
+			<div lang = "ja" class = "demoBox" style = "-ah-text-justify-trim: none;">
+				（あいうえお。かき・くけこ）
+			</div>
+			
+			<span class = "codePrint">punctuation</span>
+			<div lang = "ja" class = "demoBox" style = "-ah-text-justify-trim: punctuation;">
+				（あいうえお。かき・くけこ）
+			</div>
+			<span class = "codePrint">punctuation-except-fullstop</span><br>
+			Same as ‘punctuation’, but the two letters of U+3002 (。), U+FF0E (．) are excluded.
+			<div lang = "ja" class = "demoBox" style = "-ah-text-justify-trim: punctuation-except-fullstop;">
+				（あいうえお。かき・くけこ）
+			</div>
+			<span class = "codePrint">punctuation-except-middledot</span><br>
+			Same as ‘punctuation’, but middle dots of U+30FB (・), U+FF1A (：), U+FF1B (；) are excluded.
+			<div lang = "ja" class = "demoBox" style = "-ah-text-justify-trim: punctuation-except-middledot;">
+				（あいうえお。かき・くけこ）
+			</div>
+			<span class = "codePrint">none</span>
+			<div lang = "ja" class = "demoBox" style = "-ah-text-justify-trim: none; width: 12.5em;">
+				さんぷるとサンプル、ひらがなとカタカナ
+			</div>
+			<span class = "codePrint">kana</span>
+			<div lang = "ja" class = "demoBox" style = "-ah-text-justify-trim: kana; width: 12.5em;">
+				さんぷるとサンプル、ひらがなとカタカナ
+			</div>
+			<span class = "codePrint">none</span>
+			<div lang = "ja" class = "demoBox" style = "-ah-text-justify-trim: none; width: 12.5em;">
+				追い込みの処理を行うかどうかを指定します。
+			</div>
+			<span class = "codePrint">ideograph</span>
+			<div lang = "ja" class = "demoBox" style = "-ah-text-justify-trim: ideograph; width: 12.5em;">
+				追い込みの処理を行うかどうかを指定します。
+			</div>
+			<span class = "codePrint">none</span>
+			<div lang = "ja" class = "demoBox" style = "-ah-text-justify-trim: none; width: 20em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.
+			</div>
+			<span class = "codePrint">inter-word</span>
+			<div lang = "ja" class = "demoBox" style = "-ah-text-justify-trim: inter-word; width: 20em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.
+			</div>
+
+		</div>
+	</body>
+
+</html>

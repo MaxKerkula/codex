@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample of 3D</title>
+    <meta name="subject" content="">
+    <meta name="author" content="Antenna House, Inc.">
+    <style>
+        
+        @page PageMaster {
+            size: 11in 8in; 
+            margin: 15mm 25mm 15mm 25mm; 
+
+            
+            @top-center {
+                height: 10mm; 
+                vertical-align: bottom; 
+                font-size: 10pt; 
+                text-align: center; 
+                border-bottom-width: thin; 
+                border-bottom-style: solid; 
+                content: "Sample of 3D embedding"; 
+            }
+
+            
+             @bottom-right {
+                 height: 18mm;
+                 content: 'Antenna House, Inc.';
+                 font-size: 0.8em;
+                 text-align: right;
+                 color: green;
+                 -ah-link: url('https://www.antennahouse.com/');
+                 -ah-link-alt-text: 'Antenna House, Inc.';
+                 -ah-pdftag: Artifact; 
+                 -ah-link-annotation-contents: 'Antenna House, Inc.'; 
+            }
+            
+
+            
+            @left-middle {
+                width: 20mm; 
+            }
+            @right-middle {
+                width: 20mm; 
+            }
+        }
+
+        html {
+            page: PageMaster; 
+            counter-reset: page 1; 
+        }
+
+        
+        body {
+            font-size: 18pt; 
+        }
+
+        
+        h1#IDAHZURE {
+            font-size: 24pt;
+            font-family: Arial;
+            font-weight: bold;
+            -ah-margin-after: 14pt; 
+            break-before: page; 
+            break-after: avoid-page; 
+            -ah-border-after-style: solid; 
+            -ah-border-after-width: 2pt; 
+            bookmark-level: 1; 
+        }
+
+        
+        h1#IDAHZURE span {
+             -ah-margin-end: 5pt; 
+        }
+
+        
+        p.indented-paragraph {
+            text-indent: 1em; 
+            -ah-margin-before: 0.6em; 
+            -ah-margin-after: 0.6em; 
+            text-align: justify; 
+            break-inside: avoid-page; 
+        }
+
+        
+        pre.code-block {
+            white-space: pre-wrap; 
+            background-color: #EEEEEE; 
+            font-family: monospace; 
+            font-size: 12pt; 
+            padding: 0.5em; 
+            
+            break-inside: avoid-page; 
+        }
+
+         
+         p.final-block {
+            -ah-margin-before: 0.6em; 
+            -ah-margin-after: 0.6em; 
+            break-inside: avoid-page; 
+         }
+
+         
+         img.embedded-pdf {
+            width: 50%; 
+         }
+
+    </style>
+</head>
+<body>
+    <div> 
+        <div> 
+            <h1 id="IDAHZURE"><span><img src="img/ico3.png" alt=""/></span>Embedding 3D Images</h1>
+            <p class="indented-paragraph">It is now possible to embed 3D images in a PDF document. </p>
+            
+            <p class="indented-paragraph">It is performed by using the &lt;img&gt; element. </p>
+            
+            <pre class="code-block">&lt;img src="dice.pdf"/&gt;</pre>
+            
+            <p class="indented-paragraph">As described above, specify the page number which you want to embed to the URI. When there is no page number specified, the first page will be embedded. When there is no size specified, it's embedded in the page size of the PDF where it's embedded. However if you want to scale the size, &#x60;width&#x60; or &#x60;height&#x60; CSS properties can be specified as follows: </p>
+            
+            <pre class="code-block">&lt;img src="embedded.pdf#page=3" style="width: 50%;"/&gt;</pre>
+            <p class="indented-paragraph">When specifying PDF by utilizing the data scheme (RFC2397), the page number can be specified as the parameter of the media type as follows. </p>
+            
+            <pre class="code-block">&lt;img src="data:application/pdf;page=3;base64,JVBERi0xLjQKJeLjz9M..."/&gt;</pre>
+            <p class="indented-paragraph">A dummy image will be displayed in GUI. </p>
+            <p class="indented-paragraph">The next block is as follows.</p>
+            
+            <pre class="code-block">&lt;img src="embedded.pdf#page=1" style="width: 50%;"/&gt;</pre>
+            <p class="final-block">Embed PDF<img src="dice.pdf#page=1" class="embedded-pdf" alt=""/></p>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,495 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-table-omit-header-footer-column-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+				table
+				{
+					width: 100%;
+					border-collapse: collapse;
+					text-align: center;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Omitting table header/footer at a column break
+		</div>
+		<div class="subheading">
+			The XSL Specification includes <span class = "codePrint">table-omit-header-at-break</span> and <span class = "codePrint">table-omit-footer-at-break</span> properties for omitting the table header or table footer at a page break. However, because these properties only apply at a page break, the table header and table footer are generated when a column break occurs in a table on a multi-column region. When the extension property value '<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.table-omit-footer-at-break">column</a></span>' is specified for <span class = "codePrint">table-omit-header-at-break</span> and <span class = "codePrint">table-omit-footer-at-break</span>, Antenna House Formatter omits the table header and footer when splitting the table across columns but does not omit the header and footer when splitting across pages.
+		</div>
+		<div>
+			<h2>
+				Without settings
+			</h2>
+			<div style="column-count: 2;">
+				<table style="table-layout: fixed;">
+					<thead>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table header 1
+						</td>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table header 2
+						</td>
+					</thead>
+					<tfoot>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table footer 1
+						</td>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table footer 2
+						</td>
+					</tfoot>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div>
+			<h2>
+				Effect of a page break when specifying ‘column’ to ‘table-omit-header-at-break’ and ‘table-omit-footer-at-break’
+			</h2>
+			<div style="column-count: 2;">
+				<table style="table-layout: fixed; -ah-table-omit-header-at-break: column; -ah-table-omit-footer-at-break: column;">
+					<thead>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table header 1
+						</td>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table header 2
+						</td>
+					</thead>
+					<tfoot>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table footer 1
+						</td>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table footer 2
+						</td>
+					</tfoot>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div>
+			<h2>
+				Specifying 'column' to 'table-omit-header-at-break' and 'table-omit-footer-at-break'
+			</h2>
+			<div style="column-count: 2;">
+				<table style="table-layout: fixed; -ah-table-omit-header-at-break: column; -ah-table-omit-footer-at-break: column;">
+					<thead>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table header 1
+						</td>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table header 2
+						</td>
+					</thead>
+					<tfoot>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table footer 1
+						</td>
+						<td style="background-color: #BBFFBB; border: thin solid green;">
+							table footer 2
+						</td>
+					</tfoot>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+					<tr>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+						<td style="border: thin solid red;">
+							cell
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+
+</html>

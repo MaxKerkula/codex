@@ -1,0 +1,66 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-expansion-text-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBox
+				{
+					font-size: 0.9em;
+					-ah-margin-before: 0.5em;
+					border: 1.6pt solid gray;
+					-ah-margin-start: 15pt;
+					-ah-margin-end: 15pt;
+					padding: 5pt;
+					white-space: pre;
+					font-family: monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Specifying expansion text for tags in Tagged PDF
+		</div>
+		<div class="subheading">
+			When you create a Tagged PDF for accessibility, you can use "<a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.expansion-text">-ah-expansion-text</a>" to specify expansion text that specifies descriptive text for abbreviations, etc. in the Tagged PDF. The setting of ‘axf:expansion-text’ is available from AH Formatter V7.2.
+		</div>
+		<div style = "text-indent: 1em;">
+			In this sample, the expansion text is specified by <span class = "codePrint">-ah-expansion-text</span> as shown below. When the text of a PDF document as a Tagged PDF output from Antenna House Formatter is read aloud by screen reading software, the expansion text is also read aloud along with the abbreviation.
+		</div>
+		<div class = "demoBox">
+&lt;div&gt;
+	&lt;span style = "-ah-expansion-text: 'Cascading Style Sheets';"&gt;CSS&lt;/span&gt;
+	 is one of the specifications that indicates how to qualify HTML and XML
+	elements.
+&lt;/div&gt;
+		</div>
+		<div lang = "en" style = "-ah-margin-before: 1em; border: 1pt solid gray; font-size: 0.9em;">
+			<span style = "-ah-expansion-text: 'Cascading Style Sheets';">CSS</span> is one of the specifications that indicates how to qualify HTML and XML elements.
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,147 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-display-align-justify-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.columnBody
+				{
+					column-count: 2;
+					
+				}
+				.contentBlock
+				{
+					border: 1pt solid;
+					height: 50mm;
+					width: 30mm;
+					margin-left: 6em;
+					margin-bottom: 2em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Text alignment in vertical direction
+		</div>
+		<div class="subheading">
+				By specifying <span class = "codePrint">-ah-display-align: justify</span>, line space can be adjusted to justify the text in the block progression direction.
+		</div>
+		<div class = "columnBody">
+			<div style = "display-align: auto;">
+				<span class = "codePrint">display-align: auto;</span><br>
+
+				1 block
+				<div class = "contentBlock" style="padding: 0 0.25em;">
+					Antenna House Sample FO test test test test
+				</div>
+				multiple blocks
+				<div class = "contentBlock" style = "padding: 0 0.25em;">
+					<div style = "background-color: #F001; color: red;">
+						test
+					</div>
+					<div style = "background-color: #00F1; color: blue;">
+					test
+					</div>
+					<div style = "background-color: #0F01; color: green;">
+					test
+					</div>
+					<div style = "background-color: #FFA50010; color: orange;">
+						test test test test test test test test test test test test
+					</div>
+				</div>
+				<span class = "codePrint">line-height: 3;</span> is specified for blue block
+				<div class = "contentBlock" style = "margin-bottom: 5em; padding: 0 0.25em;">
+					<div style = "background-color: #F001; color: red;">
+						test
+					</div>
+					<div style = "background-color: #00F1; color: blue; line-height: 3;">
+						test
+					</div>
+					<div style = "background-color: #0F01; color: green;">
+						test<br>
+					</div>
+					<div style = "background-color: #FFA50010; color: orange;">
+						test test test test test test test test test test test test
+					</div>
+					<div style = "background-color: #00000008;">
+						test
+					</div>
+					<div style = "background-color: #FF00FF10; color: fuchsia;">
+						last line
+					</div>
+				</div>
+			</div>
+			
+			<div>
+				<span class = "codePrint">display-align: justify;</span><br>
+
+				1 block
+				<div class = "contentBlock" style = "display-align: justify; padding: 0 0.25em;">
+					Antenna House Sample FO test test test test
+				</div>
+				multiple blocks
+				<div class = "contentBlock" style = "display-align: justify; padding: 0 0.25em;">
+					<div style = "background-color: #F001; color: red;">
+						test
+					</div>
+					<div style = "background-color: #00F1; color: blue;">
+						test
+					</div>
+					<div style = "background-color: #0F01; color: green;">
+						test
+					</div>
+					<div style = "background-color: #FFA50010; color: orange;">
+						test test test test test test test test test test test test
+					</div>
+				</div>
+				<span class = "codePrint">line-height: 3;</span> is specified for blue block
+				<div class = "contentBlock" style="display-align: justify; padding: 0 0.25em;">
+					<div style = "background-color: #F001; color: red;">
+						test
+					</div>
+					<div style = "background-color: #00F1; color: blue; line-height: 3;">
+						test
+					</div>
+					<div style = "background-color: #0F01; color: green;">
+						test
+					</div>
+					<div style = "background-color: #FFA50010; color: orange;">
+						test test test test test test test test test test test test<br>
+					</div>
+					<div style = "background-color: #00000008;">
+						test
+					</div>
+					<div style = "background-color: #FF00FF10; color: fuchsia;">
+						last line
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+
+</html>

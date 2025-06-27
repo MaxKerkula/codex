@@ -1,0 +1,115 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-overflow-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.overflowBox
+				{
+					border: solid thin red;
+					-ah-logical-width: 30mm;
+					-ah-logical-height: 20mm;
+				}
+				#oB_0
+				{
+					-ah-overflow: replace;
+					-ah-overflow-replace: Alternate Text;
+				}
+				#oB_1
+				{
+					-ah-overflow: condense;
+					-ah-overflow-condense: letter-spacing;
+				}
+				#oB_2
+				{
+					-ah-overflow: condense;
+					-ah-overflow-condense: font-stretch;
+				}
+				#oB_3
+				{
+					-ah-overflow: condense;
+					-ah-overflow-condense: font-size;
+				}
+				#oB_4
+				{
+					-ah-overflow: condense;
+					-ah-overflow-replace: line-height;
+				}
+				
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Overflow extension
+		</div>
+		<div class="subheading">
+			If text cannot fit within (i.e., overflows) a fixed-size , the original text can be substituted with a different character string by specifying <span class = "codePrint">-ah-overflow: replace;</span>. Also, by specifying <span class = "codePrint">-ah-overflow-condense: [font-size | font-stretch | ...]</span>, you can condense text, reduce the character size, reduce the line spacing, etc.
+		</div>
+		<h4>
+			When not specified
+		</h4>
+		<div class = "overflowBox">
+			This is a sample. This is a sample. This is a sample. This is a sample. This is a sample. This is a sample.
+		</div>
+		
+		<h4 style = "margin-top: 2em;">
+			-ah-overflow: replace; -ah-overflow-replace: Alternate Text;
+		</h4>
+		<div class = "overflowBox" id = "oB_0">
+			This is a sample. This is a sample. This is a sample. This is a sample. This is a sample. This is a sample. This is a sample.
+		</div>
+		
+		<h4>
+			-ah-overflow: condense; -ah-overflow-condense: letter-spacing;
+		</h4>
+		<div class = "overflowBox" id = "oB_1">
+			This is a sample. This is a sample. This is a sample. This is a sample. This is a sample. This is a sample.
+		</div>
+		
+		<h4>
+			-ah-overflow: condense; -ah-overflow-condense: font-stretch;
+		</h4>
+		<div class = "overflowBox" id = "oB_2">
+			This is a sample. This is a sample. This is a sample. This is a sample. This is a sample. This is a sample. This is a sample.
+		</div>
+		
+		<h4>
+			-ah-overflow: condense; -ah-overflow-condense: font-size;
+		</h4>
+		<div class = "overflowBox" id = "oB_3">
+			This is a sample. This is a sample. This is a sample. This is a sample. This is a sample. This is a sample. This is a sample.
+		</div>
+		
+		<h4>
+			-ah-overflow: condense; -ah-overflow-replace: line-height;
+		</h4>
+		<div class = "overflowBox" id = "oB_4">
+			This is a sample. This is a sample. This is a sample. This is a sample. This is a sample. This is a sample. This is a sample.
+		</div>
+	</body>
+
+</html>

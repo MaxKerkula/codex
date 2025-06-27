@@ -1,0 +1,63 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[background-image-1]
+	-->
+	<head>
+		<link rel="stylesheet" href="src/AH_Style.css">
+		<style>
+			@page
+			{
+				page-height: 150mm;
+				page-width: 210mm;
+			}
+			.imgcentered
+			{
+				text-align: center;
+			}
+			.backgroundRepeat
+			{
+				background-image: url("peace.svg");
+				background-repeat: repeat;
+				width: 100%;
+				height: 450px;
+			}
+			.codePrint
+			{
+				font-weight: bold;
+				font-family: 'Courier New', 'DejaVu Sans', monospace;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class = "title">
+			Setting an image as the page background
+		</div>
+
+		<div class = "subheading">
+			It’s possible to apply a background image by specifying <span class ="codePrint">background-image: </span> on x There are many properties for ‘background-image’. In this first page, <span class ="codePrint">text-align: center</span> and <span class ="codePrint">background-repeat: no-repeat</span> are specified. Only one background image is placed in the center of the page.
+		</div>
+		
+		<div class = "imgcentered">
+			<img src = "peace.svg">
+		</div>
+		<div class = "backgroundRepeat" style = "page-break-before: always;">
+			<img src = "peace.svg">
+		</div>
+	</body>
+
+</html>

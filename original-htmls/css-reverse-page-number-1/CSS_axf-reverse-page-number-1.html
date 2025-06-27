@@ -1,0 +1,228 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-reverse-page-number-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				body
+				{
+					font-family: 'Arial Unicode MS';
+				}
+				before-leader
+				{
+					display: inline;
+				}
+				leader-content
+				{
+					display: inline;
+					content: leader(".");
+				}
+				after-leader
+				{
+					display: inline;
+				}
+				@page :nth(2)
+				{
+					font-size: 16pt;
+					@bottom-center
+					{
+						content: ' - 1 -';
+					}
+				}
+				@page :nth(3)
+				{
+					font-size: 16pt;
+					@bottom-center
+					{
+						content: ' - 2 -';
+					}
+				}
+				@page :nth(4)
+				{
+					font-size: 16pt;
+					@bottom-center
+					{
+						content: ' - 3 -';
+					}
+				}
+				@page :nth(5)
+				{
+					font-size: 16pt;
+					@bottom-center
+					{
+						content: ' - 4 -';
+					}
+				}
+				@page :nth(6)
+				{
+					font-size: 16pt;
+					@bottom-center
+					{
+						content: ' - 5 -';
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Page numbers with mixed horizontal and vertical pages
+		</div>
+		<div class="subheading" style="break-after: page;">
+			By specifying <span class = "codePrint">style</span> @page-rule, page number are counted backwards, in descending order. Together with -ah-reverse-page: true, this makes it possible to generate PDF output with sequential page numbers on horizontal writing-mode pages in a vertical writing-mode document. In this sample, ‘-ah-reverse-page’ and ‘-ah-reverse-page-number’ are specified for the index on pages 4 and 5. ‘-ah-reverse-page-number’ is available in AH Formatter V6.3 and later.
+		</div>
+		<div style=" -ah-writing-mode: tb-rl; margin: auto; height: 60%;">
+			<div lang = "ja" style="font-size: 1.5em; text-decoration: underline; color: blue;">
+				<ruby>
+					<rb>
+						縦
+					</rb>
+					<rt>
+						たて
+					</rt>
+					<rb>
+						書
+					</rb>
+					<rt>
+						が
+					</rt>
+				</ruby>
+				きサンプルページ
+				<ruby>
+					<rb>
+						壱
+					</rb>
+					<rt>
+						いち
+					</rt>
+				</ruby>
+			</div>
+			<div style="font-size: 1.5em; -ah-margin-before: 1em;">
+				<div style = "text-indent: 1em;">
+					いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。
+				</div>
+				<div style = "text-indent: 1em;">
+					いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。
+				</div>
+			</div>
+		</div>
+		<div style=" -ah-writing-mode: tb-rl; margin: auto; height: 60%;">
+			<div lang = "ja" style="font-size: 1.5em; text-decoration: underline; color: blue;">
+				<ruby>
+					<rb>
+						縦
+					</rb>
+					<rt>
+						たて
+					</rt>
+					<rb>
+						書
+					</rb>
+					<rt>
+						が
+					</rt>
+				</ruby>
+				きサンプルページ
+				<ruby>
+					<rb>
+						壱
+					</rb>
+					<rt>
+						いち
+					</rt>
+				</ruby>
+			</div>
+			<div style="font-size: 1.5em; -ah-margin-before: 1em;">
+				<div style = "text-indent: 1em;">
+					いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。
+				</div>
+				<div style = "text-indent: 1em;">
+					いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。
+				</div>
+			</div>
+		</div>
+		<div style=" -ah-writing-mode: tb-rl; margin: auto; height: 60%;">
+			<div lang = "ja" style="font-size: 1.5em; text-decoration: underline; color: blue;">
+				<ruby>
+					<rb>
+						縦
+					</rb>
+					<rt>
+						たて
+					</rt>
+					<rb>
+						書
+					</rb>
+					<rt>
+						が
+					</rt>
+				</ruby>
+				きサンプルページ
+				<ruby>
+					<rb>
+						壱
+					</rb>
+					<rt>
+						いち
+					</rt>
+				</ruby>
+			</div>
+			<div style="font-size: 1.5em; -ah-margin-before: 1em;">
+				<div style = "text-indent: 1em;">
+					いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。
+				</div>
+				<div style = "text-indent: 1em;">
+					いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。いろはにほへと、ちりぬるを。わかよたれそ、つねならむ。うゐのおくやま、けふこえて。あさきゆめみし、ゑひもせす。
+				</div>
+			</div>
+		</div>
+		<div style="font-size: larger; break-before: page;">
+			Blank Page
+		</div>
+		<div style=" break-before: page;">
+			<span style = "font-size: 1.5em;">Index</span>
+			<div lang = "ja" style="font-size: 1.2em; -ah-margin-before: 0.5em; -ah-margin-start: 0.5em; -ah-margin-end: 0.5em; border: solid gray thin; width: 75%;">
+				<div style="-ah-margin-before: 0.5em; text-align-last: justify;">
+					<div>
+						<before-leader>縦書きサンプル壱</before-leader><leader-content/><after-leader>1</after-leader>
+					</div>
+					<div>
+						<before-leader>縦書きサンプル壱</before-leader><leader-content/><after-leader>2</after-leader>
+					</div>
+					<div>
+						<before-leader>縦書きサンプル壱</before-leader><leader-content/><after-leader>3</after-leader>
+					</div>
+				</div>
+			</div>
+			<div style="margin-top: 3em;">
+				<span style="font-size: 1.5em;">Reference</span><br>
+				Sample-01<br>
+				Sample-02<br>
+				Sample-03<br>
+				Sample-04<br>
+				Sample-05<br>
+			</div>
+		</div>
+	
+	</body>
+
+</html>

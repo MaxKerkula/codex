@@ -1,0 +1,89 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-text-indent-if-first-on-page-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBlock
+				{
+					text-indent: 1em;
+					-ah-margin-before: 0.5em;
+					-ah-line-break: line;
+					font-family: serif;
+					border: solid thin gray;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			‘text-indent’ of a block at the top of the page
+		</div> 
+		<div class="subheading">
+			Specify ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.text-indent-if-first-on-page">-ah-text-indent-if-first-on-page</a></span>’ for the ‘text-indent’ of a block at the top of the page or the top of the column. When the block comes to the top of the page or column, if the first line is on that page or column, the value of this property substitutes for the value of ‘text-indent’. This feature is available in AH Formatter V7.0 or later.
+		</div>
+		<div>
+			Sample data starts on the next page.
+		</div>
+		<div style="-ah-column-count: 2; break-before: page; text-align: justify;">
+			<div class="demoBlock">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis. In vitae nibh volutpat, blandit mi at, cursus ipsum.
+			</div>
+			<div class="demoBlock">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis. In vitae nibh volutpat, blandit mi at, cursus ipsum.
+			</div>
+			<div class="demoBlock">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis. In vitae nibh volutpat, blandit mi at, cursus ipsum.
+			</div>
+			<div class="demoBlock">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis. In vitae nibh volutpat, blandit mi at, cursus ipsum.
+			</div>
+		</div>
+		<div style="-ah-margin-before: 2.5em;">
+			Only the <span class = "codePrint">text-indent: 1em</span> is specified for the block on this page.
+		</div>
+
+		<div style="-ah-column-count: 2; break-before: page; text-align: justify;">
+			<div class="demoBlock" style="-ah-text-indent-if-first-on-page: 0pt;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis. In vitae nibh volutpat, blandit mi at, cursus ipsum.
+			</div>
+			<div class="demoBlock" style="-ah-text-indent-if-first-on-page: 0pt;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis. In vitae nibh volutpat, blandit mi at, cursus ipsum.
+			</div>
+			<div class="demoBlock" style="-ah-text-indent-if-first-on-page: 0pt;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis. In vitae nibh volutpat, blandit mi at, cursus ipsum.
+			</div>
+			<div class="demoBlock" style="-ah-text-indent-if-first-on-page: 0pt;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis. In vitae nibh volutpat, blandit mi at, cursus ipsum.
+			</div>
+		</div>
+		<div style="-ah-margin-before: 2.5em;">
+			The block on this page has ‘text-indent’ and ‘axf:text-indent-if-first-on-page’. To suppress the <span class = "codePrint">text-indent: 1em;</span> of the block at the top of the page, <span class = "codePrint">-ah-text-indent-if-first-on-page: 0pt;</span> is specified.
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Avoiding table-row overflow due to keep-together.within-*="always" – Antenna House, Inc.</title>
+<meta name="document-title" content="Avoiding table-row overflow due to keep-together.within-*=&quot;always&quot; – Antenna House, Inc.">
+<meta name="displaydoctitle" content="true">
+<meta name="keywords" content="keep-together.within-page,keep-together.within-column">
+<meta name="author" content="Antenna House, Inc.">
+<style>
+@page {
+    size: 210mm 150mm;
+    margin: 10mm 20mm 15mm 20mm;
+    
+    @bottom-center { content: "- " counter(page) " -"; }
+    
+    @bottom-right {
+        height: 30mm;
+        content: 'Antenna House, Inc.';
+        font-size: 0.8em;
+        text-align: right;
+        color: green;
+        -ah-link: url('https://www.antennahouse.com/');
+        -ah-link-alt-text: 'Antenna House, Inc.';
+        -ah-pdftag: Artifact;
+        -ah-link-annotation-contents: 'Antenna House, Inc.';
+    }
+}
+
+body {
+    font-family: serif;
+    font-size: 10pt;
+    line-height: 1.4;
+    -ah-hyphenate-hyphenated-word: false;
+    hyphens: auto;
+    margin-top: 0mm;
+    margin-left: 0mm;
+    margin-right: 0mm;
+    margin-bottom: 18mm;
+    column-count: 3;
+    column-gap: 3mm;
+    -ah-column-rule-style: solid;
+    -ah-column-rule-width: 1pt;
+    -ah-column-rule-color: lightgray;
+}
+
+h1 {
+    font-family: sans-serif;
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 0.3em 1em;
+    margin: 1em 0;
+    background-color: #EEEEEE;
+    hyphens: none;
+    -ah-line-height-shift-adjustment: disregard-shifts;
+    column-span: all;
+}
+
+.keep-inline {
+    -ah-keep-together.within-line: 1;
+}
+
+.intro {
+    margin: 1em 0;
+    margin-inline-start: 0.5em;
+    margin-inline-end: 0.5em;
+    text-indent: 0;
+    border: 1pt solid #9999FF;
+    padding: 0.5em;
+    text-align: justify;
+    -ah-line-height-shift-adjustment: disregard-shifts;
+    column-span: all;
+}
+
+table {
+    width: 55mm;
+    table-layout: fixed;
+    border-collapse: collapse;
+    break-inside: avoid;
+    page-break-inside: auto;
+}
+
+table col.col-1 {
+  width: 15mm;
+}
+
+table col.col-2 {
+  width: 40mm;
+}
+
+th, td {
+    border: 0.2pt solid black;
+    text-align: center;
+    padding: 1mm;
+    vertical-align: top;
+}
+
+td p + p {
+    text-align: justify;
+    margin-bottom: 1em;
+}
+
+th {
+    background-color: #EEE;
+}
+
+.keep-together-1 {
+    -ah-keep-together.within-column: 1;
+}
+
+.keep-together-2 {
+    -ah-keep-together.within-column: 2;
+}
+
+.keep-together-3 {
+    -ah-keep-together.within-column: 3;
+}
+
+.keep-together-always {
+    -ah-keep-together.within-column: always;
+}
+
+.span-all {
+    column-span: all;
+    text-align: justify;
+}
+
+.keep-with-next {
+    -ah-keep-with-next.within-column: always;
+}
+
+.page-break {
+    break-after: page;
+}
+
+.table-caption {
+    font-size: 1.2em;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: start;
+}
+
+.explanation-heading {
+    font-family: sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 2;
+    text-indent: 0;
+}
+
+ol {
+    list-style-type: none;
+    padding-left: 4em;
+}
+
+ol li {
+    position: relative;
+}
+
+ol li::before {
+    content: "label-" counter(list-item);
+    position: absolute;
+    left: -4em;
+}
+
+code {
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+.indent-1em {
+    text-indent: 1em;
+}
+
+pre {
+    margin-top:  1em;
+    margin-bottom: 1em;
+    white-space: pre-wrap;
+    border: 1pt solid gray;
+    line-height: 1.4;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+}
+
+a.page-number::before {
+    content: target-counter(attr(href), page);
+}
+
+p, caption, ol, ul {
+    margin: 0;
+    padding: 0;
+}
+
+#KTO001e {
+    font-size: 1.2em;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: start;
+}
+
+caption {
+    text-align: start;
+}
+
+caption > div:first-child {
+    font-size: 1.1em;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+caption > div:nth-child(2) {
+    margin-top: 0;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+</style>
+</head>
+<body>
+<h1>Avoiding table-row overflow due to <span class="keep-inline">keep-together.within-*="always"</span></h1>
+
+<div class="intro">
+    <p>Specifying <code>keep-together.within-page="always"</code> on a table row (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>) in a table ensures that the table row is not split and remains on one page. However, if the table row (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>) that was not split is too long to fit on the page, it overflows past the bottom of that page. This is because the value 'always' does not allow splitting of tables on a page. This example shows how to avoid overflows when using 'keep-together'.</p>
+</div>
+
+<p class="span-all">In the samples below, in order to demonstrate each 'keep-together' sample as one page, the 'keep-together.within-page' is replaced by a column and 'keep-together.within-column'. Please consider each column as representing a page.</p>
+
+<p class="span-all" style="text-indent: 1em;">Page <a href="#KTO001e" class="page-number"></a> shows an example with no 'keep-together'. The table row (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>) containing "No.2" is split over two columns. In the next example on page <a href="#KTO002e" class="page-number"></a>, each table row (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>) has 'keep-together' with the value 'always'. The table row (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>) containing "No.2" is not split across columns but makes a single area, and the table row (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>) overflows past the bottom of the page because it does not fit its target area in the second column.</p>
+
+<div class="page-break"></div>
+
+<table>
+  <caption>
+    <div id="KTO001e">No 'keep-together'</div>
+  </caption>
+  <colgroup>
+    <col class="col-1">
+    <col class="col-2">
+  </colgroup>
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>No.1</td>
+            <td>
+                <p>Item a Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Duis volutpat, quam quis aliquet tristique.</p>
+            </td>
+        </tr>
+        <tr>
+            <td>No.2</td>
+            <td>
+                <p>Item b Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.</p>
+                <p>Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla.</p>
+            </td>
+        </tr>
+        <tr class="keep-together-always">
+            <td>No.3</td>
+            <td>
+                <p>Item b Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<table>
+    <caption>
+      <div id="KTO002e">'always' 'keep-together' value</div>
+      <div><code>keep-together.within-column="always"</code> on table rows (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>).</div>
+    </caption>
+    <colgroup>
+      <col class="col-1">
+      <col class="col-2">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="keep-together-always">
+            <td>No.1</td>
+            <td>
+                <p>Item a Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Duis volutpat, quam quis aliquet tristique.</p>
+            </td>
+        </tr>
+        <tr class="keep-together-always">
+            <td>No.2</td>
+            <td>
+                <p>Item b Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.</p>
+                <p>Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla.</p>
+            </td>
+        </tr>
+        <tr class="keep-together-always">
+            <td>No.3</td>
+            <td>
+                <p>Item b Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<div class="span-all">
+    <h2 class="keep-with-next explanation-heading">Integer (numeric) 'keep-together' values -1- (Avoiding Overflows)</h2>
+    <p>By specifying 'always' with 'keep-together', as in the example on page <a href="#KTO002e" class="page-number"></a>, the table row (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>) may overflow when making a single area. This overflow can be avoided by using an integer value for <a href="https://www.w3.org/TR/xsl11/#keep-together" data-ah-link-alt-text="keep-together property">7.20.3 "keep-together"</a> with Antenna House CSS Formatter. As shown on page <a href="#KTO003e" class="page-number"></a>, overflow is prevented by specifying <code>keep-together.within-column="1"</code> on table rows (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>) as shown in the following code:</p>
+    <pre><code>&lt;tbody&gt;
+    &lt;tr class="keep-together-1"&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="keep-together-1"&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;
+    ...
+&lt;/tbody&gt;</code></pre>
+    <p class="indent-1em">The 'keep-together' value represents its strength; the stronger it is, the more likely that its areas are kept within one page, column, or line. Specifying 'auto' or specifying nothing at all specifies no 'keep-together', whereas specifying 'always' is the strongest value.</p>
+    <p class="indent-1em">Antenna House CSS Formatter supports numeric values for 'keep-together', and when the content generated does not fit within a given area (for example, a page), a break occurs because of the 'keep-together'. However, if the content does not fit on the page of the next chosen area, the content on that page is split regardless of the 'keep-together'. The example on page <a href="#KTO003e" class="page-number"></a> shows that, if the table row (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>) containing "No.2" with <code>keep-together.within-column="1"</code> does not fit in the first column, it is moved to the next column because of the 'keep-together'. When the second table row (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>) in the second column doesn't fit entirely within the remaining space, it splits onto the next column and does not overflow.</p>
+</div>
+
+<div class="page-break"></div>
+
+<table>
+    <caption>
+      <div id="KTO003e">Numeric 'keep-together' value</div>
+      <div><code>keep-together.within-column="1"</code> on table rows (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>)</div>
+    </caption>
+    <colgroup>
+      <col class="col-1">
+      <col class="col-2">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="keep-together-1">
+            <td>No.1</td>
+            <td>
+                <p>Item a Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Duis volutpat, quam quis aliquet tristique.</p>
+            </td>
+        </tr>
+        <tr class="keep-together-1">
+            <td>No.2</td>
+            <td>
+                <p>Item b Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.</p>
+                <p>Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla.</p>
+            </td>
+        </tr>
+        <tr class="keep-together-1">
+            <td>No.3</td>
+            <td>
+                <p>Item b Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="page-break"></div>
+
+<div class="span-all">
+    <h2 class="keep-with-next explanation-heading">Integer (numeric) 'keep-together' values -2-</h2>
+    <p>The following code shows several values for 'keep-together':</p>
+    <pre><code>&lt;tbody class="keep-together-2"&gt;
+    &lt;tr class="keep-together-1"&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="keep-together-2"&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr class="keep-together-3"&gt;&lt;td&gt;...&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;</code></pre>
+    <p>When the value "N" is specified for 'keep-together' for an element and the value "M" is specified for 'keep-together' for a child element, if we assume that the second (or later child) does not fit into the same given area of the page as its preceding child, then the following results can occur:</p>
+    <ul>
+        <li>N &ge; M：the value N applies and the second child element starts on the same page as the preceding element and then splits if it doesn't fit.</li>
+        <li>N &lt; M：the value N does not apply and a break occurs before the second child element if it doesn't fit with the preceding element.</li>
+    </ul>
+    <p>The example on page <a href="#KTO007e" class="page-number"></a>, as shown in the code above, has <code>keep-together.within-column="2"</code> on the <a href="https://www.w3.org/TR/xsl11/#fo_table-body" data-ah-link-alt-text="tbody"><code>&lt;tbody&gt;</code></a> and 'keep-together.within-column' values of "1", "2", and "3" for the three <a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a> elements containing "No.1", "No.2", and "No.3", respectively.</p>
+    <p class="indent-1em">The second <a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a> containing "No.2" does not fit entirely in the first column. The <a href="https://www.w3.org/TR/xsl11/#fo_table-body" data-ah-link-alt-text="tbody"><code>&lt;tbody&gt;</code></a> has a 'keep-together' value of "2" and the first <a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a> has a value of "1" such that the parent's keep strength (N=2) is &ge; the child's keep strength (M=1). The 'keep-together' of the <a href="https://www.w3.org/TR/xsl11/#fo_table-body" data-ah-link-alt-text="tbody"><code>&lt;tbody&gt;</code></a> applies, the <a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a> elements for "No.1" and "No.2" both start in the same column, and the <a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a> for "No.2" splits over two columns.</p>
+    <p class="indent-1em">For the third <a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a> (containing "No.3"), the parent <a href="https://www.w3.org/TR/xsl11/#fo_table-body" data-ah-link-alt-text="tbody"><code>&lt;tbody&gt;</code></a> has N=2 and the <a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a> has M=3. Here, N &lt; M. The 'keep-together' of the <a href="https://www.w3.org/TR/xsl11/#fo_table-body" data-ah-link-alt-text="tbody"><code>&lt;tbody&gt;</code></a> does not apply to prevent a break between the second and third rows. The third <a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a> starts in the next column. In addition, the content that does not fit in the reformatted area is split over two columns and does not overflow.</p>
+</div>
+<div class="page-break"></div>
+
+<table>
+    <caption>
+      <div id="KTO007e">Numeric 'keep-together' values</div>
+      <div><code>keep-together.within-column="numeric"</code> on <a href="https://www.w3.org/TR/xsl11/#fo_table-body" data-ah-link-alt-text="tbody"><code>&lt;tbody&gt;</code></a> and <a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>.</div>
+    </caption>
+    <colgroup>
+      <col class="col-1">
+      <col class="col-2">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody class="keep-together-2">
+        <tr class="keep-together-1">
+            <td>No.1</td>
+            <td>
+                <p>Item a Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Duis volutpat, quam quis aliquet tristique.</p>
+            </td>
+        </tr>
+        <tr class="keep-together-2">
+            <td>No.2</td>
+            <td>
+                <p>Item b Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.</p>
+                <p>Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla.</p>
+            </td>
+        </tr>
+        <tr class="keep-together-3">
+            <td>No.3</td>
+            <td>
+                <p>Item b Details sample</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="page-break"></div>
+<div class="span-all">
+    <h2 class="keep-with-next explanation-heading">Integer (numeric) 'keep-together' values with &lt;li&gt;</h2>
+    <p>A numeric 'keep-together' value can avoid overflow on list items (<a href="https://www.w3.org/TR/xsl11/#fo_list-item" data-ah-link-alt-text="li"><code>&lt;li&gt;</code></a>) as well as on table rows (<a href="https://www.w3.org/TR/xsl11/#fo_table-row" data-ah-link-alt-text="tr"><code>&lt;tr&gt;</code></a>). Using it on <a href="https://www.w3.org/TR/xsl11/#fo_list-item" data-ah-link-alt-text="li"><code>&lt;li&gt;</code></a> is shown in the following code.</p>
+    <pre><code>&lt;ol&gt;
+    &lt;li class="keep-together-1"&gt;
+       &lt;span&gt;...&lt;/span&gt;
+       &lt;div&gt;...&lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class="keep-together-1"&gt;
+       &lt;span&gt;...&lt;/span&gt;
+       &lt;div&gt;...&lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+    <p>Examples of 'keep-together' are: no 'keep-together' specification on page <a href="#KTO004e" class="page-number"></a>; <code>keep-together="always"</code> on page <a href="#KTO005e" class="page-number"></a>; and numeric 'keep-together' values on page <a href="#KTO006e" class="page-number"></a>.</p>
+</div>
+<div class="page-break"></div>
+<h2 id="KTO004e" class="explanation-heading">No 'keep-together'</h2>
+<ol>
+    <li>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+    </li>
+    <li>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+    </li>
+    <li>
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+    </li>
+</ol>
+<div class="page-break"></div>
+<h2 id="KTO005e" class="explanation-heading">'always' 'keep-together' value</h2>
+<p><code>keep-together.within-column="always"</code> on list items (<a href="https://www.w3.org/TR/xsl11/#fo_list-item" data-ah-link-alt-text="li"><code>&lt;li&gt;</code></a>).</p>
+<ol>
+    <li class="keep-together-always">
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+    </li>
+    <li class="keep-together-always">
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+    </li>
+    <li class="keep-together-always">
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+    </li>
+</ol>
+<div class="page-break"></div>
+<h2 id="KTO006e" class="explanation-heading">Numeric 'keep-together' value</h2>
+<p><code>keep-together.within-column="1"</code> on list items (<a href="https://www.w3.org/TR/xsl11/#fo_list-item" data-ah-link-alt-text="li"><code>&lt;li&gt;</code></a>).</p>
+<ol>
+    <li class="keep-together-1">
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+        <div>list-item-sample-1</div>
+    </li>
+    <li class="keep-together-1">
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+        <div>list-item-sample-2</div>
+    </li>
+    <li class="keep-together-2">
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+        <div>list-item-sample-3</div>
+    </li>
+</ol>
+</body>
+</html>

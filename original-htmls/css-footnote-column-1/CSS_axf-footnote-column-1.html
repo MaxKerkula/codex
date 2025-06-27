@@ -1,0 +1,84 @@
+<html>
+
+	<head>
+	<link rel="stylesheet" href="src/AH_Style.css">
+		<style>
+			@page
+			{
+				page-height: 250mm;
+				page-width: 210mm;
+				margin: 10mm 10mm 20mm 20mm;
+			}
+			.columnBody
+			{
+				columns: 300px 2;
+				margin: auto;
+				hyphens: auto;
+			}
+			.footnote
+			{
+				position: fixed;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				text-align: left;
+				border-top: thin solid black;
+				text-indent: -1em;
+				font-size: 0.8em;
+			}
+			.codePrint
+			{
+				font-weight: bold;
+				font-family: 'Courier New', 'DejaVu Sans', monospace;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class = "title">
+			Column-width footnotes
+		</div>
+		<div class = "subheading">
+			In a multi-column document, you can include footnotes to provide additional information or references. By using the <span class ="codePrint">column</span> property nested within a user-defined footnote class, you have control over how footnotes are displayed. When you insert a footnote at the bottom of a page, you can specify whether it should be displayed below its respective column or span across all columns using <span class ="codePrint">column-span: all</span>. 
+		</div>
+		<div class = "columnBody">
+			<p>Antenna House Formatter is a most powerful formatting and printing software<sup>(1)</sup> using XSL-FO and XML/HTML with CSS.<sup>(2)</sup></p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a luctus est, sed dictum lectus. Vivamus vestibulum facilisis ligula ac auctor. Nullam non nunc eget urna consectetur fermentum. Proin suscipit, purus a sollicitudin luctus, est quam tincidunt massa, nec tincidunt nulla nisl quis turpis. Suspendisse potenti. Fusce vel sapien id magna facilisis vehicula in a justo. Phasellus in enim in erat consequat tincidunt. </p><br> <p>This software conforms to XSL 1.1,<sup>(3)</sup> which is a specification for displaying / printing XML documents in a fine manner.  Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under formulation in the CSS Working Group.</p> <p>Vivamus lacinia odio vitae vestibulum. Donec in efficitur leo. Morbi consequat, mi sed tincidunt volutpat, dolor nisl viverra massa, ac consequat tellus urna nec neque. Duis in turpis in ipsum vestibulum suscipit ac eu ex. Suspendisse aliquet dolor sit amet nibh volutpat, a feugiat urna cursus. Cras in turpis nec urna fermentum eleifend non et libero. Quisque.</p>
+		</div>
+		<div class = "footnote" style = "page-break-after: always;">
+			<sup>(1)</sup>Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.<br>
+			<sup>(2)</sup>XSL-FO and CSS cannot be mixed.<br>
+			<sup>(3)</sup>See also “XSL-FO Conformance” in the online manual.
+		</div>
+		<div class = "subheading" style = "page-break-before: always;">
+			This is an example of footnotes in a multi-column document. With ‘axf:footnote-position’, you can specify whether a footnote inserted at the bottom of the page is displayed below its column or spans all columns. No settings are made in this first page. In this case, any footnote spans all columns.
+		</div>
+		<div class = "columnBody">
+			<p>Antenna House Formatter is a a most powerful formatting and printing software<sup>(1)</sup>using XSL-FO and XML/HTML with CSS.<sup>(2)</sup></p>
+			<p>This software conforms to XSL 1.1,<sup>(3)</sup>which is a specification for displaying / printing XML documents in a fine manner.  Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under formulation in the CSS Working Group.</p>
+			<p>Euismod elit metus, at bibendum odio. Proin risus purus, iaculis a orci sit amet, cursus porttitor lorem. Ut sit amet vestibulum magna, eget pulvinar libero. Maecenas facilisis purus quis vehicula auctor. Pellentesque id metus eros. Sed et lorem nec nunc ornare rhoncus at at odio. Donec id egestas turpis. Fusce posuere.</p>
+			<p>Antenna House Formatter is a a most powerful formatting and printing software<sup>(4)</sup>using XSL-FO and XML/HTML with CSS.<sup>(5)</sup></p>
+			<p>This software conforms to XSL 1.1,<sup>(6)</sup>which is a specification for displaying / printing XML documents in a fine manner.  Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under formulation in the CSS Working Group.</p>
+			<p>Est, nec pellentesque elit purus ut risus. Nunc bibendum nibh in dolor blandit, in vehicula ipsum pulvinar. Proin pellentesque justo at turpis bibendum, at hendrerit enim viverra. Duis pellentesque, turpis nec facilisis cursus, leo metus ullamcorper dui, eget lacinia est sapien in nisl. Fusce fermentum, neque non congue auctor, turpis elit vestibulum orci, a dapibus tellus lorem vel dolor. Donec auctor nisl non.</p>
+		</div>
+		<div class = "footnote">
+			<div class = "columnBody">
+				<p>
+				<sup>(1)</sup>Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.<br>
+				<sup>(2)</sup>XSL-FO and CSS cannot be mixed.<br>
+				<sup>(3)</sup>See also “XSL-FO Conformance” in the online manual.
+				</p>
+				<p>
+				<sup>(4)</sup>Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.<br>
+				<sup>(5)</sup>XSL-FO and CSS cannot be mixed.<br>
+				<sup>(6)</sup>See also “XSL-FO Conformance” in the online manual.
+				</p>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,382 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_color-hsl-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					@bottom-right
+					{
+						content: " ";
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				img
+				{
+					margin-left: -5em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Colors as Hue, Saturation, and Lightness
+		</div>
+		<div class="subheading">
+			Antenna House Formatter can use HSL colors by the hsl() and hsla() functions. Colors that are specified as hue, saturation, and lightness (HSL) values are more intuitive to use or to adjust than colors that are encoded by their red, green, and blue components. It is also easier to make sets of complementary or matching HSL colors by varying one of the hue, saturation, or lightness values to make the different colors. Use hsl(&lt;H&gt;, &lt;S&gt;, &lt;L&gt;) to specify a color, and use hsla(&lt;H&gt;, &lt;S&gt;, &lt;L&gt;, &lt;A&gt;) to specify a color with an additional alpha component representing its opacity. See also <span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#hsl">hsl()</a></span> and <span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#hsla">hsla()</a></span> in the Online Manual for details.
+		</div>
+		<div>
+			<div>
+				Hue is represented as the number of an angle of the color circle (i.e., the rainbow represented in a circle), where red is 0° (and 360°), green is 120°, and blue is 240°. Saturation, lightness, and opacity are represented either as 0% to 100% or 0.0 to 1.0. 100% saturation is full saturation, and 0% saturation is a shade of gray. 100% lightness is white, 50% lightness is “normal”, and 0% lightness is black. 100% opacity is solid color, and 0% opacity is transparent.
+			</div>
+			<div style = "text-indent: 1em;">
+				The following example for the “cornflowerblue” named color (<span class = "codePrint">#6495ED</span>, equivalent to <span class = "codePrint">hsl(219, 79%, 66%)</span>) shows how colors can be adjusted by altering the hue, saturation and lightness values.
+			</div>
+		</div>
+		<table style = "text-align: center; background-color: hsl(0, 0%, 81%); border: thick solid hsl(0, 0%, 81%); -ah-margin-before: 0.5lh; width: 100%;">
+			<colgroup>
+				<col span = "1" style = "border: medium solid transparent;">
+				<col span = "1" style = "border: medium solid transparent;">
+				<col span = "1" style = "border: medium solid transparent;">
+				<col span = "1" style = "border: medium solid transparent;">
+			</colgroup>
+			<tr style="border: medium solid transparent;">
+				<td colspan="3">
+					<div style = "font-weight: bold; color: cornflowerblue;">
+						cornflowerblue (#6495ED)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt;">
+					<diV>
+						20% more saturated
+					</diV>
+				</td>
+				<td colspan="3" style = "padding: 3pt;">
+					<diV>
+						Saturation
+					</diV>
+				</td>
+				<td colspan="3" style = "padding: 3pt;">
+					<diV>
+						20% less saturated
+					</diV>
+				</td>
+			</tr>
+			<tr style = "border: medium solid transparent;">
+				<td colspan="3" style = "padding: 3pt;">
+					<div>
+						20% lighter
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(219, 99%, 86%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(219, 99%, 86%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(219, 79%, 86%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(219, 79%, 86%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(219, 59%, 86%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(219, 59%, 86%)
+					</div>
+				</td>
+			</tr>
+			<tr style = "border: medium solid transparent;">
+				<td colspan="3" style = "padding: 3pt;">
+					<div>
+						Lightness
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(219, 99%, 66%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(219, 99%, 66%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(219, 79%, 66%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(219, 79%, 66%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color:hsl(219, 59%, 66%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(219, 59%, 66%)
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" style = "padding: 3pt;">
+					<div>
+						20% darker
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(219, 99%, 46%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(219, 99%, 46%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(219, 79%, 46%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(219, 79%, 46%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color:hsl(219, 59%, 46%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(219, 59%, 46%)
+					</div>
+				</td>
+			</tr>
+			<tr style = "border: medium solid transparent;">
+				<td style="padding: 3pt;">
+					<div style="background-color: hsl(219, 79%, 66%);">
+						219	
+					</div>
+				</td>
+				<td>
+					<div style="background-color: hsl(249, 79%, 66%);">
+						249	
+					</div>
+				</td>
+				<td>
+					<div style="background-color: hsl(279, 79%, 66%);">
+						279	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(309, 79%, 66%);">
+						309	
+					</div>
+				</td>
+				<td>
+					<div style="background-color: hsl(339, 79%, 66%);">
+						339	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(9, 79%, 66%);">
+						9	
+					</div>
+				</td>
+				<td>
+					<div style="background-color: hsl(39, 79%, 66%);">
+						39	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(69, 79%, 66%);">
+						69	
+					</div>
+				</td>
+				<td>
+					<div style="background-color: hsl(99, 79%, 66%);">
+						99	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(129, 79%, 66%);">
+						129	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(159, 79%, 66%);">
+						159	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(189, 79%, 66%);">
+						189	
+					</div>	
+				</td>
+			</tr>
+		</table>
+		<div style="text-indent: 1em;">
+			This example is for the “red” named color (#FF0000, equivalent to hsl(0, 100%, 50%)). Note that as “red” is 100% saturated, it cannot be made more saturated, so 120% saturation is clipped to 100%.
+		</div>
+		<table style = "text-align: center; background-color: hsl(0, 0%, 81%); border: thick solid hsl(0, 0%, 81%); -ah-margin-before: 0.5lh; width: 100%;">
+			<colgroup>
+				<col span = "1" style = "border: medium solid transparent;">
+				<col span = "1" style = "border: medium solid transparent;">
+				<col span = "1" style = "border: medium solid transparent;">
+				<col span = "1" style = "border: medium solid transparent;">
+			</colgroup>
+			<tr style="border: medium solid transparent;">
+				<td colspan="3">
+					<div style = "font-weight: bold; color: #FF0000;">
+						red (#FF0000)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt;">
+					<diV>
+						20% more saturated
+					</diV>
+				</td>
+				<td colspan="3" style = "padding: 3pt;">
+					<diV>
+						Saturation
+					</diV>
+				</td>
+				<td colspan="3" style = "padding: 3pt;">
+					<diV>
+						20% less saturated
+					</diV>
+				</td>
+			</tr>
+			<tr style = "border: medium solid transparent;">
+				<td colspan="3" style = "padding: 3pt;">
+					<div>
+						20% lighter
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(0, 120%, 70%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(0, 120%, 70%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(0, 100%, 70%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(0, 100%, 70%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(0, 80%, 70%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(0, 80%, 70%)
+					</div>
+				</td>
+			</tr>
+			<tr style = "border: medium solid transparent;">
+				<td colspan="3" style = "padding: 3pt;">
+					<div>
+						Lightness
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(0, 120%, 50%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(0, 120%, 50%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(0, 100%, 50%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(0, 100%, 50%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color:hsl(0, 80%, 50%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(0, 80%, 50%)
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" style = "padding: 3pt;">
+					<div>
+						20% darker
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(0, 120%, 30%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(0, 120%, 30%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(0, 100%, 30%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(0, 100%, 30%)
+					</div>
+				</td>
+				<td colspan="3" style = "padding: 3pt; background-color:hsl(0, 80%, 30%);">
+					<div style = "font-family: sans-serif; font-size: 0.9em;">
+						hsl(0, 80%, 30%)
+					</div>
+				</td>
+			</tr>
+			<tr style = "border: medium solid transparent;">
+				<td style="padding: 3pt;">
+					<div style="background-color: hsl(0, 100%, 50%);">
+						219	
+					</div>
+				</td>
+				<td>
+					<div style="background-color: hsl(30, 100%, 50%);">
+						249	
+					</div>
+				</td>
+				<td>
+					<div style="background-color: hsl(60, 100%, 50%);">
+						279	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(90, 100%, 50%);">
+						309	
+					</div>
+				</td>
+				<td>
+					<div style="background-color: hsl(120, 100%, 50%);">
+						339	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(150, 100%, 50%);">
+						9	
+					</div>
+				</td>
+				<td>
+					<div style="background-color: hsl(180, 100%, 50%);">
+						39	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(210, 100%, 50%);">
+						69	
+					</div>
+				</td>
+				<td>
+					<div style="background-color: hsl(240, 100%, 50%);">
+						99	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(270, 100%, 50%);">
+						129	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(300, 100%, 50%);">
+						159	
+					</div>	
+				</td>
+				<td>
+					<div style="background-color: hsl(330, 100%, 50%);">
+						189	
+					</div>	
+				</td>
+			</tr>
+		</table>
+		<div style="text-indent: 1em; -ah-margin-before: 0.5lh">
+			There are numerous “color picker” Internet sites that support picking a color or a range of related colors by HSL values. For example, <a href="http://www.workwithcolor.com/hsl-color-picker-01.htm">http://www.workwithcolor.com/hsl-color-picker-01.htm</a> and <a href="http://www.workwithcolor.com/mm-color-blender-01.htm">http://www.workwithcolor.com/mm-color-blender-01.htm</a>.
+		</div>
+		<div style="break-before: page;">
+			<img src="src\color-table.svg">
+		</div>
+	</body>
+
+</html>

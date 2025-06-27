@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding a "continued" indicator when a table is split – Antenna House, Inc.</title>
+    <meta name="keywords" content="running-elements, table-split, continued-indicator">
+    <meta name="author" content="Antenna House, Inc.">
+    <style>
+        @page {
+            size: 210mm 150mm;
+            margin: 10mm 20mm;
+            @bottom-right {
+                content: 'Antenna House, Inc.';
+                font-size: 8pt;
+                color: green;
+                text-align: right;
+                -ah-link: url('https://www.antennahouse.com/');
+                -ah-link-alt-text: 'Antenna House, Inc.';
+                -ah-link-show-annotation: true;
+            }
+        }
+        body {
+            font-family: serif;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+        h1 {
+            font-family: sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            padding: 0.3em;
+            margin: 1em 0;
+            background-color: #EEEEEE;
+        }
+        .instructions {
+            margin: 1em 0;
+            padding: 0.5em;
+            border: 1pt solid #9999FF;
+            text-align: justify;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            page-break-inside: auto;
+            -ah-table-omit-footer-at-break: false;
+            -ah-table-omit-header-at-break: false;
+        }
+        th, td {
+            border: solid 0.2pt black;
+            vertical-align: top;
+            text-align: center;
+            padding: 0.2em;
+            -ah-box-decoration-break: clone;
+        }
+		
+        /* Continuation styles */
+		
+        thead > tr > td, tfoot > tr > td {
+            border: none;
+        }
+			
+        .headerMarker {
+            position: running(headerMarker);
+        }
+
+        .getHeaderMarker::before {
+			content: element(headerMarker, first);
+			border: none !important;
+			display: block;
+			background-color: lightgray;
+			text-align: center;
+			font-weight: normal;
+			font-style: italic;
+        }
+
+        .footerMarker {
+            position: running(footerMarker);
+        }
+
+        .getFooterMarker::after {
+            content: element(footerMarker, last);
+			border: none !important;
+			display: block;
+			background-color: lightgray;
+			text-align: center;
+			font-weight: normal;
+			font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adding a "continued" indicator when a table is split</h1>
+    
+	<div class="instructions">
+		<p>To indicate that a table continues across pages, use running elements in CSS. Here's how:</p>
+		<ol>
+			<li>Create <code>headerMarker</code> and <code>footerMarker</code> classes for running elements.</li>
+			<li>Create <code>getHeaderMarker</code> and <code>getFooterMarker</code> classes.</li>
+			<li>Insert Continuation Markers:
+				<ul>
+					<li>Add an empty <code>div</code> with the class <code>headerMarker</code> at the table start.</li>
+					<li>Add a <code>tr</code> with the class <code>getHeaderMarker</code> in the <code>thead</code>.</li>
+					<li>Add a <code>tr</code> with the class <code>getFooterMarker</code> in the <code>tfoot</code>.</li>
+				</ul>
+			</li>
+			<li>Add Content and Markers in <code>tbody</code>:
+				<ul>
+					<li>Place <code>div</code> elements with <code>headerMarker</code> and <code>footerMarker</code> classes in relevant cells.</li>
+				</ul>
+			</li>
+		</ol>
+	</div>
+
+    
+    <table>
+        <thead>
+		    <tr>
+                <td colspan="3" class="getHeaderMarker"><div class="headerMarker"/></td>
+            </tr>
+            <tr>
+                <th>Product type</th>
+                <th>Item</th>
+                <th>Item Details</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="getFooterMarker"></td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>
+					<div class="footerMarker">...........continued</div>
+                    <div class="headerMarker">continued...........</div>
+                    Product type 1
+                </td>
+                <td>Item A</td>
+                <td>
+                    Item A Details 0<br>
+                    Item A Details 1<br>
+                    Item A Details 2<br>
+                    Item A Details 3<br>
+                    Item A Details 4<br>
+                    Item A Details 5<br>
+                    Item A Details 6<br>
+                    Item A Details 7<br>
+                    Item A Details 8
+                </td>
+            </tr>
+            <tr>
+                <td>Product type 2</td>
+                <td>Item B</td>
+                <td>
+                    Item B Details 0<br>
+                    Item B Details 1<br>
+                    Item B Details 2<br>
+                    Item B Details 3<br>
+                    Item B Details 4<br>
+                    Item B Details 5<br>
+                    Item B Details 6<br>
+                    Item B Details 7<br>
+                    <div class="footerMarker"/>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

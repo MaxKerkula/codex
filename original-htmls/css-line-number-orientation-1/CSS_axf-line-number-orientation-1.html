@@ -1,0 +1,86 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-line-number-orientation-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+					@bottom-right
+					{
+						content: " ";
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBlock
+				{
+					-ah-margin-before: 1.5em;
+					writing-mode: tb-rl;
+					width: 160mm;
+					height: 55mm;
+					text-align: justify;
+					line-height: 1.6;
+					-ah-line-number: show;
+					-ah-line-number-font-family: Arial;
+					-ah-line-number-font-size: 0.8em;
+					-ah-line-number-font-style: normal;
+					-ah-line-number-font-weight: normal;
+					-ah-line-number-color: blue;
+					-ah-line-number-offset: 3pt;
+					-ah-line-number-text-align: auto;
+					-ah-line-number-text-decoration: none;
+					-ah-line-number-width: 20pt;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Example of line number orientation
+		</div>
+		<div class="subheading">
+			It’s possible to rotate line numbers by specifying ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.line-number-orientation">-ah-line-number-orientation</a></span>’. This setting makes it possible to display Arabic numerals, Roman numbers in the vertical writing document.
+		</div>
+		<div class = "codePrint" style="margin-bottom: 2em;">
+			-ah-line-number-orientation: 90;
+		</div>
+		<div lang = ja class = "demoBlock">
+			<div style = "text-indent: 1em;">
+				電子ファイルの形式としてのPDFを大雑把にいうと紙のページを電子的に表現したものである。
+			</div>
+			<div style = "text-indent: 1em;">
+				人間が一枚の白紙の紙に鉛筆で文字を書いたり、線を引くときは、頭の中でどの位置に、どんな大きさで、どんな文字や絵を描こうかと考え、考えたとおりに手を動かして、文字と絵を書く。
+			</div>
+			<div style = "text-indent: 1em;">
+				これと同じようにPDF のファイルの中には、頭の中で考えた状態と同じような情報がプログラムへの「命令」として記述されている。
+			</div>
+			<div style = "text-indent: 1em;">
+				即ち、PDFファイルには1 枚の紙の左上を原点にして、下方向と右方向に座標軸をとってできる平面を定義し、その平面のどこに、どんな大きさで、なんという文字を書くか、どんな太さで、どんな種類（直線、点線、…）の線を引くか、どんな画像をどこにどんな大きさで配置するか、といった命令が１ページ毎に記録されている。
+			</div>
+			<div style = "text-indent: 1em;">
+				電子ファイルの形式としてのPDFを大雑把にいうと紙のページを電子的に表現したものである。
+			</div>
+		</div>
+	</body>
+
+</html>

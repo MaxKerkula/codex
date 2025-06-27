@@ -1,0 +1,108 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-line-number-except-continued-line-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+				.codeBlock
+				{
+					text-align: left;
+					font-family: monospace;
+					line-height: 1.4;
+					-ah-line-number: show;
+					-ah-line-number-font-family: Arial;
+					-ah-line-number-font-size: 0.8em;
+					-ah-line-number-font-style: normal;
+					-ah-line-number-font-weight: normal;
+					-ah-line-number-color: blue;
+					-ah-line-number-offset: 3pt;
+					-ah-line-number-text-align: auto;
+					-ah-line-number-decoration: none;
+					-ah-line-number-width: 20pt;
+					-ah-line-number-initial: 1;
+					-ah-line-number-reset: force;
+					-ah-line-feed-treatment: ignore;
+					-ah-white-space-treatment: preserve;
+					white-space-collapse: false;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Adding line numbers except for continued lines
+		</div>
+		<div class="subheading">
+			When adding line numbers, line numbers are usually given for each line, but by specifying ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.line-number-except-continued-line">-ah-line-number-except-continued-line</a></span>’, you can add a line number only to the first line when a long line wraps. At this time, the continued line is not counted in the number of lines. This feature is available from AH Formatter V7.1.
+		</div>
+		<div>
+			<h2>
+				-ah-line-number-except-continued-line: false;
+			</h2>
+			<div class = "codeBlock" style="-ah-line-number-except-continued-line: false;">
+	xfoObj axfo = null;						<br>
+	try {									<br>
+		axfo = new XfoObj();				<br>
+		ErrDump eDump = new ErrDump(); 		<br>
+		axfo.setMessageListener(eDump);		<br>
+		axfo.setDocumentURI(args[0]); 		<br>
+		axfo.setOutputFilePath(args[1]);	<br>
+		axfo.setExitLevel(4);				<br>
+		axfo.execute();						<br>
+	} catch (xfoException e) {				<br>
+		System.out.println("ErrorLevel = " + e.getErrorLevel() + "\nErrorCode = " + e.getErrorCode() + "\n" + e.getErrorMessage());	  <br>
+		return;								<br>
+	}										<br>
+			</div>
+		</div>
+		<div>
+			<h2>
+				-ah-line-number-except-continued-line: true;
+			</h2>
+			<div class = "codeBlock" style="-ah-line-number-except-continued-line: true;">
+	xfoObj axfo = null;						<br>
+	try {									<br>
+		axfo = new XfoObj();				<br>
+		ErrDump eDump = new ErrDump(); 		<br>
+		axfo.setMessageListener(eDump);		<br>
+		axfo.setDocumentURI(args[0]); 		<br>
+		axfo.setOutputFilePath(args[1]);	<br>
+		axfo.setExitLevel(4);				<br>
+		axfo.execute();						<br>
+	} catch (xfoException e) {				<br>
+		System.out.println("ErrorLevel = " + e.getErrorLevel() + "\nErrorCode = " + e.getErrorCode() + "\n" + e.getErrorMessage());	  <br>
+		return;								<br>
+	}										<br>
+			</div>
+		</div>
+		
+	</body>
+
+</html>

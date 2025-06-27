@@ -1,0 +1,80 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-quotetype-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.borderBox
+				{
+					font-size: 2em;
+					border: solid thin lightgray;
+					margin-bottom: 0.5em;
+				}
+				:lang(ja)
+				{
+					font-family: "Noto Sans JP", sans-serif;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Specifying the direction of quotation marks
+		</div>
+		<div class="subheading">
+			You can specify the direction of the quotation marks with <span class = "codePrint">-ah-quotetype</span>. Available values are ‘QU’, ‘OP’ and ‘CL’. Consider ‘QU’ to be non-directional quotation marks, ‘OP’ to be open quotation marks, and ‘CL’ to be close quotation marks. You can use this extension to explicitly specify the direction for non-directional quotation marks such as U+0022, or explicitly change the direction of quotation marks for a specific language. The setting of ‘axf:quotetype’ is invalid if it is specified for characters other than quotation marks. For details on how to handle quotation marks, see also the Quotation Mark in "Technical Notes" in the manual. This feature is available from AH Formatter V7.1.
+		</div>
+		<div>
+			<h2>
+				Without the setting of -ah-quotetype
+			</h2>
+			<div>
+				Quotation Mark (U+0022: ") is a non-directional quotation mark of QU class. The Unicode line break specification for the QU class prohibits line breaks before and after it. Therefore, in the case where U+0022 is arranged without spaces, the line breaks as follows:
+			</div>
+			<div class = "borderBox">
+				Lorem ipsum dolor sit, consectetur adipiscing elit, a "123""123" do eiusmod tempor
+			</div>
+			<div lang = "ja" class = "borderBox" style = "ah-margin-before: 0.5em;">
+				むかしむかしあるところにおじいさんと"おばあさん"がおりました。
+			</div>
+		</div>
+		<div>
+			<h2>
+				With the setting of -ah-quotetype: OP | CL
+			</h2>
+			<div>
+				By specifying ‘OP’ and ‘CL’ in Quotation Mark (U+0022: "), line breaks are performed according to the respective directions.
+			</div>
+			<div class = "borderBox" style = "-ah-quotetype: OP;">
+				Lorem ipsum dolor sit, consectetur adipiscing elit, a "123""123" do eiusmod tempor
+			</div>
+			<div lang = "ja" class = "borderBox" style = "ah-margin-before: 0.5em; -ah-quotetype: CL;">
+				むかしむかしあるところにおじいさんと"おばあさん"がおりました。
+			</div>
+		</div>
+	</body>
+
+</html>

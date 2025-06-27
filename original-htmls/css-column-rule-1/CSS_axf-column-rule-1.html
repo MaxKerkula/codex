@@ -1,0 +1,104 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-column-rule-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.columnPrint
+				{
+					column-count: 2;
+					column-gap: 15mm;
+					-ah-column-rule-style: solid;
+					-ah-column-rule-width: thick;
+					-ah-column-rule-color: #BBFFBB;
+					page-break-after: always;
+				}
+				.columnPrint1
+				{
+					column-count: 3;
+					column-gap: 10mm;
+					-ah-column-rule-style: groove;
+					-ah-column-rule-width: 20pt;
+					-ah-column-rule-color: #BBFFBB;
+					-ah-column-rule-display: all;
+					page-break-after: always;
+					height: 50%;
+
+				}
+				.columnPrint2
+				{
+					column-count: 3;
+					column-gap: 10mm;
+					-ah-column-rule: 20pt groove #BBFFBB all;
+					page-break-after: always;
+					height: 50%;
+				}
+				
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Column rule
+		</div>
+		<div class="subheading">
+			You can draw a ruled line between columns by specifying -ah-column-rule-*. The color of the column rule can be specified by -ah-column-rule-color, the length can be specified by -ah-column-rule-length, the style can be specified by -ah-column-rule-style, and the width can be specified by -ah-column-rule-width. In AH Formatter V7.2 or later, a shorthand that sets border-width, border-style, color, and column-rule-display using -ah-column-rule is effective. On the first page, -ah-column-rule-style: solid, -ah-column-rule-width: thick, -ah-column-rule-color: #BBFFBB; are specified to the column rule.
+		</div>
+		<div class = "columnPrint">
+			<div style = "text-align: justify; hyphens: true; -ah-margin-after: 1em;">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</div>
+			<div style = "text-align: justify; hyphens: true; -ah-margin-after: 1em;">
+				Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus. Ut blandit tortor mi, ac bibendum felis varius vitae.
+			</div>
+		</div>
+		<div class="subheading">
+			On this page, the style of the column rule is specified by -ah-column-rule-style: groove. In addition, -ah-column-rule-display: all is used to specify how to draw the column rule, and the column rule is drawn even in the place where there is no column.
+		</div>
+		<div class = "columnPrint1" style = "line-height: 1.5em;">
+			<div style = "text-align: justify; hyphens: true; -ah-margin-after: 1em;">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</div>
+			<div style = "-ah-margin-after: 1em;">
+				Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus. Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae.
+			</div>
+		</div>
+		<div class="subheading">
+			On this page, a shorthand property is specified as -ah-column-rule: 20pt groove #BBFFBB all; so that the column rule is drawn in the same way as the second page that have -ah-column-rule-width: 20pt; -ah-column-rule-style: groove; -ah-column-rule-color: #BBFFBB; -ah-column-rule-display: all; settings.
+		</div>
+		<div class = "columnPrint2" style = "line-height: 1.5em;">
+			<div style = "text-align: justify; hyphens: true; -ah-margin-after: 1em;">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</div>
+			<div style = "text-align: justify; -ah-margin-after: 1em;">
+				Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus. Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae.
+			</div>
+		</div>
+		
+	</body>
+
+</html>

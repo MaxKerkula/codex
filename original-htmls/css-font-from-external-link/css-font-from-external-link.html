@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>font-face extension demonstration</title>
+<meta name="author" content="Alex Critchfield, Antenna House">
+<meta name="keywords" content="extensions, font-face">
+<meta name="subject" content="font-face extension">
+<meta name="document-title" content="font-face extension demonstration">
+<style>
+@font-face {
+  font-family: EXTERNAL-LOBSTER;
+  src: url(https://raw.githubusercontent.com/google/fonts/main/ofl/lobster/Lobster-Regular.ttf);
+}
+
+@page {
+  size: 8.5in 11in;
+  margin-top: 1in;
+  margin-bottom: 1in;
+  margin-left: 0.75in;
+  margin-right: 0.75in;
+  @bottom-right {
+    height: 30mm;
+    content: 'Antenna House, Inc.';
+    font-size: 0.8em;
+    text-align: right;
+    color: green;
+    -ah-link: url('https://www.antennahouse.com/');
+    -ah-link-alt-text: 'Antenna House, Inc.';
+    -ah-pdftag: Artifact;
+    -ah-link-annotation-contents: 'Antenna House, Inc.';
+  }
+}
+
+body {
+  font-size: 12pt;
+  margin: 0;
+}
+
+.fo-block {
+  -ah-margin-before: 0;
+  -ah-margin-after: 0;
+}
+
+.fo-block-space-after {
+  -ah-margin-before: 0;
+  -ah-margin-after: 10mm;
+}
+
+.fo-block-lobster {
+  font-family: EXTERNAL-LOBSTER;
+  -ah-margin-before: 0;
+  -ah-margin-after: 10mm;
+}
+
+.fo-block-monospace {
+  font-family: monospace;
+  -ah-white-space-treatment: preserve;
+  -ah-linefeed-treatment: preserve;
+  -ah-margin-before: 0;
+  -ah-margin-after: 0;
+}
+</style>
+</head>
+<body>
+<div class="fo-block">Formatter can reference fonts from external sources. Externally referenced fonts are always embedded.</div>
+<div class="fo-block-space-after">The text in the following block will be in the font EXTERNAL-LOBSTER which is referenced from a public dropbox link</div>
+<div class="fo-block-lobster">This text is in the EXTERNAL-LOBSTER font</div>
+<div class="fo-block-monospace">Code to include external font:
+  &lt;@font-face font-family="EXTERNAL-LOBSTER" src="url(https://raw.githubusercontent.com/google/fonts/main/ofl/lobster/Lobster-Regular.ttf)" /&gt;
+</div>
+</body>
+</html> 

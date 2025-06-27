@@ -1,0 +1,104 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-intrude-into-punctuation-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					@footnote
+					{
+						-ah-float: page bottom;
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				span.footnote
+				{
+					-ah-float: footnote;
+				}
+				h2
+				{
+					font-family: sans-serif;
+					font-size: 1.2em;
+				}
+				body
+				{
+					font-family: 'Arial Unicode MS';
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Intruding the inline element into the punctuation
+		</div>
+		<div class="subheading">
+			By specifying ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.intrude-into-punctuation">axf:intrude-into-punctuation</a></span>’, the inline element is intruded into the punctuation mark. The setting works when it is Japanese and '<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.punctuation-trim">-ah-punctuation-trim: adjacent;</a></span>' is specified and the available values are ‘none’ (default value), ‘start’ and ‘end’. ‘none’ does nothing. ‘start’ intrudes the inline elemenet into the punctuation mark when the character immediately before the start side is a full-width close parenthesis or a full-width punctuation mark, and ‘end’ does so when the character immediately after the end side is a full-width open parenthesis by handling each character as half-width. See ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.intrude-into-punctuation">-ah-punctuation-trim</a></span>’ for punctuation marks that you want to specify. This feature is available from AH Formatter V7.
+		</div>
+		<div>
+			<h2>
+				-ah-intrude-into-punctuation: none;
+			</h2>
+			<div lang = "ja" style="font-size: 1.3em;">
+				（インライン要素）<span style="font-size: 0.8em; -ah-intrude-into-punctuation: none;">span</span>（を句読点に）食い込ませます。<span style="font-size: 0.8em; -ah-intrude-into-punctuation: none;">span</span>
+			</div>
+			
+			<h2>
+				-ah-intrude-into-punctuation: start;
+			</h2>
+			<div lang = "ja" style="font-size: 1.3em;">
+				（インライン要素）<span style="font-size: 0.8em; -ah-intrude-into-punctuation: start;">span</span>（を句読点に）食い込ませます。<span style="font-size: 0.8em; -ah-intrude-into-punctuation: start;">span</span>
+			</div>
+			
+			<h2>
+				-ah-intrude-into-punctuation: end;
+			</h2>
+			<div lang = "ja" style="font-size: 1.3em;">
+				（インライン要素）<span style="font-size: 0.8em; -ah-intrude-into-punctuation: end;">span</span>（を句読点に）食い込ませます。<span style="font-size: 0.8em; -ah-intrude-into-punctuation: end;">span</span>
+			</div>
+			
+			<h2>
+				-ah-intrude-into-punctuation: start end;
+			</h2>
+			<div lang = "ja" style="font-size: 1.3em;">
+				（インライン要素）<span style="font-size: 0.8em; -ah-intrude-into-punctuation: start end;">span</span>（を句読点に）食い込ませます。<span style="font-size: 0.8em; -ah-intrude-into-punctuation: start end;">span</span>
+			</div>
+			<div style="-ah-margin-before: 2em;">
+				This feature can be used when you want to place a footnote referense mark after the punctuation mark and treat the punctuation mark as half-width character.
+			</div>
+		</div>
+		<div>
+			<h2>
+				-ah-intrude-into-punctuation: none;
+			</h2>
+			<div lang = "ja" style="font-size: 1.3em;">
+				インライン要素を句読点に食い込ませます <span style="-ah-intrude-into-punctuation: none;"><span class = "footnote">-ah-intrude-into-punctuation: none</span></span>
+			</div>
+			<h2>
+				-ah-intrude-into-punctuation: start;
+			</h2>
+			<div lang = "ja" style="font-size: 1.3em;">
+				インライン要素を句読点に食い込ませます。<span style="-ah-intrude-into-punctuation: none;"><span class = "footnote">-ah-intrude-into-punctuation: start</span></span>
+			</div>
+		</div>
+	</body>
+
+</html>

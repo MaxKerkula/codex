@@ -1,0 +1,97 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-text-replace-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.borderBox
+				{
+					border: 1pt solid;
+					padding: 3pt;
+					margin-bottom: 1em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Character string substitution
+		</div>
+		<div class="subheading">
+			Character string is substituted by using <span class = "codePrint">-ah-text-replace</span>. Character strings are designated in pairs. The first character string of a pair is entirely replaced with the second character string. When you want to substitute a character string that includes a space (such as 'Antenna House'), please enclose the string with quotation marks.
+		</div>
+		
+		<div>
+			Original character string
+			<div class = "borderBox">
+				sample. 1999–2008, sample. sample. Antenna House, sample. sample. Antenna House, sample.
+			</div>
+		</div>
+		<div>
+			-ah-text-replace: "2008 2010";
+			<div class = "borderBox" style = "-ah-text-replace: 2008 2010;">
+				sample. 1999–2008, sample. sample. Antenna House, sample. sample. Antenna House, sample.
+			</div>
+		</div>
+		
+		<div>
+			-ah-text-replace: 2008 2010 Antenna AAA;
+			<div class = "borderBox" style = "-ah-text-replace: 2008 2010 Antenna AAA;">
+				sample. 1999–2008, sample. sample. Antenna House, sample. sample. Antenna House, sample.
+			</div>
+		</div>
+		
+		<div>
+			-ah-text-replace: 2008 2010 Antenna House AAA;
+			<div class = "borderBox" style = "-ah-text-replace: 2008 2010 'Antenna House' AAA;">
+				sample. 1999–2008, sample. sample. Antenna House, sample. sample. Antenna House, sample.
+			</div>
+		</div>
+		
+		<div>
+			-ah-text-replace: 2008 2010 'Antenna House' AAA;
+			<div class = "borderBox" style = "-ah-text-replace: 2008 2010 &quot;Antenna House&quot; AAA;">
+				sample. 1999–2008, sample. sample. Antenna House, sample. sample. Antenna House, sample.
+			</div>
+		</div>
+		
+		<div>
+			-ah-text-replace: '2008 2010 "Antenna House" "AAA's"';
+			<div class = "borderBox" style = "-ah-text-replace: 2008 2010 &quot;Antenna House&quot; &quot;AAA's&quot;;">
+				sample. 1999–2008, sample. sample. Antenna House, sample. sample. Antenna House, sample.
+			</div>
+		</div>
+	
+		<div>
+			-ah-text-replace: '"sample. " ""';
+			<div class = "borderBox" style = "-ah-text-replace: &quot;sample &quot; &quot;&quot;;">
+				sample. 1999–2008, sample. sample. Antenna House, sample. sample. Antenna House, sample.
+			</div>
+		</div>
+	
+	</body>
+
+</html>

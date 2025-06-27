@@ -1,0 +1,123 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-float-x-alternate-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoColumnBlock
+				{
+					line-height: 1.4;
+					-ah-margin-after: 1em;
+					text-indent: 12pt;
+					height: 24em;
+					border: solid gray 1pt;
+					padding: 10pt;
+					column-count: 3;
+					column-gap: 1pt;
+					-ah-column-rule: solid 1pt gray;
+				}
+				.demoColumnBlock_0
+				{
+					line-height: 1.4;
+					-ah-margin-after: 1em;
+					text-indent: 12pt;
+					height: 15em;
+					border: solid gray 1pt;
+					padding: 10pt;
+				}
+				
+				.demoFloat_0
+				{
+					-ah-float-x: alternate;
+					width: 50mm;
+					height: 30mm;
+					background-color: pink;
+					margin-top: 0.5em;
+					margin-bottom: 0.5em;
+					text-align: center;
+					display-align: center;
+				}
+				.demoFloat_1
+				{
+					-ah-float-x: alternate;
+					width: 30mm;
+					height: 30mm;
+					background-color: yellow;
+					margin-top: 0.5em;
+					margin-bottom: 0.5em;
+					text-align: center;
+					display-align: center;
+				}
+				.demoFloat_2
+				{
+					-ah-float-x: alternate;
+					width: 50mm;
+					height: 30mm;
+					background-color: lime;
+					margin-top: 0.5em;
+					margin-bottom: 0.5em;
+					text-align: center;
+					display-align: center;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Side floats
+		</div>
+		<div class="subheading">
+			The horizontal position of a float within a column (vertical position in case of the vertical writing mode) can be adjusted automatically by specifying <span class = "codePrint">-ah-float-x: alternate</span>. With <span class = "codePrint">-ah-float-x: alternate</span>, a float in the first column is placed at the ‘end’ side, and in the last column, it is placed at the ‘start’ side. In other columns, it is placed at the ‘center’. When there is a single column, the float is placed at the ‘center’. <span class = "codePrint">-ah-float-x: alternate;</span> is available in AH Formatter V6.3 and later.
+		</div>
+		<h2>When -ah-float-x: alternate;</h2>
+		<div class = "demoColumnBlock">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+			<div class = "demoFloat_0">
+				Float-sample: width 50mm
+			</div>
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+			<div class = "demoFloat_1">
+				Float-sample: width 30mm
+			</div>
+			sunt in culpa qui officia deserunt mollit anim id est laborum.
+			
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			<div class = "demoFloat_2">
+				Float-sample: width 50mm
+			</div>
+			Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi reprehenderit.
+		</div>
+		<h2>When -ah-float-x: alternate; is specified (Non-column case)</h2>
+		<div class = "demoColumnBlock_0">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+			<div class = "demoFloat_0">
+				Float-sample: width 50mm
+			</div>
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+		</div>
+	</body>
+
+</html>

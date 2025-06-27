@@ -1,0 +1,309 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-form-field-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoField_0
+				{
+					-ah-field-type: text;
+					-ah-field-name: 'InputText-1';
+					-ah-field-default-text: 'Input text here!';
+					-ah-field-multiline: false;
+					-ah-field-scroll: true;
+					-ah-field-maxlen: 32;
+					width: 10em;
+					height: 1.2em;
+					background-color: #ff8;
+					border: 1pt silver inset;
+				}
+				.demoField_1
+				{
+					-ah-field-type: text;
+					-ah-field-name: 'InputText-2';
+					-ah-field-default-text: 'Input text here! sample text';
+					-ah-field-multiline: true;
+					-ah-field-scroll: true;
+					-ah-field-maxlen: 100;
+					width: 10em;
+					height: 2.4em;
+					background-color: #ff8;
+					border: 1pt silver inset;
+				}
+				.demoField_2
+				{
+					-ah-field-type: text;
+					-ah-field-name: 'font-size-auto';
+					-ah-field-default-text: 'font size auto';
+					-ah-field-multiline: false;
+					-ah-field-scroll: true;
+					-ah-field-maxlen: 32;
+					width: 15em;
+					height: 2.4em;
+					background-color: #ffc0cb;
+					border: 1pt silver inset;
+					-ah-field-font-size: auto;
+				}
+				.demoField_3
+				{
+					-ah-field-type: text;
+					-ah-field-name: 'text-align-center';
+					-ah-field-default-text: 'center';
+					-ah-field-multiline: false;
+					-ah-field-scroll: true;
+					-ah-field-maxlen: 32;
+					width: 10em;
+					height: 1.2em;
+					background-color: #add8e6;
+					border: 1pt silver inset;
+					-ah-field-text-align: center;
+				}
+				.demoField_4
+				{
+					-ah-field-type: text;
+					-ah-field-name: 'text-align-right';
+					-ah-field-default-text: 'right';
+					-ah-field-multiline: false;
+					-ah-field-scroll: true;
+					-ah-field-maxlen: 32;
+					width: 10em;
+					height: 1.2em;
+					background-color: #add8e6;
+					border: 1pt silver inset;
+					-ah-field-text-align: right;
+				}
+				.demoField_5
+				{
+					-ah-field-type: button;
+					-ah-field-name: 'URI Button';
+					-ah-action-type: uri;
+					
+					-ah-field-button-layout: caption-below-icon;
+					-ah-field-button-face: 'Antenna House, Inc.';
+					-ah-field-button-face-down: 'Down';
+					-ah-field-button-face-rollover: Rollover;
+					-ah-field-button-icon: url('icon1.png');
+					-ah-field-button-icon-down: url('icon2.png');
+					-ah-field-button-icon-rollover: url('icon3.png');
+					width: 15em;
+					height: 3em;
+					background-color: #eee;
+					border: 2px silver outset;
+				}
+				.demoField_6
+				{
+					-ah-field-type: button;
+					-ah-field-name: 'SubmitButton';
+					-ah-action-type: submit;
+					-ah-field-button-layout: caption;
+					-ah-field-button-face: 'Submit!';
+					width: 5em;
+					background-color: #eee;
+					border: 2px silver outset;
+				}
+				.demoField_7
+				{
+					-ah-field-type: button;
+					-ah-field-name: 'ResetButton';
+					-ah-action-type: reset;
+					-ah-field-button-layout: caption;
+					-ah-field-button-face: 'Reset!';
+					-ah-field-button-face-down: Down;
+					-ah-field-button-face-rollover: Rollover;
+					width: 5em;
+					background-color: #eee;
+					border: 2px silver outset;
+				}
+				.demoField_8
+				{
+					-ah-field-type: radio;
+					-ah-field-name: 'Choice';
+					-ah-field-value: 'Cat';
+					-ah-field-checked: false;
+					-ah-field-checked-style: circle;
+					width: 1em;
+					border-radius: 0.6em;
+					border: 1px solid silver;
+				}
+				.demoField_9
+				{
+					-ah-field-type: radio;
+					-ah-field-name: 'Choice';
+					-ah-field-value: 'Dog';
+					-ah-field-checked: false;
+					-ah-field-checked-style: circle;
+					width: 1em;
+					border-radius: 0.6em;
+					border: 1px solid silver;
+				}
+				.demoField_10
+				{
+					-ah-field-type: checkbox;
+					-ah-field-name: 'CheckMe';
+					-ah-field-checked: false;
+					-ah-field-checked-style: checkmark;
+					width: 1em;
+					border: 1px solid silver;
+				}
+				.demoField_11
+				{
+					-ah-field-type: listbox;
+					-ah-field-name: 'ListChoice';
+					-ah-field-top-index: 1;
+					-ah-field-multiple: true;
+					width: 10em;
+					height: 3em;
+					background-color: #eee;
+					border: 1pt silver inset;
+				}
+				.demoField_12
+				{
+					-ah-field-type: combobox;
+					-ah-field-name: 'ComboEditable';
+					-ah-filed-editable: true;
+					-ah-field-top-index: 1;
+					width: 10em;
+					height: 1.2em;
+					background-color: #ff8;
+					border: 1pt silver inset;
+				}
+				.demoField_13
+				{
+					-ah-field-type: signature;
+					-ah-field-name: 'sig1';
+					background-color: lightblue;
+					border: 1pt silver solid;
+					width: 10em;
+					height: 3em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Form Field
+		</div>
+		<div class="subheading">
+			PDF form field can be created by using &lt;axf:form&gt; and &lt;axf:form-field&gt;. Available field types are: text, push button, check box, radio button, list box, combo box, digital signature, etc.
+		</div>
+		<div style = "margin-bottom: 2em;">
+			<h2 style = "font-family: sans-serif;">
+				Text field (-ah-field-type: text;)
+			</h2>
+			<div>
+				The default text entered in the text field can be specified by -ah-field-default-text. Whether the text field is a single line or multiple lines can be specified by -ah-field-multiline. The text format and maximum number of characters can also be specified. <a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.field-font-size">-ah-field-font-size</a> and <a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.field-text-align">-ah-field-text-align</a> properties are available in AH Formatter V6.5 and later.
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Text Field: <input class = "demoField_0">
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Text Field(-ah-field-multiline: true): <input class = "demoField_1">
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Text Field(-ah-field-font-size: auto): <input class = "demoField_2">
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Text Field(-ah-field-font-align: center): <input class = "demoField_3">
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Text Field(-ah-field-font-align: right): <input class = "demoField_4">
+			</div>
+		</div>
+
+
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				Push-button field (-ah-field-type: button;)
+			</h2>
+			<div>
+				The caption in a push-button field can be specified by -ah-field-button-face, an icon can be specified by -ah-field-button-icon, and the layout display can be specified by -ah-field-button-layout. Separate captions to be displayed when pushing a button (down) and during rollover (rollover) can be specified. Similarly for an icon. Reset, Submit and URL action types when pushing a button are available by specifying ‘action-type’. Also, because this is just a sample, ‘Submit’ does not work in this sample.
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Push Button (URI https://www.antennahouse.com/"): <button class = "demoField_5" onclick = "window.open('https://www.antennahouse.com/')">
+					</button>
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Push Button(Submit): <input class = "demoField_6">
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Push Button(Reset): <input class = "demoField_7">
+			</div>
+		</div>
+
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				Checkbox field, radio button field (-ah-field-type: Checkbox; -ah-field-type: radio;)
+			</h2>
+			<div>
+				Whether the checkmark is displayed by default can be specified by ‘field-checked’. The check mark style can be specified by ‘field-checked-style’.
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Check Box (-ah-field-checked-style: checkmark): <input class = "demoField_10"> Check Me!
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Radio Button (-ah-field-checked-style: circle): <input class = "demoField_8"> Cat <input class = "demoField_9"> Dog
+			</div>
+		</div>
+
+		<div style="page-break-before: always;">
+			<h2 style = "font-family: sans-serif;">
+				List box field, combo box field (-ah-field-type: listbox, -ah-field-type: combobox)
+			</h2>
+			<div>
+				The content to display can be specified by -ah-form-field-option. The content should not be empty. The contents in the list box and combo box will on separate lines in the same sequence as the -ah-form-field-option.
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				List Box: <select class = "demoField_11">
+								<option value = "ja">Japan</option> 
+								<option value = "ko">Korea</option> 
+								<option value = "cn">China</option> 
+								<option value = "th">Thailand</option>
+							</select>
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Combo Box: <select class = "demoField_12">
+								<option value = "ja">Japan</option>
+								<option value = "ko">Korea</option>
+								<option value = "cn">China</option>
+								<option value = "th">Thailand</option>
+							</select>
+			</div>
+		</div>
+		
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				Digital Signature field (-ah-field-type: signature)
+			</h2>
+			<div>
+				Digital Signature field can be specified by -ah-field-type: signature. The contents are empty. The appearance cannot be specified beforehand.
+			</div>
+			<div style = "-ah-margin-before: 0.5em;">
+				Digital Signature: <input class = "demoField_13">
+			</div>
+		</div>
+	</body>
+
+</html>

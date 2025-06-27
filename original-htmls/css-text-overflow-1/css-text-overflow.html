@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rendering where inline content overflows – Antenna House, Inc.</title>
+  <meta name="author" content="Antenna House, Inc.">
+  <meta name="keywords" content="overflow,-ah-text-overflow">
+  <style>
+    @page {
+      size: 210mm 297mm;
+      margin: 10mm 20mm;
+      @bottom-right {
+        content: 'Antenna House, Inc.';
+        font-size: 8pt;
+        color: green;
+        text-align: right;
+        -ah-link: url('https://www.antennahouse.com/');
+        -ah-link-alt-text: 'Antenna House, Inc.';
+        -ah-link-show-annotation: true;
+      }
+    }
+    body {
+      font-family: serif;
+      font-size: 10pt;
+      line-height: 1.4;
+      hyphens: auto;
+    }
+    h1 {
+      font-family: sans-serif;
+      font-size: 2em;
+      font-weight: bold;
+      padding: 0.3em 1em;
+      margin: 1em 0;
+      background-color: #EEEEEE;
+      hyphens: none;
+      line-height: normal;
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+    .intro {
+      margin: 1em 0;
+      text-indent: 0;
+      border: 1pt solid #9999FF;
+      padding: 0.5em;
+      text-align: justify;
+      line-height: normal;
+    }
+    .intro a {
+      color: blue;
+      text-decoration: underline;
+    }
+    code {
+      font-family: sans-serif;
+      font-size: 0.9em;
+    }
+    h2 {
+      font-family: sans-serif;
+      font-size: 1.2em;
+      font-weight: bold;
+      text-indent: 0;
+      padding: 0.3em 0;
+      margin-top: 1em;
+      page-break-after: avoid;
+      hyphens: none;
+      line-height: normal;
+      clear: both;
+    }
+    .example {
+      width: 50%;
+      margin-bottom: 1em;
+    }
+    .example p {
+      white-space: nowrap;
+      margin: 0;
+      padding: 4pt;
+      border: 1pt solid black;
+    }
+    .clip {
+      -ah-text-overflow: clip;
+	  -ah-overflow: hidden;
+    }
+    .ellipsis {
+      -ah-text-overflow: ellipsis;
+	  -ah-overflow: hidden;
+    }
+    .arrow {
+      -ah-text-overflow: "→";
+	  -ah-overflow: hidden;
+    }
+    .columns {
+      border: solid 1pt;
+      padding: 4pt;
+      -ah-column-count: 3;
+      -ah-column-gap: 8pt;
+      width: 100%;
+      max-width: 100mm;
+      margin-bottom: 1em;
+    }
+    .columns p {
+      margin: 0;
+      white-space: nowrap;
+      padding: 4pt;
+      border: 1pt solid black;
+    }
+    .columns h3 {
+      font-weight: bold;
+      font-family: sans-serif;
+      margin-top: 1em;
+    }
+    .rtl-container {
+      width: 50%;
+      margin-bottom: 1em;
+      -ah-writing-mode: rl-tb;
+    }
+    .rtl-container p {
+      white-space: nowrap;
+      margin: 0;
+      padding: 4pt; 
+      border: 1pt solid black;
+    }
+    .rtl-container  .leftarrow {
+      -ah-text-overflow: "←";
+	  -ah-overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <h1>Rendering where inline content overflows</h1>
+  <div class="intro">
+    <p>Use '-ah-text-overflow' to control rendering where inline content overflows in the inline progression direction.
+    '-ah-text-overflow' applies to the inline progression direction and does not affect overflow in the block progression direction. 
+    This feature is effective only with <code>-ah-overflow: hidden</code>. 
+    The allowed values are: 'clip' (default: no processing is performed even if an overflow occurs); 
+    'ellipsis' (insert an ellipsis (U+2026) where the content overflows); 
+    and a string value (insert the specified character string where the content overflows). 
+    If the first character overflows, then it is clipped rather than ellipsed. 
+    For more details on '-ah-text-overflow', please refer to the 
+    <a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.text-overflow">Online Manual</a>. 
+    '-ah-text-overflow' is available in AH Formatter V6.5 and later.</p>
+  </div>
+  <h2>-ah-text-overflow: clip</h2>
+  <div class="example ">
+    <p class="clip">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat est at dolor accumsan ultrices.</p>
+  </div>
+  <h2>-ah-text-overflow: ellipsis</h2>
+  <div class="example">
+    <p class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat est at dolor accumsan ultrices.</p>
+  </div>
+  <h2>-ah-text-overflow: '→'</h2>
+  <div class="example">
+    <p class="arrow">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat est at dolor accumsan ultrices.</p>
+  </div>
+  <h2>-ah-text-overflow in columns</h2>
+  <div class="columns">
+    <div class="item">
+      <h3>-ah-text-overflow: clip</h3>
+      <p class="clip">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat est at dolor accumsan ultrices.</p>
+    </div>
+    <div class="item">
+      <h3>-ah-text-overflow: ellipsis</h3>
+      <p class="ellipsis">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat est at dolor accumsan ultrices.</p>
+    </div>
+    <div class="item">
+      <h3>-ah-text-overflow: '→'</h3>
+      <p class="arrow">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat est at dolor accumsan ultrices.</p>
+    </div>
+  </div>
+  <h2>-ah-text-overflow with right-to-left text</h2>
+  <p><b>-ah-text-overflow: </b></p>
+  <div class="rtl-container">
+    <p class="clip">כל בני אדם נולדו בני חורין ושווים בערכם ובזכויותיהם. כולם חוננו בתבונה ובמצפון, לפיכך חובה עליהם לנהוג איש ברעהו ברוח של אחוה.</p>
+  </div>
+  <p><b>-ah-text-overflow: ellipsis</b></p>
+  <div class="rtl-container ">
+    <p class="ellipsis">כל בני אדם נולדו בני חורין ושווים בערכם ובזכויותיהם. כולם חוננו בתבונה ובמצפון, לפיכך חובה עליהם לנהוג איש ברעהו ברוח של אחוה.</p>
+  </div>
+  <p><b>-ah-text-overflow: '←'</b></p>
+  <div class="rtl-container">
+    <p class="leftarrow">כל בני אדם נולדו בני חורין ושווים בערכם ובזכויותיהם. כולם חוננו בתבונה ובמצפון, לפיכך חובה עליהם לנהוג איש ברעהו ברוח של אחוה.</p>
+  </div>
+</body>
+</html>

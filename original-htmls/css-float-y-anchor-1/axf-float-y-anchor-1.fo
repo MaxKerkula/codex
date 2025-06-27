@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Antenna House : AH Formatter Sample -->
+<fo:root xml:lang="en" font-family="serif" font-size="10pt" line-height="1.4" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:axf="http://www.antennahouse.com/names/XSL/Extensions" xmlns:s="http://www.antennahouse.com/names/XSL/Sample">
+<fo:layout-master-set>
+<fo:simple-page-master page-height="297mm" page-width="210mm" margin-top="10mm" margin-left="20mm" margin-right="20mm" margin-bottom="10mm" master-name="PageMaster1">
+<fo:region-after extent="7mm" />
+<fo:region-body margin-top="0mm" margin-left="0mm" margin-right="0mm" margin-bottom="10mm" />
+</fo:simple-page-master>
+</fo:layout-master-set>
+<fo:declarations>
+<axf:document-info name="document-title" value="Positioning a float to the anchor point – Antenna House, Inc." />
+<axf:document-info name="displaydoctitle" value="true" />
+<axf:document-info name="keywords" value="&lt;fo:float&gt;,axf:float-y">
+</axf:document-info>
+<axf:document-info name="author" value="Antenna House, Inc." />
+</fo:declarations>
+<fo:page-sequence master-reference="PageMaster1">
+<fo:static-content flow-name="xsl-region-after">
+<fo:block font-size="0.8em" text-align="right" color="green" axf:pdftag="Artifact">
+<fo:basic-link external-destination="https://www.antennahouse.com/" axf:alttext="Antenna House, Inc." axf:annotation-contents="Antenna House, Inc.">Antenna House, Inc.</fo:basic-link>
+</fo:block>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body" axf:hyphenate-hyphenated-word="false" hyphenate="true">
+<fo:block span="all" font-family="sans-serif" font-size="2em" font-weight="bold" padding-before="0.3em" padding-after="0.3em" space-before="1em" space-after="1em" space-before.conditionality="retain" space-after.conditionality="retain" background-color="#EEEEEE" hyphenate="false" line-height-shift-adjustment="disregard-shifts">
+<fo:block start-indent="1em" end-indent="1em" axf:pdftag="H1">Positioning a float to the anchor point</fo:block>
+</fo:block>
+<fo:block span="all" space-before="1em" space-after="1em" space-after.conditionality="retain" text-indent="0em" border="1pt solid #9999FF" start-indent="0.5em" end-indent="0.5em" padding="0.5em" text-align="justify" line-height-shift-adjustment="disregard-shifts">By specifying <fo:basic-link external-destination="https://www.antenna.co.jp/AHF/help/en/ahf-float.html#axf.float-y" text-decoration="underline" color="blue" axf:annotation-contents="axf:float-y=&quot;anchor&quot;">
+<fo:inline font-family="sans-serif" font-size="0.9em" axf:pdftag="Code">axf:float-y="anchor"</fo:inline></fo:basic-link>, the float in the vertical direction (horizontal in vertical writing) can be placed at the anchor point. The setting of <fo:inline font-family="sans-serif" font-size="0.9em" axf:pdftag="Code">axf:float-y="anchor"</fo:inline> is available from AH Formatter V7.2.</fo:block>
+  <fo:block text-indent="1em" text-align="justify">By specifying <fo:inline font-family="sans-serif" font-size="0.9em" axf:pdftag="Code">axf:float-y="anchor"</fo:inline>, floats that span multiple columns can be placed at any anchor points with <fo:inline font-family="sans-serif" font-size="0.9em" axf:pdftag="Code">axf:float-reference="page"</fo:inline> and <fo:inline font-family="sans-serif" font-size="0.9em" axf:pdftag="Code">"multicol"</fo:inline>. In addition, the text wraps around the float even if it is not in the specified column.</fo:block>
+ 
+  <fo:block-container line-height="1.4" space-after="1em" height="65mm" border="solid gray 1pt" padding="0.5em" column-count="3" column-gap="12pt" axf:column-rule-style="solid" axf:column-rule-width="1pt" axf:column-rule-color="gray" space-before="0.5em">
+   <fo:block xml:lang="en" text-align="justify">
+    <fo:block>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. <fo:inline color="red" font-weight="bold">anchor point</fo:inline></fo:block>
+    <fo:float axf:float-reference="multicol" axf:float-x="start" axf:float-y="anchor">
+     <fo:block-container margin="0.2em 0.5em" width="70mm" height="12mm" background-color="pink" text-align="center" display-align="center">
+      <fo:block font-size="1.5em">Float-1</fo:block>
+     </fo:block-container>
+    </fo:float>
+    <fo:block text-indent="1em">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</fo:block>
+    <fo:block text-indent="1em">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </fo:block>
+    <fo:block text-indent="1em">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <fo:inline color="red" font-weight="bold">anchor point</fo:inline></fo:block>
+        <fo:float axf:float-reference="multicol" axf:float-x="end" axf:float-y="anchor">
+     <fo:block-container margin="0.2em 0.5em" width="70mm" height="12mm" background-color="lightblue" text-align="center" display-align="center">
+      <fo:block font-size="1.5em">Float-2</fo:block>
+     </fo:block-container>
+    </fo:float>
+    <fo:block text-indent="1em">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</fo:block>    
+   </fo:block>
+  </fo:block-container>
+ 
+  <fo:block text-indent="1em" text-align="justify">In AH Formatter V7.1 or earlier, the text and float may overlap as shown in the sample below under the conditions of <fo:basic-link external-destination="https://www.antenna.co.jp/AHF/help/en/ahf-float.html#float-restrictions" text-decoration="underline" color="blue" axf:annotation-contents="Restrictions">Restrictions</fo:basic-link>. By specifying <fo:inline font-family="sans-serif" font-size="0.9em" axf:pdftag="Code">axf:float-y="anchor"</fo:inline>, you can flexibly deal with such cases.</fo:block>
+ 
+  <fo:block-container line-height="1.4" space-after="1em" height="65mm" border="solid gray 1pt" padding="0.5em" column-count="3" column-gap="12pt" axf:column-rule-style="solid" axf:column-rule-width="1pt" axf:column-rule-color="gray" space-before="0.5em">
+   <fo:block xml:lang="en" text-align="justify">
+    <fo:block>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt. <fo:inline color="red" font-weight="bold">anchor point</fo:inline></fo:block>
+    <fo:float axf:float-reference="multicol" axf:float-x="start">
+     <fo:block-container margin="0.2em 0.5em" width="70mm" height="12mm" background-color="pink" text-align="center" display-align="center">
+      <fo:block font-size="1.5em">Float-1</fo:block>
+     </fo:block-container>
+    </fo:float>
+    <fo:block text-indent="1em">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</fo:block>
+    <fo:block text-indent="1em">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </fo:block>
+    <fo:block text-indent="1em">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <fo:inline color="red" font-weight="bold">anchor point</fo:inline></fo:block>
+        <fo:float axf:float-reference="multicol" axf:float-x="end">
+     <fo:block-container margin="0.2em 0.5em" width="70mm" height="12mm" background-color="lightblue" text-align="center" display-align="center">
+      <fo:block font-size="1.5em">Float-2</fo:block>
+     </fo:block-container>
+    </fo:float>
+    <fo:block text-indent="1em">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</fo:block>    
+   </fo:block>
+  </fo:block-container>
+ </fo:flow>
+</fo:page-sequence>
+</fo:root>

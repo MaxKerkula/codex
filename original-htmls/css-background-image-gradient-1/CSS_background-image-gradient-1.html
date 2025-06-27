@@ -1,0 +1,186 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_background-image-gradient-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.gradientDemo
+				{
+					-ah-background-image: linear-gradient(0deg, darkorange, yellow);
+					height: 30mm;
+					width: 50mm;
+				}
+				#gD_0
+				{
+					-ah-background-image: linear-gradient(to right, darkorange, yellow);
+				}
+				#gD_1
+				{
+					-ah-background-image: linear-gradient(0deg, darkorange, yellow, darkorange);
+				}
+				#gD_2
+				{
+					-ah-background-image: linear-gradient(0deg, darkorange 50%, yellow);
+				}
+				#gD_3
+				{
+					-ah-background-image: radial-gradient(circle 100% at center, yellow, darkorange);
+				}
+				#gD_4
+				{
+					-ah-background-image: radial-gradient(yellow, darkorange);
+				}
+				#gD_5
+				{
+					-ah-background-image: radial-gradient(yellow, darkorange, yellow);
+				}
+				#gD_6
+				{
+					-ah-background-image: radial-gradient(circle at top left, yellow, darkorange);
+				}
+				#gD_7
+				{
+					-ah-background-image: radial-gradient(closest-side at 30px 3px, yellow, darkorange);
+				}
+				
+				#gD_8
+				{
+					-ah-background-image: repeating-linear-gradient(darkorange, yellow 20%, darkorange 40%);
+				}
+				#gD_9
+				{
+					-ah-background-image: repeating-radial-gradient(darkorange, yellow 20%, darkorange 40%);
+				}
+				#gD_10
+				{
+					-ah-background-image: repeating-radial-gradient(circle closest-side at 30px 30px, darkorange, yellow, darkorange);
+				}
+				
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Gradients
+		</div>
+		<div class="subheading">
+				A gradient can be used as an <span class = "codePrint">-ah-background-image</span> value. Available types are <span class = "codePrint">linear-gradient(), radial-gradient(), repeating-linear-gradient() and repeating-radial-gradient()</span>. The orientation of the gradient, color ratio and shape can be specified.
+		</div>
+		<h2>
+			Linear gradient
+		</h2>
+		<div>
+			A linear gradient can be specified as <span class = "codePrint">-ah-background-image: linear-gradient(0deg, darkorange, yellow)</span>. Values indicate the orientation and color, in order. The angle can also be specified using the keywords ‘to top’ (0deg), ‘to right’ (90deg), ‘to bottom’ (180deg) or ‘to left’ (270deg).
+			<p>
+				<span class = "codePrint">-ah-background-image: linear-gradient(0deg, darkorange, yellow);</span>
+			</p>
+		</div>
+		<div class = "gradientDemo">
+		</div>
+		
+		<p>
+			<span class = "codePrint">-ah-background-image: linear-gradient(to right, darkorange, yellow);</span>
+		</p>
+		<div class = "gradientDemo" id = "gD_0">
+		</div>
+		
+		<p>
+			<span class = "codePrint">-ah-background-image: linear-gradient(0deg, darkorange, yellow, darkorange);</span>
+		</p>
+		<div class = "gradientDemo" id = "gD_1">
+		</div>
+		
+		<p>
+			<span class = "codePrint">-ah-background-image: linear-gradient(0deg, darkorange 50%, yellow);</span> <br>
+			The position of the gradient's color stop can be expressed by specifying "darkorange 50%"
+		</p>
+		<div class = "gradientDemo" id = "gD_2">
+		</div>
+		
+		<h2>
+			Radial-gradient
+		</h2>
+		<div>
+			The radial gradient can be specified as <span class = "codePrint">-ah-background-image: radial-gradient(circle 100% at center, yellow, darkorange)</span>. Values indicate the shape and size of the gradient, 
+			<p>
+				<span class = "codePrint">-ah-background-image: radial-gradient(circle 100% at center, yellow, darkorange);</span>
+			</p>
+		</div>
+		<div class = "gradientDemo" id = "gD_3">
+		</div>
+		
+		<p>
+			<span class = "codePrint">-ah-background-image: radial-gradient(yellow, darkorange);</span>
+		</p>
+		<div class = "gradientDemo" id = "gD_4">
+		</div>
+		
+		<p>
+			<span class = "codePrint">-ah-background-image: radial-gradient(yellow, darkorange, yellow);</span>
+		</p>
+		<div class = "gradientDemo" id = "gD_5">
+		</div>
+		
+		<p>
+			<span class = "codePrint">-ah-background-image: radial-gradient(circle at top left, yellow, darkorange);</span>
+		</p>
+		<div class = "gradientDemo" id = "gD_6">
+		</div>
+		
+		<p>
+			<span class = "codePrint">-ah-background-image: radial-gradient(circle closest-side at 30px 10px, yellow, darkorange);</span> <br>
+			The size and position of the gradient can be set by specifying the value to 'closest-side', 'farthest-side', 'closest-corner' and 'farthest-corner'.
+		</p>
+		<div class = "gradientDemo" id = "gD_7">
+		</div>
+		
+		
+		<h2 style = "break-before: always;">
+			Repeating linear-gradient() and the repeating radial-gradient()
+		</h2>
+		<div>
+			‘repeating-linear-gradient()’ and ‘repeating-radial-gradient()’ can be specified as the value of ‘background-image’. They are specified in the same way as ‘linear-gradient()’ and ‘radial-gradient()’.
+			<p>
+				<span class = "codePrint">-ah-background-image: linear-gradient(0deg, darkorange, yellow);</span>
+			</p>
+		</div>
+		<div class = "gradientDemo" id = "gD_8">
+		</div>
+		
+		<p>
+			<span class = "codePrint">-ah-background-image: linear-gradient(to right, darkorange, yellow);</span>
+		</p>
+		<div class = "gradientDemo" id = "gD_9">
+		</div>
+		
+		<p>
+			<span class = "codePrint">-ah-background-image: linear-gradient(to right, darkorange, yellow);</span>
+		</p>
+		<div class = "gradientDemo" id = "gD_10">
+		</div>
+	</body>
+
+</html>

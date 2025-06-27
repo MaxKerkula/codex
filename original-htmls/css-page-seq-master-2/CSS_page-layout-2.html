@@ -1,0 +1,85 @@
+<html>
+
+<!-- 
+ANTENNA HOUSE INC.
+www.antennahouse.com
+CSS Samples
+2023
+prepared by: Liam Congleton
+liam@antennahouse.com
+
+Antenna House Formatter CSS Extensions Property: 
+    -[page-seq-layout-2]
+-->
+
+<head>
+    <link rel="stylesheet" href="src/AH_Style.css">
+    <style>
+        @page first {
+            /* currently empty */
+        }
+
+        @page blue {
+            background-color: #CCFFFF;
+        }
+
+        @page yellow {
+            background-color: #FFFFCC;
+        }
+
+        @page pink {
+            background-color: #FFCCFF;
+        }
+
+        .colorBreak {
+            
+            page: blue;
+            page-break-before: always;
+        }
+
+        .colorBreak1 {
+            page: yellow;
+            page-break-before: always;
+        }
+
+        .colorBreak2 {
+            page: pink;
+            page-break-before: always;
+        }
+		.codePrint
+		{
+			font-weight: bold; 
+			font-family: 'Courier New', 'DejaVu Sans', monospace;
+		}
+    </style>
+</head>
+<body>
+    <div id="topImage"></div>
+    <div class="main-content"></div>
+    <div class="title">Page layout for first, last, and only pages</div>
+    <div class="subheading">
+		In CSS, using the <span class ="codePrint">@page</span> rule, you can define properties such as color or order for different pages. Through specific selectors like <span class ="codePrint">:first, :last</span>, and <span class ="codePrint">:only</span>, you can target the first, last, or sole pages in a sequence, respectively. Additionally, there's a default selector that targets any page in the sequence. By applying different styles and leveraging these selectors, page styles and format may be effectively controled and sequencing of pages in print-friendly stylesheets may be set.
+    </div>
+    <div class = "textBody">
+		In CSS, while using the <span class ="codePrint">@page</span> pseudo-class the order in which it's definied is not always important. Four pages are made each with a seperate color, the pages are called in order within the <span class ="codePrint">&lt;body&gt;</span>,we are able to specify the conditions for selecting four page masters that each have a different background color:    
+        <ul>
+            <li>For the only page in its page sequence, a page with no background color.</li>
+            <li>For the first page in its page sequence, a page with a blue background.</li>
+            <li>For the last page in its page sequence, a page with a pink background.</li>
+            <li>For a page that is not the first page and not the last page in its page sequence, a page with a yellow background.</li>
+        </ul>
+        This page is the only page in its page sequence (because the following page is the start of a new page sequence), so this page has no background color.  
+        The following three pages have blue, yellow, and pink background colors, respectively, because of their positions in the second page sequence.
+    </div>
+    <div class="colorBreak">
+        For the first page in its page sequence, a page with a blue background.
+    </div>
+    <div class="colorBreak1">
+        For a page that is not the first page and not the last page in its page sequence, a page with a yellow background.
+    </div>
+    <div class="colorBreak2">
+        For the last page in its page sequence, a page with a pink background.
+    </div>
+</body>
+
+</html>

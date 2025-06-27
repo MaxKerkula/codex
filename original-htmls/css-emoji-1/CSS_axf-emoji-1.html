@@ -1,0 +1,60 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-emoji-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.verticalPrint
+				{
+					writing-mode: vertical-rl;
+					text-orientation: upright;					
+					height: 50mm;
+					font-size: 2em;
+					display: inline-block;
+					margin-right: 40px;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				CSS Emoji Support
+		</div>
+		<div class="subheading">
+				Antenna House Formatter V7.3 supports the emoji (<a href="https://www.unicode.org/reports/tr51/tr51-23.html">UTS#51: Unicode Emoji</a>) is partially supported. Please refer to the online manual "<a href = "https://www.antenna.co.jp/AHF/help/en/ahf-tech.html#emoji">Emoji</a>" for details.
+		</div>
+			<p style = "font-size: 2em;">😀😁😂😃😄😅🙀🙇🙆🙆🌻🌼🌳🎵🐼🐸🐨🐧🐭🐮🐯</p>
+			<h3>Support for vertically written emoji</h3>
+				<p>Emoji characters in veritcal writing blocks are correctly displayed by specifying <span class = "codePrint">-ah-text-combine-horizontal: emoji;</span></p>
+			<div class = "verticalPrint">
+				縦書きで絵文字💛を使うと🐈🐼こんなふうになります。🎵文字😀😁😂😃😄😅が横を向いてしまいます。
+			</div>
+			<div class = "verticalPrint", style = "-ah-text-combine-horizontal: emoji; ">
+				縦書きで絵文字💛を使うと🐈🐼こんなふうになります。🎵文字😀😁😂😃😄😅が横を向いてしまいます。
+			</div>
+	</body>
+
+</html>

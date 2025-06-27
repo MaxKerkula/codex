@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Event – Antenna House, Inc.</title>
+    <meta name="keywords" content="form,form-field,AcroForms,JavaScript,setAction,openaction">
+    <meta name="author" content="Antenna House, Inc.">
+    <meta name="openaction" content="#JavaScript=
+        try { 
+
+        app.alert('OpenAction script executed!');
+        
+        var f = this.getField('chkButton');
+        f.fillColor = color.red;
+        f.textColor = color.blue;
+        
+        f.setAction('MouseUp', 'this.zoomType = zoomtype.fitW;');
+        f.setAction('MouseEnter', 'var f_me = this.getField(\'chkButton\'); if(f_me) f_me.fillColor = color.red;');
+        f.setAction('MouseDown', 'var f_md = this.getField(\'chkButton\'); if(f_md) f_md.fillColor = color.blue;');
+        f.setAction('MouseExit', 'var f_mxt = this.getField(\'chkButton\'); if(f_mxt) f_mxt.fillColor = color.yellow;');
+        
+        var f_count1 = this.getField('Count001');
+        var f_count2 = this.getField('Count002');
+        var f_count3 = this.getField('Count003');
+        
+        f_count1.setAction('OnBlur', 'n = this.getField(\'Count001\').value;\
+this.getField(\'syoukei1\').value = n * 1000;\
+this.getField(\'goukei\').value = Number(this.getField(\'syoukei3\').value) + Number(this.getField(\'syoukei2\').value) + Number(this.getField(\'syoukei1\').value);');
+        
+        f_count2.setAction('OnBlur', 'n = this.getField(\'Count002\').value;\
+this.getField(\'syoukei2\').value = n * 2000;\
+this.getField(\'goukei\').value = Number(this.getField(\'syoukei3\').value) + Number(this.getField(\'syoukei2\').value) + Number(this.getField(\'syoukei1\').value);');
+        
+        f_count3.setAction('OnBlur', 'n = this.getField(\'Count003\').value;\
+this.getField(\'syoukei3\').value = n * 3000;\
+this.getField(\'goukei\').value = Number(this.getField(\'syoukei3\').value) + Number(this.getField(\'syoukei2\').value) + Number(this.getField(\'syoukei1\').value);');
+        
+        this.dirty = false;
+        } catch (e) {
+            app.alert(&apos;Error in openaction script: &apos; + e.toString());
+        }
+    "/>
+    <style>
+        html {
+            font-family: serif;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+
+        @page {
+            size: A4;
+            margin-top: 10mm;
+            margin-right: 20mm;
+            margin-bottom: 17mm;
+            margin-left: 20mm;
+            @bottom-right {
+                height: 30mm;
+                content: 'Antenna House, Inc.';
+                font-size: 0.8em;
+                text-align: right;
+                color: green;
+                -ah-link: url('https://www.antennahouse.com/');
+                -ah-link-alt-text: 'Antenna House, Inc.';
+                -ah-pdftag: Artifact;
+                -ah-link-annotation-contents: 'Antenna House, Inc.';
+            }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            -ah-hyphenate-hyphenated-word: false;
+            hyphens: auto;
+        }
+
+        .title {
+            font-family: sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            padding-top: 0.3em;
+            padding-bottom: 0.3em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            background-color: #EEEEEE;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+            hyphens: none;
+        }
+
+        .title > div { 
+            margin-left: 1em;
+            margin-right: 1em;
+            -ah-pdftag: H1;
+        }
+
+        .info-block { 
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding: 0.5em;
+            text-indent: 0em;
+            border: 1pt solid #9999FF;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            text-align: justify;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+        }
+
+        .list-block {
+            list-style-type: none; 
+            padding-left: 0;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: 0;
+            -ah-provisional-label-separation: 1em; 
+            -ah-provisional-distance-between-starts: 1em; 
+        }
+
+        .list-item {
+            display: flex; 
+            align-items: baseline; 
+        }
+
+        .list-item-label > div { 
+            padding-right: 1em;
+        }
+
+        .code-block {
+            margin-top: 0; 
+            margin-bottom: 1em; 
+            background-color: #EFEFFF;
+            font-family: monospace;
+            white-space: pre-wrap; 
+            padding: 1em; 
+        }
+
+        .form-container {
+            margin-top: 1em; 
+        }
+
+        .data-table {
+            width: 130mm;
+            font-family: sans-serif; 
+            border-collapse: collapse; 
+        }
+
+        .data-table th {
+            background-color: silver; 
+            border: 1pt double; 
+            text-align: center; 
+            padding: 4px; 
+        }
+
+        .data-table td {
+            border: 0.5pt solid; 
+            text-align: center; 
+            padding: 4px; 
+        }
+
+        .data-table td:nth-child(1) {
+            width: 30mm;
+        }
+
+        .data-table td:nth-child(2) {
+            width: 30mm;
+        }
+
+        .data-table td:nth-child(3) {
+            width: 30mm;
+        }
+
+        .data-table td:nth-child(4) {
+            width: 40mm;
+        }
+
+        .data-table .price-cell {
+            text-align: right; 
+            padding-right: 0.5em;
+        }
+
+        .data-table .amount-row td:first-child { 
+            text-align: right; 
+            border: none; 
+        }
+         .data-table .amount-row td:last-child { 
+            text-align: center; 
+            border: none;
+        }
+
+        input[name="chkButton"] {
+            width: 10em; 
+            height: 1.2em; 
+            background-color: #eee; 
+            border: 2px silver outset;
+            -ah-field-type: button; 
+            -ah-field-button-layout: caption;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="title">
+        <div>Form Event</div>
+    </div>
+
+    <div class="info-block">
+        Use &lt;meta name=&quot;openaction&quot;&gt; and field.setAction(); to define form actions corresponding to form events by JavaScript. It is available in AH Formatter V6.4 or later.
+    </div>
+
+    <ul class="list-block">
+        <li class="list-item">
+            <div class="list-item-label"><div style="text-align: left;">•</div></div>
+            <div class="list-item-body">A &lt;meta name=&quot;openaction&quot; content=&quot;#JavaScript=...&quot;&gt; in &lt;head&gt; runs a script on PDF open.</div>
+        </li>
+        <li class="list-item">
+            <div class="list-item-label"><div style="text-align: left;">•</div></div>
+            <div class="list-item-body">Inside the script, get field by its HTML &apos;name&apos; attribute: var myField = this.getField(&apos;fieldName&apos;);</div>
+        </li>
+        <li class="list-item">
+            <div class="list-item-label"><div style="text-align: left;">•</div></div>
+            <div class="list-item-body">Assign actions: myField.setAction(&apos;EventName&apos;, &apos;JavaScript code for event&apos;); (e.g., &apos;MouseUp&apos;).</div>
+        </li>
+    </ul>
+
+    <form style="margin: 0; padding: 0;">
+        <div class="form-container">
+            Push Button field:
+            <input type="button" name="chkButton" value="chk button"
+                   style="width: 10em; height: 1.2em; 
+                          background-color: #eee; border: 2px silver outset;
+                          -ah-field-type: button; -ah-field-button-layout: caption;">
+        </div>
+    </form>
+
+    <div>This PDF form is defined as follows:</div>
+    <div class="code-block">&lt;form&gt;
+  &lt;div class="form-container"&gt;
+    Push Button field:
+    &lt;input type="button" name="chkButton" value="chk button"
+           style="width: 10em; height: 1.2em; 
+                  background-color: #eee; border: 2px silver outset;
+                  -ah-field-type: button; -ah-field-button-layout: caption;"&gt;
+    &lt;!-- Event handlers are defined in openaction script: --&gt;
+    &lt;!-- 
+    f.setAction('MouseUp', 'this.zoomType = zoomtype.fitW;');
+    // Release the mouse button, Fit window width to PDF viewer
+    
+    f.setAction('MouseEnter', 'var f_me = this.getField(\'chkButton\'); if(f_me) f_me.fillColor = color.red;');
+    // Put pointer in range, Change background to red
+    
+    f.setAction('MouseDown', 'var f_md = this.getField(\'chkButton\'); if(f_md) f_md.fillColor = color.blue;');
+    // Press mouse button, Change background to blue
+    
+    f.setAction('MouseExit', 'var f_mxt = this.getField(\'chkButton\'); if(f_mxt) f_mxt.fillColor = color.yellow;');
+    // Pointer moves out of range, Change background to yellow
+    --&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</div>
+
+    <div>In the following example, the calculation result is displayed by using JavaScript of PDF form in the table cell. Please refer to the contents of this document for details.</div>
+
+    <table class="data-table">
+        <colgroup>
+            <col style="width: 30mm">
+            <col style="width: 30mm">
+            <col style="width: 30mm">
+            <col style="width: 40mm">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Sub Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A-001</td>
+                <td class="price-cell">$1,000</td>
+                <td>
+                    <select name="Count001" id="Count001" 
+                            style="width: 2em; height: 1.2em; border: 1pt silver inset; 
+                                   -ah-field-type: combobox; -ah-field-top-index: 1; -ah-field-multiple: true;">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="syoukei1" id="syoukei1" value="0"
+                           style="width: 10em; height: 1.2em; border: 1pt silver inset;
+                                  -ah-field-type: text; -ah-field-default-text: '0';
+                                  -ah-field-format-category: number; -ah-field-format: '0 0 0 $ true';
+                                  -ah-field-multiline: false; -ah-field-scroll: false; -ah-field-maxlen: 32;
+                                  -ah-field-text-align: right;">
+                </td>
+            </tr>
+            <tr>
+                <td>A-002</td>
+                <td class="price-cell">$2,000</td>
+                <td>
+                    <select name="Count002" id="Count002" 
+                            style="width: 2em; height: 1.2em; border: 1pt silver inset;
+                                   -ah-field-type: combobox; -ah-field-top-index: 1; -ah-field-multiple: true;">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="syoukei2" id="syoukei2" value="0"
+                           style="width: 10em; height: 1.2em; border: 1pt silver inset;
+                                  -ah-field-type: text; -ah-field-default-text: '0';
+                                  -ah-field-format-category: number; -ah-field-format: '0 0 0 $ true';
+                                  -ah-field-multiline: false; -ah-field-scroll: false; -ah-field-maxlen: 32;
+                                  -ah-field-text-align: right;">
+                </td>
+            </tr>
+            <tr>
+                <td>A-003</td>
+                <td class="price-cell">$3,000</td>
+                <td>
+                    <select name="Count003" id="Count003"
+                            style="width: 2em; height: 1.2em; border: 1pt silver inset;
+                                   -ah-field-type: combobox; -ah-field-top-index: 1; -ah-field-multiple: true;">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="text" name="syoukei3" id="syoukei3" value="0"
+                           style="width: 10em; height: 1.2em; border: 1pt silver inset;
+                                  -ah-field-type: text; -ah-field-default-text: '0';
+                                  -ah-field-format-category: number; -ah-field-format: '0 0 0 $ true';
+                                  -ah-field-multiline: false; -ah-field-scroll: false; -ah-field-maxlen: 32;
+                                  -ah-field-text-align: right;">
+                </td>
+            </tr>
+            <tr class="amount-row">
+                <td colspan="3">Amount</td>
+                <td>
+                    <input type="text" name="goukei" id="goukei" value="0"
+                           style="width: 10em; height: 1.2em; border: 1pt silver inset;
+                                  -ah-field-type: text; -ah-field-default-text: '0';
+                                  -ah-field-format-category: number; -ah-field-format: '0 0 0 $ true';
+                                  -ah-field-multiline: false; -ah-field-scroll: false; -ah-field-maxlen: 32;
+                                  -ah-field-text-align: right;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html> 

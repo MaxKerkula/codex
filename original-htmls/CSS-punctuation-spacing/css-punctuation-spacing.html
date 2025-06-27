@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alex Critchfield, Antenna House">
+    <meta name="keywords" content="extensions, punctuation, spacing, sample, example">
+    <meta name="subject" content="punctuation spacing extensions">
+    <title>punctuation spacing extensions example</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin-top: 1in;
+            margin-left: 0.75in;
+            margin-right: 0.75in;
+            margin-bottom: 55.4mm; 
+        }
+
+        @page {
+            @bottom-right {
+                height: 30mm;
+                content: 'Antenna House, Inc.';
+                font-size: 0.8em;
+                text-align: right;
+                color: green;
+                -ah-link: url('https://www.antennahouse.com/');
+                -ah-link-alt-text: 'Antenna House, Inc.';
+                -ah-pdftag: Artifact;
+                -ah-link-annotation-contents: 'Antenna House, Inc.';
+            }
+        }
+
+        html {
+            font-size: 12pt;
+        }
+
+        /*
+        The axf:space-after-punctuation setting from the original FO's fo:declarations
+        is now handled by the config.xml file
+        */
+
+        .block1 {
+            -ah-margin-after: 10mm;
+            -ah-margin-before: 0;
+        }
+
+        .block2 {
+            -ah-margin-after: 10mm;
+            font-family: monospace;
+            -ah-white-space-treatment: preserve;
+            -ah-linefeed-treatment: preserve;
+            -ah-margin-before: 0; 
+        }
+
+        .block3 {
+            -ah-margin-after: 10mm;
+            -ah-margin-before: 10mm;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="block1">
+        <p>Formatter has extensions to customize the spacing around punctuation. These are used mostly for documents in European languages.</p>
+    </div>
+
+    <div class="block2">
+        <p>The following XSL-FO code was originally present in the <code>fo:declarations</code> element of the XSL-FO document:</p>
+        <pre>&lt;axf:space-after-punctuation code="." space="2in" language="en"/&gt;</pre>
+        <p>This is an Antenna House Formatter specific instruction. In an HTML+CSS workflow, this global setting is typically configured via an Antenna House Formatter options file (e.g., <code>config.xml</code>) rather than a direct CSS rule in the stylesheet. Formatter will apply this setting based on the content of <code>config.xml</code> when processing the document.</p>
+    </div>
+
+    <div class="block3" lang="en">
+        <p>This paragraph has the HTML attribute <code>lang="en"</code>. This will cause the punctuation spacing (defined in <code>config.xml</code>) to be applied, and there will be 2 inches of space after the periods. The first paragraph does not have the <code>lang="en"</code> attribute, so the extension isn't applied to it.</p>
+    </div>
+</body>
+</html> 

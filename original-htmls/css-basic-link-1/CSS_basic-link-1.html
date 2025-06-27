@@ -1,0 +1,84 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+				.internalLink
+				{
+					text-decoration: underline;
+					color: blue;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Links in PDF
+		</div>
+		<div class="subheading">
+			There are two types of links in PDF: a link to a specific position in the same PDF document, and a link to an external document. The internal-destination property of fo:basic-link indicates to link to a position in the same document. Its destination may be either an ID or a page number. The external-destination property indicates to link to an external document. Its destination may be either an external file or a website.
+		</div>
+		<div>
+			<h2>
+				Linking to an internal destination
+			</h2>
+			<div style="-ah-margin-before: 0.3em;">
+				<span class = "internalLink" style="-ah-internal-destination: 'Link-01';">Linking to an ID</span>：Specify internal-destination="Link-01" on the link; specify id="Link-01" on the link’s destination.
+			</div>
+			<div style="-ah-margin-before: 1em;">
+				<span class = "internalLink" style="-ah-internal-destination: 2;">Linking to a page number (page 2)</span>：-ah-internal-destination: 2;
+			</div>
+			<div style="-ah-margin-before: 1em;">
+				<span class = "internalLink" style="-ah-internal-destination: '2#zoom=200';">Linking to a page number (page 2) and setting the display ratio (200%)</span>：-ah-internal-destination: '2#zoom=200'
+			</div>
+		</div>
+		<div>
+			<h2>
+				Linking to an external destination
+			</h2>
+			<div style="-ah-margin-before: 0.3em;">
+				<a href="attachment-sample-1.pdf">Linking to an external file (attachment-sample-1.pdf).</a>：external-destination="./attachment-sample-1.pdf"
+			</div>
+			<div style="-ah-margin-before: 1em;">
+				<span class = "internalLink" style="-ah-internal-destination: 2;">Linking to a website (https://www.antennahouse.com/)</span>：external-destination="https://www.antennahouse.com/"
+			</div>
+		</div>
+		<div id = "Link-01" style="break-before: page; -ah-margin-before: 0.3em;">
+			<h2>
+				About Antenna House
+			</h2>
+			<div style="text-indent: 1em;">
+				See also <a href="https://www.antennahouse.com/">https://www.antennahouse.com/</a> for more details.
+			</div>
+		</div>
+	</body>
+
+</html>

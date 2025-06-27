@@ -1,0 +1,45 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_graphics-data-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Embed graphic in XSL-FO
+		</div>
+		<div class="subheading">
+			A graphic in a binary format, such as PNG or JPEG, may be embedded in the XSL-FO file by using the “data” URL scheme and base64-encoding the graphic file. The “data” URL scheme, defined in <a href="https://www.ietf.org/rfc/rfc2397.txt">RFC2397</a>, allows inclusion of small data items as “immediate” data, as if it had been included externally. The “data” URL scheme may be used with the ‘src’ property of &lt;a href&gt;. For example, <span class = "codePrint">&lt;src="data:image/png;base64,iVBORw0K…"/&gt;</span>. The content type (and its following ‘;’) is optional: the graphic format is always determined from the data, and if the specified content type conflicts, then an error is raised. See  “<a href="https://www.antenna.co.jp/AHF/help/en/ahf-gra.html#data-scheme">Graphics</a>” in the Online Manual for details about using the “data” URL scheme for graphics. (The “data” URL scheme is also used when generating barcodes using the “<a href="https://www.antennahouse.com/barcode-generator-option/">Antenna House Formatter Barcode Generator Option</a>”.)
+		</div>
+		<div style="text-align: center;">
+			<img src="data:image/png;base64,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&#xA;sApVSesAAAAASUVORK5CYII=">
+		</div>
+	</body>
+
+</html>

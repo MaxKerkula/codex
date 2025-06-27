@@ -1,0 +1,114 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-line-break-BPIL-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBox
+				{
+					hyphens: false;
+					-ah-margin-before: 0.5em;
+					border: solid thin lightgray;
+					-ah-avoid-widow-words: true;
+					 
+				}
+				.columnBox
+				{
+					
+					width: 100%;
+					-ah-column-count: 2;
+					-ah-column-gap: 14mm;
+				}
+
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Breaking Paragraphs into Lines (BPIL)
+		</div>
+		<div class="subheading">
+			Line breaking is performed according to the line breaking algorithm by Knuth-Plass's Breaking Paragraphs into Lines. BPIL determines the break position considering the balance of the whole block. BPIL is available in AH Formatter V7.0 or later.
+		</div>
+		<ul>
+		BPIL is applied to the following blocks:
+			<li>
+				Blocks with <span class = "codePrint">-ah-line-break: bpil;</span>
+			</li>
+			<li>
+				Blocks with no algorithm specified by ‘axf:line-break’ but its language is specified by ‘bpil’ in the Option Setting File
+			</li>
+			<div>
+				If <span class = "codePrint">-ah-line-break: line;</span> is specified, line breaking is performed one by one by a simple algorithm.
+				<p>
+					In ‘bpil’ of the Option Setting File, specifies a language or script to apply BPIL to the line breaking algorithm by separating each code with a space. The default value is ‘Latn Grek Cyrl’. When a script is specified, it is considered that the language for which it is a representative script has been specified.
+				</p>
+				<p>
+					However, depending on certain conditions, BPIL may not apply. See Line Breaking for details. This result is not justified, as the width of the space is clear. The width of the space at the end of the line is more even when BPIL processing is applied.
+				</p>
+			</div>
+		</ul>
+		
+		<div style = "margin-top: 0.5em; margin-bottom: 0.5em; span: all;">
+			This result is not justified, as the width of the space is clear. The width of the space at the end of the line is more even when BPIL processing is applied.
+		</div>
+		<div class = "columnBox">		
+			<h3>
+				BPIL not applied
+			</h3>
+			<div class = "demoBox" style = "-ah-line-break: line;">
+				Everyone is entitled to all the rights and freedoms set forth in this Declaration, without distinction of any kind, such as race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status. Furthermore, no distinction shall be made on the basis of the political, jurisdictional or international status of the country or territory to which a person belongs, whether it be independent, trust, non-self-governing or under any other limitation of sovereignty.
+			</div>
+			<h3>
+				BPIL applied
+			</h3>
+			<div class = "demoBox" style = "-ah-line-break: bpil;">
+				Everyone is entitled to all the rights and freedoms set forth in this Declaration, without distinction of any kind, such as race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status. Furthermore, no distinction shall be made on the basis of the political, jurisdictional or international status of the country or territory to which a person belongs, whether it be independent, trust, non-self-governing or under any other limitation of sovereignty.
+			</div>
+		</div>
+		
+		<div style = "margin-top: 0.5em; margin-bottom: 0.5em; span: all; page-break-before: always;">
+			This result is not justified, as the width of the space is clear. The width of the space at the end of the line is more even when BPIL processing is applied.
+		</div>
+		<div class = "columnBox">		
+			<h3>
+				BPIL not applied
+			</h3>
+			<div class = "demoBox" style = "-ah-line-break: line; hyphens: true;">
+				Everyone is entitled to all the rights and freedoms set forth in this Declaration, without distinction of any kind, such as race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status. Furthermore, no distinction shall be made on the basis of the political, jurisdictional or international status of the country or territory to which a person belongs, whether it be independent, trust, non-self-governing or under any other limitation of sovereignty.
+			</div>
+			<h3>
+				BPIL applied
+			</h3>
+			<div class = "demoBox" style = "-ah-line-break: bpil; hyphens: true;">
+				Everyone is entitled to all the rights and freedoms set forth in this Declaration, without distinction of any kind, such as race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status. Furthermore, no distinction shall be made on the basis of the political, jurisdictional or international status of the country or territory to which a person belongs, whether it be independent, trust, non-self-governing or under any other limitation of sovereignty.
+			</div>
+		</div>
+	
+	</body>
+
+</html>

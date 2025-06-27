@@ -1,0 +1,119 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-diagonal-border-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.diagonalBorderBox
+				{
+					border: solid #7777FF 4pt;
+					-ah-margin-start: 50pt;
+					-ah-margin-end: 50pt;
+					padding: 4pt;
+					-ah-margin-before: 0.5em;
+					-ah-reverse-diagonal-border-style: solid;
+					-ah-reverse-diagonal-border-color: #7777FF;
+				}
+				table 
+				{
+					width: 100%;
+					border-collapse: collapse;
+				}
+				table, th, td 
+				{
+					border: 1.5pt solid black;
+					text-align: center;
+					table-layout: fixed;
+					-ah-margin-after: 10pt;
+					-ah-margin-before: 10pt;
+				}
+				th
+				{
+					height: 50px;
+					background-color: lightgrey;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Drawing a diagonal border
+		</div>
+		<div class="subheading">
+				A diagonal border can be drawn in any region where you can specify a border, such as a table cell. A diagonal border drawn with <span class = "codePrint">-ah-diagonal-border-*</span> is a line between the before–start vertex and after–end vertex of the region, and a reverse diagonal border drawn with <span class = "codePrint">-ah-reverse-diagonal-border-*</span> is a line between the before–end vertex and after–start vertex of the region. 
+		</div>
+		<h2>
+			Diagonal border in &lt;table&gt;
+		</h2>
+		<p>
+			Diagonal border on the cell in the first row of the first column in a table using <span class = "codePrint">-ah-diagonal-border-color: black</span>, <span class = "codePrint">-ah-diagonal-border-style: solid</span>, and <span class = "codePrint">-ah-diagonal-border-width: 1pt</span>
+		</p>
+		<table>
+		  <tr>
+				<th style = "-ah-diagonal-border-color: black; -ah-diagonal-border-style: solid; -ah-diagonal-border-width: 1pt; position: relative;">
+					<div style = "position: absolute; top: 0; right: 0; padding: 4px;">
+						Sales Month
+					</div>
+					<div style = "position: absolute; bottom: 0; left: 0; padding: 4px; transform: translateY(-100%); text-align: right;">
+						Group
+					</div>
+				</th>
+				<th>January</th> 
+				<th>February</th>
+				<th>March</th>
+		  </tr>
+		  <tr>
+				<td>Group A</td>
+				<td>58.4%</td>
+				<td>68.2%</td>
+				<td>92.0%</td>
+		  </tr>
+		  <tr>
+				<td>Group B</td>
+				<td>67.0%</td>
+				<td>70.7%</td>
+				<td>88.2%</td>
+		  </tr>
+		   <tr>
+				<td>Group C</td>
+				<td>87.0%</td>
+				<td>72.3%</td>
+				<td>95.2%</td>
+		   </tr> 
+		</table>
+		<h2>
+			Reverse diagonal border
+		</h2>
+		<p>
+			Reverse diagonal border on an &lt;div&gt; which has been defined using the following CSS styling: <br><span class = "codePrint">-ah-reverse-diagonal-border-style: solid; <br>-ah-reverse-diagonal-border-width: 4pt;<br>-ah-reverse-diagonal-border-color: #2222FF;</span>
+		</p>
+		
+		<div class = "diagonalBorderBox">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla.
+		</div>
+	</body>
+
+</html>

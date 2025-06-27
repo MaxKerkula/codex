@@ -1,0 +1,122 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-keep-together-within-dimension-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.columnBody
+				{
+					column-count: 2;
+					column-gap: 20px;
+					column-rule: 1px solid #ccc;
+					-ah-break-inside: avoid;
+					page-break-after: always;
+				}
+				#cB_0
+				{
+					
+				}
+				.borderBox 
+				{
+					border: solid thin red;
+					break-before: column;
+					text-align: justify;
+
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Limiting the height to which 'keep-together' applies
+		</div>
+		<div class="subheading" >
+			When ‘keep-together.within-page’ or ‘keep-together.within-column’ is not ‘auto’, specify ‘axf:keep-together-within-dimension’ to limit the height for which the ‘keep-together’ applies. See “axf:keep-together-within-dimension” in the Online Manual. ‘axf:keep-together-within-dimension’ is available in AH Formatter V6.5 and later.
+		</div>
+		<div style = "page-break-after: always;">
+			For example, if you want to specify keep-together.within-page="always" for a block but you also want the block to break if it exceeds the height of the page, then specify it as follows: <span class = "codePrint">&lt;fo:block keep-together.within-page="always" axf:keep-together-within-dimension="100vh"&gt;</span>
+		</div>
+		<div class = "columnBody" style="-ah-keep-together-within-dimension: all;">
+			<p>
+				<span class = "codePrint">-ah-keep-together-within-dimension: all;</span> <br>
+				There is no limit on the height of the block (shown with red border): even if the block exceeds the column height, it is output as is.
+			</p>
+			<div class = "borderBox">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum. Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Nullam purus. In porttitor, dui eget placerat pretium, mauris arcu ultrices nisl, quis mattis nisi turpis in velit. Cras et tellus quis nulla ultricies tristique. Ut at lacus at nibh cursus vestibulum. Praesent nec dui. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vivamus vehicula malesuada leo. Pellentesque eu nunc ac lectus viverra pretium. Nunc nibh purus, adipiscing et, vehicula vel, feugiat nec, elit. Praesent nisi. Sed tincidunt. Dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum. Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis at lacus mattis, luctus leo rhoncus, interdum velit. Nam ultrices orci nunc, et vestibulum ligula efficitur a. Aliquam mollis, ante nec consequat accumsan, odio est fringilla ipsum, nec sollicitudin felis justo sit amet leo. Etiam tempor blandit lectus, eu tempus odio lobortis non Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis at lacus mattis, luctus leo rhoncus, interdum velit. Nam ultrices orci nunc, et vestibulum ligula efficitur a. Aliquam mollis, ante nec consequat accumsan, odio est fringilla ipsum, nec sollicitudin felis justo sit amet leo. Etiam tempor blandit lectus, eu tempus odio lobortis non
+			</div>
+		</div>
+		
+		<div class = "columnBody" style = "-ah-keep-together-within-dimension: 100vh;">
+			<p>
+				<span class = "codePrint">-ah-keep-together-within-dimension: 100vh;</span> <br>
+				There is no limit on the height of the block (shown with red border): even if the block exceeds the column height, it is output as is.
+			</p>
+			<div class = "borderBox">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum. Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Nullam purus. In porttitor, dui eget placerat pretium, mauris arcu ultrices nisl, quis mattis nisi turpis in velit. Cras et tellus quis nulla ultricies tristique. Ut at lacus at nibh cursus vestibulum. Praesent nec dui. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vivamus vehicula malesuada leo. Pellentesque eu nunc ac lectus viverra pretium. Nunc nibh purus, adipiscing et, vehicula vel, feugiat nec, elit. Praesent nisi. Sed tincidunt. Dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum. Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis at lacus mattis, luctus leo rhoncus, interdum velit. Nam ultrices orci nunc, et vestibulum ligula efficitur a. Aliquam mollis, ante nec consequat accumsan, odio est fringilla ipsum, nec sollicitudin felis justo sit amet leo. Etiam tempor blandit lectus, eu tempus odio lobortis non Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis at lacus mattis, luctus leo rhoncus, interdum velit. Nam ultrices orci nunc, et vestibulum ligula efficitur a. Aliquam mollis, ante nec consequat accumsan, odio est fringilla ipsum, nec sollicitudin felis justo sit amet leo. Etiam tempor blandit lectus, eu tempus odio lobortis non
+			</div>
+		</div>
+		<div class = "columnBody" style = "-ah-keep-together-within-dimension: all;">
+			<p>
+				<span class = "codePrint">-ah-keep-together-within-dimension: all;</span> <br>
+				There is no limit on the effect of the ‘keep-together’ that applies to the block (shown with red border). Keeping the block together may leave a large space at the bottom of the previous column or page.
+			</p>
+			<div style = "ah-margin-before: 2em; text-align: justify; line-height: 1.4; text-indent: 1em;">
+				Praesent nisi. Sed tincidunt. Dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum.
+			</div>
+			<div class = "borderBox">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum. Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Nullam purus. In porttitor, dui eget placerat pretium, mauris arcu ultrices nisl, quis mattis nisi turpis in velit. Cras et tellus quis nulla ultricies tristique. Ut at lacus at nibh cursus vestibulum. Praesent nec dui. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vivamus vehicula malesuada leo.
+			</div>
+		</div>
+		<div class = "columnBody" style = "-ah-keep-together-within-dimension: 50vh;">
+			<p>
+				<span class = "codePrint">-ah-keep-together-within-dimension: 50vh;</span> <br>
+				When there is a limit on the effect of the ‘keep-together’ that applies to the block (shown with red border) that is taller than the available height, the block may break when the available height matches or exceeds the limit.
+			</p>
+			<div style="ah-margin-before: 2em; text-align: justify; line-height: 1.4; text-indent: 1em;">
+				Praesent nisi. Sed tincidunt. Dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum.
+			</div>
+			<div class = "borderBox" style="break-before: auto;">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum. Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Nullam purus. In porttitor, dui eget placerat pretium, mauris arcu ultrices nisl, quis mattis nisi turpis in velit. Cras et tellus quis nulla ultricies tristique. Ut at lacus at nibh cursus vestibulum. Praesent nec dui. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vivamus vehicula malesuada leo.
+			</div>
+		</div>
+		<div class = "columnBody" style = "-ah-keep-together-within-dimension: 50vh;">
+			<p>
+				<span class = "codePrint">-ah-keep-together-within-dimension: 50vh;</span> <br>
+				The block (shown with red border) that is taller than the available height will not break if the available height is less than the ‘axf:keep-together-within-dimension’ value.
+			</p>
+			<div style="ah-margin-before: 2em; text-align: justify; line-height: 1.4; text-indent: 1em;">
+				Praesent nisi. Sed tincidunt. Dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum. Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis at lacus mattis, luctus leo rhoncus, interdum velit.
+			</div>
+			<div class = "borderBox">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer egestas, est et bibendum consequat, tortor mi sagittis odio, id adipiscing dui lorem ultricies velit. Nullam eu lacus sed elit mollis elementum. Nullam dolor lacus, pellentesque eget, adipiscing id, bibendum in, velit. Nullam purus. In porttitor, dui eget placerat pretium, mauris arcu ultrices nisl, quis mattis nisi turpis in velit. Cras et tellus quis nulla ultricies tristique. Ut at lacus at nibh cursus vestibulum. Praesent nec dui. Mauris bibendum, arcu eget aliquam imperdiet, arcu neque hendrerit sapien, in vulputate ipsum massa ut augue. Nulla at urna in diam posuere condimentum. Mauris ultricies facilisis tortor. Nunc bibendum condimentum nisl. Vivamus vehicula malesuada leo.
+			</div>
+		</div>
+		
+		
+	</body>
+
+</html>

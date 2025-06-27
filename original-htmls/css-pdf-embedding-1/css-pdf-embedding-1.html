@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PDF Embedding – Antenna House, Inc.</title>
+    <meta name="author" content="Antenna House, Inc.">
+    <meta name="keywords" content="img,background-image,PDF">
+    <style>
+html {
+    font-family: serif;
+    font-size: 10pt;
+    line-height: 1.4;
+}
+
+@page PageMaster1 {
+    size: 210mm 297mm;
+    margin-top: 10mm;
+    margin-left: 20mm;
+    margin-right: 20mm;
+    margin-bottom: 27mm;
+}
+
+@page PageMaster2 {
+    size: 210mm 297mm;
+    margin-top: 10mm;
+    margin-left: 20mm;
+    margin-right: 20mm;
+    margin-bottom: 27mm;
+    background-image: url('four-pages.pdf');
+}
+
+@page {
+    @bottom-right {
+        height: 30mm;
+        content: 'Antenna House, Inc.';
+        font-size: 0.8em;
+        text-align: right;
+        color: green;
+        -ah-link: url('https://www.antennahouse.com/');
+        -ah-link-alt-text: 'Antenna House, Inc.';
+        -ah-pdftag: Artifact;
+        -ah-link-annotation-contents: 'Antenna House, Inc.';
+    }
+}
+
+.page-sequence-1 {
+    page: PageMaster1;
+}
+
+.page-sequence-2 {
+    page: PageMaster2;
+}
+
+.common-flow-styles {
+    -ah-hyphenate-hyphenated-word: false;
+    -ah-hyphens: auto;
+}
+
+.main-title-block {
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    -ah-margin-before: 1em;
+    -ah-margin-after: 1em;
+    background-color: #EEEEEE;
+    -ah-hyphens: none;
+    -ah-line-height-shift-adjustment: disregard-shifts;
+}
+
+.main-title-content {
+    margin-left: 1em;
+    margin-right: 1em;
+    -ah-pdftag: H1;
+}
+
+.info-block-1 {
+    -ah-margin-before: 1em;
+    -ah-margin-after: 1em;
+    text-indent: 0em;
+    border: 1pt solid #9999FF;
+    padding: 0.5em 1em;
+    text-align: justify;
+    -ah-line-height-shift-adjustment: disregard-shifts;
+}
+
+.info-block-2 {
+    -ah-margin-before: 1em;
+    -ah-margin-after: 1em;
+    text-indent: 0em;
+    border: 1pt solid #9999FF;
+    padding: 0.5em 1em;
+    text-align: justify;
+    -ah-line-height-shift-adjustment: disregard-shifts;
+    background-color: white;
+}
+
+.link-style-1 {
+    -ah-link: attr(href);
+    -ah-link-annotation-contents: attr(data-annotation-contents);
+}
+
+.link-style-1a {
+    -ah-link: attr(href);
+    -ah-link-annotation-contents: attr(data-annotation-contents);
+}
+
+.code-inline-1 {
+    font-family: sans-serif;
+    font-size: 0.9em;
+    -ah-pdftag: Code;
+}
+
+.link-style-2 {
+    -ah-link: attr(href);
+    -ah-link-annotation-contents: attr(data-annotation-contents);
+    text-decoration: underline;
+    color: blue;
+}
+
+.section-title-1 {
+    -ah-margin-before: 1em;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-indent: 0em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    -ah-break-after: avoid-column;
+    -ah-hyphens: none;
+    -ah-line-height-shift-adjustment: disregard-shifts;
+    clear: both;
+    -ah-pdftag: H2;
+}
+
+.img-pdf-sample2-default,
+.img-pdf-sample3-default {
+    display: block;
+}
+
+.img-pdf-sample2-scaled {
+    display: block;
+    -ah-content-height: 40%;
+}
+
+.img-inline-pdf-icon {
+    display: inline;
+    -ah-content-height: 2em;
+    vertical-align: middle;
+}
+    </style>
+</head>
+<body>
+<div class="page-sequence-1 common-flow-styles">
+    <div class="main-title-block">
+        <div class="main-title-content">PDF Embedding</div>
+    </div>
+    <div class="info-block-1">Antenna House Formatter can use <a class="link-style-1" href="https://www.w3.org/TR/xsl11/#fo_external-graphic" data-annotation-contents="fo:external-graphic">img</a> to embed a PDF like an image. Specify as <code class="code-inline-1"><a class="link-style-1a" href="https://www.w3.org/TR/xsl11/#fo_external-graphic src=&apos;embedded.pdf&apos;/" data-annotation-contents="fo:external-graphic src=&apos;embedded.pdf&apos;/">&lt;img src="embedded.pdf"/&gt;</a></code>. Fillable PDF forms can also be embedded. A PDF is embedded at its original size. Use '-ah-content-height' and '-ah-content-width' to scale the image if necessary. A page from a PDF file can also be used as a background image, including as the background of an <a class="link-style-1" href="https://www.w3.org/TR/xsl11/#fo_simple-page-master" data-annotation-contents="fo:simple-page-master">@page rule</a> and <a class="link-style-1" href="https://www.w3.org/TR/xsl11/#fo_page-sequence" data-annotation-contents="fo:page-sequence">page sequence container</a>. For more details, see <a class="link-style-2" href="https://www.antenna.co.jp/AHF/help/en/ahf-pdf.html#pdf-embedding" data-annotation-contents="PDF Embedding">PDF Embedding</a> in the Manual.</div>
+    <div class="section-title-1">PDF embedding without specifying 'content-height' and 'content-width'</div>
+    <div class="pdf-embed-container-1">
+        <img src="./embedded-pdf-sample-2.pdf" class="img-pdf-sample2-default" alt="Embedded PDF Sample 2">
+    </div>
+    <div class="section-title-1">PDF embedding with specifying <code class="code-inline-1">content-height="40%"</code></div>
+    <div class="pdf-embed-container-2">
+        <img src="./embedded-pdf-sample-2.pdf" class="img-pdf-sample2-scaled" alt="Embedded PDF Sample 2 Scaled">
+    </div>
+    <div class="section-title-1">PDF embedding with form fields</div>
+    <div class="pdf-embed-container-3">
+        <img src="./embedded-pdf-sample-3.pdf" class="img-pdf-sample3-default" alt="Embedded PDF Sample 3 with Form Fields">
+    </div>
+</div>
+<div class="page-sequence-2 common-flow-styles">
+    <div class="info-block-2">This page uses PDF <img src="four-pages.pdf" class="img-inline-pdf-icon" alt="Four Pages PDF Icon"> as the background by specifying it in the 'background-image' attribute of the <a class="link-style-1" href="https://www.w3.org/TR/xsl11/#fo_simple-page-master" data-annotation-contents="fo:simple-page-master">@page rule</a> object.</div>
+</div>
+</body>
+</html> 

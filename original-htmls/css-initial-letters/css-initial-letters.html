@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drop Caps – Antenna House, Inc.</title>
+    <meta name="keywords" content="-ah-initial-letters">
+    <meta name="author" content="Antenna House, Inc.">
+    <style>
+
+    @page {
+        size: 210mm 150mm;
+        margin: 10mm 20mm;
+
+        @top-center {
+            content: "";
+            height: 15mm;
+            vertical-align: top;
+            margin: 0;
+        }
+
+        @bottom-right {
+            content: "Antenna House, Inc.";
+            height: 15mm;
+            font-size: 0.8em;
+            color: green;
+            vertical-align: bottom;
+            text-align: right;
+            -ah-pdftag: Artifact;
+            margin-bottom: 10mm;
+            -ah-hyperlink: url("https://www.antennahouse.com");
+            -ah-alttext: "Antenna House, Inc.";
+            -ah-annotation-contents: "Antenna House, Inc.";
+        }
+    }
+
+   
+
+
+    body {
+        font-family: serif;
+        font-size: 10pt;
+        line-height: 1.4;
+        hyphens: auto;
+        -ah-hyphenate-hyphenated-word: false;
+        margin: 0;
+        padding-top: 0mm;
+        padding-left: 0mm;
+        padding-right: 0mm;
+        padding-bottom: 20mm;
+    }
+   
+    h1 {
+        font-family: sans-serif;
+        font-size: 2em;
+        font-weight: bold;
+        padding: 0.3em 1em;
+        margin: 1em 0;
+        background-color: #EEEEEE;
+        hyphens: manual;
+        -ah-line-height-shift-adjustment: disregard-shifts;
+        -ah-pdftag: H1;
+    }
+
+    .info-block {
+        margin: 1em 0.5em;
+        text-indent: 0em;
+        border: 1pt solid #9999FF;
+        padding: 0.5em;
+        text-align: justify;
+        -ah-line-height-shift-adjustment: disregard-shifts;
+    }
+
+    .info-block a {
+        text-decoration: underline;
+        color: blue;
+        -ah-annotation-contents: attr(title);
+    }
+
+    .multi-col-container {
+        column-count: 2;
+        column-gap: 5mm;
+    }
+
+    .multi-col-container > div {
+        line-height: 1.2;
+        text-align: justify;
+    }
+
+    .sub-heading {
+        margin-top: 0.5em;
+        margin-bottom: 0;
+        break-after: avoid-column;
+        page-break-after: avoid;
+    }
+
+    .code-inline {
+        font-family: sans-serif;
+        font-size: 0.9em;
+        -ah-pdftag: Code; 
+        background-color: #f0f0f0;
+        padding: 0.1em 0.3em;
+        border-radius: 3px;
+    }
+
+    .description {
+        margin-top: 0;
+        margin-bottom: 0.2em;
+        break-after: avoid-column;
+        page-break-after: avoid;
+    }
+
+    .example-block {
+        break-inside: avoid-column;
+        page-break-inside: avoid;
+        border: solid thin lightgray;
+        padding: 3pt;
+        margin: 0 0 0.8em 0;
+    }
+
+    .initial-letter-3::first-letter {
+        -ah-initial-letters: 3; 
+    }
+
+    .initial-letter-3-adjacent::first-letter {
+        -ah-initial-letters: 3 adjacent; 
+    }
+
+    .initial-letter-image-container::first-letter {
+        -ah-initial-letters: 3;
+        -ah-initial-letters-end-indent: 5pt;
+    }
+
+    .rtl-container {
+        break-inside: avoid-column;
+        page-break-inside: avoid;
+        direction: rtl;
+        writing-mode: horizontal-tb;
+        border: solid thin lightgray;
+        padding: 3pt;
+        margin: 0;
+        font-family: serif;
+    }
+
+    .initial-letter-2::first-letter {
+        -ah-initial-letters: 2;
+    }
+    
+    .initial-letter-3-raise {
+        text-indent: -0.115em;
+        padding-left: 12pt;
+    }
+    .initial-letter-3-raise::first-letter {
+        -ah-initial-letters: 3 raise;
+    }
+
+    .lang-specific-container {
+        break-inside: avoid-column;
+        page-break-inside: avoid;
+        border: solid thin lightgray;
+        padding: 3pt;
+        padding-left: 12pt;
+        margin: 0;
+    }
+    
+    p[lang="nl"].initial-letter-lang {
+        text-indent: -0.115em;
+        -ah-initial-letters-end-indent: 0 5pt;
+    }
+    p[lang="nl"].initial-letter-lang::first-letter {
+        -ah-initial-letters: 3;
+    }
+    
+    p[lang="en"].initial-letter-lang {
+        text-indent: -0.115em;
+        -ah-initial-letters-end-indent: -2.5pt 2.5pt;
+    }
+    p[lang="en"].initial-letter-lang::first-letter {
+        -ah-initial-letters: 3;
+    }
+
+    .initial-letter-3-color {
+        text-indent: -0.085em;
+        padding-left: 12pt;
+    }
+    .initial-letter-3-color::first-letter {
+        -ah-initial-letters: 3;
+        color: red;
+    }
+
+    .initial-letter-3-indent {
+        text-indent: -0.115em; 
+        padding-left: 12pt;
+    }
+    .initial-letter-3-indent::first-letter {
+        -ah-initial-letters: 3;
+        -ah-initial-letters-end-indent: -1.2em 0;
+    }
+
+    .initial-letter-3-smallcaps {
+        text-indent: -0.115em; 
+        padding-left: 12pt;
+    }
+    .initial-letter-3-smallcaps::first-letter {
+        -ah-initial-letters: 3;
+        -ah-initial-letters-end-indent: -1em 0;
+    }
+    .small-caps {
+        font-variant: small-caps;
+        letter-spacing: 0.05em;
+    }
+
+    .initial-letter-partially-raised {
+        padding: 0 20%;
+        font-size: 0.5em;
+        text-indent: -1.2em;
+        -ah-initial-letters-end-indent: -1.8em -0.2em 0 -0.6em;
+    }
+
+    .initial-letter-partially-raised::first-letter {
+        -ah-initial-letters: 12 2;
+    }
+
+    .full-width-block {
+        column-span: all;
+        margin-top: 1.5em;
+    }
+    .break-before-page {
+        break-before: page;
+        page-break-before: always;
+    }
+
+    .code-block {
+        -ah-text-autospace: none;
+        font-family: monospace;
+        white-space: pre;
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        padding: 0.5em;
+        margin: 0.5em 0;
+        overflow: auto;
+    }
+
+    .result-block {
+        margin-top: 0.5em;
+    }
+    .result-image {
+        width: 100%;
+        object-fit: contain;
+        border: 1px solid #ccc;
+        display: block;
+        margin-top: 0.3em;
+    }
+
+    .final-note {
+        padding-bottom: 1.5em;
+        margin: 1.5em 0;
+    }
+    .final-note a {
+        text-decoration: underline;
+        color: blue;
+        -ah-annotation-contents: attr(title); 
+    }
+
+    .margin-top-1_5em { margin-top: 0.8em; }
+    .margin-top-1em { margin-top: 0.5em; }
+
+    .vertical-text-container {
+        break-inside: avoid-column;
+        page-break-inside: avoid;
+        writing-mode: vertical-lr;
+        height: 12em;
+        overflow: hidden;
+        border: solid thin lightgray;
+        padding: 3pt;
+        margin: 0;
+        width: calc(100% - 8pt);
+        font-family: serif;
+    }
+
+    .initial-letter-2-vertical {
+        -ah-hanging-punctuation: allow-end;
+        hanging-punctuation: allow-end;
+        text-align: justify;
+        -ah-initial-letters-width: 2.2em;
+        -ah-initial-letters-text-align: start;
+    }
+    .initial-letter-2-vertical::first-letter {
+        -ah-initial-letters: 2;
+    }
+
+    </style>
+</head>
+<body>
+
+    <h1>Drop Caps</h1>
+
+    <div class="info-block">
+        Using '
+        <a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.initial-letters" title="-ah-initial-letters">-ah-initial-letters</a>
+        ', creates
+        <a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#DropCapitals" title="Drop Capitals">Drop Capitals</a>.
+        Drop Capitals is a layout technique that enlarges the first character of a paragraph. This feature is available in AH Formatter V7.0 or later.
+    </div>
+
+    <div class="multi-col-container">
+        <div>
+            <p class="sub-heading">
+                <code class="code-inline">-ah-initial-letters="3"</code>
+            </p>
+            <p class="description">Specify the letter size as 3 lines</p>
+            <p class="example-block initial-letter-3" lang="en">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis.
+            </p>
+
+            <p class="sub-heading">
+                <code class="code-inline">-ah-initial-letters="3 adjacent"</code>
+            </p>
+            <p class="description">Indent all the lines in block</p>
+            <p class="example-block initial-letter-3-adjacent" lang="en">
+                Zorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis.
+            </p>
+
+            <p class="sub-heading">
+                <code class="code-inline">-ah-initial-letters="3"</code> (for image)
+            </p>
+            <p class="description break-before-col">Image as initial letter</p>
+            <p class="example-block initial-letter-image-container" lang="en">
+                <img src="sample.png" alt="Antenna House logo" class="initial-image" onerror="this.src='https://placehold.co/30x30/eee/ccc?text=IMG';this.onerror=null;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis.
+            </p>
+
+            <p class="description margin-top-1_5em">Languages written right-to-left</p>
+            <div class="rtl-container">
+                <p class="initial-letter-2" lang="he">
+                    הואיל והכרה בכבוד הטבעי אשר לכל בני משפהת האדם ובזכויותיהם השוות והבלתי נפקעות הוא יסוד החופש, הצדק והשלום בעולם.
+                </p>
+            </div>
+
+            <div class="full-width-block break-before-page">
+                <p>The height of the dropped initial is set to the cap-height or x-height of the first line by specifying '
+                    <a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.initial-letters-first-line-head-height" title="-ah-initial-letters-first-line-head-height">-ah-initial-letters-first-line-head-height</a>'.
+                    However, some fonts do not have the cap-height and x-height information, so the dropped initial characters and the height of the first line will not match. In such a case, it can be adjusted by specifying in the
+                    <a href="https://www.antenna.co.jp/AHF/help/en/ahf-font.html#x-height" title="Font Configuration File">Font Configuration File</a>
+                    of Antenna House Formatter. For example, the setting in the font construction file is as follows:
+                </p>
+                <pre class="code-block">
+&lt;font-folder path="C:\*****"&gt;
+  &lt;font-entry file="frank.ttf" cap-height="0.46"/&gt;
+&lt;/font-folder&gt;
+                </pre>
+            </div>
+
+            <div class="rtl-container margin-top-1em">
+                <p class="initial-letter-2" lang="he">
+                    הואיל והכרה בכבוד הטבעי אשר לכל בני משפהת האדם ובזכויותיהם השוות והבלתי נפקעות הוא יסוד החופש, הצדק והשלום בעולם.
+                </p>
+            </div>
+
+            <div class="full-width-block margin-top-1em">By adjusting in the Font Configuration File, the above sample changes as follows:</div>
+
+            <div class="result-block">Result when adjusted:
+                <img src="cap-height-set.png" alt="Result when adjusted" class="result-image" onerror="this.src='https://placehold.co/600x100/eee/ccc?text=Adjusted+Result+Placeholder';this.onerror=null;">
+            </div>
+
+            <div class="result-block">Result when not adjusted:
+                <img src="cap-height-noset.png" alt="Result when not adjusted" class="result-image" onerror="this.src='https://placehold.co/600x100/eee/ccc?text=Not+Adjusted+Result+Placeholder';this.onerror=null;">
+            </div>
+
+            <div class="full-width-block final-note break-before-page">
+                In addition, various layouts can be created by combining the specifications for the dropped initial. For details, see
+                <a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#DropCapitals" title="Drop Capitals">Drop Capitals</a>
+                in the online manual, download this HTML and refer to it by using an editor.
+            </div>
+
+            <p class="description margin-top-1_5em">Raised initial letter</p>
+            <p class="example-block initial-letter-3-raise" lang="en">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus.
+            </p>
+
+            <p class="description margin-top-1_5em">Language-specific letter selection</p>
+            <div class="example-block lang-specific-container">
+                <p class="initial-letter-lang" lang="nl">
+                    IJzel zorgt voor zeer gevaarlijke omstandigheden op de weg. IJzel zorgt voor zeer gevaarlijke omstandigheden op de weg.
+                </p>
+                <p class="initial-letter-lang" lang="en">
+                    Black ice creates very dangerous conditions on the road. Black ice creates very dangerous conditions on the road.
+                </p>
+            </div>
+
+            <p class="description margin-top-1_5em">Individual color</p>
+            <p class="example-block initial-letter-3-color" lang="en">
+                Zorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus.
+            </p>
+
+            <p class="description margin-top-1_5em">Change indent only for first line</p>
+            <p class="example-block initial-letter-3-indent" lang="en">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis. In vitae nibh volutpat, blandit mi at, cursus ipsum.
+            </p>
+
+            <p class="description margin-top-1_5em">Combination with small-capitals</p>
+            <p class="example-block initial-letter-3-smallcaps" lang="en">
+                <span class="small-caps">Lorem ipsum</span> dolor sit amet, consectetur adipisicing elit. Fusce sit amet risus ut sapien vehicula aliquam molestie vitae lacus. In aliquam sem quis suscipit iaculis. In vitae nibh volutpat, blandit mi at, cursus ipsum.
+            </p>
+
+            <p class="description margin-top-1_5em">Partially raised</p>
+            <p class="example-block initial-letter-partially-raised" lang="en">
+                gazing on that which seems to dim thy sight? What seest thou there? King Henry's diadem, enchased with all the honours of the world? If so, gaze on, and grovel on thy face, until thy head be circled with the same.
+            </p>
+
+            <p class="description margin-top-1_5em">Initial letter in vertical text</p>
+            <div class="vertical-text-container">
+                <p class="initial-letter-2-vertical" lang="ja">
+                    吾輩は猫である。名前はまだ無い。どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。しかもあとで聞くとそれは書生という人間中で一番獰悪な種族であったそうだ。この書生というのは時々我々を捕えて煮て食うという話である。しかしその当時は何という考もなかったから別段恐しいとも思わなかった。
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

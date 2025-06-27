@@ -1,0 +1,302 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-ruby-2]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.verticalBlock
+				{
+					writing-mode: tb-rl;
+					font-size: 1.5em;
+					line-height: 2;
+					height: 8em;
+					-ah-margin-before: 0.5em;
+					text-indent: 1em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Ruby in vertical mode
+		</div>
+		<div class="subheading">
+			Antenna House Formatter supports ruby annotations on vertical text. Ruby can be expressed by <span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ruby.html#axf.ruby">&lt;ruby&gt;&lt;/ruby&gt;</a></span>, 
+		</div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				Mono-ruby
+			</h2>
+			The ruby container of mono-ruby is independent and ruby characters never overhang the base character of the adjacent ruby.
+			<div class = "verticalBlock">
+					<ruby>
+					<rb>電</rb>
+					<rt>でん</rt>
+					</ruby>
+					<ruby>
+					<rb>子</rb>
+					<rt>し</rt>
+					</ruby>
+					ファイルの<ruby>
+					<rb>形</rb>
+					<rt>けい</rt>
+					</ruby>
+					<ruby>
+					<rb>式</rb>
+					<rt>しき</rt>
+					</ruby>
+					としてのPDFを<ruby>
+					<rb>大</rb>
+					<rt>おお</rt>
+					</ruby>
+					<ruby>
+					<rb>雑</rb>
+					<rt>ざっ</rt>
+					</ruby>
+					<ruby>
+					<rb>把</rb>
+					<rt>ぱ</rt>
+					</ruby>
+					にいうと<ruby>
+					<rb>紙</rb>
+					<rt>かみ</rt>
+					</ruby>
+					のページを<ruby>
+					<rb>電</rb>
+					<rt>でん</rt>
+					</ruby>
+					<ruby>
+					<rb>子</rb>
+					<rt>し</rt>
+					</ruby>
+					<ruby>
+					<rb>的</rb>
+					<rt>てき</rt>
+					</ruby>
+					に<ruby>
+					<rb>表</rb>
+					<rt>ひょう</rt>
+					</ruby>
+					<ruby>
+					<rb>現</rb>
+					<rt>げん</rt>
+					</ruby>
+					したものである。
+			</div>
+		</div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				Group-ruby
+			</h2>
+			Group-ruby consists of one ruby container. Group-ruby is evenly arranged to the entire base characters.
+			<div class = "verticalBlock">
+					<ruby>
+					<rb>電子</rb>
+					<rt>でんし</rt>
+					</ruby>
+					ファイルの<ruby>
+					<rb>形式</rb>
+					<rt>けいしき</rt>
+					</ruby>
+					としてのPDFを<ruby>
+					<rb>大雑把</rb>
+					<rt>おおざっぱ</rt>
+					</ruby>
+					にいうと<ruby>
+					<rb>紙</rb>
+					<rt>かみ</rt>
+					</ruby>
+					のページを<ruby>
+					<rb>電子的</rb>
+					<rt>でんしてき</rt>
+					</ruby>
+					に<ruby>
+					<rb>表現</rb>
+					<rt>ひょうげん</rt>
+					</ruby>
+					したものである。
+			</div>
+		</div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				Jukugo (kanji compound word)-ruby
+			</h2>
+			Jyukugo-ruby consists of one or more ruby containers. when the ruby text is wider than the ruby base characters, ruby text is allowed to partially overhang any adjacent text in addition to its own base to adjust its position.
+			<div class = "verticalBlock">
+					<ruby>
+					<rb>電</rb>
+					<rt>でん</rt>
+					<rb>子</rb>
+					<rt>し</rt>
+					</ruby>
+					ファイルの<ruby>
+					<rb>形</rb>
+					<rt>けい</rt>
+					<rb>式</rb>
+					<rt>しき</rt>
+					</ruby>
+					としてのPDFを<ruby>
+					<rb>大</rb>
+					<rt>おお</rt>
+					<rb>雑</rb>
+					<rt>ざっ</rt>
+					<rb>把</rb>
+					<rt>ぱ</rt>
+					</ruby>
+					にいうと<ruby>
+					<rb>紙</rb>
+					<rt>かみ</rt>
+					</ruby>
+					のページを<ruby>
+					<rb>電</rb>
+					<rt>でん</rt>
+					<rb>子</rb>
+					<rt>し</rt>
+					<rb>的</rb>
+					<rt>てき</rt>
+					</ruby>
+					に<ruby>
+					<rb>表</rb>
+					<rt>ひょう</rt>
+					<rb>現</rb>
+					<rt>げん</rt>
+					</ruby>
+					したものである。
+			</div>
+		</div>
+		<div class = "subheading" style = "page-break-before: always;">
+			These examples are taken from Section 3.3, <a href = "https://www.w3.org/TR/jlreq/#ruby_and_emphasis_dots">Ruby and Emphasis Dots</a>, of <a href="https://www.w3.org/TR/2020/NOTE-jlreq-20200811/">Requirements for Japanese Text Layout</a>.
+		</div>
+		<div style="writing-mode: tb-rl; font-size: 2.5em; line-height: 2; height: 12em;">
+			<div style="-ah-ruby-overhang: none;">
+				<ruby>
+					<rb>鬼</rb>
+					<rt>き</rt>
+					<rb>門</rb>
+					<rt>もん</rt>
+					</ruby>
+					の<ruby>
+					<rb>方</rb>
+					<rt>ほう</rt>
+					<rb>角</rb>
+					<rt>がく</rt>
+					</ruby>
+					を<ruby>
+					<rb>凝</rb>
+					<rt>ぎよう</rt>
+					</ruby>
+					<ruby>
+					<rb>視</rb>
+					<rt>し</rt>
+					</ruby>
+					する				
+			</div>
+			<div>
+					<ruby>
+					<rb>鬼</rb>
+					<rt>き</rt>
+					<rb>門</rb>
+					<rt>もん</rt>
+					</ruby>
+					の<ruby>
+					<rb>方</rb>
+					<rt>ほう</rt>
+					<rb>角</rb>
+					<rt>がく</rt>
+					</ruby>
+					を<ruby>
+					<rb>凝視</rb>
+					<rt>ぎようし</rt>
+					</ruby>
+					する
+			</div>
+			<div style="-ah-ruby-overhang: none;">
+					<ruby>
+					<rb>茅</rb>
+					<rt>かや</rt>
+					<rb>場</rb>
+					<rt>ば</rt>
+					</ruby>
+					<ruby>
+					<rb>町</rb>
+					<rt>ちょう</rt>
+					</ruby>
+					<ruby>
+					<rb>茅場町</rb>
+					<rt>かやばちょう</rt>
+					</ruby>
+			</div>
+			<div style="-ah-ruby-overhang: none;">
+					<ruby>
+					<rb>模型</rb>
+					<rt>モデル</rt>
+					</ruby>
+					<ruby>
+					<rb>顧客</rb>
+					<rt>クライアント</rt>
+					</ruby>
+					<ruby>
+					<rb>境界面</rb>
+					<rt>インターフェース</rt>
+					</ruby>
+			</div>
+			<div>
+					<ruby>
+					<rb>editor</rb>
+					<rt>エディター</rt>
+					</ruby>
+					<ruby style="-ah-ruby-align: center;">
+					<rb>編集者</rb>
+					<rt>editor</rt>
+					</ruby>
+			</div>
+			<div>
+					に<ruby>
+					<rb>幟</rb>
+					<rt>のぼり</rt>
+					</ruby>
+					を　に<ruby style = "-ah-ruby-font-stretch: extra-condensed;">
+					<rb>幟</rb>
+					<rt>のぼり</rt>
+					</ruby>
+					を
+			</div>
+			<div>
+					<ruby>
+					<rb>
+					<ruby style="-ah-ruby-position: after;">
+					<rb>東南</rb>
+					<rt>たつみ</rt>
+					</ruby>
+					</rb>
+					<rt>とうなん</rt>
+					</ruby>
+					の方角
+			</div>
+		</div>
+	</body>
+
+</html>

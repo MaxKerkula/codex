@@ -1,0 +1,47 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-background-content-height-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+					-ah-background-image: url('peace.svg');
+					-ah-background-repeat: no-repeat;
+					-ah-background-position: center;
+					-ah-background-size: 50%;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Scaling the background image
+		</div>
+		<div class="subheading">
+			You can scale a <span class = "codePrint">background-image</span> that is specified in &lt;style&gt; in the <span class = "codePrint">@page rule</span>. Use <span class = "codePrint">-ah-background-position: center;</span> for the placement of the image. The image on this page is then expanded by using <span class = "codePrint">-ah-background-size: 50%;</span>.
+		</div>
+	</body>
+
+</html>

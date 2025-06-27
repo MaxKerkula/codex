@@ -1,0 +1,113 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-condensed-text-align-last-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBlock
+				{
+					width: 50%;
+					height: 50pt;
+					border: solid thin;
+					font-size: 20pt;
+					-ah-overflow: condense;
+					-ah-overflow-condense: font-size font-stretch;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Specifying whether to justify the last line after condensing the overflow
+		</div>
+		<div class="subheading">
+			Specifies whether to set <span class = "codePrint">text-align-last: justify</span> automatically on the last line after condensing the overflow by specifying ‘-ah-condensed-text-align-last’. For the conditions under which the feature is effective, see ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.condensed-text-align-last">-ah-condensed-text-align-last</a></span>’ in the manual. This feature is available from AH Formatter V7.1.
+		</div>
+		<div>
+			<h2>
+				-ah-condensed-text-align-last: false;
+			</h2>
+			<div>
+				<span class = "codePrint">-ah-condensed-text-align-last: false</span> does not change the last line. If ‘text-align-last’ is specified, follows its setting.
+			</div>
+			<div class = "demoBlock" style="-ah-condensed-text-align-last: false;">
+				<div>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Nulla consequat massa quis enim. Donec.
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2>
+				-ah-condensed-text-align-last: true;
+			</h2>
+			<div>
+				Sets <span class = "codePrint">text-align-last: justify</span> in the last line when <span class = "codePrint">-ah-condensed-text-align-last: true</span> is specified.
+			</div>
+			<div class = "demoBlock" style="-ah-condensed-text-align-last: true;">
+				<div>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Nulla consequat massa quis enim. Donec.
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2>
+				-ah-condensed-text-align-last: justify;
+			</h2>
+			<div>
+				<span class = "codePrint">-ah-condensed-text-align-last: justify</span> sets <span class = "codePrint">text-align-last: justify</span> when the last line is <span class = "codePrint">text-align: justify</span>. Whether or not <span class = "codePrint">text-align: justify</span> is determined by whether or not the element with the <span class = "codePrint">-ah-overflow: condense</span> specified is <span class = "codePrint">text-align: justify</span>.
+			</div>
+			<div>
+				Without the setting of ‘text-align’
+			</div>
+			<div class = "demoBlock" style="-ah-condensed-text-align-last: justify;">
+				<div>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Nulla consequat massa quis enim. Donec.
+				</div>
+			</div>
+			<div>
+				With the setting of <span class = "codePrint">text-align: justify</span>
+			</div>
+			<div class = "demoBlock" style="text-align: justify; -ah-condensed-text-align-last: justify;">
+				<div>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Nulla consequat massa quis enim. Donec.
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2>
+				-ah-condensed-text-align-last: auto
+			</h2>
+			<div>
+				If <span class = "codePrint">-ah-condensed-text-align-last: auto</span> is specified, follows the setting of ‘<a href="https://www.antenna.co.jp/AHF/help/en/ahf-optset.html#condensed-text-align-last">-ah-condensed-text-align-last</a>' in the Option Setting File.
+			</div>
+		</div>
+	</body>
+
+</html>

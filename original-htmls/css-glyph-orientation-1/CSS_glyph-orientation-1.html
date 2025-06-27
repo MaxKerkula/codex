@@ -1,0 +1,84 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_glyph-orientation-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.columnBox
+				{
+					-ah-column-count: 2;
+					-ah-column-gap: 2em;
+				}
+				li
+				{
+					margin-bottom: 0.5em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Glyph Orientation
+		</div>
+		<div class="subheading">
+			Glyph Orientation can be set. ‘glyph-orientation-horizontal’ and ‘glyph-orientation-vertical’ when ‘writing-mode’ is ‘tb-rl’ can be specified for horizontal text.	
+		</div>
+		<div class = "columnBox">
+			<ol>
+				<strong>Example: </strong> 
+				<li>
+					glyph-orientation-horizontal: 0deg;
+				</li>
+				<li>
+					glyph-orientation-horizontal: 90deg;
+				</li>
+				<li>
+					glyph-orientation-horizontal: 180deg;
+				</li>
+				<li>
+					glyph-orientation-horizontal: 270deg;
+				</li>
+			</ol>
+			<ol>
+				<strong>Implemented: </strong>
+				<li>
+					<span style = "-ah-glyph-orientation-horizontal: 0deg">ABCDEFG-abcdefg</span>
+				</li>
+				<li>
+					<span style = "-ah-glyph-orientation-horizontal: 90deg">ABCDEFG-abcdefg</span>
+				</li>
+				<li>
+					<span style = "-ah-glyph-orientation-horizontal: 180deg">ABCDEFG-abcdefg</span>
+				</li>
+				<li>
+					<span style = "-ah-glyph-orientation-horizontal: 270deg">ABCDEFG-abcdefg</span>
+				</li>
+			</ol>
+		</div>
+	</body>
+
+</html>

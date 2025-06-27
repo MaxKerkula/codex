@@ -1,0 +1,104 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-float-column-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.columnBody
+				{
+					-ah-margin-after: 1em;
+					height: 25em;
+					border: solid gray 1pt;
+					padding: 4pt;
+					column-count: 2;
+					-ah-column-gap: 10pt;
+					-ah-column-rule-style: solid;
+					-ah-column-rule-width: 1pt;
+					-ah-column-rule-color: gray;
+				}
+				.floatColumn
+				{
+					text-align: justify;
+					-ah-float-reference: column;
+					height: 4em;
+					background-color: lightblue;
+					text-align: center;
+					border: 1pt solid gray;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Column float examples
+		</div>
+		<div class="subheading">
+				Antenna House Formatter extends the float feature with the ability to position the float in any positions on the page or position it across multiple columns. The reference area where the float is positioned can be specified by <span class = "codePrint">-ah-float-reference</span>. Available values are ‘auto’, ‘normal’, ‘page’, ‘multicol’ and ‘column’. Specify <span class = "codePrint">-ah-float-x</span> for horizontal position of the float, and specify <span class = "codePrint">-ah-float-y</span> for vertical position. This sample shows the float in a column area specified by <span class = "codePrint">-ah-float-reference: column</span>
+		</div>
+		<div style = "font-size: 1.2em; -ah-margin-after: 0.5em;">
+			Float example specified by <span class = "codePrint">-ah-float-reference: column</span>
+		</div>
+		
+		<div class = "columnBody">
+			<div class = "floatColumn" style = "-ah-float-x: none; -ah-float-y: top;">
+				Float is positioned at the top of the column <span class = "codePrint">-ah-float-reference: column; -ah-float-x: none; -ah-float-y: top;</span>
+			</div>
+			<div class = "floatColumn" style = "-ah-float-x: none; -ah-float-y: bottom;">
+				Float is positioned at the top of the column <span class = "codePrint">-ah-float-reference: column; -ah-float-x: none; -ah-float-y: bottom;</span>
+			</div>
+			<div style = "-ah-margin-after: 0.5em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor.
+			</div>
+			<div style = "-ah-margin-after: 0.5em;">
+				Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus.
+			</div>
+			
+			<div style = "-ah-margin-after: 0.5em;">
+				Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</div>
+			<div class = "floatColumn" style = "-ah-float-x: right; -ah-float-y: top; height: 9em; width: 11em; display-align: center; margin: 0.3em;">
+				Float is positioned at the top of the column <span class = "codePrint">-ah-float-reference: column; -ah-float-x: right; -ah-float-y: top;</span>
+			</div>
+			<div style = "-ah-margin-after: 0.5em;">
+				Integer ut porttitor felis, vel tincidunt velit.
+			</div>
+			<div class = "floatColumn" style = "-ah-float-x: left; -ah-float-y: bottom; height: 9em; width: 11em; display-align: center; margin: 0.3em;">
+				Float is positioned at the top of the column <span class = "codePrint">-ah-float-reference: column; -ah-float-x: left; -ah-float-y: bottom;</span>
+			</div>
+		</div>
+		
+		<div>
+			You can also use the -ah-float shorthand property to specify the float-related extended properties at once. The following produce the same result but use different approaches of individuals properties and the shorthand property.
+			<br><br>
+			Using individual extended properties (Position the float at the top of the column) -ah-float-reference: column; -ah-float-x: none; -ah-float-y: top;
+			<br><br>
+			Using the shorthand property (Position the float at the top of the column)
+			-ah-float: column top;
+		</div>
+		
+	</body>
+
+</html>

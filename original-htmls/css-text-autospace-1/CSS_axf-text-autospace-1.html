@@ -1,0 +1,89 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-text-autospace-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoHeader
+				{
+					font-size: 1.2em;
+					margin-top: 1em;
+					margin-bottom: 0.5em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Space between Japanese and Western languages
+		</div>
+		<div class="subheading">
+				Here is a setting of automatically inserting a space between Japanese and Western languages. No space is entered when <span class = "codePrint">-ah-text-autospace</span> is specified as ‘none’. A space is entered between Kanji/Kana and European languages if ‘ideograph-numeric’ is set. Likewise, a space is entered between Kanji/Kana and alphabets with ‘ideograph-alpha’, and between Kanji/Kana and Western language parenthesis with ‘ideograph-prenthesis’ (however, a space will be entered outside the parenthesis only). A space between Japanese and Western languages can be specified with the value of <span class = "codePrint">-ah-text-autospace-width</span>.
+		</div>
+		<div style = "text-align: justify; -ah-language: ja;">
+			<div class = "demoHeader">
+				none
+			</div>
+			<div style = "font-size: 1.5em; -ah-text-autospace: none;">
+				漢0漢X漢(漢)漢[漢]漢{漢}漢
+			</div>
+			<div class = "demoHeader">
+				ideograph-numeric + ideograph-alpha
+			</div>
+			<div style = "font-size: 1.5em; -ah-text-autospace: ideograph-numeric ideograph-alpha;">
+				漢0漢X漢(漢)漢[漢]漢{漢}漢
+			</div>
+			<div class = "demoHeader">
+				ideograph-parenthesis
+			</div>
+			<div style = "font-size: 1.5em; -ah-text-autospace: ideograph-parenthesis;">
+				漢0漢X漢(漢)漢[漢]漢{漢}漢
+			</div>
+			
+			
+			<div class = "demoHeader" style = "margin-top: 5em;">
+				ideograph-numeric + ideograph-alpha + ideograph-parenthesis, -ah-text-autospace-width: 0.125em
+			</div>
+			<div style = "font-size: 1.5em; -ah-text-autospace: ideograph-numeric ideograph-alpha ideograph-parenthesis; -ah-text-autospace-width: 0.125em;">
+				漢0漢X漢(漢)漢[漢]漢{漢}漢
+			</div>
+			<div class = "demoHeader">
+				ideograph-numeric + ideograph-alpha + ideograph-parenthesis,  -ah-text-autospace-width: 0.25em
+			</div>
+			<div style = "font-size: 1.5em; -ah-text-autospace: ideograph-numeric ideograph-alpha ideograph-parenthesis; -ah-text-autospace-width: 0.25em;">
+				漢0漢X漢(漢)漢[漢]漢{漢}漢
+			</div>
+			<div class = "demoHeader">
+				ideograph-numeric + ideograph-alpha + ideograph-parenthesis, -ah-text-autospace-width: 0.5em
+			</div>
+			<div style = "font-size: 1.5em; -ah-text-autospace: ideograph-numeric ideograph-alpha ideograph-parenthesis; -ah-text-autospace-width: 0.5em;">
+				漢0漢X漢(漢)漢[漢]漢{漢}漢
+			</div>
+			
+		</div>
+	</body>
+
+</html>

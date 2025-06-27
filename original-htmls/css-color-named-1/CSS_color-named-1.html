@@ -1,0 +1,3849 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 210mm;
+					page-width: 297mm;
+					@bottom-right
+					{
+						content: "";
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				table
+				{
+					background-color: white;
+					-ah-margin-before: 1em;
+					width: 100%;
+				}
+				tr
+				{
+					border: 2.75pt solid transparent;
+				}
+				td
+				{
+					padding: 0 0.2em;
+					border: 0.75pt solid black;
+					color: from-table-column();
+					text-align: from-table-column();
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Named colors
+		</div>
+		<div class="subheading">
+				XSL 1.1 defines 16 color keywords: ‘aqua’, ‘black’, ‘blue’, ‘fuchsia’, ‘gray’, ‘green’, ‘lime’, ‘maroon’, ‘navy’, ‘olive’, ‘purple’, ‘red’, ‘silver’, ‘teal’, ‘white’, and ‘yellow’. Antenna House Formatter also supports the 131 extended color names from CSS Color Module Level 3 (and SVG 1.0) plus ‘rebeccapurple’ that is defined in CSS Color Module Level 4.
+		</div>
+		<div>
+			The rows in the following table show each named color used as the background color for black, gray, and white text and as the text color with black, gray, and white backgrounds.
+		</div>
+		<table>
+			<colgroup>
+				<col span = 1 style = "border: 3pt solid transparent; column-width: 5em;">
+				<col span = 1 style = "border: 3pt solid transparent; column-width: 5em;">
+				<col span = 1 style = "color:black; text-align: center;">
+				<col span = 1 style = "color: gray; text-align: center;">
+				<col span = 1 style = "color: white; text-align: center;">
+				<col span = 1 style = "color: black; text-align: center;">
+				<col span = 1 style = "color: gray; text-align: center;">
+				<col span = 1 style = "color: white; text-align: center;">
+			</colgroup>
+			<tr>
+				<td style = "background-color: aliceblue;">
+				
+				</td>
+				<td style="border: none;">
+					'aliceblue'
+				</td>
+				<td style="background-color: aliceblue;">
+					aliceblue
+				</td>
+				<td style="background-color: aliceblue;">
+					aliceblue
+				</td>
+				<td style="background-color: aliceblue;">
+					aliceblue
+				</td>
+				<td style="color: aliceblue; background-color: from-table-column('color');">
+					aliceblue
+				</td>
+				<td style="color: aliceblue; background-color: from-table-column('color');">
+					aliceblue
+				</td>
+				<td style="color: aliceblue; background-color: from-table-column('color');">
+					aliceblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: antiquewhite;">
+				
+				</td>
+				<td style="border: none;">
+					'antiquewhite'
+				</td>
+				<td style="background-color: antiquewhite;">
+					aliceblue
+				</td>
+				<td style="background-color: antiquewhite;">
+					aliceblue
+				</td>
+				<td style="background-color: antiquewhite;">
+					aliceblue
+				</td>
+				<td style="color: antiquewhite; background-color: from-table-column('color');">
+					aliceblue
+				</td>
+				<td style="color: antiquewhite; background-color: from-table-column('color');">
+					aliceblue
+				</td>
+				<td style="color: antiquewhite; background-color: from-table-column('color');">
+					aliceblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: aqua;">
+				
+				</td>
+				<td style="border: none;">
+					'aqua'
+				</td>
+				<td style="background-color: aqua;">
+					aqua
+				</td>
+				<td style="background-color: aqua;">
+					aqua
+				</td>
+				<td style="background-color: aqua;">
+					aqua
+				</td>
+				<td style="color: aqua; background-color: from-table-column('color');">
+					aqua
+				</td>
+				<td style="color: aqua; background-color: from-table-column('color');">
+					aqua
+				</td>
+				<td style="color: aqua; background-color: from-table-column('color');">
+					aqua
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: aquamarine;">
+				
+				</td>
+				<td style="border: none;">
+					'aquamarine'
+				</td>
+				<td style="background-color: aquamarine;">
+					aquamarine
+				</td>
+				<td style="background-color: aquamarine;">
+					aquamarine
+				</td>
+				<td style="background-color: aquamarine;">
+					aquamarine
+				</td>
+				<td style="color: aquamarine; background-color: from-table-column('color');">
+					aquamarine
+				</td>
+				<td style="color: aquamarine; background-color: from-table-column('color');">
+					aquamarine
+				</td>
+				<td style="color: aquamarine; background-color: from-table-column('color');">
+					aquamarine
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: azure;">
+				
+				</td>
+				<td style="border: none;">
+					'azure'
+				</td>
+				<td style="background-color: azure;">
+					azure
+				</td>
+				<td style="background-color: azure;">
+					azure
+				</td>
+				<td style="background-color: azure;">
+					azure
+				</td>
+				<td style="color: azure; background-color: from-table-column('color');">
+					azure
+				</td>
+				<td style="color: azure; background-color: from-table-column('color');">
+					azure
+				</td>
+				<td style="color: azure; background-color: from-table-column('color');">
+					azure
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: beige;">
+				
+				</td>
+				<td style="border: none;">
+					'beige'
+				</td>
+				<td style="background-color: beige;">
+					beige
+				</td>
+				<td style="background-color: beige;">
+					beige
+				</td>
+				<td style="background-color: beige;">
+					beige
+				</td>
+				<td style="color: beige; background-color: from-table-column('color');">
+					beige
+				</td>
+				<td style="color: beige; background-color: from-table-column('color');">
+					beige
+				</td>
+				<td style="color: beige; background-color: from-table-column('color');">
+					beige
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: bisque;">
+				
+				</td>
+				<td style="border: none;">
+					'bisque'
+				</td>
+				<td style="background-color: bisque;">
+					bisque
+				</td>
+				<td style="background-color: bisque;">
+					bisque
+				</td>
+				<td style="background-color: bisque;">
+					bisque
+				</td>
+				<td style="color: bisque; background-color: from-table-column('color');">
+					bisque
+				</td>
+				<td style="color: bisque; background-color: from-table-column('color');">
+					bisque
+				</td>
+				<td style="color: bisque; background-color: from-table-column('color');">
+					bisque
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: black;">
+				
+				</td>
+				<td style="border: none;">
+					'black'
+				</td>
+				<td style="background-color: black;">
+					black
+				</td>
+				<td style="background-color: black;">
+					black
+				</td>
+				<td style="background-color: black;">
+					black
+				</td>
+				<td style="color: black; background-color: from-table-column('color');">
+					black
+				</td>
+				<td style="color: black; background-color: from-table-column('color');">
+					black
+				</td>
+				<td style="color: black; background-color: from-table-column('color');">
+					black
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: blanchedalmond;">
+				
+				</td>
+				<td style="border: none;">
+					'blanchedalmond'
+				</td>
+				<td style="background-color: blanchedalmond;">
+					blanchedalmond
+				</td>
+				<td style="background-color: blanchedalmond;">
+					blanchedalmond
+				</td>
+				<td style="background-color: blanchedalmond;">
+					blanchedalmond
+				</td>
+				<td style="color: blanchedalmond; background-color: from-table-column('color');">
+					blanchedalmond
+				</td>
+				<td style="color: blanchedalmond; background-color: from-table-column('color');">
+					blanchedalmond
+				</td>
+				<td style="color: blanchedalmond; background-color: from-table-column('color');">
+					blanchedalmond
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: blue;">
+				
+				</td>
+				<td style="border: none;">
+					'blue'
+				</td>
+				<td style="background-color: blue;">
+					blue
+				</td>
+				<td style="background-color: blue;">
+					blue
+				</td>
+				<td style="background-color: blue;">
+					blue
+				</td>
+				<td style="color: blue; background-color: from-table-column('color');">
+					blue
+				</td>
+				<td style="color: blue; background-color: from-table-column('color');">
+					blue
+				</td>
+				<td style="color: blue; background-color: from-table-column('color');">
+					blue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: blueviolet;">
+				
+				</td>
+				<td style="border: none;">
+					'blueviolet'
+				</td>
+				<td style="background-color: blueviolet;">
+					blueviolet
+				</td>
+				<td style="background-color: blueviolet;">
+					blueviolet
+				</td>
+				<td style="background-color: blueviolet;">
+					blueviolet
+				</td>
+				<td style="color: blueviolet; background-color: from-table-column('color');">
+					blueviolet
+				</td>
+				<td style="color: blueviolet; background-color: from-table-column('color');">
+					blueviolet
+				</td>
+				<td style="color: blueviolet; background-color: from-table-column('color');">
+					blueviolet
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: brown;">
+				
+				</td>
+				<td style="border: none;">
+					'brown'
+				</td>
+				<td style="background-color: brown;">
+					brown
+				</td>
+				<td style="background-color: brown;">
+					brown
+				</td>
+				<td style="background-color: brown;">
+					brown
+				</td>
+				<td style="color: brown; background-color: from-table-column('color');">
+					brown
+				</td>
+				<td style="color: brown; background-color: from-table-column('color');">
+					brown
+				</td>
+				<td style="color: brown; background-color: from-table-column('color');">
+					brown
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: burlywood;">
+				
+				</td>
+				<td style="border: none;">
+					'burlywood'
+				</td>
+				<td style="background-color: burlywood;">
+					burlywood
+				</td>
+				<td style="background-color: burlywood;">
+					burlywood
+				</td>
+				<td style="background-color: burlywood;">
+					burlywood
+				</td>
+				<td style="color: burlywood; background-color: from-table-column('color');">
+					burlywood
+				</td>
+				<td style="color: burlywood; background-color: from-table-column('color');">
+					burlywood
+				</td>
+				<td style="color: burlywood; background-color: from-table-column('color');">
+					burlywood
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: cadetblue;">
+				
+				</td>
+				<td style="border: none;">
+					'cadetblue'
+				</td>
+				<td style="background-color: cadetblue;">
+					cadetblue
+				</td>
+				<td style="background-color: cadetblue;">
+					cadetblue
+				</td>
+				<td style="background-color: cadetblue;">
+					cadetblue
+				</td>
+				<td style="color: cadetblue; background-color: from-table-column('color');">
+					cadetblue
+				</td>
+				<td style="color: cadetblue; background-color: from-table-column('color');">
+					cadetblue
+				</td>
+				<td style="color: cadetblue; background-color: from-table-column('color');">
+					cadetblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: chartreuse;">
+				
+				</td>
+				<td style="border: none;">
+					'chartreuse'
+				</td>
+				<td style="background-color: chartreuse;">
+					chartreuse
+				</td>
+				<td style="background-color: chartreuse;">
+					chartreuse
+				</td>
+				<td style="background-color: chartreuse;">
+					chartreuse
+				</td>
+				<td style="color: chartreuse; background-color: from-table-column('color');">
+					chartreuse
+				</td>
+				<td style="color: chartreuse; background-color: from-table-column('color');">
+					chartreuse
+				</td>
+				<td style="color: chartreuse; background-color: from-table-column('color');">
+					chartreuse
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: chocolate;">
+				
+				</td>
+				<td style="border: none;">
+					'chocolate'
+				</td>
+				<td style="background-color: chocolate;">
+					chocolate
+				</td>
+				<td style="background-color: chocolate;">
+					chocolate
+				</td>
+				<td style="background-color: chocolate;">
+					chocolate
+				</td>
+				<td style="color: chocolate; background-color: from-table-column('color');">
+					chocolate
+				</td>
+				<td style="color: chocolate; background-color: from-table-column('color');">
+					chocolate
+				</td>
+				<td style="color: chocolate; background-color: from-table-column('color');">
+					chocolate
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: coral;">
+				
+				</td>
+				<td style="border: none;">
+					'coral'
+				</td>
+				<td style="background-color: coral;">
+					coral
+				</td>
+				<td style="background-color: coral;">
+					coral
+				</td>
+				<td style="background-color: coral;">
+					coral
+				</td>
+				<td style="color: coral; background-color: from-table-column('color');">
+					coral
+				</td>
+				<td style="color: coral; background-color: from-table-column('color');">
+					coral
+				</td>
+				<td style="color: coral; background-color: from-table-column('color');">
+					coral
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: cornflowerblue;">
+				
+				</td>
+				<td style="border: none;">
+					'cornflowerblue'
+				</td>
+				<td style="background-color: cornflowerblue;">
+					cornflowerblue
+				</td>
+				<td style="background-color: cornflowerblue;">
+					cornflowerblue
+				</td>
+				<td style="background-color: cornflowerblue;">
+					cornflowerblue
+				</td>
+				<td style="color: cornflowerblue; background-color: from-table-column('color');">
+					cornflowerblue
+				</td>
+				<td style="color: cornflowerblue; background-color: from-table-column('color');">
+					cornflowerblue
+				</td>
+				<td style="color: cornflowerblue; background-color: from-table-column('color');">
+					cornflowerblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: cornsilk;">
+				
+				</td>
+				<td style="border: none;">
+					'cornsilk'
+				</td>
+				<td style="background-color: cornsilk;">
+					cornsilk
+				</td>
+				<td style="background-color: cornsilk;">
+					cornsilk
+				</td>
+				<td style="background-color: cornsilk;">
+					cornsilk
+				</td>
+				<td style="color: cornsilk; background-color: from-table-column('color');">
+					cornsilk
+				</td>
+				<td style="color: cornsilk; background-color: from-table-column('color');">
+					cornsilk
+				</td>
+				<td style="color: cornsilk; background-color: from-table-column('color');">
+					cornsilk
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: crimson;">
+				
+				</td>
+				<td style="border: none;">
+					'crimson'
+				</td>
+				<td style="background-color: crimson;">
+					crimson
+				</td>
+				<td style="background-color: crimson;">
+					crimson
+				</td>
+				<td style="background-color: crimson;">
+					crimson
+				</td>
+				<td style="color: crimson; background-color: from-table-column('color');">
+					crimson
+				</td>
+				<td style="color: crimson; background-color: from-table-column('color');">
+					crimson
+				</td>
+				<td style="color: crimson; background-color: from-table-column('color');">
+					crimson
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: cyan;">
+				
+				</td>
+				<td style="border: none;">
+					'cyan'
+				</td>
+				<td style="background-color: cyan;">
+					cyan
+				</td>
+				<td style="background-color: cyan;">
+					cyan
+				</td>
+				<td style="background-color: cyan;">
+					cyan
+				</td>
+				<td style="color: cyan; background-color: from-table-column('color');">
+					cyan
+				</td>
+				<td style="color: cyan; background-color: from-table-column('color');">
+					cyan
+				</td>
+				<td style="color: cyan; background-color: from-table-column('color');">
+					cyan
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkblue;">
+				
+				</td>
+				<td style="border: none;">
+					'darkblue'
+				</td>
+				<td style="background-color: darkblue;">
+					darkblue
+				</td>
+				<td style="background-color: darkblue;">
+					darkblue
+				</td>
+				<td style="background-color: darkblue;">
+					darkblue
+				</td>
+				<td style="color: darkblue; background-color: from-table-column('color');">
+					darkblue
+				</td>
+				<td style="color: darkblue; background-color: from-table-column('color');">
+					darkblue
+				</td>
+				<td style="color: darkblue; background-color: from-table-column('color');">
+					darkblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkcyan;">
+				
+				</td>
+				<td style="border: none;">
+					'darkcyan'
+				</td>
+				<td style="background-color: darkcyan;">
+					darkcyan
+				</td>
+				<td style="background-color: darkcyan;">
+					darkcyan
+				</td>
+				<td style="background-color: darkcyan;">
+					darkcyan
+				</td>
+				<td style="color: darkcyan; background-color: from-table-column('color');">
+					darkcyan
+				</td>
+				<td style="color: darkcyan; background-color: from-table-column('color');">
+					darkcyan
+				</td>
+				<td style="color: darkcyan; background-color: from-table-column('color');">
+					darkcyan
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkgoldenrod;">
+				
+				</td>
+				<td style="border: none;">
+					'darkgoldenrod'
+				</td>
+				<td style="background-color: darkgoldenrod;">
+					darkgoldenrod
+				</td>
+				<td style="background-color: darkgoldenrod;">
+					darkgoldenrod
+				</td>
+				<td style="background-color: darkgoldenrod;">
+					darkgoldenrod
+				</td>
+				<td style="color: darkgoldenrod; background-color: from-table-column('color');">
+					darkgoldenrod
+				</td>
+				<td style="color: darkgoldenrod; background-color: from-table-column('color');">
+					darkgoldenrod
+				</td>
+				<td style="color: darkgoldenrod; background-color: from-table-column('color');">
+					darkgoldenrod
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkgray;">
+				
+				</td>
+				<td style="border: none;">
+					'darkgray'
+				</td>
+				<td style="background-color: darkgray;">
+					darkgray
+				</td>
+				<td style="background-color: darkgray;">
+					darkgray
+				</td>
+				<td style="background-color: darkgray;">
+					darkgray
+				</td>
+				<td style="color: darkgray; background-color: from-table-column('color');">
+					darkgray
+				</td>
+				<td style="color: darkgray; background-color: from-table-column('color');">
+					darkgray
+				</td>
+				<td style="color: darkgray; background-color: from-table-column('color');">
+					darkgray
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkgreen;">
+				
+				</td>
+				<td style="border: none;">
+					'darkgreen'
+				</td>
+				<td style="background-color: darkgreen;">
+					darkgreen
+				</td>
+				<td style="background-color: darkgreen;">
+					darkgreen
+				</td>
+				<td style="background-color: darkgreen;">
+					darkgreen
+				</td>
+				<td style="color: darkgreen; background-color: from-table-column('color');">
+					darkgreen
+				</td>
+				<td style="color: darkgreen; background-color: from-table-column('color');">
+					darkgreen
+				</td>
+				<td style="color: darkgreen; background-color: from-table-column('color');">
+					darkgreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkmagenta;">
+				
+				</td>
+				<td style="border: none;">
+					'darkmagenta'
+				</td>
+				<td style="background-color: darkmagenta;">
+					darkmagenta
+				</td>
+				<td style="background-color: darkmagenta;">
+					darkmagenta
+				</td>
+				<td style="background-color: darkmagenta;">
+					darkmagenta
+				</td>
+				<td style="color: darkmagenta; background-color: from-table-column('color');">
+					darkmagenta
+				</td>
+				<td style="color: darkmagenta; background-color: from-table-column('color');">
+					darkmagenta
+				</td>
+				<td style="color: darkmagenta; background-color: from-table-column('color');">
+					darkmagenta
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkolivegreen;">
+				
+				</td>
+				<td style="border: none;">
+					'darkolivegreen'
+				</td>
+				<td style="background-color: darkolivegreen;">
+					darkolivegreen
+				</td>
+				<td style="background-color: darkolivegreen;">
+					darkolivegreen
+				</td>
+				<td style="background-color: darkolivegreen;">
+					darkolivegreen
+				</td>
+				<td style="color: darkolivegreen; background-color: from-table-column('color');">
+					darkolivegreen
+				</td>
+				<td style="color: darkolivegreen; background-color: from-table-column('color');">
+					darkolivegreen
+				</td>
+				<td style="color: darkolivegreen; background-color: from-table-column('color');">
+					darkolivegreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkorange;">
+				
+				</td>
+				<td style="border: none;">
+					'darkorange'
+				</td>
+				<td style="background-color: darkorange;">
+					darkorange
+				</td>
+				<td style="background-color: darkorange;">
+					darkorange
+				</td>
+				<td style="background-color: darkorange;">
+					darkorange
+				</td>
+				<td style="color: darkorange; background-color: from-table-column('color');">
+					darkorange
+				</td>
+				<td style="color: darkorange; background-color: from-table-column('color');">
+					darkorange
+				</td>
+				<td style="color: darkorange; background-color: from-table-column('color');">
+					darkorange
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkorchid;">
+				
+				</td>
+				<td style="border: none;">
+					'darkorchid'
+				</td>
+				<td style="background-color: darkorchid;">
+					darkorchid
+				</td>
+				<td style="background-color: darkorchid;">
+					darkorchid
+				</td>
+				<td style="background-color: darkorchid;">
+					darkorchid
+				</td>
+				<td style="color: darkorchid; background-color: from-table-column('color');">
+					darkorchid
+				</td>
+				<td style="color: darkorchid; background-color: from-table-column('color');">
+					darkorchid
+				</td>
+				<td style="color: darkorchid; background-color: from-table-column('color');">
+					darkorchid
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkred;">
+				
+				</td>
+				<td style="border: none;">
+					'darkred'
+				</td>
+				<td style="background-color: darkred;">
+					darkred
+				</td>
+				<td style="background-color: darkred;">
+					darkred
+				</td>
+				<td style="background-color: darkred;">
+					darkred
+				</td>
+				<td style="color: darkred; background-color: from-table-column('color');">
+					darkred
+				</td>
+				<td style="color: darkred; background-color: from-table-column('color');">
+					darkred
+				</td>
+				<td style="color: darkred; background-color: from-table-column('color');">
+					darkred
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darksalmon;">
+				
+				</td>
+				<td style="border: none;">
+					'darksalmon'
+				</td>
+				<td style="background-color: darksalmon;">
+					darksalmon
+				</td>
+				<td style="background-color: darksalmon;">
+					darksalmon
+				</td>
+				<td style="background-color: darksalmon;">
+					darksalmon
+				</td>
+				<td style="color: darksalmon; background-color: from-table-column('color');">
+					darksalmon
+				</td>
+				<td style="color: darksalmon; background-color: from-table-column('color');">
+					darksalmon
+				</td>
+				<td style="color: darksalmon; background-color: from-table-column('color');">
+					darksalmon
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkseagreen;">
+				
+				</td>
+				<td style="border: none;">
+					'darkseagreen'
+				</td>
+				<td style="background-color: darkseagreen;">
+					darkseagreen
+				</td>
+				<td style="background-color: darkseagreen;">
+					darkseagreen
+				</td>
+				<td style="background-color: darkseagreen;">
+					darkseagreen
+				</td>
+				<td style="color: darkseagreen; background-color: from-table-column('color');">
+					darkseagreen
+				</td>
+				<td style="color: darkseagreen; background-color: from-table-column('color');">
+					darkseagreen
+				</td>
+				<td style="color: darkseagreen; background-color: from-table-column('color');">
+					darkseagreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkslateblue;">
+				
+				</td>
+				<td style="border: none;">
+					'darkslateblue'
+				</td>
+				<td style="background-color: darkslateblue;">
+					darkslateblue
+				</td>
+				<td style="background-color: darkslateblue;">
+					darkslateblue
+				</td>
+				<td style="background-color: darkslateblue;">
+					darkslateblue
+				</td>
+				<td style="color: darkslateblue; background-color: from-table-column('color');">
+					darkslateblue
+				</td>
+				<td style="color: darkslateblue; background-color: from-table-column('color');">
+					darkslateblue
+				</td>
+				<td style="color: darkslateblue; background-color: from-table-column('color');">
+					darkslateblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkslategray;">
+				
+				</td>
+				<td style="border: none;">
+					'darkslategray'
+				</td>
+				<td style="background-color: darkslategray;">
+					darkslategray
+				</td>
+				<td style="background-color: darkslategray;">
+					darkslategray
+				</td>
+				<td style="background-color: darkslategray;">
+					darkslategray
+				</td>
+				<td style="color: darkslategray; background-color: from-table-column('color');">
+					darkslategray
+				</td>
+				<td style="color: darkslategray; background-color: from-table-column('color');">
+					darkslategray
+				</td>
+				<td style="color: darkslategray; background-color: from-table-column('color');">
+					darkslategray
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkturquoise;">
+				
+				</td>
+				<td style="border: none;">
+					'darkturquoise'
+				</td>
+				<td style="background-color: darkturquoise;">
+					darkturquoise
+				</td>
+				<td style="background-color: darkturquoise;">
+					darkturquoise
+				</td>
+				<td style="background-color: darkturquoise;">
+					darkturquoise
+				</td>
+				<td style="color: darkturquoise; background-color: from-table-column('color');">
+					darkturquoise
+				</td>
+				<td style="color: darkturquoise; background-color: from-table-column('color');">
+					darkturquoise
+				</td>
+				<td style="color: darkturquoise; background-color: from-table-column('color');">
+					darkturquoise
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: darkviolet;">
+				
+				</td>
+				<td style="border: none;">
+					'darkviolet'
+				</td>
+				<td style="background-color: darkviolet;">
+					darkviolet
+				</td>
+				<td style="background-color: darkviolet;">
+					darkviolet
+				</td>
+				<td style="background-color: darkviolet;">
+					darkviolet
+				</td>
+				<td style="color: darkviolet; background-color: from-table-column('color');">
+					darkviolet
+				</td>
+				<td style="color: darkviolet; background-color: from-table-column('color');">
+					darkviolet
+				</td>
+				<td style="color: darkviolet; background-color: from-table-column('color');">
+					darkviolet
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: deeppink;">
+				
+				</td>
+				<td style="border: none;">
+					'deeppink'
+				</td>
+				<td style="background-color: deeppink;">
+					deeppink
+				</td>
+				<td style="background-color: deeppink;">
+					deeppink
+				</td>
+				<td style="background-color: deeppink;">
+					deeppink
+				</td>
+				<td style="color: deeppink; background-color: from-table-column('color');">
+					deeppink
+				</td>
+				<td style="color: deeppink; background-color: from-table-column('color');">
+					deeppink
+				</td>
+				<td style="color: deeppink; background-color: from-table-column('color');">
+					deeppink
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: deepskyblue;">
+				
+				</td>
+				<td style="border: none;">
+					'deepskyblue'
+				</td>
+				<td style="background-color: deepskyblue;">
+					deepskyblue
+				</td>
+				<td style="background-color: deepskyblue;">
+					deepskyblue
+				</td>
+				<td style="background-color: deepskyblue;">
+					deepskyblue
+				</td>
+				<td style="color: deepskyblue; background-color: from-table-column('color');">
+					deepskyblue
+				</td>
+				<td style="color: deepskyblue; background-color: from-table-column('color');">
+					deepskyblue
+				</td>
+				<td style="color: deepskyblue; background-color: from-table-column('color');">
+					deepskyblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: dimgrey;">
+				
+				</td>
+				<td style="border: none;">
+					'dimgrey'
+				</td>
+				<td style="background-color: dimgrey;">
+					dimgrey
+				</td>
+				<td style="background-color: dimgrey;">
+					dimgrey
+				</td>
+				<td style="background-color: dimgrey;">
+					dimgrey
+				</td>
+				<td style="color: dimgrey; background-color: from-table-column('color');">
+					dimgrey
+				</td>
+				<td style="color: dimgrey; background-color: from-table-column('color');">
+					dimgrey
+				</td>
+				<td style="color: dimgrey; background-color: from-table-column('color');">
+					dimgrey
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: dimgray;">
+				
+				</td>
+				<td style="border: none;">
+					'dimgray'
+				</td>
+				<td style="background-color: dimgray;">
+					dimgray
+				</td>
+				<td style="background-color: dimgray;">
+					dimgray
+				</td>
+				<td style="background-color: dimgray;">
+					dimgray
+				</td>
+				<td style="color: dimgray; background-color: from-table-column('color');">
+					dimgray
+				</td>
+				<td style="color: dimgray; background-color: from-table-column('color');">
+					dimgray
+				</td>
+				<td style="color: dimgray; background-color: from-table-column('color');">
+					dimgray
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: dodgerblue;">
+				
+				</td>
+				<td style="border: none;">
+					'dodgerblue'
+				</td>
+				<td style="background-color: dodgerblue;">
+					dodgerblue
+				</td>
+				<td style="background-color: dodgerblue;">
+					dodgerblue
+				</td>
+				<td style="background-color: dodgerblue;">
+					dodgerblue
+				</td>
+				<td style="color: dodgerblue; background-color: from-table-column('color');">
+					dodgerblue
+				</td>
+				<td style="color: dodgerblue; background-color: from-table-column('color');">
+					dodgerblue
+				</td>
+				<td style="color: dodgerblue; background-color: from-table-column('color');">
+					dodgerblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: firebrick;">
+				
+				</td>
+				<td style="border: none;">
+					'firebrick'
+				</td>
+				<td style="background-color: firebrick;">
+					firebrick
+				</td>
+				<td style="background-color: firebrick;">
+					firebrick
+				</td>
+				<td style="background-color: firebrick;">
+					firebrick
+				</td>
+				<td style="color: firebrick; background-color: from-table-column('color');">
+					firebrick
+				</td>
+				<td style="color: firebrick; background-color: from-table-column('color');">
+					firebrick
+				</td>
+				<td style="color: firebrick; background-color: from-table-column('color');">
+					firebrick
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: floralwhite;">
+				
+				</td>
+				<td style="border: none;">
+					'floralwhite'
+				</td>
+				<td style="background-color: floralwhite;">
+					floralwhite
+				</td>
+				<td style="background-color: floralwhite;">
+					floralwhite
+				</td>
+				<td style="background-color: floralwhite;">
+					floralwhite
+				</td>
+				<td style="color: floralwhite; background-color: from-table-column('color');">
+					floralwhite
+				</td>
+				<td style="color: floralwhite; background-color: from-table-column('color');">
+					floralwhite
+				</td>
+				<td style="color: floralwhite; background-color: from-table-column('color');">
+					floralwhite
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: forestgreen;">
+				
+				</td>
+				<td style="border: none;">
+					'forestgreen'
+				</td>
+				<td style="background-color: forestgreen;">
+					forestgreen
+				</td>
+				<td style="background-color: forestgreen;">
+					forestgreen
+				</td>
+				<td style="background-color: forestgreen;">
+					forestgreen
+				</td>
+				<td style="color: forestgreen; background-color: from-table-column('color');">
+					forestgreen
+				</td>
+				<td style="color: forestgreen; background-color: from-table-column('color');">
+					forestgreen
+				</td>
+				<td style="color: forestgreen; background-color: from-table-column('color');">
+					forestgreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: fuchsia;">
+				
+				</td>
+				<td style="border: none;">
+					'fuchsia'
+				</td>
+				<td style="background-color: fuchsia;">
+					fuchsia
+				</td>
+				<td style="background-color: fuchsia;">
+					fuchsia
+				</td>
+				<td style="background-color: fuchsia;">
+					fuchsia
+				</td>
+				<td style="color: fuchsia; background-color: from-table-column('color');">
+					fuchsia
+				</td>
+				<td style="color: fuchsia; background-color: from-table-column('color');">
+					fuchsia
+				</td>
+				<td style="color: fuchsia; background-color: from-table-column('color');">
+					fuchsia
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: gainsboro;">
+				
+				</td>
+				<td style="border: none;">
+					'gainsboro'
+				</td>
+				<td style="background-color: gainsboro;">
+					gainsboro
+				</td>
+				<td style="background-color: gainsboro;">
+					gainsboro
+				</td>
+				<td style="background-color: gainsboro;">
+					gainsboro
+				</td>
+				<td style="color: gainsboro; background-color: from-table-column('color');">
+					gainsboro
+				</td>
+				<td style="color: gainsboro; background-color: from-table-column('color');">
+					gainsboro
+				</td>
+				<td style="color: gainsboro; background-color: from-table-column('color');">
+					gainsboro
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: ghostwhite;">
+				
+				</td>
+				<td style="border: none;">
+					'ghostwhite'
+				</td>
+				<td style="background-color: ghostwhite;">
+					ghostwhite
+				</td>
+				<td style="background-color: ghostwhite;">
+					ghostwhite
+				</td>
+				<td style="background-color: ghostwhite;">
+					ghostwhite
+				</td>
+				<td style="color: ghostwhite; background-color: from-table-column('color');">
+					ghostwhite
+				</td>
+				<td style="color: ghostwhite; background-color: from-table-column('color');">
+					ghostwhite
+				</td>
+				<td style="color: ghostwhite; background-color: from-table-column('color');">
+					ghostwhite
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: gold;">
+				
+				</td>
+				<td style="border: none;">
+					'gold'
+				</td>
+				<td style="background-color: gold;">
+					gold
+				</td>
+				<td style="background-color: gold;">
+					gold
+				</td>
+				<td style="background-color: gold;">
+					gold
+				</td>
+				<td style="color: gold; background-color: from-table-column('color');">
+					gold
+				</td>
+				<td style="color: gold; background-color: from-table-column('color');">
+					gold
+				</td>
+				<td style="color: gold; background-color: from-table-column('color');">
+					gold
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: goldenrod;">
+				
+				</td>
+				<td style="border: none;">
+					'goldenrod'
+				</td>
+				<td style="background-color: goldenrod;">
+					goldenrod
+				</td>
+				<td style="background-color: goldenrod;">
+					goldenrod
+				</td>
+				<td style="background-color: goldenrod;">
+					goldenrod
+				</td>
+				<td style="color: goldenrod; background-color: from-table-column('color');">
+					goldenrod
+				</td>
+				<td style="color: goldenrod; background-color: from-table-column('color');">
+					goldenrod
+				</td>
+				<td style="color: goldenrod; background-color: from-table-column('color');">
+					goldenrod
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: gray;">
+				
+				</td>
+				<td style="border: none;">
+					'gray'
+				</td>
+				<td style="background-color: gray;">
+					gray
+				</td>
+				<td style="background-color: gray;">
+					gray
+				</td>
+				<td style="background-color: gray;">
+					gray
+				</td>
+				<td style="color: gray; background-color: from-table-column('color');">
+					gray
+				</td>
+				<td style="color: gray; background-color: from-table-column('color');">
+					gray
+				</td>
+				<td style="color: gray; background-color: from-table-column('color');">
+					gray
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: green;">
+				
+				</td>
+				<td style="border: none;">
+					'green'
+				</td>
+				<td style="background-color: green;">
+					green
+				</td>
+				<td style="background-color: green;">
+					green
+				</td>
+				<td style="background-color: green;">
+					green
+				</td>
+				<td style="color: green; background-color: from-table-column('color');">
+					green
+				</td>
+				<td style="color: green; background-color: from-table-column('color');">
+					green
+				</td>
+				<td style="color: green; background-color: from-table-column('color');">
+					green
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: greenyellow;">
+				
+				</td>
+				<td style="border: none;">
+					'greenyellow'
+				</td>
+				<td style="background-color: greenyellow;">
+					greenyellow
+				</td>
+				<td style="background-color: greenyellow;">
+					greenyellow
+				</td>
+				<td style="background-color: greenyellow;">
+					greenyellow
+				</td>
+				<td style="color: greenyellow; background-color: from-table-column('color');">
+					greenyellow
+				</td>
+				<td style="color: greenyellow; background-color: from-table-column('color');">
+					greenyellow
+				</td>
+				<td style="color: greenyellow; background-color: from-table-column('color');">
+					greenyellow
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: grey;">
+				
+				</td>
+				<td style="border: none;">
+					'grey'
+				</td>
+				<td style="background-color: grey;">
+					grey
+				</td>
+				<td style="background-color: grey;">
+					grey
+				</td>
+				<td style="background-color: grey;">
+					grey
+				</td>
+				<td style="color: grey; background-color: from-table-column('color');">
+					grey
+				</td>
+				<td style="color: grey; background-color: from-table-column('color');">
+					grey
+				</td>
+				<td style="color: grey; background-color: from-table-column('color');">
+					grey
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: honeydew;">
+				
+				</td>
+				<td style="border: none;">
+					'honeydew'
+				</td>
+				<td style="background-color: honeydew;">
+					honeydew
+				</td>
+				<td style="background-color: honeydew;">
+					honeydew
+				</td>
+				<td style="background-color: honeydew;">
+					honeydew
+				</td>
+				<td style="color: honeydew; background-color: from-table-column('color');">
+					honeydew
+				</td>
+				<td style="color: honeydew; background-color: from-table-column('color');">
+					honeydew
+				</td>
+				<td style="color: honeydew; background-color: from-table-column('color');">
+					honeydew
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: hotpink;">
+				
+				</td>
+				<td style="border: none;">
+					'hotpink'
+				</td>
+				<td style="background-color: hotpink;">
+					hotpink
+				</td>
+				<td style="background-color: hotpink;">
+					hotpink
+				</td>
+				<td style="background-color: hotpink;">
+					hotpink
+				</td>
+				<td style="color: hotpink; background-color: from-table-column('color');">
+					hotpink
+				</td>
+				<td style="color: hotpink; background-color: from-table-column('color');">
+					hotpink
+				</td>
+				<td style="color: hotpink; background-color: from-table-column('color');">
+					hotpink
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: indianred;">
+				
+				</td>
+				<td style="border: none;">
+					'indianred'
+				</td>
+				<td style="background-color: indianred;">
+					indianred
+				</td>
+				<td style="background-color: indianred;">
+					indianred
+				</td>
+				<td style="background-color: indianred;">
+					indianred
+				</td>
+				<td style="color: indianred; background-color: from-table-column('color');">
+					indianred
+				</td>
+				<td style="color: indianred; background-color: from-table-column('color');">
+					indianred
+				</td>
+				<td style="color: indianred; background-color: from-table-column('color');">
+					indianred
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: indigo;">
+				
+				</td>
+				<td style="border: none;">
+					'indigo'
+				</td>
+				<td style="background-color: indigo;">
+					indigo
+				</td>
+				<td style="background-color: indigo;">
+					indigo
+				</td>
+				<td style="background-color: indigo;">
+					indigo
+				</td>
+				<td style="color: indigo; background-color: from-table-column('color');">
+					indigo
+				</td>
+				<td style="color: indigo; background-color: from-table-column('color');">
+					indigo
+				</td>
+				<td style="color: indigo; background-color: from-table-column('color');">
+					indigo
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: ivory;">
+				
+				</td>
+				<td style="border: none;">
+					'ivory'
+				</td>
+				<td style="background-color: ivory;">
+					ivory
+				</td>
+				<td style="background-color: ivory;">
+					ivory
+				</td>
+				<td style="background-color: ivory;">
+					ivory
+				</td>
+				<td style="color: ivory; background-color: from-table-column('color');">
+					ivory
+				</td>
+				<td style="color: ivory; background-color: from-table-column('color');">
+					ivory
+				</td>
+				<td style="color: ivory; background-color: from-table-column('color');">
+					ivory
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: khaki;">
+				
+				</td>
+				<td style="border: none;">
+					'khaki'
+				</td>
+				<td style="background-color: khaki;">
+					khaki
+				</td>
+				<td style="background-color: khaki;">
+					khaki
+				</td>
+				<td style="background-color: khaki;">
+					khaki
+				</td>
+				<td style="color: khaki; background-color: from-table-column('color');">
+					khaki
+				</td>
+				<td style="color: khaki; background-color: from-table-column('color');">
+					khaki
+				</td>
+				<td style="color: khaki; background-color: from-table-column('color');">
+					khaki
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lavender;">
+				
+				</td>
+				<td style="border: none;">
+					'lavender'
+				</td>
+				<td style="background-color: lavender;">
+					lavender
+				</td>
+				<td style="background-color: lavender;">
+					lavender
+				</td>
+				<td style="background-color: lavender;">
+					lavender
+				</td>
+				<td style="color: lavender; background-color: from-table-column('color');">
+					lavender
+				</td>
+				<td style="color: lavender; background-color: from-table-column('color');">
+					lavender
+				</td>
+				<td style="color: lavender; background-color: from-table-column('color');">
+					lavender
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lavenderblush;">
+				
+				</td>
+				<td style="border: none;">
+					'lavenderblush'
+				</td>
+				<td style="background-color: lavenderblush;">
+					lavenderblush
+				</td>
+				<td style="background-color: lavenderblush;">
+					lavenderblush
+				</td>
+				<td style="background-color: lavenderblush;">
+					lavenderblush
+				</td>
+				<td style="color: lavenderblush; background-color: from-table-column('color');">
+					lavenderblush
+				</td>
+				<td style="color: lavenderblush; background-color: from-table-column('color');">
+					lavenderblush
+				</td>
+				<td style="color: lavenderblush; background-color: from-table-column('color');">
+					lavenderblush
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lawngreen;">
+				
+				</td>
+				<td style="border: none;">
+					'lawngreen'
+				</td>
+				<td style="background-color: lawngreen;">
+					lawngreen
+				</td>
+				<td style="background-color: lawngreen;">
+					lawngreen
+				</td>
+				<td style="background-color: lawngreen;">
+					lawngreen
+				</td>
+				<td style="color: lawngreen; background-color: from-table-column('color');">
+					lawngreen
+				</td>
+				<td style="color: lawngreen; background-color: from-table-column('color');">
+					lawngreen
+				</td>
+				<td style="color: lawngreen; background-color: from-table-column('color');">
+					lawngreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lemonchiffon;">
+				
+				</td>
+				<td style="border: none;">
+					'lemonchiffon'
+				</td>
+				<td style="background-color: lemonchiffon;">
+					lemonchiffon
+				</td>
+				<td style="background-color: lemonchiffon;">
+					lemonchiffon
+				</td>
+				<td style="background-color: lemonchiffon;">
+					lemonchiffon
+				</td>
+				<td style="color: lemonchiffon; background-color: from-table-column('color');">
+					lemonchiffon
+				</td>
+				<td style="color: lemonchiffon; background-color: from-table-column('color');">
+					lemonchiffon
+				</td>
+				<td style="color: lemonchiffon; background-color: from-table-column('color');">
+					lemonchiffon
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightblue;">
+				
+				</td>
+				<td style="border: none;">
+					'lightblue'
+				</td>
+				<td style="background-color: lightblue;">
+					lightblue
+				</td>
+				<td style="background-color: lightblue;">
+					lightblue
+				</td>
+				<td style="background-color: lightblue;">
+					lightblue
+				</td>
+				<td style="color: lightblue; background-color: from-table-column('color');">
+					lightblue
+				</td>
+				<td style="color: lightblue; background-color: from-table-column('color');">
+					lightblue
+				</td>
+				<td style="color: lightblue; background-color: from-table-column('color');">
+					lightblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightcoral;">
+				
+				</td>
+				<td style="border: none;">
+					'lightcoral'
+				</td>
+				<td style="background-color: lightcoral;">
+					lightcoral
+				</td>
+				<td style="background-color: lightcoral;">
+					lightcoral
+				</td>
+				<td style="background-color: lightcoral;">
+					lightcoral
+				</td>
+				<td style="color: lightcoral; background-color: from-table-column('color');">
+					lightcoral
+				</td>
+				<td style="color: lightcoral; background-color: from-table-column('color');">
+					lightcoral
+				</td>
+				<td style="color: lightcoral; background-color: from-table-column('color');">
+					lightcoral
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightcyan;">
+				
+				</td>
+				<td style="border: none;">
+					'lightcyan'
+				</td>
+				<td style="background-color: lightcyan;">
+					lightcyan
+				</td>
+				<td style="background-color: lightcyan;">
+					lightcyan
+				</td>
+				<td style="background-color: lightcyan;">
+					lightcyan
+				</td>
+				<td style="color: lightcyan; background-color: from-table-column('color');">
+					lightcyan
+				</td>
+				<td style="color: lightcyan; background-color: from-table-column('color');">
+					lightcyan
+				</td>
+				<td style="color: lightcyan; background-color: from-table-column('color');">
+					lightcyan
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightgoldenrodyellow;">
+				
+				</td>
+				<td style="border: none;">
+					'lightgoldenrodyellow'
+				</td>
+				<td style="background-color: lightgoldenrodyellow;">
+					lightgoldenrodyellow
+				</td>
+				<td style="background-color: lightgoldenrodyellow;">
+					lightgoldenrodyellow
+				</td>
+				<td style="background-color: lightgoldenrodyellow;">
+					lightgoldenrodyellow
+				</td>
+				<td style="color: lightgoldenrodyellow; background-color: from-table-column('color');">
+					lightgoldenrodyellow
+				</td>
+				<td style="color: lightgoldenrodyellow; background-color: from-table-column('color');">
+					lightgoldenrodyellow
+				</td>
+				<td style="color: lightgoldenrodyellow; background-color: from-table-column('color');">
+					lightgoldenrodyellow
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightgray;">
+				
+				</td>
+				<td style="border: none;">
+					'lightgray'
+				</td>
+				<td style="background-color: lightgray;">
+					lightgray
+				</td>
+				<td style="background-color: lightgray;">
+					lightgray
+				</td>
+				<td style="background-color: lightgray;">
+					lightgray
+				</td>
+				<td style="color: lightgray; background-color: from-table-column('color');">
+					lightgray
+				</td>
+				<td style="color: lightgray; background-color: from-table-column('color');">
+					lightgray
+				</td>
+				<td style="color: lightgray; background-color: from-table-column('color');">
+					lightgray
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightgreen;">
+				
+				</td>
+				<td style="border: none;">
+					'lightgreen'
+				</td>
+				<td style="background-color: lightgreen;">
+					lightgreen
+				</td>
+				<td style="background-color: lightgreen;">
+					lightgreen
+				</td>
+				<td style="background-color: lightgreen;">
+					lightgreen
+				</td>
+				<td style="color: lightgreen; background-color: from-table-column('color');">
+					lightgreen
+				</td>
+				<td style="color: lightgreen; background-color: from-table-column('color');">
+					lightgreen
+				</td>
+				<td style="color: lightgreen; background-color: from-table-column('color');">
+					lightgreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightgrey;">
+				
+				</td>
+				<td style="border: none;">
+					'lightgrey'
+				</td>
+				<td style="background-color: lightgrey;">
+					lightgrey
+				</td>
+				<td style="background-color: lightgrey;">
+					lightgrey
+				</td>
+				<td style="background-color: lightgrey;">
+					lightgrey
+				</td>
+				<td style="color: lightgrey; background-color: from-table-column('color');">
+					lightgrey
+				</td>
+				<td style="color: lightgrey; background-color: from-table-column('color');">
+					lightgrey
+				</td>
+				<td style="color: lightgrey; background-color: from-table-column('color');">
+					lightgrey
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightpink;">
+				
+				</td>
+				<td style="border: none;">
+					'lightpink'
+				</td>
+				<td style="background-color: lightpink;">
+					lightpink
+				</td>
+				<td style="background-color: lightpink;">
+					lightpink
+				</td>
+				<td style="background-color: lightpink;">
+					lightpink
+				</td>
+				<td style="color: lightpink; background-color: from-table-column('color');">
+					lightpink
+				</td>
+				<td style="color: lightpink; background-color: from-table-column('color');">
+					lightpink
+				</td>
+				<td style="color: lightpink; background-color: from-table-column('color');">
+					lightpink
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightsalmon;">
+				
+				</td>
+				<td style="border: none;">
+					'lightsalmon'
+				</td>
+				<td style="background-color: lightsalmon;">
+					lightsalmon
+				</td>
+				<td style="background-color: lightsalmon;">
+					lightsalmon
+				</td>
+				<td style="background-color: lightsalmon;">
+					lightsalmon
+				</td>
+				<td style="color: lightsalmon; background-color: from-table-column('color');">
+					lightsalmon
+				</td>
+				<td style="color: lightsalmon; background-color: from-table-column('color');">
+					lightsalmon
+				</td>
+				<td style="color: lightsalmon; background-color: from-table-column('color');">
+					lightsalmon
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightseagreen;">
+				
+				</td>
+				<td style="border: none;">
+					'lightseagreen'
+				</td>
+				<td style="background-color: lightseagreen;">
+					lightseagreen
+				</td>
+				<td style="background-color: lightseagreen;">
+					lightseagreen
+				</td>
+				<td style="background-color: lightseagreen;">
+					lightseagreen
+				</td>
+				<td style="color: lightseagreen; background-color: from-table-column('color');">
+					lightseagreen
+				</td>
+				<td style="color: lightseagreen; background-color: from-table-column('color');">
+					lightseagreen
+				</td>
+				<td style="color: lightseagreen; background-color: from-table-column('color');">
+					lightseagreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightskyblue;">
+				
+				</td>
+				<td style="border: none;">
+					'lightskyblue'
+				</td>
+				<td style="background-color: lightskyblue;">
+					lightskyblue
+				</td>
+				<td style="background-color: lightskyblue;">
+					lightskyblue
+				</td>
+				<td style="background-color: lightskyblue;">
+					lightskyblue
+				</td>
+				<td style="color: lightskyblue; background-color: from-table-column('color');">
+					lightskyblue
+				</td>
+				<td style="color: lightskyblue; background-color: from-table-column('color');">
+					lightskyblue
+				</td>
+				<td style="color: lightskyblue; background-color: from-table-column('color');">
+					lightskyblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightslategray;">
+				
+				</td>
+				<td style="border: none;">
+					'lightslategray'
+				</td>
+				<td style="background-color: lightslategray;">
+					lightslategray
+				</td>
+				<td style="background-color: lightslategray;">
+					lightslategray
+				</td>
+				<td style="background-color: lightslategray;">
+					lightslategray
+				</td>
+				<td style="color: lightslategray; background-color: from-table-column('color');">
+					lightslategray
+				</td>
+				<td style="color: lightslategray; background-color: from-table-column('color');">
+					lightslategray
+				</td>
+				<td style="color: lightslategray; background-color: from-table-column('color');">
+					lightslategray
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightslategrey;">
+				
+				</td>
+				<td style="border: none;">
+					'lightslategrey'
+				</td>
+				<td style="background-color: lightslategrey;">
+					lightslategrey
+				</td>
+				<td style="background-color: lightslategrey;">
+					lightslategrey
+				</td>
+				<td style="background-color: lightslategrey;">
+					lightslategrey
+				</td>
+				<td style="color: lightslategrey; background-color: from-table-column('color');">
+					lightslategrey
+				</td>
+				<td style="color: lightslategrey; background-color: from-table-column('color');">
+					lightslategrey
+				</td>
+				<td style="color: lightslategrey; background-color: from-table-column('color');">
+					lightslategrey
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightsteelblue;">
+				
+				</td>
+				<td style="border: none;">
+					'lightsteelblue'
+				</td>
+				<td style="background-color: lightsteelblue;">
+					lightsteelblue
+				</td>
+				<td style="background-color: lightsteelblue;">
+					lightsteelblue
+				</td>
+				<td style="background-color: lightsteelblue;">
+					lightsteelblue
+				</td>
+				<td style="color: lightsteelblue; background-color: from-table-column('color');">
+					lightsteelblue
+				</td>
+				<td style="color: lightsteelblue; background-color: from-table-column('color');">
+					lightsteelblue
+				</td>
+				<td style="color: lightsteelblue; background-color: from-table-column('color');">
+					lightsteelblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lightyellow;">
+				
+				</td>
+				<td style="border: none;">
+					'lightyellow'
+				</td>
+				<td style="background-color: lightyellow;">
+					lightyellow
+				</td>
+				<td style="background-color: lightyellow;">
+					lightyellow
+				</td>
+				<td style="background-color: lightyellow;">
+					lightyellow
+				</td>
+				<td style="color: lightyellow; background-color: from-table-column('color');">
+					lightyellow
+				</td>
+				<td style="color: lightyellow; background-color: from-table-column('color');">
+					lightyellow
+				</td>
+				<td style="color: lightyellow; background-color: from-table-column('color');">
+					lightyellow
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: lime;">
+				
+				</td>
+				<td style="border: none;">
+					'lime'
+				</td>
+				<td style="background-color: lime;">
+					lime
+				</td>
+				<td style="background-color: lime;">
+					lime
+				</td>
+				<td style="background-color: lime;">
+					lime
+				</td>
+				<td style="color: lime; background-color: from-table-column('color');">
+					lime
+				</td>
+				<td style="color: lime; background-color: from-table-column('color');">
+					lime
+				</td>
+				<td style="color: lime; background-color: from-table-column('color');">
+					lime
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: limegreen;">
+				
+				</td>
+				<td style="border: none;">
+					'limegreen'
+				</td>
+				<td style="background-color: limegreen;">
+					limegreen
+				</td>
+				<td style="background-color: limegreen;">
+					limegreen
+				</td>
+				<td style="background-color: limegreen;">
+					limegreen
+				</td>
+				<td style="color: limegreen; background-color: from-table-column('color');">
+					limegreen
+				</td>
+				<td style="color: limegreen; background-color: from-table-column('color');">
+					limegreen
+				</td>
+				<td style="color: limegreen; background-color: from-table-column('color');">
+					limegreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: linen;">
+				
+				</td>
+				<td style="border: none;">
+					'linen'
+				</td>
+				<td style="background-color: linen;">
+					linen
+				</td>
+				<td style="background-color: linen;">
+					linen
+				</td>
+				<td style="background-color: linen;">
+					linen
+				</td>
+				<td style="color: linen; background-color: from-table-column('color');">
+					linen
+				</td>
+				<td style="color: linen; background-color: from-table-column('color');">
+					linen
+				</td>
+				<td style="color: linen; background-color: from-table-column('color');">
+					linen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: magenta;">
+				
+				</td>
+				<td style="border: none;">
+					'magenta'
+				</td>
+				<td style="background-color: magenta;">
+					magenta
+				</td>
+				<td style="background-color: magenta;">
+					magenta
+				</td>
+				<td style="background-color: magenta;">
+					magenta
+				</td>
+				<td style="color: magenta; background-color: from-table-column('color');">
+					magenta
+				</td>
+				<td style="color: magenta; background-color: from-table-column('color');">
+					magenta
+				</td>
+				<td style="color: magenta; background-color: from-table-column('color');">
+					magenta
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: maroon;">
+				
+				</td>
+				<td style="border: none;">
+					'maroon'
+				</td>
+				<td style="background-color: maroon;">
+					maroon
+				</td>
+				<td style="background-color: maroon;">
+					maroon
+				</td>
+				<td style="background-color: maroon;">
+					maroon
+				</td>
+				<td style="color: maroon; background-color: from-table-column('color');">
+					maroon
+				</td>
+				<td style="color: maroon; background-color: from-table-column('color');">
+					maroon
+				</td>
+				<td style="color: maroon; background-color: from-table-column('color');">
+					maroon
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mediumaquamarine;">
+				
+				</td>
+				<td style="border: none;">
+					'mediumaquamarine'
+				</td>
+				<td style="background-color: mediumaquamarine;">
+					mediumaquamarine
+				</td>
+				<td style="background-color: mediumaquamarine;">
+					mediumaquamarine
+				</td>
+				<td style="background-color: mediumaquamarine;">
+					mediumaquamarine
+				</td>
+				<td style="color: mediumaquamarine; background-color: from-table-column('color');">
+					mediumaquamarine
+				</td>
+				<td style="color: mediumaquamarine; background-color: from-table-column('color');">
+					mediumaquamarine
+				</td>
+				<td style="color: mediumaquamarine; background-color: from-table-column('color');">
+					mediumaquamarine
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mediumblue;">
+				
+				</td>
+				<td style="border: none;">
+					'mediumblue'
+				</td>
+				<td style="background-color: mediumblue;">
+					mediumblue
+				</td>
+				<td style="background-color: mediumblue;">
+					mediumblue
+				</td>
+				<td style="background-color: mediumblue;">
+					mediumblue
+				</td>
+				<td style="color: mediumblue; background-color: from-table-column('color');">
+					mediumblue
+				</td>
+				<td style="color: mediumblue; background-color: from-table-column('color');">
+					mediumblue
+				</td>
+				<td style="color: mediumblue; background-color: from-table-column('color');">
+					mediumblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mediumorchid;">
+				
+				</td>
+				<td style="border: none;">
+					'mediumorchid'
+				</td>
+				<td style="background-color: mediumorchid;">
+					mediumorchid
+				</td>
+				<td style="background-color: mediumorchid;">
+					mediumorchid
+				</td>
+				<td style="background-color: mediumorchid;">
+					mediumorchid
+				</td>
+				<td style="color: mediumorchid; background-color: from-table-column('color');">
+					mediumorchid
+				</td>
+				<td style="color: mediumorchid; background-color: from-table-column('color');">
+					mediumorchid
+				</td>
+				<td style="color: mediumorchid; background-color: from-table-column('color');">
+					mediumorchid
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mediumpurple;">
+				
+				</td>
+				<td style="border: none;">
+					'mediumpurple'
+				</td>
+				<td style="background-color: mediumpurple;">
+					mediumpurple
+				</td>
+				<td style="background-color: mediumpurple;">
+					mediumpurple
+				</td>
+				<td style="background-color: mediumpurple;">
+					mediumpurple
+				</td>
+				<td style="color: mediumpurple; background-color: from-table-column('color');">
+					mediumpurple
+				</td>
+				<td style="color: mediumpurple; background-color: from-table-column('color');">
+					mediumpurple
+				</td>
+				<td style="color: mediumpurple; background-color: from-table-column('color');">
+					mediumpurple
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mediumseagreen;">
+				
+				</td>
+				<td style="border: none;">
+					'mediumseagreen'
+				</td>
+				<td style="background-color: mediumseagreen;">
+					mediumseagreen
+				</td>
+				<td style="background-color: mediumseagreen;">
+					mediumseagreen
+				</td>
+				<td style="background-color: mediumseagreen;">
+					mediumseagreen
+				</td>
+				<td style="color: mediumseagreen; background-color: from-table-column('color');">
+					mediumseagreen
+				</td>
+				<td style="color: mediumseagreen; background-color: from-table-column('color');">
+					mediumseagreen
+				</td>
+				<td style="color: mediumseagreen; background-color: from-table-column('color');">
+					mediumseagreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mediumslateblue;">
+				
+				</td>
+				<td style="border: none;">
+					'mediumslateblue'
+				</td>
+				<td style="background-color: mediumslateblue;">
+					mediumslateblue
+				</td>
+				<td style="background-color: mediumslateblue;">
+					mediumslateblue
+				</td>
+				<td style="background-color: mediumslateblue;">
+					mediumslateblue
+				</td>
+				<td style="color: mediumslateblue; background-color: from-table-column('color');">
+					mediumslateblue
+				</td>
+				<td style="color: mediumslateblue; background-color: from-table-column('color');">
+					mediumslateblue
+				</td>
+				<td style="color: mediumslateblue; background-color: from-table-column('color');">
+					mediumslateblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mediumspringgreen;">
+				
+				</td>
+				<td style="border: none;">
+					'mediumspringgreen'
+				</td>
+				<td style="background-color: mediumspringgreen;">
+					mediumspringgreen
+				</td>
+				<td style="background-color: mediumspringgreen;">
+					mediumspringgreen
+				</td>
+				<td style="background-color: mediumspringgreen;">
+					mediumspringgreen
+				</td>
+				<td style="color: mediumspringgreen; background-color: from-table-column('color');">
+					mediumspringgreen
+				</td>
+				<td style="color: mediumspringgreen; background-color: from-table-column('color');">
+					mediumspringgreen
+				</td>
+				<td style="color: mediumspringgreen; background-color: from-table-column('color');">
+					mediumspringgreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mediumturquoise;">
+				
+				</td>
+				<td style="border: none;">
+					'mediumturquoise'
+				</td>
+				<td style="background-color: mediumturquoise;">
+					mediumturquoise
+				</td>
+				<td style="background-color: mediumturquoise;">
+					mediumturquoise
+				</td>
+				<td style="background-color: mediumturquoise;">
+					mediumturquoise
+				</td>
+				<td style="color: mediumturquoise; background-color: from-table-column('color');">
+					mediumturquoise
+				</td>
+				<td style="color: mediumturquoise; background-color: from-table-column('color');">
+					mediumturquoise
+				</td>
+				<td style="color: mediumturquoise; background-color: from-table-column('color');">
+					mediumturquoise
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mediumvioletred;">
+				
+				</td>
+				<td style="border: none;">
+					'mediumvioletred'
+				</td>
+				<td style="background-color: mediumvioletred;">
+					mediumvioletred
+				</td>
+				<td style="background-color: mediumvioletred;">
+					mediumvioletred
+				</td>
+				<td style="background-color: mediumvioletred;">
+					mediumvioletred
+				</td>
+				<td style="color: mediumvioletred; background-color: from-table-column('color');">
+					mediumvioletred
+				</td>
+				<td style="color: mediumvioletred; background-color: from-table-column('color');">
+					mediumvioletred
+				</td>
+				<td style="color: mediumvioletred; background-color: from-table-column('color');">
+					mediumvioletred
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: midnightblue;">
+				
+				</td>
+				<td style="border: none;">
+					'midnightblue'
+				</td>
+				<td style="background-color: midnightblue;">
+					midnightblue
+				</td>
+				<td style="background-color: midnightblue;">
+					midnightblue
+				</td>
+				<td style="background-color: midnightblue;">
+					midnightblue
+				</td>
+				<td style="color: midnightblue; background-color: from-table-column('color');">
+					midnightblue
+				</td>
+				<td style="color: midnightblue; background-color: from-table-column('color');">
+					midnightblue
+				</td>
+				<td style="color: midnightblue; background-color: from-table-column('color');">
+					midnightblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mintcream;">
+				
+				</td>
+				<td style="border: none;">
+					'mintcream'
+				</td>
+				<td style="background-color: mintcream;">
+					mintcream
+				</td>
+				<td style="background-color: mintcream;">
+					mintcream
+				</td>
+				<td style="background-color: mintcream;">
+					mintcream
+				</td>
+				<td style="color: mintcream; background-color: from-table-column('color');">
+					mintcream
+				</td>
+				<td style="color: mintcream; background-color: from-table-column('color');">
+					mintcream
+				</td>
+				<td style="color: mintcream; background-color: from-table-column('color');">
+					mintcream
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: mistyrose;">
+				
+				</td>
+				<td style="border: none;">
+					'mistyrose'
+				</td>
+				<td style="background-color: mistyrose;">
+					mistyrose
+				</td>
+				<td style="background-color: mistyrose;">
+					mistyrose
+				</td>
+				<td style="background-color: mistyrose;">
+					mistyrose
+				</td>
+				<td style="color: mistyrose; background-color: from-table-column('color');">
+					mistyrose
+				</td>
+				<td style="color: mistyrose; background-color: from-table-column('color');">
+					mistyrose
+				</td>
+				<td style="color: mistyrose; background-color: from-table-column('color');">
+					mistyrose
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: moccasin;">
+				
+				</td>
+				<td style="border: none;">
+					'moccasin'
+				</td>
+				<td style="background-color: moccasin;">
+					moccasin
+				</td>
+				<td style="background-color: moccasin;">
+					moccasin
+				</td>
+				<td style="background-color: moccasin;">
+					moccasin
+				</td>
+				<td style="color: moccasin; background-color: from-table-column('color');">
+					moccasin
+				</td>
+				<td style="color: moccasin; background-color: from-table-column('color');">
+					moccasin
+				</td>
+				<td style="color: moccasin; background-color: from-table-column('color');">
+					moccasin
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: navajowhite;">
+				
+				</td>
+				<td style="border: none;">
+					'navajowhite'
+				</td>
+				<td style="background-color: navajowhite;">
+					navajowhite
+				</td>
+				<td style="background-color: navajowhite;">
+					navajowhite
+				</td>
+				<td style="background-color: navajowhite;">
+					navajowhite
+				</td>
+				<td style="color: navajowhite; background-color: from-table-column('color');">
+					navajowhite
+				</td>
+				<td style="color: navajowhite; background-color: from-table-column('color');">
+					navajowhite
+				</td>
+				<td style="color: navajowhite; background-color: from-table-column('color');">
+					navajowhite
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: navy;">
+				
+				</td>
+				<td style="border: none;">
+					'navy'
+				</td>
+				<td style="background-color: navy;">
+					navy
+				</td>
+				<td style="background-color: navy;">
+					navy
+				</td>
+				<td style="background-color: navy;">
+					navy
+				</td>
+				<td style="color: navy; background-color: from-table-column('color');">
+					navy
+				</td>
+				<td style="color: navy; background-color: from-table-column('color');">
+					navy
+				</td>
+				<td style="color: navy; background-color: from-table-column('color');">
+					navy
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: oldlace;">
+				
+				</td>
+				<td style="border: none;">
+					'oldlace'
+				</td>
+				<td style="background-color: oldlace;">
+					oldlace
+				</td>
+				<td style="background-color: oldlace;">
+					oldlace
+				</td>
+				<td style="background-color: oldlace;">
+					oldlace
+				</td>
+				<td style="color: oldlace; background-color: from-table-column('color');">
+					oldlace
+				</td>
+				<td style="color: oldlace; background-color: from-table-column('color');">
+					oldlace
+				</td>
+				<td style="color: oldlace; background-color: from-table-column('color');">
+					oldlace
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: olive;">
+				
+				</td>
+				<td style="border: none;">
+					'olive'
+				</td>
+				<td style="background-color: olive;">
+					olive
+				</td>
+				<td style="background-color: olive;">
+					olive
+				</td>
+				<td style="background-color: olive;">
+					olive
+				</td>
+				<td style="color: olive; background-color: from-table-column('color');">
+					olive
+				</td>
+				<td style="color: olive; background-color: from-table-column('color');">
+					olive
+				</td>
+				<td style="color: olive; background-color: from-table-column('color');">
+					olive
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: olivedrab;">
+				
+				</td>
+				<td style="border: none;">
+					'olivedrab'
+				</td>
+				<td style="background-color: olivedrab;">
+					olivedrab
+				</td>
+				<td style="background-color: olivedrab;">
+					olivedrab
+				</td>
+				<td style="background-color: olivedrab;">
+					olivedrab
+				</td>
+				<td style="color: olivedrab; background-color: from-table-column('color');">
+					olivedrab
+				</td>
+				<td style="color: olivedrab; background-color: from-table-column('color');">
+					olivedrab
+				</td>
+				<td style="color: olivedrab; background-color: from-table-column('color');">
+					olivedrab
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: orange;">
+				
+				</td>
+				<td style="border: none;">
+					'orange'
+				</td>
+				<td style="background-color: orange;">
+					orange
+				</td>
+				<td style="background-color: orange;">
+					orange
+				</td>
+				<td style="background-color: orange;">
+					orange
+				</td>
+				<td style="color: orange; background-color: from-table-column('color');">
+					orange
+				</td>
+				<td style="color: orange; background-color: from-table-column('color');">
+					orange
+				</td>
+				<td style="color: orange; background-color: from-table-column('color');">
+					orange
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: orangered;">
+				
+				</td>
+				<td style="border: none;">
+					'orangered'
+				</td>
+				<td style="background-color: orangered;">
+					orangered
+				</td>
+				<td style="background-color: orangered;">
+					orangered
+				</td>
+				<td style="background-color: orangered;">
+					orangered
+				</td>
+				<td style="color: orangered; background-color: from-table-column('color');">
+					orangered
+				</td>
+				<td style="color: orangered; background-color: from-table-column('color');">
+					orangered
+				</td>
+				<td style="color: orangered; background-color: from-table-column('color');">
+					orangered
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: orchid;">
+				
+				</td>
+				<td style="border: none;">
+					'orchid'
+				</td>
+				<td style="background-color: orchid;">
+					orchid
+				</td>
+				<td style="background-color: orchid;">
+					orchid
+				</td>
+				<td style="background-color: orchid;">
+					orchid
+				</td>
+				<td style="color: orchid; background-color: from-table-column('color');">
+					orchid
+				</td>
+				<td style="color: orchid; background-color: from-table-column('color');">
+					orchid
+				</td>
+				<td style="color: orchid; background-color: from-table-column('color');">
+					orchid
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: palegoldenrod;">
+				
+				</td>
+				<td style="border: none;">
+					'palegoldenrod'
+				</td>
+				<td style="background-color: palegoldenrod;">
+					palegoldenrod
+				</td>
+				<td style="background-color: palegoldenrod;">
+					palegoldenrod
+				</td>
+				<td style="background-color: palegoldenrod;">
+					palegoldenrod
+				</td>
+				<td style="color: palegoldenrod; background-color: from-table-column('color');">
+					palegoldenrod
+				</td>
+				<td style="color: palegoldenrod; background-color: from-table-column('color');">
+					palegoldenrod
+				</td>
+				<td style="color: palegoldenrod; background-color: from-table-column('color');">
+					palegoldenrod
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: palegreen;">
+				
+				</td>
+				<td style="border: none;">
+					'palegreen'
+				</td>
+				<td style="background-color: palegreen;">
+					palegreen
+				</td>
+				<td style="background-color: palegreen;">
+					palegreen
+				</td>
+				<td style="background-color: palegreen;">
+					palegreen
+				</td>
+				<td style="color: palegreen; background-color: from-table-column('color');">
+					palegreen
+				</td>
+				<td style="color: palegreen; background-color: from-table-column('color');">
+					palegreen
+				</td>
+				<td style="color: palegreen; background-color: from-table-column('color');">
+					palegreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: paleturquoise;">
+				
+				</td>
+				<td style="border: none;">
+					'paleturquoise'
+				</td>
+				<td style="background-color: paleturquoise;">
+					paleturquoise
+				</td>
+				<td style="background-color: paleturquoise;">
+					paleturquoise
+				</td>
+				<td style="background-color: paleturquoise;">
+					paleturquoise
+				</td>
+				<td style="color: paleturquoise; background-color: from-table-column('color');">
+					paleturquoise
+				</td>
+				<td style="color: paleturquoise; background-color: from-table-column('color');">
+					paleturquoise
+				</td>
+				<td style="color: paleturquoise; background-color: from-table-column('color');">
+					paleturquoise
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: palevioletred;">
+				
+				</td>
+				<td style="border: none;">
+					'palevioletred'
+				</td>
+				<td style="background-color: palevioletred;">
+					palevioletred
+				</td>
+				<td style="background-color: palevioletred;">
+					palevioletred
+				</td>
+				<td style="background-color: palevioletred;">
+					palevioletred
+				</td>
+				<td style="color: palevioletred; background-color: from-table-column('color');">
+					palevioletred
+				</td>
+				<td style="color: palevioletred; background-color: from-table-column('color');">
+					palevioletred
+				</td>
+				<td style="color: palevioletred; background-color: from-table-column('color');">
+					palevioletred
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: papayawhip;">
+				
+				</td>
+				<td style="border: none;">
+					'papayawhip'
+				</td>
+				<td style="background-color: papayawhip;">
+					papayawhip
+				</td>
+				<td style="background-color: papayawhip;">
+					papayawhip
+				</td>
+				<td style="background-color: papayawhip;">
+					papayawhip
+				</td>
+				<td style="color: papayawhip; background-color: from-table-column('color');">
+					papayawhip
+				</td>
+				<td style="color: papayawhip; background-color: from-table-column('color');">
+					papayawhip
+				</td>
+				<td style="color: papayawhip; background-color: from-table-column('color');">
+					papayawhip
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: peachpuff;">
+				
+				</td>
+				<td style="border: none;">
+					'peachpuff'
+				</td>
+				<td style="background-color: peachpuff;">
+					peachpuff
+				</td>
+				<td style="background-color: peachpuff;">
+					peachpuff
+				</td>
+				<td style="background-color: peachpuff;">
+					peachpuff
+				</td>
+				<td style="color: peachpuff; background-color: from-table-column('color');">
+					peachpuff
+				</td>
+				<td style="color: peachpuff; background-color: from-table-column('color');">
+					peachpuff
+				</td>
+				<td style="color: peachpuff; background-color: from-table-column('color');">
+					peachpuff
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: peru;">
+				
+				</td>
+				<td style="border: none;">
+					'peru'
+				</td>
+				<td style="background-color: peru;">
+					peru
+				</td>
+				<td style="background-color: peru;">
+					peru
+				</td>
+				<td style="background-color: peru;">
+					peru
+				</td>
+				<td style="color: peru; background-color: from-table-column('color');">
+					peru
+				</td>
+				<td style="color: peru; background-color: from-table-column('color');">
+					peru
+				</td>
+				<td style="color: peru; background-color: from-table-column('color');">
+					peru
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: pink;">
+				
+				</td>
+				<td style="border: none;">
+					'pink'
+				</td>
+				<td style="background-color: pink;">
+					pink
+				</td>
+				<td style="background-color: pink;">
+					pink
+				</td>
+				<td style="background-color: pink;">
+					pink
+				</td>
+				<td style="color: pink; background-color: from-table-column('color');">
+					pink
+				</td>
+				<td style="color: pink; background-color: from-table-column('color');">
+					pink
+				</td>
+				<td style="color: pink; background-color: from-table-column('color');">
+					pink
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: plum;">
+				
+				</td>
+				<td style="border: none;">
+					'plum'
+				</td>
+				<td style="background-color: plum;">
+					plum
+				</td>
+				<td style="background-color: plum;">
+					plum
+				</td>
+				<td style="background-color: plum;">
+					plum
+				</td>
+				<td style="color: plum; background-color: from-table-column('color');">
+					plum
+				</td>
+				<td style="color: plum; background-color: from-table-column('color');">
+					plum
+				</td>
+				<td style="color: plum; background-color: from-table-column('color');">
+					plum
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: powderblue;">
+				
+				</td>
+				<td style="border: none;">
+					'powderblue'
+				</td>
+				<td style="background-color: powderblue;">
+					powderblue
+				</td>
+				<td style="background-color: powderblue;">
+					powderblue
+				</td>
+				<td style="background-color: powderblue;">
+					powderblue
+				</td>
+				<td style="color: powderblue; background-color: from-table-column('color');">
+					powderblue
+				</td>
+				<td style="color: powderblue; background-color: from-table-column('color');">
+					powderblue
+				</td>
+				<td style="color: powderblue; background-color: from-table-column('color');">
+					powderblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: purple;">
+				
+				</td>
+				<td style="border: none;">
+					'purple'
+				</td>
+				<td style="background-color: purple;">
+					purple
+				</td>
+				<td style="background-color: purple;">
+					purple
+				</td>
+				<td style="background-color: purple;">
+					purple
+				</td>
+				<td style="color: purple; background-color: from-table-column('color');">
+					purple
+				</td>
+				<td style="color: purple; background-color: from-table-column('color');">
+					purple
+				</td>
+				<td style="color: purple; background-color: from-table-column('color');">
+					purple
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: rebeccapurple;">
+				
+				</td>
+				<td style="border: none;">
+					'rebeccapurple'
+				</td>
+				<td style="background-color: rebeccapurple;">
+					rebeccapurple
+				</td>
+				<td style="background-color: rebeccapurple;">
+					rebeccapurple
+				</td>
+				<td style="background-color: rebeccapurple;">
+					rebeccapurple
+				</td>
+				<td style="color: rebeccapurple; background-color: from-table-column('color');">
+					rebeccapurple
+				</td>
+				<td style="color: rebeccapurple; background-color: from-table-column('color');">
+					rebeccapurple
+				</td>
+				<td style="color: rebeccapurple; background-color: from-table-column('color');">
+					rebeccapurple
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: red;">
+				
+				</td>
+				<td style="border: none;">
+					'red'
+				</td>
+				<td style="background-color: red;">
+					red
+				</td>
+				<td style="background-color: red;">
+					red
+				</td>
+				<td style="background-color: red;">
+					red
+				</td>
+				<td style="color: red; background-color: from-table-column('color');">
+					red
+				</td>
+				<td style="color: red; background-color: from-table-column('color');">
+					red
+				</td>
+				<td style="color: red; background-color: from-table-column('color');">
+					red
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: rosybrown;">
+				
+				</td>
+				<td style="border: none;">
+					'rosybrown'
+				</td>
+				<td style="background-color: rosybrown;">
+					rosybrown
+				</td>
+				<td style="background-color: rosybrown;">
+					rosybrown
+				</td>
+				<td style="background-color: rosybrown;">
+					rosybrown
+				</td>
+				<td style="color: rosybrown; background-color: from-table-column('color');">
+					rosybrown
+				</td>
+				<td style="color: rosybrown; background-color: from-table-column('color');">
+					rosybrown
+				</td>
+				<td style="color: rosybrown; background-color: from-table-column('color');">
+					rosybrown
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: royalblue;">
+				
+				</td>
+				<td style="border: none;">
+					'royalblue'
+				</td>
+				<td style="background-color: royalblue;">
+					royalblue
+				</td>
+				<td style="background-color: royalblue;">
+					royalblue
+				</td>
+				<td style="background-color: royalblue;">
+					royalblue
+				</td>
+				<td style="color: royalblue; background-color: from-table-column('color');">
+					royalblue
+				</td>
+				<td style="color: royalblue; background-color: from-table-column('color');">
+					royalblue
+				</td>
+				<td style="color: royalblue; background-color: from-table-column('color');">
+					royalblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: saddlebrown;">
+				
+				</td>
+				<td style="border: none;">
+					'saddlebrown'
+				</td>
+				<td style="background-color: saddlebrown;">
+					saddlebrown
+				</td>
+				<td style="background-color: saddlebrown;">
+					saddlebrown
+				</td>
+				<td style="background-color: saddlebrown;">
+					saddlebrown
+				</td>
+				<td style="color: saddlebrown; background-color: from-table-column('color');">
+					saddlebrown
+				</td>
+				<td style="color: saddlebrown; background-color: from-table-column('color');">
+					saddlebrown
+				</td>
+				<td style="color: saddlebrown; background-color: from-table-column('color');">
+					saddlebrown
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: salmon;">
+				
+				</td>
+				<td style="border: none;">
+					'salmon'
+				</td>
+				<td style="background-color: salmon;">
+					salmon
+				</td>
+				<td style="background-color: salmon;">
+					salmon
+				</td>
+				<td style="background-color: salmon;">
+					salmon
+				</td>
+				<td style="color: salmon; background-color: from-table-column('color');">
+					salmon
+				</td>
+				<td style="color: salmon; background-color: from-table-column('color');">
+					salmon
+				</td>
+				<td style="color: salmon; background-color: from-table-column('color');">
+					salmon
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: sandybrown;">
+				
+				</td>
+				<td style="border: none;">
+					'sandybrown'
+				</td>
+				<td style="background-color: sandybrown;">
+					sandybrown
+				</td>
+				<td style="background-color: sandybrown;">
+					sandybrown
+				</td>
+				<td style="background-color: sandybrown;">
+					sandybrown
+				</td>
+				<td style="color: sandybrown; background-color: from-table-column('color');">
+					sandybrown
+				</td>
+				<td style="color: sandybrown; background-color: from-table-column('color');">
+					sandybrown
+				</td>
+				<td style="color: sandybrown; background-color: from-table-column('color');">
+					sandybrown
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: seagreen;">
+				
+				</td>
+				<td style="border: none;">
+					'seagreen'
+				</td>
+				<td style="background-color: seagreen;">
+					seagreen
+				</td>
+				<td style="background-color: seagreen;">
+					seagreen
+				</td>
+				<td style="background-color: seagreen;">
+					seagreen
+				</td>
+				<td style="color: seagreen; background-color: from-table-column('color');">
+					seagreen
+				</td>
+				<td style="color: seagreen; background-color: from-table-column('color');">
+					seagreen
+				</td>
+				<td style="color: seagreen; background-color: from-table-column('color');">
+					seagreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: seashell;">
+				
+				</td>
+				<td style="border: none;">
+					'seashell'
+				</td>
+				<td style="background-color: seashell;">
+					seashell
+				</td>
+				<td style="background-color: seashell;">
+					seashell
+				</td>
+				<td style="background-color: seashell;">
+					seashell
+				</td>
+				<td style="color: seashell; background-color: from-table-column('color');">
+					seashell
+				</td>
+				<td style="color: seashell; background-color: from-table-column('color');">
+					seashell
+				</td>
+				<td style="color: seashell; background-color: from-table-column('color');">
+					seashell
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: sienna;">
+				
+				</td>
+				<td style="border: none;">
+					'sienna'
+				</td>
+				<td style="background-color: sienna;">
+					sienna
+				</td>
+				<td style="background-color: sienna;">
+					sienna
+				</td>
+				<td style="background-color: sienna;">
+					sienna
+				</td>
+				<td style="color: sienna; background-color: from-table-column('color');">
+					sienna
+				</td>
+				<td style="color: sienna; background-color: from-table-column('color');">
+					sienna
+				</td>
+				<td style="color: sienna; background-color: from-table-column('color');">
+					sienna
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: silver;">
+				
+				</td>
+				<td style="border: none;">
+					'silver'
+				</td>
+				<td style="background-color: silver;">
+					silver
+				</td>
+				<td style="background-color: silver;">
+					silver
+				</td>
+				<td style="background-color: silver;">
+					silver
+				</td>
+				<td style="color: silver; background-color: from-table-column('color');">
+					silver
+				</td>
+				<td style="color: silver; background-color: from-table-column('color');">
+					silver
+				</td>
+				<td style="color: silver; background-color: from-table-column('color');">
+					silver
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: skyblue;">
+				
+				</td>
+				<td style="border: none;">
+					'skyblue'
+				</td>
+				<td style="background-color: skyblue;">
+					skyblue
+				</td>
+				<td style="background-color: skyblue;">
+					skyblue
+				</td>
+				<td style="background-color: skyblue;">
+					skyblue
+				</td>
+				<td style="color: skyblue; background-color: from-table-column('color');">
+					skyblue
+				</td>
+				<td style="color: skyblue; background-color: from-table-column('color');">
+					skyblue
+				</td>
+				<td style="color: skyblue; background-color: from-table-column('color');">
+					skyblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: slateblue;">
+				
+				</td>
+				<td style="border: none;">
+					'slateblue'
+				</td>
+				<td style="background-color: slateblue;">
+					slateblue
+				</td>
+				<td style="background-color: slateblue;">
+					slateblue
+				</td>
+				<td style="background-color: slateblue;">
+					slateblue
+				</td>
+				<td style="color: slateblue; background-color: from-table-column('color');">
+					slateblue
+				</td>
+				<td style="color: slateblue; background-color: from-table-column('color');">
+					slateblue
+				</td>
+				<td style="color: slateblue; background-color: from-table-column('color');">
+					slateblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: slategray;">
+				
+				</td>
+				<td style="border: none;">
+					'slategray'
+				</td>
+				<td style="background-color: slategray;">
+					slategray
+				</td>
+				<td style="background-color: slategray;">
+					slategray
+				</td>
+				<td style="background-color: slategray;">
+					slategray
+				</td>
+				<td style="color: slategray; background-color: from-table-column('color');">
+					slategray
+				</td>
+				<td style="color: slategray; background-color: from-table-column('color');">
+					slategray
+				</td>
+				<td style="color: slategray; background-color: from-table-column('color');">
+					slategray
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: slategrey;">
+				
+				</td>
+				<td style="border: none;">
+					'slategrey'
+				</td>
+				<td style="background-color: slategrey;">
+					slategrey
+				</td>
+				<td style="background-color: slategrey;">
+					slategrey
+				</td>
+				<td style="background-color: slategrey;">
+					slategrey
+				</td>
+				<td style="color: slategrey; background-color: from-table-column('color');">
+					slategrey
+				</td>
+				<td style="color: slategrey; background-color: from-table-column('color');">
+					slategrey
+				</td>
+				<td style="color: slategrey; background-color: from-table-column('color');">
+					slategrey
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: snow;">
+				
+				</td>
+				<td style="border: none;">
+					'snow'
+				</td>
+				<td style="background-color: snow;">
+					snow
+				</td>
+				<td style="background-color: snow;">
+					snow
+				</td>
+				<td style="background-color: snow;">
+					snow
+				</td>
+				<td style="color: snow; background-color: from-table-column('color');">
+					snow
+				</td>
+				<td style="color: snow; background-color: from-table-column('color');">
+					snow
+				</td>
+				<td style="color: snow; background-color: from-table-column('color');">
+					snow
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: springgreen;">
+				
+				</td>
+				<td style="border: none;">
+					'springgreen'
+				</td>
+				<td style="background-color: springgreen;">
+					springgreen
+				</td>
+				<td style="background-color: springgreen;">
+					springgreen
+				</td>
+				<td style="background-color: springgreen;">
+					springgreen
+				</td>
+				<td style="color: springgreen; background-color: from-table-column('color');">
+					springgreen
+				</td>
+				<td style="color: springgreen; background-color: from-table-column('color');">
+					springgreen
+				</td>
+				<td style="color: springgreen; background-color: from-table-column('color');">
+					springgreen
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: steelblue;">
+				
+				</td>
+				<td style="border: none;">
+					'steelblue'
+				</td>
+				<td style="background-color: steelblue;">
+					steelblue
+				</td>
+				<td style="background-color: steelblue;">
+					steelblue
+				</td>
+				<td style="background-color: steelblue;">
+					steelblue
+				</td>
+				<td style="color: steelblue; background-color: from-table-column('color');">
+					steelblue
+				</td>
+				<td style="color: steelblue; background-color: from-table-column('color');">
+					steelblue
+				</td>
+				<td style="color: steelblue; background-color: from-table-column('color');">
+					steelblue
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: tan;">
+				
+				</td>
+				<td style="border: none;">
+					'tan'
+				</td>
+				<td style="background-color: tan;">
+					tan
+				</td>
+				<td style="background-color: tan;">
+					tan
+				</td>
+				<td style="background-color: tan;">
+					tan
+				</td>
+				<td style="color: tan; background-color: from-table-column('color');">
+					tan
+				</td>
+				<td style="color: tan; background-color: from-table-column('color');">
+					tan
+				</td>
+				<td style="color: tan; background-color: from-table-column('color');">
+					tan
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: teal;">
+				
+				</td>
+				<td style="border: none;">
+					'teal'
+				</td>
+				<td style="background-color: teal;">
+					teal
+				</td>
+				<td style="background-color: teal;">
+					teal
+				</td>
+				<td style="background-color: teal;">
+					teal
+				</td>
+				<td style="color: teal; background-color: from-table-column('color');">
+					teal
+				</td>
+				<td style="color: teal; background-color: from-table-column('color');">
+					teal
+				</td>
+				<td style="color: teal; background-color: from-table-column('color');">
+					teal
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: thistle;">
+				
+				</td>
+				<td style="border: none;">
+					'thistle'
+				</td>
+				<td style="background-color: thistle;">
+					thistle
+				</td>
+				<td style="background-color: thistle;">
+					thistle
+				</td>
+				<td style="background-color: thistle;">
+					thistle
+				</td>
+				<td style="color: thistle; background-color: from-table-column('color');">
+					thistle
+				</td>
+				<td style="color: thistle; background-color: from-table-column('color');">
+					thistle
+				</td>
+				<td style="color: thistle; background-color: from-table-column('color');">
+					thistle
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: tomato;">
+				
+				</td>
+				<td style="border: none;">
+					'tomato'
+				</td>
+				<td style="background-color: tomato;">
+					tomato
+				</td>
+				<td style="background-color: tomato;">
+					tomato
+				</td>
+				<td style="background-color: tomato;">
+					tomato
+				</td>
+				<td style="color: tomato; background-color: from-table-column('color');">
+					tomato
+				</td>
+				<td style="color: tomato; background-color: from-table-column('color');">
+					tomato
+				</td>
+				<td style="color: tomato; background-color: from-table-column('color');">
+					tomato
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: turquoise;">
+				
+				</td>
+				<td style="border: none;">
+					'turquoise'
+				</td>
+				<td style="background-color: turquoise;">
+					turquoise
+				</td>
+				<td style="background-color: turquoise;">
+					turquoise
+				</td>
+				<td style="background-color: turquoise;">
+					turquoise
+				</td>
+				<td style="color: turquoise; background-color: from-table-column('color');">
+					turquoise
+				</td>
+				<td style="color: turquoise; background-color: from-table-column('color');">
+					turquoise
+				</td>
+				<td style="color: turquoise; background-color: from-table-column('color');">
+					turquoise
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: violet;">
+				
+				</td>
+				<td style="border: none;">
+					'violet'
+				</td>
+				<td style="background-color: violet;">
+					violet
+				</td>
+				<td style="background-color: violet;">
+					violet
+				</td>
+				<td style="background-color: violet;">
+					violet
+				</td>
+				<td style="color: violet; background-color: from-table-column('color');">
+					violet
+				</td>
+				<td style="color: violet; background-color: from-table-column('color');">
+					violet
+				</td>
+				<td style="color: violet; background-color: from-table-column('color');">
+					violet
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: wheat;">
+				
+				</td>
+				<td style="border: none;">
+					'wheat'
+				</td>
+				<td style="background-color: wheat;">
+					wheat
+				</td>
+				<td style="background-color: wheat;">
+					wheat
+				</td>
+				<td style="background-color: wheat;">
+					wheat
+				</td>
+				<td style="color: wheat; background-color: from-table-column('color');">
+					wheat
+				</td>
+				<td style="color: wheat; background-color: from-table-column('color');">
+					wheat
+				</td>
+				<td style="color: wheat; background-color: from-table-column('color');">
+					wheat
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: white;">
+				
+				</td>
+				<td style="border: none;">
+					'white'
+				</td>
+				<td style="background-color: white;">
+					white
+				</td>
+				<td style="background-color: white;">
+					white
+				</td>
+				<td style="background-color: white;">
+					white
+				</td>
+				<td style="color: white; background-color: from-table-column('color');">
+					white
+				</td>
+				<td style="color: white; background-color: from-table-column('color');">
+					white
+				</td>
+				<td style="color: white; background-color: from-table-column('color');">
+					white
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: whitesmoke;">
+				
+				</td>
+				<td style="border: none;">
+					'whitesmoke'
+				</td>
+				<td style="background-color: whitesmoke;">
+					whitesmoke
+				</td>
+				<td style="background-color: whitesmoke;">
+					whitesmoke
+				</td>
+				<td style="background-color: whitesmoke;">
+					whitesmoke
+				</td>
+				<td style="color: whitesmoke; background-color: from-table-column('color');">
+					whitesmoke
+				</td>
+				<td style="color: whitesmoke; background-color: from-table-column('color');">
+					whitesmoke
+				</td>
+				<td style="color: whitesmoke; background-color: from-table-column('color');">
+					whitesmoke
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: yellow;">
+				
+				</td>
+				<td style="border: none;">
+					'yellow'
+				</td>
+				<td style="background-color: yellow;">
+					yellow
+				</td>
+				<td style="background-color: yellow;">
+					yellow
+				</td>
+				<td style="background-color: yellow;">
+					yellow
+				</td>
+				<td style="color: yellow; background-color: from-table-column('color');">
+					yellow
+				</td>
+				<td style="color: yellow; background-color: from-table-column('color');">
+					yellow
+				</td>
+				<td style="color: yellow; background-color: from-table-column('color');">
+					yellow
+				</td>
+			</tr>
+			<tr>
+				<td style = "background-color: yellowgreen;">
+				
+				</td>
+				<td style="border: none;">
+					'yellowgreen'
+				</td>
+				<td style="background-color: yellowgreen;">
+					yellowgreen
+				</td>
+				<td style="background-color: yellowgreen;">
+					yellowgreen
+				</td>
+				<td style="background-color: yellowgreen;">
+					yellowgreen
+				</td>
+				<td style="color: yellowgreen; background-color: from-table-column('color');">
+					yellowgreen
+				</td>
+				<td style="color: yellowgreen; background-color: from-table-column('color');">
+					yellowgreen
+				</td>
+				<td style="color: yellowgreen; background-color: from-table-column('color');">
+					yellowgreen
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

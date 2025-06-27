@@ -1,0 +1,272 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_graphics-svg-2]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBlock
+				{
+					-ah-margin-before: 1em;
+					font-family: sans-serif;
+					font-size: 1.2em;
+					font-weight: bold;
+					text-indent: 0em;
+					-ah-padding-before: 0.3em;
+					-ah-padding-after: 0.3em;
+					keep-with-next.within-column: always;
+					hyphens: auto;
+					-ah-line-height-shift-adjustment: disregard-shifts;
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Scalable Vector Graphics (SVG) 2
+		</div>
+		<div class="subheading">
+			Antenna House Formatter V7.3 supports <a href="https://www.w3.org/TR/SVG2/">Scalable Vector Graphics (SVG) 2</a>. A custom drawing engine enables the inclusion of high resolution images in PDF. To use SVG, you must purchase “<a href="https://www.antennahouse.com/svg-output/">Antenna House Formatter SVG Output Option</a>”.
+		</div>
+		<div style="column-count: 2;">
+			<div class = "demoBlock">
+				&lt;filter&gt;
+				<div style="width: 75mm; height: 50mm; -ah-content-width: 70mm; -ah-content-height: 55mm; -ah-display-align: center; text-align: center;">
+					<svg viewBox="0 0 200 150" width="200" height="150">
+						<defs>
+						 <filter id="sample">
+							<feGaussianBlur stdDeviation="10">
+				   			</feGaussianBlur>
+						 </filter>
+						</defs>
+						<circle cx="100" cy="75" r="65" filter="url(#sample)">
+				   		</circle>
+					</svg>
+				</div>
+			</div>
+			<div class = "demoBlock">
+				&lt;Filter Effects Module Level1&gt;
+				<div style="width: 75mm; height: 50mm; -ah-content-width: 70mm; -ah-content-height: 55mm; -ah-display-align: center; text-align: center;">
+					<svg width="250" viewBox="0 0 200 70" version="1.1">
+						<defs>	 
+						 <filter id="MyFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="200" height="120">
+						  <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur">
+				   </feGaussianBlur>
+						  <feOffset in="blur" dx="4" dy="4" result="offsetBlur">
+				   </feOffset>
+						  <feSpecularLighting in="blur" surfaceScale="5" specularConstant=".75" specularExponent="20" lighting-color="#bbbbbb" result="specOut">
+						   <fePointLight x="-5000" y="-10000" z="20000">
+				   </fePointLight>
+						  </feSpecularLighting>
+						  <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut">
+				   </feComposite>
+						  <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint">
+				   </feComposite>
+						  <feMerge>
+						   <feMergeNode in="offsetBlur">
+				   </feMergeNode>
+						   <feMergeNode in="litPaint">
+				   </feMergeNode>
+				   	  </feMerge>
+				   	 </filter>
+				   	</defs>
+				   <g filter="url(#MyFilter)">
+				   	 <path fill="none" stroke="#D90000" stroke-width="10" d="M50,66 c-50,0 -50,-60 0,-60 h100 c50,0 50,60 0,60z">
+				   </path>
+				   	 <path fill="#D90000" d="M60,56 c-30,0 -30,-40 0,-40 h80 c30,0 30,40 0,40z">
+				   </path>
+				   	 <g fill="#FFFFFF" stroke="black" font-size="45" font-family="Verdana">
+				   	  <text x="52" y="52">
+				   SVG</text>
+				   	</g>
+				   	</g>
+				      </svg>
+				</div>
+			</div>
+			<div class = "demoBlock">
+				&lt;mask&gt;
+				<div style="width: 75mm; height: 50mm; -ah-content-width: 70mm; -ah-content-height: 55mm; -ah-display-align: center; text-align: center;">
+					<svg width="250" height="166">
+
+						<defs>
+				   
+						 <linearGradient id="imagesGradient">
+				   
+						  <stop offset="0" stop-color="white" stop-opacity="0">
+				   </stop>
+				   
+						  <stop offset="1" stop-color="white" stop-opacity="1">
+				   </stop>
+				   
+						 </linearGradient>
+				   
+						 <mask id="imagesMask">
+				   
+						  <rect x="0" y="0" width="250" height="166" fill="url(#imagesGradient)">
+				   </rect>
+				   
+						 </mask>
+				   
+						</defs>
+				   
+						
+						<image class="photo1" x="0" y="0" width="250" height="166" xlink:href="sunflower.jpg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </image>
+				   
+						<rect x="0" y="0" width="250" height="166" fill="lime" mask="url(#imagesMask)">
+				   </rect>
+				   
+					   </svg>
+				</div>
+			</div>
+			<div class = "demoBlock">
+				&lt;paint-order&gt;
+				<div style="width: 75mm; height: 50mm; -ah-content-width: 70mm; -ah-content-height: 55mm; -ah-display-align: center; text-align: center;">
+					<svg id="svg-root" width="100%" height="100%" viewBox="75 25 300 300">
+
+     
+						<defs>
+				   
+						 <rect id="rectangle" width="2" height="2" style="fill:blue">
+				   </rect>
+				   
+						 <marker id="marker" style="overflow:visible" markerWidth="2" markerHeight="2" orient="auto" viewBox="0 0 2 2" refX="1" refY="1">
+				   
+						  <use xlink:href="#rectangle" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </use>
+				   
+						 </marker>
+				   
+						 <path id="path" d="m -25,-25 0,50 50,0 0,-50 z">
+				   </path>
+				   
+						</defs>
+				   
+						
+						<g id="test-body-content" font-size="16" style="fill:lavender;stroke:green;stroke-width:5px;marker:url(#marker)">
+				   
+						 <use xlink:href="#path" transform="translate(80,80)" style="" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </use>
+				   
+						 <use xlink:href="#path" transform="translate(200,80)" style="paint-order:normal" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </use>
+				   
+						 <use xlink:href="#path" transform="translate(320,80)" style="paint-order:fill stroke markers" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </use>
+				   
+						 <use xlink:href="#path" transform="translate(80,180)" style="paint-order:fill" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </use>
+				   
+						 <use xlink:href="#path" transform="translate(200,180)" style="paint-order:stroke" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </use>
+				   
+						 <use xlink:href="#path" transform="translate(320,180)" style="paint-order:markers" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </use>
+				   
+						 <use xlink:href="#path" transform="translate(80,280)" style="paint-order:fill stroke" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </use>
+				   
+						 <use xlink:href="#path" transform="translate(200,280)" style="paint-order:stroke markers" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </use>
+				   
+						 <use xlink:href="#path" transform="translate(320,280)" style="paint-order:markers fill" xmlns:xlink="http://www.w3.org/1999/xlink">
+				   </use>
+				   
+						</g>
+				   
+						
+					   </svg>
+				</div>
+			</div>
+			<div class = "demoBlock">
+				&lt;mix-blend-mode&gt;
+				<div style="width: 75mm; height: 50mm; -ah-content-width: 70mm; -ah-content-height: 55mm; -ah-display-align: center; text-align: center;">
+					<svg id="svg-root" width="100%" height="100%" viewBox="180 60 200 300">
+
+     
+     
+						<style id="test-font" type="text/css">
+				   
+						 rect {
+						 mix-blend-mode: screen;
+						 }
+						 
+						 #edgecover &gt; rect {
+						 mix-blend-mode: normal;
+						 }
+						 
+						 g {
+						 isolation: isolate;
+						 }
+						</style>
+				   
+						
+						<g id="test-body-content">
+				   
+						 
+						 <g>
+				   
+						  <rect x="120" y="80" width="160" height="160" fill="red">
+				   </rect>
+				   
+						  <rect x="200" y="80" width="160" height="160" fill="lime">
+				   </rect>
+				   
+						  <rect x="160" y="160" width="160" height="160" fill="blue">
+				   </rect>
+				   
+						 </g>
+				   
+						 
+						 
+						 <g style="fill:none;stroke:black;stroke-width:2px" id="edgecover">
+				   
+						  <rect x="120" y="80" width="160" height="160">
+				   </rect>
+				   
+						  <rect x="200" y="80" width="160" height="160">
+				   </rect>
+				   
+						  <rect x="160" y="160" width="160" height="160">
+				   </rect>
+				   
+						 </g>
+				   
+						 
+						</g>
+				   
+						
+					   </svg>
+				   
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

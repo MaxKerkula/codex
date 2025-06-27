@@ -1,0 +1,65 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-footnote-max-height-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					@footnote
+					{
+						border-top: thin solid;
+						-ah-float: bottom;
+						-ah-footnote-max-height: 15%;
+					}
+				}
+				span.footnote
+				{
+					-ah-float: footnote;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Antenna House CSS Sample Template
+		</div>
+		<div class="subheading">
+			You can set footnotes across pages, set the height of the footnote area by using <span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.footnote-max-height">-ah-footnote-max-height</a></span>. The initial value is ‘auto’. The operation when <span class = "codePrint">-ah-footnote-max-height: auto</span> is specified depends on the value of auto-break-footnote in the Option Setting File. Footnotes do not break across pages when <span class = "codePrint">-ah-footnote-max-height: auto</span> is specified and auto-break-footnote is ‘false’. Large-size footnotes will cause overflow. When <span class = "codePrint">-ah-footnote-max-height: auto</span> is specified and auto-break-footnote is ‘true’, a page height is regarded as specified in -ah-footnote-max-height, and the page break will occur within footnote-body. You can also specify ‘length’ and ‘percentage’ for -ah-footnote-max-height. The value must be positive. At this time, auto-break-footnote is not referenced. When specifying values, page breaks may occur within the footnote-body. Footnote text is entered as much as possible after the anchor position, and the part not entered is split and sent to the next page.		
+		</div>
+		<div>
+			<h3 style = "font-family: sans-serif;">
+				Footnote arrangement by <span class = "codePrint">-ah-footnote-max-height: 15%</span> setting
+			</h3>
+			<div style = "-ah-margin-after: 1em;">
+				Antenna House Formatter is a most powerful formatting and printing software<span class = "footnote">Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.</span> using XSL-FO and XML/HTML with CSS<span class = "footnote">XSL-FO and CSS cannot be mixed.</span>
+			</div>
+			<div>
+				ABCDE<span class = "footnote">footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote. footnote.</span>
+			</div>
+		</div>
+		<div style = "page-break-before: always;">
+			This software conforms to XSL 1.1, <span class = "footnote">See also [XSL-FO Conformance] in the online manual.</span> which is a specification for displaying / printing XML documents in a fine manner.  Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under formulation in the CSS Working Group.
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,45 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-printer-marks-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					-ah-marks: crop cross url('colorbar.svg');
+					-ah-printer-marks-line-width: 0.25pt;
+					-ah-crop-offset: 20mm 14mm 20mm 14mm;
+					-ah-bleed: 4mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Printer Marks
+		</div>
+		<div class="subheading">
+			Antenna House Formatter can draw printer marks. Specify the distance from the edge of a paper to the finishing position using <span class = "codePrint">-ah-crop-offset</span>. Specify the width of the bleed region with <span class = "codePrint">-ah-bleed</span>. This example shows printer marks for a B5 (182mm × 257mm) page centered on A4 (210mm x 297mm) paper.
+		</div>
+	</body>
+
+</html>

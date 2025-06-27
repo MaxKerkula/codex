@@ -1,0 +1,100 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-kerning-mode-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoHeader
+				{
+					font-size: 1.2em;
+					margin-top: 1em;
+				}
+				.kerningModeDemo_0
+				{
+					font-size: 3.5em;
+					-ah-kerning-mode: none;
+				}
+				.kerningModeDemo_1
+				{
+					font-size: 3.5em;
+					-ah-kerning-mode: pair;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Pair Kerning in Alphabets
+		</div>
+		<div class="subheading">
+				By using a pair kerning value of Western fonts, you may set whether the space between letters should be trimmed or not using: <span class = "codePrint">-ah-kerning-mode: none | pair</span>. If the value of <span class = "codePrint">letter-spacing</span> is not <span class = "codePrint">0</span>, it would be regarded as specifying <span class = "codePrint">none</span>.
+		</div>
+		<div class = "demoHeader">
+			Latin script:
+		</div>
+		<div class = "kerningModeDemo_0">
+			TO WALT
+		</div>
+		<div class = "kerningModeDemo_1">
+			TO WALT
+		</div>
+		
+		
+		<div class = "demoHeader">
+			Greek script:
+		</div>
+		<div class = "kerningModeDemo_0">
+			ΓΑΜΜΑ
+		</div>
+		<div class = "kerningModeDemo_1">
+			ΓΑΜΜΑ
+		</div>
+		
+		
+		<div class = "demoHeader">
+			Cyrillic script:
+		</div>
+		<div class = "kerningModeDemo_0">
+			ТАЙНА
+		</div>
+		<div class = "kerningModeDemo_1">
+			ТАЙНА
+		</div>
+		
+		
+		<div class = "demoHeader">
+			The letter-spacing value is non-zero:
+		</div>
+		<div class = "kerningModeDemo_0" style = "letter-spacing: 0.0001em;">
+			TO WALT
+		</div>
+		<div class = "kerningModeDemo_1" style = "letter-spacing: 0.0001em;">
+			TO WALT
+		</div>
+		
+	</body>
+
+</html>

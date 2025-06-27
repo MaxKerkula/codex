@@ -1,0 +1,184 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-annotation-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.styleBlock
+				{
+					-ah-margin-after: 11em;
+					-ah-annotation-type: Text;
+					-ah-annotation-title: 'Annotation';
+					-ah-annotation-author: 'Antenna House';
+					-ah-annotation-contents: 'Sample';
+					-ah-annotation-color: rgba(0,128,128,0.5);
+					-ah-annotation-open: true;
+					-ah-annotation-position-horizontal: 0pt;
+					-ah-annotation-position-vertical: 0pt;
+					-ah-annotation-width: 150pt;
+					-ah-annotation-height: 70pt;
+				}
+				.styleBlock_0
+				{
+					-ah-margin-after: 6em;
+					-ah-annotation-type: FreeText;
+					-ah-annotation-title: 'Annotation';
+					-ah-annotation-author: 'Antenna House';
+					-ah-annotation-contents: 'Sample';
+					-ah-annotation-color: lightgray;
+					-ah-annotation-open: true;
+					-ah-annotation-position-horizontal: 0pt;
+					-ah-annotation-position-vertical: 0pt;
+					-ah-annotation-width: 200pt;
+					-ah-annotation-height: 40pt;
+					-ah-annotation-text-color: midnightblue;
+					-ah-annotation-font-family: Times;
+					-ah-annotation-font-size: 20pt;
+				}
+				.styleBlock_1
+				{
+					-ah-margin-after: 4em;
+					-ah-annotation-type: Stamp;
+					-ah-annotation-title: 'Annotation';
+					-ah-annotation-author: 'Antenna House';
+					-ah-annotation-contents: 'Sample';
+					-ah-annotation-color: lightgray;
+					-ah-annotation-position-horizontal: 0pt;
+					-ah-annotation-position-vertical: 0pt;
+					-ah-annotation-width: 100pt;
+					-ah-annotation-height: 40pt;
+					-ah-annotation-icon-name: Draft;
+				}
+				.styleBlock_2
+				{
+					-ah-margin-after: 4em;
+					-ah-annotation-type: Stamp;
+					-ah-annotation-title: 'Annotation';
+					-ah-annotation-author: 'Antenna House';
+					-ah-annotation-contents: 'Sample';
+					-ah-annotation-color: lightgray;
+					-ah-annotation-position-horizontal: 0pt;
+					-ah-annotation-position-vertical: 0pt;
+					-ah-annotation-width: 100pt;
+					-ah-annotation-height: 40pt;
+					-ah-annotation-icon-name: Approved;
+				}
+				.styleBlock_3
+				{
+					-ah-margin-after: 5em;
+					-ah-annotation-type: Stamp;
+					-ah-annotation-title: 'Annotation';
+					-ah-annotation-author: 'Antenna House';
+					-ah-annotation-contents: 'Sample';
+					-ah-annotation-color: lightgray;
+					-ah-annotation-position-horizontal: 0pt;
+					-ah-annotation-position-vertical: 0pt;
+					-ah-annotation-width: 100pt;
+					-ah-annotation-height: 40pt;
+					-ah-annotation-icon-name: TopSecret;
+				}
+				.styleBlock_4
+				{
+					-ah-margin-after: 6em;
+					-ah-annotation-type: FileAttachment;
+					-ah-annotation-title: 'Annotation';
+					-ah-annotation-author: 'Antenna House';
+					-ah-annotation-contents: 'Sample';
+					-ah-annotation-color: lightgray;
+					-ah-annotation-file-attachment: './attachment-sample-1.pdf';
+					-ah-annotation-position-horizontal: 10pt;
+					-ah-annotation-position-vertical: 10pt;
+					-ah-annotation-width: 15pt;
+					-ah-annotation-height: 15pt;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Annotations in PDF document 
+		</div>
+		<div class="subheading">
+			You can create annotations in PDF by specifying <span class = "codePrint">-ah-annotation-type</span>. The types of annotations available are text annotation (‘Text’), free-text annotation (‘FreeText’), rubber-stamp annotation (‘Stamp’) and file-attachment annotation (‘FileAttachment’). An author, title, content, display when the PDF is opened and icon of the respective annotations can be specified.
+		</div>
+		<div>
+			This sample specifies a title (<span class = "codePrint">-ah-annotation-title: Annotation;</span>), an author (<span class = "codePrint">-ah-annotation-author: Antenna House</span>) and contents (<span class = "codePrint">-ah-annotation-contents: Sample;</span>).
+		</div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				-ah-annotation-type: Text;
+			</h2>
+			<diV>
+				The display state can be specified to ‘Text’ when PDF is opened by -ah-annotation-open. By specifying ‘true’, it is displayed.
+			</diV>
+		</div>
+		<div class = "styleBlock"></div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				-ah-annotation-type: FreeText;
+			</h2>
+			<div>
+				Font, font size, weight and color can be specified to ‘FreeText’
+			</div>
+			<div class = "styleBlock_0">
+			</div>
+		</div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				-ah-annotation-type: Stamp;
+			</h2>
+			<div>
+				Any display styles can be specified to ‘Stamp’ by -ah-annotation-icon-name’. The following shows some of the examples.
+			</div>
+			<div class = "codePrint">
+				-ah-annotation-icon-name: Draft
+			</div>
+			<div class = "styleBlock_1">
+			</div>
+			<div class = "codePrint">
+				-ah-annotation-icon-name: ForPublicRelease
+			</div>
+			<div class = "styleBlock_2">
+			</div>
+			<div class = "codePrint">
+				-ah-annotation-icon-name: TopSecret
+			</div>
+			<div class = "styleBlock_3">
+			</div>
+		</div>
+		<div>
+			<h2 style = "font-family: sans-serif;">
+				-ah-annotation-type: FileAttachment;
+			</h2>
+			<div>
+				A reference file can be specified to ‘FileAttachment’ by -ah-annotation-file-attachment.
+			</div>
+			<div class = "styleBlock_4">
+			</div>
+		</div>
+	</body>
+
+</html>

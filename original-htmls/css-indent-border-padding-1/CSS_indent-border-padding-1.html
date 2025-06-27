@@ -1,0 +1,143 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page :last
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+					font-size: small;
+				}
+				.customTextBorder
+				{
+					margin-left: 20mm;
+					margin-right: 20mm;
+					border-style: solid;
+					border-width: 5mm;
+					border-color: #FFDDDD;
+				}
+				#cTB_0
+				{
+					margin-left: 0;
+					margin-right: 0;
+					-ah-margin-start: 20mm;
+					-ah-margin-end: 20mm;
+				}
+				#cTB_1
+				{
+					margin-left: 0;
+				}
+				#cTB_2
+				{
+					margin-left: 0;
+					margin-right: 0;
+					-ah-margin-start: -5mm;
+					-ah-margin-end: 20mm;
+				}
+				#cTB_3
+				{
+					margin-left: 20mm;
+					margin-right: 0;
+				}
+				#cTB_4
+				{
+					margin-left: 0;
+					margin-right: 0;
+					-ah-margin-start: 20mm;
+					-ah-margin-end: -5mm;
+				}
+				#cTB_5
+				{
+					margin-left: 0;
+					margin-right: 0;
+					padding: 0mm;
+					border-style: none;
+				}
+				#cTB_6
+				{
+					margin-left: 0;
+					margin-right: 0;
+					padding: 2mm;
+					border-style: none;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Creating optional spaces around text inside a block
+		</div>
+		<div class="subheading">
+				You can create an optional space around the text inside the block flexibly.
+		</div>
+		<p>	<span class = "codePrint">margin-left:20mm; margin-right:20mm; border-style:solid;border-width:5mm; border-color:#FFDDDD;</span></p>
+			<div style = "border: thin dotted;">
+				<div class = "customTextBorder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+				</div>
+			</div>
+			
+			<p>	<span class = "codePrint">-ah-margin-start:20mm; -ah-margin-end:20mm; border-style:solid; border-width:5mm; border-color:#FFDDDD;</span></p>
+			<div style = "border: thin dotted;">
+				<div class = "customTextBorder" id = "cTB_0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+				</div>
+			</div>
+			
+			<p>	<span class = "codePrint">margin-left:0mm; margin-right:20mm; border-style:solid; border-width:5mm; border-color:#FFDDDD;</span></p>
+			<div style = "border: thin dotted;">
+				<div class = "customTextBorder" id = "cTB_1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+				</div>
+			</div>
+			
+			<p>	<span class = "codePrint">-ah-margin-start:-5mm; -ah-margin-end:20mm; border-style:solid; border-width:5mm; border-color:#FFDDDD;</span></p>
+			<div style = "border: thin dotted;">
+				<div class = "customTextBorder" id = "cTB_2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+				</div>
+			</div>
+			
+			<p>	<span class = "codePrint">margin-left:20mm; margin-right:0mm; border-style:solid; border-width:5mm; border-color:#FFDDDD;</span></p>
+			<div style = "border: thin dotted;">
+				<div class = "customTextBorder" id = "cTB_3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+				</div>
+			</div>
+			
+			<p>	<span class = "codePrint">-ah-margin-start:20mm; -ah-margin-end:-5mm; border-style:solid; border-width:5mm; border-color:#FFDDDD;</span></p>
+			<div style = "border: thin dotted;">
+				<div class = "customTextBorder" id = "cTB_4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+				</div>
+			</div>
+			
+			<p style = "break-before: always">	<span class = "codePrint">margin-left:0mm; margin-right:0mm; padding:0mm; border-style:none;</span></p>
+			<div style = "border: thin dotted;">
+				<div class = "customTextBorder" id = "cTB_5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+				</div>
+			</div>
+			
+			<p>	<span class = "codePrint">margin-left:0mm; margin-right:0mm; padding:2mm; border-style:none;</span></p>
+			<div style = "border: thin dotted;">
+				<div class = "customTextBorder" id = "cTB_6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+				</div>
+			</div>
+	</body>
+
+</html>

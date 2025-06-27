@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="keywords" content="object,video,-ah-multimedia-treatment,content-type">
+<meta name="author" content="Antenna House, Inc.">
+<title>Rich Media Annotations – Antenna House, Inc.</title>
+<style>
+@page {
+    size: 210mm 297mm;
+    margin-top: 10mm;
+    margin-left: 20mm;
+    margin-right: 20mm;
+    margin-bottom: 27mm;
+    @bottom-right {
+        height: 30mm;
+        content: 'Antenna House, Inc.';
+        font-size: 0.8em;
+        text-align: right;
+        color: green;
+        -ah-link: url('https://www.antennahouse.com/');
+        -ah-link-alt-text: 'Antenna House, Inc.';
+        -ah-pdftag: Artifact;
+        -ah-link-annotation-contents: 'Antenna House, Inc.';
+    }
+}
+body {
+    font-family: serif;
+    font-size: 10pt;
+    line-height: 1.4;
+    -ah-hyphenate-hyphenated-word: false;
+    hyphens: auto;
+}
+.block_1 {
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    -ah-space-before-conditionality: retain;
+    -ah-space-after-conditionality: retain;
+    background-color: #EEEEEE;
+    hyphens: manual;
+    -ah-line-height-shift-adjustment: disregard-shifts;
+}
+.block_1_child {
+    margin-left: 1em;
+    margin-right: 1em;
+    -ah-pdftag: H1;
+}
+.block_2 {
+    -ah-margin-before: 1em;
+    -ah-margin-after: 1em;
+    -ah-space-after-conditionality: retain;
+    text-indent: 0em;
+    border: 1pt solid #9999FF;
+    padding: 0.5em;
+    text-align: justify;
+    -ah-line-height-shift-adjustment: disregard-shifts;
+}
+.link_1 {
+    text-decoration: underline;
+    color: blue;
+    -ah-link-annotation-contents: 'axf:multimedia-treatment';
+    -ah-link: url('https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.multimedia-treatment');
+}
+.block_h2_style {
+    margin-top: 1em;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-indent: 0em;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+    -ah-keep-with-next-within-column: always;
+    hyphens: manual;
+    -ah-line-height-shift-adjustment: disregard-shifts;
+    clear: both;
+    -ah-pdftag: H2;
+}
+.video_1 {
+    width: 180pt;
+    height: 100pt;
+    -ah-multimedia-treatment: richmedia;
+    -ah-poster-image: url('Wildlife_0001.jpg');
+}
+.video_2 {
+    width: 180pt;
+    height: 100pt;
+    -ah-multimedia-treatment: richmedia-windowed;
+    -ah-poster-image: url('Wildlife_0001.jpg');
+}
+.video_3 {
+    width: 180pt;
+    height: 100pt;
+    -ah-multimedia-treatment: richmedia;
+    -ah-poster-image: url('Wildlife_0001.jpg');
+    -ah-media-skin-control: all;
+    -ah-media-skin-color: red;
+    -ah-media-skin-auto-hide: false;
+}
+.link_2 {
+    text-decoration: underline;
+    color: blue;
+    -ah-link-annotation-contents: 'axf:media-activation';
+    -ah-link: url('https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.media-activation');
+}
+.video_4 {
+    width: 180pt;
+    height: 100pt;
+    -ah-multimedia-treatment: richmedia;
+    -ah-poster-image: url('Wildlife_0001.jpg');
+    -ah-media-activation: PageOpen PageClose;
+}
+</style>
+</head>
+<body>
+    <div class="block_1">
+        <div class="block_1_child">Rich Media Annotations</div>
+    </div>
+    <div class="block_2">By specifying -ah-multimedia-treatment: richmedia;, you can embed multimedia data in your PDF as "Rich Media" annotations. For example: &lt;video src="video.mp4" type="video/mp4" style="-ah-multimedia-treatment: richmedia;"&gt;&lt;/video&gt;. If -ah-multimedia-treatment: richmedia-windowed; is specified, the content will be displayed and played in a separate window. Rich media annotations do not require external players for playback. Supported data formats and valid properties differ from when multimedia is embedded using -ah-multimedia-treatment: auto;. For further information on '<a class="link_1" href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.multimedia-treatment">-ah-multimedia-treatment</a>', please refer to the Online Manual. Rich media annotations are available with AH Formatter V6.5. This feature is supported only with PDF1.7 or later.</div>
+    <div class="block_h2_style">-ah-multimedia-treatment="richmedia"</div>
+    <div>
+        <video src="Wildlife.mp4" type="video/mp4" class="video_1"></video>
+    </div>
+    <div class="block_h2_style">-ah-multimedia-treatment="richmedia-windowed"</div>
+    <div>
+        <video src="Wildlife.mp4" type="video/mp4" class="video_2"></video>
+    </div>
+    <div class="block_h2_style">-ah-media-skin-control="all", -ah-media-skin-color="red", -ah-media-skin-auto-hide="false"</div>
+    <div>You can specify -ah-media-skin-control, -ah-media-skin-color, and -ah-media-skin-auto-hide to set the appearance of the skin with the controls to play and stop the rich media.</div>
+    <div>
+        <video src="Wildlife.mp4" type="video/mp4" class="video_3"></video>
+    </div>
+    <div class="block_h2_style">-ah-media-activation</div>
+    <div>-ah-media-activation specifies when to enable or disable rich media. For details on allowed values, please refer to '<a class="link_2" href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.media-activation">-ah-media-activation</a>' in the Online Manual. The following sample combines PageOpen (activates when the page content containing the content is opened) and PageClose (deactivates when the page containing the content is closed). </div>
+    <div class="block_h2_style">-ah-media-activation="PageOpen PageClose"</div>
+    <div>
+        <video src="Wildlife.mp4" type="video/mp4" class="video_4"></video>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alex Critchfield, Antenna House">
+    <meta name="keywords" content="extensions, value, table-omit-header-at-break, table-omit-footer-at-break">
+    <meta name="subject" content="table-omit-header-at-break table-omit-footer-at-break extended values">
+    <title>table-omit-header-at-break table-omit-footer-at-break extended values example</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin-top: 1in;
+            margin-bottom: 1in;
+            margin-left: 0.75in;
+            margin-right: 0.75in;
+
+            @bottom-right {
+                height: 30mm;
+                content: 'Antenna House, Inc.';
+                font-size: 0.8em;
+                text-align: right;
+                color: green;
+                -ah-link: url('https://www.antennahouse.com/');
+                -ah-link-alt-text: 'Antenna House, Inc.';
+                -ah-pdftag: Artifact;
+                -ah-link-annotation-contents: 'Antenna House, Inc.';
+            }
+        }
+
+        body {
+            font-family: "Arial Unicode MS";
+            font-size: 12pt;
+            column-count: 3;
+            margin: 0;
+        }
+
+        .block-span-all-intro,
+        .block-span-all-table-intro,
+        .spacer-6in {
+            column-span: all;
+        }
+
+        .block-span-all-intro p,
+        .block-span-all-table-intro p {
+            -ah-margin-before: 0;
+            -ah-margin-after: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+
+        .block-span-all-table-intro {
+            -ah-margin-before: 10mm;
+        }
+
+        .spacer-6in {
+            -ah-margin-before: 6in;
+        }
+
+        .main-table {
+            border: 2pt solid blue;
+            -ah-table-omit-footer-at-break: column;
+            -ah-table-omit-header-at-break: column;
+            border-collapse: collapse;
+        }
+
+        .main-table th.header-cell {
+            background-color: orange;
+            padding: 5pt;
+            text-align-last: center;
+            font-weight: normal;
+            text-align: start;
+        }
+
+        .main-table td.footer-cell {
+            background-color: lightblue;
+            padding: 5pt;
+            text-align-last: center;
+            text-align: start;
+        }
+
+        .main-table td.data-cell {
+            padding: 5pt;
+            border: 1pt solid black;
+            text-align-last: center;
+            text-align: start;
+        }
+        
+        code {
+            font-family: monospace;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="block-span-all-intro">
+        <p>The CSS properties <code>-ah-table-omit-header-at-break</code> and <code>-ah-table-omit-footer-at-break</code> are used to prevent a table header or footer from appearing after a table breaks across a page but allow the header or footer to appear when the table breaks across a column.</p>
+        <p>These CSS properties have been extended to allow for a value of <code>column</code>. This value will omit the header or footer when the table breaks across a column but not when it breaks across a page.</p>
+    </div>
+
+    <div class="block-span-all-table-intro">
+        <p>The following table has the CSS properties <code>-ah-table-omit-header-at-break: column;</code> and <code>-ah-table-omit-footer-at-break: column;</code> in its style definition.</p>
+    </div>
+
+    <div class="spacer-6in"></div>
+
+    <div>
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th class="header-cell"><div>This is the table header</div></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td class="footer-cell"><div>This is the table footer</div></td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+                <tr><td class="data-cell"><div>This is a cell</div></td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html> 

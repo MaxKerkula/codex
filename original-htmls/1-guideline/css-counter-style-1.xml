@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- $Id: css-counter-style-1.xml 3903 2025-03-31 17:25:14Z max $ -->
+<s:sample
+	xmlns:s="http://www.antennahouse.com/names/XSL/Sample"
+	xmlns="http://www.w3.org/1999/xhtml"
+	cat="nomenu" order="61" ver="6.3" type="css" prefix="cs" specification="CSS3-CustomProperties"
+>
+<s:title lang="ja">カウンタスタイル</s:title>
+ <s:title lang="en">Counter styles</s:title>
+ <s:keyword>@counter-style</s:keyword>
+   <s:style>
+   .cs-number {
+       color: red;
+   }
+
+   @counter-style cs-01 {
+       system: cyclic;
+       symbols: "a" "b" "c";
+   }
+
+   @counter-style cs-02 {
+       system: numeric;
+       symbols: "a" "b" "c";
+   }
+
+   @counter-style cs-03 {
+       system: alphabetic;
+       symbols: "a" "b" "c";
+   }
+
+   @counter-style cs-04 {
+       system: symbolic;
+       symbols: "a" "b" "c";
+   }
+
+   @counter-style cs-05 {
+       system: additive;
+       additive-symbols: 5 "v", 1 "i";
+   }
+
+   @counter-style cs-06 {
+       system: fixed;
+       symbols: "a" "b" "c";
+   }
+
+   @counter-style cs-07 {
+       system: extends decimal;
+       pad: 2 "0";
+   }
+
+   @counter-style cs-08 {
+       system: cyclic;
+       symbols: "a" "b" "c";
+       range: 1 3;
+       fallback: cjk-decimal;
+   }
+
+   @counter-style cs-09 {
+     system: extends decimal;
+     negative: "[-" "]";
+   }
+   .cs-counter-sample {
+       counter-reset: sample;
+   }
+
+   .cs-counter-sample span::before {
+       counter-increment: sample;
+       content: counter(sample, cs-01) " ";
+   }
+
+   .cs-counter-sample.cs-numeric span::before {
+       content: counter(sample, cs-02) " ";  
+   }
+
+   .cs-counter-sample.cs-alphabetic span::before {
+       content: counter(sample, cs-03) " ";
+   }
+
+   .cs-counter-sample.cs-symbolic span::before {
+       content: counter(sample, cs-04) " "; 
+   }
+
+   .cs-counter-sample.cs-additive span::before {
+       content: counter(sample, cs-05) " ";
+   }
+
+   .cs-counter-sample.cs-fixed span::before {
+       content: counter(sample, cs-06) " ";
+   }
+
+   .cs-counter-sample.cs-decimal-pad span::before {
+       content: counter(sample, cs-07) " ";  
+   }
+
+   .cs-counter-sample.cs-fixed-range span::before {
+       content: counter(sample, cs-08) " ";
+   }
+
+   .cs-counter-sample.cs-decimal-negative span::before {
+     counter-increment: sample -1;
+     content: counter(sample, cs-09) " ";
+   }
+
+   .cs-complex-predefined {
+       counter-reset: sample;
+   }
+
+   .cs-complex-predefined span::before {
+       counter-increment: sample; 
+       content: counter(sample, circled-decimal) " ";
+   }
+
+   .cs-complex-predefined.cs-filled-circled span::before {
+       content: counter(sample, filled-circled-decimal) " ";
+   }
+
+   .cs-complex-predefined.cs-fullwidth-upper-alpha span::before {
+       content: counter(sample, fullwidth-upper-alpha) " ";  
+   }
+
+   .cs-complex-predefined.cs-lower-greek span::before {
+       content: counter(sample, lower-greek) " ";
+   }
+
+   .cs-complex-predefined.cs-japanese-informal span::before {
+       content: counter(sample, japanese-informal) " ";
+   }
+
+   .cs-complex-predefined.cs-japanese-formal span::before {
+       content: counter(sample, japanese-formal) " ";  
+   }
+   </s:style>
+
+ <s:description lang="ja">
+  <p>■未訳■axf:counter-style により独自のカウンタスタイルを定義できます。name でカウンタスタイルの名前、system でカウンタシステムの種類、symbols でカウンタシンボルを指定します。name で指定した名前は list-style-type や axf:number-transform などで利用可能です。axf:counter-style 拡張要素は、fo:declarations の直下に配置できます。また、<a href="https://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/">Predefined Counter Styles</a> および <a href="https://www.w3.org/TR/2015/CR-css-counter-styles-3-20150203/#complex-predefined-counters">7. Complex Predefined Counter Styles</a> で定義されているスタイルを利用できます。詳細はオンラインマニュアルの「<s:help href="ahf-ext.html#axf.counter-style">axf:counter-style</s:help>」をご参照ください。カウンタスタイルの設定は Antenna House Formatter V6.3 から利用いただけます。</p>
+ </s:description>
+ <s:description lang="en">
+<p>You can define your own unique counter style with <span class="rule">@counter-style</span>. Specify the counter-style name, the counter-system type in <span class="property">system</span>, and the counter-symbol in <span class="property">symbols</span>. Names specified in the counter-style rule can be used in the <span class="property">list-style-type</span> property in CSS. The <span class="rule">@counter-style</span> rule must be placed in the CSS stylesheet. You may also use styles defined in <a href="https://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/">Predefined Counter Styles</a>, including styles in <a href="https://www.w3.org/TR/2015/CR-css-counter-styles-3-20150203/#complex-predefined-counters">Section 7, Complex Predefined Counter Styles</a>. For further details on <a href="https://www.w3.org/TR/css-counter-styles-3/">CSS Counter Styles Level 3</a>, please refer to the W3C specification. Counter style settings are available in Antenna House Formatter V6.3 and later.</p>
+</s:description>
+ <s:source lang="ja">
+  <p>このサンプルでは、一部を除き <code class="html">"One:1, Two:2, Three:3, Four:4, Five:5, Six:6"</code> の文字列中の数字が変換されるように axf:number-transform の指定と axf:counter-style で定義した name を設定します。変換される数字は赤字にしています。また、ページ番号 fo:page-number の形式が、(1)、(2) ... になるよう fo:page-sequence の format へも axf:counter-style で定義した name を設定しています。</p>
+ </s:source>
+<s:source lang="en">
+   <p>These samples, with some exceptions, convert the numerals in the character string <code class="html">One: 1, Two: 2, Three: 3, Four: 4, Five: 5, Six: 6</code> by using the <span class="function">counter()</span> function with a counter style defined in a <span class="rule">@counter-style</span> rule. The numbers to be converted are in red.</p>
+</s:source>
+
+ <s:subtitle lang="ja">■未訳■</s:subtitle>
+ <s:subtitle lang="en">Custom Counter Styles</s:subtitle>
+
+   <h3><code class="css">system: cyclic; symbols: a b c;</code></h3>
+ <s:source lang="ja">
+  <p>最初のシンボル a を 0 とみなすため、b から始まります。</p>
+   <div class="example">
+   <div class="cs-counter-sample">
+    One:<span class="cs-number"></span>, Two:<span class="cs-number"></span>, Three:<span class="cs-number"></span>, Four:<span class="cs-number"></span>, Five:<span class="cs-number"></span>, Six:<span class="cs-number"></span>
+   </div>
+   </div>
+ </s:source>
+<s:source lang="en">
+   <p>Converts the numerals in the character string into the repeating sequence a, b, c, a, b, c ...</p>
+   <div class="example">
+   <div class="cs-counter-sample">
+    One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+</s:source>
+   <h3><code class="css">system: numeric; symbols: a b c;</code></h3>
+ <s:source lang="ja">
+  <p>最初のシンボル a を 0 とみなすため、b から始まります。</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-numeric">
+    One:<span class="cs-number"></span>, Two:<span class="cs-number"></span>, Three:<span class="cs-number"></span>, Four:<span class="cs-number"></span>, Five:<span class="cs-number"></span>, Six:<span class="cs-number"></span>
+   </div>
+   </div>
+ </s:source>
+<s:source lang="en">
+   <p>The first symbol, <span class="value">a</span>, corresponds to 0, so the converted numerals start from <span class="value">b</span>.</p>
+    <div class="example">
+   <div class="cs-counter-sample cs-numeric">
+       One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+</s:source>
+   
+   <h3><code class="css">system: alphabetic; symbols: a b c;</code></h3>
+ <s:source lang="ja">
+  <p>文字列内の数字列が a, b, c, aa, ab, ac, ba, bb, bc, ... の順で変換されます。</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-alphabetic">
+    One:<span class="cs-number"></span>, Two:<span class="cs-number"></span>, Three:<span class="cs-number"></span>, Four:<span class="cs-number"></span>, Five:<span class="cs-number"></span>, Six:<span class="cs-number"></span>
+   </div>
+   </div>
+ </s:source>
+<s:source lang="en">
+   <p>Converts the numerals in the character string into the sequence a, b, c, aa, ab, ac, ba, bb, bc, ...</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-alphabetic">
+      One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+</s:source>
+   
+   <h3><code class="css">system: symbolic; symbols: a b c;</code></h3>
+ <s:source lang="ja">
+  <p>文字列内の数字列が a, b, c, aa, bb, cc, aaa, bbb, ccc, ... の順で変換されます。</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-symbolic">
+    One:<span class="cs-number"></span>, Two:<span class="cs-number"></span>, Three:<span class="cs-number"></span>, Four:<span class="cs-number"></span>, Five:<span class="cs-number"></span>, Six:<span class="cs-number"></span>
+   </div>
+   </div>
+ </s:source>
+<s:source lang="en">
+   <p>Converts the numerals in the character string into the sequence a, b, c, aa, bb, cc, aaa, bbb, ccc, ...</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-symbolic">
+       One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+</s:source>
+   <h3><code class="css">system: additive; additive-symbols: 5 v,1 i;</code></h3>
+ <s:source lang="ja">
+  <p>文字列内の数字列が 1 を i、5 を v として変換されます。</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-additive">
+       One:<span class="cs-number"></span>, Two:<span class="cs-number"></span>, Three:<span class="cs-number"></span>, Four:<span class="cs-number"></span>, Five:<span class="cs-number"></span>, Six:<span class="cs-number"></span>
+   </div>
+   </div>
+ </s:source>
+<s:source lang="en">
+   <p>Converts the numerals in the character string by converting 5 to v and remainder multiples of 1 to the same number of i.</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-additive">
+       One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+</s:source>   
+   
+   <h3><code class="css">system: fixed; symbols: a b c;</code></h3>
+ <s:source lang="ja">
+  <p>文字列内の数字列を a, b, c まで変換、以後は数字列のまま表示します。</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-fixed">
+       One:<span class="cs-number"></span>, Two:<span class="cs-number"></span>, Three:<span class="cs-number"></span>, Four:<span class="cs-number"></span>, Five:<span class="cs-number"></span>, Six:<span class="cs-number"></span>
+   </div>
+   </div>
+ </s:source>
+<s:source lang="en">
+   <p>Converts the numerals in the character string into the sequence a, b, c and then displays higher numbers unchanged.</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-fixed">
+      One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+</s:source>
+
+   <h3><code class="css">system: extends decimal; pad: 2 '0';</code></h3>
+ <s:source lang="ja">
+  <p><span class="property">pad</span> で短い桁に対するパディングを指定します。 2桁まで 01, 02, 03, ... の順で表示します。</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-decimal-pad">
+       One:<span class="cs-number"></span>, Two:<span class="cs-number"></span>, Three:<span class="cs-number"></span>, Four:<span class="cs-number"></span>, Five:<span class="cs-number"></span>, Six:<span class="cs-number"></span>
+   </div>
+   </div>
+ </s:source>
+<s:source lang="en">
+   <p><span class="property">pad</span> specifies padding for short representations. This displays up to two digits in the sequence 01, 02, 03, ...</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-decimal-pad">
+      One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+</s:source>
+
+   <h3><code class="css">system: cyclic; symbols: a b c; range: 1 3; fallback: cjk-decimal;</code></h3>
+ <s:source lang="ja">
+  <p><span class="property">range</span> でスタイル適用範囲を指定、<span class="property">fallback</span> で適用範囲外のフォールバックスタイルを指定します。 1～3 の間は a, b, c のスタイルが適用されます。以降は <a href="https://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/">Predefined Counter Styles</a> 定義の <span class="keyword">cjk-decimal</span> が適用され表示されます。</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-decimal-pad">
+       One:<span class="cs-number"></span>, Two:<span class="cs-number"></span>, Three:<span class="cs-number"></span>, Four:<span class="cs-number"></span>, Five:<span class="cs-number"></span>, Six:<span class="cs-number"></span>
+   </div>
+   </div>
+ </s:source>
+<s:source lang="en">
+   <p><span class="property">range</span> specifies the number range to which the style applies. <span class="property">fallback</span> specifies the fallback style for numbers outside that range. This sample applies a, b, c for numerals 1 to 3. It then falls back to using the <span class="keyword">cjk-decimal</span> style from <a href="https://www.w3.org/TR/2015/WD-predefined-counter-styles-20150203/">Predefined Counter Styles</a> for 4 and above.</p>
+   <div class="example">
+   <div class="cs-counter-sample cs-fixed-range">
+       One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+</s:source>
+
+   <h3><code class="css">system: extends decimal; negative: "[-" "]";</code></h3>
+ <s:source lang="ja">
+  <p>negative で負の値に対する前置後置文字列を指定します。 負の値に前置<code class="html">[-</code>、後置<code class="html">]</code> が適用され表示されます。</p>
+   <div class="example">
+     <div class="cs-counter-sample cs-decimal-negative">
+       Negative One:<span class="cs-number"></span>, Negative Two:<span class="cs-number"></span>, Negative Three:<span class="cs-number"></span>, Negative Four:<span class="cs-number"></span>, Negative Five:<span class="cs-number"></span>, Negative Six:<span class="cs-number"></span>
+     </div>
+   </div>
+ </s:source>
+<s:source lang="en">
+   <p><span class="property">negative</span> specifies the prefix and suffix character strings for negative values. This sample displays <code class="html">[-</code> before, and <code class="html">]</code> after, negative values.</p>
+   <div class="example">
+     <div class="cs-counter-sample cs-decimal-negative">
+       Negative One: <span class="cs-number"></span>, Negative Two: <span class="cs-number"></span>, Negative Three: <span class="cs-number"></span>, Negative Four: <span class="cs-number"></span>, Negative Five: <span class="cs-number"></span>, Negative Six: <span class="cs-number"></span>
+     </div>
+   </div>
+ </s:source>
+
+ <s:subtitle lang="ja">Predefined Counter Styles および 7. Complex Predefined Counter Styles</s:subtitle>
+ <s:subtitle lang="en">Complex Predefined Counter Styles</s:subtitle>
+
+ <s:source lang="ja">
+  <p>定義済み Predefined Counter Styles および 7. Complex Predefined Counter Styles のスタイルを指定した例です。</p>
+  <h3>circled-decimal</h3>
+     <div class="example">
+   <div class="cs-complex-predefined">
+   One:<span>1</span>,
+   Two:<span>2</span>,
+   Three:<span>3</span>,
+   Four:<span>4</span>,
+   Five:<span>5</span>,
+   Six:<span>6</span>
+   </div>
+     </div>
+  <h3>filled-circled-decimal</h3>
+     <div class="example">
+   <div class="cs-complex-predefined cs-filled-circled">
+   One:<span>1</span>,
+   Two:<span>2</span>,
+   Three:<span>3</span>,
+   Four:<span>4</span>,
+   Five:<span>5</span>,
+   Six:<span>6</span>
+   </div>
+     </div>
+  <h3>fullwidth-upper-alpha</h3>
+     <div class="example">
+   <div class="cs-complex-predefined cs-fullwidth-upper-alpha">
+   One:<span>1</span>,
+   Two:<span>2</span>,
+   Three:<span>3</span>,
+   Four:<span>4</span>,
+   Five:<span>5</span>,
+   Six:<span>6</span>
+   </div>
+     </div>
+  <h3>lower-greek</h3>
+     <div class="example">
+   <div class="cs-complex-predefined cs-lower-greek">
+   One:<span>1</span>,
+   Two:<span>2</span>,
+   Three:<span>3</span>,
+   Four:<span>4</span>,
+   Five:<span>5</span>,
+   Six:<span>6</span>
+   </div>
+     </div>
+  <h3>japanese-informal</h3>
+     <div class="example">
+   <div class="cs-complex-predefined cs-japanese-informal">
+   One:<span>1</span>,
+   Two:<span>2</span>,
+   Three:<span>3</span>,
+   Four:<span>4</span>,
+   Five:<span>5</span>,
+   Six:<span>6</span>
+   </div>
+     </div>
+  <h3>japanese-formal</h3>
+     <div class="example">
+   <div class="cs-complex-predefined cs-japanese-formal">
+   One:<span>1</span>,
+   Two:<span>2</span>,
+   Three:<span>3</span>,
+   Four:<span>4</span>,
+   Five:<span>5</span>,
+   Six:<span>6</span>
+   </div>
+     </div>
+ </s:source>
+ <s:source lang="en">
+   <p>Examples from <a href="https://www.w3.org/TR/2015/CR-css-counter-styles-3-20150203/#complex-predefined-counters">Section 7, Complex Predefined Counter Styles</a>, of <a href="https://www.w3.org/TR/2015/CR-css-counter-styles-3-20150203/">Predefined Counter Styles</a>.</p>
+
+   <h3><span class="keyword">circled-decimal</span></h3>
+   <div class="example">
+   <div class="cs-complex-predefined">
+      One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+
+   <h3><span class="keyword">filled-circled-decimal</span></h3>
+   <div class="example">
+   <div class="cs-complex-predefined cs-filled-circled">
+       One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+
+   <h3><span class="keyword">fullwidth-upper-alpha</span></h3>
+   <div class="example">
+   <div class="cs-complex-predefined cs-fullwidth-upper-alpha">
+       One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+
+   <h3><span class="keyword">lower-greek</span></h3>
+   <div class="example">
+   <div class="cs-complex-predefined cs-lower-greek">
+      One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+   
+   <h3><span class="keyword">japanese-informal</span></h3>
+   <div class="example">
+   <div class="cs-complex-predefined cs-japanese-informal">
+      One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+   
+   <h3><span class="keyword">japanese-formal</span></h3>
+   <div class="example">
+   <div class="cs-complex-predefined cs-japanese-formal">
+      One: <span class="cs-number"></span>, Two: <span class="cs-number"></span>, Three: <span class="cs-number"></span>, Four: <span class="cs-number"></span>, Five: <span class="cs-number"></span>, Six: <span class="cs-number"></span>
+   </div>
+   </div>
+   
+
+ </s:source>
+</s:sample>

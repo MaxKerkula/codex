@@ -1,0 +1,82 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_table-display-align-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			   table 
+			   {
+					width: 100%;
+					border-collapse: collapse;
+				}
+				th, td 
+				{
+					border: 1px solid black;
+					padding: 10px;
+				}
+				th 
+				{
+					background-color: #f2f2f2;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Text aligment in a table cell
+		</div>
+		<div class="subheading">
+			Use the XSL 1.1 <span class = "codePrint">-ah-display-align</span> and <span class = "codePrint">vertical-align</span> property to align the blocks of text in a table cell to the top, bottom, or center of the cell. Antenna House Formater has an extension: justify value that adjusts the space between lines so that the text fills the table cell.
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<th style = "background-color: #CCCCFF">vertical-align: top;</th>
+					<th style = "background-color: #EECCFF">vertical-align: bottom;</th>
+					<th style = "background-color: #CCEEFF">-ah-display-align: center;</th>
+					<th style = "background-color: #EEEEFF">-ah-display-align: justify;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr style = "line-height: 7mm; height: 100mm;">
+					<td style = "background-color: #CCCCFF; vertical-align: top;">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+					</td>
+					<td style = "background-color: #EECCFF; vertical-align: bottom;">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+					</td>
+					<td style = "background-color: #CCEEFF; -ah-display-align: center;">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+					</td>
+					<td style = "background-color: #EEEEFF; -ah-display-align: justify; display: block;">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+
+</html>

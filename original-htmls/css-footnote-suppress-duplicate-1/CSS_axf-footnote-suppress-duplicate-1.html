@@ -1,0 +1,99 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					@footnote
+					{
+						border-top: 0.02pt solid;
+						-ah-float: page bottom;
+						-ah-suppress-duplicate-footnote: true;
+						
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				span.footnote
+				{
+					-ah-float: footnote;
+				}
+				br
+				{
+					margin-bottom: 3em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Suppressing duplicate footnotes within the same page
+		</div>
+		<div class="subheading">
+			When the same footnote is allotted at several positions within a same page, using <span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.suppress-duplicate-footnote">-ah-suppress-duplicate-footnote</a></span> prevents them from being duplicated and displayed within the same footnote region. In this page, a duplicated display is controlled with <span class = "codePrint">-ah-suppress-duplicate-footnote: true;</span>
+		</div>
+		<div>
+			<div style = "margin-bottom: 1em;">
+				ABCDE<span class = "footnote">footnote sample 1</span>
+			</div>
+			<div style = "margin-bottom: 1em;">
+				EDCBA<span class = "footnote">footnote sample 2</span>
+			</div>
+			<div style = "margin-bottom: 1em;">
+				Antenna House Formatter is a most powerful formatting and printing software<span class = "footnote">Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.</span>using XSL-FO and XML/HTML with CSS
+			</div>
+			<div style = "margin-bottom: 1em;">
+				This software conforms to XSL 1.1<span class = "footnote">XSL-FO and CSS cannot be mixed.</span>, which is a specification for displaying / printing XML documents in a fine manner.  Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under formulation in the CSS Working Group.
+			</div>
+			<div style = "margin-bottom: 1em;">
+				ABCDE<span class = "footnote" style = "-ah-suppress-duplicate-footnote: true;">footnote sample 1</span>
+			</div>
+			<div style = "margin-bottom: 1em;">
+				EDCBA<span class = "footnote" style="-ah-suppress-duplicate-footnote: true;">footnote sample 2</span>
+			</div>
+		</div>
+		<div class = "subheading" style = "page-break-before: always;">
+			Because <span class = "codePrint">-ah-suppress-duplicate-footnote</span> is not specified in the second page, the same footnote is duplicated in the footnote region.
+		</div>
+		<div style = "-ah-footnote-number-reset: auto;">
+			<div style = "margin-bottom: 1em;">
+				ABCDE<span class = "footnote">footnote sample 1</span>
+			</div>
+			<div style = "margin-bottom: 1em;">
+				EDCBA<span class = "footnote">footnote sample 2</span>
+			</div>
+			<div style = "margin-bottom: 1em;">
+				Antenna House Formatter is a most powerful formatting and printing software<span class = "footnote">Depending on the formatting capability, Antenna House Formatter (formatting using XSL-FO and CSS) and Antenna House CSS Formatter (formatting using CSS) are available.</span>using XSL-FO and XML/HTML with CSS
+			</div>
+			<div style = "margin-bottom: 1em;">
+				This software conforms to XSL 1.1<span class = "footnote">XSL-FO and CSS cannot be mixed.</span>, which is a specification for displaying / printing XML documents in a fine manner.  Also it supports the page formatting with the layout setting by the CSS Level 3 specification which is currently under formulation in the CSS Working Group.
+			</div>
+			<div style = "margin-bottom: 1em;">
+				ABCDE<span class = "footnote">footnote sample 1</span>
+			</div>
+			<div style = "margin-bottom: 1em;">
+				EDCBA<span class = "footnote">footnote sample 2</span>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,1592 @@
+﻿@charset "UTF-8";
+
+/*
+ * Any copyright in this style sheet is dedicated to the Public
+ * Domain.
+ *
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ *
+ * Provided by Antenna House, Inc. to help promote
+ * the adoption of CSS for Paged Media.
+ */
+
+/* $Id: booklet-print-4th.css 3900 2025-03-31 16:22:58Z tgraham $ */
+
+@namespace m "http://www.w3.org/1998/Math/MathML";
+@namespace s "http://www.w3.org/2000/svg";
+
+/* URLs are relative to this file, not relative to the HTML file. */
+
+@font-face {
+  font-family: source-serif-pro;
+  src: url(../fonts/SourceSerifPro/SourceSerifPro-Regular.otf);
+}
+
+@font-face {
+  font-family: source-serif-pro;
+  src: url(../fonts/SourceSerifPro/SourceSerifPro-Bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: source-sans-pro;
+  src: url(../fonts/SourceSansPro/SourceSansPro-Regular.otf);
+}
+
+@font-face {
+  font-family: source-sans-pro;
+  src: url(../fonts/SourceSansPro/SourceSansPro-It.otf);
+  font-style: italic;
+}
+
+@font-face {
+  font-family: source-sans-pro;
+  src: url(../fonts/SourceSansPro/SourceSansPro-Semibold.otf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: source-sans-pro;
+  src: url(../fonts/SourceSansPro/SourceSansPro-Black.otf);
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: source-sans-pro;
+  src: url(../fonts/SourceSansPro/SourceSansPro-Bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: source-code-pro;
+  src: url(../fonts/SourceCodePro/SourceCodePro-Regular.otf);
+}
+
+@font-face {
+  font-family: source-code-pro;
+  src: url(../fonts/SourceCodePro/SourceCodePro-Bold.otf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: source-code-pro;
+  src: url(../fonts/SourceCodePro/SourceCodePro-It.otf);
+  font-style: italic;
+}
+
+@font-face {
+  font-family: source-code-pro;
+  src: url(../fonts/SourceCodePro/SourceCodePro-BoldIt.otf);
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: source-han-sans;
+  src: url(../fonts/SourceHanSansJP/SourceHanSansJP-Regular.otf);
+	font-weight: normal;
+}
+
+@font-face {
+  font-family: source-han-sans;
+  src: url(../fonts/SourceHanSansJP/SourceHanSansJP-Bold.otf);
+	font-weight: bold;
+}
+
+@font-face {
+  font-family: source-han-sans;
+  src: url(../fonts/SourceHanSansJP/SourceHanSansJP-Heavy.otf);
+	font-weight: 900;
+}
+
+@font-face {
+  font-family: source-han-serif;
+  src: url(../fonts/SourceHanSerifJP/SourceHanSerifJP-Regular.otf);
+	font-weight: normal;
+}
+
+@font-face {
+  font-family: source-han-serif;
+  src: url(../fonts/SourceHanSerifJP/SourceHanSerifJP-Bold.otf);
+	font-weight: bold;
+}
+
+@font-face {
+  font-family: source-han-serif;
+  src: url(../fonts/SourceHanSerifJP/SourceHanSerifJP-Heavy.otf);
+	font-weight: 900;
+}
+
+:root {
+  --page-size: JIS-B5;
+}
+
+/* 共通のページ設定 */
+@page {
+  size: var(--page-size); /* JIS B5 (182mm 257mm) */
+  margin: 28mm 21.325mm;
+
+  marks: crop cross;        /* printer marks to display */
+  -ah-crop-offset: 14mm;    /* distance from the page box edge to the
+                               page sheet edge */
+  -ah-printer-marks-line-color: auto;    /* printer marks line color */
+  -ah-printer-marks-line-length: 10mm;   /* printer marks line length  */
+  -ah-printer-marks-line-width: 0.12mm;  /* printer marks line width */
+  bleed: 3mm;               /* page bleed distance */
+
+
+  @top-left {
+    margin-top: -3mm;
+    padding-top: 3mm;
+    /*margin-bottom: 10mm;*/
+  }
+
+  @top-center {
+    margin-top: -3mm;
+    padding-top: 3mm;
+    /*margin-bottom: 10mm;*/
+  }
+
+  @top-right {
+    margin-top: -3mm;
+    padding-top: 3mm;
+    /*margin-bottom: 10mm;*/
+  }
+
+  @top-left-corner {
+    margin-top: -3mm;
+    padding-top: 3mm;
+    margin-left: -3mm;
+    /*margin-bottom: 10mm;*/
+  }
+
+  @top-right-corner {
+    margin-top: -3mm;
+    padding-top: 3mm;
+    margin-right: -3mm;
+    /*margin-bottom: 10mm;*/
+  }
+}
+
+/* 左ページ設定 */
+@page :left {
+  margin-left: 16.325mm;
+  margin-right: 26.325mm;
+
+  @top-left {    /* 柱（ページヘッダ）*/
+    font-size: 8pt;
+    font-family: var(--header-footer-font-family);
+  }
+  @top-right { content: none }
+
+  @bottom-left { /* ノンブル（ページ番号）*/
+    font-size: 8pt;
+    font-family: var(--header-footer-font-family);
+    content: element(Title);
+  }
+}
+
+/* 右ページ設定 */
+@page :right {
+  margin-left: 26.325mm;
+  margin-right: 16.325mm;
+
+  @top-left { content: none }
+  @top-right {   /* 柱（ページヘッダ）*/
+    font-size: 8pt;
+    font-family: var(--header-footer-font-family);
+  }
+  @bottom-right { /* ノンブル（ページ番号）*/
+    font-size: 8pt;
+    font-family: var(--header-footer-font-family);
+    content: string(ChapterTitle) "\A0\A0|\A0\A0" counter(page);
+  }
+}
+
+/* 文書の先頭ページ設定 */
+@page Title:first {
+  margin-left: 21.325mm;
+  margin-right: 21.325mm;
+
+  /* ページヘッダ／フッタ非表示 */
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+
+/* 空白ページの設定 */
+@page :blank {
+  @top-center { content: none }
+  @top-left-corner { content: none }
+  @top-right-corner { content: none }
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+  @left-middle { content: none }
+  @right-middle { content: none }
+}
+
+/* はじめにのページ */
+@page Preface:right {
+  @bottom-right { /* ノンブル（ページ番号）*/
+    content: counter(page, lower-roman);
+  }
+}
+@page Preface:left {
+  @bottom-left { /* ノンブル（ページ番号）*/
+    content: counter(page, lower-roman);
+  }
+}
+
+@page Preface:blank {
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+
+/* 目次のページ */
+@page TOC:right {
+  @bottom-right { /* ノンブル（ページ番号）*/
+    content: counter(page, lower-roman);
+  }
+}
+@page TOC:left {
+  @bottom-left { /* ノンブル（ページ番号）*/
+    content: counter(page, lower-roman);
+  }
+}
+@page TOC:first {
+  @top-right { content: none }
+}
+
+@page TOC:blank {
+  @bottom-left { content: none; }
+  @bottom-right { content: none; }
+}
+
+
+/* 章のページ */
+@page Chapter {
+  /* 章のページの共通設定 */
+  font-family: var(--header-footer-font-family);
+}
+
+@page Chapter:left {
+  /* 章の左ページ */
+  @left-top {
+    content: element(Tab);
+  }
+}
+
+@page Chapter:right {
+    /* 章の右ページ */
+  @right-top {
+    content: element(Tab);
+  }
+}
+
+@page Chapter:first {
+  /* 章の先頭ページ */
+  /* ページヘッダ非表示 */
+  @top-right { content: none }
+  /* @bottom-right {
+    content: counter(page);
+    } */
+}
+
+@page Index {
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+@page Index:left {
+  /* 章の左ページ */
+  @left-middle {
+    margin-top: -33mm;
+    margin-left: -3mm;
+    margin-right: 4.5mm;
+    margin-bottom: -33mm;
+    content: "\a0";
+    background-color: var(--ah-green-cmyk-25);
+    padding: 1mm;
+  }
+
+  @top-left {
+    font-size: 8pt;
+    font-family: var(--header-footer-font-family);
+    content: string(IndexTerm, first);
+    margin-left: 9pt;
+  }
+
+  @top-right {
+    font-size: 8pt;
+    font-family: var(--header-footer-font-family);
+    content: string(IndexTerm, last);
+    margin-right: 9pt;
+  }
+}
+
+@page Index:right {
+  /* 章の右ページ */
+  @right-middle {
+    margin-top: -33mm;
+    margin-left: 4.5mm;
+    margin-right: -3mm;
+    margin-bottom: -33mm;
+    background-color: var(--ah-green-rgb-25);
+    background-color: var(--ah-green-cmyk-25);
+    content: "\a0";
+    padding: 1mm;
+  }
+
+  @top-left {
+    font-size: 8pt;
+    font-family: var(--header-footer-font-family);
+    content: string(IndexTerm, first);
+    margin-left: 9pt;
+  }
+
+  @top-right {
+    font-size: 8pt;
+    font-family: var(--header-footer-font-family);
+    content: string(IndexTerm, last);
+    margin-right: 9pt;
+  }
+}
+
+
+@page Index:first {
+  /* 章の先頭ページ */
+  /* ページヘッダ非表示 */
+  @top-left  { content: none }
+  @top-right { content: none }
+}
+
+@page Index:blank {
+  @top-left  { content: none }
+  @top-right { content: none }
+  @left-middle { content: none }
+  @right-middle { content: none }
+}
+
+/* 後付ページ */
+@page Back, BackLandscape, BackLandscapeWide {
+  @top-center { content: none }
+  @top-left-corner { content: none }
+  @top-right-corner { content: none }
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+
+/*----------------------*/
+
+section {
+ -ah-pdftag: 'Sect';
+}
+section.Preface {
+  page-break-before: right;
+  page: Preface;
+  counter-reset: page 1;
+}
+div.TOC {
+  page-break-before: right;
+  page: TOC;
+  -ah-pdftag: 'Sect';
+}
+section.Introduction,
+section.Chapter,
+section.References {
+  page-break-before: right;
+  page: Chapter;
+}
+
+div.TOC + section {
+  /*page-break-before: right;*/
+  counter-reset: page 1;
+}
+
+section.Index {
+  page-break-before: right;
+  page: Index;
+}
+
+section.References,
+section.Appendix,
+div.Back {
+  /*page-break-before: left;*/
+  page: Back;
+}
+
+section.References.landscape,
+section.Appendix.landscape,
+div.Back.landscape {
+  /*page-break-before: left;*/
+  page: BackLandscape;
+}
+
+div.Back {
+  page-break-before: left;
+}
+/*----------------------*/
+
+:root {
+	/* RGB (and RGBA tints) of Antenna House green. */
+	--ah-green-rgb: rgb(0, 61, 25);
+	--ah-green-rgb-03: rgba(0, 61, 25, 0.03);
+	--ah-green-rgb-05: rgba(0, 61, 25, 0.05);
+	--ah-green-rgb-08: rgba(0, 61, 25, 0.08);
+	--ah-green-rgb-12: rgba(0, 61, 25, 0.12);
+	--ah-green-rgb-15: rgba(0, 61, 25, 0.15);
+	--ah-green-rgb-25: rgba(0, 61, 25, 0.25);
+	--ah-green-rgb-20: rgba(0, 61, 25, 0.2);
+	--ah-green-rgb-30: rgba(0, 61, 25, 0.3);
+	--ah-green-rgb-50: rgba(0, 61, 25, 0.5);
+	--ah-green-rgb-70: rgba(0, 61, 25, 0.7);
+	--ah-green-rgb-75: rgba(0, 61, 25, 0.75);
+	/* Pantone color and CMYK fallback for AH Formatter green and tints. */
+	--ah-green-cmyk: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC',  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-03: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.03,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-05: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.05,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-08: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.08,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-12: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.12,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-15: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.15,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-20: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.2,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-25: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.25,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-30: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.3,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-35: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.35,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-40: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.4,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-50: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.5,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-70: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.7,  90%, 0%, 75%, 83%);
+	--ah-green-cmyk-75: rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.75,  90%, 0%, 75%, 83%);
+	/* Grayscale. */
+	/* 0.0 is black. 1.0 is white. */
+	--grayscale-00: rgb-icc(#Grayscale, 0);
+	--grayscale-15: rgb-icc(#Grayscale, 0.15);
+	--grayscale-20: rgb-icc(#Grayscale, 0.2);
+	--grayscale-25: rgb-icc(#Grayscale, 0.25);
+	--grayscale-30: rgb-icc(#Grayscale, 0.3);
+	--grayscale-35: rgb-icc(#Grayscale, 0.35);
+	--grayscale-40: rgb-icc(#Grayscale, 0.4);
+	--grayscale-50: rgb-icc(#Grayscale, 0.5);
+	--grayscale-65: rgb-icc(#Grayscale, 0.65);
+	--grayscale-85: rgb-icc(#Grayscale, 0.85);
+	--grayscale-90: rgb-icc(#Grayscale, 0.9);
+	--grayscale-92: rgb-icc(#Grayscale, 0.92);
+}
+:root:lang(ja) {
+	--font-sans: source-han-sans, source-sans-pro, sans-serif;
+	--font-serif: source-han-serif, source-serif-pro, serif;
+	--font-monospace: source-code-pro, source-han-sans, monospace;
+
+	--text-font-family: var(--font-serif);
+	--text-font-size: 9.5pt;
+	--text-line-height: 13pt;
+	--heading-font-family: var(--font-sans);
+	--heading-number-font-family: source-sans-pro, source-han-sans;
+	--header-footer-font-family: var(--font-serif);
+	--syntax-font-family: var(--font-sans);
+	--code-font-family: var(--font-monospace);
+	--pre-font-family: var(--code-font-family);
+}
+:root:lang(en) {
+	/* Include 'Lucida Sans Unicode' for squares for list markers, etc. */
+	--font-sans: source-sans-pro, source-han-sans, sans-serif;
+	--font-serif: source-serif-pro, source-han-serif, serif;
+	--font-monospace: source-code-pro, source-han-sans, monospace;
+
+	--text-font-family: var(--font-sans);
+	--text-font-size: 9.5pt;
+	--text-line-height: 13pt;
+	--heading-font-family: var(--font-sans);
+	--heading-number-font-family: source-sans-pro, source-han-sans;
+	--header-footer-font-family: var(--font-sans);
+	--syntax-font-family: var(--font-sans);
+	--code-font-family: var(--font-monospace);
+	--pre-font-family: var(--code-font-family);
+}
+/* 本文 */
+:root {
+  font-size: var(--text-font-size);
+  line-height: var(--text-line-height);
+  font-family: var(--text-font-family);
+  counter-reset: ChapterNo;
+  -ah-line-height-shift-adjustment: disregard-shifts;
+  -ah-avoid-widow-words: true;
+}
+body:lang(en) {
+ hyphens: manual;
+}
+body:lang(ja) {
+  /* 日本語組版のための設定 */
+  /*line-height: 1.5;*/
+  font-family: var(--text-font-family);
+  -ah-punctuation-trim: start end adjacent;
+  -ah-text-autospace: ideograph-numeric ideograph-alpha;
+  -ah-text-autospace-width: 25%;
+  -ah-text-justify-trim: punctuation;
+  -ah-hanging-punctuation: none;
+}
+
+/* 段落 */
+p {
+  text-align: justify;
+  margin: 0;
+  orphans: 2;
+  widows: 2;
+}
+p:lang(ja) {
+  text-indent: 1em;
+}
+p:lang(en) {
+  text-indent: 1em;
+}
+p.continuation:lang(en) {
+  text-indent: 0;
+}
+
+/* No 'text-indent' for first <p> after a heading. */
+h2 + p:lang(en),
+h2 + p.tab + p:lang(en),
+h2 + p.tab + p.tab + p:lang(en),
+h3 + p:lang(en),
+h4 + p:lang(en),
+/* No 'text-indent' for first <p> inside <li>, <td>, or <th>. */
+li > p:first-child,
+td > p:first-child,
+th > p:first-child {
+  text-indent: 0;
+}
+
+*:lang(he) {
+  writing-mode: horizontal-tb;
+  direction: rtl;
+	/* direction: attr(dir, rtl); */
+}
+
+bdo { unicode-bidi: bidi-override }
+bdo[dir="ltr"]{ direction: ltr; unicode-bidi: bidi-override }
+bdo[dir="rtl"]{ direction: rtl; unicode-bidi: bidi-override }
+/* *[dir="ltr"]  { direction: ltr; unicode-bidi: embed } */
+*[dir="rtl"]  { direction: rtl; unicode-bidi: embed }
+
+ul.property > li {
+  text-align: justify;
+}
+li::marker {
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+
+/* コード例 */
+pre {
+  font-family: source-code-pro, source-han-sans, monospace;
+  font-size: 8pt;
+  line-height: 1.2;
+  hyphens: manual;
+  -ah-text-autospace: none;
+  margin-top: .8em;
+  margin-bottom: .8em;
+  background-color: var(--ah-green-rgb-03);
+  background-color: var(--ah-green-cmyk-03);
+  padding: .4em;
+}
+pre.LongText {
+  white-space: pre-wrap;
+}
+
+/* 強調 */
+b {
+  background-color: yellow;
+}
+
+/* Style sheet provides description of <b> style. */
+b.sample {
+  content: "bold text with a yellow background";
+}
+
+b:lang(ja) {
+  font-weight: normal;
+}
+b:lang(ja).sample {
+  content: "黄色い背景のテキスト";
+}
+h1, h2, h3, h4, h5, h6 {
+ font-family: var(--heading-font-family);
+ line-height: 1.25;
+ hyphens: none;
+}
+
+.CoverPage {
+ /* "ahf-version.svg" is copyright 2008-2018 Antenna House, Inc. */
+ background-image: url('../../images/ahf-version.svg');
+ background-repeat: no-repeat;
+ background-position: 100% 100%;
+ height: 90vh;
+ page: Title;
+}
+/* 文書タイトル */
+.CoverPage h1 {
+  margin-top: 20mm;
+  margin-bottom: 118mm;
+  font-weight: 900;
+  font-size: 30pt;
+  font-family: var(--heading-font-family);
+  text-align: center;
+  page-break-after: avoid;
+}
+
+title {
+    position: running(Title);
+}
+
+
+p.Title::before {
+ content: counter(page) "\A0\A0|\A0\A0";
+}
+p.Title {
+    position: running(Title);
+    text-indent: 0;
+}
+p.tab {
+    position: running(Tab);
+    /* When the page size is changed, the tab height and the margin-top
+       multiplier probably need to change.  The tab width may also
+       need to change. */
+    width: 20mm;
+    height: 20mm;
+    margin-top: calc(attr(data-position) * 20mm);
+    /* Float the number away from the outer edge. */
+    -ah-float-x: inside;
+		font-family: var(--heading-number-font-family);
+    color: white;
+    font-weight: 900;
+    font-size: 7mm;
+    white-space: nowrap;
+    text-indent: 0;
+    box-sizing: border-box;
+    background-color: var(--ah-green-rgb-15);
+    background-color: var(--ah-green-cmyk-15);
+    padding: 2mm;
+    -ah-display-align: center;
+    text-align: inside;
+    margin-right: 4.5mm;
+    margin-left: 4.5mm;
+    border-radius: 3mm;
+    -ah-pdftag: Artifact;
+}
+
+/* 著者 */
+.Author {
+  margin-bottom: 4mm;
+  text-align: center;
+  font-size: 16pt;
+  line-height: 1em;
+  font-family: var(--heading-font-family);
+}
+
+/* 日付 */
+.Published {
+  margin-bottom: 4mm;
+  text-align: center;
+  font-size: 16pt;
+  line-height: 1em;
+  font-family: var(--heading-font-family);
+}
+
+/* 表紙ロゴ */
+.CoverPage .CompanyLogo object,
+.CoverPage .CompanyLogo img {
+  height: 24pt;
+  vertical-align: middle;
+}
+.HalfTitle .CompanyLogo,
+.CoverPage .CompanyLogo{
+  text-align: center;
+}
+
+/* 章 */
+
+/* 章見出し */
+.Chapter h2 {
+  margin-bottom: 7mm;
+  font-weight: bold;
+  font-size: 36pt;
+  font-family: var(--heading-font-family);
+  page-break-after: avoid;
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+
+.Chapter h2 {
+  counter-increment: ChapterNo;
+  counter-reset: SectionNo;
+  string-set: ChapterNo counter(ChapterNo), ChapterTitle content(), Chapter content(before) ", " content(), Section "";
+  bookmark-label: attr(data-bookmark, string);
+  height: 20vh;  /*  Fixed-height 'chapter drop'. */
+  font-weight: 900;
+}
+
+.Chapter h2:before {
+  content: "Chapter " counter(ChapterNo);
+  font-size: 0.5em;
+  font-weight: bold;
+  display: block;
+  color: black;
+  color: k100;
+  -ah-pdftag: P;
+}
+
+/* 節見出し */
+.Chapter h3 {
+  counter-increment: SectionNo;
+  counter-reset: SubSectionNo;
+  string-set: Section content(before) content();
+  margin-left: -1mm;
+  margin-top: 7mm;
+  margin-bottom: 3mm;
+  font-weight: bold;
+  font-size: 12pt;
+  font-family: var(--heading-font-family);
+  border-top-left-radius: 2mm;
+  border-bottom-left-radius: 2mm;
+  padding: 1mm;
+  padding-bottom: 1mm;
+  padding-left: 13mm;
+  text-indent: -12mm;
+  background-color: var(--ah-green-rgb-12);
+  background-color: var(--ah-green-cmyk-12);
+  page-break-after: avoid;
+}
+
+.Chapter h3::before {
+  content: counter(ChapterNo) "." counter(SectionNo) "\a0 ";
+	font-family: var(--heading-number-font-family);
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+  display: inline-block;
+  text-indent: 0;
+  width: 12mm;
+}
+
+/* 項見出し */
+.Chapter h4 {
+  counter-increment: SubSectionNo;
+  string-set: SubSection content(before) content();
+  margin-top: 5mm;
+  margin-bottom: 2mm;
+  font-weight: bold;
+  font-size: 11pt;
+  font-family: var(--heading-font-family);
+  padding: 0 1mm;
+  padding-left: 12mm;
+  text-indent: -12mm;
+  page-break-after: avoid;
+}
+
+.Chapter h4::before {
+  content: counter(ChapterNo) "." counter(SectionNo) "." counter(SubSectionNo) "\a0 ";
+	font-family: var(--heading-number-font-family);
+  color: var(--ah-green-rgb-75);
+  color: var(--ah-green-cmyk-75);
+  display: inline-block;
+  text-indent: 0;
+  width: 12mm;
+}
+
+/* クロスリファレンス */
+.ChapterRef::before {
+  content: target-text(attr(href url), before) ", "
+           target-text(attr(href url), content);
+}
+.SectionRef::before {
+  content: "Section " target-counter(attr(href url), ChapterNo) "."
+           target-counter(attr(href url), SectionNo) ", "
+           target-text(attr(href url), content);
+}
+.ChapterRef:lang(ja)::before,
+.SectionRef:lang(ja)::before {
+  content: target-text(attr(href url), before) " "
+           target-text(attr(href url), content);
+}
+/*.SectionRef::before {
+  content: target-counter(attr(href url), ChapterNo) "." counter(SectionNo) " " target-text(attr(href url));
+}*/
+.ChapterRef,
+.SectionRef,
+.PageRef {
+  content: "";
+}
+
+.ChapterRef.PageRef:lang(en)::after,
+.AppendixRef.PageRef:lang(en)::after,
+.SectionRef.PageRef:lang(en)::after {
+  content: " (page " target-counter(attr(href url), page) ")";
+}
+.ChapterRef.PageRef:lang(ja)::after,
+.SectionRef.PageRef:lang(ja)::after {
+  content: "（ページ" target-counter(attr(href url), page) "）";
+}
+.PageRef:lang(en)::after {
+  content: "page " target-counter(attr(href url), page);
+}
+.PageRef:lang(ja)::after {
+  content: "（ページ" target-counter(attr(href url), page) "）";
+}
+
+/* はじめに */
+
+.Preface h2,
+.Appendix h2,
+.References h2,
+.Index h2{
+  page-break-before: always;
+  font-size: 16pt;
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+/*
+.Preface {
+  font-size: 12pt;
+  line-height: 1.3;
+}
+
+.Preface .SampleBox {
+  font-size: 9pt;
+}
+*/
+/* 目次 */
+.TOC h2 {
+  page-break-before: always;
+  string-set: Chapter content();
+}
+
+.TOC > ul {
+  margin-left: 1em;
+  margin-right: 1em;
+  font-size: 11pt;
+  -ah-baseline-grid: new;
+  -ah-baseline-block-snap: before border-box;
+  font-family: var(--heading-font-family);
+}
+
+.TOC ul {
+  list-style: none;
+  padding: 0;
+  -ah-pdftag: TOC
+}
+
+.TOC > ul > ul {
+  margin: 0;
+  break-before: avoid-page;
+}
+.TOC li {
+  padding-right: 1mm;
+  -ah-pdftag: TOCI;
+}
+
+.TOCSample li.TocLevel1,
+.TOC li.TocLevel1 {
+  list-style: none;
+  margin: 0;
+  margin-top: 3mm;
+  font-size: 11pt;
+}
+.TOCSample li.TocLevel1 {
+  margin-top: 1mm;
+}
+
+.TOC li.TocLevel1 > ul {
+  break-before: avoid !important;
+}
+
+.TOC li.TocLevel2:first-child {
+  break-before: avoid-page;
+}
+
+.TOCSample li.TocLevel1,
+.TOC li.TocLevel1 > a {
+  padding: 0;
+  padding-left: 1mm;
+  padding-right: 1mm;
+  margin-right: -1mm;
+  padding-top: 1mm;
+  padding-bottom: 1mm;
+  background-color: var(--ah-green-rgb-03);
+  background-color: var(--ah-green-cmyk-03);
+  border-top-left-radius: 1mm;
+  border-bottom-left-radius: 1mm;
+  break-after: avoid-page;
+}
+
+.TocAppendix.first {
+  margin-top: 1lh;
+}
+.TOC li.TocLevel2 {
+  list-style: none;
+  margin: 0;
+  margin-right: 1em;
+  -ah-last-line-end-indent: -1em;
+  padding: 0;
+  padding-left: 3.5em;
+  text-indent: -3.5em;
+  font-size: 10pt;
+}
+.TOC li.TocLevel3 {
+  list-style: none;
+  margin: 0;
+  -ah-last-line-end-indent: -10pt; /* 'margin-right' of parent. */
+  padding: 0;
+  padding-left: 1em;
+  text-indent: -3.5em;
+  font-size: 9pt;
+}
+
+.TOC span.code{
+ font-size: 90% ;
+}
+ 
+/*.TOCSample a,
+.TOC a,*/
+.IndexItem a {
+  text-decoration: none;
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+
+.IndexItem a {
+  string-set: IndexTerm content();
+}
+.GlossaryItem {
+  color: black;
+  color: k100;
+  font-size: 0.8em;
+	display: block;
+	text-align: left;
+	-ah-text-align-first: left;
+	padding-left: 1.25em;
+	padding-right: 1.5em;
+	break-before: avoid;
+}
+
+.TOCSample li.TocLevel1 a::before,
+.TOC li.TocLevel1 a::before {
+  content: "Chapter " target-counter(attr(href url), ChapterNo) ". ";
+}
+.TOCSample:lang(ja) li.TocLevel1 > a::before,
+.TOC:lang(ja) li.TocLevel1 > a::before {
+  content: "第" target-counter(attr(href url), ChapterNo) "章　";
+}
+.TOCSample li.TocLevel1 > a::after,
+.TOC li.TocLevel1 > a::after {
+  content: leader(space) target-counter(attr(href url), page);
+  font-size: 9pt;
+}
+.TOC li.TocLevel2 > a::before {
+  content: target-counter(attr(href url), ChapterNo) "." target-counter(attr(href url), SectionNo);
+  width: 3em;
+  display: inline-block;
+  text-indent: 0;
+  -ah-last-line-end-indent: 0;
+  padding-right: 0.5em;
+  text-align: right;
+}
+.TOC li.TocLevel2 > a::after {
+  content: "\2005" leader(dotted) "\200A" target-counter(attr(href url), page);
+  font-size: 9pt;
+}
+.TOC li.TocLevel3 a::before {
+  content: target-counter(attr(href url), ChapterNo) "." target-counter(attr(href url), SectionNo) "." target-counter(attr(href url), SubSectionNo);
+  width: 3em;
+  display: inline-block;
+  text-indent: 0;
+  -ah-last-line-end-indent: 0;
+  padding-right: 0.5em;
+  text-align: right;
+}
+.TOC li.TocLevel3 a::after {
+  content: "\2005" leader(dotted) "\200A" target-counter(attr(href url), page);
+  font-size: 9pt;
+}
+
+div.IndexBody,
+ul.TOCSample {
+  column-count: 2;                /* 段数を指定 */
+  column-gap: 5mm;                /* 段間 */
+  -ah-baseline-grid: new;
+  font-size: 9pt;
+  line-height: 11pt;
+}
+
+ul.Glossary {
+  list-style: none;
+  padding: 0;
+  font-size: 9pt;
+}
+
+ul.Index,
+ul.TOCSample {
+  list-style: none;
+  margin: .5em 1em;
+  padding: 0;
+  font-size: 9pt;
+}
+
+ul.Glossary,
+ul.Index {
+  margin-bottom: 2em;
+}
+
+ul.Index {
+  -ah-text-align-first: justify;
+}
+
+.Index li.IndexItem a {
+ font-family: var(--heading-font-family);
+}
+.Index li.IndexItem a::after {
+  content: "\2005" leader(dotted) "\200A" target-counter(attr(href url), page);
+  font-size: 9pt;
+}
+
+/* ページフロート */
+div.TopFloat {
+  float: top;
+  border: ridge orange;
+  padding: 3pt;
+}
+
+div.BottomFloat {
+  float: bottom;
+  border: ridge lime;
+  padding: 3pt;
+}
+
+div.TopPageFloat {
+  float: top page;
+  border: ridge maroon;
+  padding: 3pt;
+}
+
+div.BottomPageFloat {
+  float: bottom page;
+  border: ridge green;
+  padding: 3pt;
+}
+
+/* 脚注 */
+.Footnote {
+  text-align: justify;
+  float: footnote;
+  text-indent: 0;
+  font-size: 7.5pt;
+  line-height: 1.2;
+  font-weight: normal;
+  color: black;
+  color: k100;
+  font-family: var(--text-font-family);
+}
+
+@page {
+  @footnote {
+    float: page bottom;
+    border-top: .5pt solid black;
+    border-top-color: k100;
+    border-length: 30%;
+    margin-top: 0.4rem;
+    padding-top: 0.3rem;
+    padding-left: 15pt;
+    color: black;
+    color: k100;
+  }
+}
+
+::footnote-call {
+  content: counter(footnote) ")";
+  font-size: 7pt;
+  font-weight: normal;
+  vertical-align: super;
+  -ah-pdftag: Reference;
+  -ah-text-autospace: none;
+}
+
+::footnote-marker {
+  content: counter(footnote, decimal) ")";
+  font-weight: normal;
+  font-size: 1em;
+  vertical-align: baseline;
+}
+
+/* table */
+
+table {
+ font-family: source-sans-pro, source-han-sans, sans-serif;
+}
+table.Example {
+  margin-left: 25mm;
+}
+
+div.FigureBox {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+figure.Figure,
+table.Figure {
+  page-break-inside: avoid;
+  max-width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+figure.Figure img {
+  -ah-image-resolution: from-image 200;
+}
+
+figure.Figure pre {
+  text-align: left;
+}
+
+figcaption,
+table.Figure caption {
+  font-size: 0.9em;
+  caption-side: after;
+  text-align: center;
+  margin-top: 0.5em;
+  -ah-pdftag: "Caption";
+}
+
+object[title] {
+ -ah-alttext: attr(title string);
+}
+
+table.StdTable,
+table.MarkTable {
+  border-color: gray;
+  border-style: solid none solid none;
+  border-width: 1.5pt;
+  border-collapse: collapse;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  /* margin-left: 2em; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.StdTable caption,
+table.MarkTable caption {
+  font-weight: bold;
+  margin: 0.5em;
+  margin-top: 0;
+}
+
+table.StdTable thead,
+table.MarkTable thead {
+  border-style: solid none solid none;
+  border-color: gray transparent;
+  border-width: 1.5pt;
+}
+
+table.StdTable td,
+table.StdTable th,
+table.MarkTable td,
+table.MarkTable th {
+  border-style: none none solid none;
+  border-color: gray transparent;
+  border-width: 0.75pt medium;
+  padding: 3pt;
+}
+
+table.StdTable thead tr,
+table.MarkTable thead tr {
+  background-color: var(--ah-green-rgb-08);
+  background-color: var(--ah-green-cmyk-08)
+}
+
+table.MarkTable thead tr th:not(:first-child),
+table.MarkTable tbody tr td:not(:first-child) {
+  text-align: center;
+}
+
+/* サイドフロート */
+.RightFloat {
+  float: right;
+  margin-left: 6pt;
+  -ah-display-align: center;
+}
+.LeftFloat {
+  float: left;
+  margin-right: 6pt;
+  -ah-display-align: center;
+}
+
+/* テキストフロートサンプル */
+span.TextSampleFloat {
+  background: #80FF80;
+  height: 22.5pt;
+  border-radius: 6pt;
+  padding: 1.25pt;
+  text-indent: 0;
+  margin-top: 2pt;
+  line-height: 10pt;
+}
+
+/* 文中のサンプル */
+div.SampleBox {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  /* break-inside: avoid-page; */
+}
+/* No extra margins inside '.SampleBox'. */
+div.SampleBox > *:first-child {
+  margin-top: 0;
+}
+div.SampleBox > *:last-child {
+  margin-bottom: 0;
+}
+
+div.VSampleBox {
+  height: calc(12em + 0.6pt);
+  writing-mode: tb-rl;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  -ah-display-align: center;
+  break-inside: avoid-page;
+}
+div.SampleTitle {
+  font-family: var(--heading-font-family);
+  background-color: var(--ah-green-rgb-30);
+  background-color: var(--ah-green-cmyk-30);
+  -ah-padding-start: 0.5em;
+  page-break-after: avoid;
+}
+
+div.ShortTable {
+  column-count: 2;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+p.TextSample,
+div.TextSample,
+p.TextSample0,
+div.TextSample0 {
+  border: solid 0.3pt gray;
+  padding: 0.4em;
+  page-break-inside: avoid;
+}
+p.TextSample0,
+div.TextSample0 {
+  text-indent: 0;
+  break-inside: avoid-page;
+}
+p.TextSample0 object,
+p.TextSample0 img,
+div.TextSample0 object,
+div.TextSample0 img {
+  -ah-alignment-baseline: central;
+}
+.TextSample0 p {
+  text-indent: 0;
+}
+
+/* 縦書きブロック */
+div.VerticalTextBlock,
+div.VerticalTextFloat {
+  writing-mode: tb-rl;
+  height: 16em;
+  padding: 3pt;
+  border: solid green;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.75em;
+  -ah-baseline-grid: none;
+}
+div.VerticalTextFloat {
+  height: 21em;
+}
+div.VerticalSmallBlock {
+  writing-mode: tb-rl;
+  height: calc(8em + 0.6pt);
+  -ah-display-align: center;
+  line-height: 1.75em;
+  -ah-baseline-grid: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.VerticalSmallBlock2 {
+  writing-mode: tb-rl;
+  height: calc(11em + 0.6pt);
+  -ah-display-align: center;
+  line-height: 1.75em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  -ah-baseline-grid: none;
+}
+
+/* 縦中横 */
+span.TateChuYoko {
+  display: inline-block;
+  writing-mode: lr-tb;
+  text-align: center;
+  text-indent: 0;
+  line-height: 1;
+ /* margin-top: 0.15em; */   /* 垂直位置の調整 */
+  /*margin-bottom: -0.15em;*/
+}
+
+/* Bookmarks */
+h1 { bookmark-level: 1; }
+h2 {
+ bookmark-level: 2;
+ bookmark-state: closed
+}
+h3[data-bookmark] {
+ bookmark-level: 3;
+ bookmark-label: attr(data-bookmark, string);
+ bookmark-state: closed
+}
+h4[data-bookmark] {
+ bookmark-level: 4;
+ bookmark-label: attr(data-bookmark, string);
+ bookmark-state: closed
+}
+h5,h6 { bookmark-level: none }
+
+
+/* MathML and SVG */
+m|math {
+  vertical-align: baseline;
+  font-family: "STIX Two Text", source-serif-pro, "Times New Roman", "Lucida Sans Unicode", serif;
+}
+m|math[alttext] {
+ -ah-alttext: attr(alttext string);
+}
+s|svg {
+  vertical-align: bottom;
+}
+
+/* Lists */
+/*ol, ul	{ -ah-margin-before: 0; -ah-margin-after: 0 }*/
+
+ul > li::marker {
+    -ah-lang: en;
+    font-family: source-sans-pro, sans-serif;
+}
+ul.AhfFeature { padding-left: 1em; }
+ul.AhfFeature li {
+  list-style: check;
+  margin: .5em 0;
+  text-align: justify;
+}
+ul.counter-style-list li ul {
+ column-count: 3;
+ -ah-pdftag: "L";
+}
+dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+div.Properties {
+  -ah-linefeed-treatment: ignore;
+}
+
+div.Properties + * {
+  page-break-before: avoid;
+}
+span.Property {
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+
+span.Property::before {
+  content: "●";
+  font-family: var(--syntax-font-family);
+}
+
+div.Properties span.Property {
+  margin-left: 1em;
+}
+div.Properties span.Property:first-of-type {
+  margin-left: 0;
+}
+
+span.code:lang(en) {
+ font-family: var(--code-font-family);
+ font-size: 90%;
+}
+span.code:lang(ja) {
+ font-family: var(--code-font-family);
+ /*font-variant: half-width;*/
+}
+
+span.function:lang(en)::before,
+span.property:lang(en)::before,
+span.rule:lang(en)::before,
+span.value:lang(en)::before {
+ content: '‘';
+}
+
+span.function:lang(en)::after,
+span.property:lang(en)::after,
+span.rule:lang(en)::after,
+span.value:lang(en)::after {
+ content: '’';
+}
+
+span.Pattern {
+ break-inside: avoid;
+}
+span.CSSLevel {
+  content: "";
+}
+
+span.CSSLevel::after {
+  content: url("../../images/css3-logo.svg");
+  -ah-alttext: "CSS 3";
+  -ah-alignment-baseline: text-after-edge;
+  height: 1em;
+}
+
+span.CSSLevelAH {
+  content: "";
+  -ah-alttext: content();
+}
+
+span.CSSLevelAH::after {
+  /* "logo-antenna.svg" is copyright 2008-2018 Antenna House, Inc. */
+  content: url("../../images/logo-antenna.svg");
+  -ah-alttext: "Antenna House extension";
+  -ah-alignment-baseline: text-after-edge;
+  height: 1em;
+}
+
+.pdf-only {
+  display: none;
+}
+
+/* Style sheet provides description of <a> style. */
+a[href].sample {
+  content: "green text";
+}
+
+a[href] {
+  text-decoration: none;
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+
+/* 圏点 */
+span.kenten {
+  -ah-text-emphasis-style: filled;
+  -ah-text-emphasis-offset: 0.25;
+  -ah-text-emphasis-font-size: 0.25;
+}
+
+ruby.kenten {
+  -ah-margin-before: -0.7em;
+}
+ruby.kenten > rt {
+  font-size: 70%;
+}
+
+div.hidden {
+  display: none;
+}
+
+/* References */
+ul.References {
+ font-family: var(--syntax-font-family);
+  padding-left: 1.5em;
+}
+ul.References li {
+  list-style: check;
+  line-height: 1.1;
+}
+ul.References li::marker {
+  -ah-lang: ja
+}
+ul.References .SpecTitle {
+  font-weight: bold;
+}
+ul.References .SpecStatus {
+  white-space: nowrap;
+  margin-right: .25em;
+}
+ul.References a.URL {
+  text-decoration: none;
+  font-size: smaller;
+  white-space: nowrap;
+}
+ul.References .SpecStatus::before {
+  content: leader(dotted);
+}
+
+/* Back matter. */
+
+div.Imprint,
+div.ImprintOverflow,
+div.Back {
+ -ah-display-align: after;
+ height: 100vh;
+ line-height: 1.2;
+}
+.backmatter {
+  margin-right: auto;
+  margin-left: auto;
+}
+.Imprint .revision,
+.backmatter .revision {
+  font-size: 0.8em;
+  line-height: 1;
+}
+
+.Imprint,
+.backmatter .address,
+.backmatter .notice {
+  font-size: 0.8em;
+}
+
+.Imprint .notice,
+.backmatter .notice {
+  line-height: 1.2;
+}
+.backmatter tr > td {
+  vertical-align: top;
+}
+
+div.Imprint {
+	-ah-display-align: auto;
+	height: 100vh;
+}
+
+div.ImprintInner {
+	padding-left: 30pt;
+	padding-right: 30pt;
+	padding-top: 85pt;
+	column-count: 2;
+	column-gap: 2em;
+	padding-bottom: 50pt;
+	height: 100vh;
+	-ah-pdftag: Div;
+}
+
+.Imprint p,
+.Imprint figure,
+.Imprint table {
+	text-indent: 0;
+	text-align: inherit;
+	margin-top: 1.2lh;
+}
+
+.Imprint img {
+	max-width: 100%;
+}

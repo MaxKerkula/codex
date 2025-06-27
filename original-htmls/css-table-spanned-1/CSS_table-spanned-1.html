@@ -1,0 +1,219 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_table-spanned-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				table
+				{
+					border: solid thin black;
+					border-collapse: collapse;
+					width: 80%;
+					margin-left: 5em;
+				}
+				td, tr
+				{
+					border: solid thin black;
+					text-align: center;
+					background-color: #FFBBBB;
+					width: 30mm;
+					line-height: 10mm;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Column span & row span
+		</div>
+		<div class="subheading">
+			The table column can be spanned in horizontal direction by <span class = "codePrint">colspan = "VALUE"</span>, the table row can be spanned by <span class = "codePrint">rowspan = "VALUE"</span> in vertical direction. Both can be specified at the same time.
+		</div>
+		<h2>
+			This is an example of a column span in a table.
+		</h2>
+		<table>
+			<tr>
+				<td>
+					1-1
+				</td>
+				<td>
+					1-2
+				</td>
+				<td>
+					1-3
+				</td>
+				<td>
+					1-4
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style = "background-color: #FFEEEE;">
+					number-columns-spanned: 2
+				</td>
+				<td>
+					2-3
+				</td>
+				<td>
+					2-4
+				</td>
+				
+			</tr>
+			<tr>
+				<td colspan="3" style = "background-color: #FFEEEE;">
+					number-columns-spanned: 3
+				</td>
+				<td>
+					3-4
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" style = "background-color: #FFEEEE;">
+					number-columns-spanned: 4
+				</td>
+			</tr>
+			<tr>
+				<td>
+					5-1
+				</td>
+				<td colspan="2" style = "background-color: #FFEEEE;">
+					number-columns-spanned: 2
+				</td>
+				<td>
+					5-4
+				</td>
+			</tr>
+		</table>
+		<h2>
+			This is an example of a row span in a table.
+		</h2>
+		<table>
+			<tr>
+				<td>
+					1-1
+				</td>
+				<td rowspan="2" style = "background-color: #FFEEEE;">
+					number-rows-spanned: 2
+				</td>
+				<td rowspan="5" style = "background-color: #FFEEEE;">
+					number-rows-spanned: 5
+				</td>
+				<td>
+					1-4
+				</td>
+			</tr>
+			<tr>
+				<td>
+					2-1
+				</td>
+				<td rowspan="3" style = "background-color: #FFEEEE;">
+					number-rows-spanned: 3
+				</td>
+			</tr>
+			<tr>
+				<td>
+					3-1
+				</td>
+				<td>
+					3-2
+				</td>
+			</tr>
+			<tr>
+				<td>
+					4-1
+				</td>
+				<td>
+					4-2
+				</td>
+			</tr>
+			<tr>
+				<td>
+					5-1
+				</td>
+				<td>
+					5-2
+				</td>
+				<td>
+					5-4
+				</td>
+			</tr>
+		</table>
+		<h2>
+			This is an example of a row span and column span in a table.
+		</h2>
+		<table>
+			<tr>
+				<td>
+					1-1
+				</td>
+				<td colspan = "2" rowspan = "2" style = "background-color: #FFEEEE;">
+					number-columns-spanned: 2<br>
+					number-rows-spanned: 2
+				</td>
+				<td>
+					1-4
+				</td>
+			</tr>
+			<tr>
+				<td>
+					2-1
+				</td>
+				<td>
+					2-4
+				</td>
+			</tr>
+			<tr>
+				<td>
+					3-1
+				</td>
+				<td>
+					3-2
+				</td>
+				<td>
+					3-3
+				</td>
+				<td>
+					3-4
+				</td>
+			</tr>
+			<tr>
+				<td>
+					4-1
+				</td>
+				<td colspan = "3" rowspan = "2" style = "background-color: #FFEEEE;">
+					number-columns-spanned: 3<br>
+					number-rows-spanned: 2
+				</td>
+			</tr>
+			<tr>
+				<td>
+					5-1
+				</td>
+			</tr>
+		</table>		
+	</body>
+
+</html>

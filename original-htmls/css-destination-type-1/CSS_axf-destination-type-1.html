@@ -1,0 +1,88 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-destination-type-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page :left
+				{
+					border: thin solid lightgray;
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Link settings with a destination type specified
+		</div>
+		<div class="subheading">
+			With axf:destination-type, you can create a link with a destination type defining how to display a link destination. Available values for the destination type include xyz-left-top (to display the contents at the left top of the window), fit (to show all), fith (to fit the window width to display), fitbh (to fit the drawing area width to display) and more. For details, see also "<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.destination-type">-ah-destination-type</a></span>" in the online manual. In addition to the destination type, you can also specify axf:action-type gotor  that indicates the external link destination URI as PDF, and then you can specify ID and page number as well as the internal link.
+		</div>
+		<div>
+			<h2>
+				Example of an internal link with a destination type specified
+			</h2>
+			<div>
+				<span style = "text-decoration: underline; color: blue; -ah-internal-destination: 'link-xyz';">Destination type xyz-left-top, ID specified and display scale 100%</span>:<br>
+				internal-destination="link-xyz" for the link origin and id="link-xyz" axf:destination-type="xyz-left-top 100" for the link destination are specified.
+			</div>
+			<div style="margin-top: 1em;">
+				<span style = "text-decoration: underline; color: blue; -ah-internal-destination: '2#view=fit';">Destination type fit and page number (2nd page)</span>:<br>
+				-ah-internal-destination: '2#view=fit' is specified.
+			</div>
+			<div style="margin-top: 1em;">
+				<span style = "text-decoration: underline; color: blue; -ah-internal-destination: '2#view=fith';">Destination type fit and page number (2nd page)</span>:<br>
+				-ah-internal-destination: '2#view=fith' is specified.
+			</div>
+			<div style="margin-top: 1em;">
+				<span style = "text-decoration: underline; color: blue; -ah-internal-destination: '2#view=fitbh';">Destination type fit and page number (2nd page)</span>:<br>
+				-ah-internal-destination: '2#view=fitbh' is specified.
+			</div>
+		</div>
+		<div>
+			<h2>
+				Example of an external link with a destination type specified
+			</h2>
+			<div>
+				<a href="./attachment-sample-2.pdf#nameddest=external-link-xyz">Destination type xyz-left-top, ID specified and display scale 100% for the external file attachment-sample-2.pdf</a>:<br>
+				external-destination="./attachment-sample-2.pdf#nameddest=external-link-xyz" axf:action-type="gotor" is specified for the link origin, and id="external-link-xyz" axf:destination-type="xyz-left-top 100" is specified for the external PDF in the link destination. The valid parameter in URI is nameddest only.
+			</div>
+			<div>
+				<a href="./attachment-sample-2.pdf#page=2&amp;view=fit">Destination type fit and page number (2nd page) are specified for the external file (attachment-sample-2.pdf)</a>:<br>
+				external-destination="./attachment-sample-2.pdf#page=2&amp;amp;view=fit" axf:action-type="gotor" for the link origin is specified.
+			</div>
+		</div>
+		<div style="break-before: page; -ah-margin-before: 0.3em;">
+			<div style="font-weight: bold;">
+				Lines are drawn to separate each region so you can easily find where the destination type of the link destination specified is placed:
+			</div>
+			<div id = "link-xyz" style="-ah-margin-before: 1em; text-indent: 0.2em; -ah-destination-type: 'xyz-left-top 100'; font-size: 1.2em; border: thin solid gray;">
+				&lt;div&gt; with id="link-xyz" -ah-destination-type: 'xyz-left-top 100'; specified
+			</div>
+		</div>
+	</body>
+
+</html>

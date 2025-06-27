@@ -1,0 +1,108 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-avoid-widow-words-cjk-punctuation-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				body
+				{
+					font-family: 'Arial Unicode MS';
+				}
+				.demoblock
+				{
+					width: 280pt;
+					text-indent: 1em;
+					border: solid thin;
+					-ah-text-autospace: none;
+					-ah-punctuation-trim: none;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Discounting the last punctuation mark in one character at the end of the line
+		</div>
+		<div class="subheading">
+			The setting of <span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.avoid-widow-words">-ah-avoid-widow-word: true</a></span> in CJK prevents the last line of a paragraph from being just one character. At this time, you can specify whether to count the punctuation mark including in the last character by <span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.avoid-widow-words-cjk-punctuation">-ah-avoid-widow-words-cjk-punctuation</a></span>. This feature is available from AH Formatter V7.1.
+		</div>
+		<div>
+			For details about ‘axf:avoid-widow-word’ see “Widow Adjustment of Paragraphs (axf:avoid-widow-words)” in <a href="https://www.antennahouse.com/xsl-fo-and-css-samples#line">Lines</a>.
+		</div>
+		<div>
+			<h2 class = "codePrint">
+				-ah-avoid-widow-words-cjk-punctuation: false;
+			</h2>
+			<div>
+				Because the punctuation mark is also counted as one character, they may be lines like “る。”
+			</div>
+			<div class = "demoblock">
+				<div lang = "ja" style = "-ah-avoid-widow-words: true; -ah-avoid-widow-words-cjk-punctuation: false;">
+					PDF が普及した要因のひとつは、PDF の仕様書が「PDF Reference」として PDF
+    				誕生当初から公開されてきたことである。
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2 class = "codePrint">
+				-ah-avoid-widow-words-cjk-punctuation: true;
+			</h2>
+			<div>
+				Because punctuation marks are not counted in one character, they do not become a line like “る。”, but a line like “ある。”. The target punctuation marks here are characters classified as CL or CP in UAX#14: Line Breaking Properties (such as closing parenthesis and punctuation mark), U+2019 and U+201D.
+			</div>
+			<div class = "demoblock">
+				<div lang = "ja" style = "-ah-avoid-widow-words: true; -ah-avoid-widow-words-cjk-punctuation: true;">
+					PDF が普及した要因のひとつは、PDF の仕様書が「PDF Reference」として PDF
+    				誕生当初から公開されてきたことである。
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2 class = "codePrint">
+				-ah-avoid-widow-words-cjk-punctuation: &lt;string&gt;
+			</h2>
+			<div>
+				If you specify a character string other than ‘true’ or ‘false’, such as <span class = "codePrint">-ah-avoid-widow-words-cjk-punctuation: '？！'</span>, those characters will also be treated as the target punctuation in addition to the above. 
+			</div>
+			<div class = "demoblock">
+				<div lang = "ja" style = "-ah-avoid-widow-words: true; -ah-avoid-widow-words-cjk-punctuation: '? ! ';">
+					PDF が普及した要因のひとつは、PDF の仕様書が「PDF Reference」として PDF
+    				誕生当初から公開されてきたことである。
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2 class = "codePrint">
+				-ah-avoid-widow-words-cjk-punctuation: auto
+			</h2>
+			<div>
+				If <span class = "codePrint">-ah-avoid-widow-words-cjk-punctuation: auto</span> is specified, follows the setting of ‘<a href="https://www.antenna.co.jp/AHF/help/en/ahf-optset.html#avoid-widow-words-cjk-punctuation">-ah-avoid-widow-words-cjk-punctuation</a>’ in the Option Setting File.
+			</div>
+		</div>
+		
+	</body>
+
+</html>

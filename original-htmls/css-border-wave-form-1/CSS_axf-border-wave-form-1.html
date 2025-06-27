@@ -1,0 +1,103 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-border-wave-form-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.borderWavy
+				{
+					-ah-margin-after: 1.5em;
+					border-style: wave;
+					padding: 5pt;
+					margin-bottom: 2em;
+					font-size: 0.9em;
+				}
+				#bW_1
+				{
+					-ah-border-wave-form: auto;
+				}
+				#bW_2
+				{
+					-ah-border-wave-form: 6 0.125;
+				}
+				#bW_3
+				{
+					-ah-border-wave-form: 2;
+				}
+				#bW_4
+				{
+					-ah-border-wave-form: 5;
+				}
+				#bW_5
+				{
+					-ah-border-wave-form: 10;
+				}
+				#bW_6
+				{
+					-ah-border-wave-form: 10 3pt;
+				}
+				#bW_7
+				{
+					-ah-border-wave-form: 10 5pt;
+				}
+				
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Generating wavy borders
+		</div>
+		<div class="subheading">
+			The border of <span class = "codePrint">border-style: wave;</span> can be specified like <span class = "codePrint">-ah-border-wave-form: 10 3pt;</span>. One or two values may be specified. The values in order from left to right are wave form length and line width. Each value may be a number, a length, or ‘auto’. Numeric values are proportional to the border width. If a value is ‘auto’ or omitted, it is regarded as either 6 or 0.125, respectively. Negative values are not available. <span class = "codePrint">border-style: wave;</span> is available in AH Formatter V6.3 and later.
+		</div>
+		<div class = "borderWavy">
+			<span class = "codePrint">border-style: wave;</span>
+		</div>
+		<div class = "borderWavy" id = "bW_1">
+			<span class = "codePrint">border-style: wave; -ah-border-wave-form: auto;</span>
+		</div>
+		<div class = "borderWavy" id = "bW_2">
+			<span class = "codePrint">border-style: wave; -ah-border-wave-form: 6 0.125;</span>
+		</div>
+		<div class = "borderWavy" id = "bW_3">
+			<span class = "codePrint">border-style: wave; -ah-border-wave-form: 2;</span>
+		</div>
+		<div class = "borderWavy" id = "bW_4">
+			<span class = "codePrint">border-style: wave; -ah-border-wave-form: 5;</span>
+		</div>
+		<div class = "borderWavy" id = "bW_5">
+			<span class = "codePrint">border-style: wave; -ah-border-wave-form: 10;</span>
+		</div>
+		<div class = "borderWavy" id = "bW_6">
+			<span class = "codePrint">border-style: wave; -ah-border-wave-form: 10 3pt;</span>
+		</div>
+		<div class = "borderWavy" id = "bW_7">
+			<span class = "codePrint">border-style: wave; -ah-border-wave-form: 10 5pt;</span>
+		</div>
+	</body>
+
+</html>

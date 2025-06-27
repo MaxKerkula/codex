@@ -1,0 +1,87 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-hyphenate-caps-word-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBlock
+				{
+					hyphens: true;
+					border: 1pt solid gray;
+					font-size: 1.6em;
+					margin-bottom: 1.5em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Hyphenation processing of words that consist of uppercase letters
+		</div>
+		<div class="subheading">
+			You can specify whether to hyphenate uppercase words with <span class = "codePrint">-ah-hyphenate-caps-word</span>. The setting is effective when <span class = "codePrint">hyphens: true;</span> is specified. Even small-caps processed characters are considered lowercase if the original characters are lowercase. The setting of <span class = "codePrint">-ah-hyphenate-caps-word: false-all;</span> is available from AH Formatter V7.2. 
+		</div>
+
+		<div style = "text-align: justify;">
+			If you specify <span class = "codePrint">-ah-hyphenate-caps-word: true;</span> (default), normal Hyphenation is preformed. Words are hyphenated regardless of whether they are uppercase or lowercase.
+			<div lang = "en" class = "demoBlock" style = "-ah-hyphenate-caps-word: true;">
+				<div>
+					a padding padding padding padding padding padding padding <span style = "color:red;">HYPHENATED</span>
+				</div>
+				<div>
+					padding padding padding padding padding padding padding padding <span style = "color:red;">Hyphenated</span>
+				</div>
+			</div>
+		</div>
+		
+		<div style = "text-align: justify;">
+			If you specify <span class = "codePrint">-ah-hyphenate-caps-word: false;</span>, words that are all uppercase will not be hyphenated. Words that are not all uppercase, such as words that have only the first letter capitalized, are hyphenated.
+			<div lang = "en" class = "demoBlock" style = "-ah-hyphenate-caps-word: false;">
+				<div>
+					a padding padding padding padding padding padding padding <span style = "color:red;">HYPHENATED</span>
+				</div>
+				<div>
+					padding padding padding padding padding padding padding padding <span style = "color:red;">Hyphenated</span>
+				</div>
+			</div>
+		</div>
+
+		<div style = "text-align: justify;">
+			If you specify <span class = "codePrint">-ah-hyphenate-caps-word: false-all;</span>, all words with only the first letter capitalized do not hyphenate at all.
+			<div lang = "en" class = "demoBlock" style = "-ah-hyphenate-caps-word: false-all;">
+				<div>
+					a padding padding padding padding padding padding padding <span style = "color:red;">HYPHENATED</span>
+				</div>
+				<div>
+					padding padding padding padding padding padding padding padding <span style = "color:red;">Hyphenated</span>
+				</div>
+			</div>
+			A string like ANTENNA-HOUSE with a hyphen is considered multiple words. Therefore, there is a possibility of line breaking at the hyphen position.
+		</div>
+
+	</body>
+
+</html>

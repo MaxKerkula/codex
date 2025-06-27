@@ -1,0 +1,63 @@
+﻿@charset "UTF-8";
+
+/*
+ * Any copyright is dedicated to the Public Domain.
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ *
+ * Provided by Antenna House, Inc. to help promote
+ * the adoption of CSS for Paged Media.
+ */
+
+/* $Id: blurb.css 3900 2025-03-31 16:22:58Z tgraham $ */
+
+/* 共通のページ設定 */
+@page {
+  size: 6.125in 9.25in !important; /* 6x9 'trade book' + fake bleed */
+  margin: 61pt 54pt 73pt 54pt !important;
+          /* 52pt + 9pt 'bleed', 54pt, 64pt + 9pt 'bleed', 54pt */
+
+  marks: none /* crop cross */;        /* printer marks to display */
+  -ah-crop-offset: 0 !important;    /* distance from the page box edge to the
+                               page sheet edge */
+  bleed: 0 !important;				 /* page bleed distance */
+}
+
+/* 左ページ設定 */
+@page :left {
+  margin-left: 61pt !important; /* 52pt + 9pt 'bleed'. */
+  margin-right: 49pt !important;
+
+  -ah-crop-offset: 0 !important;    /* distance from the page box edge to the
+                               page sheet edge */
+  -ah-crop-offset-left: 0 !important;
+  -ah-crop-offset-top: 0 !important;
+  -ah-crop-offset-bottom: 0 !important;
+  bleed: 0 !important;				 /* page bleed distance */
+  -ah-bleed-left: 0 !important;
+  -ah-bleed-top: 0 !important;
+  -ah-bleed-bottom: 0 !important;
+}
+
+/* 右ページ設定 */
+@page :right {
+  margin-left: 49pt !important;
+  margin-right: 61pt !important; /* 52pt + 9pt 'bleed'. */
+
+  -ah-crop-offset: 0 !important;    /* distance from the page box edge to the
+                               page sheet edge */
+  -ah-crop-offset-right: 0 !important;
+  -ah-crop-offset-top: 0 !important;
+  -ah-crop-offset-bottom: 0 !important;
+  bleed: 0 !important;				 /* page bleed distance */
+  -ah-bleed-right: 0 !important;
+  -ah-bleed-top: 0 !important;
+  -ah-bleed-bottom: 0 !important;
+}
+
+/* 文書の先頭ページ設定 */
+@page :first,
+Title {
+  margin-left: 10pt !important;
+  margin-right: 19pt !important;  /* 10pt + 9pt 'bleed'. */
+  margin-bottom: 19pt !important; /* 10pt + 9pt 'bleed'. */
+}

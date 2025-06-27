@@ -1,0 +1,85 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-break-distance-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBlock
+				{
+					page-break-before: always;
+					column-count: 2;
+					-ah-column-rule: thin burlywood solid all;
+					background-color: beige;
+					margin-bottom: 20mm;
+					padding: 3pt;
+					widows: 1;
+					orphans: 1;
+					font-size: 1.2em;
+					hyphens: false;
+					height: 75%;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Reduce unnecessary forced breaks
+		</div>
+		<div class="subheading">
+			<span class = "codePrint">break-before</span> and <span class = "codePrint">break-after</span> force a page break or column break. However, ‘axf:break-distance’ reduces unnecessary breaks by disabling ‘break-before’ and ‘break-after’ if there is sufficient space on the page. ‘axf:break-distance’ is specified as either a length or a percentage of the height of the containing block.
+			A page break or column break specified by ‘break-before’ or ‘break-after’ is enabled only when the height of the remaining area is less than the ‘axf:break-distance’ height. If the height of the remaining area is greater than the height specified by ‘axf:break-distance’, no page breaks or column breaks are made. ‘axf: break-distance’ is available in Antenna House Formatter V7.3 and later.
+		</div>
+		<div>
+			In the next page, <span class = "codePrint">break-before: column;</span> is specified on blocks in a two-column page. If only <span class = "codePrint">break-before: column;</span> is specified, the column breaks there. However, if ‘axf:break-distance’ is also specified, the height of the column will determine whether or not to break the column.
+		</div>
+		
+		<div class = "demoBlock">
+			<div>
+				There are two columns here.
+			</div>
+			<div style = "break-before: column; -ah-margin-before: 1.5em;">
+				The block has <span class = "codePrint">break-before: column</span>, which normally forces a column break. This caused the large space in the previous column.
+			</div>
+			<div style = "-ah-margin-before: 1.5em">
+				The following three blocks are identical.
+			</div>
+			<div style = "-ah-break-distance: 30%; -ah-margin-before: 1.5em;">
+				This block has <span class = "codePrint">-ah-break-distance: 30%;</span>. A forced break occurs only if the height of the remaining area is less than the <span class = "codePrint">-ah-break-distance</span> value.
+			</div>
+			<div style = "-ah-margin-before: 1.5em; -ah-margin-before: 1.5em;">
+				This block has <span class = "codePrint">break-before: column;</span> and <span class = "codePrint">-ah-break-distance: 30%;</span> A forced break occurs only if the height of the remaining area is less than the <span class = "codePrint">-ah-break-distance</span> value.
+			</div>
+		</div>
+
+		<div class = "demoBlock">
+			<div style = "break-before: column; -ah-break-distance: 30%;">
+				This block has <span class = "codePrint">break-before: column;</span> and <span class = "codePrint">-ah-break-distance: 30%</span>. A forced break occurs only if the height of the remaining area is less than the <span class = "codePrint">-ah-break-distance</span> value.
+			</div>
+		</div>
+	</body>
+
+</html>

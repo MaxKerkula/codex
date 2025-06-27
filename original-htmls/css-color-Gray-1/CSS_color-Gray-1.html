@@ -1,0 +1,304 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_color-Gray-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Grayscale rendering with rgb-icc()
+		</div>
+		<div class="subheading">
+			These are examples of rendering in grayscale by specifying rgb-icc(#Grayscale, &lt;Scale&gt;) or rgb-icc(&lt;R&gt;, &lt;G&gt;, &lt;B&gt;, #Grayscale, &lt;Scale&gt;). Scale is either a number in the range 0.0 (black) to 1.0 (white) or a percentage in the range 0% (black) to 100% (white). R, G, and B, if present, specify a fallback RGB color that is used when the device cannot display the grayscale color. See also “rgb-icc()” in the Online Manual for details.
+		</div>
+		<h2>
+			Scale as a number
+		</h2>
+		<table>
+			<colgroup>
+				<col span = "1" style = "padding: 0.2em 0.5em 0.2em 0; column-width: 11.5em;">
+				<col span = "2" style = "padding: 0.2em 0.5em; column-width: 4em; text-align: center;">
+				<col span = "3" style = "padding: 0.2em 0.5em;">
+			</colgroup>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 1.0);">
+					rgb-icc(#Grayscale, 1.0)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(#Grayscale, 1.0);">
+					1.0
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 1.0);">
+					rgb-icc(#Grayscale, 1.0)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0.9);">
+					rgb-icc(#Grayscale, 0.9)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(230, 230, 230, #Grayscale, 0.9);">
+					0.9
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(230, 230, 230, #Grayscale, 0.9);">
+					rgb-icc(230, 230, 230, #Grayscale, 0.9)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0.8);">
+					rgb-icc(#Grayscale, 0.8)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(205, 205, 205, #Grayscale, 0.8);">
+					0.8
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(205, 205, 205, #Grayscale, 0.8);">
+					rgb-icc(205, 205, 205, #Grayscale, 0.8)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0.7);">
+					rgb-icc(#Grayscale, 0.7)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(180, 180, 180, #Grayscale, 0.7);">
+					0.7
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(180, 180, 180, #Grayscale, 0.7);">
+					rgb-icc(180, 180, 180, #Grayscale, 0.7)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0.6);">
+					rgb-icc(#Grayscale, 0.6)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(153, 153, 153, #Grayscale, 0.6);">
+					0.6
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(153, 153, 153, #Grayscale, 0.6);">
+					rgb-icc(153, 153, 153, #Grayscale, 0.6)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0.5);">
+					rgb-icc(#Grayscale, 0.5)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(128, 128, 128, #Grayscale, 0.5); color: white;">
+					0.5
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(128, 128, 128, #Grayscale, 0.5);">
+					rgb-icc(128, 128, 128, #Grayscale, 0.5)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0.4);">
+					rgb-icc(#Grayscale, 0.4)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(102, 102, 102, #Grayscale, 0.4); color: white;">
+					0.4
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(102, 102, 102, #Grayscale, 0.4);">
+					rgb-icc(102, 102, 102, #Grayscale, 0.4)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0.3);">
+					rgb-icc(#Grayscale, 0.3)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(77, 77, 77, #Grayscale, 0.3); color: white;">
+					0.3
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(77, 77, 77, #Grayscale, 0.3);">
+					rgb-icc(77, 77, 77, #Grayscale, 0.3)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0.2);">
+					rgb-icc(#Grayscale, 0.2)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(51, 51, 51, #Grayscale, 0.2); color: white;">
+					0.2
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(51, 51, 51, #Grayscale, 0.2);">
+					rgb-icc(51, 51, 51, #Grayscale, 0.2)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0.1);">
+					rgb-icc(#Grayscale, 0.1)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(26, 26, 26, #Grayscale, 0.1); color: white;">
+					0.1
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(26, 26, 26, #Grayscale, 0.1);">
+					rgb-icc(26, 26, 26, #Grayscale, 0.1)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0.0);">
+					rgb-icc(#Grayscale, 0.0)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(0, 0, 0, #Grayscale, 0.0); color: white;">
+					0.0
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(0, 0, 0, #Grayscale, 0.0);">
+					rgb-icc(0, 0, 0, #Grayscale, 0.0)
+				</td>
+			</tr>
+		</table>
+		<h2>
+			Scale as a percentage
+		</h2>
+		<table>
+			<colgroup>
+				<col span = "1" style = "padding: 0.2em 0.5em 0.2em 0; column-width: 11.5em;">
+				<col span = "2" style = "padding: 0.2em 0.5em; column-width: 4em; text-align: center;">
+				<col span = "3" style = "padding: 0.2em 0.5em;">
+			</colgroup>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 100%);">
+					rgb-icc(#Grayscale, 100%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(100%, 100%, 100%, #Grayscale, 100%);">
+					100%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(100%, 100%, 100%, #Grayscale, 100%);">
+					rgb-icc(100%, 100%, 100%, #Grayscale, 100%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 90%);">
+					rgb-icc(#Grayscale, 90%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(90%, 90%, 90%, #Grayscale, 90%);">
+					90%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(90%, 90%, 90%, #Grayscale, 90%);">
+					rgb-icc(90%, 90%, 90%, #Grayscale, 90%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 80%);">
+					rgb-icc(#Grayscale, 80%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(80%, 80%, 80%, #Grayscale, 80%);">
+					80%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(80%, 80%, 80%, #Grayscale, 80%);">
+					rgb-icc(80%, 80%, 80%, #Grayscale, 80%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 70%);">
+					rgb-icc(#Grayscale, 70%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(70%, 70%, 70%, #Grayscale, 70%);">
+					70%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(70%, 70%, 70%, #Grayscale, 70%);">
+					rgb-icc(70%, 70%, 70%, #Grayscale, 70%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 60%);">
+					rgb-icc(#Grayscale, 60%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(60%, 60%, 60%, #Grayscale, 60%);">
+					60%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(60%, 60%, 60%, #Grayscale, 60%);">
+					rgb-icc(60%, 60%, 60%, #Grayscale, 60%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 50%);">
+					rgb-icc(#Grayscale, 50%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(50%, 50%, 50%, #Grayscale, 50%); color: white;">
+					50%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(50%, 50%, 50%, #Grayscale, 50%);">
+					rgb-icc(50%, 50%, 50%, #Grayscale, 50%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 40%);">
+					rgb-icc(#Grayscale, 40%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(40%, 40%, 40%, #Grayscale, 40%); color: white;">
+					40%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(40%, 40%, 40%, #Grayscale, 40%);">
+					rgb-icc(40%, 40%, 40%, #Grayscale, 40%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 30%);">
+					rgb-icc(#Grayscale, 30%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(30%, 30%, 30%, #Grayscale, 30%); color: white;">
+					30%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(30%, 30%, 30%, #Grayscale, 30%);">
+					rgb-icc(30%, 30%, 30%, #Grayscale, 30%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 20%);">
+					rgb-icc(#Grayscale, 20%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(20%, 20%, 20%, #Grayscale, 20%); color: white;">
+					20%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(20%, 20%, 20%, #Grayscale, 20%);">
+					rgb-icc(20%, 20%, 20%, #Grayscale, 20%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 10%);">
+					rgb-icc(#Grayscale, 10%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(10%, 10%, 10%, #Grayscale, 10%); color: white;">
+					10%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(10%, 10%, 10%, #Grayscale, 10%);">
+					rgb-icc(10%, 10%, 10%, #Grayscale, 10%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(#Grayscale, 0%);">
+					rgb-icc(#Grayscale, 0%)
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); background-color: rgb-icc(0%, 0%, 0%, #Grayscale, 0%); color: white;">
+					0%
+				</td>
+				<td style = "text-align: from-table-column(); padding: from-table-column(); color: rgb-icc(0%, 0%, 0%, #Grayscale, 0%);">
+					rgb-icc(0%, 0%, 0%, #Grayscale, 0%)
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

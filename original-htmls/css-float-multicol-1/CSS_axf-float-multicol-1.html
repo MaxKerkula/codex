@@ -1,0 +1,101 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-float-multicol-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.multiColumnBlock
+				{
+					-ah-margin-after: 1em;
+					height: 25em;
+					border: solid gray 1pt;
+					padding: 4pt;
+					column-count: 4;
+					column-gap: 10pt;
+					-ah-column-rule-style: solid;
+					-ah-column-rule-width: 1pt;
+					-ah-column-rule-color: gray;
+				}
+				.multiFloat
+				{
+					height: 5em;
+					margin: 0.1em;
+					background-color: lightblue;
+					text-align: center;
+					display-align: center;
+					border: 1pt solid gray;
+					-ah-float-reference: multicol;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Multi-column float examples
+		</div>
+		<div class="subheading">
+			Antenna House Formatter extends the float feature with the ability to position the float in any place on the page or position it across multiple columns. The reference area where the float is positioned can be specified by <span class = "codePrint">-ah-float-reference</span>. Available values are: <span class = "codePrint">auto, normal, page, multicol, and column</span>. Specify <span class = "codePrint">-ah-float-x</span> for horizontal position of the float, and specify <span class = "codePrint">-ah-float-y</span> for vertical position. This sample shows the float in a multi-column area specified by <span class = "codePrint">-ah-float-reference: multicol</span>.
+		</div>
+		<div>
+			Float example specified by fo:float -ah-float-reference="multicol"
+		</div>
+		<div>
+			The column spanning can be specified by the unit of 'gr' (grid).  A 'gr' is a special unit of length, where the ‘column width’ and the ‘column gap’ each count as '1gr' . If you want to span two columns, then this is calculated as '3gr': column width x 2 + column gap x 1.
+		</div>
+		<div class = "multiColumnBlock">
+			<div class = "multiFloat" style = "-ah-float-x: left; -ah-float-y: top; width: 3gr;">
+				Float is positioned at the upper left and spans two columns. -ah-float-reference: multicol; -ah-float-x: left; -ah-float-y: top;
+			</div>
+			<div class = "multiFloat" style = "-ah-float-x: right; -ah-float-y: bottom; width: 5gr;">
+				Float is positioned at the lower right and spans three columns. -ah-float-reference: multicol; ah-float-x: right; -ah-float-y: bottom;
+			</div>
+			<div style = "-ah-margin-after: 0.5em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor.
+			</div>
+			<div style = "-ah-margin-after: 0.5em;">
+				Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus.
+			</div>
+			<div style = "-ah-margin-after: 0.5em;">
+				Vivamus nec turpis elementum, iaculis lorem in, pellentesque metus. Ut blandit tortor mi, ac bibendum felis varius vitae. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</div>
+			<div>
+				Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.Integer ut porttitor felis. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.
+			</div>
+		</div>
+		<div>
+			<div>
+				You can also use the ‘-ah-float’ shorthand property to specify the float-related extended properties at once. The following produce the same result but use different approaches of individual properties and the shorthand property.
+			</div>
+			<div>
+				Using individual extended properties (Position the float at the upper left of the multiple columns) fo:float -ah-float-reference: multicol; -ah-float-x: left; -ah-float-y: top;
+			</div>
+			<div>
+				Using the shorthand property (Position the float at the upper left of the multiple columns) fo:float -ah-float: multicol left top"
+			</div>
+		</div>
+	</body>
+
+</html>

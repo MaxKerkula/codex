@@ -1,0 +1,82 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-unbreakable-words-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Unbreakable Words
+		</div>
+		<div class="subheading">
+			List the unbreakable words in the content of the ‘<a href="https://www.antenna.co.jp/AHF/help/en/ahf-optset.html#unbreakable-words">unbreakable-words</a>’ element of the option setting file, using line feed as a delimiter. It is possible to list strings containing spaces and words containing hyphens. The leading and trailing white spaces (U+0009, U+0020) will be discarded. Consecutive white spaces (U+0009, U+0020) are grouped together. See ‘<a href="https://www.antenna.co.jp/AHF/help/en/ahf-optset.html#unbreakable-words">unbreakable-words</a>’ for details. This feature is available in AH Formatter V7.0 or later.
+		</div>
+		<div style="-ah-margin-before: 1em;">
+			Example of option setting file:
+		</div>
+		<div style="-ah-text-autospace: none; font-family: monospace; white-space: pre; font-size: 1.2em;">
+&lt;?xml version="1.0"?&gt;
+&lt;formatter-config&gt;
+    &lt;formatter-settings&gt;    
+	  &lt;unbreakable-words&gt;
+		Antenna House
+		support-team
+	  &lt;/unbreakable-words&gt;    
+    &lt;/formatter-settings&gt;
+&lt;/formatter-config&gt;
+		</div>
+		<div style="-ah-margin-before: 1em;">
+			With AH Formatter V7.0 and later, yellow background words are listed in ‘<a href="https://www.antenna.co.jp/AHF/help/en/ahf-optset.html#unbreakable-words">unbreakable-words</a>’ in the Option Setting File, and you can see the result by formatting this document.
+		</div>
+		<div style="-ah-margin-before: 1em; -ah-column-count: 2;">
+			<div style="font-size: 12pt;">
+				<div style="-ah-margin-before: 0.5em; font-family: serif; border: solid thin lightgray;">
+					<span style = "background-color: yellow;">Antenna House</span> Sample Data, <span style = "background-color: yellow;">Antenna House</span> , <span style = "background-color: yellow;">Antenna House</span> Sample Data, <span style = "background-color: yellow;">Antenna House</span> Sample, <span style = "background-color: yellow;">Antenna House</span> Sample Data, <span style = "background-color: yellow;">Antenna House</span>, <span style = "background-color: yellow;">Antenna House</span> Sample Data, <span style = "background-color: yellow;">Antenna House</span>, <span style = "background-color: yellow;">Antenna House</span> Sample Data, <span style = "background-color: yellow;">Antenna House</span>
+				</div>
+				<div style="-ah-margin-before: 0.5em; font-family: serif; border: solid thin lightgray;">
+					<div>
+						Antenna support team support team support team support team support team
+					</div>
+						<div>
+							Antenna <span style = "background-color: yellow;">support-team</span> <span style = "background-color: yellow;">support-team</span> <span style = "background-color: yellow;">support-team</span> <span style = "background-color: yellow;">support-team</span> <span style = "background-color: yellow;">support-team</span>
+						</div>
+						<div>
+							Antenna supportteam supportteam supportteam supportteam supportteam
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			If the option setting ‘<a href="https://www.antenna.co.jp/AHF/help/en/ahf-optset.html#unbreakable-words">unbreakable-words</a>’ is not applied, the result is as follows.
+			<img style="width: 100%; -ah-content-width: scale-to-fit;" src="v7-not-unbreak-en.png">
+		</div>
+	</body>
+
+</html>

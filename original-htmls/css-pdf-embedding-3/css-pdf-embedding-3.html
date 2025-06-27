@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Printing by merging embedded PDF – Antenna House, Inc.</title>
+    <meta name="keywords" content="background-image, container element, position: absolute, PDF">
+    <meta name="author" content="Antenna House, Inc.">
+    <style>
+        body {
+            font-family: serif;
+            font-size: 10pt;
+            line-height: 1.4;
+        }
+
+        @page PageMaster1 {
+            size: 210mm 297mm;
+            margin: 10mm 20mm 10mm 20mm;
+        }
+
+        @page PageMaster2 {
+            size: 210mm 297mm;
+            margin: 10mm 20mm 10mm 20mm;
+            background-image: url("order.pdf");
+       }
+
+        @page {
+            @bottom-right {
+                height: 18mm;
+                content: 'Antenna House, Inc.';
+                font-size: 0.8em;
+                text-align: right;
+                color: green;
+                -ah-link: url('https://www.antennahouse.com/');
+                -ah-link-alt-text: 'Antenna House, Inc.';
+                -ah-pdftag: Artifact;
+                -ah-link-annotation-contents: 'Antenna House, Inc.';
+            }
+        }
+
+        .page-sequence-1 {
+            page: PageMaster1;
+            -ah-hyphenate-hyphenated-word: false;
+            -ah-hyphens: auto;
+        }
+
+        .heading1-outer {
+            column-span: all;
+            font-family: sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            -ah-padding-before: 0.3em;
+            -ah-padding-after: 0.3em;
+            -ah-margin-before: 1em;
+            -ah-margin-after: 1em;
+            background-color: #EEEEEE;
+            -ah-hyphens: none;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+        }
+        h1.heading1-inner {
+             margin-block-start: 0;
+             margin-block-end: 0;
+             margin-inline-start: 1em;
+             margin-inline-end: 1em;
+             font-size: inherit;
+             -ah-pdftag: H1;
+        }
+        .intro-para {
+            column-span: all;
+            -ah-margin-before: 1em;
+            -ah-margin-after: 1em;
+            text-indent: 0em;
+            border: 1pt solid #9999FF;
+            margin-inline-start: 0.5em;
+            margin-inline-end: 0.5em;
+            padding: 0.5em;
+            text-align: justify;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+        }
+        .intro-para a {
+            -ah-annotation-contents: attr(title);
+        }
+        .intro-para a.manual-link {
+             text-decoration: underline;
+             color: blue;
+         }
+        .multi-col-container {
+            -ah-margin-before: 0.5em;
+            -ah-column-count: 2;
+            -ah-column-gap: 25pt;
+        }
+        .multi-col-container pre.code-block {
+             -ah-margin-before: 1em;
+             font-family: monospace;
+             white-space: pre;
+             font-size: 0.9em;
+             -ah-padding-start: 0.5em;
+             -ah-padding-end: 0.5em;
+             padding: 0.5em;
+             border: 1pt solid lightgray;
+         }
+         .multi-col-container p.example-para {
+             -ah-margin-before: 1em;
+         }
+        .multi-col-container p.info-para {
+            text-indent: 1em;
+        }
+         .multi-col-container span.code-inline {
+             font-family: sans-serif;
+            font-size: 0.9em;
+            -ah-pdftag: Code;
+        }
+         .multi-col-container p.absolute-info {
+             -ah-margin-before: 1em;
+        }
+        .multi-col-container p.break-before-col {
+             -ah-break-before: column;
+        }
+        .multi-col-container p.image-block {
+             -ah-margin-before: 1em;
+            -ah-text-align-last: center;
+            border: 1pt solid lightgray;
+             text-align: center;
+        }
+         .multi-col-container img.embedded-graphic {
+            -ah-content-width: 35%;
+        }
+
+        .page-sequence-2 {
+            page: PageMaster2;
+            font-size: 11pt;
+            -ah-hyphenate-hyphenated-word: false;
+            -ah-hyphens: auto;
+        }
+        .abs-container {
+            position: absolute;
+            -ah-pdftag: Div;
+        }
+         .abs-block-1 { top: 38mm; left: 38mm; right: 90mm; bottom: 224mm; }
+        .abs-block-1 p { margin-block-start: 0; margin-block-end: 0; }
+        .abs-block-2 { top: 38mm; left: 130mm; bottom: 214mm; }
+        .abs-block-2 p:first-child { margin-block-start: 0; margin-block-end: 0; }
+        .abs-block-2 p:nth-child(2) { -ah-margin-before: 1mm; }
+         .abs-block-3 { top: 70.5mm; left: 51mm; right: 89mm; bottom: 189mm; }
+        .abs-block-3 p { margin-block-start: 0; margin-block-end: 0; }
+         .abs-table-container {
+            position: absolute;
+            top: 89.7mm; left: 0mm; bottom: 90mm;
+            line-height: 17pt;
+            width: auto;
+         }
+         .abs-table-container table {
+             width: auto;
+             border-collapse: collapse;
+             border-spacing: 0;
+         }
+         .abs-table-container col.col1 { width: 10mm; }
+         .abs-table-container col.col2 { width: 68.5mm; }
+         .abs-table-container col.col3 { width: 19.5mm; }
+         .abs-table-container col.col4 { width: 27mm; }
+         .abs-table-container col.col5 { width: 43mm; }
+         .abs-table-container td {
+             vertical-align: top;
+             padding: 0;
+             height: 18.5pt;
+         }
+        .abs-table-container td.cell-col1 {
+            text-align: center;
+        }
+        .abs-table-container td.cell-col2 {
+             padding-left: 0.5em;
+        }
+        .abs-table-container td.cell-col3 {
+            text-align: center;
+        }
+         .abs-table-container td.cell-col4 {
+             text-align: right;
+
+         }
+         .abs-table-container td.cell-col5 {
+             text-align: right;
+
+         }
+         .abs-block-4 { top: 174.5mm; left: 2mm; right: 2mm; bottom: 73mm; }
+        .abs-block-4 p { margin-block-start: 0; margin-block-end: 0; }
+    </style>
+</head>
+<body>
+    <div class="page-sequence-1">
+        <!-- Heading -->
+        <div class="heading1-outer">
+             <h1 class="heading1-inner">Printing by merging embedded PDF</h1>
+        </div>
+        <!-- Intro Paragraph (with body text conversion) -->
+        <p class="intro-para">Antenna House Formatter can use a PDF page as a background image for an <a href="https://www.w3.org/TR/css-page-3/#at-page-rule" class="link1" title="@page rule">@page rule</a> or applied via the <a href="https://www.antennahouse.com/product/ahf70/docs/ahf-css.html#css-page" class="link2" title="page property">page CSS property</a> to a container element. At this time, you can use the PDF embedded as the background as a template and insert data on the background to generate and print a new PDF. For more information on embedding PDF, see <a href="https://www.antenna.co.jp/AHF/help/en/ahf-pdf.html#pdf-embedding" class="link3 manual-link" title="PDF Embedding">PDF Embedding</a> in the manual.</p>
+        <!-- Multi-Column Container (with body text conversion) -->
+        <div class="multi-col-container">
+            <p>First, create a template PDF and the HTML/CSS to be merged data. Next, specify the template PDF in the 'background-image' CSS property of the <a href="https://www.w3.org/TR/css-page-3/#at-page-rule" title="@page rule">@page rule</a> definition as follows:</p>
+            <pre class="code-block" lang="en">@page PageMaster-* {
+    size: 210mm 297mm; /* Example */
+    background-image: url("order.pdf");
+}</pre>
+            <p class="example-para">The above example uses a page with a height of 297 mm and a width of 210 mm (via the `size` property), and displays order.pdf as the background on the entire page via the `background-image` property.</p>
+            <p class="info-para">In most cases, the data to be inserted into the template is placed by specifying the absolute position on the page. Include the merged data in a `div` element (or similar block container), specify the <span class="code-inline">position: absolute;</span> CSS property, and then use the `left`, `right`, `top`, and `bottom` CSS properties to determine the absolute position of the `div` element as follows:</p>
+            <pre class="code-block" lang="en">&lt;div style="
+    position: absolute; 
+    left: 10mm; 
+    right: 30mm; 
+    top: 50mm; 
+    bottom: 20mm; 
+"&gt;...&lt;/div&gt;</pre>
+            <p class="absolute-info">In the above example, the `div` element is positioned 10mm from the left, 30mm from the right, 50mm from the top, and 20mm from the bottom relative to its containing block.</p>
+            <p class="break-before-col">In this sample, the following PDF is embedded as the background of the second page as a template, and the data is inserted into that PDF.</p>
+            <p class="image-block">
+                <img class="embedded-graphic" src="order.pdf" alt="Embedded PDF sample">
+            </p>
+        </div> <!-- end multi-col-container -->
+    </div>
+    <div class="page-sequence-2">
+        <div class="abs-container abs-block-1">
+            <p>Antenna House</p>
+        </div>
+        <div class="abs-container abs-block-2">
+            <p>1234567-1234567</p>
+            <p>dd/mm/yyyy</p>
+        </div>
+        <div class="abs-container abs-block-3">
+            <p>750</p>
+        </div>
+        <div class="abs-table-container">
+             <!-- Table from fo:table-and-caption/fo:table -->
+                 <table>
+                     <colgroup>
+                         <col class="col1">
+                         <col class="col2">
+                         <col class="col3">
+                         <col class="col4">
+                         <col class="col5">
+                     </colgroup>
+                     <tbody>
+                         <tr>
+                         <td class="cell-col1">1</td>
+                         <td class="cell-col2">Product-1</td>
+                         <td class="cell-col3">10</td>
+                         <td class="cell-col4">30</td>
+                         <td class="cell-col5">300</td>
+                         </tr>
+                         <tr>
+                         <td class="cell-col1">2</td>
+                         <td class="cell-col2">Product-2</td>
+                         <td class="cell-col3">5</td>
+                         <td class="cell-col4">50</td>
+                         <td class="cell-col5">250</td>
+                         </tr>
+                         <tr>
+                         <td class="cell-col1">3</td>
+                         <td class="cell-col2">Product-3</td>
+                         <td class="cell-col3">8</td>
+                         <td class="cell-col4">25</td>
+                         <td class="cell-col5">200</td>
+                         </tr>
+                     <!-- Empty rows 4-10 -->
+                     <tr> <td class="cell-col1">4</td> <td class="cell-col2"></td> <td class="cell-col3"></td> <td class="cell-col4"></td> <td class="cell-col5"></td> </tr>
+                     <tr> <td class="cell-col1">5</td> <td class="cell-col2"></td> <td class="cell-col3"></td> <td class="cell-col4"></td> <td class="cell-col5"></td> </tr>
+                     <tr> <td class="cell-col1">6</td> <td class="cell-col2"></td> <td class="cell-col3"></td> <td class="cell-col4"></td> <td class="cell-col5"></td> </tr>
+                     <tr> <td class="cell-col1">7</td> <td class="cell-col2"></td> <td class="cell-col3"></td> <td class="cell-col4"></td> <td class="cell-col5"></td> </tr>
+                     <tr> <td class="cell-col1">8</td> <td class="cell-col2"></td> <td class="cell-col3"></td> <td class="cell-col4"></td> <td class="cell-col5"></td> </tr>
+                     <tr> <td class="cell-col1">9</td> <td class="cell-col2"></td> <td class="cell-col3"></td> <td class="cell-col4"></td> <td class="cell-col5"></td> </tr>
+                     <tr> <td class="cell-col1">10</td> <td class="cell-col2"></td> <td class="cell-col3"></td> <td class="cell-col4"></td> <td class="cell-col5"></td> </tr>
+                     <!-- Last row with total -->
+                         <tr>
+                         <td class="cell-col1"></td>
+                         <td class="cell-col2"></td>
+                         <td class="cell-col3"></td>
+                         <td class="cell-col4"></td>
+                         <td class="cell-col5">750</td>
+                         </tr>
+                     </tbody>
+                 </table>
+             </div>
+        <div class="abs-container abs-block-4">
+            <p>Sample</p>
+        </div>
+    </div>
+</body>
+</html> 

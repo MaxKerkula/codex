@@ -1,0 +1,107 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_block-container-2]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.blockContainer
+				{
+					border-style: solid;
+					border-width: 1pt;
+					border-color: gray;
+					margin-bottom: 2em;
+				}
+				#dBC_0
+				{
+					-ah-logical-width: 50%;
+				}
+				#dBC_1
+				{
+					-ah-logical-width: 50%;
+					-ah-logical-height: 20%;
+				}
+				#dBC_2
+				{
+					-ah-logical-width: 50%;
+					-ah-logical-height: 30mm;
+				}
+				#dBC_3
+				{
+					-ah-min-logical-width: 30em;
+					-ah-min-logical-height: 2em;
+				}
+				#dBC_4
+				{
+					-ah-max-logical-width: 30em;
+					-ah-max-logical-height: 2em;
+				}
+				#dBC_5
+				{
+					-ah-logical-width: 50%;
+					background-color: lightyellow;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Position and size of a block container
+		</div>
+		<div class="subheading">
+			When the position of a block container (&lt;fo:block-container&gt;) is not specified, it is positioned after its previous block. The width and the height will change by the value optionally specified  and the contents included in the area.
+		</div>
+		<h6>This is a block area before the block container whose position isn’t specified.</h6>
+		<div class = "blockContainer">
+			This is the contents of the block container whose  position isn’t specified. It’s arranged following the previous block because the position isn’t specified. Because the width and the height aren’t specified, the size reflects the contents included in the area.
+		</div>
+		<h6>This is a block area before the block container whose position isn’t specified.</h6>
+		<div class = "blockContainer" id = "dBC_0">
+			This is the contents of the block container whose  position isn’t specified. It’s arranged following the previous block because the position isn’t specified. Because the width and the height aren’t specified, the size reflects the contents included in the area.
+		</div>
+		<div class = "blockContainer" id = "dBC_1">
+			This is the contents of the block container whose  position isn’t specified. It’s arranged following the previous block because the position isn’t specified. Because the width and the height aren’t specified, the size reflects the contents included in the area.
+		</div>
+		<div class = "blockContainer" id = "dBC_2">
+			This is the contents of the block container whose  position isn’t specified. It’s arranged following the previous block because the position isn’t specified. Because the width and the height aren’t specified, the size reflects the contents included in the area.
+		</div>
+		<div class = "blockContainer" id = "dBC_3">
+			This is the contents of the block container whose  position isn’t specified. It’s arranged following the previous block because the position isn’t specified. Because the width and the height aren’t specified, the size reflects the contents included in the area.
+		</div>
+		<div class = "blockContainer">
+			The minimum values is specified as same as the block container just before this area.
+		</div>
+		<div class = "blockContainer" id = "dBC_4">
+			This is the contents of the block container whose position isn’t specified. By specifying the width as -ah-max-logical-width: 30em;, the height as -ah-max-logical-height: 2em;, maximum values of the width and height can be specified.
+		</div>
+		<div class = "blockContainer" id = "dBC_4">
+			The maximum values is specified as same as the block container just before this area.
+		</div>
+		<div class = "blockContainer" id = "dBC_5">
+			When the height is not specified to the block container, a page break occurs within the block container if the contents overflow. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample.
+		</div>
+	</body>
+
+</html>

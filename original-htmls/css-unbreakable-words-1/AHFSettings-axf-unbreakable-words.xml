@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<formatter-config>
+    <formatter-settings>    
+        <unbreakable-words>
+            アンテナハウス<!-- "アンテナハウス" を登録 -->
+            Antenna House<!-- "Antenna House" を登録 -->
+            Sampleデータ<!-- 和文欧文混合 "Sampleデータ" を登録 -->
+            support-team<!-- ハイフンを含む "support-team" を登録 -->
+        </unbreakable-words>    
+    </formatter-settings>
+</formatter-config>

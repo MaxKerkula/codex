@@ -1,0 +1,89 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-float-page-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+					font-size: 0.9em;
+				}
+				.pageFloatDemo
+				{
+					background-color: lightblue;
+					text-align: center;
+					display-align: center;
+					border: 1pt solid gray;
+					-ah-float-reference: page;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Page floats
+		</div>
+		<div class="subheading">
+			Antenna House Formatter extends the float feature to position the float in any positions on the page or position it across multiple columns. The reference area where the float is positioned can be specified by <span class = "codePrint">-ah-float-reference</span>. Available values are <span class = "codePrint">auto, normal, page, multicol and column</span>. Specify <span class = "codePrint">-ah-float-x</span> for arranging the horizontal position of the float, specify <span class = "codePrint">-ah-float-y</span> for the vertical position. This sample shows the page float specified by <span class = "codePrint">-ah-float-reference: page</span>.
+		</div>
+		
+		<div style = "-ah-margin-after: 0.5em; text-align: justify;">
+			You can also use the shorthand property, <span class = "codePrint">-ah-float</span>, to specify the float-related extended properties at once. The following shows the same result but the different approach of using individual properties and using shorthand property.
+		</div>
+		<div style = "-ah-margin-after: 0.5em; text-align: justify;">
+			Using individual extended properties (Position the float on top of the page.) <span class = "codePrint">-ah-float-reference: page; -ah-float-x: none; -ah-float-y: top;</span>
+		</div>
+		<div style = "-ah-margin-after: 0.5em; text-align: justify;">
+			Using the shorthand property (Position the float at the top of the page.) <span class = "codePrint">-ah-float: page top;</span>
+		</div>
+		
+		
+		
+		<div class = "pageFloatDemo" style = "-ah-float: none top; height: 2.5em; position: relative; z-index: 3;">
+			<span class = "codePrint">-ah-float-reference: page; -ah-float-x: none; -ah-float-y: top;</span>  (Position the float at the top of the page.)
+		</div>
+		
+		<div class = "pageFloatDemo" style = "-ah-float: right top; width: 10em; height: 15.5em; position: relative; z-index: 3; margin-left: 0.3em;">
+			<span class = "codePrint">-ah-float-reference: page; -ah-float-x: none; -ah-float-y: top;</span>  (Position the float at the top of the page.)
+		</div>
+		
+		<div class = "pageFloatDemo" style = "-ah-float: left bottom; width: 10em; height: 15em; position: relative; z-index: 3; margin-left: 0.3em;">
+			<span class = "codePrint">-ah-float-reference: page; -ah-float-x: none; -ah-float-y: top;</span>  (Position the float at the top of the page.)
+		</div>
+		
+		<div class = "pageFloatDemo" style = "-ah-float: outside center; width: 10em; height: 12em; position: relative; z-index: 3; margin-left: 0.3em;">
+			<span class = "codePrint">-ah-float-reference: page; -ah-float-x: none; -ah-float-y: top;</span>  (Position the float at the top of the page.)
+		</div>
+		
+		<div class = "pageFloatDemo" style = "-ah-float: inside center; width: 10em; height: 12em; position: relative; z-index: 3; margin-left: 0.3em;">
+			<span class = "codePrint">-ah-float-reference: page; -ah-float-x: none; -ah-float-y: top;</span>  (Position the float at the top of the page.)
+		</div>
+		
+		<div class = "pageFloatDemo" style = "-ah-float: none bottom; height: 3em; position: relative; z-index: 3; margin-left: 0.3em;">
+			<span class = "codePrint">-ah-float-reference: page; -ah-float-x: none; -ah-float-y: top;</span>  (Position the float at the top of the page.)
+		</div>
+		
+		
+	</body>
+
+</html>

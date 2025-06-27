@@ -1,0 +1,118 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_graphics-cgm-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Displaying CGM Graphics
+		</div>
+		<div class="subheading">
+			Antenna House Formatter supports Computer Graphics Metafile（CGM）as defined in ISO/IEC 8632.  CGM graphics are embedded as vector images with no degradation of image quality.  The drawing engine was completely rewritten in AH Formatter V6.4 to support more elements than before.  The second page shows a comparison of graphics drawn with AH Formatter V6.4 and AH Formatter V6.3.  The CGM drawing function is an optional feature. To use the CGM drawing function, you must purchase “<a href="https://www.antennahouse.com/cgm-option/">Antenna House Formatter CGM</a>".
+		</div>
+		<div>
+			This sample CGM image is from the W3C WebCGM Test Suite.
+		</div>
+		<div>
+			Source: <a href="https://www.w3.org/Graphics/WebCGM/2009/WebCGM21/testsuite21.html">WebCGM 2.1 Test Suite</a>. Copyright © 2002-2006, Lofton Henderson. All Rights Reserved.
+		</div>
+		<div style="-ah-margin-before: 1.5em;">
+			<img src="BIGCGM01.cgm" style="-ah-content-width: 150mm; border: thin solid gray;">
+			<div>
+				From WebCGM 2.1 Test Suite BIGCGM01.cgm.
+			</div>
+		</div>
+		<div>
+			<h2>
+				Line type
+			</h2>
+			<div style="column-count: 2; column-gap: 8pt;">
+				<div>
+					AH Formatter V6.4
+					<div style="border: 1pt solid;">
+						<img src="SPECMD02.cgm" style="-ah-content-width: scale-down-to-fit; width: 80%;">
+					</div>
+				</div>
+				<div>
+					AH Formatter V6.3
+					<div style="border: 1pt solid;">
+						<img src="SPECMD02-v63.png" style="-ah-content-width: scale-down-to-fit; width: 80%;">
+					</div>
+				</div>
+			</div>
+				From WebCGM 2.1 Test Suite SPECMD02.cgm.
+		</div>
+		<div>
+			<h2>
+				Transparency
+			</h2>
+			<div style="column-count: 2; column-gap: 8pt;">
+				<div>
+					AH Formatter V6.4
+					<div style="border: 1pt solid;">
+						<img src="alphaEscape.cgm" style="-ah-content-width: scale-down-to-fit; width: 80%;">
+					</div>
+				</div>
+				<div style="-ah-keep-together.within-column: always;">
+					AH Formatter V6.3
+					<div style="border: 1pt solid;">
+						<img src="alphaEscape-v63.png" style="-ah-content-width: scale-down-to-fit; width: 80%;">
+					</div>
+				</div>
+			</div>
+			From WebCGM 2.1 Test Suite interpolated-interior-01.cgm.
+		</div>
+		<div>
+			<h2>
+				Gradient fill
+			</h2>
+			<div style="column-count: 2; column-gap: 8pt;">
+				<div>
+					AH Formatter V6.4
+					<div style="border: 1pt solid;">
+						<img src="interpolated-interior-01.cgm" style="-ah-content-width: scale-down-to-fit; width: 80%;">
+					</div>
+				</div>
+				<div>
+					AH Formatter V6.3
+					<div style="border: 1pt solid;">
+						<img src="interpolated-interior-01-v63.png" style="-ah-content-width: scale-down-to-fit; width: 80%;">
+					</div>
+				</div>
+			</div>
+			From WebCGM 2.1 Test Suite interpolated-interior-01.cgm.
+		</div>
+	</body>
+
+</html>

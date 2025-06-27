@@ -1,0 +1,88 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[Avoid-widow-words]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				.codePrint
+				{
+					font-weight: bold; 
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.widowExampleBlock
+				{
+					font-size: 10pt;
+					-ah-margin-after: 0.5em;
+					border: solid thin lightgrey;
+					-ah-line-break: normal;
+					-ah-avoid-widow-words: false
+				}
+				#web_0
+				{
+					-ah-text-justify-trim: auto;
+					-ah-avoid-widow-words: true;
+				}
+				#web_1
+				{
+					-ah-line-break: bpil;
+					-ah-avoid-widow-words: 460pt;
+				}
+				#web_2
+				{
+					-ah-line-break: bpil;
+					-ah-avoid-widow-words: 80%;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Widow Adjustment of Paragraphs
+		</div>
+		<div class="subheading">
+				The <span class = "codePrint">-ah-avoid-widow-words</span> attribute controls the spacing behavior between words or characters  in a paragraph to prevent the last line from having only one word. This attribute is also applicable to length and percentage when using AH Formatter V7.0 or later.
+		</div>
+		<h3><span class = "codePrint">-ah-avoid-widow-words: false;</span></h3>
+		<p>The last line of a paragraph may be only one word</p>
+		<div class = "widowExampleBlock">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		</div>
+		<h3><span class = "codePrint">-ah-avoid-widow-words: true;</span></h3>
+		<p>	
+			Adjusts the spacing so that the last line of the paragraph does not have only one word left (one character for CJK). When <span class = "codePrint">-ah-text-justify-trim: auto;</span> is specified, it is regarded as ‘ideograph inter-word’ is specified.
+		</p>
+		<div class = "widowExampleBlock" id = "web_0">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		</div>
+		<p>
+			With AH Formatter V7.0 and later, when &lt;length&gt; or &lt;percentage&gt; is specified, leaves the specified width of text on the last line of the paragraph. This setting is effective only when the Breaking Paragraphs into Lines line breaking algorithm is applied, such as when <span class = "codePrint">-ah-line-break: bpil; </span>is specified.
+		</p>
+		<p>
+			<span class = "codePrint">-ah-avoid-widow-words: 460pt;</span> is specified in the following block.
+		</p>
+		<div class = "widowExampleBlock" id = "web_1">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		</div>
+		<p>
+			<span class = "codePrint">-ah-avoid-widow-words: 80%;</span> is specified in the following block.
+		</p>
+		<div class = "widowExampleBlock" id = "web_2">
+			Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		</div>
+	</body>
+
+</html>

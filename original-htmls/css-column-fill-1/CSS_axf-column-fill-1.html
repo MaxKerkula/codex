@@ -1,0 +1,114 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_column-fill-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.columnBox
+				{
+					-ah-margin-before: 0.5em;
+					border: solid #7777FF 4pt;
+					padding: 4pt;
+					column-count: 4;
+					column-gap: 8pt;
+					-ah-column-rule: solid #7777FF 1.5pt;
+					orphans: 1;
+					widows: 1;
+					hyphens: false;
+					max-height: calc(7lh + 8pt);
+					margin-bottom: 2em;
+				}
+				img
+				{
+					
+					-ah-content-width: scale-down-to-fit;
+					width: 100%;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Filling Columns
+		</div>
+		<div class="subheading">
+			Depending on the <span class = "codePrint">-ah-column-fill</span> value, the content in an &lt;div&gt; that has multiple columns can either fill the columns sequentially or be balanced, as much as possible, across the columns. When <span class = "codePrint">-ah-column-fill</span> is <span class = "codePrint">balance</span> (default), the columns are balanced as much as possible. When it is <span class = "codePrint">auto</span>, the columns are filled sequentially.
+		</div>
+		<div>
+			Unless stated otherwise, these samples have orphans: 1;, widows = 1;, and max-height: 7lh + 8pt;
+		</div>
+		<div>
+			<span class = "codePrint">-ah-column-fill</span>
+			<div class = "columnBox" style="-ah-column-fill: balance;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.
+			</div>
+			<div class = "columnBox" style="-ah-column-fill: balance;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</div>
+			The available content might not fill balanced columns.
+			<div class = "columnBox" style="-ah-column-fill: balance;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.
+			</div>
+			Content that cannot break, such as a graphic, can affect column heights.
+			<div class = "columnBox" style="-ah-column-fill: balance;">
+				<img src = "sunflower-2.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.
+			</div>
+		</div>
+		<div>
+			<span class = "codePrint">-ah-column-fill</span>
+			'orphans', 'widows', and properties causing keeps or breaks can effect column heights
+			<div class = "columnBox"  style="-ah-column-fill: balance; widows: 3;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.
+			</div>
+		</div>
+		<div style = "page-break-before: always;">
+			<span class = "codePrint">-ah-column-fill: auto;</span>
+			Columns are sequentially filled up to the maximum available height.
+			<div class = "columnBox" style = "-ah-column-fill: auto;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.
+			</div>
+			<div class = "columnBox" style = "-ah-column-fill: auto;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
+			</div>
+			<div class = "columnBox" style = "-ah-column-fill: auto;">
+				<img src = "sunflower-2.jpg">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.
+			</div>
+		</div>
+		<div>
+			Content before a spanning block is balanced.
+			<div class = "columnBox" style = "-ah-column-fill: auto; -ah-column-rule-length: 80%;">
+				Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur.
+
+				<div style = "-ah-column-span: all; color: white; background-color: #7777FF; font-weight: bold;">Lorem Ipsum</div>
+
+				Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur.
+				
+			</div>
+		</div>
+	</body>
+
+</html>

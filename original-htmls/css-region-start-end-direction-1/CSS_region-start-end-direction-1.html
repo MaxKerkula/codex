@@ -1,0 +1,87 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_region-start-end-direction-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					position: relative;
+					page-height: 150mm;
+					page-width: 210mm;
+					@bottom-center
+					{
+						content: counter(page) " of " counter(pages);
+					}
+				}
+				.left-bar, .right-bar 
+				{
+					background-color: lightblue;
+					position: fixed;
+					top: 0;
+					bottom: 0;
+					width: 50px;
+				}
+
+				.left-bar 
+				{
+					left: -20mm;
+
+				}
+
+				.right-bar 
+				{
+					right: -20mm;
+				}
+				.left-bar span, .right-bar span
+				{
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.content 
+				{
+					margin: 60px;  /* Adjust this margin to give enough space for the blue bars */
+					padding: 20px;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Antenna House CSS Sample Template
+		</div>
+		<div class="subheading">
+				It’s possible to specify the writing direction in both user-defined classes or in-line using the &lt;span&gt; tag.  Specify <span class = "codePrint">writing-mode: vertical-rl;</span> to make it vertical. Specify the orientation using the <span class = "codePrint">transform: rotate(90deg);</span> in the unit of 90 degrees to rotate text. But even if ‘writing-mode’ and ‘reference-orientation’ are specified, if you don’t make it right, it will not be effective.
+		</div>
+		
+		<div class="left-bar"><span style = "writing-mode: vertical-rl; text-align: center;">This is the position of region-start.</span></div>
+		<div class="right-bar"><span style = "writing-mode: vertical-lr; text-align: center;">This is the position of region-end. </span></div>
+		<div class="content" style = "page-break-after: always;">
+				The region start and end of this page is made in vertical mode by specifying <span class = "codePrint">writing-mode: vertical-lr</span>
+		</div>
+		
+		<div class="left-bar"><span style = "writing-mode: vertical-rl; transform: rotate(-180deg); text-align: center;">This is the position of region-start.</span></div>
+		<div class="right-bar"><span style = "writing-mode: vertical-rl; transform: rotate(-180deg); text-align: center;">This is the position of region-end.</span></div>
+	</body>
+
+</html>

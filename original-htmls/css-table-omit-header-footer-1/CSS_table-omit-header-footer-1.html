@@ -1,0 +1,208 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_table-omit-header-footer-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+					@bottom-right
+					{
+						content: " ";
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				table
+				{
+					border-collapse: collapse;
+					width: 100%;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Outputting table header and footer repeatedly
+		</div>
+		<div class="subheading">
+			The <span class = "codePrint">table-omit-header-at-break</span>, <span class = "codePrint">table-omit-footer-at-break</span> properties in &lt;table&gt; control the repeated output of the header and footer in a table that is split across multiple pages.
+		</div>
+		<h2 style = "font-family: sans-serif;">
+			The header and the footer in the table are outputted repeatedly.
+		</h2>
+		
+		<table>
+			<colgroup>
+				<col span = 1 style = "column-width: 75mm;">				
+				<col span = 1 style = "column-width: 75mm;">
+			</colgroup>
+			<thead style = "background-color: #DDDDDD; border-start-style: solid; border-end-style: solid; border-before-style: solid; border-width: 0.1mm;">
+				<td style = "padding: 1.5mm; border-end-style: solid; border-width: 0.1mm;">
+					<div style="font-weight: bold; text-align: center;">
+						Column 1 Header
+					</div>
+				</td>
+				<td style = "padding: 1.5mm; border-end-style: solid; border-width: 0.1mm;">
+					<div style="font-weight: bold; text-align: center;">
+						Column 2 Header
+					</div>
+				</td>
+			</thead>
+			<tfoot style = "background-color: #DDDDDD; border-start-style: solid; border-end-style: solid; border-before-style: solid; border-after-style: solid; border-width: 0.1mm;">
+				<td style = "padding: 1.5mm; border-end-style: solid; border-width: 0.1mm;">
+					<div style="font-weight: bold; text-align: center;">
+						Column 1 Footer
+					</div>
+				</td>
+				<td style = "padding: 1.5mm; border-end-style: solid; border-width: 0.1mm;">
+					<div style="font-weight: bold; text-align: center;">
+						Column 2 Footer
+					</div>
+				</td>
+			</tfoot>
+			<tr>
+				<td style = "border: solid thin;">
+					<div style = "-ah-linefeed-treatment: preserve; text-align: center;">
+						1. Cell text in single table
+						2. Cell text in single table
+						3. Cell text in single table
+						4. Cell text in single table
+						5. Cell text in single table
+						6. Cell text in single table
+					</div>
+				</td>
+				<td style = "border: solid thin;">
+					<div style = "-ah-linefeed-treatment: preserve; text-align: center;">
+						1. Cell text in single table
+						2. Cell text in single table
+						3. Cell text in single table
+						4. Cell text in single table
+						5. Cell text in single table
+						6. Cell text in single table
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: solid thin;">
+					<div style = "-ah-linefeed-treatment: preserve; text-align: center;">
+						7. Cell text in single table
+						8. Cell text in single table
+						9. Cell text in single table
+						10. Cell text in single table
+						11. Cell text in single table
+						12. Cell text in single table
+					</div>
+				</td>
+				<td style = "border: solid thin;">
+					<div style = "-ah-linefeed-treatment: preserve; text-align: center;">
+						7. Cell text in single table
+						8. Cell text in single table
+						9. Cell text in single table
+						10. Cell text in single table
+						11. Cell text in single table
+						12. Cell text in single table
+					</div>
+				</td>
+			</tr>
+		</table>
+
+		<h2 style = "font-family: sans-serif; margin-top: 2em;">
+			The header and footer in a table are not outputted repeatedly.
+		</h2>
+		<table style = "-ah-table-omit-footer-at-break: true; -ah-table-omit-header-at-break: true;">
+			<colgroup>
+				<col span = 1 style = "column-width: 75mm;">				
+				<col span = 1 style = "column-width: 75mm;">
+			</colgroup>
+			<thead style = "background-color: #DDDDDD; border-start-style: solid; border-end-style: solid; border-before-style: solid; border-width: 0.1mm;">
+				<td style = "padding: 1.5mm; border-end-style: solid; border-width: 0.1mm;">
+					<div style="font-weight: bold; text-align: center;">
+						Column 1 Header
+					</div>
+				</td>
+				<td style = "padding: 1.5mm; border-end-style: solid; border-width: 0.1mm;">
+					<div style="font-weight: bold; text-align: center;">
+						Column 2 Header
+					</div>
+				</td>
+			</thead>
+			<tfoot style = "background-color: #DDDDDD; border-start-style: solid; border-end-style: solid; border-before-style: solid; border-after-style: solid; border-width: 0.1mm;">
+				<td style = "padding: 1.5mm; border-end-style: solid; border-width: 0.1mm;">
+					<div style="font-weight: bold; text-align: center;">
+						Column 1 Footer
+					</div>
+				</td>
+				<td style = "padding: 1.5mm; border-end-style: solid; border-width: 0.1mm;">
+					<div style="font-weight: bold; text-align: center;">
+						Column 2 Footer
+					</div>
+				</td>
+			</tfoot>
+			<tr>
+				<td style = "border: solid thin;">
+					<div style = "-ah-linefeed-treatment: preserve; text-align: center;">
+						1. Cell text in single table
+						2. Cell text in single table
+						3. Cell text in single table
+						4. Cell text in single table
+						5. Cell text in single table
+						6. Cell text in single table
+					</div>
+				</td>
+				<td style = "border: solid thin;">
+					<div style = "-ah-linefeed-treatment: preserve; text-align: center;">
+						1. Cell text in single table
+						2. Cell text in single table
+						3. Cell text in single table
+						4. Cell text in single table
+						5. Cell text in single table
+						6. Cell text in single table
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style = "border: solid thin;">
+					<div style = "-ah-linefeed-treatment: preserve; text-align: center;">
+						7. Cell text in single table
+						8. Cell text in single table
+						9. Cell text in single table
+						10. Cell text in single table
+						11. Cell text in single table
+						12. Cell text in single table
+					</div>
+				</td>
+				<td style = "border: solid thin;">
+					<div style = "-ah-linefeed-treatment: preserve; text-align: center;">
+						7. Cell text in single table
+						8. Cell text in single table
+						9. Cell text in single table
+						10. Cell text in single table
+						11. Cell text in single table
+						12. Cell text in single table
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

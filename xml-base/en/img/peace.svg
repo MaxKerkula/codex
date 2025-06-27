@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="70px"
+    height="70px" viewBox="0 0 700 700" preserveAspectRatio="xMidYMid meet">
+    <rect id="svgEditorBackground" x="0" y="0" width="800" height="800"
+        style="fill: none; stroke: none;"/>
+    <circle id="e1_circle" cx="353.3064270019499" cy="278.6774902343752"
+        style="fill:#FFFF99;stroke:#339966;stroke-width:8px;" r="249.97"/>
+    <circle id="e2_circle" cx="239.94601889339" cy="226"
+        style="fill:#FFFF99;stroke:#339966;stroke-width:8px;" r="31.74145298647"/>
+    <circle id="e3_circle" cx="454.3860473632807" cy="226"
+        style="fill:#FFFF99;stroke:#339966;stroke-width:8px;" r="31.74145298647"/>
+    <path
+        d="M228.60998650472,368.42105263158a140.9756276828,140.9756276828,0,0,0,255.06072874494,-2.834008097169999"
+        style="fill:none;stroke:#339966;stroke-width:8px;" id="e3_circleArc"/>
+    <text style="fill:#FF99CC;font-family:Arial;font-size:41.5655px;font-style:normal;" x="85.0202"
+        y="547.908" id="e4_texte" transform="matrix(3.17688 0 0 1.7954 -134.275 -361.327)"
+        >PEACE</text>
+</svg>

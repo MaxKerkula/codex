@@ -1,0 +1,68 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[page-layout-1]
+	-->
+
+	<head>
+		<style>
+			@page :left
+			{
+				page-height: 150mm;
+				page-width: 210mm;
+				margin-top: 10mm;
+				margin-left: 10mm;
+				margin-right: 20mm;
+				margin-bottom: 10mm;
+			}
+			@page :right
+			{
+				page-height: 150mm;
+				page-width: 210mm;
+				margin-top: 10mm;
+				margin-left: 20mm;
+				margin-right: 10mm;
+				margin-bottom: 10mm;
+			}
+		</style>
+			<link rel="stylesheet" href="src/AH_Style.css">
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Page Layout 1
+		</div>
+		<div class="subheading">
+				This sample demonstrates automatic switching of layout between odd and even pages:
+				<ul>
+					<li>
+						The header text aligns to the left on the left-hand (odd) pages and to the right on the right-hand (even) pages.
+					</li>
+					<li>
+						Similarly, page numbers and footer text align to the right on right-hand pages and to the left on left-hand pages.
+					</li>
+					<li>
+						The wider margin is placed on the right side of left-hand pages, and conversely, on the left side of right-hand pages. This alternating layout enhances readability and aesthetic appeal.
+					</li>
+				</ul>
+		</div>
+		<p style = "page-break-after: always;">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra.Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.
+		</p>
+		<p>
+			Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.
+		</p>
+	</body>
+
+</html>

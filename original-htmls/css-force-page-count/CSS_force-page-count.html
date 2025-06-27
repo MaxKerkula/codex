@@ -1,0 +1,59 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_force-page-count]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					-ah-force-page-count: end-on 6 3;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Force page count
+		</div>
+		<div class="subheading">
+			Formatter has extended the values of the force-page-count property to allow for customization of the amount of pages in a document or in a page sequence.  The value doubly-even forces ending on multiples of 4.  A second extended value forces a document or page sequence to end on specific multiple of a number plus another number of blank pages.
+
+			This page sequence has the value force-page-count="end-on 6 3".  There are 5 pages on content so the total document size will be 9 page(1 set of 6 pages and 3 following).
+		</div>
+		<div style = "page-break-after: always;">
+			contents page 1
+		</div>
+		<div style = "page-break-after: always;">
+			contents page 2
+		</div>
+		<div style = "page-break-after: always;">
+			contents page 3
+		</div>
+		<div style = "page-break-after: always;">
+			contents page 4
+		</div>
+		<div style = "page-break-after: always;">
+			contents page 5
+		</div>
+	</body>
+
+</html>

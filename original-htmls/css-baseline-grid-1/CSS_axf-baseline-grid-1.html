@@ -1,0 +1,152 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-baseline-grid-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: sans-serif;
+					font-size: 0.9em;
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+				.demoBlock
+				{
+					height: 18em;
+					-ah-margin-before: 0.5em;
+					-ah-margin-start: 0.5em;
+					-ah-margin-end: 0.5em;
+					border: solid gray thin;
+					padding: 4pt;
+					column-count: 2;
+					column-gap: 1em;
+					-ah-column-rule-style: solid;
+					-ah-column-rule-width: 1.5pt;
+					-ah-column-rule-color: lightgray;
+					-ah-column-rule-length: 100%;
+					-ah-column-rule-align: center;
+				}
+				.gridSpan
+				{
+					text-align: center; 
+					-ah-display-align: center; 
+					background: lightblue; 
+					padding: 2pt; 
+					height: 1.5em; 
+					-ah-baseline-grid: none; 
+					-ah-baseline-block-snap: auto border-box;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Line grid
+		</div>
+		<div class="subheading">
+			By specifying ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.baseline-grid">-ah-baseline-grid</a></span>’, a baseline grid can be set to make a baseline of each column fixed even when there is a heading or figures in the line. A new baseline grid can be specified with <span class = "codePrint">-ah-baseline-grid: new</span>. The settings of ‘font’ and ‘line-height’ of this element are used for the baseline grid. By specifying ‘root’, the settings of ‘font’ and ‘line-height’ of the root element are used for the baseline grid. On the other hand, by specifying ‘none’, the baseline grid setting is disabled. How a block other than a line, such as a header and a figure, is placed in the baseline grid can be specified with ‘-ah-baseline-block-snap’. In this sample, the default value ‘auto border-box’ is used for the setting. This is the same as specifying ‘before’ for the beginning of the column, ‘after’ for the end of the column, and ‘center’ for the others; however, ‘before’, ‘after’ and ‘center’ can be specified separately.
+		</div>
+		<div>
+			<h2>
+				When -ah-baseline-grid is specified
+			</h2>
+			<div class = "demoBlock">
+				<div style="-ah-baseline-grid: new; font-size: 1em; line-height: 14pt; text-align: justify;">
+					<div>
+						In this block, a line grid is specified with <span class = "codePrint">-ah-baseline-grid: new;</span>.
+					</div>
+					<div style="font-size: 2.5em; line-height: 2; text-align: center; background: lightgray;">
+						Heading
+					</div>
+					<div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum <span style="font-size: 1.4em; font-weight: bold;">Large letters</span> tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc <span style="font-size: 2.5em; font-weight: bold;"> Larger letters</span> mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.
+					</div>
+					<div class="gridSpan">
+						<div style="font-size: 0.8em;">
+							Image [<span class = "codePrint">-ah-baseline-block-snap: auto border-box;</span> (default)]
+						</div>
+					</div>
+					<div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+					</div>
+					<div class="gridSpan">
+						<div style="font-size: 0.8em;">
+							Image [<span class = "codePrint">-ah-baseline-block-snap: auto border-box;</span> (default)]
+						</div>
+					</div>
+					<div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+					</div>
+					<div class="gridSpan">
+						<div style="font-size: 0.8em;">
+							Image [<span class = "codePrint">-ah-baseline-block-snap: auto border-box;</span> (default)]
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<h2>
+				When -ah-baseline-grid is not specified
+			</h2>
+			<div class = "demoBlock">
+				<div style="font-size: 1em; line-height: 14pt; text-align: justify;">
+					<div>
+						In this block, a baseline grid is not specified with <span class = "codePrint">-ah-baseline-grid</span>.
+					</div>
+					<div style="font-size: 2.5em; line-height: 2; text-align: center; background: lightgray;">
+						Heading
+					</div>
+					<div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum <span style="font-size: 1.4em; font-weight: bold;">Large letters</span> tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc <span style="font-size: 2.5em; font-weight: bold;"> Larger letters</span> mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.
+					</div>
+					<div class="gridSpan">
+						<div style="font-size: 0.8em;">
+							Image
+						</div>
+					</div>
+					<div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+					</div>
+					<div class="gridSpan">
+						<div style="font-size: 0.8em;">
+							Image
+						</div>
+					</div>
+					<div>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+					</div>
+					<div class="gridSpan">
+						<div style="font-size: 0.8em;">
+							Image
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

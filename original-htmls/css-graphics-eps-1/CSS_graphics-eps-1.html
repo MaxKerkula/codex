@@ -1,0 +1,102 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_graphics-eps-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Encapsulated PostScript (EPS) graphics
+		</div>
+		<div class="subheading">
+			Antenna House Formatter supports Encapsulated PostScript (EPS). When there is a preview image, the image will be output. If there is none, a substitute image will be output instead. Please note that when using Adobe Distiller or outputting to a PS printer, the PostScript program in the EPS file will be output instead of the preview image. In an environment where Adobe Distiller or Ghostscript is installed, EPS can be output to PDF by specifying EPS-processor in the Option Setting File. In this way, EPS can be embedded in PDF as PDF.
+		</div>
+		<div style="margin: 0 0 0 10mm; column-count: 2; column-gap: 10mm;">
+			<!--LEFT COLUMN-->
+			<div>
+				<div>
+					EPS with preview image
+					<img src="eps-sample1.eps">
+				</div>
+				<div>
+					EPS with preview image
+					<img src="eps-sample2.eps">
+				</div>
+				<div style="-ah-margin-before: 0.5em;">
+					<img src="eps-compare-en.png" style="-ah-content-width: 80mm;">
+					EPS with and without a preview image when EPS-processor is not set in the Option Setting File.
+				</div>
+				<div style="-ah-margin-before: 3em;">
+					Also, EPS code can be included directly in HTML/CSS. With Adobe Distiller or a similar application, the EPS code can be embedded in PDF as-is. The following EPS was given by including the EPS code shown in the right column in HTML.
+				</div>
+			</div>
+			<!--RIGHT COLUMN-->
+			<div>
+				<div>
+					EPS code
+				</div>
+				<div style="white-space: pre; wrap-option: wrap; background-color: #EEEEEE; font-family: monospace; font-size: 1em; -ah-keep-together.within-column: always;">
+&lt;![CDATA[%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 0 0 84 43
+%%Pages: 0
+%%Creator: Antenna House
+%%Title: Green Rounded Box
+%%CreationDate: 10 Feb 2003
+%%LanguageLevel: 2
+%%EndComments
+%%BeginProlog
+%%EndProlog
+%%BeginSetup
+%%EndSetup
+%%Page: 1 1
+%%BeginPageSetup
+%%EndPageSetup
+0 128 0 setrgbcolor
+0.1 setlinewidth
+newpath
+0 5 moveto
+0 43 84 43 5 arct
+84 43 84 0 5 arct
+84 0 0 0 5 arct
+0 0 0 43 5 arct
+closepath
+gsave
+stroke
+grestore
+fill
+%%PageTrailer
+%%Trailer
+%%EOF
+]]&gt;
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

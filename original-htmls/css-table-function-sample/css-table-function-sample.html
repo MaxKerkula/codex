@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<title>Combining various table features</title>
+			<style>
+        @page {
+            size: A4;
+            margin: 10mm 20mm;
+            @bottom-right {
+                content: "Antenna House, Inc.";
+                font-size: 0.8em;
+                color: green;
+                -ah-link: url(https://www.antennahouse.com/);
+                -ah-text-align: outside;
+                -ah-pdftag: "Artifact";
+            }
+        }
+
+        body {
+		  font-family: serif;
+		  font-size: 10pt;
+		  line-height: 1.2;
+		  -ah-hyphenate: auto;
+		  margin: 0mm 0mm 0mm 10mm;
+        }
+
+        .title {
+		  font-family: sans-serif;
+		  font-size: 2em;
+		  font-weight: bold;
+		  padding: 0.3em 1em;
+		  margin: 1em 0;
+		  background-color: #EEEEEE;
+		  -ah-hyphenate: none;
+		  -ah-line-height-shift-adjustment: disregard-shifts;
+        }
+
+        .intro {
+		  margin: 1em 0;
+		  text-indent: 0;
+		  border: 1pt solid #9999FF;
+		  padding: 0.5em;
+		  -ah-text-align: justify;
+		  -ah-line-height-shift-adjustment: disregard-shifts;
+		  -ah-keep-together-within-page: always;
+        }
+
+
+        table {
+			page-break-inside: avoid;
+            border-collapse: collapse;
+            width: 100%;
+			border-spacing: 0;
+        }
+
+        th, td {
+            border: 0.1mm solid black;
+            padding-right: .5em;
+			padding-left: .5em;
+        }
+
+        th {
+            background-color: #EEEEEE;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .amount {
+            text-align: right;
+        }
+
+        .indent1 {
+           padding-left: 1.5em;;
+        }
+
+        .indent2 {
+            padding-left: 2.5em;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .caption {
+		  text-align: center;
+		  font-weight: bold;
+		  font-size: 1.2em;
+		  margin-bottom: 0;
+		  -ah-keep-with-next: always;
+        }
+
+        .subcaption {
+		  text-align: center;
+		  font-size: 1em;
+		  margin: 0;
+		  -ah-keep-with-next: always;
+        }
+
+        .unit {
+		  text-align: right;
+		  font-size: 0.8em;
+		  font-weight: normal;
+		  margin-bottom: 0.5em;
+        }
+
+        .balance-sheet {
+            width: 100%;
+        }
+
+        .income-statement {
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        .total-row {
+			text-align: center;
+			block-size: 5.1mm;
+            border-top: 0.1mm solid black;
+            border-bottom: 0.1mm solid black;
+        }
+
+        .no-border-bottom {
+            border-bottom: none;
+        }
+
+        .no-border-top {
+            border-top: none;
+        }
+
+        .center-text {
+            text-align: center;
+        }
+		
+    </style>
+		</head>
+		<body>
+			<h1 class="title">Combining various table features</h1>
+			<p class="intro">This is an example of a balance sheet created by combining various table features.</p>
+			<h2 class="caption">Balance Sheet Summary</h2>
+			<p class="subcaption">As of March 31, ---</p>
+			<p class="unit">(unit : Billion Yen)</p>
+			<div class="table-container">
+				<table class="balance-sheet">
+					<tr>
+						<th>Account</th>
+						<th>Amount</th>
+						<th>Account</th>
+						<th>Amount</th>
+					</tr>
+					<tr>
+						<td class="center-text bold">Assets</td>
+						<td class="amount bold">7,775</td>
+						<td class="center-text bold">Liabilities</td>
+						<td class="amount bold">2,277</td>
+					</tr>
+					<tr>
+						<td class="bold no-border-bottom">Current Assets</td>
+						<td class="amount bold no-border-bottom">3,000</td>
+						<td class="bold no-border-bottom">Current Liabilities</td>
+						<td class="amount bold no-border-bottom">1,436</td>
+					</tr>
+					<tr>
+						<td class="indent1 no-border-top no-border-bottom">Cash and Deposits</td>
+						<td class="amount no-border-top no-border-bottom">585</td>
+						<td class="indent1 no-border-top no-border-bottom">Notes Payable from Customer</td>
+						<td class="amount no-border-top no-border-bottom">757</td>
+					</tr>
+					<tr>
+						<td class="indent1 no-border-top no-border-bottom">Notes Receivable and Accounts Re-<br>ceivable, Net</td>
+							<td class="amount no-border-top no-border-bottom">906</td>
+							<td class="indent1 no-border-top no-border-bottom">Accrued Expenses</td>
+							<td class="amount no-border-top no-border-bottom">315</td>
+						</tr>
+						<tr>
+							<td class="indent1 no-border-top no-border-bottom">Marketable Securities</td>
+							<td class="amount no-border-top no-border-bottom">850</td>
+							<td class="indent1 no-border-top no-border-bottom">Current Liabilities, Other</td>
+							<td class="amount no-border-top no-border-bottom">364</td>
+						</tr>
+						<tr>
+							<td class="indent1 no-border-top no-border-bottom">Inventories</td>
+							<td class="amount no-border-top no-border-bottom">225</td>
+							<td class="bold no-border-top no-border-bottom">Noncurrent Liabilities</td>
+							<td class="amount bold no-border-top no-border-bottom">841</td>
+						</tr>
+						<tr>
+							<td class="indent1 no-border-top no-border-bottom">Current Assets, Other</td>
+							<td class="amount no-border-top no-border-bottom">434</td>
+							<td class="indent1 no-border-top no-border-bottom">Straight Bond</td>
+							<td class="amount no-border-top no-border-bottom">514</td>
+						</tr>
+						<tr>
+							<td class="bold no-border-top no-border-bottom">Fixed Assets</td>
+							<td class="amount bold no-border-top no-border-bottom">4,775</td>
+							<td class="indent1 no-border-top no-border-bottom">Liability for Retirement Benefits</td>
+							<td class="amount no-border-top no-border-bottom">325</td>
+						</tr>
+						<tr>
+							<td class="indent1 bold no-border-top no-border-bottom">Property, Plant and Equipment, Net</td>
+							<td class="amount bold no-border-top no-border-bottom">1,349</td>
+							<td class="indent1 no-border-top no-border-bottom">Noncurrent Liabilities, Other</td>
+							<td class="amount no-border-top no-border-bottom">2</td>
+						</tr>
+						<tr>
+							<td class="indent2 no-border-top no-border-bottom">Buildings, Net</td>
+							<td class="amount no-border-top no-border-bottom">373</td>
+							<td class="no-border-top no-border-bottom"/>
+							<td class="no-border-top no-border-bottom"/>
+						</tr>
+						<tr>
+							<td class="indent2 no-border-top no-border-bottom">Machinery and Equipment, Net</td>
+							<td class="amount no-border-top no-border-bottom">377</td>
+							<td class="no-border-top no-border-bottom"/>
+							<td class="no-border-top no-border-bottom"/>
+						</tr>
+						<tr>
+							<td class="indent2 no-border-top no-border-bottom">Land</td>
+							<td class="amount no-border-top no-border-bottom">411</td>
+							<td class="no-border-top no-border-bottom"/>
+							<td class="no-border-top no-border-bottom"/>
+						</tr>
+						<tr>
+							<td class="indent2 no-border-top no-border-bottom">Other Property, Plant and Equipment,<br>Net</td>
+								<td class="amount no-border-top no-border-bottom">188</td>
+								<td class="center-text bold">Stockholders' Equity</td>
+								<td class="amount bold">5,498</td>
+							</tr>
+							<tr>
+								<td class="bold no-border-top no-border-bottom">Long Term Investments</td>
+								<td class="amount bold no-border-top no-border-bottom">3,426</td>
+								<td class="bold no-border-top no-border-bottom">Capital Stock</td>
+								<td class="amount bold no-border-top no-border-bottom">397</td>
+							</tr>
+							<tr>
+								<td class="indent1 no-border-top no-border-bottom">Investment Securities</td>
+								<td class="amount no-border-top no-border-bottom">1,854</td>
+								<td class="bold no-border-top no-border-bottom">Statutory Reserve</td>
+								<td class="amount bold no-border-top no-border-bottom">513</td>
+							</tr>
+							<tr>
+								<td class="indent1 no-border-top no-border-bottom">Equity Securities for Subsidiaries and<br>Investment in Subsidiary Partnership</td>
+									<td class="amount no-border-top no-border-bottom">994</td>
+									<td class="bold no-border-top no-border-bottom">Earned Surplus</td>
+									<td class="amount bold no-border-top no-border-bottom">4,588</td>
+								</tr>
+								<tr>
+									<td class="bold no-border-top">Other Assets</td>
+									<td class="amount bold no-border-top">578</td>
+									<td class="indent1 no-border-top">(Net Income included)</td>
+									<td class="amount no-border-top">329</td>
+								</tr>
+								<tr class="total-row">
+									<td class="bold">Total Assets</td>
+									<td class="amount bold">7,775</td>
+									<td class="bold">Total Liabilities and Stockholders' Equity</td>
+									<td class="amount bold">7,775</td>
+								</tr>
+							</table>
+						</div>
+						<h2 class="caption">Income Statement Summary</h2>
+						<p class="unit">(Unit : Billion Yen)</p>
+						<div class="table-container">
+							<table class="income-statement">
+								<tr>
+									<th>Account</th>
+									<th>Amount</th>
+								</tr>
+								<tr>
+									<td class="bold no-border-bottom">Operating Revenue</td>
+									<td class="amount bold no-border-bottom">7,408</td>
+								</tr>
+								<tr>
+									<td class="indent1 no-border-top no-border-bottom">Operating Expense</td>
+									<td class="amount no-border-top no-border-bottom">6,916</td>
+								</tr>
+								<tr>
+									<td class="bold no-border-top no-border-bottom">Operating Profit</td>
+									<td class="amount bold no-border-top no-border-bottom">491</td>
+								</tr>
+								<tr>
+									<td class="indent1 no-border-top no-border-bottom">Nonoperating Income</td>
+									<td class="amount no-border-top no-border-bottom">152</td>
+								</tr>
+								<tr>
+									<td class="indent1 no-border-top no-border-bottom">Nonoperating Expenses</td>
+									<td class="amount no-border-top no-border-bottom">102</td>
+								</tr>
+								<tr>
+									<td class="bold no-border-top no-border-bottom">Ordinary Profit</td>
+									<td class="amount bold no-border-top no-border-bottom">541</td>
+								</tr>
+								<tr>
+									<td class="bold no-border-top no-border-bottom">Income Before Income Taxes</td>
+									<td class="amount bold no-border-top no-border-bottom">541</td>
+								</tr>
+								<tr>
+									<td class="indent1 no-border-top no-border-bottom">Income Taxes Including Inhabitants' and Enterprise Taxes</td>
+									<td class="amount no-border-top no-border-bottom">209</td>
+								</tr>
+								<tr>
+									<td class="indent1 no-border-top no-border-bottom">Income Taxes Deferred</td>
+									<td class="amount no-border-top no-border-bottom">3</td>
+								</tr>
+								<tr>
+									<td class="bold no-border-top no-border-bottom">Net Income</td>
+									<td class="amount bold no-border-top no-border-bottom">329</td>
+								</tr>
+								<tr>
+									<td class="no-border-top no-border-bottom">Other Increase in Unappropriated Retained Earnings</td>
+									<td class="amount no-border-top no-border-bottom">371</td>
+								</tr>
+								<tr class="total-row">
+									<td class="bold">Unappropriated Retained Earnings, End of Year</td>
+									<td class="amount bold">700</td>
+								</tr>
+							</table>
+						</div>
+					</body>
+				</html>

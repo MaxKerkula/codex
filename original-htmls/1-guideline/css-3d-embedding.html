@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html data-cat="nomenu" data-order="70" data-ver="6.3" lang="en" data-prefix="3d">
+<head>
+<title>Title</title>
+<meta charset="UTF-8"/>
+<meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, annotation"/>
+
+<meta name="specification" content="PDF-3D"/>
+<link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+<link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+<link rel="stylesheet" href="../../css/css-sample-en.css"/>
+<style>
+    :root { --accent:#0060df; }
+
+    .info-block{
+      margin:0.8em 0.4em;
+      text-align:justify;
+    }
+
+    p.indented-paragraph{
+      text-indent:1em;
+      -ah-margin-before:0.6em;
+      -ah-margin-after:0.6em;
+      text-align:justify;
+      break-inside:avoid-page;
+    }
+
+    pre.code-block{
+      white-space:pre-wrap;
+      background:#f5f5f5;
+      font-family:"Courier New",monospace;
+      font-size:11pt;
+      padding:0.6em 0.8em;
+      border-left:3px solid var(--accent);
+      break-inside:avoid-page;
+    }
+
+    figure{
+      margin:0.8em auto 1.2em auto;
+      text-align:center;
+    }
+    img.embedded-pdf{width:30%;}
+    figcaption{
+      font-size:9pt;
+      color:#666;
+      margin-top:0.3em;
+    }
+  </style>
+
+</head>
+<body>
+<div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
+<h1 lang="en">Embedding 3-D Images</h1>
+<div class="description" lang="en">
+    <p class="info-block">
+      It is now possible to embed 3-D images in a PDF document with the
+      <code>&lt;img&gt;</code> element. To display annotations contained in the
+      embedded PDF, set <code>import-annotation-types="all"</code>
+      (Option Setting File or GUI → Format → PDF Option Setting → Others →
+      PDF Embedding).
+    </p>
+  </div>
+<div class="source" lang="en">
+    <pre class="code-block">&lt;img src="../../img/dice.pdf" /&gt;</pre>
+
+    <p class="indented-paragraph">
+      Specify the page you wish to embed with <code>#page</code>. If omitted,
+      page 1 is used. When no size is given, the artwork retains the page size
+      of the embedded PDF. To scale, use normal <code>width</code> or
+      <code>height</code> properties:
+    </p>
+
+    <pre class="code-block">&lt;img src="../../img/dice.pdf#page=3" style="width:50%;" /&gt;</pre>
+
+    <p class="indented-paragraph">
+      You can also embed a PDF using a data URI (RFC 2397). Include the page
+      number as a parameter of the media type:
+    </p>
+
+    <pre class="code-block">&lt;img src="data:application/pdf;page=3;base64,JVBERi0xLjQKJeLjz9M..." /&gt;</pre>
+
+    <p class="indented-paragraph">A dummy image is shown in the GUI.</p>
+
+    <p class="indented-paragraph">
+      The next block demonstrates an embedded first page at 30 % width:
+    </p>
+
+    <pre class="code-block">&lt;img src="../../img/dice.pdf#page=1" style="width:30%;" /&gt;</pre>
+
+    <figure>
+      <img src="../../img/dice.pdf#page=1" class="embedded-pdf" alt="3-D dice model"/>
+      <figcaption>Figure 1  PDF-3D dice rendered at 30 % width</figcaption>
+    </figure>
+  </div></body></html>

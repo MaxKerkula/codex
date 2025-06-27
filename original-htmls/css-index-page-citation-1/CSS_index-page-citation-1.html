@@ -1,0 +1,118 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_index-page-citation-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page :last
+				{
+					@bottom-right
+					{
+						content: " ";
+					}
+				}
+				before-leader
+				{
+					display: inline;
+				}
+				leader-content
+				{
+					display: inline;
+					content: leader(".")
+				}
+				after-leader
+				{
+					display: inline;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoIndex
+				{
+					-ah-display-align: auto;
+					font-size: 1.0em;
+					-ah-margin-before: 0.5em;
+					border: solid #7777FF 1pt;
+					padding: 4pt;
+					column-count: 2;
+					column-gap: 8pt;
+					-ah-column-rule-style: solid;
+					-ah-column-rule-width: 1.5pt;
+					-ah-column-rule-color: #AAAAFF;
+					-ah-column-rule-length: 100%;
+					-ah-column-rule-align: center;
+					-ah-column-rule-display: gap;
+					position: fixed;
+					bottom: 0;
+					width: 100%;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Index
+		</div>
+		<div class="subheading">
+			By using ‘index-key’ property, a key value is specified as an index term to be used in an index. Put the index-term in the place where an index is generated in an actual document, and then place &lt;fo:index-page-citation-list&gt;. &lt;fo:index-page-citation-list&gt; enumerates &lt;fo:index-key-reference&gt; as a child element of it. &lt;fo:index-key-reference&gt; shows the page number to which the index term belongs. By using the ‘ref-index-key’ property, a key value of an index term is specified. Also, whether the reference page is shown as a hyperlink can be specified with the ‘page-number-treatment’ property.
+		</div>
+		<div>
+			In this sample, the FOs with the ‘index-key’ property are indicated with underlined text. 
+		</div>
+		<div style = "font-size: 1.5em; text-align: justify;">
+			<div style="font-size: 1.8em; font-weight: bold; color: blue; text-decoration: underline; -ah-index-key: 'title-1';">
+				TITLE 1.
+			</div>
+			<div>
+				<span style="color: blue; text-decoration: underline; -ah-index-key: 'lorem ipsum';">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus.
+			</div>
+			<div style="-ah-margin-before: 1em;">
+				Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus. Amus nec turpis elementum, iaculis lorem in, pellentesque metus. <span style="color: blue; text-decoration: underline; -ah-index-key: 'ut-b';">Ut blandit</span> tortor mi, ac bibendum felis varius vitae. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus. Integer eu lobortis neque. Donec malesuada sed arcu vitae fringilla. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. Duis sit amet ipsum non elit tincidunt sagittis ac non tortor. Mauris commodo, elit a imperdiet interdum, nulla velit viverra elit, at scelerisque urna est eget lacus.
+			</div>
+			<div style="font-size: 1.8em; font-weight: bold; color: blue; text-decoration: underline; -ah-index-key: 'title-2'; break-before: page;">
+				TITLE 2.
+			</div>
+			<div>
+				Quisque imperdiet tortor iaculis, pulvinar neque sit amet, aliquet massa. Sed sed auctor purus. <span style="color: blue; text-decoration: underline; -ah-index-key: 'vivamus';">Vivamus</span> nec turpis elementum, iaculis lorem in, pellentesque metus. <span style="color: blue; text-decoration: underline; -ah-index-key: 'ut-b';">Ut blandit</span> tortor mi, ac bibendum felis varius vitae. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing. <span style="color: blue; text-decoration: underline; -ah-index-key: 'lorem ipsum';">Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. blandit tortor mi, ac bibendum felis varius vitae. 
+			</div>
+		</div>
+		<div>
+			<div style="font-size: 1.5em; text-align: left;">
+				Index
+			</div>
+			<div class = "demoIndex">
+				<div>
+					When 'page-number-treatment' is not specified<br>
+					<before-leader>Lorem ipsum</before-leader><leader-content/><after-leader>1, 2</after-leader><br>
+					<before-leader>TITLE 1</before-leader><leader-content/><after-leader>1</after-leader><br>
+					<before-leader>TITLE 2</before-leader><leader-content/><after-leader>2</after-leader><br>
+					<before-leader>Ut blandit</before-leader><leader-content/><after-leader>1, 2</after-leader><br>
+				</div>
+				<div>
+					When 'page-number-treatment' is not specified<br>
+					<before-leader>Lorem ipsum</before-leader><leader-content/><after-leader>1, 2</after-leader><br>
+					<before-leader>TITLE 1</before-leader><leader-content/><after-leader>1</after-leader><br>
+					<before-leader>TITLE 2</before-leader><leader-content/><after-leader>2</after-leader><br>
+					<before-leader>Ut blandit</before-leader><leader-content/><after-leader>1, 2</after-leader><br>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

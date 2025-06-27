@@ -1,0 +1,95 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@font-face
+				{
+					font-family: 'Shakespeare';
+					src: url('ILShakeFest.ttf') format('truetype');
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.contentBox
+				{
+					font-size: 0.9em;
+					-ah-margin-before: 0.5em;
+					border: 1.6pt solid gray;
+					-ah-margin-start: 15pt;
+					-ah-margin-end: 15pt;
+					padding: 5pt;
+					font-family: monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Using additional fonts in CSS with the <span class = "codePrint">@font-face</span> @-rule.
+		</div>
+		<div class="subheading">
+				<span class = "codePrint">@font-face</span> lets you use additional fonts in a document without altering your Antenna House Formatter settings and without installing the font in your operating system. <span class = "codePrint">@font-face</span> has <span class = "codePrint">font-family, font-style, font-weight, and src</span> attributes. ‘font-family’ is the name that is used in font family name matching. Its value overrides the family name from the font data. The optional <span class = "codePrint">font-style</span> and <span class = "codePrint">font-weight</span> attributes specify the style and weight of the font. These, like <span class = "codePrint">font-family</span>, are matched on when selecting the font in font-related properties. ‘src’ is a comma-separated list of alternative locations for the font file. ‘src’ may also include aliases of installed fonts as alternatives for the font. Antenna House Formatter uses the first available font from the ‘src’ list. See also <span class = "codePrint">@font-face</span> in the Online Manual for details.
+		</div>
+		<h2>Declare and use an additional font</h2>
+		<p>
+			Specify the font using <span class = "codePrint">@font-face</span> within &lt;fo:declarations&gt;. Each URL may also have a ‘format()’ hint describing the format of the font resource. Antenna House Formatter supports “woff” (Web Open Font Format), “woff2”, “truetype”, and “opentype”.
+		</p>
+		<div class = "contentBox">
+			&lt;style&gt;
+			@font-face{ font-family: Shakespeare;
+			src: url('ILShakeFest.ttf') format('truetype');" }<br>
+			&lt;/style&gt; <br>
+			... <br>
+			&lt;p style = "text-align: center; font-family: Shakespeare; font-size: 3em;"&gt;Shakespeare&lt;/p&gt;
+		</div>
+		<p style = "text-align: center; font-family: Shakespeare; font-size: 3em;">
+			Shakespeare
+		</p>
+		<h2>Alternative font files</h2>
+		<p>
+			In the example below, the local font file would be used in preference to downloading the remote font file. Because neither exists, the aliased local font is the alternative that is used.
+		</p>
+		<div class = "contentBox">
+			&lt;style&gt;
+			@font-face{ font-family: Not Available; }<br>
+			font-style: italic; <br>
+			src: url('NotAvailable.ttf'); <br>
+			url(https://example.com/font/NotAvailable.ttf), <br>
+			local(Arial)" /&gt;
+		</div>
+		<p style = "text-align: center; font-family: Not Available; font-size: 3em;">
+			Not Available
+		</p>
+		<h2>Font alias for multiple platforms</h2>
+		<p>
+			Create an alias for local Japanese fonts on different platforms:
+		</p>
+		<div class = "contentBox">
+			&lt;style&gt;@font-face {<br>
+			<span style = "text-indent: 15pt">font-family: jpgothic; <br>
+			src: local(HiraKakuPro-W3), local(Meiryo), local(IPAPGothic); } &lt;/style&gt;</span>
+		</div> 
+		<p style = "text-align: center; font-family: jpgothic; font-size: 3em;">
+			ゴシック系のフォント
+		</p>
+	</body>
+
+</html>

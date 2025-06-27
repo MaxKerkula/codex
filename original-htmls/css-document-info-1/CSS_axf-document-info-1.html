@@ -1,0 +1,88 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-document-info-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Document Information embedded into PDF
+		</div>
+		<div class="subheading">
+			Document information such as an author and title can be embedded in the PDF. Antenna House Formatter generates document information automatically by adding the following extended elements. It’s also possible to specify how to display PDF or hide the menu and tool bar. See also “<span class="codePrint" style="-ah-annotation-contents: '-ah-document-info';"></span>” in the Online Manual. The information that is embedded into the PDF can be seen by Adobe Acrobat or Reader. 
+		</div>
+		<h2>
+			Example
+		</h2>
+		<div>
+			The &lt;meta&gt; element is used to specify the document information. The &lt;meta&gt; element is placed in the &lt;head&gt; element. The following example shows how to specify the document information.
+		</div>
+		<div style="white-space: pre; font-size: 0.9em;">
+...
+&lt;meta name="document-title" content="The document title" &gt;
+&lt;meta name="subject" content="The document subject" &gt;
+&lt;meta name="author" content="The author" &gt;
+&lt;meta name="author-title" content="Title of, or some keywords about, the author" &gt;
+&lt;meta name="description-writer" content="The author of the document description" &gt;
+&lt;meta name="keywords" content="Comma-separated keywords list" &gt;
+&lt;meta name="copyright-status" content="Copyright status" &gt;
+&lt;meta name="copyright-notice" content="Copyright notice" &gt;
+&lt;meta name="copyright-info-url" content="URL of the copyright information" &gt;
+&lt;meta name="xmp" content="URL of XMP file to embed in the PDF" &gt;
+&lt;meta name="pagemode" content="How the document should be displayed when it is opened" &gt;
+&lt;meta name="pagelayout" content="Page layout when the document is opened" &gt;
+&lt;meta name="hidetoolbar" content="Whether to hide the tool bar when opening the document" &gt;
+&lt;meta name="hidemenubar" content="Whether to hide the menu bar when opening the document" &gt;
+&lt;meta name="hidewindowui" content="Whether to hide the user interface elements when opening the document" &gt;
+&lt;meta name="fitwindow" content="Whether to resize the document’s window to fit the first displayed page" &gt;
+&lt;meta name="centerwindow" content="Whether to position the document’s window in the center of the screen" &gt;
+&lt;meta name="displaydoctitle" content="Whether the window’s title should display the document title" &gt;
+&lt;meta name="openaction" content="Destination to display or action to perform when document is opened" &gt;
+&lt;meta name="createdate" content="Date and time the document was created" &gt;
+&lt;meta name="modifydate" content="Date and time the document was most recently modified" &gt;
+...
+		</div>
+		<ul>
+			<li>
+				The ‘createdate’ and ‘modifydate’ values for ‘name’ are valid only with AH Formatter V6.6 MR5 and later.
+			</li>
+			<li>
+				This sample specifies ‘document-title’, ‘author’, and ‘keywords’.	
+			</li>
+			<li>
+				The information can be displayed in the <a href="https://www.antenna.co.jp/AHF/help/en/ahf-gui.html#document-information-dialog">Document Information Dialog</a> in the Antenna House Formatter GUI.
+			</li>
+		</ul>
+	</body>
+
+</html>

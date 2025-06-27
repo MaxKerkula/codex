@@ -1,0 +1,81 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-border-radius-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				div
+				{
+					margin-bottom: 20pt;
+				}
+				.borderBox_0
+				{
+					border: solid black;
+					padding: 2em;
+				}
+				.borderBox_1
+				{
+					padding: 2em;
+					border: solid blue; 
+					-ah-border-radius: 15pt 10pt;
+				}
+				.borderBox_2
+				{
+					padding: 2em;
+					border: solid salmon; 
+					-ah-border-radius: 25pt 25pt;
+				}
+				.borderBox_3
+				{
+					padding: 2em;
+					border: solid lime;
+					-ah-border-radius: 50% 50%;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Border extension for rounded corners
+		</div>
+		<div class="subheading">
+			As a type of border, a radius border can be drawn by using <span class = "codePrint">-ah-border-radius:</span>. Specify such as <span class = "codePrint">-ah-border-radius: 15pt 10pt;</span>, then the default value will be set as a horizontal diameter (vertical diameter when <span class = "codePrint">-ah-writing-mode: vertical-rl;</span>). The second value is the other diameter. If omitted, it will be regarded as a default value, and it cannot be rounded if either diameter is less than zero.
+		</div>
+		<div class = "borderBox_0">
+			Here is an example without specification
+		</div>
+		<div class = "borderBox_1">
+			Here is an example of a block with <span class = "codePrint">-ah-border-radius: 15pt 10pt;</span>
+		</div>
+		<div class = "borderBox_2">
+			Here is an example of a block with <span class = "codePrint">-ah-border-radius: 25pt 25pt;</span>
+		</div>
+		<div class = "borderBox_3">
+			Here is an example of a block with <span class = "codePrint">-ah-border-radius: 50% 50%;</span>
+		</div>
+	</body>
+
+</html>

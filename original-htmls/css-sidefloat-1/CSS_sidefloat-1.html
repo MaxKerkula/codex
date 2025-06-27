@@ -1,0 +1,89 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_sidefloat-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+					font-size: 0.9em;
+				}
+				.demoText
+				{
+					-ah-margin-before: 0.5em;
+					margin-bottom: 2em;
+				}
+				.floatDemo
+				{
+					-ah-logical-width: 20em;
+					-ah-logical-height: 3em;
+					background-color: lightblue;
+					font-style: italic;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Side float
+		</div>
+		<div class="subheading">
+				Here is an example of setting the side float by specifying <span class = "codePrint">-ah-float: start</span>, <span class = "codePrint">-ah-float: end</span>.  The first 2 examples show that the text body is wrapping around the float. The latter 2 examples show that the text does not wrap around the float because <span class = "codePrint">-ah-float</span> is being arranged in the indent of left and right of the text body.
+		</div>
+		
+		
+		<h2>
+			Side float <span class = "codePrint">-ah-float: start;</span>
+		</h2>
+		<div class = "demoText">
+			<div class = "floatDemo" style = "-ah-float: start;">Float area</div>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. 
+		</div>
+		
+		
+		<h2>
+			Side float <span class = "codePrint">-ah-float: end;</span>
+		</h2>
+		<div class = "demoText" style = "-ah-float: end;">
+			<div class = "floatDemo" style = "-ah-float: end;">Float area</div>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. 
+		</div>
+		
+		
+		<h2>
+			Side float <span class = "codePrint">-ah-float: start;</span>
+		</h2>
+		<div class = "demoText">
+			<div class = "floatDemo" style = "-ah-float: start;">Float area</div>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. 
+		</div>
+		
+		
+		<h2>
+			Side float <span class = "codePrint">-ah-float: end;</span>
+		</h2>
+		<div class = "demoText">
+			<div class = "floatDemo" style = "-ah-float: end;">Float area</div>sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. sample. 
+		</div>
+		
+		
+	</body>
+
+</html>

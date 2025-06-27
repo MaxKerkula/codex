@@ -1,0 +1,361 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-table-row-widows-orphans-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBlock
+				{
+					padding: 3pt;
+					height: 1.6in;
+					column-count: 2;
+					column-gap: 10mm;
+					-ah-column-fill: auto;
+					-ah-column-rule-style: solid;
+					-ah-column-rule-width: 1.5pt;
+					-ah-column-rule-color: #AAAAFF;
+					-ah-column-rule-length: 100%;
+					-ah-column-rule-align: center;
+					-ah-column-rule-display: gap;
+				}
+				table
+				{
+					width: 100%;
+					border-collapse: collapse;
+					text-align: center;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			table-row widows/orphans
+		</div>
+		<div class="subheading">
+			Specifies the number of table rows that should remain at the bottom (column) of the page or at the top (column) of the page. Use ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.table-row-widows">-ah-table-row-widows</a></span>’ for the number of table-rows at the top of the page, and use ‘<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.table-row-orphans">-ah-table-row-orphans</a></span>' for the number of table-rows at the bottom of the page. In each case, specify an integer value for the &lt;tbody&gt; element. This feature is available in AH Formatter V7.0 and later.
+		</div>
+		<div style="break-after: page;">
+			Sample data starts on the next page.
+		</div>
+		<div style="-ah-keep-with-next.within-page: always; break-before: page;">
+			Specifies the number of table rows that should remain at the top (column) of the page：-ah-table-row-widows
+			<div style="-ah-margin-before: 0.5em;">
+				Specified value ：1
+			</div>
+			<div class="demoBlock">
+				<table style = "table-layout: fixed; -ah-table-omit-header-at-break: column;">
+					<thead>
+						<td style = "background-color: #BBFFBB; border: thin solid green;">
+							table header 1
+						</td>
+						<td style = "background-color: #BBFFBB; border: thin solid green;">
+							table header 2
+						</td>
+					</thead>
+					<tbody style="-ah-table-row-widows: 1;">
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div style="-ah-margin-before: 0.5em;">
+				Specified value ：2
+			</div>
+			<div class="demoBlock">
+				<table style = "table-layout: fixed; -ah-table-omit-header-at-break: column;">
+					<thead>
+						<td style = "background-color: #BBFFBB; border: thin solid green;">
+							table header 1
+						</td>
+						<td style = "background-color: #BBFFBB; border: thin solid green;">
+							table header 1
+						</td>
+					</thead>
+					<tbody style="-ah-table-row-widows: 2;">
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div style="-ah-keep-with-next.within-page: always; break-before: page;">
+			Specifies the number of table rows that should remain at the bottom (column) of the page：-ah-table-row-widows
+			<div style="-ah-margin-before: 0.5em;">
+				Specified value ：1
+			</div>
+			<div class="demoBlock">
+				sample<br>
+				sample<br>
+				sample<br>
+				sample<br>
+				sample<br>
+				sample
+				<table style = "table-layout: fixed; -ah-table-omit-header-at-break: column;">
+					<thead>
+						<td style = "background-color: #BBFFBB; border: thin solid green;">
+							table header 1
+						</td>
+						<td style = "background-color: #BBFFBB; border: thin solid green;">
+							table header 2
+						</td>
+					</thead>
+					<tbody style="-ah-table-row-orphans: 1;">
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div style="-ah-margin-before: 0.5em;">
+				Specified value ：2
+			</div>
+			<div class="demoBlock">
+				sample<br>
+				sample<br>
+				sample<br>
+				sample<br>
+				sample<br>
+				sample
+				<table style = "table-layout: fixed; -ah-table-omit-header-at-break: column;">
+					<thead>
+						<td style = "background-color: #BBFFBB; border: thin solid green;">
+							table header 1
+						</td>
+						<td style = "background-color: #BBFFBB; border: thin solid green;">
+							table header 1
+						</td>
+					</thead>
+					<tbody style="-ah-table-row-orphans: 2;">
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						<tr>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+							<td style="border: thin solid red;">
+								cell
+							</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+
+</html>

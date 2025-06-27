@@ -1,0 +1,74 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[line-stacking-strategy-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			line-stacking-strategy
+		</div>
+		<div class="subheading">
+			The ‘<span class = "codePrint">-ah-line-stacking-strategy</span>’ property specifies line spacing (stacking of line boxes).
+		</div>
+		<div>
+			Half-leading is determined from the values of the ‘line-height’ and ‘font-size’ properties. Half-leading is the space above and below the text. In the following sample, the blue background part is an inline area of the size specified by the font size, and the red parts above and below it are half-leading.
+		</div>
+		<div style="width: 200pt; -ah-margin-before: 0.5em;">
+			<div style="font-size: 30pt; background-color: red; text-align: justify; text-align-last: justify;">
+				<span style="background-color: aqua;">ABC line height</span>
+			</div>
+		</div>
+		<div style="-ah-margin-before: 1em;">
+			<span class = "codePrint">-ah-line-stacking-strategy: max-height</span> (default value) fixes the line spacing.
+		</div>
+		<div style="width: 360pt; text-align: justify; -ah-margin-before: 0.5em;">
+			<div style="background-color: gray; font-size: 10pt; -ah-line-height: 2; -ah-line-stacking-strategy: max-height;">
+				<span style="background-color: yellow;">Line height is calculated from <span style="font-size: 20pt;">'line-height'</span> . If <span style="font-size: 20pt;">'line-height: 2'</span> (double the font size) and -ah-line-stacking-strategy: max-height, half-leading is calculated from the <span style = "font-size: 5pt;">‘font-size’</span> specified for the block. The sum of half leading × 2 and the maximum <span style = "font-size: 5pt;">‘font-size’</span> in the line is the line height. If <span style="font-size: 20pt;">different</span> <span style = "font-size: 5pt;">‘font-size’</span> characters are mixed in a block, the line height will differ from line to line, but the value of half-leading will be constant.</span>
+			</div>
+		</div>
+		<div style="-ah-margin-before: 1em;">
+			<span class = "codePrint">-ah-line-stacking-strategy: font-height</span> has a fixed line feed pitch.
+		</div>
+		<div style="width: 360pt; text-align: justify; -ah-margin-before: 0.5em;">
+			<div style="background-color: gray; font-size: 10pt; -ah-line-height: 2; -ah-line-stacking-strategy: font-height;">
+				<span style="background-color: yellow;">Line height is calculated from <span style="font-size: 20pt;">'line-height'</span> . If <span style="font-size: 20pt;">'line-height: 2'</span> (double the font size) and <span class = "codePrint">-ah-line-stacking-strategy: font-height</span>, the baseline-to-baseline spacing is fixed at twice the font size specified for the block. All the lines in the block will have the same line height, so if the font sizes of the characters are <span style="font-size: 24pt;">different</span>, then the characters may overlap.</span>
+			</div>
+		</div>
+		<div style="-ah-margin-before: 1em;">
+			<span class = "codePrint">-ah-line-stacking-strategy: line-height</span> determines the placement of lines according to the inline height of each line.
+		</div>
+		<div style="width: 360pt; text-align: justify; -ah-margin-before: 0.5em;">
+			<div style="background-color: gray; font-size: 10pt; -ah-line-height: 2; -ah-line-stacking-strategy: line-height;">
+				<span style="background-color: yellow;">Line height is calculated from <span style="font-size: 20pt;">'line-height'</span> . If <span style="font-size: 20pt;">'line-height: 2'</span> (double the font size) and <span class = "codePrint">-ah-line-stacking-strategy: line-height</span>, the height of the line including half-leading will be twice the ‘font-size’ specified for that block. If different <span style="font-size: 30pt;">‘font-size’</span> characters are mixed in a line, half-leading height is also different. Line height is calculated for each line, so line height may be different for each line.</span>
+			</div>
+		</div>
+	</body>
+
+</html>

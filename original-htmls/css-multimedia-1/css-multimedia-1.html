@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+				<meta name="displaydoctitle"
+				      content="true">
+					<meta name="keywords"
+					      content="video,object,content-type">
+						<meta name="author"
+						      content="Antenna House, Inc.">
+							<title>Embedding multi media in PDF – Antenna House, Inc.</title>
+							<style>
+        @page {
+            size: 210mm 297mm;
+            margin-top: 10mm;
+            margin-left: 20mm;
+            margin-right: 20mm;
+            margin-bottom: 27mm; 
+        }
+
+        @page PageMaster1 {
+        }
+
+        @page {
+            @bottom-right {
+                height: 30mm;
+                content: 'Antenna House, Inc.';
+                font-size: 0.8em;
+                text-align: right;
+                color: green;
+                -ah-link: url('https://www.antennahouse.com/');
+                -ah-link-alt-text: 'Antenna House, Inc.';
+                -ah-pdftag: Artifact;
+                -ah-link-annotation-contents: 'Antenna House, Inc.';
+            }
+        }
+
+        body {
+            font-family: serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            -ah-hyphenate-hyphenated-word: false;
+            hyphens: auto;
+        }
+
+        .block-h1-container {
+            font-family: sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            padding-top: 0.3em;
+            padding-bottom: 0.3em;
+            -ah-margin-before: 1em;
+            -ah-margin-after: 1em;
+            background-color: #EEEEEE;
+            hyphens: none;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+        }
+
+        .block-h1-content {
+            -ah-margin-start: 1em;
+            -ah-margin-end: 1em;
+            -ah-pdftag: H1;
+        }
+
+        .block-info {
+            -ah-margin-before: 1em;
+            -ah-margin-after: 1em;
+            text-indent: 0em;
+            border: 1pt solid #9999FF;
+            padding: 0.5em;
+            text-align: justify;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+        }
+        
+        .block-h2 {
+            -ah-margin-before: 1em;
+            font-family: sans-serif;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-indent: 0em;
+            padding-top: 0.3em;
+            padding-bottom: 0.3em;
+            -ah-keep-with-next-within-column: always;
+            hyphens: none;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+            clear: both;
+            -ah-pdftag: H2;
+        }
+        
+        .multimedia-basic {
+            display: block; 
+            width: 180pt;
+            height: 100pt;
+        }
+
+        .multimedia-poster {
+            display: block;
+            width: 180pt;
+            height: 100pt;
+            -ah-scaling: non-uniform; 
+            -ah-content-width: scale-to-fit;
+            -ah-content-height: scale-to-fit;
+        }
+        
+        .multimedia-controls-poster {
+            display: block;
+            width: 180pt;
+            height: 100pt;
+            -ah-scaling: non-uniform;
+            -ah-content-width: scale-to-fit;
+            -ah-content-height: scale-to-fit;
+            -ah-show-controls: true;
+            -ah-media-volume: 10%;
+            -ah-media-play-mode: 2;
+        }
+        
+        .block-spacing-after {
+             -ah-margin-after: 1.5em;
+        }
+
+    </style>
+						</head>
+						<body>
+							<div class="block-h1-container">
+								<div class="block-h1-content">Embedding multi media in PDF</div>
+							</div>
+							<div class="block-info">Multimedia data such as audio, video can be embedded in PDF. You can specify it as &lt;video src="video.mpg" type="video/mpeg"&gt; or &lt;object data="video.mpg" type="video/mpeg"&gt;. A poster picture can be specified to -ah-poster-image. You can show the player control bar by -ah-show-controls, the volume of the sound by -ah-media-volume and the number of times to play the multimedia by -ah-media-play-mode. Embedding of multi media data is available only with PDF1.5 or later.</div>
+							<div class="block-h2">Without the setting of -ah-poster-image</div>
+							<div>
+								<video src="Wildlife.mpg"
+								       type="video/mpeg"
+								       class="multimedia-basic"/>
+							</div>
+							<div class="block-h2">With the setting of -ah-poster-image</div>
+							<div>
+								<video src="Wildlife.mpg"
+								       type="video/mpeg"
+								       poster="Wildlife_0001.jpg"
+								       class="multimedia-poster"/>
+							</div>
+							<div class="block-h2">-ah-show-controls="true", -ah-media-volume="10%", -ah-media-play-mode="2"</div>
+							<div class="block-spacing-after">
+								<video src="Wildlife.mpg"
+								       type="video/mpeg"
+								       poster="Wildlife_0001.jpg"
+								       class="multimedia-controls-poster"
+								       controls><
+								       video>
+							</div>
+							<div>The control bar is shown in the lower side of the multimedia under playing. An enough space is required under the multimedia element. Whether the setting of -ah-show-control, -ah-media-volume, -ah-media-play-mode may become effective or not depends on multimedia data, a viewer and a player.</div>
+						</body>
+					</html> 

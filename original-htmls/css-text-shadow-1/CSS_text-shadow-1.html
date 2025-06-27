@@ -1,0 +1,81 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[text-shadow-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 250mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold; 
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Text Shadow
+		</div>
+		<div class="subheading">
+				A text shadow can be specified with <span class ="codePrint">text-shadow</span>. Specifying the value as <span class ="codePrint">text-shadow: 10px 10px 10px darkgray</span>, values are interpreted in the following order: horizontal offset of the shadow, vertical offset of the shadow, blur radius of the shadow, and shadow color. The blur radius of the shadow must be a non-negative value, and if the blur radius is 0 or is omitted, the shadow’s edge is sharp.
+		</div>
+		<h2 style = "text-align: center;">
+			<span class ="codePrint">text-shadow: 8px 5px 0px green</span>
+		</h2>
+		<p style = "font-size: 3em; font-weight: bold; text-shadow: 8px 5px 0px green; -ah-margin-after: 0.5em; text-align: center;">
+			Antenna House
+		</p>
+		<h2 style = "text-align: center;">
+			<span class ="codePrint">text-shadow: 8px 5px 3px green</span>
+		</h2>
+		<p style = "font-size: 3em; font-weight: bold; text-shadow: 8px 5px 3px green; -ah-margin-after: 0.5em; text-align: center;">
+			Antenna House
+		</p>
+		<h2 style = "text-align: center;">
+			<span class ="codePrint">text-shadow: 8px 5px 6px green</span>
+		</h2>
+		<p style = "font-size: 3em; font-weight: bold; text-shadow: 8px 5px 6px green; -ah-margin-after: 0.5em; text-align: center;">
+			Antenna House
+		</p>
+		<div class = "subheading" style = "font-size: smaller; text-align: center; page-break-after:always;"> **When an offset of the shadow is a negative value, the shadow is offset in the opposite direction. Multiple values can be specified to add additional shadows.**
+		</div>
+		<h2 style = "text-align: center;">
+			<span class ="codePrint">text-shadow: -8px -5px 0px green</span>
+		</h2>
+		<p style = "font-size: 3em; font-weight: bold; text-shadow: -8px -5px 0px green; -ah-margin-after: 0.5em; text-align: center;">
+			Antenna House
+		</p>
+		<h2 style = "text-align: center;">
+			<span class ="codePrint">text-shadow: 10px 10px 0px green, 20px 20px 0px lightgreen</span>
+		</h2>
+		<p style = "font-size: 3em; font-weight: bold; text-shadow: 10px 10px 0px green, 20px 20px 0px lightgreen; -ah-margin-after: 0.5em; text-align: center;">
+			Antenna House
+		</p>
+		<h2 style = "text-align: center;">
+			<span class ="codePrint">text-shadow: 10px 10px 2px green, 20px 20px 4px lightgreen</span>
+		</h2>
+		<p style = "font-size: 3em; font-weight: bold; text-shadow: 10px 10px 2px green, 20px 20px 4px lightgreen; -ah-margin-after: 0.5em; text-align: center;">
+			Antenna House
+		</p>
+	</body>
+
+</html>

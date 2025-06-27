@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thumb index – Antenna House, Inc.</title>
+  <meta name="title" content="Thumb Index">
+  <meta name="author" content="Antenna House, Inc.">
+  <meta name="keywords" content="retrieve-marker, thumb-index">
+   <style>
+        @page {
+            size: 210mm 297mm;
+                  margin-top: 10mm;
+                  margin-left: 20mm;
+                  margin-right: 0mm;
+                  margin-bottom: 10mm;
+            @top-right {
+                content: element(thumbindex);
+            }
+            @bottom-right {
+                content: 'Antenna House, Inc.';
+                font-size: 8pt;
+                color: green;
+                text-align: right;
+                margin: 7mm;
+                -ah-link: url('https://www.antennahouse.com/');
+                -ah-link-alt-text: 'Antenna House, Inc.';
+                -ah-link-show-annotation: true;
+            }
+        }
+
+        body {
+          font-family: serif;
+          font-size: 10pt;
+          line-height: 1.4;
+          margin-top: 0mm;
+          margin-left: 0mm;
+          margin-right: 20mm;
+          margin-bottom: 10mm;
+          hyphens: auto;
+          -ah-hyphenate-hyphenated-word: false;
+        }
+
+        h1 {
+            font-family: sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            padding-top: 0.3em;
+            padding-bottom: 0.3em;
+            padding-left: 1em;
+            padding-right: 1em;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            background-color: #EEEEEE;
+            hyphens: none;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+            -ah-pdftag: H1;
+        }
+
+        .description {
+            border: 1pt solid #9999FF;
+            padding: 0.5em;
+            margin: 1em 0;
+        }
+
+        .index-section {
+          line-height: 2;
+        }
+        
+        .index-header {
+            background-color: #97D8F0;
+            border: 0.2mm solid black;
+            font-size: 1.4em;
+            font-weight: bold;
+            text-align: center;
+            margin: 0.5em 0;
+            padding: 0.2em 0;
+            -ah-keep-with-next: always;
+            break-after: avoid;
+        }
+			
+        .index-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .index-item {
+            display: block;
+            margin-bottom: 0.2em;
+        }
+
+        .index-label {
+            width: 3em;
+            text-align: right;
+            margin-right: 1em;
+        }
+
+        .thumb-index {
+            position: running(thumbindex);
+        }
+
+        .thumb-index-item {
+            position: absolute;
+            right: 0;
+            width: 20mm;
+            text-align: right;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding-bottom: 5em;
+            display: inline-block;
+        }
+        
+        .thumb-index-item::after {
+            content:url(marker.png);
+            -ah-alttext: "Marker";
+            display: inline;
+            vertical-align: middle;
+        }
+
+        #thumbA { top: 20mm; content: "A "; }
+        #thumbB { top: 30mm; content: "B "; }
+        #thumbC { top: 40mm; content: "C "; }
+        #thumbD { top: 50mm; content: "D "; }
+        #thumbE { top: 60mm; content: "E "; }
+        #thumbF { top: 70mm; content: "F "; } 
+        #thumbG { top: 80mm; content: "G "; }
+    </style>
+</head>
+<body>
+        <div class="region-body">
+        <h1>Thumb index</h1>
+        <div class="description">Prints thumb indexes on the right side of the page. Thumb indexes are generated automatically.</div>
+        
+        <div class="index-section">
+            <div id="A" class="index-header">A</div>
+			<div id="thumbA" class="thumb-index-item"></div>
+			<ul class="index-list">
+                <li class="index-item"><span class="index-label">a-1</span>sample</li>
+                <li class="index-item"><span class="index-label">a-2</span>sample</li>
+                <li class="index-item"><span class="index-label">a-3</span>sample</li>
+            </ul>
+
+            <div id="B" class="index-header">B</div>
+			<div id="thumbB" class="thumb-index-item"></div>
+            <ul class="index-list">
+                <li class="index-item"><span class="index-label">b-1</span>sample</li>
+                <li class="index-item"><span class="index-label">b-2</span>sample</li>
+                <li class="index-item"><span class="index-label">b-3</span>sample</li>
+                <li class="index-item"><span class="index-label">b-4</span>sample</li>
+            </ul>
+
+            <div id="C" class="index-header">C</div>
+			<div id="thumbC" class="thumb-index-item"></div>
+            <ul class="index-list">
+                <li class="index-item"><span class="index-label">c-1</span>sample</li>
+                <li class="index-item"><span class="index-label">c-2</span>sample</li>
+                <li class="index-item"><span class="index-label">c-3</span>sample</li>
+                <li class="index-item"><span class="index-label">c-4</span>sample</li>
+                <li class="index-item"><span class="index-label">c-5</span>sample</li>
+                <li class="index-item"><span class="index-label">c-6</span>sample</li>
+            </ul>
+
+            <div id="D" class="index-header">D</div>
+			<div id="thumbD" class="thumb-index-item"></div>
+            <ul class="index-list">
+                <li class="index-item"><span class="index-label">d-1</span>sample</li>
+                <li class="index-item"><span class="index-label">d-2</span>sample</li>
+                <li class="index-item"><span class="index-label">d-3</span>sample</li>
+                <li class="index-item"><span class="index-label">d-4</span>sample</li>
+                <li class="index-item"><span class="index-label">d-5</span>sample</li>
+                <li class="index-item"><span class="index-label">d-6</span>sample</li>
+                <li class="index-item"><span class="index-label">d-7</span>sample</li>
+            </ul>
+
+            <div id="E" class="index-header">E</div><ul class="index-list">
+			<div id="thumbE" class="thumb-index-item"></div>
+                <li class="index-item"><span class="index-label">e-1</span>sample</li>
+                <li class="index-item"><span class="index-label">e-2</span>sample</li>
+                <li class="index-item"><span class="index-label">e-3</span>sample</li>
+            </ul>
+
+            <div id="F" class="index-header">F</div>
+			<div id="thumbF" class="thumb-index-item"></div>
+            <ul class="index-list">
+                <li class="index-item"><span class="index-label">f-1</span>sample</li>
+                <li class="index-item"><span class="index-label">f-2</span>sample</li>
+            </ul>
+
+            <div id="G" class="index-header">G</div>
+			<div id="thumbG" class="thumb-index-item"></div>
+            <ul class="index-list">
+                <li class="index-item"><span class="index-label">g-1</span>sample</li>
+                <li class="index-item"><span class="index-label">g-2</span>sample</li>
+            </ul>
+        </div>
+</div>
+</body>
+</html>

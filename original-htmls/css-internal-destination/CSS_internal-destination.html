@@ -1,0 +1,73 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_internal-destination]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBlock
+				{
+					-ah-margin-before: 10mm;
+					padding: 5pt;
+					border: 2pt solid black;
+					text-align-last: center;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Internal-destination
+		</div>
+		<div class="subheading">
+			The internal-destination property of the basic-link element is used to create internal links in a PDF document.  Antenna House has extended the value of this property to allow linking to specific pages and changing the PDF view.  The following link goes to page 3 of this document and zooms the document out to 50%.
+		</div>
+		<div class = "demoBlock">
+			<span style = "color:blue; text-decoration: underline; -ah-internal-destination: '3#zoom=50';">link to page 3 and zoom 50%</span>
+			<div class = "codePrint" style = "-ah-margin-before: 5mm;">
+				-ah-internal-destination: 3#zoom=50;
+			</diV>
+		</div>
+		<div class = "demoBlock" style = "page-break-before: always;">
+			page
+		</div>
+		<div class = "demoBlock" style = "page-break-before: always;">
+			page
+		</div>
+		<div class = "demoBlock" style = "page-break-before: always;">
+			page
+		</div>
+		<div class = "demoBlock" style = "page-break-before: always;">
+			page
+		</div>
+		<div class = "demoBlock" style = "page-break-before: always;">
+			page
+		</div>
+		<div class = "demoBlock" style = "page-break-before: always;">
+			page
+		</div>
+	</body>
+
+</html>

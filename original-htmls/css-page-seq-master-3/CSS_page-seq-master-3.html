@@ -1,0 +1,58 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 180mm;
+					page-width: 210mm;
+					-ah-force-page-count: 3;
+				}
+				@page :blank
+				{
+					background-color: lightblue;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				p
+				{
+					text-indent: 1em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Page layout for blank pages
+		</div>
+		<div class="subheading">
+				The properties such as <span class = "codePrint">blank, not-blank, odd-or-even, and page-position</span> define criteria for applying specific styling rules. For 'blank-or-not-blank', it determines if the webpage contains actual content or if it's a blank page rendered because of a style instruction like <span class = "codePrint">break-before: odd-page or force-page-count: end-on-even</span> in CSS. A page that inherits content from an HTML element, even if the content is something like a &lt;div&gt;&lt;/div&gt; that doesn't display anything, is considered non-blank. The values for 'blank-or-not-blank' are: 'blank' (page rendered just to fulfill style requirements); 'not-blank' (page has content); and 'any' (any page). By default, the value is 'any', which always holds true, so 'blank-or-not-blank' is typically left out unless defining styles specifically for blank pages.
+		</div>
+		<p>
+			This document has only enough text for one page, but <span class = "codePrint">-ah-force-page-count: 3;</span> is specified to force this page sequence to generate three pages. Two blank pages were generated to satisfy the constraint. @-rules for this document specify separate page layout for blank and non-blank pages. The page layout for blank pages specifies a blue background.
+		</p>
+		<p>
+			The page rule <span class = "codePrint">@page :blank</span> allows for style specification in each blank page instance.
+		</p>
+	</body>
+
+</html>

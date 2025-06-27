@@ -1,0 +1,110 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_keep-together-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				@page :first
+				{
+					@bottom-right
+					{
+						content: "";
+					}
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+					background-color: lightgray;
+				}
+				.demoBlock
+				{
+					background-color: #FFFFAF;
+				}
+				.demoBlockKeep
+				{
+					background-color: #FFFFAF;
+					-ah-keep-together: always;
+				}
+				img
+				{
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					max-width: 100%;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Place consecutive blocks on the same page
+		</div>
+		<div class="subheading">
+				Ordinarily, text is arranged from the top of the page, and when the text fills up the entire page, a page break occurs automatically. It is possible to place the blocks (including paragraph and figures) on one page by specifying ‘keep-together’.
+		</div>
+		<div class = "demoBlock">
+			<h4>Antenna House Workflow</h4>
+			<p>
+				Antenna House Formatter formats XSL Formatting Objects (XSL-FO), XML with XSL stylesheet, or HTML with CSS. The formatted result will be displayed in GUI and outputted or printed to PDF. (Display and printing are available only with the Windows version).
+			</p>
+			The work flow is as shown below.
+			<img src = "workflow70-wo-rx.png">
+		</div>
+		<h3 style = "page-break-before: always;">
+			Blocks with background color have <span class = "codePrint">keep-together.within.page: always;</span> is specified
+		</h3>
+		<div class = "demoBlockKeep">
+			<h4>Antenna House Workflow</h4>
+			<p style = "-ah-condensed-text-align-last: true;">
+				Antenna House Formatter formats XSL Formatting Objects (XSL-FO), XML with XSL stylesheet, or HTML with CSS. The formatted result will be displayed in GUI and outputted or printed to PDF. (Display and printing are available only with the Windows version).
+			</p>
+			The work flow is as shown below.
+			<img src = "workflow70-wo-rx.png">
+		</div>
+		<div class = "subheading" style = "page-break-before: always;">
+			Place consecutive blocks in the same column
+		</div>
+		<h2>Blocks with background color have no settings (default value)</h2>
+		<div class = "demoBlock" style = "columns: 200px 2; column-gap: 150px; page-break-after: always;">
+			<h4>Antenna House Workflow</h4>
+			<p>
+				Antenna House Formatter formats XSL Formatting Objects (XSL-FO), XML with XSL stylesheet, or HTML with CSS. The formatted result will be displayed in GUI and outputted or printed to PDF. (Display and printing are available only with the Windows version).
+			</p>
+			The work flow is as shown below.
+			<img src = "workflow70-wo-rx.png">
+		</div>
+			<h2>Blocks with background color have keep-together.within-column="always"</h2>
+		<div style = "columns: 200px 2; column-gap: 200px;">
+			<div class = "demoBlock" style = "-ah-keep-together.within-column: always;">
+			<p>By specifying ‘keep-together’, blocks are placed in the one column.</p>
+			<h4>Antenna House Workflow</h4>
+			<p>
+				Antenna House Formatter formats XSL Formatting Objects (XSL-FO), XML with XSL stylesheet, or HTML with CSS. The formatted result will be displayed in GUI and outputted or printed to PDF. (Display and printing are available only with the Windows version).
+			</p>
+			The work flow is as shown below.
+			<img src = "workflow70-wo-rx.png">
+			</div>
+		</div>
+	</body>
+
+</html>

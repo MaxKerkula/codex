@@ -1,0 +1,98 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_change-bar-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				p.change-start
+				{
+					-ah-change-bar-style: thin solid red;
+					-ah-change-bar-class: change1;
+					-ah-change-bar-offset: 2mm;
+					-ah-change-bar-side: left; /* or right, inside, outside */
+
+				}
+				p.change-end
+				{
+					change-bar-class: change1;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Change Bar
+		</div>
+		<div class="subheading" style="font-size: smaller;">
+			Here is an example of displaying a change bar. By the use of &lt;span&gt; you can begin a change-bar with inline CSS properties. You can specify the position of a change bar object on the left/right, inside/outside of the block by ‘change-bar-placement’. ‘change-bar-color’, ‘change-bar-offset’, ‘change-bar-style’, and ‘change-bar-width’ are  properties of &lt;span&gt; that specify the color, offset from the body, line style, and line width of the change bar, respectively.
+		</div>
+		<div style="hyphens: true; text-align: justify; line-height: 1.4; column-count: 2;">
+			<div style="-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. <span style="-ah-change-bar-style: solid; -ah-change-bar-color: red; -ah-change-bar-class: c201406-1; -ah-change-bar-offset: 2mm; -ah-change-bar-side: left;">Aenean ultricies molestie ante</span><span style = "-ah-change-bar-class: c201406-1;"></span>, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.
+			</div>
+			<div style="-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis <span style="-ah-change-bar-style: dotted; -ah-change-bar-color: blue; -ah-change-bar-class: c201406-2; -ah-change-bar-offset: 2mm; -ah-change-bar-side: left;"></span>id<span style = "-ah-change-bar-class: c201406-2;"></span>. Integer ut porttitor felis, vel tincidunt velit.
+			</div>
+			<div style="-ah-margin-after: 1em;">
+				<span style="-ah-change-bar-style: solid; -ah-change-bar-color: green; -ah-change-bar-class: c201406-3; -ah-change-bar-offset: 2mm; -ah-change-bar-side: end;"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.<span style = "-ah-change-bar-class: c201406-3;"></span>
+			</div>
+			<div style="-ah-margin-after: 1em;">
+				<span style="-ah-change-bar-style: solid; -ah-change-bar-color: yellow; -ah-change-bar-class: c201406-4; -ah-change-bar-offset: 2mm; -ah-change-bar-side: inside;"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.<span style = "-ah-change-bar-class: c201406-4;"></span>
+			</div>
+			<!--
+				Page 2 Begins here
+				<div style="-ah-margin-after: 1em; break-before: page;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam <span style="-ah-change-bar-style: groove; -ah-change-bar-color: cyan; -ah-change-bar-class: c201406-5; -ah-change-bar-offset: 2mm; -ah-change-bar-side: inside;"></span>bibendum tincidunt pharetra<span style = "-ah-change-bar-class: c201406-5;"></span>. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.
+			</div>
+			-->
+		</div>
+		<div style="hyphens: true; text-align: justify; line-height: 1.4; column-count: 2; break-before: page;">
+			<div style="-ah-margin-after: 1em; break-before: page;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam <span style="-ah-change-bar-style: groove; -ah-change-bar-color: cyan; -ah-change-bar-class: c201406-5; -ah-change-bar-offset: 2mm; -ah-change-bar-side: inside;"></span>bibendum tincidunt pharetra<span style = "-ah-change-bar-class: c201406-5;"></span>. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.
+			</div>
+			<div style="-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis <span style="-ah-change-bar-style: solid; -ah-change-bar-color: red; -ah-change-bar-class: c201406-6; -ah-change-bar-offset: 2mm;"></span>id<span style = "-ah-change-bar-class: c201406-6;"></span>. Integer ut porttitor felis, vel tincidunt velit.
+			</div>
+			<div style="-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis <span style="-ah-change-bar-style: dotted; -ah-change-bar-color: blue; -ah-change-bar-class: c201406-7; -ah-change-bar-offset: 2mm;"></span>id<span style = "-ah-change-bar-class: c201406-7;"></span>. Integer ut porttitor felis, vel tincidunt velit.
+			</div>
+			<div style="-ah-margin-after: 1em;">
+				<span style="-ah-change-bar-style: solid; -ah-change-bar-color: green; -ah-change-bar-class: c201406-8; -ah-change-bar-offset: 2mm; -ah-change-bar-side: end;"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.<span style = "-ah-change-bar-class: c201406-8;"></span>
+			</div>
+			<div style="-ah-margin-after: 1em;">
+				<span style="-ah-change-bar-style: solid; -ah-change-bar-color: yellow; -ah-change-bar-class: c201406-9; -ah-change-bar-offset: 2mm; -ah-change-bar-side: outside;"></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.<span style = "-ah-change-bar-class: c201406-9;"></span>
+			</div>
+			<div style="-ah-margin-after: 1em;">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam bibendum <span style="-ah-change-bar-style: groove; -ah-change-bar-color: cyan; -ah-change-bar-class: c201406-10; -ah-change-bar-offset: 2mm; -ah-change-bar-side: outside;"></span>tincidunt pharetra<span style = "-ah-change-bar-class: c201406-10;"></span>. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.
+			</div>
+			<div style="-ah-margin-after: 1em; -ah-change-bar-style: solid;">
+				<span style="-ah-change-bar-color: blue; -ah-change-bar-class: blue;"></span>A change bar starts at an &lt;<a href="https://www.w3.org/TR/xsl11/#fo_change-bar-begin">fo:change-bar-begin</a>&gt;, and <span style="-ah-change-bar-color: red; -ah-change-bar-class: red; -ah-change-bar-offset: 3pt;"></span>ends at an &lt;<a href="https://www.w3.org/TR/xsl11/#fo_change-bar-end">fo:change-bar-end</a>&gt;.<span style="-ah-change-bar-color: yellow; -ah-change-bar-class: yellow; -ah-change-bar-offset: 0pt;"></span>In order to make "end" match with "begin",<span style = "-ah-change-bar-class: blue;"></span> class names are specified on &lt;<a href="https://www.w3.org/TR/xsl11/#fo_change-bar-begin">fo:change-bar-begin</a>&gt; and &lt;<a href="https://www.w3.org/TR/xsl11/#fo_change-bar-end">fo:change-bar-end</a>&gt;<span style = "-ah-change-bar-class: yellow;"></span>using ‘change-bar-class’.<span style = "-ah-change-bar-class: red;"></span>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,71 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-hyphenate-hyphenated-word-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBox
+				{
+					border: 1pt solid gray;
+					font-size: 1.6em;
+					text-align: justify;
+					margin-bottom: 2em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Hyphenation of hyphenated words
+		</div>
+		<div class="subheading">
+			You can use <span class = "codePrint">-ah-hyphenate-hyphenated-word</span> to control whether or not a hyphenated word (for example, “hyphenated-word” in these samples) can be further hyphenated.
+		</div>
+		<div>
+			When <span class = "codePrint">-ah-hyphenate-hyphenated-word: true;</span> (default value) is specified, normal hyphenation is preformed when the existing hyphen is not at the end of line.
+			<div class = "demoBox" style="hyphens: true; -ah-hyphenate-hyphenated-word: true;">
+				<div>
+					a padding padding padding padding padding padding padding <span style = "color: red;">hyphenated-word</span>
+				</div>
+				<div>
+					padding padding padding padding padding padding padding padding <span style = "color: red;">hyphenated-word</span>
+				</div>
+			</div>
+		</div>
+		<div>
+			When <span class = "codePrint">-ah-hyphenate-hyphenated-word: false;</span> is specified, an already hyphenated word will not be further hyphenated. A line break can occur only at an existing hyphen.
+			<div class = "demoBox" style="hyphens: true; -ah-hyphenate-hyphenated-word: false;">
+				<div>
+					a padding padding padding padding padding padding padding <span style = "color: red;">hyphenated-word</span>
+				</div>
+				<div>
+					padding padding padding padding padding padding padding padding <span style = "color: red;">hyphenated-word</span>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

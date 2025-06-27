@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Listbox Content Change</title>
+    <meta name="author" content="user name">
+    <meta name="openaction" content="#JavaScript=
+
+    var f1 = this.getField('listbox1');
+	var f2 = this.getField('listbox2');
+	
+	f1.setAction('Keystroke', 'setF2func();');
+	
+	function setF2func() {
+		
+		if (event.changeEx == 'M') {
+			f2.clearItems();
+			f2.setItems(['Mastercard1', 'Mastercard2', 'Mastercard3']);
+		} else if (event.changeEx == 'V') {
+			f2.clearItems();
+			f2.setItems(['Visa1', 'Visa2', 'Visa3']);
+		} else if (event.changeEx == 'A') {
+			f2.clearItems();
+			f2.setItems(['Amex1', 'Amex2', 'Amex3']);
+		}
+	}
+	
+"
+                 />
+    <style>
+        html {
+            font-family: Times, serif;
+            font-size: 10pt;
+        }
+
+        @page {
+            size: A4;
+            margin: 25mm;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .title-block {
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 5mm;
+        }
+
+        .form-block {
+            border: solid 1pt red;
+            margin-top: 5mm;
+        }
+        
+        select {
+            width: 10em;
+            height: 25mm;
+            background-color: #ff8;
+            border: 1pt silver inset;
+            -ah-field-type: listbox;
+            -ah-field-top-index: 1;
+            -ah-field-multiple: false;
+            font-family: Times, serif;
+        }
+
+        label {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-block">
+        Listbox Test - Dynamically Change Content of Second Listbox
+    </div>
+
+    <div class="form-block">
+        <form action="http://xwww.antenna.co.jp/form-test.cgi" method="post">
+            <label for="listbox1">ListBox 1:</label>
+            <select name="listbox1" id="listbox1">
+                <option value="M">MasterCard</option>
+                <option value="V">Visa</option>
+                <option value="A">AMEX</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="form-block">
+        <form action="http://xwww.antenna.co.jp/form-test.cgi" method="post">
+            <label for="listbox2">ListBox 2:</label>
+            <select name="listbox2" id="listbox2">
+                <option value="M2">empty1</option>
+                <option value="V2">empty2</option>
+                <option value="A2">empty3</option>
+            </select>
+        </form>
+    </div>
+
+</body>
+</html> 

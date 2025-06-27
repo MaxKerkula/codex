@@ -1,0 +1,132 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_allowed-height-width-scale-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+
+				}
+					@page :nth(2)
+					{
+						page-height: 150mm;
+						page-width: 210mm;
+					}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.imgBorderBox
+				{
+					border-style: dotted;
+					border-width: thin;
+				}
+				#iBB_0
+				{
+					width: 4cm;
+					height: 2.5cm;
+					-ah-content-height: scale-to-fit;
+				}
+				#iBB_1
+				{
+					-ah-allowed-height-scale: 25% 50% 75% 100%;
+					width: 4cm;
+					height: 2.5cm;
+					-ah-content-height: scale-to-fit;
+				}
+				#iBB_2
+				{
+					-ah-allowed-width-scale: 100% 75% 25% 50%;
+					-ah-max-logical-width: 4cm;
+					-ah-max-logical-height: 2.5cm;
+					-ah-content-width: scale-to-fit;
+				}
+				#iBB_3
+				{
+					-ah-allowed-width-scale: 100% 75%;
+					-ah-allowed-height-scale: 100% 75%;
+					width: 4cm;
+					height: 2.5cm;
+					-ah-content-width: scale-to-fit;
+					-ah-content-height: scale-to-fit;
+				}
+				#iBB_4
+				{
+					-ah-allowed-width-scale: 100% 75% any;
+					-ah-allowed-height-scale: 100% 75% any;
+					width: 4cm;
+					height: 2.5cm;
+					-ah-content-width: scale-to-fit;
+					-ah-content-height: scale-to-fit;
+				}
+				
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Graphic scaling in discrete steps
+		</div>
+		<div class="subheading">
+			<span class = "codePrint">-ah-allowed-height-scale</span> and <span class = "codePrint">-ah-allowed-width-scale</span> specify a list of allowed values for scaling the height or width of a graphic. Their values are a list of percentages for the allowed scale values or ‘any’, for specifying no constraint on the scale-factor. The list is unordered, except that ‘any’ is considered last.
+		</div>
+		<div>
+			Controlling the scaling of a raster image can ensure that the image does not show Moiré effects from being rendered at an arbitrary scale. Controlling the scaling of all graphics can ensure that text in the graphics will appear at a discrete range of sizes rather than appearing to be arbitrary sizes because the graphics were arbitrarily scaled.<br>
+			<span style = "text-indent: 1em;">The scaling values shown below are generated using</span>
+		</div>
+		<div>
+			<h2>
+			content-width not specified
+			</h2>
+			<img src = "sunflower.jpg" class = "imgBorderBox">
+		</div>
+		<div>
+			
+			<span class = "codePrint">
+				width: 4cm; height: 2.5cm; -ah-content-height: scale-to-fit;
+			</span><br>
+			<img src = "sunflower.jpg" class = "imgBorderBox" id = "iBB_0">
+		</div>
+		<div>
+			<span class = "codePrint">
+				-ah-allowed-height-scale: 25% 50% 75% 100%; width: 4cm; height: 2.5cm; -ah-content-height: scale-to-fit;
+			</span><br>
+			<img src = "sunflower.jpg" class = "imgBorderBox" id = "iBB_1">
+		</div>
+		<div>
+			<span class = "codePrint">
+				-ah-allowed-width-scale: 100% 75% 25% 50%; -ah-max-logical-width: 4cm; -ah-max-logical-height: 2.5cm; -ah-content-height: scale-to-fit;
+			</span><br>
+			<img src = "sunflower.jpg" class = "imgBorderBox" id = "iBB_2">
+		</div>
+		<div  style = "page-break-before: always;">
+			<span class = "codePrint">
+				-ah-allowed-width-scale: 100% 75%; -ah-allowed-height-scale: 100% 75%; width: 4cm; height: 2.5cm; -ah-content-width: scale-to-fit; -ah-content-height: scale-to-fit;
+			</span><br>
+			<img src = "sunflower.jpg" class = "imgBorderBox" id = "iBB_3">
+		</div>
+		<div>
+			<span class = "codePrint"> -ah-allowed-width-scale: 100% 75% any; -ah-allowed-height-scale: 100% 75% any; width: 4cm; height: 2.5cm; -ah-content-width: scale-to-fit; -ah-content-height: scale-to-fit;
+			</span><br>
+			<img src = "sunflower.jpg" class = "imgBorderBox" id = "iBB_4">
+		</div>
+		
+	</body>
+
+</html>

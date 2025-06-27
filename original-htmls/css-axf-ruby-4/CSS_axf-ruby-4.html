@@ -1,0 +1,291 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-ruby-4]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			How ruby overhangs text
+		</div>
+		<div class="subheading">
+			With <span class = "codePrint"><a href = "https://www.antenna.co.jp/AHF/help/en/ahf-ruby.html#axf.ruby-overhang">-ah-ruby-overhang</a></span>, you can specify how the ruby overhangs adjacent text of its base. When ruby length is longer than the base character, the maximum overhang length can be specified with <span class = "codePrint">-ah-ruby-limit-overhang</span>. Alternatively, the ruby text can be condensed, with the limit specified by <span class = "codePrint">-ah-ruby-condense</span>. Also, when ruby length is shorter than the base character, the spacing before and after ruby can be specified with <span class = "codePrint">-ah-ruby-limit-space</span>.
+		</div>
+		<div>
+			<h3 style = "font-family: sans-serif;">
+				<span class = "codePrint">-ah-ruby-overhang</span> (How ruby overhangs adjacent text of its base)
+			</h3>
+			<div>
+				Example of specifying ‘none’ (Does not to overhang adjacent text of its base), ‘start’ (Overhangs adjacent text on the start side of its base) and ‘end’ (Overhangs adjacent text on the end side of its base):
+			</div>
+			<div style="column-count: 3; column-gap: 8pt;">
+				<div>
+					<span class = "codePrint">-ah-ruby-overhang: none;</span>
+					<div style = "line-height: 2; font-size: 3em;">
+						あ
+						<ruby style = "-ah-ruby-overhang: none;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>
+						あ
+					</div>
+				</div>
+				<div>
+					<span class = "codePrint">-ah-ruby-overhang: start;</span>
+					<div style = "line-height: 2; font-size: 3em;">
+						あ
+						<ruby style = "-ah-ruby-overhang: start;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>
+						あ
+					</div>
+				</div>
+				<div>
+					<span class = "codePrint">-ah-ruby-overhang: end;</span>
+					<div style = "line-height: 2; font-size: 3em;">
+						あ
+						<ruby style = "-ah-ruby-overhang: end;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>
+						あ
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style = "-ah-margin-before: 1.5em">
+			Example of specifying ‘except-kanji’ (Does not overhang adjacent text if it is kanji) and ‘except-katakana’ (Does not overhang adjacent text if it is katakana):
+			<div style = "column-count: 2; column-gap: 8pt;">
+				<div>
+					<span class = "codePrint">-ah-ruby-overhang: except-kanji</span>
+					<div style = "line-height: 2; font-size: 3em;">
+						あ
+						<ruby style = "-ah-ruby-overhang: except-kanji;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>
+						阿
+					</div>
+				</div>
+				<div>
+					<span class = "codePrint">-ah-ruby-overhang: except-katakana</span>
+					<div style = "line-height: 2; font-size: 3em;">
+						あ
+						<ruby style = "-ah-ruby-overhang: except-katakana;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>
+						ア
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div style="-ah-margin-before: 1.5em;">
+			Example of specifying ‘except-start-open-parenthesis’ (Does not overhang adjacent text if the start side of its base is an opening parenthesis) and ‘except-end-close-parenthesis’ (Does not overhang adjacent text if the end side of its base  is a closing parenthesis):
+			<div style = "column-count: 2; column-gap: 8pt;">
+				<div>
+					<span class = "codePrint">-ah-ruby-overhang: except-start-open-parenthesis;</span>
+					<div style = "line-height: 2; font-size: 3em;">
+						(<ruby style = "-ah-ruby-overhang: except-start-open-parenthesis;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>
+						あ
+					</div>
+				</div>
+				<div>
+					<span class = "codePrint">-ah-ruby-overhang: except-end-close-parenthesis;</span>
+					<div style = "line-height: 2; font-size: 3em;">
+						あ<ruby style = "-ah-ruby-overhang: except-start-open-parenthesis;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>
+						)
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3 style = "font-family: sans-serif;">
+				-ah-ruby-limit-overhang (Maximum length of ruby to overhang adjacent text of its base when the ruby length is longer than its base)
+			</h3>
+			<div>
+				Example of specifying the maximum overhang length as a number (a value multiplied by the font size of ruby), length (specified length) and percentage (a value multiplied by the font size):
+			</div>
+			<div style = "column-count: 3; column-gap: 8pt;">
+				<div>
+					<span class = "codePrint">-ah-ruby-limit-overhang: 1.0;</span> (Initial)
+					<div style = "line-height: 2; font-size: 3em;">
+						あ<ruby style = "-ah-ruby-limit-overhang: 1.0;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>
+						あ
+					</div>
+				</div>
+				<div>
+					<span class = "codePrint">-ah-ruby-limit-overhang: 0;</span> (Initial)
+					<div style = "line-height: 2; font-size: 3em;">
+						あ<ruby style = "-ah-ruby-limit-overhang: 0;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>
+						あ
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<h3>
+				<span class = "codePrint">-ah-ruby-condense</span> (Whether to condense ruby text when the ruby length is longer than its base)
+			</h3>
+			<div>
+				Example of specifying the font condense limit as  ‘none’ (do not condense ruby text), a number (a value multiplied by the font size of ruby) and a percentage (a value multiplied by the font size):
+			</div>
+			<div style = "column-count: 3; column-gap: 8pt;">
+				<div>
+					<span class = "codePrint">-ah-ruby-condense: none;</span> (Initial)
+					<div style = "line-height: 2; font-size: 2.5em;">
+						あ<ruby style = "-ah-ruby-condense: none;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>あ
+					</div>
+				</div>
+				<div>
+					<span class = "codePrint">-ah-ruby-condense: 0.75;</span> (Initial)
+					<div style = "line-height: 2; font-size: 2.5em;">
+						あ<ruby style = "-ah-ruby-condense: 0.75;">
+							<rb>
+								燕
+							</rb>
+							<rt>
+								つばめ
+							</rt>
+						</ruby>あ
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<h3>
+				<span class = "codePrint">-ah-ruby-limit-space</span> (Maximum spacing before and after ruby text when the ruby length is shorter than its base character)
+			</h3>
+			<div>
+				Example of specifying the maximum ruby spacing as a number (a value multiplied by the font size of ruby), length (specified length) and percentage (a value multiplied by the font size). When ‘none’ is specified, the maximum spacing before and after ruby will not be limited.
+			</div>
+			<div style = "column-count: 3; column-gap: 8pt;">
+				<div>
+					<span class = "codePrint">-ah-ruby-limit-space: 1.0;</span> (Initial)
+					<div style = "line-height: 2; font-size: 2em;">
+						<ruby style = "-ah-ruby-limit-space: 1.0;">
+							<rb>
+								なげきの聖母像
+							</rb>
+							<rt>
+								ピエタ
+							</rt>
+						</ruby>
+					</div>
+				</div>
+				<div>
+					<span class = "codePrint">-ah-ruby-limit-space: 0;</span>
+					<div style = "line-height: 2; font-size: 2em;">
+						<ruby style = "-ah-ruby-limit-space: 0;">
+							<rb>
+								なげきの聖母像
+							</rb>
+							<rt>
+								ピエタ
+							</rt>
+						</ruby>
+					</div>
+				</div>
+				<div>
+					<span class = "codePrint">-ah-ruby-limit-space: none;</span>
+					<div style = "line-height: 2; font-size: 2em;">
+						<ruby style = "-ah-ruby-limit-space: none;">
+							<rb>
+								なげきの聖母像
+							</rb>
+							<rt>
+								ピエタ
+							</rt>
+						</ruby>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

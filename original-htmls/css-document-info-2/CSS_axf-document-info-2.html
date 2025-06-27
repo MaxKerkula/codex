@@ -1,0 +1,139 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-document-info-2]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.floatMedia
+				{
+					-ah-float: right;
+					-ah-content-width: 50%;
+					margin-left: 1em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Page layout when PDF is opened
+		</div>
+		<div class="subheading">
+			To specify how the pages are shown when a document is initially opened in a PDF viewer, use <a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.document-info">&lt;meta&gt;</a> with ‘name’ set to ‘pagelayout’. One of these values may be specified: ‘SinglePage’, ‘OneColumn’, ‘TwoColumnLeft’, ‘TwoColumnRight’, ‘TwoPageLeft’, or ‘TwoPageRight’. ‘TwoPageLeft’ and ‘TwoPageRight’ may only be specified for PDF1.5 or later. When nothing is specified, it depends on the operation of the PDF viewer application. In this sample, ‘TwoPageLeft’ is specified in ‘pagelayout’.
+		</div>
+		<div>
+			<div class = "floatMedia">
+				<img src="pagelayout-gui.png" width="150px">
+			</div>
+			<div>
+				This example uses the four-page document shown opened in the Antenna House Formatter GUI in the screenshot on the right.
+			</div>
+			<div style="text-indent: 1em;">
+				All of the screenshots for this example show pages at 10% zoom to illustrate when the ‘pagelayout’ value does and does not allow multiple pages to be shown on initial viewing. To save space, screenshots from the PDF viewer show just the pages rather than the full PDF viewer window.
+			</div>
+		</div>
+		<div style="margin-top: 10em;">
+			<div class = "floatMedia">
+				<img src="SinglePage.png" width="70px">
+			</div>
+			<h2>
+				&lt;meta name="pagelayout" Content="SinglePage"&gt;
+			</h2>
+			<div>
+				Displays one page at a time. When the document is scrolled, the PDF viewer shows just page 2, then page 3, and so on.
+			</div>
+		</div>
+		<div style="margin-top: 3em;">
+			<div class = "floatMedia">
+				<img src="TwoPageLeft.png" width="100px">
+			</div>
+			<h2>
+				&lt;meta name="pagelayout" Content="TwoPageLeft"&gt;
+			</h2>
+			<div>
+				Displays the pages two at a time, with the odd-numbered pages on the left. When the document is scrolled, the PDF viewer shows pages 3 and 4, then pages 5 and 6, and so on.
+			</div>
+			<div style="text-indent: 1em;">
+				‘TwoPageLeft’ may only be specified for PDF 1.5 or later.
+			</div>
+		</div>
+		<div style="margin-top: 0.5em;">
+			<div class = "floatMedia">
+				<img src="TwoPageRight.png" width="70px">
+			</div>
+			<h2>
+				&lt;meta name="pagelayout" Content="TwoPageRight"&gt;
+			</h2>
+			<div>
+				Displays the pages two at a time, with the odd-numbered pages on the right. The initial view shows just page 1.
+			</div>
+		</div>
+		<div style="margin-top: 2em;">
+			<div class = "floatMedia">
+				<img src="TwoPageRight-2-3.png" width="100px">
+			</div>
+			<div>
+				When the document is scrolled, the PDF viewer shows pages 2 and 3, then pages 4 and 5, and so on.
+			</div>
+			<div style="text-indent: 1em;">
+				‘TwoPageRight’ may only be specified for PDF 1.5 or later.
+			</div>
+		</div>
+		<div style="margin-top: 2em; break-before: page;">
+			<div class = "floatMedia">
+				<img src="OneColumn.png" width="60px">
+			</div>
+			<h2>
+				&lt;meta name="pagelayout" Content="OneColumn"&gt;
+			</h2>
+			<div>
+				Displays the pages in one column. When the document is scrolled, the PDF viewer may show partial pages at the top or bottom of the window.
+			</div>
+		</div>
+		<div style="margin-top: 23em;">
+			<div class = "floatMedia">
+				<img src="TwoColumnLeft.png" width="100px">
+			</div>
+			<h2>
+				&lt;meta name="pagelayout" Content="TwoColumnLeft"&gt;
+			</h2>
+			<div>
+				Displays the pages in two  columns, with the odd-numbered pages on the left. When the document is scrolled, the PDF viewer may show partial pages at the top or bottom of the window.
+			</div>
+		</div>
+		<div style="margin-top: 10em;">
+			<div class = "floatMedia">
+				<img src="TwoColumnRight.png" width="100px">
+			</div>
+			<h2>
+				&lt;meta name="pagelayout" Content="TwoColumnRight"&gt;
+			</h2>
+			<div>
+				Displays the pages in two  columns, with the odd-numbered pages on the right. When the document is scrolled, the PDF viewer may show partial pages at the top or bottom of the window.
+			</div>
+		</div>
+	</body>
+
+</html>

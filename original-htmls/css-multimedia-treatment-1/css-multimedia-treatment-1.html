@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Embedded and External Multimedia Data – Antenna House, Inc.</title>
+    <meta name="subject" content="The document subject">
+    <meta name="author" content="Antenna House, Inc.">
+    <meta name="keywords" content="video, -ah-multimedia-treatment, content-type">
+    <meta name="displaydoctitle" content="true">
+
+    <style>
+        @page {
+            size: A4;
+            margin-top: 10mm;
+            margin-left: 20mm;
+            margin-right: 20mm;
+            margin-bottom: 27mm;
+
+            @bottom-right {
+                 height: 30mm;
+                 content: 'Antenna House, Inc.';
+                 font-size: 0.8em;
+                 text-align: right;
+                 color: green;
+                 -ah-link: url('https://www.antennahouse.com/');
+                 -ah-link-alt-text: 'Antenna House, Inc.';
+                 -ah-pdftag: Artifact;
+                 -ah-link-annotation-contents: 'Antenna House, Inc.';
+            }
+        }
+
+        @page {
+           font-family: serif;
+           font-size: 10pt;
+           line-height: 1.4;
+        }
+
+        body {
+            font-family: serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            -ah-hyphenate-hyphenated-word: false;
+            hyphens: auto;
+        }
+
+        h1 {
+            font-family: sans-serif;
+            font-size: 2em;
+            font-weight: bold;
+            -ah-padding-before: 0.3em;
+            -ah-padding-after: 0.3em;
+            -ah-margin-before: 1em;
+            -ah-margin-after: 1em;
+            background-color: #EEEEEE;
+            hyphens: none;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+            padding-left: 1em;
+            padding-right: 1em;
+            -ah-pdftag: H1;
+        }
+
+        p.intro{
+            -ah-margin-before: 1em;
+            -ah-margin-after: 1em;
+            -ah-margin-after-conditionality: retain;
+            border: 1pt solid #9999FF;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            text-align: justify;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+        }
+
+        .code-inline {
+            font-family: sans-serif;
+            font-size: 0.9em;
+            -ah-pdftag: Code;
+        }
+
+         .link-style {
+             text-decoration: underline;
+             color: blue;
+             -ah-link-annotation-contents: attr(data-annotation-contents);
+             -ah-alttext: attr(data-alttext);
+         }
+
+        h2 {
+            -ah-margin-before: 1em;
+            font-family: sans-serif;
+            font-size: 1.2em;
+            font-weight: bold;
+            padding-top: 0.3em;
+            padding-bottom: 0.3em;
+            -ah-keep-with-next: always;
+            hyphens: none;
+            -ah-line-height-shift-adjustment: disregard-shifts;
+            clear: both;
+             -ah-pdftag: H2;
+        }
+
+
+        video.multimedia-object {
+             display: inline-block;
+             vertical-align: middle;
+         }
+
+        .multimedia-base {
+            width: 180pt;
+            height: 90pt;
+            -ah-multimedia-treatment: relative-link;
+            -ah-content-type: attr(type);
+        }
+
+        .multimedia-poster {
+            width: 180pt;
+            height: 90pt;
+            -ah-multimedia-treatment: relative-link;
+            -ah-content-type: attr(type);
+            -ah-scaling: non-uniform;
+            -ah-content-width: scale-to-fit;
+            -ah-content-height: scale-to-fit;
+        }
+
+        .multimedia-controls {
+            width: 180pt;
+            height: 90pt;
+            -ah-multimedia-treatment: relative-link;
+            -ah-content-type: attr(type);
+            -ah-scaling: non-uniform;
+            -ah-content-width: scale-to-fit;
+            -ah-content-height: scale-to-fit;
+            -ah-media-volume: 10%;
+            -ah-media-play-mode: 2;
+        }
+
+        div.media-controls-container {
+             -ah-margin-after: 1.5em;
+         }
+
+    </style>
+</head>
+<body>
+    <h1>Embedded and External Multimedia Data</h1>
+
+    <p class="intro">On &lt;<a href="https://www.w3.org/TR/xsl11/#fo_external-graphic" class="link-style" data-annotation-contents="fo:external-graphic" data-alttext="">video</a>&gt;, '-ah-multimedia-treatment' allows you to specify whether to embed multimedia data in PDF output or to reference it.  For example: <span class="code-inline">&lt;video src="video.mpg" type="video/mpeg" class="multimedia-object multimedia-base"&gt;&lt;/video&gt;</span>. A poster picture can be specified using the standard HTML5 \`poster\` attribute. To apply '-ah-multimedia-treatment', specify as follows: 'auto' (use the <a href="https://www.antenna.co.jp/AHF/help/en/ahf-optset.html#multimedia-treatment" class="link-style" data-annotation-contents="multimedia-treatment" data-alttext="">multimedia-treatment</a> value in the Option Setting File); 'embed' (embed multimedia in the PDF); 'absolute-link' (refer to multimedia using an absolute path); 'relative-link' (refer to multimedia using a relative path); 'richmedia' (embed as a Rich Media annotation); 'richmedia-windowed' (embed as a Rich Media annotation but display in a separate window when playing). For more details see also "<a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.multimedia-treatment" class="link-style" data-annotation-contents="axf:multimedia-treatment" data-alttext="">-ah-multimedia-treatment</a>" in the Manual. '-ah-multimedia-treatment' is available in AH Formatter V6.3 and later. Handling multimedia files is valid only with PDF1.5 or higher. 'richmedia' and 'richmedia-windowed' require both PDF1.7 or higher and AH Formatter V6.5 or later.</p>
+
+    <p>In this sample, multimedia is referenced by a relative path by specifying <span class="code-inline">-ah-multimedia-treatment="relative-link"</span>. If you embed multimedia by specifying <span class="code-inline">-ah-multimedia-treatment="embed"</span>, the size of the PDF will increase according to the size of the multimedia.</p>
+
+    <h2>Without '-ah-poster-image'</h2>
+    <div>
+        <video src="Wildlife.mpg" type="video/mpeg" class="multimedia-object multimedia-base"></video>
+    </div>
+
+    <h2>With '-ah-poster-image'</h2>
+    <div>
+        <video src="Wildlife.mpg" type="video/mpeg" class="multimedia-object multimedia-poster" poster="Wildlife_0001.jpg"></video>
+    </div>
+
+    <h2>
+        <span class="code-inline">-ah-show-controls="true"</span>,
+        <span class="code-inline">-ah-media-volume="10%"</span>,
+        <span class="code-inline">-ah-media-play-mode="2"</span>
+    </h2>
+    <div class="media-controls-container">
+         <video src="Wildlife.mpg" type="video/mpeg" class="multimedia-object multimedia-controls" poster="Wildlife_0001.jpg" controls></video>
+    </div>
+
+    <p> Whether or not the '-ah-show-controls', '-ah-media-volume', and '-ah-media-play-mode' settings are valid depends on the multimedia data, the viewer and the player.</p>
+
+</body>
+</html> 

@@ -1,0 +1,222 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-background-origin-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.innerDemoBox
+				{
+					border: thin dotted rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.5,  90%, 0%, 75%, 83%);
+					position: absolute;
+					vertical-align: top;
+					text-align: center;
+					height: 50pt;
+					width: 100pt;
+				}
+				.demoBorderBox
+				{
+					margin-left: 0;
+					margin: 7pt;
+					padding: 5pt;
+					height: 50pt;
+					width: 100pt;
+					border: 5pt dashed rgb(0,61,25);
+					-ah-background-origin: border-box;
+					-ah-background-image: url('background-size-background-lightblue.svg'), url('background-size-background.svg');
+					background-repeat: no-repeat;
+				}
+				#dBB_0
+				{
+					-ah-background-origin: padding-box;
+				}
+				#dBB_1
+				{
+					-ah-background-origin: content-box;
+				}
+				#dBB_2
+				{
+					background-repeat: no-repeat, repeat;
+				}
+				#dBB_3
+				{
+					-ah-background-origin: padding-box;
+					background-repeat: no-repeat, repeat;
+				}
+				#dBB_4
+				{
+					-ah-background-origin: content-box;
+					background-repeat: no-repeat, repeat;
+				}
+				#dBB_5
+				{
+					background-position: 100% 100%;
+				}
+				#dBB_6
+				{
+					background-position: 100% 100%;
+					-ah-background-origin: padding-box;
+				}
+				#dBB_7
+				{
+					background-position: 100% 100%;
+					-ah-background-origin: content-box;
+				}
+				#dBB_8
+				{
+					background-repeat: no-repeat, repeat;
+					background-position: 100% 100%;
+				}
+				#dBB_9
+				{
+					background-position: 100% 100%;
+					-ah-background-origin: padding-box;
+					background-repeat: no-repeat, repeat;
+				}
+				#dBB_10
+				{
+					background-position: 100% 100%;
+					-ah-background-origin: content-box;
+					background-repeat: no-repeat, repeat;
+				}
+				
+				table
+				{
+					border-spacing: 20px;
+				}
+				h2, p
+				{
+					margin-bottom: -15px;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Background image origin
+		</div>
+		<div class="subheading">
+			<span class = "codePrint">-ah-background-origin</span> specifies the area within which the background image is positioned. The allowed values correspond to the three parts of the CSS box model: <span class = "codePrint">border-box, padding-box, and content-box</span>. The default is <span class = "codePrint">padding-box. background-position</span> specifies the position of the image within the box, where ‘0% 0%’ (which is also ‘0 0’) is at the top-left of the positioning area and ‘100% 100%’ is at the bottom-right of the positioning area. <span class = "codePrint">-ah-background-origin</span> does not affect either clipping of the image or repetitions of the image: 
+		</div>
+		<p>
+			In the following examples, the dotted border indicates the extent of the content box of the outer block, and the text indicates the <span class = "codePrint">-ah-background-clip</span> value. All background images are the same size.
+		</p>
+		<p style = "text-indent: 1em;">
+			The examples use these images for repeated and non-repeated backgrounds, respectively: <img src = "background-size-background.svg"> and <img src = "background-size-background-lightblue.svg">
+		</p>
+		<table>
+			<tr>
+				<th colspan="3">
+					<h2>Single, non-repeated background image at '0% 0%'</h2>
+				</th>
+			</tr>
+			<tr>
+				<td class = "demoBorderBox">
+					<div class = "innerDemoBox">
+						'border-box'
+					</div>
+				</td>
+				<td class = "demoBorderBox" id = "dBB_0">
+					<div class = "innerDemoBox">
+						'padding-box’'
+					</div>
+				</td>
+				<td class = "demoBorderBox" id = "dBB_1">
+					<div class = "innerDemoBox">
+						'content-box'
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="3">
+					<h2>Non-repeated and repeated background image at '0% 0%'</h2>
+				</th>
+			</tr>
+			<tr>
+				<td class = "demoBorderBox" id = "dBB_2">
+					<div class = "innerDemoBox">
+						'border-box'
+					</div>
+				</td>
+				<td class = "demoBorderBox" id = "dBB_3">
+					<div class = "innerDemoBox">
+						'padding-box'
+					</div>
+				</td>
+				<td class = "demoBorderBox" id = "dBB_4">
+					<div class = "innerDemoBox">
+						'content-box'
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="3">
+					<h2>Single, non-repeated background image at '100% 100%'</h2>
+				</th>
+			</tr>
+			<tr>
+				<td class = "demoBorderBox" id = "dBB_5">
+					<div class = "innerDemoBox">
+						'border-box'
+					</div>
+				</td>
+				<td class = "demoBorderBox" id = "dBB_6">
+					<div class = "innerDemoBox">
+						'padding-box'
+					</div>
+				</td>
+				<td class = "demoBorderBox" id = "dBB_7">
+					<div class = "innerDemoBox">
+						'content-box'
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="3">
+					<h2>Non-repeated and repeated background image at '100% 100%'</h2>
+				</th>
+			</tr>
+			<tr>
+				<td class = "demoBorderBox" id = "dBB_8">
+					<div class = "innerDemoBox">
+						'border-box'
+					</div>
+				</td>
+				<td class = "demoBorderBox" id = "dBB_9">
+					<div class = "innerDemoBox">
+						'padding-box'
+					</div>
+				</td>
+				<td class = "demoBorderBox" id = "dBB_10">
+					<div class = "innerDemoBox">
+						'content-box'
+					</div>
+				</td>
+			</tr>
+			
+		</table>
+	</body>
+
+</html>

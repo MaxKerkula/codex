@@ -1,0 +1,131 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				img
+				{
+					border: thin dotted;
+				}
+				.imgFormat
+				{
+					width: 4cm; 
+					height: 3cm;
+					-ah-content-width: scale-to-fit;
+				}
+				#iF_0
+				{
+					width: 10cm; 
+					height: 7cm;
+					-ah-content-width: scale-to-fit;
+				}
+				#iF_1
+				{
+					width: 4cm; 
+					height: 3cm;
+					-ah-content-width: scale-down-to-fit;
+				}
+				#iF_2
+				{
+					width: 8cm; 
+					height: 6cm;
+					-ah-content-width: scale-down-to-fit;
+				}
+				#iF_3
+				{
+					width: 8cm; 
+					height: 6cm;
+					-ah-content-width: scale-up-to-fit;
+				}
+				#iF_4
+				{
+					width: 4cm; 
+					height: 3cm;
+					-ah-content-width: scale-up-to-fit;
+				}
+
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Automatically fitting graphics to the drawing area
+		</div>
+		<div class="subheading">
+				It’s possible to scale graphics so that graphics can fit into the drawing area when the width and height of the drawing area and loaded graphics are different. If you want to fit the width, specify <span class = "codePrint">-ah-content-width: scale-to-fit; or -ah-content-width: scale-down-to-fit;</span>. To condense graphics, specify <span class = "codePrint">-ah-content-width: scale-to-fit;</span>, or to expand graphics, <span class = "codePrint">-ah-content-width: scale-up-to-fit;</span>. If you want to fit the height, specify <span class = "codePrint">-ah-content-height</span>.
+		</div>
+		<p>
+			<span class = "codePrint">No settings to content-width</span>
+		</p>
+		<div>
+			<img src = "sunflower.jpg">
+		</div>
+		<p>
+			<span class = "codePrint">width: 4cm; height: 3cm; -ah-content-width: scale-to-fit;</span>
+		</p>
+		<div>
+			<img class = "imgFormat" src = "sunflower.jpg">
+		</div>
+		
+		<p>
+			<span class = "codePrint">width: 10cm; height: 7cm; -ah-content-width: scale-to-fit;</span>
+		</p>
+		<div>
+			<img class = "imgFormat" id = "iF_0" src = "sunflower.jpg">
+		</div>
+		
+		<p>
+			<span class = "codePrint">width: 4cm; height: 3cm; -ah-content-width: scale-down-to-fit;</span>
+		</p>
+		<div>
+			<img class = "imgFormat" id = "iF_1" src = "sunflower.jpg">
+		</div>
+		
+		<p>
+			<span class = "codePrint">width: 8cm; height: 6cm; -ah-content-width: scale-down-to-fit;</span>
+		</p>
+		<div>
+			<img class = "imgFormat" id = "iF_2" src = "sunflower.jpg">
+		</div>
+		
+		<p>
+			<span class = "codePrint">width: 8cm; height: 6cm; -ah-content-width: scale-up-to-fit;</span>
+		</p>
+		<div>
+			<img class = "imgFormat" id = "iF_3" src = "sunflower.jpg">
+		</div>
+		
+		<p>
+			<span class = "codePrint">width: 4cm; height: 3cm; -ah-content-width: scale-up-to-fit;</span>
+		</p>
+		<div>
+			<img class = "imgFormat" id = "iF_4" src = "sunflower.jpg">
+		</div>
+		
+	</body>
+
+</html>

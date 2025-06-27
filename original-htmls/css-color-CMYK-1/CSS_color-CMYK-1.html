@@ -1,0 +1,158 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_color-CMYK-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				p
+				{
+					text-indent: 2em;
+				}
+				table
+				{
+					-ah-margin-before: 2em;
+					width: 100%;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			CMYK color with rgb-icc() and cmyk()
+		</div>
+		<div class="subheading">
+			Here is an example of drawing CMYK color by specifying rgb-icc(&lt;R&gt;,&lt;G&gt;,&lt;B&gt;,#CMYK,&lt;C&gt;,&lt;M&gt;,&lt;Y&gt;,&lt;K&gt;). Specify 0.0–1.0 or % value in CMYK value. cmyk(&lt;C&gt;,&lt;M&gt;,&lt;Y&gt;,&lt;K&gt;) is equivalent to rgb-icc(#CMYK,&lt;C&gt;,&lt;M&gt;,&lt;Y&gt;,&lt;K&gt;).
+		</div>
+		<div>
+			The following formulas are used for RGB calculation:
+			<p>
+				Red = 1 - minimum(1, Cyan X (1 - Black) + Black)
+			</p>
+			<p>
+				Green = 1 - minimum(1, Magenta X (1 - Black) + Black)
+			</p>
+			<p>
+				Blue = 1 - minimum(1, Yellow X (1 - Black) + Black)
+			</p>
+		</div>
+		<table>
+			<colgroup>
+				<col span = "1">
+				<col span = "2">
+				<col span = "3">
+			</colgroup>
+			<tr>
+				<td style = "color: rgb-icc(164,164,164,#CMYK,0.2, 0.2, 0.2, 0.2)">
+					rgb-icc(164,164,164,#CMYK,0.2, 0.2, 0.2, 0.2)
+				</td>
+				<td style = "background-color: rgb-icc(64%,64%,64%,#CMYK, 20%, 20%, 20%, 20%)">
+					<span style = "color: transparent;">-------------</span>
+				</td>
+				<td style = "color: rgb-icc(64%,64%,48%,#CMYK, 20%, 20%, 40%, 20%);">
+					rgb-icc(64%,64%,48%,#CMYK, 20%, 20%, 40%, 20%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "color: rgb-icc(123,123,123,#CMYK,0.2, 0.2, 0.2, 0.4)">
+					rgb-icc(123,123,123,#CMYK,0.2, 0.2, 0.2, 0.4)
+				</td>
+				<td style = "background-color: rgb-icc(48%,48%,48%,#CMYK, 20%, 20%, 20%, 40%)">
+					<span style = "color: transparent;">-------------</span>
+				</td>
+				<td style = "color: rgb-icc(48%,48%,48%,#CMYK, 20%, 20%, 20%, 40%);">
+					rgb-icc(48%,48%,48%,#CMYK, 20%, 20%, 20%, 40%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "color: rgb-icc(164,164,123,#CMYK,0.2, 0.2, 0.4, 0.2)">
+					rgb-icc(164,164,123,#CMYK,0.2, 0.2, 0.4, 0.2)
+				</td>
+				<td style = "background-color: rgb-icc(64%,64%,48%,#CMYK, 20%, 20%, 40%, 20%)">
+					<span style = "color: transparent;">-------------</span>
+				</td>
+				<td style = "color: rgb-icc(64%,64%,48%,#CMYK, 20%, 20%, 40%, 20%);">
+					rgb-icc(64%,64%,48%,#CMYK, 20%, 20%, 40%, 20%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "color: rgb-icc(164,123,164,#CMYK,0.2, 0.4, 0.2, 0.2)">
+					rgb-icc(164,123,164,#CMYK,0.2, 0.4, 0.2, 0.2)
+				</td>
+				<td style = "background-color: rgb-icc(64%,48%,64%,#CMYK, 20%, 40%, 20%, 20%)">
+					<span style = "color: transparent;">-------------</span>
+				</td>
+				<td style = "color: rgb-icc(64%,48%,64%,#CMYK, 20%, 40%, 20%, 20%);">
+					rgb-icc(64%,48%,64%,#CMYK, 20%, 40%, 20%, 20%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "color: rgb-icc(123,164,164,#CMYK,0.4, 0.2, 0.2, 0.2)">
+					rgb-icc(123,164,164,#CMYK,0.4, 0.2, 0.2, 0.2)
+				</td>
+				<td style = "background-color: rgb-icc(48%,64%,64%,#CMYK, 40%, 20%, 20%, 20%)">
+					<span style = "color: transparent;">-------------</span>
+				</td>
+				<td style = "color: rgb-icc(48%,64%,64%,#CMYK, 40%, 20%, 20%, 20%);">
+					rgb-icc(48%,64%,64%,#CMYK, 40%, 20%, 20%, 20%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "color: rgb-icc(123,123,92,#CMYK,0.2, 0.2, 0.4, 0.4)">
+					rgb-icc(123,123,92,#CMYK,0.2, 0.2, 0.4, 0.4)
+				</td>
+				<td style = "background-color: rgb-icc(48%,48%,36%,#CMYK, 20%, 20%, 40%, 40%)">
+					<span style = "color: transparent;">-------------</span>
+				</td>
+				<td style = "color: rgb-icc(48%,48%,36%,#CMYK, 20%, 20%, 40%, 40%);">
+					rgb-icc(48%,48%,36%,#CMYK, 20%, 20%, 40%, 40%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "color: rgb-icc(164,123,123,#CMYK,0.2, 0.4, 0.4, 0.2)">
+					rgb-icc(164,123,123,#CMYK,0.2, 0.4, 0.4, 0.2)
+				</td>
+				<td style = "background-color: rgb-icc(64%,48%,48%,#CMYK, 20%, 40%, 40%, 20%)">
+					<span style = "color: transparent;">-------------</span>
+				</td>
+				<td style = "color: rgb-icc(64%,48%,48%,#CMYK, 20%, 40%, 40%, 20%);">
+					rgb-icc(64%,48%,48%,#CMYK, 20%, 40%, 40%, 20%)
+				</td>
+			</tr>
+			<tr>
+				<td style = "color: rgb-icc(123,123,164,#CMYK,0.4, 0.4, 0.2, 0.2)">
+					rgb-icc(123,123,164,#CMYK,0.4, 0.4, 0.2, 0.2)
+				</td>
+				<td style = "background-color: rgb-icc(48%,48%,64%,#CMYK, 40%, 40%, 20%, 20%)">
+					<span style = "color: transparent;">-------------</span>
+				</td>
+				<td style = "color: rgb-icc(48%,48%,64%,#CMYK, 40%, 40%, 20%, 20%);">
+					rgb-icc(48%,48%,64%,#CMYK, 40%, 40%, 20%, 20%)
+				</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

@@ -1,0 +1,92 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[TEMPLATE PLACEHOLDER_TEXT]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+					font-family: Arial Unicode MS;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoFormat
+				{
+					-ah-margin-after: 1em;
+					font-size: 1.5em;
+					width: 22em;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Trimming the space between full-width punctuation and full-width character
+		</div>
+		<div class="subheading">
+			In Japanese, the space between punctuation and character in full-width can be specified by <span class = "codePrint">-ah-punctuation-spacing</span>. The specified space is applied between the full-width closing parenthesis and opening parenthesis, between the full-width closing parenthesis and full-width non-punctuation, between the full-width non-punctuation and full-width opening parenthesis when <span class = "codePrint">-ah-punctuation-trim: adjacent</span> is specified. The value can be specified by the absolute or percentage. The default value of the space to trim can be specified by <span class = "codePrint">-ah-punctuation-spacing</span> in the option setting file. The default value of is <span class = "codePrint">-ah-punctuation-spacing: 50%</span>.
+		</div>
+		<div>
+			<span class = "codePrint">-ah-punctuation-trim: adjacent</span>, without the setting of <span class = "codePrint">-ah-punctuation-spacing</span>
+			<div class = "demoFormat" style = "-ah-punctuation-trim: adjacent;">
+				（あい「うえお」「「かきく」けこ」）
+			</div>
+		</div>
+		
+		
+		<div>
+			<span class = "codePrint">-ah-punctuation-trim: adjacent</span>, without the setting of <span class = "codePrint">-ah-punctuation-spacing: 1em</span>
+			<div class = "demoFormat" style = "-ah-punctuation-trim: adjacent; -ah-punctuation-spacing: 1em;">
+				（あい「うえお」「「かきく」けこ」）
+			</div>
+		</div>
+		
+		<div>
+			<span class = "codePrint">-ah-punctuation-trim: adjacent</span>, without the setting of <span class = "codePrint">-ah-punctuation-spacing: 2em</span>
+			<div class = "demoFormat" style = "-ah-punctuation-trim: adjacent; -ah-punctuation-spacing: 2em;">
+				（あい「うえお」「「かきく」けこ」）
+			</div>
+		</div>
+		
+		<div>
+			<span class = "codePrint">-ah-punctuation-trim: adjacent</span>, without the setting of <span class = "codePrint">-ah-punctuation-spacing: 0%</span>
+			<div class = "demoFormat" style = "-ah-punctuation-trim: adjacent; -ah-punctuation-spacing: 0%;">
+				（あい「うえお」「「かきく」けこ」）
+			</div>
+		</div>
+		
+		<div>
+			<span class = "codePrint">-ah-punctuation-trim: adjacent</span>, without the setting of <span class = "codePrint">-ah-punctuation-spacing: 50%</span>
+			<div class = "demoFormat" style = "-ah-punctuation-trim: adjacent; -ah-punctuation-spacing: 50%;">
+				（あい「うえお」「「かきく」けこ」）
+			</div>
+		</div>
+		
+		<div>
+			<span class = "codePrint">-ah-punctuation-trim: adjacent</span>, without the setting of <span class = "codePrint">-ah-punctuation-spacing: 200%</span>
+			<div class = "demoFormat" style = "-ah-punctuation-trim: adjacent; -ah-punctuation-spacing: 200%;">
+				（あい「うえお」「「かきく」けこ」）
+			</div>
+		</div>
+		
+		
+	</body>
+
+</html>

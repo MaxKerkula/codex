@@ -1,0 +1,122 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_background-position-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page :first
+				{
+					page-height: 150mm;
+					page-width: 210mm;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.imagePosition
+				{
+					background-image: url('src/AH-logo.svg');
+					background-repeat: no-repeat;
+					position: absolute;
+					height: 40mm;
+					width: 40mm;
+				}
+				#topLeft
+				{
+					background-position: 0% 0%;
+				}
+				#topMiddle
+				{
+					top: 0;
+					left: 45%;
+				}
+				#topRight
+				{
+					top: 0;
+					right: -20mm;
+				}
+				#middleLeft
+				{
+					top: 40%;
+					left: 0;
+				}
+				#middleCenter
+				{
+					top: 40%;
+					left: 45%;
+				}
+				#middleRight
+				{
+					top: 40%;
+					right: -20mm;
+				}
+				#bottomLeft
+				{
+					top: 80%;
+					left: 0;
+				}
+				#bottomMiddle
+				{
+					top: 80%;
+					left: 45%
+				}
+				#bottomRight
+				{
+					top: 80%;
+					right: -20mm;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Positioning Background Image
+		</div>
+		<div class="subheading" style = "page-break-after: always;">
+				The property <span class = "codePrint">background-position</span> determines the starting position of a background image, if set. It can take keyword values for horizontal (like 'left', 'center', or 'right') and vertical alignment (like 'top', 'center', or 'bottom') or numerical values (either as a percentage or a length). When specifying, you can give either one or both horizontal and vertical positions. If only one is given, the other defaults to 'center'. If any value isn't a keyword, then the first is the horizontal position and the second (if provided) is for vertical alignment. In essence, <span class = "codePrint">background-position</span> combines the roles of <span class = "codePrint">background-position-horizontal</span> and <span class = "codePrint">background-position-vertical</span>.
+		</div>
+		<div class = "imagePosition" id = "topLeft">
+			<span class = "codePrint", style = "background-color:lightgreen;">top: 0 left: 0</span> 
+		</div>
+		<div class = "imagePosition" id = "topMiddle">
+			<span class = "codePrint", style = "background-color:lightgreen;">top: 0 left: 45%</span>
+		</div>
+		<div class = "imagePosition" id = "topRight">
+			<span class = "codePrint", style = "background-color:lightgreen;">top: 0 right: -20mm</span>
+		</div>
+		<div class = "imagePosition" id = "middleLeft">
+			<span class = "codePrint", style = "background-color:lightgreen;">top: 40% left: 0</span>
+		</div>
+		<div class = "imagePosition" id = "middleCenter">
+			<span class = "codePrint", style = "background-color:lightgreen;">top: 40% left: 45%</span>
+		</div>
+		<div class = "imagePosition" id = "middleRight">
+			<span class = "codePrint", style = "background-color:lightgreen;">top: 40% left: -20mm</span>
+		</div>
+		<div class = "imagePosition" id = "bottomLeft">
+			<span class = "codePrint", style = "background-color:lightgreen;">top: 80% left: 0</span>
+		</div>
+		<div class = "imagePosition" id = "bottomMiddle">
+			<span class = "codePrint", style = "background-color:lightgreen;">top: 80% left: 45%</span>
+		</div>
+		<div class = "imagePosition" id = "bottomRight">
+			<span class = "codePrint", style = "background-color:lightgreen;">top: 80% right: -20mm</span>
+		</div>
+	</body>
+
+</html>

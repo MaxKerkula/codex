@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF embedding by specifying pages</title>
+  <meta name="author" content="Antenna House, Inc.">
+  <meta name="keywords" content="external-graphic, img, PDF">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 20mm;
+      @bottom-right {
+        content: "Antenna House, Inc.";
+        color: green;
+        font-size: 0.8em;
+      }
+    }
+
+    body {
+      font-family: serif;
+      font-size: 10pt;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #EEEEEE;
+      margin: 1em 0;
+      padding: 0.3em 1em;
+    }
+    header h1 {
+      font-family: sans-serif;
+      font-size: 2em;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .description {
+      border: 1pt solid #9999FF;
+      margin: 1em 0.5em;
+      padding: 0.5em;
+      text-align: justify;
+    }
+
+    .description a {
+      color: blue;
+      text-decoration: underline;
+    }
+
+    .description code {
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+
+    .graphic-small {
+      height: 2em;
+      vertical-align: middle;
+    }
+
+    .table-sample {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.25em;
+      table-layout: fixed;
+    }
+    .table-sample col:nth-child(1) { width: 35%; }
+    .table-sample col:nth-child(2) { width: 30%; }
+    .table-sample col:nth-child(3) { width: 35%; }
+    .table-sample th,
+    .table-sample td {
+      padding: 0.25em;
+      border-top: thin solid black;
+      border-bottom: thin solid black;
+      vertical-align: middle;
+    }
+    .table-sample th {
+      font-weight: bold;
+      text-align: center;
+    }
+ 
+    .table-sample code {
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+    .graphic {
+      height: 4em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>PDF embedding by specifying pages</h1>
+  </header>
+  <p class="description">
+    Antenna House Formatter can use the HTML <code>&lt;img&gt;</code> tag to embed a PDF like an image. By default, the first page of the PDF is embedded, but you can also embed a specified page. Use the format of <code>#page=&lt;FirstPage&gt;-&lt;LastPage&gt;</code> in the <code>src</code> attribute to embed a specific page, consecutive pages, or a page range specified. For more details, see <a href="https://www.antenna.co.jp/AHF/help/en/ahf-pdf.html#pdf-embedding" target="_blank">PDF Embedding</a> in the Manual.
+  </p>
+  <p>
+    The following table uses these pages from a four-page PDF file:
+    <img src="four-pages.pdf#page=1" class="graphic-small" alt="Page 1"/>,
+    <img src="four-pages.pdf#page=2" class="graphic-small" alt="Page 2"/>,
+    <img src="four-pages.pdf#page=3" class="graphic-small" alt="Page 3"/>, and
+    <img src="four-pages.pdf#page=4" class="graphic-small" alt="Page 4"/>.
+  </p>
+  <table class="table-sample">
+    <colgroup>
+      <col/>
+      <col/>
+      <col/>
+    </colgroup>
+    <thead>
+      <tr>
+        <th>src="..."</th>
+        <th>Effect</th>
+        <th>Result (using &lt;img&gt;)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>embedded.pdf</code></td>
+        <td>First page only</td>
+        <td><img src="four-pages.pdf" class="graphic" alt="First page only"/></td>
+      </tr>
+      <tr>
+        <td><code>embedded.pdf#page=2</code></td>
+        <td>Specific page</td>
+        <td><img src="four-pages.pdf#page=2" class="graphic" alt="Page 2"/></td>
+      </tr>
+      <tr>
+        <td><code>embedded.pdf#page=2-3</code></td>
+        <td>Page range</td>
+        <td><img src="four-pages.pdf#page=2-3" class="graphic" alt="Pages 2–3"/></td>
+      </tr>
+      <tr>
+        <td><code>embedded.pdf#page=2-</code></td>
+        <td>From page until end</td>
+        <td><img src="four-pages.pdf#page=2-" class="graphic" alt="Pages from 2 to end"/></td>
+      </tr>
+      <tr>
+        <td><code>embedded.pdf#page=1-</code></td>
+        <td>All pages</td>
+        <td><img src="four-pages.pdf#page=1-" class="graphic" alt="All pages"/></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html> 

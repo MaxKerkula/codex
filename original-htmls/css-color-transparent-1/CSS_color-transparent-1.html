@@ -1,0 +1,63 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_color-transparent-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoText
+				{
+					width: 100%;
+					background-color: lightblue;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Transparent and invisible text
+		</div>
+		<div class="subheading">
+				XSL 1.1 allows <span class = "codePrint">transparent</span> to be used with <span class = "codePrint">background-color</span> and with the ‘border-*’ properties that set a border color. Antenna House Formatter extends this to allow <span class = "codePrint">transparent</span> whereever a color is specified. When <span class = "codePrint">color: transparent;</span> is specified for text, space equivalent to the size of the formatted text is left in the output, but the characters are not output. When the characters are to be included in the output but just not visible, use <span class = "codePrint">color: rgba(0, 0, 0, 0)</span> instead.
+		</div>
+		<h2>Without the setting</h2>
+		<div class = "demoText">
+			You can't see me! You can see me!
+		</div>
+		<p class = "codePrint">color: transparent;</p>
+		<div class = "demoText">
+			<span style = "color: transparent;">You can't see me!</span> You can see me!
+		</div>
+		<p class = "codePrint">color: rgba(0, 0, 0, 0);</p>
+		<div class = "demoText">
+			<span style = "color: rgba(0, 0, 0, 0);">You can't see me!</span> You can see me!
+		</div>
+		<div>
+			<h2>Text selection</h2>
+			<img style = "border: solid thin black;"src = "transparent-invisible-text.png">
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,85 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-font-variant-east-asian-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Specifying Japanese font face variants
+		</div>
+		<div class="subheading">
+			By specifying &lt;font-variant-east-asian&gt; values for ‘<a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.font-variant">font-variant</a>’, you can control the glyphs used for East Asian scripts, provided that the current font both includes the glyphs (such as Japanese kanji variants) and supports the OpenType substitute feature. Within &lt;font-variant-east-asian&gt;, glyph forms can be controlled with &lt;east-asian-variant-values&gt;, and a font rendering can be controlled with &lt;east-asian-width-values&gt;. Supported values for &lt;east-asian-variant-values&gt; are ‘jis78’, ‘jis83’, ‘jis90’ and ‘jis04’ (the JIS-defined fonts) as well as ‘simplified’ (simplified Chinese), ‘traditional’ (traditional Chinese), ‘hojo-kanji’ (supplementary kanji) and ‘nlckanji’ (NCD: National Language Council-defined font). Supported values for &lt;east-asian-width-values&gt; are ‘full-width’, ‘half-width’, ‘third-width’, ‘quarter-width’ and ‘proportional-width’. ‘full-width’ displays a fixed-width font while ‘proportional-width’ displays a proportionally-spaced font. However, please note that each value has an effect only when the font supports that feature, such as glyph variants.
+		</div>
+		<div style="font-weight: bold;">
+			In order to display a font face specified by a &lt;font-variant-east-asian&gt; variant, the font must support the specified feature. This sample specifies <span class = "codePrint">font-family: Hiragino Mincho Pro;</span>, because that font supports the features being used. If there is no applicable font in the environment, the FO file will not render correctly. If so, please instead see the result PDF provided alongside the FO file.
+		</div>
+		<div>
+			<div style="-ah-margin-before: 1em;">
+				When ‘font-variant’ is not specified, the normal glyphs are displayed:
+			</div>
+			<div lang = ja style="font-family: 'Arial Unicode MS'; color: navy; font-size: 3em; border: 1pt solid gray; text-align: center; padding: 1mm;">
+				鯵 壷 桧 藪 籠 学 国 麹 醤 掻 填 泡
+			</div>
+		</div>
+		<div>
+			<div style="-ah-margin-before: 1em;">
+				With <span class = "codePrint">font-variant="jis78"</span>, the JIS78 forms of the characters, if available, are displayed:
+			</div>
+			<div lang = ja style="font-family: 'Arial Unicode MS'; color: navy; font-size: 3em; border: 1pt solid gray; text-align: center; padding: 1mm;">
+				鯵 壷 桧 藪 籠 学 国 麹 醤 掻 填 泡
+			</div>
+		</div>
+		<div>
+			<div style="-ah-margin-before: 2.5em;">
+				By specifying &lt;east-asian-width-values&gt;, Japanese kana letters etc. can be drawn with either a fixed-width font or a proportionally-spaced font.
+			</div>
+			<div style="-ah-margin-before: 0.3em;">
+				Without specifying ‘font-variant’:
+				<div lang = ja style="font-family: 'Arial Unicode MS'; color: navy; font-size: 3em; border: 1pt solid gray; padding: 1mm;">
+					"プロポーショナル"に描画
+				</div>
+			</div>
+			<div style="-ah-margin-before: 0.3em;">
+				With <span class = "codePrint">font-variant: full-width</span>:
+				<div lang = ja style="font-family: 'Arial Unicode MS'; color: navy; font-size: 3em; border: 1pt solid gray; padding: 1mm;">
+					"プロポーショナル"に描画
+				</div>
+			</div>
+			<div style="-ah-margin-before: 0.3em;">
+				With <span class = "codePrint">font-variant: proportional-width</span>:
+				<div lang = ja style="font-family: 'Arial Unicode MS'; color: navy; font-size: 3em; border: 1pt solid gray; padding: 1mm;">
+					"プロポーショナル"に描画
+				</div>
+			</div>
+		</div>
+		
+	</body>
+
+</html>

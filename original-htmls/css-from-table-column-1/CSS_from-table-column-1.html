@@ -1,0 +1,180 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_from-table-column-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				table
+				{
+					table-layout: fixed;
+					-ah-display-align: center;
+					-ah-margin-before: 1em;
+				 	-ah-margin-after: 1em;
+					border-collapse: collapse;
+					margin: auto;
+				}
+				thead
+				{
+					text-align: center;
+					font-weight: bold;
+					background-color: #DDDDFF;
+				}
+				td
+				{
+					border-style: solid;
+					border-width: 0.5mm;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Inheriting properties from table row and column
+		</div>
+		<div class="subheading">
+			Inheriting property values from an &lt;tr&gt; to an &lt;td&gt; is simple, and inheriting property values from an &lt;col&gt; to an &lt;td&gt; is only slightly more complicated. &lt;tr&gt; contains one or more &lt;td&gt;, so the normal CSS rules for property inheritance apply.  &lt;col&gt; is an empty element and, obviously, is not an ancestor of &lt;td&gt;. However, any inherited property can be specified on an &lt;col&gt; and used by the &lt;td&gt; (or any of its descendants) in that column by specifying ‘from-table-column()’ as the property’s value on the FO. Specifying ‘from-table-column()’ returns the inherited value of the current property. Also specifying a property name (for example, color="from-table-column(background-color)") returns the inherited value of the named property.
+		</div>
+		<div style = "text-indent: 1em; text-align: justify; margin-bottom: 2em;">
+			In the following table, Row 1 inherits the value of the &lt;tr&gt; property to &lt;td&gt;. From Row 2 onwards, &lt;td&gt; uses ‘from-table-column()’ to inherit properties such as character thickness, size, and color of &lt;col&gt; in each column.
+		</div>
+		<table>
+			<colgroup>
+				<col span = 1 style="background-color: #CCCCFF;">
+				<col span = 1 style="background-color: #EECCFF; font-weight: bold;">
+				<col span = 1 style="background-color: #CCEEFF; font-size: 1.5em;">
+				<col span = 1 style="background-color: #EEEEFF; color: gray;">
+			</colgroup>
+			<thead>
+				<td>
+					Row 1, column 1
+				</td>
+				<td>
+					Row 1, column 2
+				</td>
+				<td>
+					Row 1, column 3
+				</td>
+				<td>
+					Row 1, column 4
+				</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="padding: 2mm;">
+						<div>
+							Row 2, column 1
+						</div>
+					</td>
+					<td style="padding: 2mm; font-weight: from-table-column();">
+						<div>
+							Row 2, column 2
+						</div>
+					</td>
+					<td style="padding: 2mm; font-size: from-table-column();">
+						<div>
+							Row 2, column 3
+						</div>
+					</td>
+					<td style="padding: 2mm; color: from-table-column();">
+						<div>
+							Row 2, column 4
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 2mm;">
+						<div>
+							Row 3, column 1
+						</div>
+					</td>
+					<td style="padding: 2mm; font-weight: from-table-column();">
+						<div>
+							Row 3, column 2
+						</div>
+					</td>
+					<td style="padding: 2mm; font-size: from-table-column();">
+						<div>
+							Row 3, column 3
+						</div>
+					</td>
+					<td style="padding: 2mm; color: from-table-column();">
+						<div>
+							Row 3, column 4
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="font-size: from-table-column(); padding: 2mm; background-color: from-table-column(color); color: from-table-column(background-color);">
+						<div>
+							Row 4, column 1
+						</div>
+					</td>
+					<td style="font-size: from-table-column(); padding: 2mm; background-color: from-table-column(color); color: from-table-column(background-color);">
+						<div>
+							Row 4, column 2
+						</div>
+					</td>
+					<td style="font-size: from-table-column(); padding: 2mm; background-color: from-table-column(color); color: from-table-column(background-color);">
+						<div>
+							Row 4, column 3
+						</div>
+					</td>
+					<td style="font-size: from-table-column(); padding: 2mm; background-color: from-table-column(color); color: from-table-column(background-color);">
+						<div>
+							Row 4, column 4
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td style="padding: 2mm;">
+						<div>
+							Row 5, column 1
+						</div>
+					</td>
+					<td style="padding: 2mm; font-weight: from-table-column();">
+						<div>
+							Row 5, column 2
+						</div>
+					</td>
+					<td style="padding: 2mm; font-size: from-table-column();">
+						<div>
+							Row 5, column 3
+						</div>
+					</td>
+					<td style="padding: 2mm; color: from-table-column();">
+						<div>
+							Row 5, column 4
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div style="text-indent: 1em; text-align: justify; margin-top: 2em;">
+			The inherited value of a property that applies to &lt;col&gt; can still be returned by ‘from-table-column()’ to set the value of the same property, or of a different property, on an &lt;td&gt; or its descendants. Unlike other Rows, Row 4 has swapped background and text colors. This is because the value of ‘background-color’ in &lt;col&gt; is inherited to the ‘color’ of &lt;td&gt; by specifying color="from-table-column(background-color)", and the value of ‘color’ in &lt;col&gt; is inherited to ‘background-color’ in &lt;td&gt; by specifying background-color="from-table-column(color)".
+		</div>
+	</body>
+
+</html>

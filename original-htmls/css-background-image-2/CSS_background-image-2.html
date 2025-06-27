@@ -1,0 +1,103 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_background-image-2]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBorderBox
+				{
+					margin-left: 0;
+					margin: 7pt;
+					padding: 5pt;
+					height: 50pt;
+					width: 100pt;
+					border: 5pt dashed rgb(0,61,25);
+					-ah-background-image: url('background-size-background-lightblue.svg'), url('background-size-background.svg');
+				}
+				#dBB_0
+				{
+					background-repeat: no-repeat, repeat;
+				}
+				#dBB_1
+				{
+					background-repeat: no-repeat;
+					background-position: 0 0, 100%, 67% 33%;
+					-ah-background-origin: padding-box, content-box;
+				}
+				.innerDemoBox
+				{
+					border: thin dotted rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.5,  90%, 0%, 75%, 83%);
+					position: absolute;
+					height: 50pt;
+					width: 100pt;
+				}
+				h2, p
+				{
+					
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Multiple background images
+		</div>
+		<div class="subheading">
+			Multiple background images separated by commas may be specified as the value of the <span class = "codePrint">background-image</span> property. The images are drawn with the first specified image on top and each subsequent image behind the previous image. All of the other background image-related properties may also be specified as multiple comma-separated values. For those properties, each value in sequence applies to the corresponding ‘background-image’ image. Excess values are ignored. If a property contains fewer comma-separated values than there are background images, then the last specified value is used for the remaining images.  If a background-related property is not specified, then the initial value for that property is used for all background images of the formatting object. Multiple background images are available with AH Formatter V6.6 and later.	
+		</div>
+		<p>
+			In the following examples, the dotted border indicates the extent of the content box of the outer block, and the text indicates the <span class = "codePrint">-ah-background-clip</span> value. All background images are the same size.
+		</p>
+		<p style = "text-indent: 1em;">
+			The examples use these images for repeated and non-repeated backgrounds, respectively: <img src = "background-size-background.svg"> and <img src = "background-size-background-lightblue.svg">
+		</p>
+		<h2>No other properties</h2>
+		<p>
+			Both images are repeated horizontally and vertically, but the first image obscures the second.
+		</p>
+		<div class = "demoBorderBox">
+			<div class = "innerDemoBox">
+			</div>
+		</div>
+		<h2>background-repeat: no-repeat, repeat;</h2>
+		<p>
+			Both images are repeated horizontally and vertically, but the first image obscures the second.
+		</p>
+		<div class = "demoBorderBox" id = "dBB_0">
+			<div class = "innerDemoBox">
+			</div>
+		</div>
+		<h2>background-repeat: no-repeat, repeat;</h2>
+		<p>
+			Both images are repeated horizontally and vertically, but the first image obscures the second.
+		</p>
+		<div class = "demoBorderBox" id = "dBB_1">
+			<div class = "innerDemoBox">
+			</div>
+		</div>
+	</body>
+
+</html>

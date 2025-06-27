@@ -1,0 +1,88 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_list-block-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				ol 
+				{
+					counter-reset: customNumber;
+					list-style-type: none;
+					padding-left: 0;
+					font-size: 1.3em;
+					-ah-line-height: 8mm;
+					-ah-margin-before: 0.5em;
+					-ah-margin-after: 0.5em;
+				}
+				ol li::before 
+				{
+					counter-increment: customNumber;
+					content: "No." counter(customNumber);
+					margin-right: 50px;
+				}
+				.labelArea
+				{
+					background-color: #FFFFAF;
+					-ah-float: left;
+					height: 2em;
+					margin-right: 2em;
+					padding-top: 3em; 
+				}
+				.labelBody
+				{
+					background-color: lightgray;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			List Example
+		</div>
+		<div class="subheading">
+				This example demonstrates the effectiveness of CSS in list styling. By leveraging specific properties, you can precisely control the widths of list labels and their corresponding content in HTML.
+		</div>
+		<div class = "labelArea">
+			Label area
+		</div>
+		<div class = "labelBody">
+			Body area. Utilizing CSS, the width of the list item labels and the initial positioning of the list item content can be dynamically computed. This is achieved through properties such as <span class = "codePrint">margin, padding, and position</span>, combined with pseudo-elements and selectors to target specific HTML list elements.
+		</div>
+		
+		<p>
+			In the following example, <span class = "codePrint">margin-right: 50px;</span> and <span class = "codePrint">-ah-line-height: 8mm;</span> are specified in the CSS &lt;style&gt; tag.
+		</p>
+		<p style = "font-size:1.3em;">Ranking</p>
+		<ol>
+			<li>AAAAA: aaaaa</li>
+			<li>BBBBB: bbbbb</li>
+			<li>CCCCC: ccccc</li>
+			<li>DDDDD: ddddd</li>
+			<li>EEEEE: eeeee</li>
+		</ol>
+	</body>
+
+</html>

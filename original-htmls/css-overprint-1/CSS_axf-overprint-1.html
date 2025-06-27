@@ -1,0 +1,87 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-overprint-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoGraphic_0
+				{
+					height: 30mm;
+					width: 70mm;
+					background-color: rgb-icc(#CMYK, 0, 0, 1.0, 0);
+					-ah-overprint: 'k100';
+				}
+				.demoGraphic_1
+				{
+					height: 25mm;
+					width: 50mm;
+					background-color: rgb-icc(#CMYK, 0, 0, 1.0, 0);
+					-ah-overprint: 'k100';
+					position: absolute;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Overprint
+		</div>
+		<div class="subheading">
+			Overprint can be specified with <span class = "codePrint">-ah-overprint</span>. Overprint is to print one color on top of another when different colors of the objects such as characters and diagram are overlapped and placed. Values which can be set with -ah-overprint include: ‘&lt;color&gt;’ that specifies the color applied to overprint; ‘k100’ that is applied to ‘rgb-icc(#CMYK,0,0,0,1)’; ‘separation’ that is applied to the separation color shown with ‘rgb-icc(#Separation)’; ‘all’ that is applied to all colors; ‘stroke’ that is applied to line drawing; and ‘paint’ that is applied to paint drawing. For details about the features and restrictions, see also <span class = "codePrint">-ah-overprint</span> in the Online Manual.
+		</div>
+		<div>
+			<h2>
+				Samples with <span class = "codePrint">-ah-overprint</span> specified
+			</h2>
+			In the left sample, rgb-icc(#CMYK, 0, 0, 0, 1.0) and <span class = "codePrint">-ah-overprint: k100</span> are specified to the color of the characters. On the other hand,  in the right sample, axf:overprint="rgb-icc(#CMYK, 1.0, 0, 0, 0)" is specified to the top overlapping object (the color is ‘rgb-icc(#CMYK, 1.0, 0, 0, 0)’).
+		</div>
+		<div style="column-count: 2; font-size: 1.5em;  text-indent: 1em;">
+			<div class = "demoGraphic_0">
+				<div style="font-size: 1.5em; font-weight: bold; color: black; text-align: center;">
+					overprint sample
+				</div>
+			</div>
+			<div>
+				<div class = "demoGraphic_1" style="left: 80mm;">
+				</div>
+				<div class = "demoGraphic_1" style="width: 60mm; height: 25mm; background-color: rgb-icc(#CMYK, 1.0, 0, 0, 0); border: solid thin gray; left: 110mm; top: 115mm;">
+				</div>
+			</div>
+		</div>
+		<h2>
+			Different result due to overprint setting
+		</h2>
+		<div>
+			The following image indicates that  the color of the characters in the left sample above and the color of the top overlapping object in the right samples are specified to be hidden in the preview of the color separation in Adobe Acrobat. In the overprint setting, the  one color is printed on top of another; therefore, even when the color of the characters and the color of the top object are set to be hidden, the color of the bottom object will be kept.
+		</div>
+		<img src="overprint-1.png">
+	</body>
+
+</html>

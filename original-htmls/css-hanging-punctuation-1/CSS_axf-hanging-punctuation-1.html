@@ -1,0 +1,104 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-hanging-punctuation-1]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoHeader
+				{
+					text-align: justify;
+					font-size: 1.2em;
+					margin-top: 1em;
+				}
+				.demoBox
+				{
+					-ah-margin-after: 0.5em;
+					font-size: 1.5em;
+					width: 5.5em;
+					background-color: orange;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+				Hanging punctuation at the start / end of line
+		</div>
+		<div class="subheading">
+				Specifies whether punctuation at the start and/or end of a line may hang outside the line. If -ah-hanging-punctuation: none; is specified, hanging punctuation is not applied. If ‘start’ is specified, hanging punctuation is applied at the start of a line. If text-align: right; or text-align: justify; is specified together with the ‘force-end’ value, then full-width punctuation that comes at the end of a line is forced to hang. The other settings are explained in this sample. See also -ah-hanging-punctuation" in the Online Manual to learn more about the corresponding punctuation.
+		</div>
+		<div class = "codePrint">
+			'none'
+		</div>
+		<div class = "demoBox" style = "-ah-hanging-punctuation: none;">
+			「あいうえお、
+		</div>
+		
+		
+		<div class = "codePrint">
+			‘start’
+		</div>
+		<div class = "demoBox" style = "-ah-hanging-punctuation: none;">
+			「あいうえお、
+		</div>
+		
+		
+		<div class = "codePrint">
+			‘force-end’
+		</div>
+		<div class = "demoBox" style = "-ah-hanging-punctuation: none;">
+			「あいうえお、
+		</div>
+		
+		
+		<div class = "demoHeader">
+			<span class = "codePrint">‘first’</span><br> The same behavior as ‘start’ is applied only at the first line of a paragraph.
+		</div>
+		<div class = "demoBox" style = "-ah-hanging-punctuation: none;">
+			「あいうえお」「かきく
+		</div>
+		
+		
+		<div class = "demoHeader">
+			<span class = "codePrint">‘allow-end’</span><br> When the target character to be hung comes at the end of a line, it isn’t hung when it fits into the line, but it is hung when it does not fit into the line.
+		</div>
+		<div class = "demoBox" style = "-ah-hanging-punctuation: none;">
+			あいうえお、「かきくけこ、
+		</div>
+		
+		
+		<div class = "demoHeader">
+			<span class = "codePrint">‘last’</span><br> The same behavior as ‘force-end’ is applied only at the last line of a paragraph.
+		</div>
+		<div class = "demoBox" style = "-ah-hanging-punctuation: none;">
+			あいうえおかきくけこ、さしすせそたちつ、
+		</div>
+		
+		
+		
+	</body>
+
+</html>

@@ -1,0 +1,86 @@
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
+	
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_overflow]
+	-->
+
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoBox
+				{
+					-ah-margin-before: 10mm;
+					padding: 5pt;
+					text-align-last: center;
+					border: 2pt solid black;
+				}
+				.innerDemoBox
+				{
+					color: blue;
+					font-size: 30pt;
+					padding: 5pt;
+					display-align: center;
+					margin-left: auto;
+					margin-right: auto;
+					width: 4in;
+					height: 1in;
+					border: 2pt solid salmon;
+					text-align: center;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
+		</div>
+		<div class="main-content">
+		</div>
+		<div class="title">
+			Overflow
+		</div>
+		<div class="subheading">
+			The overflow property is used determine the behavior of Formatter when the contents of an area format to a size greater than the area's defined boundaries.  Antenna House has extended the value of this property to the following values <span class = "codePrint">overflow: replace;</span> allows for replacement of overflowing contents, similar to how spreadsheets replace number too large to display in cells with "*****".  The string to replace the overflow with is defined as the value of the extension element <span class = "codePrint">-ah-overflow-replace. overflow: condense;</span> allows the text to be condensed according to the value of the <span class = "codePrint">-ah-overflow-condense</span> extension property. These extended values  only apply to block-container and inline-container elements.
+		</div>
+		<div class = "demoBox">
+			overflow: replace (default)
+			<div class = "innerDemoBox">
+				<div style = "-ah-keep-together: always;">
+					rubber baby buggy bumpers
+				</div>
+			</div>
+		</div>
+		<div class = "demoBox">
+			overflow: replace -ah-overflow-replace: '#';
+			<div class = "innerDemoBox" style="overflow: replace; -ah-overflow-replace: '#';">
+				<div style = "-ah-keep-together: always;">
+					rubber baby buggy bumpers
+				</div>
+			</div>
+		</div>
+		<div class = "demoBox">
+			overflow: condense; -ah-overflow-condense: font-size;
+			<div class = "innerDemoBox" style="overflow: condense; -ah-overflow-condense: font-size;">
+				<div style = "-ah-keep-together: always;">
+					rubber baby buggy bumpers
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>

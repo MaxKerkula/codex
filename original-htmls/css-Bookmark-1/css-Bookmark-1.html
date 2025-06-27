@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PDF Bookmarks – Antenna House, Inc.</title>
+<style>
+@page {
+    size: 210mm 297mm;
+    margin: 10mm 20mm 10mm 20mm;
+    @bottom-right {
+                content: 'Antenna House, Inc.';
+                font-size: 8pt;
+                color: green;
+                text-align: right;
+                -ah-link: url('https://www.antennahouse.com/');
+                -ah-link-alt-text: 'Antenna House, Inc.';
+                -ah-link-show-annotation: true;
+            }
+    }
+
+/* Basic styles */
+body {
+    font-family: serif;
+    font-size: 10pt;
+    line-height: 1.4;
+}
+
+/* Head title block */
+.head-title {
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 0.3em;
+    margin: 1em 0;
+    background-color: #EEEEEE;
+}
+
+/* Description block */
+.description {
+    border: 1pt solid #9999FF;
+    padding: 0.5em;
+    margin: 1em 0.5em;
+    text-align: justify;
+}
+
+/* Section styles */
+.section-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.subsection {
+    margin-left: 2em;
+    line-height: 1.4;
+}
+
+.subsection-title {
+    font-weight: bold;
+    margin-top: 4mm;
+}
+
+.code {
+    font-family: sans-serif;
+    font-size: 0.9em;
+}
+
+/* Bookmark structure */
+#pdf-bookmarks {
+    -ah-outline-level: 1;
+    -ah-outline-title: "PDF Bookmarks";
+    -ah-outline-font-weight: bold;
+}
+
+#styling {
+    -ah-outline-level: 2;
+    -ah-outline-title: "Styling bookmarks";
+    -ah-outline-color: green;
+    -ah-outline-font-style: italic;
+    -ah-outline-font-weight: bold;
+}
+
+#color {
+    -ah-outline-level: 3;
+    -ah-outline-title: "Color";
+    -ah-outline-color: green;
+}
+
+#font-style {
+    -ah-outline-level: 3;
+    -ah-outline-title: "Font style";
+    -ah-outline-font-style: italic;
+}
+
+#font-weight {
+    -ah-outline-level: 3;
+    -ah-outline-title: "Font weight";
+    -ah-outline-font-weight: bold;
+}
+
+#starting-state {
+    -ah-outline-level: 2;
+    -ah-outline-title: "Starting state";
+    -ah-outline-font-weight: bold;
+    break-before: page;
+}
+
+#show {
+    -ah-outline-level: 3;
+    -ah-outline-title: "Show";
+}
+
+#hide {
+    -ah-outline-level: 3;
+    -ah-outline-title: "Hide";
+}
+
+}
+</style>
+</head>
+<body>
+    <h1 class="head-title" id="pdf-bookmarks">PDF Bookmarks</h1>
+    
+    <div class="description">
+    PDF has a 'bookmark' feature for creating a hierarchical table of contents. By clicking a bookmark when viewing the PDF, you can jump to its target location. In CSS for paged media, bookmarks are created by adding -ah-outline-* properties to block-level elements. The level is specified by -ah-outline-level (1 being highest), titles are set with -ah-outline-title, and bookmarks can be organized using -ah-outline-group. These properties can be applied to any block-level HTML element like div, h1, p, etc.
+    </div>
+
+    <h2 class="section-title" id="styling">Styling bookmarks</h2>
+    <p>The style of a bookmark is independent of the style of the HTML it refers to.</p>
+    
+    <div class="subsection">
+        <div class="subsection-title" id="color">Color</div>
+        <p>The -ah-outline-color property specifies the color of the bookmark title.</p>
+        
+        <div class="subsection-title" id="font-style">Font style</div>
+        <p>The -ah-outline-font-style property specifies the font style of the bookmark title. The allowed values are 'normal' and 'italic'.</p>
+        
+        <div class="subsection-title" id="font-weight">Font weight</div>
+        <p>The -ah-outline-font-weight property specifies the font weight of the bookmark title. The allowed values are 'normal' and 'bold'.</p>
+    </div>
+
+    <h2 class="section-title" id="starting-state">Starting state</h2>
+    <p>The -ah-outline-expand property specifies whether the bookmark subtree initially appears expanded or collapsed.</p>
+    
+    <div class="subsection">
+        <div class="subsection-title" id="show">
+            <span class="code">-ah-outline-expand: true"</span>
+        </div>
+        <p><span class="code">-ah-outline-expand: true"</span> specifies that the bookmark subtree is initially shown expanded. This is the default.</p>
+        
+        <div class="subsection-title" id="hide">
+            <span class="code">-ah-outline-expand: false</span>
+        </div>
+        <p><span class="code">-ah-outline-expand: false</span> specifies that the bookmark subtree is initially shown collapsed.</p>
+    </div>
+
+</body>
+</html>
