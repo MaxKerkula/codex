@@ -1,93 +1,116 @@
-<!DOCTYPE html>
-<!-- $Id$ -->
-<html data-cat="structure" data-order="22" data-ver="6.3" lang="en">
-<head>
-  <title>Title</title>
-  <meta charset="UTF-8"/>
-  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
-  <meta name="specification" content="CSS"/>
-  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
-  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
-  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
-  <style>
-	@page
-		{
-			page-height: 297mm;
-			page-width: 210mm;
-			margin-top: 10mm;
-			margin-bottom: 10mm;
-			margin-left: 20mm;
-			margin-right: 20mm;
-			@bottom-right
-			{
-				position: fixed;
-				bottom: 0;
-				right: 0;
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: 10mm 10mm; /* or 'cover' or explicit dimensions like '50mm 20mm' */
-				height: 30mm; /* Set a height to give space for the background image */
-				width: 50mm; /* Similarly, set a width */
-			}
-			@bottom-center 
-			{
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
 	
-			}
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-background-origin-1]
+	-->
 
-		}
-			.title
-			{
-				position: relative;
-				text-align: center;
-				top: -10mm;
-				column-span: all;
-				font-family: Helvetica, sans-serif;
-				font-size: 2em; 
-				color: #cdf0cd;
-				font-weight: bold; 
-				padding: 0.5em 0.5em;
-				margin: 1em 1em;
-				hyphens: false; 
-				background-color: rgba(186,228,185,0);
-				z-index: 3;
-				border: inset rgb(13,100,61); /*Alt: rgba(13,100,61,255)*/
-			}
-			.subheading
-			{
-				position: relative;
-				background-color: rgba(186,228,185,0.65);
-				column-span: all;
-				font-family: Helvetica, sans-serif;
-				font-size: 1.15em;
-				color: #444444;
-				top: -10mm;
-				padding: 1em;
-				margin: 1em 1em;
-				text-indent: 0.5em;
-				text-align: justify;
-				top: -1.7em;
-				border: 3pt solid rgba(186,228,185,1);
-				z-index: 3;
-			}
-			
-			#topImage 
-			{
-				background-size: cover;
-				background-repeat: no-repeat;
-				width: calc(100% + 40mm);  
-				height: 170px;             
-				position: absolute;
-				top: -20mm;               
-				left: -20mm;              
-				z-index: 1;
-			}
-
-  </style>
-</head>
-<body>
-  <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div>
-  <div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-<div id = "topImage">
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.innerDemoBox
+				{
+					border: thin dotted rgb-icc(0, 61, 25, #Separation, 'PANTONE 627 PC', 0.5,  90%, 0%, 75%, 83%);
+					position: absolute;
+					vertical-align: top;
+					text-align: center;
+					height: 50pt;
+					width: 100pt;
+				}
+				.demoBorderBox
+				{
+					margin-left: 0;
+					margin: 7pt;
+					padding: 5pt;
+					height: 50pt;
+					width: 100pt;
+					border: 5pt dashed rgb(0,61,25);
+					-ah-background-origin: border-box;
+					-ah-background-image: url('background-size-background-lightblue.svg'), url('background-size-background.svg');
+					background-repeat: no-repeat;
+				}
+				#dBB_0
+				{
+					-ah-background-origin: padding-box;
+				}
+				#dBB_1
+				{
+					-ah-background-origin: content-box;
+				}
+				#dBB_2
+				{
+					background-repeat: no-repeat, repeat;
+				}
+				#dBB_3
+				{
+					-ah-background-origin: padding-box;
+					background-repeat: no-repeat, repeat;
+				}
+				#dBB_4
+				{
+					-ah-background-origin: content-box;
+					background-repeat: no-repeat, repeat;
+				}
+				#dBB_5
+				{
+					background-position: 100% 100%;
+				}
+				#dBB_6
+				{
+					background-position: 100% 100%;
+					-ah-background-origin: padding-box;
+				}
+				#dBB_7
+				{
+					background-position: 100% 100%;
+					-ah-background-origin: content-box;
+				}
+				#dBB_8
+				{
+					background-repeat: no-repeat, repeat;
+					background-position: 100% 100%;
+				}
+				#dBB_9
+				{
+					background-position: 100% 100%;
+					-ah-background-origin: padding-box;
+					background-repeat: no-repeat, repeat;
+				}
+				#dBB_10
+				{
+					background-position: 100% 100%;
+					-ah-background-origin: content-box;
+					background-repeat: no-repeat, repeat;
+				}
+				
+				table
+				{
+					border-spacing: 20px;
+				}
+				h2, p
+				{
+					margin-bottom: -15px;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
 		</div>
 		<div class="main-content">
 		</div>
@@ -194,5 +217,6 @@
 			</tr>
 			
 		</table>
-</body>
+	</body>
+
 </html>

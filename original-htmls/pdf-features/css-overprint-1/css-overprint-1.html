@@ -1,93 +1,52 @@
-<!DOCTYPE html>
-<!-- $Id$ -->
-<html data-cat="pdf-features" data-order="1" data-ver="6.3" lang="en">
-<head>
-  <title>Title</title>
-  <meta charset="UTF-8"/>
-  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
-  <meta name="specification" content="CSS"/>
-  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
-  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
-  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
-  <style>
-	@page
-		{
-			page-height: 297mm;
-			page-width: 210mm;
-			margin-top: 10mm;
-			margin-bottom: 10mm;
-			margin-left: 20mm;
-			margin-right: 20mm;
-			@bottom-right
-			{
-				position: fixed;
-				bottom: 0;
-				right: 0;
-				background-repeat: no-repeat;
-				background-position: center;
-				background-size: 10mm 10mm; /* or 'cover' or explicit dimensions like '50mm 20mm' */
-				height: 30mm; /* Set a height to give space for the background image */
-				width: 50mm; /* Similarly, set a width */
-			}
-			@bottom-center 
-			{
+<html>
+
+	<!-- 
+	ANTENNA HOUSE INC.
+	www.antennahouse.com
+	CSS Samples
+	2023
+	prepared by: Liam Congleton
+	liam@antennahouse.com
 	
-			}
+	Antenna House Formatter CSS Extensions Property: 
+		-[CSS_axf-overprint-1]
+	-->
 
-		}
-			.title
-			{
-				position: relative;
-				text-align: center;
-				top: -10mm;
-				column-span: all;
-				font-family: Helvetica, sans-serif;
-				font-size: 2em; 
-				color: #cdf0cd;
-				font-weight: bold; 
-				padding: 0.5em 0.5em;
-				margin: 1em 1em;
-				hyphens: false; 
-				background-color: rgba(186,228,185,0);
-				z-index: 3;
-				border: inset rgb(13,100,61); /*Alt: rgba(13,100,61,255)*/
-			}
-			.subheading
-			{
-				position: relative;
-				background-color: rgba(186,228,185,0.65);
-				column-span: all;
-				font-family: Helvetica, sans-serif;
-				font-size: 1.15em;
-				color: #444444;
-				top: -10mm;
-				padding: 1em;
-				margin: 1em 1em;
-				text-indent: 0.5em;
-				text-align: justify;
-				top: -1.7em;
-				border: 3pt solid rgba(186,228,185,1);
-				z-index: 3;
-			}
-			
-			#topImage 
-			{
-				background-size: cover;
-				background-repeat: no-repeat;
-				width: calc(100% + 40mm);  
-				height: 170px;             
-				position: absolute;
-				top: -20mm;               
-				left: -20mm;              
-				z-index: 1;
-			}
-
-  </style>
-</head>
-<body>
-  <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div>
-  <div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-<div id = "topImage">
+	<head>
+			<link rel="stylesheet" href="src/AH_Style.css">
+			<style>
+				@page
+				{
+				
+				}
+				h2
+				{
+					font-family: sans-serif;
+				}
+				.codePrint
+				{
+					font-weight: bold;
+					font-family: 'Courier New', 'DejaVu Sans', monospace;
+				}
+				.demoGraphic_0
+				{
+					height: 30mm;
+					width: 70mm;
+					background-color: rgb-icc(#CMYK, 0, 0, 1.0, 0);
+					-ah-overprint: 'k100';
+				}
+				.demoGraphic_1
+				{
+					height: 25mm;
+					width: 50mm;
+					background-color: rgb-icc(#CMYK, 0, 0, 1.0, 0);
+					-ah-overprint: 'k100';
+					position: absolute;
+				}
+			</style>
+	</head>
+	<body>
+		<div id = "topImage">
 		</div>
 		<div class="main-content">
 		</div>
@@ -123,5 +82,6 @@
 			The following image indicates that  the color of the characters in the left sample above and the color of the top overlapping object in the right samples are specified to be hidden in the preview of the color separation in Adobe Acrobat. In the overprint setting, the  one color is printed on top of another; therefore, even when the color of the characters and the color of the top object are set to be hidden, the color of the bottom object will be kept.
 		</div>
 		<img src="overprint-1.png">
-</body>
+	</body>
+
 </html>
