@@ -1,69 +1,93 @@
-<html>
-
-	<!-- 
-	ANTENNA HOUSE INC.
-	www.antennahouse.com
-	CSS Samples
-	2023
-	prepared by: Liam Congleton
-	liam@antennahouse.com
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html data-cat="structure" data-order="3" data-ver="6.3" lang="en">
+<head>
+  <title>Title</title>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
+  <meta name="specification" content="CSS"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+  <style>
+	@page
+		{
+			page-height: 297mm;
+			page-width: 210mm;
+			margin-top: 10mm;
+			margin-bottom: 10mm;
+			margin-left: 20mm;
+			margin-right: 20mm;
+			@bottom-right
+			{
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 10mm 10mm; /* or 'cover' or explicit dimensions like '50mm 20mm' */
+				height: 30mm; /* Set a height to give space for the background image */
+				width: 50mm; /* Similarly, set a width */
+			}
+			@bottom-center 
+			{
 	
-	Antenna House Formatter CSS Extensions Property: 
-		-[CSS_region-start-end-direction-1]
-	-->
+			}
 
-	<head>
-			<link rel="stylesheet" href="src/AH_Style.css">
-			<style>
-				@page
-				{
-					position: relative;
-					page-height: 150mm;
-					page-width: 210mm;
-					@bottom-center
-					{
-						content: counter(page) " of " counter(pages);
-					}
-				}
-				.left-bar, .right-bar 
-				{
-					background-color: lightblue;
-					position: fixed;
-					top: 0;
-					bottom: 0;
-					width: 50px;
-				}
+		}
+			.title
+			{
+				position: relative;
+				text-align: center;
+				top: -10mm;
+				column-span: all;
+				font-family: Helvetica, sans-serif;
+				font-size: 2em; 
+				color: #cdf0cd;
+				font-weight: bold; 
+				padding: 0.5em 0.5em;
+				margin: 1em 1em;
+				hyphens: false; 
+				background-color: rgba(186,228,185,0);
+				z-index: 3;
+				border: inset rgb(13,100,61); /*Alt: rgba(13,100,61,255)*/
+			}
+			.subheading
+			{
+				position: relative;
+				background-color: rgba(186,228,185,0.65);
+				column-span: all;
+				font-family: Helvetica, sans-serif;
+				font-size: 1.15em;
+				color: #444444;
+				top: -10mm;
+				padding: 1em;
+				margin: 1em 1em;
+				text-indent: 0.5em;
+				text-align: justify;
+				top: -1.7em;
+				border: 3pt solid rgba(186,228,185,1);
+				z-index: 3;
+			}
+			
+			#topImage 
+			{
+				background-size: cover;
+				background-repeat: no-repeat;
+				width: calc(100% + 40mm);  
+				height: 170px;             
+				position: absolute;
+				top: -20mm;               
+				left: -20mm;              
+				z-index: 1;
+			}
 
-				.left-bar 
-				{
-					left: -20mm;
-
-				}
-
-				.right-bar 
-				{
-					right: -20mm;
-				}
-				.left-bar span, .right-bar span
-				{
-					position: absolute;
-					top: 50%;
-					transform: translateY(-50%);
-				}
-				.codePrint
-				{
-					font-weight: bold;
-					font-family: 'Courier New', 'DejaVu Sans', monospace;
-				}
-				.content 
-				{
-					margin: 60px;  /* Adjust this margin to give enough space for the blue bars */
-					padding: 20px;
-				}
-			</style>
-	</head>
-	<body>
-		<div id = "topImage">
+  </style>
+</head>
+<body>
+  <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
+<div id = "topImage">
 		</div>
 		<div class="main-content">
 		</div>
@@ -82,6 +106,5 @@
 		
 		<div class="left-bar"><span style = "writing-mode: vertical-rl; transform: rotate(-180deg); text-align: center;">This is the position of region-start.</span></div>
 		<div class="right-bar"><span style = "writing-mode: vertical-rl; transform: rotate(-180deg); text-align: center;">This is the position of region-end.</span></div>
-	</body>
-
+</body>
 </html>
