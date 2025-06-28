@@ -1,306 +1,93 @@
-<html>
-
-	<!-- 
-	ANTENNA HOUSE INC.
-	www.antennahouse.com
-	CSS Samples
-	2023
-	prepared by: Liam Congleton
-	liam@antennahouse.com
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html data-cat="block" data-order="23" data-ver="6.3" lang="en">
+<head>
+  <title>Title</title>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
+  <meta name="specification" content="CSS"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+  <style>
+	@page
+		{
+			page-height: 297mm;
+			page-width: 210mm;
+			margin-top: 10mm;
+			margin-bottom: 10mm;
+			margin-left: 20mm;
+			margin-right: 20mm;
+			@bottom-right
+			{
+				position: fixed;
+				bottom: 0;
+				right: 0;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 10mm 10mm; /* or 'cover' or explicit dimensions like '50mm 20mm' */
+				height: 30mm; /* Set a height to give space for the background image */
+				width: 50mm; /* Similarly, set a width */
+			}
+			@bottom-center 
+			{
 	
-	Antenna House Formatter CSS Extensions Property: 
-		-[line-style-1]
-	-->
+			}
 
-	<head>
-			<link rel="stylesheet" href="src/AH_Style.css">
-			<style>
-				@page
-				{
-					
-				}
-				body
-				{
-					columns: 2 300px;
-					column-gap: 50px;
-				}
-				.codePrint
-				{
-					font-weight: bold;
-					font-family: 'Courier New', 'DejaVu Sans', monospace;
-				}
-				.columnTextBody
-				{
-					
-				}
-				.solidBorder
-				{
-					-ah-border-after-style: solid;
-				}
-				#sB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#sB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#sB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#sB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#sB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-				.dottedBorder
-				{
-					-ah-border-after-style: dotted;
-				}
-				#dB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#dB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#dB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#dB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#dB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-				.dashedBorder
-				{
-					-ah-border-after-style: dashed;
-				}
-				#dsB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#dsB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#dsB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#dsB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#dsB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-				.doubleBorder
-				{
-					-ah-border-after-style: double;
-				}
-				#ddB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#ddB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#ddB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#ddB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#ddB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-				.ridgeBorder
-				{
-					-ah-border-after-style: ridge;
-				}
-				#rB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#rB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#rB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#rB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#rB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-				.insetBorder
-				{
-					-ah-border-after-style: inset;
-				}
-				#iB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#iB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#iB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#iB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#iB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-				.outsetBorder
-				{
-					-ah-border-after-style: outset;
-				}
-				#oB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#oB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#oB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#oB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#oB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-				.grooveBorder
-				{
-					-ah-border-after-style: groove;
-				}
-				#gB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#gB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#gB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#gB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#gB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-				.dotDashBorder
-				{
-					-ah-border-after-style: dot-dash;
-				}
-				#dotDB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#dotDB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#dotDB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#dotDB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#dotDB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-				.dotdotDashBorder
-				{
-					-ah-border-after-style: dot-dot-dash;
-				}
-				#dotdotDB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#dotdotDB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#dotdotDB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#dotdotDB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#dotdotDB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-				.waveBorder
-				{
-					-ah-border-after-style: wave;
-				}
-				#wB_0
-				{
-					-ah-border-after-width: thin;
-				}
-				#wB_1
-				{
-					-ah-border-after-width: medium;
-				}
-				#wB_2
-				{
-					-ah-border-after-width: thick;
-				}
-				#wB_3
-				{
-					-ah-border-after-width: 0.5pt;
-				}
-				#WB_4
-				{
-					-ah-border-after-width: 1mm;
-				}
-			</style>
-	</head>
-	<body>
-		<div id = "topImage">
+		}
+			.title
+			{
+				position: relative;
+				text-align: center;
+				top: -10mm;
+				column-span: all;
+				font-family: Helvetica, sans-serif;
+				font-size: 2em; 
+				color: #cdf0cd;
+				font-weight: bold; 
+				padding: 0.5em 0.5em;
+				margin: 1em 1em;
+				hyphens: false; 
+				background-color: rgba(186,228,185,0);
+				z-index: 3;
+				border: inset rgb(13,100,61); /*Alt: rgba(13,100,61,255)*/
+			}
+			.subheading
+			{
+				position: relative;
+				background-color: rgba(186,228,185,0.65);
+				column-span: all;
+				font-family: Helvetica, sans-serif;
+				font-size: 1.15em;
+				color: #444444;
+				top: -10mm;
+				padding: 1em;
+				margin: 1em 1em;
+				text-indent: 0.5em;
+				text-align: justify;
+				top: -1.7em;
+				border: 3pt solid rgba(186,228,185,1);
+				z-index: 3;
+			}
+			
+			#topImage 
+			{
+				background-size: cover;
+				background-repeat: no-repeat;
+				width: calc(100% + 40mm);  
+				height: 170px;             
+				position: absolute;
+				top: -20mm;               
+				left: -20mm;              
+				z-index: 1;
+			}
+
+  </style>
+</head>
+<body>
+  <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
+<div id = "topImage">
 		</div>
 		<div class="main-content">
 		</div>
@@ -499,8 +286,5 @@
 				-ah-border-after-width: 1mm;
 			</div>
 		</div>
-		
-		
-	</body>
-
+</body>
 </html>
