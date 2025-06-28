@@ -1,0 +1,21 @@
+.code {
+    background-color: orange;
+}
+.function {
+    background-color: teal;
+}
+.keyword {
+    background-color: fuchsia;
+}
+span.property {
+    background-color: lime;
+}
+.pseudo {
+    background-color: red;
+}
+span.rule {
+    background-color: olive;
+}
+.value {
+    background-color: aqua;
+}

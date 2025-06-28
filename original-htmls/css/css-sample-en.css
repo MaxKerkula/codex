@@ -1,0 +1,143 @@
+@charset "UTF-8";
+
+.description {
+  font-weight: 600;
+}
+
+.description > p:first-child,
+h2 + div > p:first-child,
+h3 + div > p:first-child {
+  text-indent: 0;
+}
+
+h1 {
+  margin-top: 0;
+  /* Attempt to optically align the first glyph with the text box. */
+  margin-left: -0.06em;
+  string-set: Title content();
+    /*font-variant: all-small-caps;*/
+    text-transform: uppercase;
+    letter-spacing: 0.015em;
+    word-spacing: 0.05em;
+}
+
+h1::before {
+  display: block;
+  /* Reverse the margin applied to the h1 text. */
+  margin-left: calc(0.06em div 0.4);
+  content: "Antenna House Formatter CSS Sample";
+  -ah-link: url("https://www.antennahouse.com/xsl-fo-and-css-samples");
+	color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+  font-size: 0.4em;
+  font-weight: normal;
+  line-height: 1;
+}
+
+meta[name = "copyright-notice"] {
+  string-set: copyright-notice attr(content);
+}
+
+meta[name = "specification"] {
+  string-set: specification attr(content);
+}
+
+.page-number-footer-left {
+  position: running(PageNumberFooterLeft);
+}
+
+.page-number-footer-right {
+  position: running(page-number-right);
+}
+
+.page-number-footer .separator {
+  content: "\A0|\A0";
+  color: var(--ah-green-cmyk);
+}
+
+.page-number-footer .page-number {
+  content: counter(page);
+}
+
+.page-number-footer .title {
+  content: string(Title);
+}
+
+@page :left {
+  bleed: 0;
+  -ah-bleed-left: 0in;
+  -ah-bleed-right: 0in;
+  -ah-bleed-top: 0in;
+  -ah-bleed-bottom: 0in;
+  -ah-crop-offset: 0;
+}
+
+@page :right {
+  bleed: 0;
+  -ah-bleed-left: 0in;
+  -ah-bleed-right: 0in;
+  -ah-bleed-top: 0in;
+  -ah-bleed-bottom: 0in;
+  -ah-crop-offset: 0;
+}
+
+/* 左ページ設定 / Left-hand page. */
+@page :left {
+  @bottom-left { /* ノンブル（ページ番号）*/
+    content: element(PageNumberFooterLeft);
+    font-variant: all-small-caps;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+    padding-bottom: 5pt;
+  }
+
+  @bottom-right {
+    font-size: var(--header-footer-font-size);
+    content: "Antenna House, Inc.";
+    -ah-link: url("https://www.antennahouse.com/");
+    font-variant: all-small-caps;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+    padding-bottom: 5pt;
+  }
+}
+
+/* 右ページ設定 / Right-hand page. */
+@page :right:first {
+  @right-top {
+    text-align: left;
+    vertical-align: middle;
+    font-size: calc(var(--text-font-size) * 1.5);
+    font-weight: bold;
+    color: white;
+	  background-color: var(--ah-green-rgb);
+	  background-color: var(--ah-green-cmyk);
+    -ah-reference-orientation: 270;
+    padding: 4pt;
+    padding-right: 7pt;
+    margin-right: -3pt;
+    content: string(specification);
+    width: 20pt;
+    height: 200pt;
+  }
+}
+
+/* 右ページ設定 / Right-hand page. */
+@page :right {
+  @bottom-left {
+    font-size: var(--header-footer-font-size);
+    content: "Antenna House, Inc.";
+    -ah-link: url("https://www.antennahouse.com/");
+    font-variant: all-small-caps;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+    padding-bottom: 5pt;
+  }
+
+  @bottom-right { /* ノンブル（ページ番号）*/
+    content: element(page-number-right); /*string(Title) "\A0|\A0" counter(page);*/
+  }
+}

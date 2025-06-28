@@ -1,0 +1,1263 @@
+﻿@charset "UTF-8";
+
+/*
+ * Any copyright in this style sheet is dedicated to the Public
+ * Domain.
+ *
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ *
+ * Provided by Antenna House, Inc. to help promote
+ * the adoption of CSS for Paged Media.
+ */
+
+/* $Id: booklet-page-en.css 3900 2025-03-31 16:22:58Z tgraham $ */
+
+:root {
+  --page-size: 6in 9in;
+  --page-margin-inside: 49pt;
+  --page-margin-outside: 52pt;
+
+  --body-line-height: 1rlh;
+
+  --note-marker-font-size: 7pt;
+  --note-font-size: 7.5pt;
+  --note-line-height: 9pt;
+
+  --header-footer-font-size: 9pt;
+}
+
+/* 共通のページ設定 */
+@page {
+  size: var(--page-size); /* 6x9 'trade book' */
+  margin: var(--page-margin-outside) 54pt 64pt 54pt;
+
+  /* 'font-size' and 'font-family' inherited by page-margin boxes. */
+  font-size: 8pt;
+  font-family: var(--header-footer-font-family);
+
+  marks: none;                 /* printer marks to display */
+  -ah-crop-offset: 0.125in;    /* distance from the page box edge to the
+                                  page sheet edge */
+  bleed: 0.25in;               /* page bleed distance */
+  -ah-printer-marks-line-color: auto;    /* printer marks line color */
+  -ah-printer-marks-line-length: 10mm;   /* printer marks line length  */
+  -ah-printer-marks-line-width: 0.12mm;  /* printer marks line width */
+  /* -ah-crop-offset: 0.125in; */    /* distance from the page box edge to the
+          page sheet edge */
+
+}
+
+/* 左ページ設定 / Left-hand page. */
+@page :left {
+  margin-left: var(--page-margin-outside);
+  margin-right: var(--page-margin-inside);
+
+  /* Bleed and crop offset on all sides except the gutter. */
+  bleed: 0.125in;
+  -ah-bleed-right: 0in;
+  -ah-crop-offset-right: 0in;
+
+  @bottom-left { /* ノンブル（ページ番号）*/
+    font-size: var(--header-footer-font-size);
+    font-family: var(--header-footer-font-family);
+    content: element(Title);
+    padding-bottom: 5pt;
+    font-variant: all-small-caps;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+  }
+}
+
+/* 右ページ設定 / Right-hand page. */
+@page :right {
+  margin-left: var(--page-margin-inside);
+  margin-right: var(--page-margin-outside);
+
+  /* Bleed on all sides except the gutter. */
+  -ah-crop-offset: 0.125in;
+  -ah-crop-offset-left: 0in;
+  bleed: 0.125in;
+  -ah-bleed-left: 0in;
+
+  @top-left { content: none }
+  @top-right {   /* 柱（ページヘッダ）*/
+    /*font-size: 8pt;
+    font-family: var(--header-footer-font-family);*/
+  }
+  @bottom-right { /* ノンブル（ページ番号）*/
+    font-size: var(--header-footer-font-size);
+    /*font-family: var(--header-footer-font-family);*/
+    content: string(ChapterNo) ". " string(ChapterTitle) "\A0|\A0" counter(page);
+    padding-bottom: 5pt;
+    font-variant: all-small-caps;
+  /*   text-transform: lowercase; */
+  /* } */
+  /* @bottom-center { /\* ノンブル（ページ番号）*\/ */
+  /*   font-size: var(--header-footer-font-size); */
+  /*   font-family: var(--header-footer-font-family); */
+  /*   content: string(ChapterNo) ". " string(ChapterTitle) "\A0\A0|\A0\A0" counter(page); */
+  /*   padding-bottom: 5pt; */
+  /*   font-variant: small-caps oldstyle-nums; */
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+    text-transform: lowercase;
+  }
+}
+
+/* 文書の先頭ページ設定 */
+@page Title:first {
+  margin-left: 10pt;
+  margin-right: 10pt;
+  margin-bottom: 10pt;
+
+  /* -ah-bleed: 0.125in;               /\* page bleed distance *\/ */
+  /* -ah-bleed-left: 0in; */
+
+  /* ページヘッダ／フッタ非表示 */
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+
+@page TOC:left {
+  @bottom-left { /* ノンブル（ページ番号）*/
+    margin-left: 11pt;
+    content: none;
+  }
+}
+
+
+@page Chapter:first {
+  @right-top { content: element(TabChapter) }
+}
+
+@page TOC:right {
+  @bottom-right { /* ノンブル（ページ番号）*/
+    margin-right: 14pt;
+    content: none;
+  }
+}
+@page Index:left {
+  /* 章の左ページ */
+  /* Solid color at outer edge to make it easy to find the index.  The
+     color bleeds off the page to avoid white areas if the page is not
+     trimmed correctly. */
+  @left-middle {
+    margin-top: -33mm;
+    margin-left: -0.125in;
+    margin-right: 16pt;
+    margin-bottom: -40mm;
+    background-color: var(--ah-green-rgb-25);
+    background-color: var(--ah-green-cmyk-25);
+    padding: 1mm;
+  }
+
+  @top-left {
+    /* First index term starting on the page. */
+    content: string(IndexTerm, first);
+  }
+
+  @top-right {
+    /* Last index term starting on the page. */
+    content: string(IndexTerm, last);
+  }
+
+  @bottom-left { /* ノンブル（ページ番号）*/
+    /*content: element(Title);*/
+    /* content: counter(page); */
+    margin-left: 9pt;
+  }
+}
+
+@page Index:right {
+  /* 章の右ページ */
+  @right-middle {
+    margin-top: -33mm;
+    margin-left: 16pt;
+    margin-right: -0.125in;
+    margin-bottom: -40mm;
+    background-color: var(--ah-green-rgb-25);
+    background-color: var(--ah-green-cmyk-25);
+    content: "\a0";
+    padding: 1mm;
+  }
+
+  @top-left {
+    /*font-size: 8pt;
+    font-family: var(--header-footer-font-family);*/
+    content: string(IndexTerm, first);
+    /* margin-left: 9pt; */
+  }
+
+  @top-right {
+    /*font-size: 8pt;
+    font-family: var(--header-footer-font-family);*/
+    content: string(IndexTerm, last);
+    /*margin-right: 9pt; */
+  }
+
+  @bottom-right { /* ノンブル（ページ番号）*/
+    content: string(ChapterTitle) "\A0|\A0" counter(page);
+    /* content: counter(page); */
+    margin-right: 9pt;
+  }
+}
+
+@page Index:blank {
+  @top-center { content: none }
+  @top-left-corner { content: none }
+  @top-right-corner { content: none }
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+
+@page Index {
+  -ah-force-page-count: document 6 4;
+}
+
+@page Back:left,
+      BackLandscape:left,
+			BackLandscapeWide:left {
+  @top-center { content: none }
+  @top-left-corner { content: none }
+  @top-right-corner { content: none }
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+
+  @bottom-left { /* ノンブル（ページ番号）*/
+    content: element(Title);
+    /* content: counter(page); */
+  }
+}
+
+@page Back:right,
+      BackLandscape:right,
+			BackLandscapeWide:right,
+			BackLandscapeWide:right:first {
+  @top-center { content: none }
+  @top-left-corner { content: none }
+  @top-right-corner { content: none }
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+
+  @bottom-right { /* ノンブル（ページ番号）*/
+    content: string(ChapterTitle) "\A0|\A0" counter(page);
+  }
+}
+
+@page Back:blank, BackLandscape:blank, BackLandscapeWide:blank {
+  @top-center { content: none }
+  @top-left-corner { content: none }
+  @top-right-corner { content: none }
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+
+/* 後付ページ */
+@page Title {
+  margin-left: 10pt;
+  margin-right: 10pt;
+  margin-bottom: 10pt;
+
+  @top-center { content: none }
+  @top-left-corner { content: none }
+  @top-right-corner { content: none }
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+
+/* Imprintページ */
+@page Imprint {
+  @top-center { content: none }
+  @top-left-corner { content: none }
+  @top-right-corner { content: none }
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+
+@page Blurb {
+  -ah-force-page-count: document 6;
+
+  @top-center { content: none }
+  @top-left-corner { content: none }
+  @top-right-corner { content: none }
+  @top-left  { content: none }
+  @top-right { content: none }
+  @bottom-left { content: none }
+  @bottom-right { content: none }
+}
+
+@page Landscape, BackLandscape {
+	size: 9in 6in;
+	margin: 54pt 64pt 54pt var(--page-margin-outside);
+}
+
+@page LandscapeWide, BackLandscapeWide {
+	size: 9in 6in;
+	margin: 32pt 32pt 54pt 32pt;
+}
+
+.Landscape {
+	page: Landscape;
+}
+
+.Appendix .LandscapeWide {
+	page: BackLandscapeWide;
+}
+
+.LandscapeWide {
+	page: LandscapeWide;
+}
+
+table.LandscapeWide {
+	margin-top: 0;
+}
+
+:root {
+  word-spacing: 0.05em;
+  hanging-punctuation: allow-end;
+  color: black;
+  color: k100;
+  --index-indent: 10pt;
+}
+
+body:lang(en) {
+  hyphens: auto;
+}
+
+/* Bookmarks */
+
+h1 {
+  -ah-outline-font-weight: bold;
+  -ah-outline-color: var(--ah-green-rgb);
+}
+/* h3[data-bookmark] { */
+/*   bookmark-label: content(); */
+/* } */
+/* h4[data-bookmark] { */
+/*   bookmark-label: content(); */
+/* } */
+
+.HalfTitle {
+  -ah-pdftag: "Artifact";
+  page: Title;
+}
+
+.HalfTitle .Title {
+  position: static;
+  margin-top: 25pt;
+  margin-bottom: 425pt;
+  font-size: 1.5rem;
+  font-variant: all-small-caps;
+  letter-spacing: 0.03em;
+  word-spacing: 0.03em;
+  text-align: center;
+}
+
+.HalfTitle .Title::before {
+  content: none;
+}
+
+.half-title-css {
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+
+.CompanyLogo {
+  -ah-pdftag: "Artifact";
+	position: absolute;
+	bottom: 90pt;
+	width: 100%;
+	-ah-display-align: after;
+}
+
+.HalfTitle .CompanyLogo img,
+.CoverPage .CompanyLogo object,
+.CoverPage .CompanyLogo img {
+  -ah-pdftag: "Artifact";
+  height: 30pt;
+  vertical-align: baseline;
+}
+
+p.Title::before {
+  content: counter(page) "\A0|\A0";
+}
+
+.CoverPage {
+  /* Background image is copyright 2008-2022 Antenna House, Inc. */
+  background-image: attr("data-background-image");
+  -ah-pdftag: 'Div';
+  height: calc(100vh - 40pt);
+  page-break-before: right;
+  page: Title;
+}
+
+.CoverPage h1 {
+  margin-top: 0.25in;
+  margin-bottom: 3.1in;
+  font-variant: all-small-caps;
+  line-height: 30pt;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  word-spacing: 0.03em;
+}
+span.cover-css {
+  display: block;
+  line-height: 118pt;
+  margin-top: 18pt;
+  padding: 0;
+  font-size: 150pt;
+  font-variant: normal;
+  vertical-align: -10pt;
+  /* font-weight: bolder; */
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+
+.Author {
+  margin-bottom: 0.5em;
+}
+
+@media ah-formatter {
+	p.tab {
+		height: 53pt;
+		margin-top: calc(attr(data-position) * 53pt);
+		/* color: var(--ah-green-rgb); */
+		/* color: var(--ah-green-cmyk); */
+		font-variant: proportional-nums;
+	}
+
+	p.tab.first {
+		position: running(TabChapter);
+		color: var(--ah-green-rgb);
+		color: var(--ah-green-cmyk);
+	}
+}
+
+@media screen {
+	p.tab {
+		display: none;
+	}
+}
+
+.TOC {
+  hyphens: manual;
+}
+
+.TOC h2 {
+  text-align: center;
+  font-weight: normal;
+  font-variant: all-small-caps;
+  letter-spacing: 0.03em;
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+
+.TocReferences {
+  padding-top: 3mm;
+}
+
+.TOC li.TocLevel1 > a,
+.TOC li.TocPreface > a,
+.TOC li.TocIntroduction > a,
+.TOC li.TocReferences > a,
+.TOC li.TocAppendix > a,
+.TOC li.TocIndex > a {
+  font-variant: all-small-caps;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  word-spacing: 0.01em;
+}
+
+.TOC li.TocLevel1 {
+    /* Rely on the larger font-size and the grid to push the chapter entry
+       to the next grid line.  Unfortunately, that could also push the
+       title down when it's the first text on the ToC page. */
+    margin-top: 1rem;
+    margin-left: -18pt;
+    font-size: 1rem;
+    -ah-line-stacking-strategy: font-height;
+}
+
+.TOC.Short li.TocLevel1 {
+    /* Rely on the larger font-size and the grid to push the chapter entry
+       to the next grid line.  Unfortunately, that could also push the
+       title down when it's the first text on the ToC page. */
+    margin-top: 0;
+}
+
+.TOC li.TocLevel1 > a {
+  font-size: 1.25rem;
+  /* letter-spacing: 0.01em; */
+  /* word-spacing: 0.01em; */
+  background-color: transparent;
+  padding: 0;
+  /* padding-left: 2pt; */
+  /* padding-right: 2pt; */
+  margin-right: 0;
+  /* padding-top: 2pt; */
+  /* padding-bottom: 0; */
+  /* border-top-left-radius: 2pt; */
+  /* border-bottom-left-radius: 2pt; */
+}
+
+.TOC.Short li.TocLevel1 > a {
+  font-size: 11pt;
+}
+
+.TOC li.TocLevel1 a::before {
+    content: target-counter(attr(href url), ChapterNo) ". ";
+    display: inline-block;
+    width: 18pt;
+    box-sizing: border-box;
+    text-align: right;
+    padding-right: 0.25em;
+}
+
+.TOC li.TocLevel1 > ul{
+    margin-left: 18pt;
+}
+
+.TOC li.TocLevel2 {
+  padding-left: 1em;
+  text-indent: -1em;
+  margin-right: 20pt;
+  -ah-last-line-end-indent: -20pt;
+
+  font-size: 1rem;
+}
+
+.TOC li.TocLevel2 > a {
+  /*font-weight: bolder;*/
+}
+.TOC li.TocLevel1 > a::after {
+  content: leader(space);
+}
+
+.TOC li.TocIntroduction > a::after,
+.TOC li.TocLevel1 > a::after,
+.TOC li.TocLevel2 > a::after,
+.TOC li.TocLevel3 > a::after,
+.TOC li.TocAppendix > a::after,
+.TOC li.TocReferences > a::after,
+.TOC li.TocIndex > a::after {
+  content: leader(space) "\2002" target-counter(attr(href url), page);
+  font-size: 1rem;
+  font-weight: normal;
+  font-variant: oldstyle-nums /*proportional-nums*/;
+  color: k100;
+  letter-spacing: 0;
+}
+.TOC li.TocLevel2 > ul{
+    margin-left: 0;
+}
+
+.TOC li.TocLevel3 {
+  /*list-style: none;
+  margin: 0;
+  -ah-last-line-end-indent: -10pt; /\* 'margin-right' of parent. *\/
+  padding: 0;
+  text-indent: -3.5em;*/
+  -ah-last-line-end-indent: -20pt; /* 'margin-right' of parent. */
+  text-indent: -1em;
+  padding-left: 1em;
+  font-size: inherit;
+  color: k100;
+}
+
+.TOC li.TocLevel3:last-child {
+  break-before: avoid-page;
+}
+.TOC li.TocLevel3 > a {
+  color: grey;
+  color: var(--grayscale-15);
+}
+.TOC li.TocLevel2 a::before,
+.TOC li.TocLevel3 a::before {
+  content: none;
+  width: 0;
+  padding-right: 0;
+}
+
+section.Introduction {
+  page-break-before: right;
+  page: Back;
+  counter-reset: page 1;
+}
+
+.Chapter h2 {
+    font-variant: all-small-caps;
+    -ah-display-align: center;
+  word-spacing: 0.09em;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  text-align: center;
+  font-weight: normal;
+  counter-reset: SectionNo footnote;
+  height: 7rlh;  /*  Fixed-height 'chapter drop'. */
+  /* margin-left: -3pt; */ /* Magic length for 'optical' alignment of
+                        titles to margin. */
+  margin-bottom: 3rlh;
+  margin-top: 0;
+  column-span: all;
+}
+
+@media print {
+	.Chapter h2::before {
+    content: counter(ChapterNo);
+    display: block;
+		position: absolute;
+    -ah-display-align: center;
+    /* border: thin solid blue; */
+    margin-top: 0;
+    padding-top: 0.4em;
+    padding-bottom: 0;
+    /* vertical-align: 0.2em; */
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		/* top: -0.2em; */
+		height: 0;
+    font-weight: 900;
+    font-size: 4em;
+		font-variant: proportional-nums;
+    z-index: -1;
+    letter-spacing: normal;
+		color: var(--ah-green-rgb-15);
+		color: var(--ah-green-cmyk-15);
+	}
+}
+
+@media screen {
+  .Chapter h2 {
+    margin-top: 1em;
+    height: auto;
+  }
+}
+
+.Preface h2,
+.Introduction h2,
+.Appendix h2,
+.References h2,
+.Index h2{
+  string-set: ChapterTitle content();
+  margin-top: 0.7rlh;
+  margin-bottom: 0.7rlh;
+  font-family: var(--heading-font-family);
+  font-size: 1.2rlh;
+  line-height: 1.6rlh;
+  font-variant: normal all-small-caps;
+  letter-spacing: 0.03em;
+  word-spacing: 0.03em;
+}
+
+.Chapter > section {
+    padding-top: 0.7rlh;
+    /* margin-bottom: 0.5rlh; */
+    /* background-color: pink; */
+}
+
+/* .Chapter > section > section { */
+/*     background-color: orange; */
+/* } */
+
+/* p { background-color: cyan; } */
+
+.Chapter h3 {
+  margin: 0;
+  /* -ah-margin-before: 0.7rlh !important /\* was: 12.5pt *\/; */
+  margin-bottom: 0.2rlh /* 6pt !important */;
+  padding: 0;
+  text-indent: 0;
+  font-size: 0.9rlh /* was: 16pt */;
+  line-height: 1.1rlh;
+  /* font-weight: normal; */
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.Preface h3,
+.Introduction h3,
+.Chapter h4,
+.References h3,
+.Appendix h3 {
+  /*font-weight: normal;*/
+  font-family: var(--heading-font-family);
+  font-size: 1rem;
+  line-height: 1rlh /* 13pt */;
+  margin-top: 1rlh  /* 13pt */;
+  margin-bottom: 0;
+  padding-left: 0;
+  text-indent: 0;
+  color: #111;
+  color: var(--grayscale-20);
+  /* color: var(--ah-green-rgb); */
+  /* color: var(--ah-green-cmyk)*/
+}
+
+/* Space between h3 and h4 should be standard space after a h3. */
+section:nth-child(2) h4 {
+  margin-top: 0.2rlh;
+}
+
+.Chapter h3::before,
+.Chapter h4::before {
+  content: none;
+  width: auto;
+}
+
+
+/* References */
+ul.References {
+  font-family: var(--text-font-family);
+  padding-left: 1em;
+}
+ul.References li {
+  break-inside: avoid-page;
+  line-height: 0.8rlh;
+}
+
+ul.References .SpecStatus::before {
+  content: none;
+}
+ul.References li .SpecStatus,
+ul.References li div {
+  break-before: avoid;
+}
+ul.References li a {
+  break-inside: avoid;
+}
+
+ul.References + p {
+  text-indent: 0;
+  /* margin-top: 0.3em; */
+}
+
+.SpecTitle + div {
+  break-before: avoid;
+}
+
+/* Index */
+li.IndexItem {
+  hyphens: manual;
+  break-inside: avoid-page;
+}
+
+.Index li.IndexItem a::after {
+  /* content: leader(space) target-counter(attr(href url), page); */
+  color: k100;
+  font-variant: oldstyle-nums proportional-nums;
+}
+
+.Index li.IndexItem a {
+  display: block;
+  text-indent: calc(-1 * var(--index-indent));
+  margin-left: var(--index-indent);
+}
+
+.Glossary .IndexItem {
+  font-weight: bold;
+  font-size: 8pt;
+}
+
+.Glossary .GlossaryItem {
+  display: inline;
+  padding-left: 1em;
+  padding-right: 0;
+}
+
+/* .Glossary .GlossaryItem::before { */
+/*   content: " "; */
+/* } */
+
+.GlossaryItem {
+  font-size: 8pt;
+  font-weight: normal;
+}
+
+div.Imprint {
+  page-break-before: left;
+  height: auto;
+  page: Imprint;
+}
+
+.Imprint ul,
+.notice ul {
+  -ah-padding-start: 0em;
+  margin-top: 1lh;
+}
+
+.imprint-box {
+  hyphens: manual;
+  margin-top: 0.7lh;
+  padding-left: 0.3lh;
+  padding-right: 0.3lh;
+  padding-top: 0.3lh;
+  padding-bottom: 0.3lh;
+  margin-bottom: 0.7lh;
+  margin-left: -0.3lh;
+  margin-right: -0.3lh;
+  border-radius: 0.3lh;
+  background-color: var(--ah-green-rgb-03);
+  background-color: var(--ah-green-cmyk-03);
+}
+
+.imprint-box p {
+	margin-top: 0;
+  text-indent: 1em;
+}
+.imprint-box p:first-child {
+  text-indent: 0;
+}
+
+.ChapterRef:lang(en)::before {
+  content: target-counter(attr(href url), ChapterNo) ". "
+           target-text(attr(href url), content);
+  font-variant: all-small-caps;
+}
+
+.AppendixRef:lang(en)::before {
+  content: target-text(attr(href url), content);
+  font-variant: all-small-caps;
+}
+
+.SectionRef:lang(en)::before {
+  content: target-text(attr(href url), content);
+}
+
+.PageRef:lang(en)::after {
+  font-variant: oldstyle-nums proportional-nums;
+}
+
+div.Properties {
+  hyphens: manual;
+}
+
+div.Properties span.Property {
+  margin-left: 0.6em;
+}
+span.Property {
+  hyphens: manual;
+  color: var(--ah-green-cmyk-70);
+  /* border-left: thin solid; */
+  /* border-left-color: var(--ah-green-cmyk);*/
+  /* padding-left: 0.3em; */
+}
+
+span.Property::before {
+  content: "■\202F"; /* \202F is NARROW NO-BREAK SPACE. */
+  font-family: var(--text-font-family), "Lucida Sans Unicode";
+  color: var(--ah-green-cmyk-35);
+}
+
+/* Add same background as <pre>. */
+code,
+.code{
+  font-family: var(--code-font-family);
+  font-size: 0.93em; /* Make code SHOUT a little less loudly. */
+  word-spacing: -0.05em;
+  padding: 0.05em 0.1em;
+  background-color: var(--ah-green-rgb-03);
+  background-color: var(--ah-green-cmyk-03);
+}
+
+/* Outdent margins so that code, etc., lines up with paragraphs. */
+pre {
+  line-height: 0.8rlh;
+  margin-top: 0.7lh;
+  padding-top: 0.3lh;
+  padding-bottom: 0.3lh;
+  margin-bottom: 0.7lh;
+  word-spacing: normal;
+  margin-left: -0.3lh;
+  margin-right: -0.3lh;
+  border-radius: 0.3lh;
+}
+/* No outdent for <pre> in a box. */
+.SampleBox pre {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+div.SampleBox,
+div.VSampleBox {
+  box-sizing: border-box;
+  margin-top: 0.5rlh;
+  margin-bottom: 0.5rlh;
+  /* -ah-line-stacking-strategy: max-height; */
+}
+
+div.SampleBox > p:first-child {
+  text-indent: 0;
+}
+/* p.TextSample0, */
+/* div.TextSample0 { */
+/*   font-size: 11pt; */
+/*   line-height: 15pt; */
+/* } */
+
+a.nochange {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+b {
+  font-weight: normal;
+}
+
+/* Style sheet provides description of <b> style. */
+b.sample {
+  content: "text with a yellow background";
+}
+
+span.keyword:lang(en)::before,
+span.pseudo:lang(en)::before {
+ content: '‘';
+}
+
+span.keyword:lang(en)::after,
+span.pseudo:lang(en)::after {
+ content: '’';
+}
+
+.code,
+.function,
+.keyword,
+span.property,
+.pseudo,
+span.rule,
+.value {
+  hyphens: manual;
+}
+
+span.property {
+  color: k100;
+}
+
+div.SampleTitle {
+  background-color: var(--ah-green-rgb-12);
+  background-color: var(--ah-green-cmyk-12);
+  /* Padding needs to apply in both horizontal and vertical contexts. */
+  -ah-padding-start: 0.5em;
+  -ah-padding-before: 0.2em;
+  -ah-padding-after: 0.2em;
+  page-break-after: avoid;
+}
+
+/* Lists */
+ol, ul  { -ah-margin-before: 0; -ah-margin-after: 0; }
+
+ol, ul  { -ah-padding-start: 2em; }
+
+td > ol, td > ul  { -ah-padding-start: 1em; }
+
+ul > li > ul  { -ah-padding-start: 1em; }
+
+ol > li::marker {
+  font-variant: oldstyle-nums proportional-nums;
+}
+
+ul > li::marker {
+  content: "\25AA" ; /* ▪ = \25AA = Black small square */
+  font-family: source-sans-pro, sans-serif, 'Lucida Sans Unicode';
+  -ah-margin-end: 0.32em; /* Magic length to get symbol in
+                          'Lucida Sans Unicode' to align. */
+}
+
+ul > li > ul > li::marker {
+  content: "\25AB" ; /* ▫ = \25AB = White small square */
+  font-family: source-sans-pro, sans-serif, 'Lucida Sans Unicode';
+}
+
+ul.counter-style-list {
+  column-count: 3;
+  hyphens: manual;
+  -ah-pdftag: "L";
+ }
+
+ul.TOCSample {
+    column-count: 1;
+    -ah-baseline-grid: none;
+}
+
+
+div.ShortTable {
+  column-gap: 1.5em;
+}
+
+table.StdTable thead tr,
+table.MarkTable thead tr {
+  background-color: transparent;
+}
+
+.StdTable th,
+.MarkTable th {
+  hyphens: manual;
+  text-align: inherit;
+}
+
+/* Adjust the 'Selectors' table so that it fits on a two-page spread
+   (on a 6x9 page at 9.5/13, anyway). */
+table.SelectorsTable td {
+  padding-top: 2.5pt;
+  padding-bottom: 2.5pt;
+}
+
+::footnote-call {
+  /* Thin-space before number.*/
+  content: /* "\200A" */ counter(footnote, decimal);
+}
+
+::footnote-marker {
+  content: counter(footnote, decimal);
+  font-size: var(--note-marker-font-size);
+}
+
+.Footnote {
+  margin-left: -15pt;
+}
+
+#side-float-vertical {
+  height: 17rlh;
+}
+#text-align-vertical {
+  height: 12rlh;
+}
+
+#text-align-last-vertical {
+  height: 18em;
+}
+
+.consider-shifts sub,
+.consider-shifts sup,
+.shift-adjustment sub,
+.shift-adjustment sup { font-size: .9em }
+
+.BaselineGrid p,
+.NoBaselineGrid p {
+  text-decoration: underline;
+  text-decoration-color: var(--ah-green-rgb-50);
+  text-decoration-color: var(--ah-green-cmyk-50);
+}
+
+#allow-end-sample,
+#end-except-fullstop-sample,
+#hanging-first-sample,
+#paragraph-start-line-indent-sample,
+#writing-mode-tb-rl {
+  height: 20em;
+}
+
+#ruby-vertical {
+  height: 12em;
+}
+
+#three-pages {
+  float: page top;
+}
+
+/* Leave some left- and right-margin. */
+table.TableSample col.col1 { width: 32.5%; }
+table.TableSample col.col2 { width: 66.5%; }
+
+::sidenote-marker {
+  content: counter(sidenote);
+  /* -ah-margin-end: auto; */
+}
+
+span.sidenote {
+  padding: 0em 1em;
+  text-align: left;
+}
+::sidenote-marker {
+  content: counter(sidenote, super-decimal);
+  text-align: right;
+  -ah-margin-start: 0.25em;
+  -ah-margin-end: 0.25em;
+}
+
+/* Antenna House blurb at back of the book. */
+
+.Blurb {
+  page: Blurb;
+	page-break-before: right;
+  /* Original text written in Arial. */
+  font-family: Arial, var(--text-font-family);
+}
+
+.Blurb p {
+  text-align: left;
+  text-indent: 0;
+  hyphens: manual;
+  color: gray;
+  color: var(--grayscale-40);
+  font-stretch: condensed;
+}
+
+p.BlurbTitle {
+  text-align: center;
+  text-indent: 0;
+  font-weight: bold;
+  font-size: 2em;
+  font-stretch: normal;
+  color: black;
+  color: k100;
+  white-space: pre;
+  overflow: condense;
+  -ah-overflow-condense: font-size;
+  /* margin-bottom: 0.5em; */
+}
+
+p.ProductTitle {
+  text-indent: 0;
+  font-size: 1.5em;
+  font-stretch: normal;
+  color: black;
+  color: k100;
+  margin-bottom: 0.65em;
+}
+
+.Blurb .Product {
+  padding: 1.5em 0;
+}
+
+.Blurb .Product + .Product {
+  border-top: 1pt solid gray;
+  border-top-color: var(--grayscale-65);
+}
+
+.Product .Byline {
+  font-style: italic;
+  font-stretch: normal;
+  margin-bottom: 0.65em;
+}
+
+.Product .Logo {
+  float: left;
+  width: 25%;
+  padding-right: 4pt;
+}
+
+.Contact .Logo {
+  float: right;
+  width: 40%;
+  line-height: 0;
+}
+
+.Logo img {
+  width: 100%;
+}
+
+.Blurb .Contact {
+  float: bottom;
+}
+
+.Contact p {
+  color: var(--grayscale-35);
+}
+
+/* Syntax highlighting. */
+
+.hl-property {
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+
+.hl-keyword {
+  color: var(--ah-green-rgb);
+  color: var(--ah-green-cmyk);
+}
+
+.hl-xsyntax {
+	color: #4169E1;
+}
+.hl-function,
+.hl-xvalue,
+.hl-value,
+.hl-string {
+	color: navy;
+}
+
+.hl-string-delimiter {
+	color: #0000BF;
+}
+
+.hl-string {
+  color: blue;
+}
+
+.hl-number {
+  color: blue;
+}
+
+.hl-comment {
+  color: green;
+  font-style: italic;
+}
+
+.hl-doccomment,
+.hl-doctype {
+  color: teal;
+  font-style: italic;
+}
+
+.hl-directive {
+  color: maroon;
+}
+
+.hl-annotation {
+  color: gray;
+  font-style: italic;
+}
+
+.hl-tag {
+  color: teal;
+}
+
+.hl-ncname {
+	hyphens: manual;
+}
+
+.hl-prefix.ns-fo {
+	color: #757500;/*olive;*/
+}
+
+/* Separate color for AH Formatter extensions. */
+.hl-prefix.ns-axf,
+.hl-prefix.ns-axh,
+.hl-prefix.ns-axs,
+.hl-prefix.prefix-ah- {
+	color: var(--ah-green-rgb);
+	color: var(--ah-green-cmyk);
+}
+
+.hl-colon {
+	color: black;
+	color: k100;
+}
+
+.hl-attribute {
+  color: purple;
+}
+
+.hl-value {
+  color: blue;
+}
+
+.hl-xslt {
+  color: red;
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="425px"
+    height="425px" viewBox="0 0 425 425" preserveAspectRatio="xMidYMid meet">
+    <rect id="svgEditorBackground" x="0" y="0" width="710" height="710"
+        style="fill: none; stroke: none;"/>
+    <text style="fill:black;font-family:Arial;font-size:20px;" x="134" y="153" id="e1_texte"/>
+    <text
+        style="fill: #CCCCCC; font-family:Palatino Linotype; font-size: 23.8095px; font-style:normal; font-weight: bold;"
+        x="29.7619" y="147.024" id="e2_texte"
+        transform="matrix(1.34846 -1.33633 0.772905 2.33145 -63.8587 66.4405)"><tspan x="29.7619"
+        y="" dy="">Watermark Sample</tspan></text>
+</svg>

@@ -1,0 +1,368 @@
+/*
+ * Any copyright in this style sheet is dedicated to the Public
+ * Domain.
+ *
+ * http://creativecommons.org/publicdomain/zero/1.0/
+ *
+ * Provided by Antenna House, Inc. to help promote
+ * the adoption of CSS for Paged Media.
+ */
+
+/* $Id: booklet-sample-4th.css 3900 2025-03-31 16:22:58Z tgraham $ */
+
+/* SVG */
+@namespace s "http://www.w3.org/2000/svg";
+
+@font-face {
+  font-family: font-face-example;
+  src: url(../../images/UglyQua.ttf);
+}
+
+span.gray { background-color: #FFD; }
+
+span.u {
+  -ah-text-decoration-line: underline;       /* 下線を指定する */
+  -ah-text-decoration-color: cmyk(1,1,0,0);  /* 線の色を赤にする */
+  -ah-text-line-width: 0.12mm;               /* 線の幅を指定する */
+}
+
+span.solid { -ah-text-decoration-style: solid; }                /* 線の種類を実線にする */
+span.double { -ah-text-decoration-style: double; }              /* 線の種類を二重線にする */
+span.dotted { -ah-text-decoration-style: dotted; }              /* 線の種類を点線にする */
+span.dashed { -ah-text-decoration-style: dashed; }              /* 線の種類を破線にする */
+span.dot-dash { -ah-text-decoration-style: dot-dash; }          /* 線の種類を一点鎖線にする */
+span.dot-dot-dash { -ah-text-decoration-style: dot-dot-dash; }  /* 線の種類を二点鎖線にする */
+span.wave { -ah-text-decoration-style: wave;}                   /* 線の種類を波線にする */
+span.groove { -ah-text-decoration-style: groove;}               /*  */
+span.ridge { -ah-text-decoration-style: ridge;}                 /*  */
+span.inset { -ah-text-decoration-style: inset;}                 /*  */
+span.outset { -ah-text-decoration-style: outset;}               /*  */
+span.text-decoration {
+  -ah-text-decoration-line: line-through;
+  font-family: source-code-pro, monospace;
+}
+
+/* Text that is not important to the example. */
+.unimportant { color: #555; }
+
+/* Cross reference that generates title of its target. */
+.TitleRef {
+  content: target-text(attr(href, url), before)  ", "
+           target-text(attr(href, url), content);
+}
+.TitleRef:lang(ja) {
+  content: target-text(attr(href, url), before)  "　"
+           target-text(attr(href, url), content);
+}
+
+
+/* サンプルテーブル */
+table.TableSample {
+  display: table;
+  border-collapse: collapse;
+  border-spacing: 0mm;
+  table-layout: fixed;
+  border: 0.3mm solid black;
+  border-color: k100;
+  margin-left: auto;
+  margin-right: auto;
+}
+table.TableSample caption {
+  font-weight: bold;
+}
+
+table.TableSample col.col1 { width: 33%; }
+table.TableSample col.col2 { width: 67%; }
+
+table.TableSample tr { display: table-row }
+
+table.TableSample th {
+  display: table-cell;
+  font-size: 9pt;
+  color: black;
+  color: k100;
+  padding: 0.5mm 1.5mm;
+  text-align: center;
+  vertical-align: middle;
+  border: 0.15mm solid black;
+  border-color: k100;
+  background-color: var(--ah-green-rgb-20);
+  background-color: var(--ah-green-cmyk-20);
+}
+
+table.TableSample td {
+  display: table-cell;
+  font-size: 9pt;
+  color: black;
+  color: k100;
+  padding: 0.5mm 1.5mm;
+  text-align: justify;
+  vertical-align: middle;
+  border: 0.15mm solid black;
+  border-color: k100;
+}
+
+table.ColorTable {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+table.ColorTable tr > td {
+  padding-right: 0.5em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+table.ColorTable tr > td:nth-child(3n+1) {
+  padding-right: 0.5em;
+}
+table.ColorTable tr > td:nth-child(3n+2) {
+  padding-left: 0.3em;
+}
+table.ColorTable tr > td:nth-child(3n+0) {
+  padding-left: 0.3em;
+  padding-right: 2em;
+}
+table.ColorTable tr > td:last-child {
+  padding-right: 0;
+}
+
+table.OpacityTable {
+  display: table;
+  border-collapse: collapse;
+  caption-side: top;
+}
+table.ColorTable td {
+  padding: 0.5em;
+}
+
+table.GrayscaleTable {
+  display: table;
+  border-collapse: collapse;
+  caption-side: top;
+  border: 0.3mm solid black;
+  border-color: k100;
+}
+table.GrayscaleTable td {
+  padding: 0.5em;
+  border: 0.15mm solid var(--grayscale-50);
+}
+
+p.font-face-example {
+ text-indent: 0;
+ text-align: center;
+ font-size: 3.5em;
+ line-height: 1.2;
+ font-family: font-face-example;
+}
+
+p.small-caps-example {
+ text-indent: 0;
+ text-align: center;
+ font-size: 3em;
+ line-height: 1.2;
+ font-variant: small-caps oldstyle-nums;
+}
+
+
+div.BaselineGrid {
+  -ah-baseline-grid: new;
+  -ah-baseline-block-snap: center;
+}
+div.NoBaselineGrid {
+  -ah-baseline-grid: none;
+}
+
+div.BaselineGrid div,
+div.NoBaselineGrid div {
+   font-weight:bold;
+   font-size: 1.7em;
+   padding-top: 0.2em;
+   padding-bottom: 0.4em;
+}
+
+div.BaselineGrid div {
+  -ah-baseline-grid: none;
+  -ah-baseline-block-snap: auto;
+}
+
+/* 段組 */
+div.MultiCol {
+  column-count: 2;                /* 段数を指定 */
+  column-gap: 5mm;                /* 段間 */
+  column-rule: dotted green 1mm;  /* 段間罫 */
+  border: solid 0.3pt gray;
+  padding: 3pt;
+  margin-bottom: 1em;
+}
+
+div.MultiCol3 {
+  column-count: 3;                /* 段数を指定 */
+  column-gap: 5mm;                /* 段間 */
+  column-rule: dotted green 1mm;  /* 段間罫 */
+  border: solid 0.3pt gray;
+  padding: 3pt;
+  margin-bottom: 1em;
+}
+
+div.MultiColWidth {
+  column-width: 35%;
+  column-gap: 5mm;                /* 段間 */
+  column-rule: dotted green 1mm;  /* 段間罫 */
+  border: solid 0.3pt gray;
+  padding: 3pt;
+  margin-bottom: 1em;
+}
+
+div.MultiColW {
+  column-width: 12em;             /* 段幅を指定 */
+  column-gap: 1em;                /* 段間 */
+  column-rule: solid 1pt;         /* 段間罫 */
+  border: solid 0.3pt gray;
+  padding: 3pt;
+  margin-bottom: 1em;
+}
+
+/* ハイフネーション */
+.Hyphenated {
+  hyphens: auto;
+}
+.noHyphenated {
+  hyphens: none;
+}
+span.sidenote {
+  float: sidenote;
+  text-indent: 0;
+  color: dimgray;
+  padding: 0em 0.5em;
+  text-align: outside;
+}
+::sidenote-call {
+  content: counter(sidenote, super-decimal);
+}
+::sidenote-marker {
+  content: counter(sidenote, super-decimal);
+  -ah-margin-end: 0.5em;
+}
+
+@page {
+  @sidenote {
+    float: outside;
+    clear: both;
+    width: 20%;
+  }
+}
+
+.BorderSample {
+  border-width: 0.4em;
+  margin: 0.6em 0;
+  padding: 0.2em 0.6em;
+  border-style: solid;
+  text-indent: 0 !important;
+  border-color: var(--ah-green-rgb);
+  border-color: var(--ah-green-cmyk);
+  background-color: var(--ah-green-rgb-05);
+  background-color: var(--ah-green-cmyk-05);
+  -ah-baseline-grid: none;
+}
+
+.BorderSample.NoBorder {
+  padding: 0.2em 1em; /* Extra padding so text aligns. */
+  border-style:none;
+}
+
+@counter-style my-cjk-decimal {
+system: numeric;
+range: 0 infinite;
+symbols: \3007  \4E00  \4E8C  \4E09  \56DB  \4E94  \516D  \4E03  \516B  \4E5D;
+/* 〇 一 二 三 四 五 六 七 八 九 */
+suffix: "\3001";
+/* "、" */
+}
+@counter-style my-filled-circled-decimal {
+system: fixed;
+symbols: '\2776' '\2777' '\2778' '\2779' '\277a' '\277b' '\277c' '\277d' '\277e' '\277f' '\24EB' '\24EC' '\24ED' '\24EE' '\24EF' '\24F0' '\24F1' '\24F2' '\24F3' '\24F4';
+/* symbols: '❶' '❷' '❸' '❹' '❺' '❻' '❼' '❽' '❾' '❿' '⓫' '⓬' '⓭' '⓮' '⓯' '⓰' '⓱' '⓲' '⓳' '⓴'; */
+suffix: ' ';
+} 
+.my-filled-circled-decimal li {
+    list-style-type: my-filled-circled-decimal;
+}
+.my-filled-circled-decimal li::marker {
+    font-family: 'MS PGothic';
+}
+
+ul.TOCSample {
+ -ah-pdftag: "L"; /* Workaround for PDF/UA bug in 6.5 MR2. */
+}
+
+/* Select SVG element type. Same specificity as 's|circle'
+   selector. */
+circle {
+  fill: purple;
+}
+/* Select element type */
+s|circle {
+  fill: red;
+}
+/* Select element type with ID */
+circle#circle2 {
+  fill: lightblue;
+}
+/* Select SVG element type with ID */
+s|circle#circle3 {
+  fill: beige;
+}
+/* Select SVG element by ID */
+#circle4 {
+  fill: green;
+}
+/* Select element type with ID */
+circle#circle5 {
+  fill: cyan;
+}
+/* Select element in SVG namespace by ID */
+s|#circle6 {
+  fill: pink;
+}
+
+.BackgroundContentBox {
+  border: thin dotted var(--ah-green-cmyk-50);
+  box-sizing: border-box;
+  height: 100%;
+  padding: 2pt;
+}
+
+.BackgroundOriginSample {
+  display: inline-block;
+  /* box-sizing: border-box; */
+  margin: 5pt;
+  padding: 8pt;
+  height: 40pt;
+  width: 60pt;
+  border: 5pt dashed var(--ah-green-cmyk-40);
+  background-image: url(../../images/background-size-background-darker.svg), url(../../images/background-size-background.svg);
+  background-repeat: no-repeat, repeat;
+}
+
+.BackgroundSizeSample {
+  display: inline-block;
+  margin: 10pt;
+  padding: 2pt;
+  height: 40pt;
+  width: 50pt;
+  border: thin solid var(--ah-green-cmyk);
+  background-image: url(../../images/background-size-background.svg);
+  background-repeat: no-repeat;
+}
+
+.BackgroundRepeatSample {
+  /*display: inline-block;*/
+  margin: 9pt;
+  padding: 2pt;
+  height: 40pt;
+  width: 50pt;
+  border: thin solid var(--ah-green-cmyk);
+  background-image: url(../../images/background-repeat-background.svg);
+  /* background-repeat: no-repeat; */
+}
