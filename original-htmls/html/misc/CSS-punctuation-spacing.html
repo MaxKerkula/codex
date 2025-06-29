@@ -24,7 +24,7 @@
 
         /*
         The axf:space-after-punctuation setting from the original FO's fo:declarations
-        is now handled by the config.xml file
+        is now handled by the AHFSettings-punctuation-spacing.xml file
         */
 
         .block1 {
@@ -55,11 +55,11 @@
     <div class="block2">
         <p>The following XSL-FO code was originally present in the <code>fo:declarations</code> element of the XSL-FO document:</p>
         <pre>&lt;axf:space-after-punctuation code="." space="2in" language="en"/&gt;</pre>
-        <p>This is an Antenna House Formatter specific instruction. In an HTML+CSS workflow, this global setting is typically configured via an Antenna House Formatter options file (e.g., <code>config.xml</code>) rather than a direct CSS rule in the stylesheet. Formatter will apply this setting based on the content of <code>config.xml</code> when processing the document.</p>
+        <p>This is an Antenna House Formatter specific instruction. In an HTML+CSS workflow, this global setting is typically configured via an Antenna House Formatter options file (e.g., <code>AHFSettings-punctuation-spacing.xml</code>) rather than a direct CSS rule in the stylesheet. Formatter will apply this setting based on the content of <code>AHFSettings-punctuation-spacing.xml</code> when processing the document.</p>
     </div>
 
     <div class="block3" lang="en">
-        <p>This paragraph has the HTML attribute <code>lang="en"</code>. This will cause the punctuation spacing (defined in <code>config.xml</code>) to be applied, and there will be 2 inches of space after the periods. The first paragraph does not have the <code>lang="en"</code> attribute, so the extension isn't applied to it.</p>
+        <p>This paragraph has the HTML attribute <code>lang="en"</code>. This will cause the punctuation spacing (defined in <code>AHFSettings-punctuation-spacing.xml</code>) to be applied, and there will be 2 inches of space after the periods. The first paragraph does not have the <code>lang="en"</code> attribute, so the extension isn't applied to it.</p>
     </div>
 </body>
 </html> 
