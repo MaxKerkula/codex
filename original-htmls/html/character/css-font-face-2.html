@@ -49,20 +49,20 @@
     }
     @font-face {
       font-family: "Shakespeare-Normal";
-      src: url("ILShakeFest.ttf") format("truetype");
+      src: url("../../fonts/ILShakeFest.ttf") format("truetype");
     }
     @font-face {
       font-family: "Shakespeare";
-      src: url("ILShakeFest.ttf") format("truetype");
+      src: url("../../fonts/ILShakeFest.ttf") format("truetype");
       unicode-range: U+0040-0060;
     }
     @font-face {
       font-family: "MySourceHanSans";
-      src: url("SourceHanSans-Regular.otf") format("opentype");
+      src: url("../../fonts/SourceHanSans-Regular.otf") format("opentype");
     }
     @font-face {
       font-family: "MySourceHanSans-adjust";
-      src: url("SourceHanSans-Regular.otf") format("opentype");
+      src: url("../../fonts/SourceHanSans-Regular.otf") format("opentype");
       -ah-size-adjust: 0.85;
     }
     pre {
@@ -103,9 +103,9 @@
     <pre>
 &lt;!-- Example: specifying two fonts with different unicode-ranges --&gt;
 &lt;@font-face font-family="Shakespeare-Normal"
-  src="url('ILShakeFest.ttf')" /&gt;  
+  src="url('../../fonts/ILShakeFest.ttf')" /&gt;
 &lt;@font-face font-family="Shakespeare"
-  src="url('ILShakeFest.ttf')" 
+  src="url('../../fonts/ILShakeFest.ttf')"
   unicode-range="U+0040-0060" /&gt;
     </pre>
     <div style="margin-top:0.5em; font-family:Shakespeare-Normal,serif; font-size:1.2em;">
@@ -126,9 +126,9 @@
 &lt;!-- Example: specifying two versions of Source Han Sans,
    one with size-adjust for balancing English text --&gt;
 &lt;@font-face font-family="MySourceHanSans"
-  src="url('SourceHanSans-Regular.otf')" /&gt;   
+  src="url('../../fonts/SourceHanSans-Regular.otf')" /&gt;
 &lt;@font-face font-family="MySourceHanSans-adjust"
-  src="url('SourceHanSans-Regular.otf')"
+  src="url('../../fonts/SourceHanSans-Regular.otf')"
   size-adjust="0.85" /&gt;
     </pre>
     <div lang="ja" style="margin-top:0.5em; font-family:Arial,MySourceHanSans; font-size:1.2em;">
