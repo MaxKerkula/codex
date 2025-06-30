@@ -1,109 +1,91 @@
 <!DOCTYPE html>
 <!-- $Id$ -->
-<html lang="en" data-cat="adv-forms" data-order="0" data-ver="6.3">
+<html lang="en" data-cat="adv-forms" data-order="1" data-ver="6.3">
 <head>
-    <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
-    <meta name="specification" content=""/>
-<link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
-<link rel="stylesheet" href="../../css/booklet-page-en.css"/>
-<link rel="stylesheet" href="../../css/css-sample-en.css"/>
-    <meta charset="UTF-8">
-    <title>Dynamic Listbox Content Change</title>
-    <meta name="author" content="user name">
-    <meta name="openaction" content="#JavaScript=
-
+  <title>Dynamic Listbox Content Change</title>
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, pdf‑forms, javascript, listbox">
+  <meta name="specification" content="Forms‑JavaScript‑Dynamic‑List">
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+  <!-- preserves original openaction JavaScript meta -->
+  <meta name="openaction" content="#JavaScript=
     var f1 = this.getField('listbox1');
-	var f2 = this.getField('listbox2');
-	
-	f1.setAction('Keystroke', 'setF2func();');
-	
-	function setF2func() {
-		
-		if (event.changeEx == 'M') {
-			f2.clearItems();
-			f2.setItems(['Mastercard1', 'Mastercard2', 'Mastercard3']);
-		} else if (event.changeEx == 'V') {
-			f2.clearItems();
-			f2.setItems(['Visa1', 'Visa2', 'Visa3']);
-		} else if (event.changeEx == 'A') {
-			f2.clearItems();
-			f2.setItems(['Amex1', 'Amex2', 'Amex3']);
-		}
-	}
-	
-"
-                 />
-    <style>
-        html {
-            font-family: Times, serif;
-            font-size: 10pt;
-        }
+    var f2 = this.getField('listbox2');
+    f1.setAction('Keystroke', 'setF2func();');
+    function setF2func() {
+      if (event.changeEx == 'M') {
+        f2.clearItems();
+        f2.setItems(['Mastercard1', 'Mastercard2', 'Mastercard3']);
+      } else if (event.changeEx == 'V') {
+        f2.clearItems();
+        f2.setItems(['Visa1', 'Visa2', 'Visa3']);
+      } else if (event.changeEx == 'A') {
+        f2.clearItems();
+        f2.setItems(['Amex1', 'Amex2', 'Amex3']);
+      }
+    }"/>
+  <style>
 
-        @page {
-            size: A4;
-            margin: 25mm;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        .title-block {
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 5mm;
-        }
-
-        .form-block {
-            border: solid 1pt red;
-            margin-top: 5mm;
-        }
-        
-        select {
-            width: 10em;
-            height: 25mm;
-            background-color: #ff8;
-            border: 1pt silver inset;
-            -ah-field-type: listbox;
-            -ah-field-top-index: 1;
-            -ah-field-multiple: false;
-            font-family: Times, serif;
-        }
-
-        label {
-            display: inline;
-        }
-    </style>
+    @page { -ah-page-frame-size: 180mm 250mm; margin: 15mm; }
+    .title-block { font-weight:bold; text-align:center; margin-bottom:5mm; }
+    .form-block { border: solid 1pt red; margin-top:5mm; }
+    select { width:10em; height:25mm; background:#FF8; border:1pt silver inset; -ah-field-type:listbox; -ah-field-top-index:1; -ah-field-multiple:false; font-family:Times, serif; }
+    label { display:inline; }
+  </style>
 </head>
 <body>
-<div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
 
-    <div class="title-block">
-        Listbox Test - Dynamically Change Content of Second Listbox
-    </div>
+  <h1 lang="en">Listbox Test — dynamic content</h1>
 
-    <div class="form-block">
-        <form action="http://xwww.antenna.co.jp/form-test.cgi" method="post">
-            <label for="listbox1">ListBox 1:</label>
-            <select name="listbox1" id="listbox1">
-                <option value="M">MasterCard</option>
-                <option value="V">Visa</option>
-                <option value="A">AMEX</option>
-            </select>
-        </form>
-    </div>
+  <div class="description" lang="en">
+    <p>This sample demonstrates JavaScript embedded in PDF forms. Selecting an issuer in “Listbox 1” dynamically populates “Listbox 2” when viewed in a JavaScript‑enabled PDF reader.</p>
+  </div>
 
-    <div class="form-block">
-        <form action="http://xwww.antenna.co.jp/form-test.cgi" method="post">
-            <label for="listbox2">ListBox 2:</label>
-            <select name="listbox2" id="listbox2">
-                <option value="M2">empty1</option>
-                <option value="V2">empty2</option>
-                <option value="A2">empty3</option>
-            </select>
-        </form>
-    </div>
+  <!-- Source code excerpt -->
+  <div class="source" lang="en">
+    <pre class="code-block">&lt;meta name=&quot;openaction&quot; content=&quot;#JavaScript=
+    var f1 = this.getField('listbox1');
+    var f2 = this.getField('listbox2');
+    f1.setAction('Keystroke', 'setF2func();');
+    function setF2func() {
+      if (event.changeEx == 'M') {
+        f2.clearItems();
+        f2.setItems(['Mastercard1', 'Mastercard2', 'Mastercard3']);
+      } else if (event.changeEx == 'V') {
+        f2.clearItems();
+        f2.setItems(['Visa1', 'Visa2', 'Visa3']);
+      } else if (event.changeEx == 'A') {
+        f2.clearItems();
+        f2.setItems(['Amex1', 'Amex2', 'Amex3']);
+      }
+    }&quot;/&gt;</pre>
+  </div>
 
+  <!-- original form blocks kept intact -->
+  <div class="form-block">
+    <form action="http://xwww.antenna.co.jp/form-test.cgi" method="post">
+      <label for="listbox1">ListBox 1:</label>
+      <select name="listbox1" id="listbox1">
+        <option value="M">MasterCard</option>
+        <option value="V">Visa</option>
+        <option value="A">AMEX</option>
+      </select>
+    </form>
+  </div>
+
+  <div class="form-block">
+    <form action="http://xwww.antenna.co.jp/form-test.cgi" method="post">
+      <label for="listbox2">ListBox 2:</label>
+      <select name="listbox2" id="listbox2">
+        <option value="M2">empty1</option>
+        <option value="V2">empty2</option>
+        <option value="A2">empty3</option>
+      </select>
+    </form>
+  </div>
 </body>
-</html> 
+</html>

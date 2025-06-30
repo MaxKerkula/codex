@@ -1,122 +1,163 @@
 <!DOCTYPE html>
 <!-- $Id$ -->
-<html data-cat="adv-forms" data-order="0" data-ver="6.3">
+<html lang="en" data-cat="adv-forms" data-order="0" data-ver="6.3" >
 <head>
-    <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
-    <meta name="specification" content=""/>
-<link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
-<link rel="stylesheet" href="../../css/booklet-page-en.css"/>
-<link rel="stylesheet" href="../../css/css-sample-en.css"/>
-<meta charset="UTF-8">
-<title>formdemo.fo converted for Antenna House Formatter</title>
-<style>
-body {
-  font-size: 12pt;
-  font-family: Arial;
-  -ah-hyphenation-push-character-count: 1;
-  -ah-hyphenation-remain-character-count: 1;
-  margin: 1in;
-}
+  <title>Interactive Form Elements</title>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, forms, interactive"/>
+  <meta name="specification" content="HTML-Forms"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
 
-.formdemo-form {
-  -ah-margin-before: 0;
-  -ah-margin-after: 0;
-}
+  <!-- Sample-specific styles (kept minimal and functional) -->
+  <style>
+    /* Typography & layout defaults */
+    body {
+      -ah-hyphenation-push-character-count: 1;
+      -ah-hyphenation-remain-character-count: 1;
+    }
 
-.formdemo-block {
-  -ah-margin-before: 0;
-  -ah-margin-after: 0;
-}
+    /* Utility: zero top/bottom margins around blocks */
+    .formdemo-block {
+      -ah-margin-before: 0;
+      -ah-margin-after: 0;
+    }
 
-.input-text {
-  color: black;
-  width: 20em;
-  height: 1.2em;
-  border: 1pt solid black;
-}
-.input-radio, .input-checkbox {
-  width: 1em;
-  height: 1em;
-  border: 1pt solid black;
-}
+    /* Form layout */
+    .SampleBox ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .SampleBox li {
+      margin-bottom: 0.5em;
+      display: flex;
+      align-items: center;
+    }
+    .SampleBox li label {
+      width: 8em; /* Fixed width for labels */
+      flex-shrink: 0; /* Prevent label from shrinking */
+    }
 
-.select-combobox {
-  width: 20em;
-  height: 1.2em;
-  border: 1pt solid black;
-}
-.select-listbox {
-  width: 20em;
-  height: 3.6em;
-  border: 1pt solid black;
-}
-.input-password {
-  width: 20em;
-  height: 1.2em;
-  border: 1pt solid black;
-}
-.textarea-multiline {
-  width: 20em;
-  height: 3.6em;
-  border: 1pt solid black;
-}
-.button-submit {
-  width: 5em;
-  background-color: #eee;
-  border: 2px silver outset;
-}
+    /* Form controls */
+    .input-text,
+    .input-password,
+    .select-combobox {
+      width: 20em;
+      height: 1.2em;
+      border: 1pt solid black;
+    }
 
-@page {
-}
-</style>
+    .input-radio,
+    .input-checkbox {
+      width: 1em;
+      height: 1em;
+      border: 1pt solid black;
+    }
+
+    .select-listbox,
+    .textarea-multiline {
+      width: 20em;
+      height: 3.6em;
+      border: 1pt solid black;
+    }
+
+    .button-submit {
+      width: 5em;
+      background-color: #eeeeee;
+      border: 2px silver outset;
+    }
+
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+  </style>
 </head>
 <body>
-<div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-<form class="formdemo-form" action="http://some-fake-addess.com" method="get">
-  <div class="formdemo-block">Text Box</div>
-  <div class="formdemo-block">
-    <input class="input-text" type="text" name="textfield" />
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1 lang="en">Interactive Form Elements</h1>
+
+  <!-- Introductory description -->
+  <div class="description" lang="en">
+    <p>This sample demonstrates various interactive form controls rendered in a PDF document using Antenna&nbsp;House&nbsp;Formatter.</p>
   </div>
-  <div class="formdemo-block">Radio Buttons</div>
-  <div class="formdemo-block">
-    Option 1 <input class="input-radio" type="radio" name="Radio" value="Option1" checked />
-    Option 2 <input class="input-radio" type="radio" name="Radio" value="Option2" />
+
+  <!-- Source code excerpt -->
+  <div class="source" lang="en">
+    <pre class="code-block">&lt;form action=&quot;http://some-fake-addess.com&quot; method=&quot;get&quot;&gt;
+  &lt;input type=&quot;text&quot; name=&quot;textfield&quot; /&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;Radio&quot; value=&quot;Option1&quot; /&gt;
+  &lt;input type=&quot;checkbox&quot; checked /&gt;
+  &lt;select name=&quot;combobox&quot;&gt;...&lt;/select&gt;
+  &lt;select name=&quot;listbox&quot; size=&quot;6&quot;&gt;...&lt;/select&gt;
+  &lt;input type=&quot;password&quot; /&gt;
+  &lt;textarea&gt;text area&lt;/textarea&gt;
+  &lt;button type=&quot;submit&quot;&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</pre>
   </div>
-  <div class="formdemo-block">Checkbox</div>
-  <div class="formdemo-block">
-    <input class="input-checkbox" type="checkbox" checked />
+
+  <!-- Visual demonstration -->
+  <div class="SampleBox TextSample" lang="en">
+    <form class="formdemo-form" action="http://some-fake-addess.com" method="get">
+      <ul>
+      <li>
+          <label>Text Box</label>
+          <input class="input-text" type="text" name="textfield" />
+        </li>
+
+      <li>
+          <label>Radio Buttons</label>
+          Option&nbsp;1 <input class="input-radio" type="radio" name="Radio" value="Option1" checked />
+          Option&nbsp;2 <input class="input-radio" type="radio" name="Radio" value="Option2" />
+        </li>
+
+      <li>
+          <label>Checkbox</label>
+          <input class="input-checkbox" type="checkbox" checked />
+        </li>
+
+      <li>
+          <label>Dropdown List</label>
+          <select class="select-combobox" name="combobox">
+            <option value="1">option1</option>
+            <option value="2">option2</option>
+            <option value="3">option3</option>
+          </select>
+        </li>
+
+      <li>
+          <label>List Box</label>
+          <select class="select-listbox" name="listbox" size="6">
+            <option value="1">option1</option>
+            <option value="2">option2</option>
+            <option value="3">option3</option>
+            <option value="4">option4</option>
+            <option value="5">option5</option>
+            <option value="6">option6</option>
+          </select>
+        </li>
+
+      <li>
+          <label>Password Box</label>
+          <input class="input-password" type="password" maxlength="50" />
+        </li>
+
+      <li>
+          <label>Text Area</label>
+          <textarea class="textarea-multiline" maxlength="500">text area</textarea>
+        </li>
+
+      <li>
+          <label>Submit Button</label>
+          <button class="button-submit" name="SubmitButton" type="submit">Submit</button>
+        </li>
+    </ul>
+    </form>
   </div>
-  <div class="formdemo-block">Dropdown List</div>
-  <div class="formdemo-block">
-    <select class="select-combobox" name="combobox">
-      <option value="1">option1</option>
-      <option value="2">option2</option>
-      <option value="3">option3</option>
-    </select>
-  </div>
-  <div class="formdemo-block">List Box</div>
-  <div class="formdemo-block">
-    <select class="select-listbox" name="listbox" size="6">
-      <option value="1">option1</option>
-      <option value="2">option2</option>
-      <option value="3">option3</option>
-      <option value="4">option4</option>
-      <option value="5">option5</option>
-      <option value="6">option6</option>
-    </select>
-  </div>
-  <div class="formdemo-block">Password Box</div>
-  <div class="formdemo-block">
-    <input class="input-password" type="password" maxlength="50" />
-  </div>
-  <div class="formdemo-block">Text Area</div>
-  <div class="formdemo-block">
-    <textarea class="textarea-multiline" maxlength="500">text area</textarea>
-  </div>
-  <div class="formdemo-block">Submit Button</div>
-  <div class="formdemo-block">
-    <button class="button-submit" name="SubmitButton" type="submit">Submit</button>
-  </div>
-</form>
 </body>
-</html> 
+</html>
