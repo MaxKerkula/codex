@@ -82,29 +82,21 @@
     .data-cell-left-align {
       text-align: left;
     }
-    .barcode-table .barcode-cell {
-      text-align: center;
-      justify-self: end;
-    }
+
     .barcode-img {
       display: block;
       margin: 0 auto;
       max-width: 45mm;
       max-height: 20mm;
-      width: 100%;
+      width: auto;
       height: auto;
     }
 
     .barcode-generator-link {
       -ah-link-alt-text: "Antenna House Formatter Barcode Generator Option";
     }
-    .barcode-img-cw80 {
-      -ah-content-width: 60%;
-    }
-    .barcode-cell {
-      text-align: center;
-      -ah-inline-overflow-align: normal;
-    }
+
+
     .data-cell {
       text-align: center;
     }
@@ -152,7 +144,7 @@
     .data-cell-left-align, .data-cell { text-align: left; }
     .barcode-cell {
       text-align: right;
-      overflow: hidden;
+      -ah-inline-overflow-align: normal;
     }
     .barcode-img {
       max-width: 45mm;
@@ -189,7 +181,7 @@
           <col style="width:50%;">
           <col style="width:50%;">
         </colgroup>
-        <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+  
         <tr>
           <td class="data-cell-left-align">Antenna House, Inc.<br>500 Creek View Rd., Suite 107,<br>Newark, Delaware 19711 USA<br>https://www.antennahouse.com/</td>
           <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;type=QR;scale=2,Antenna House, Inc. 500 Creek View Rd., Suite 107, Newark, Delaware 19711 USA https://www.antennahouse.com" alt="QR Barcode"></td>
@@ -214,7 +206,7 @@
           <col style="width:50%;">
           <col style="width:50%;">
         </colgroup>
-        <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+  
         <tr>
           <td class="data-cell">Antenna House</td>
           <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;type=MicroQR;scale=3,Antenna House" alt="MicroQR Barcode"></td>
@@ -239,7 +231,7 @@
           <col style="width:50%;">
           <col style="width:50%;">
         </colgroup>
-        <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+  
         <tr>
           <td class="data-cell">Antenna House Formatter</td>
           <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;scale=3;enc=AB;type=DM,Antenna House Formatter" alt="Data Matrix Barcode"></td>
@@ -262,7 +254,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">https://www.antennahouse.com/</td>
         <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;scale=1;type=PDF417,https://www.antennahouse.com/" alt="PDF417 Barcode"></td>
@@ -284,7 +276,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">https://www.antennahouse.com/</td>
         <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;type=Aztec;out=png;scale=2;qz=4,https://www.antennahouse.com/" alt="Aztec Code Barcode"></td>
@@ -306,7 +298,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">1030004</td>
         <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;type=JPCBC;text=auto,1030004" alt="Japan Post Customer Barcode"></td>
@@ -328,7 +320,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">01234567094987654321</td>
         <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;type=IMBC,01234567094987654321" alt="Intelligent Mail Barcode"></td>
@@ -350,7 +342,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">555551237</td>
         <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;type=POSTNET,555551237" alt="POSTNET Barcode"></td>
@@ -372,7 +364,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">4901234567894</td>
         <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;type=EAN;scale=1;text=auto,4901234567894" alt="EAN / JAN Barcode"></td>
@@ -394,7 +386,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">01234567899</td>
         <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;type=UPC;text=auto;scale=1,01234567899" alt="UPC Barcode"></td>
@@ -416,7 +408,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">1234567890</td>
         <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;type=ITF;text=auto;scale=1,1234567890" alt="ITF Barcode"></td>
@@ -438,7 +430,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">A37859+B</td>
         <td class="barcode-cell"><img class="barcode-img barcode-img-cw80" src="data:application/vnd.ah-barcode;content-width=80%;type=CODABAR;text=auto;scale=1,A37859+B" alt="Codabar Barcode"></td>
@@ -460,7 +452,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">01234Sample56789</td>
         <td class="barcode-cell"><img class="barcode-img barcode-img-cw80" src="data:application/vnd.ah-barcode;content-width=80%;type=code39;text=auto;scale=1,01234Sample56789" alt="Code39 Barcode"></td>
@@ -482,7 +474,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">antenna9021</td>
         <td class="barcode-cell"><img class="barcode-img barcode-img-cw80" src="data:application/vnd.ah-barcode;content-width=80%;type=CODE128;text=auto;scale=1,antenna9021" alt="Code 128 Barcode"></td>
@@ -504,7 +496,7 @@
         <col style="width:50%;">
         <col style="width:50%;">
       </colgroup>
-      <tr class="header-row"><th>Set Data</th><th>Barcode</th></tr>
+
       <tr>
         <td class="data-cell">&#xc6;0114912345678901</td>
         <td class="barcode-cell"><img class="barcode-img" src="data:application/vnd.ah-barcode;type=GS1-128;text=auto,Æ0114912345678901" alt="GS1-128 Barcode"></td>
