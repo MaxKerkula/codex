@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- $Id$ -->
+<html lang="en" data-cat="pdf-features" data-order="0" data-ver="6.3">
 <head>
+    <meta name="specification" content=""/>
 <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
 <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
 <link rel="stylesheet" href="../../css/css-sample-en.css"/>
@@ -132,6 +134,7 @@
     </style>
 </head>
 <body>
+<div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
     <h1>Embedded and External Multimedia Data</h1>
 
     <p class="intro">On &lt;<a href="https://www.w3.org/TR/xsl11/#fo_external-graphic" class="link-style" data-annotation-contents="fo:external-graphic" data-alttext="">video</a>&gt;, '-ah-multimedia-treatment' allows you to specify whether to embed multimedia data in PDF output or to reference it.  For example: <span class="code-inline">&lt;video src="video.mpg" type="video/mpeg" class="multimedia-object multimedia-base"&gt;&lt;/video&gt;</span>. A poster picture can be specified using the standard HTML5 \`poster\` attribute. To apply '-ah-multimedia-treatment', specify as follows: 'auto' (use the <a href="https://www.antenna.co.jp/AHF/help/en/ahf-optset.html#multimedia-treatment" class="link-style" data-annotation-contents="multimedia-treatment" data-alttext="">multimedia-treatment</a> value in the Option Setting File); 'embed' (embed multimedia in the PDF); 'absolute-link' (refer to multimedia using an absolute path); 'relative-link' (refer to multimedia using a relative path); 'richmedia' (embed as a Rich Media annotation); 'richmedia-windowed' (embed as a Rich Media annotation but display in a separate window when playing). For more details see also "<a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.multimedia-treatment" class="link-style" data-annotation-contents="axf:multimedia-treatment" data-alttext="">-ah-multimedia-treatment</a>" in the Manual. '-ah-multimedia-treatment' is available in AH Formatter V6.3 and later. Handling multimedia files is valid only with PDF1.5 or higher. 'richmedia' and 'richmedia-windowed' require both PDF1.7 or higher and AH Formatter V6.5 or later.</p>
