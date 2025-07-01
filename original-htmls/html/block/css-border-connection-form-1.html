@@ -1,164 +1,175 @@
 <!DOCTYPE html>
 <!-- $Id$ -->
 <html lang="en" data-cat="block" data-order="0" data-ver="6.3">
-	<head>
-    <meta charset="UTF-8"/>
-    <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
-    <meta name="specification" content=""/>
-<link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
-<link rel="stylesheet" href="../../css/booklet-page-en.css"/>
-<link rel="stylesheet" href="../../css/css-sample-en.css"/>
-			<style>
-				@page
-				{
-					@footnote
-					{
-						-ah-float: page bottom;
-						-ah-suppress-duplicate-footnote: true;
-					}
-				}
-				.codePrint
-				{
-					font-weight: bold;
-					font-family: 'Courier New', 'DejaVu Sans', monospace;
-				}
-				h2
-				{
-					font-family: sans-serif;
-				}
-				table
-				{
-					width: 100%;
-					height: 8em;
-					border-collapse: collapse;
-				}
-				span.footnote
-				{
-					-ah-float: footnote;
-				}
-			</style>
-	</head>
-	<body>
-<div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div id = "topImage">
-		</div>
-		<div class="main-content">
-		</div>
-		<div class="title">
-			Shape of connections between borders
-		</div>
-		<div class="subheading">
-			<span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.border-connection-form">-ah-border-connection-form:</a></span> specifies the shape of connections between borders. It is available in AH Formatter V6.6.
-		</div>
-		<div>
-			<h2>
-				-ah-border-connection-form: mixed;
-			</h2>
-			<div>
-				When <span class = "codePrint">-ah-border-connection-form</span> is <span class = "codePrint">mixed</span>, T-intersections of borders with the same thickness connect with squared off ends. Other connections are wedge-shaped.
-			</div>
-			<table style="-ah-margin-before: 1em; -ah-margin-after: 1em; table-layout: fixed; -ah-border-connection-form: mixed;">
-				<tbody>
-					<tr style="height: 3em;">
-						<td style="text-align: center; -ah-display-align: center; -ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">
-							1
-						</td>
-						<td style="text-align: center; -ah-display-align: center; -ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">
-							2
-						</td>
-					</tr>
-					<tr style="height: 3em;">
-						<td style="text-align: center; -ah-display-align: center; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: green; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">
-							3
-						</td>
-						<td style="text-align: center; -ah-display-align: center; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">
-							4
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div>
-			<h2>
-				-ah-border-connection-form: wedge;
-			</h2>
-			<div>
-				When <span class = "codePrint">-ah-border-connection-form</span> is <span class = "codePrint">wedge</span>, all borders connect with a wedge shape. Connections form an X shape at cross-shaped intersections, and form a Y shape at T-intersections.
-			</div>
-			<table style="-ah-margin-before: 1em; -ah-margin-after: 1em; table-layout: fixed; -ah-border-connection-form: wedge;">
-				<tbody>
-					<tr style="height: 3em;">
-						<td style="text-align: center; -ah-display-align: center; -ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">
-							1
-						</td>
-						<td style="text-align: center; -ah-display-align: center; -ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">
-							2
-						</td>
-					</tr>
-					<tr style="height: 3em;">
-						<td style="text-align: center; -ah-display-align: center; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: green; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">
-							3
-						</td>
-						<td style="text-align: center; -ah-display-align: center; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">
-							4
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div>
-			<h2>
-				-ah-border-connection-form: precedence;
-			</h2>
-			<div>
-				When <span class = "codePrint">-ah-border-connection-form</span> is <span class = "codePrint">precedence</span>, the thicker border is drawn to the edge. When intersecting borders have the same thickness, the border with the higher border priority<span class = "footnote">Refer to <a href="https://www.w3.org/TR/CSS2/tables.html#border-conflict-resolution">17.6.2.1 Border conflict resolution</a> for details of border priority.</span> is drawn to the edge.
-			</div>
-			<table style="-ah-margin-before: 1em; -ah-margin-after: 1em; table-layout: fixed; -ah-border-connection-form: precedence;">
-				<tbody>
-					<tr style="height: 3em;">
-						<td style="text-align: center; -ah-display-align: center; -ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">
-							1
-						</td>
-						<td style="text-align: center; -ah-display-align: center; -ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">
-							2
-						</td>
-					</tr>
-					<tr style="height: 3em;">
-						<td style="text-align: center; -ah-display-align: center; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: green; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">
-							3
-						</td>
-						<td style="text-align: center; -ah-display-align: center; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">
-							4
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-		<div style="break-before: page;">
-			<div class = "subheading">
-				For &lt;div&gt;, when ‘mixed’ or ‘wedge’ is specified, all border intersections are wedge-shaped,  but when ‘precedence’ is specified, the shape depends on the relative priority of the borders.
-			</div>
-			<div style="-ah-margin-start: 20%; -ah-margin-end: 20%; height: 20mm; -ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green; -ah-border-connection-form: mixed;">
-				<div style="text-align: center; -ah-margin-start: 0; -ah-margin-end: 0;">
-					-ah-border-connection-form: mixed;
-				</div>
-			</div>
-			<div style=" -ah-margin-before: 1em; -ah-margin-after: 1em; -ah-margin-start: 20%; -ah-margin-end: 20%; height: 20mm; -ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green; -ah-border-connection-form: mixed;">
-				<div style="text-align: center; -ah-margin-start: 0; -ah-margin-end: 0;">
-					-ah-border-connection-form: wedge;
-				</div>
-			</div>
-			<div style=" -ah-margin-before: 1em; -ah-margin-after: 1em; -ah-margin-start: 20%; -ah-margin-end: 20%; height: 20mm; -ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green; -ah-border-connection-form: precedence;">
-				<div style="text-align: center; -ah-margin-start: 0; -ah-margin-end: 0;">
-					-ah-border-connection-form: precedence;
-				</div>
-			</div>
-			<div style=" -ah-margin-before: 1em; -ah-margin-after: 1em; -ah-margin-start: 20%; -ah-margin-end: 20%; height: 20mm; -ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: groove; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: dotted; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: double; -ah-border-end-width: 10pt; -ah-border-end-color: green; -ah-border-connection-form: precedence;">
-				<div style="text-align: center; -ah-margin-start: 0; -ah-margin-end: 0;">
-					-ah-border-connection-form: precedence;
-				</div>
-			</div>
-		</div>
-	</body>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, border connection"/>
+  <meta name="specification" content="Block-Extensions"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
 
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+      @footnote {
+        -ah-float: page bottom;
+        -ah-suppress-duplicate-footnote: true;
+      }
+    }
+
+    /* Spacing helpers */
+    .text-block {
+      -ah-margin-before: 0;
+      -ah-margin-after: 0;
+    }
+    .text-block-mb1 {
+      -ah-margin-before: 1em;
+      -ah-margin-after: 0;
+    }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Section headers */
+    .demo-section {
+      -ah-margin-before: 1.2em;
+      -ah-margin-after: 0.6em;
+      font-weight: 600;
+      font-size: 1.1em;
+      color: #333;
+      font-family: sans-serif;
+    }
+
+    /* Demo tables */
+    .demo-table {
+      width: 100%;
+      height: 6em;
+      border-collapse: collapse;
+      -ah-margin-before: 0.8em;
+      -ah-margin-after: 1em;
+      table-layout: fixed;
+    }
+
+    .demo-table td {
+      text-align: center;
+      -ah-display-align: center;
+      height: 3em;
+    }
+
+    /* Border demo boxes */
+    .border-demo-box {
+      -ah-margin-before: 1em;
+      -ah-margin-after: 1em;
+      -ah-margin-start: 20%;
+      -ah-margin-end: 20%;
+      height: 20mm;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Footnote styling */
+    span.footnote {
+      -ah-float: footnote;
+    }
+
+    /* Keep sections together */
+    .border-section {
+      -ah-keep-together-within-page: always;
+      break-inside: avoid-page;
+      page-break-inside: avoid;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Border Connection Forms</h1>
+
+  <div class="description" lang="en">
+    The <code class="code-inline">-ah-border-connection-form</code> property specifies the shape of connections between borders. This property controls how borders meet at intersections and is available in AH Formatter V6.6 and later. The property accepts three values: <code class="code-inline">mixed</code>, <code class="code-inline">wedge</code>, and <code class="code-inline">precedence</code>, each creating different visual effects at border intersections.
+  </div>
+
+  <div class="border-section">
+    <div class="demo-section">Mixed Connection Form</div>
+    <p class="text-block">When <code class="code-inline">-ah-border-connection-form</code> is <code class="code-inline">mixed</code>, T-intersections of borders with the same thickness connect with squared off ends. Other connections are wedge-shaped.</p>
+    <table class="demo-table" style="-ah-border-connection-form: mixed;">
+      <tbody>
+        <tr>
+          <td style="-ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">1</td>
+          <td style="-ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">2</td>
+        </tr>
+        <tr>
+          <td style="-ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: green; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">3</td>
+          <td style="-ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="border-section">
+    <div class="demo-section">Wedge Connection Form</div>
+    <p class="text-block">When <code class="code-inline">-ah-border-connection-form</code> is <code class="code-inline">wedge</code>, all borders connect with a wedge shape. Connections form an X shape at cross-shaped intersections, and form a Y shape at T-intersections.</p>
+    <table class="demo-table" style="-ah-border-connection-form: wedge;">
+      <tbody>
+        <tr>
+          <td style="-ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">1</td>
+          <td style="-ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">2</td>
+        </tr>
+        <tr>
+          <td style="-ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: green; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">3</td>
+          <td style="-ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="border-section">
+    <div class="demo-section">Precedence Connection Form</div>
+    <p class="text-block">When <code class="code-inline">-ah-border-connection-form</code> is <code class="code-inline">precedence</code>, the thicker border is drawn to the edge. When intersecting borders have the same thickness, the border with the higher border priority<span class="footnote">Refer to <a href="https://www.w3.org/TR/CSS2/tables.html#border-conflict-resolution">17.6.2.1 Border conflict resolution</a> for details of border priority.</span> is drawn to the edge.</p>
+    <table class="demo-table" style="-ah-border-connection-form: precedence;">
+      <tbody>
+        <tr>
+          <td style="-ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">1</td>
+          <td style="-ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green;">2</td>
+        </tr>
+        <tr>
+          <td style="-ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: green; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">3</td>
+          <td style="-ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: blue;">4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="break-before: page;" class="border-section">
+    <div class="demo-section">Border Connection Forms on Block Elements</div>
+    <p class="text-block">For <code class="code-inline">&lt;div&gt;</code> elements, when <code class="code-inline">mixed</code> or <code class="code-inline">wedge</code> is specified, all border intersections are wedge-shaped, but when <code class="code-inline">precedence</code> is specified, the shape depends on the relative priority of the borders.</p>
+    
+    <div class="border-demo-box" style="-ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green; -ah-border-connection-form: mixed;">
+      <code class="code-inline">-ah-border-connection-form: mixed</code>
+    </div>
+    
+    <div class="border-demo-box" style="-ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green; -ah-border-connection-form: wedge;">
+      <code class="code-inline">-ah-border-connection-form: wedge</code>
+    </div>
+    
+    <div class="border-demo-box" style="-ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: solid; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: solid; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: solid; -ah-border-end-width: 10pt; -ah-border-end-color: green; -ah-border-connection-form: precedence;">
+      <code class="code-inline">-ah-border-connection-form: precedence</code>
+    </div>
+    
+    <div class="border-demo-box" style="-ah-border-before-style: solid; -ah-border-before-width: 10pt; -ah-border-before-color: red; -ah-border-after-style: groove; -ah-border-after-width: 10pt; -ah-border-after-color: yellow; -ah-border-start-style: dotted; -ah-border-start-width: 10pt; -ah-border-start-color: blue; -ah-border-end-style: double; -ah-border-end-width: 10pt; -ah-border-end-color: green; -ah-border-connection-form: precedence;">
+      <code class="code-inline">precedence with different border styles</code>
+    </div>
+  </div>
+</body>
 </html>

@@ -1,76 +1,82 @@
 <!DOCTYPE html>
 <!-- $Id$ -->
 <html lang="en" data-cat="block" data-order="0" data-ver="6.3">
-	<head>
-    <meta charset="UTF-8"/>
-    <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
-    <meta name="specification" content=""/>
-<link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
-<link rel="stylesheet" href="../../css/booklet-page-en.css"/>
-<link rel="stylesheet" href="../../css/css-sample-en.css"/>
-			<style>
-				@page
-				{
-					
-				}
-				.codePrint
-				{
-					font-weight: bold;
-					font-family: 'Courier New', 'DejaVu Sans', monospace;
-				}
-				div
-				{
-					margin-bottom: 20pt;
-				}
-				.borderBox_0
-				{
-					border: solid black;
-					padding: 2em;
-				}
-				.borderBox_1
-				{
-					padding: 2em;
-					border: solid blue; 
-					-ah-border-radius: 15pt 10pt;
-				}
-				.borderBox_2
-				{
-					padding: 2em;
-					border: solid salmon; 
-					-ah-border-radius: 25pt 25pt;
-				}
-				.borderBox_3
-				{
-					padding: 2em;
-					border: solid lime;
-					-ah-border-radius: 50% 50%;
-				}
-			</style>
-	</head>
-	<body>
-<div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div id = "topImage">
-		</div>
-		<div class="main-content">
-		</div>
-		<div class="title">
-				Border extension for rounded corners
-		</div>
-		<div class="subheading">
-			As a type of border, a radius border can be drawn by using <span class = "codePrint">-ah-border-radius:</span>. Specify such as <span class = "codePrint">-ah-border-radius: 15pt 10pt;</span>, then the default value will be set as a horizontal diameter (vertical diameter when <span class = "codePrint">-ah-writing-mode: vertical-rl;</span>). The second value is the other diameter. If omitted, it will be regarded as a default value, and it cannot be rounded if either diameter is less than zero.
-		</div>
-		<div class = "borderBox_0">
-			Here is an example without specification
-		</div>
-		<div class = "borderBox_1">
-			Here is an example of a block with <span class = "codePrint">-ah-border-radius: 15pt 10pt;</span>
-		</div>
-		<div class = "borderBox_2">
-			Here is an example of a block with <span class = "codePrint">-ah-border-radius: 25pt 25pt;</span>
-		</div>
-		<div class = "borderBox_3">
-			Here is an example of a block with <span class = "codePrint">-ah-border-radius: 50% 50%;</span>
-		</div>
-	</body>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, border radius"/>
+  <meta name="specification" content="AH-Formatter-Extensions"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
 
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Border examples */
+    div {
+      margin-bottom: 15pt;
+    }
+
+    .borderBox_0 {
+      border: solid black;
+      padding: 1.5em;
+    }
+
+    .borderBox_1 {
+      padding: 1.5em;
+      border: solid blue; 
+      -ah-border-radius: 15pt 10pt;
+    }
+
+    .borderBox_2 {
+      padding: 1.5em;
+      border: solid salmon; 
+      -ah-border-radius: 25pt 25pt;
+    }
+
+    .borderBox_3 {
+      padding: 1.5em;
+      border: solid lime;
+      -ah-border-radius: 50% 50%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Border Extension for Rounded Corners</h1>
+
+  <div class="description" lang="en">
+    As a type of border, a radius border can be drawn by using <code class="code-inline">-ah-border-radius:</code>. Specify such as <code class="code-inline">-ah-border-radius: 15pt 10pt;</code>, then the default value will be set as a horizontal diameter (vertical diameter when <code class="code-inline">-ah-writing-mode: vertical-rl;</code>). The second value is the other diameter. If omitted, it will be regarded as a default value, and it cannot be rounded if either diameter is less than zero.
+  </div>
+
+  <div class="borderBox_0">
+    Here is an example without specification
+  </div>
+
+  <div class="borderBox_1">
+    Here is an example of a block with <code class="code-inline">-ah-border-radius: 15pt 10pt;</code>
+  </div>
+
+  <div class="borderBox_2">
+    Here is an example of a block with <code class="code-inline">-ah-border-radius: 25pt 25pt;</code>
+  </div>
+
+  <div class="borderBox_3">
+    Here is an example of a block with <code class="code-inline">-ah-border-radius: 50% 50%;</code>
+  </div>
+</body>
 </html>
