@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html lang="en" data-cat="barcode" data-order="0" data-ver="6.3">
+<head>
+  <title>Barcode Color and Size</title>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, barcode, QR, color, size"/>
+  <meta name="specification" content="Barcode-Generator-Option"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+
+    /* Column layout used in sample */
+    .column-container {
+      -ah-column-count: 2;
+      -ah-column-gap: 8pt;
+      column-count: 2;
+      column-gap: 8pt;
+    }
+    .column-container-mb05 {
+      -ah-column-count: 2;
+      -ah-column-gap: 8pt;
+      column-count: 2;
+      column-gap: 8pt;
+      -ah-margin-before: 0.5em;
+    }
+
+    /* Spacing helpers */
+    .text-block-mb1-kwn {
+      -ah-margin-before: 1em;
+      -ah-keep-with-next: always;
+      -ah-margin-after: 0;
+    }
+    .text-block-mb1 {
+      -ah-margin-before: 1em;
+      -ah-margin-after: 0;
+    }
+    .text-block {
+      -ah-margin-before: 0;
+      -ah-margin-after: 0;
+    }
+
+    /* Barcode image height examples */
+    .barcode-img-h10mm { -ah-content-height: 10mm; }
+    .barcode-img-h40mm { -ah-content-height: 40mm; }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Link styling retained */
+    .link-style2 { text-decoration: underline; color: blue; }
+
+    /* Start-indent helper */
+    .block-start-indent05 { -ah-start-indent: 0.5em; }
+
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Barcode Color and Size</h1>
+
+  <div class="description" lang="en">
+    <p>Barcode colour can be specified by using the <code class="code-inline">color</code> parameter of the data scheme. With this parameter you can specify any colour other than <code class="code-inline">transparent</code>; however, when the output format is PNG, the specified colour will be converted to RGB. The formatted size of the barcode can be specified with the <code class="code-inline">-ah-content-height</code> and <code class="code-inline">-ah-content-width</code> properties of <code class="code-inline">&lt;img&gt;</code>. Note that changing the aspect ratio or setting a small size may make the barcode impossible to read. Specifying barcode colour is available with AH Formatter&nbsp;V6.3 or later. The <a class="link-style2" href="https://www.antennahouse.com/barcode-generator-option/">Barcode Generator Option</a> must be purchased separately in order to generate barcodes.</p>
+  </div>
+
+  <!-- Visual demonstration -->
+    <h2>Barcode colour</h2>
+    <div class="column-container">
+      <p class="text-block-mb1-kwn">No value specified for <span class="code-inline">color</span></p>
+      <p class="text-block"><img src="data:application/vnd.ah-barcode;type=QR;scale=2,Antenna House"></p>
+      <p class="text-block-mb1-kwn"><span class="code-inline">color=red</span></p>
+      <p class="text-block"><img src="data:application/vnd.ah-barcode;type=QR;scale=2;color=red,Antenna House"></p>
+    </div>
+
+    <div class="column-container-mb05">
+      <p class="text-block-mb1-kwn"><span class="code-inline">color=#0000FF</span></p>
+      <p class="text-block"><img src="data:application/vnd.ah-barcode;type=QR;scale=2;color=#0000FF,Antenna House"></p>
+      <p class="text-block-mb1-kwn"><span class="code-inline">color='rgb-icc(#Grayscale,0.5)'</span></p>
+      <p class="text-block"><img src="data:application/vnd.ah-barcode;type=QR;scale=2;color='rgb-icc(#Grayscale,0.5)',Antenna House"></p>
+    </div>
+
+    <div class="column-container-mb05">
+      <p class="text-block-mb1-kwn">PNG, <span class="code-inline">color='cmyk(0.2, 0.4, 0.4, 0.2)'</span></p>
+      <p class="text-block"><img src="data:application/vnd.ah-barcode;type=QR;scale=2;out=png;color='cmyk(0.2, 0.4, 0.4, 0.2)',Antenna House"></p>
+      <p class="text-block-mb1-kwn">SVG, <span class="code-inline">color='cmyk(0.2, 0.4, 0.4, 0.2)'</span></p>
+      <p class="text-block"><img src="data:application/vnd.ah-barcode;type=QR;scale=2;out=svg;color='cmyk(0.2, 0.4, 0.4, 0.2)',Antenna House"></p>
+    </div>
+
+    <h2>Barcode size</h2>
+    <div class="column-container">
+      <p class="text-block">Without <span class="code-inline">-ah-content-height</span></p>
+      <p class="text-block"><img src="data:application/vnd.ah-barcode;type=QR;scale=2,Antenna House Inc, 500 Creek View Rd., Suite 107, Newark, Delaware 19711 USA https://www.antennahouse.com/"></p>
+      <p class="text-block-mb1"><span class="code-inline">-ah-content-height: 10mm</span></p>
+      <div class="block-start-indent05"><p class="text-block"><img class="barcode-img-h10mm" src="data:application/vnd.ah-barcode;type=QR;scale=2,Antenna House Inc, 500 Creek View Rd., Suite 107, Newark, Delaware 19711 USA https://www.antennahouse.com/"></p></div>
+      <p class="text-block-mb1"><span class="code-inline">-ah-content-height: 40mm</span></p>
+      <p class="text-block"><img class="barcode-img-h40mm" src="data:application/vnd.ah-barcode;type=QR;scale=2,Antenna House Inc, 500 Creek View Rd., Suite 107, Newark, Delaware 19711 USA https://www.antennahouse.com/"></p>
+    </div>
+
+</body>
+</html>

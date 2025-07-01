@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html lang="en" data-cat="line" data-order="0" data-ver="6.3">
+<head>
+  <title>Baseline Grid</title>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, baseline grid"/>
+  <meta name="specification" content="CSS-Baseline-Grid"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+
+    /* Demo block styles */
+    .demo-block {
+      height: 10em;
+      -ah-margin-before: 0.3em;
+      -ah-margin-after: 0.8em;
+      border: solid gray thin;
+      padding: 4pt;
+      column-count: 2;
+      column-gap: 0.8em;
+      -ah-column-rule-style: solid;
+      -ah-column-rule-width: 1pt;
+      -ah-column-rule-color: lightgray;
+      -ah-column-rule-length: 100%;
+      -ah-column-rule-align: center;
+      overflow: hidden;
+    }
+
+    .grid-content {
+      font-size: 1em;
+      line-height: 14pt;
+      text-align: justify;
+    }
+
+    .grid-content-with-baseline {
+      -ah-baseline-grid: new;
+      font-size: 1em;
+      line-height: 14pt;
+      text-align: justify;
+    }
+
+    .demo-heading {
+      font-size: 2.5em;
+      line-height: 2;
+      text-align: center;
+      background: lightgray;
+    }
+
+    .large-text {
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+
+    .larger-text {
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    .grid-span {
+      text-align: center;
+      -ah-display-align: center;
+      background: lightblue;
+      padding: 1pt;
+      height: 1em;
+      -ah-baseline-grid: none;
+      -ah-baseline-block-snap: auto border-box;
+      font-size: 0.75em;
+      margin: 0.2em 0;
+    }
+
+    .grid-span-label {
+      font-size: 0.8em;
+    }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Property link styling */
+    .property-link {
+      text-decoration: underline;
+      color: blue;
+    }
+
+    /* Section headers */
+    h2 {
+      font-family: sans-serif;
+      -ah-margin-before: 1em;
+      -ah-margin-after: 0.3em;
+    }
+
+    h2:first-of-type {
+      -ah-margin-before: 0.8em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1 lang="en">Baseline Grid</h1>
+
+  <!-- Description section -->
+  <div class="description" lang="en">
+    <p>By specifying <code class="code-inline"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.baseline-grid" class="property-link">-ah-baseline-grid</a></code>, a baseline grid can be set to make a baseline of each column fixed even when there is a heading or figures in the line. A new baseline grid can be specified with <code class="code-inline">-ah-baseline-grid: new</code>. The settings of <code class="code-inline">font</code> and <code class="code-inline">line-height</code> of this element are used for the baseline grid. By specifying <code class="code-inline">root</code>, the settings of <code class="code-inline">font</code> and <code class="code-inline">line-height</code> of the root element are used for the baseline grid. On the other hand, by specifying <code class="code-inline">none</code>, the baseline grid setting is disabled. How a block other than a line, such as a header and a figure, is placed in the baseline grid can be specified with <code class="code-inline">-ah-baseline-block-snap</code>. In this sample, the default value <code class="code-inline">auto border-box</code> is used for the setting. This is the same as specifying <code class="code-inline">before</code> for the beginning of the column, <code class="code-inline">after</code> for the end of the column, and <code class="code-inline">center</code> for the others; however, <code class="code-inline">before</code>, <code class="code-inline">after</code> and <code class="code-inline">center</code> can be specified separately.</p>
+  </div>
+
+
+
+  <!-- Visual demonstration -->
+  <div class="SampleBox" lang="en">
+    <h2>When -ah-baseline-grid is specified</h2>
+    <div class="demo-block">
+      <div class="grid-content-with-baseline">
+        <div>
+          In this block, a line grid is specified with <span class="code-inline">-ah-baseline-grid: new</span>.
+        </div>
+        <div class="demo-heading">
+          Heading
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="large-text">Large letters</span> tincidunt pharetra. Aenean ultricies <span class="larger-text">Larger letters</span> mollis id.
+        </div>
+        <div class="grid-span">
+          <div class="grid-span-label">
+            Image [<span class="code-inline">auto border-box</span>]
+          </div>
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+      </div>
+    </div>
+
+    <h2>When -ah-baseline-grid is not specified</h2>
+    <div class="demo-block">
+      <div class="grid-content">
+        <div>
+          In this block, a baseline grid is not specified.
+        </div>
+        <div class="demo-heading">
+          Heading
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. <span class="large-text">Large letters</span> tincidunt pharetra. Aenean ultricies <span class="larger-text">Larger letters</span> mollis id.
+        </div>
+        <div class="grid-span">
+          <div class="grid-span-label">
+            Image
+          </div>
+        </div>
+        <div>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
