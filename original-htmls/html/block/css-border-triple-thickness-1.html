@@ -1,76 +1,84 @@
 <!DOCTYPE html>
 <!-- $Id$ -->
 <html lang="en" data-cat="block" data-order="0" data-ver="6.3">
-	<head>
-    <meta charset="UTF-8"/>
-    <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
-    <meta name="specification" content=""/>
-<link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
-<link rel="stylesheet" href="../../css/booklet-page-en.css"/>
-<link rel="stylesheet" href="../../css/css-sample-en.css"/>
-			<style>
-				@page
-				{
-				
-				}
-				.codePrint
-				{
-					font-weight: bold;
-					font-family: 'Courier New', 'DejaVu Sans', monospace;
-				}
-				.borderTripleDemo
-				{
-					border: triple 15pt;
-					-ah-border-triple-thickness: 1;
-					padding: 5pt;
-					margin-bottom: 2em;
-				}
-				#bTD_0
-				{
-					-ah-border-triple-thickness: 1pt;
-				}
-				#bTD_1
-				{
-					-ah-border-triple-thickness: 1pt 3pt;
-				}
-				#bTD_2
-				{
-					-ah-border-triple-thickness: 1pt 3pt 1pt 3pt 1pt;
-				}
-				#bTD_3
-				{
-					-ah-border-triple-thickness: 3pt 1pt 3pt 1pt 3pt;
-				}
-			</style>
-	</head>
-	<body>
-<div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div id = "topImage">
-		</div>
-		<div class="main-content">
-		</div>
-		<div class="title">
-				Thickness of triple-border lines
-		</div>
-		<div class="subheading">
-				The line thickness of <span class = "codePrint">border-style: triple</span> can be specified by using <span class = "codePrint">-ah-border-triple-thickness</span>. For instance, the thickness can be specified like: <span class = "codePrint">-ah-border-triple-thickness: 3pt 1pt 3pt 1pt 3pt</span>. The values are outside line width, spacing, middle line width, spacing, and inside line width in order from left to right. If the value is omitted, it is considered to be equivalent to the preceding value. Negative values are not available. Borders with triple lines is available in Antenna House Formatter V7.3 and later.
-		</div>
-		<div class = "borderTripleDemo">
-			border: triple 15pt; -ah-border-triple-thickness: 1;
-		</div>
-		<div class = "borderTripleDemo" id = "bTD_0">
-			border: triple 15pt; -ah-border-triple-thickness: 1pt;
-		</div>
-		<div class = "borderTripleDemo" id = "bTD_1">
-			border: triple 15pt; -ah-border-triple-thickness: 1pt 3pt;
-		</div>
-		<div class = "borderTripleDemo" id = "bTD_2">
-			border: triple 15pt; -ah-border-triple-thickness: 1pt 3pt 1pt 3pt 1pt;
-		</div>
-		<div class = "borderTripleDemo" id = "bTD_3">
-			border: triple 15pt; -ah-border-triple-thickness: 3pt 1pt 3pt 1pt 3pt;
-		</div>
-		
-	</body>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, border triple"/>
+  <meta name="specification" content="Block-Extensions"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
 
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Triple border demonstration boxes */
+    .borderTripleDemo {
+      border: triple 15pt;
+      -ah-border-triple-thickness: 1;
+      padding: 5pt;
+      margin-bottom: 1.5em;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    #bTD_0 {
+      -ah-border-triple-thickness: 1pt;
+    }
+
+    #bTD_1 {
+      -ah-border-triple-thickness: 1pt 3pt;
+    }
+
+    #bTD_2 {
+      -ah-border-triple-thickness: 1pt 3pt 1pt 3pt 1pt;
+    }
+
+    #bTD_3 {
+      -ah-border-triple-thickness: 3pt 1pt 3pt 1pt 3pt;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Thickness of Triple-Border Lines</h1>
+
+  <div class="description" lang="en">
+    The line thickness of <code class="code-inline">border-style: triple</code> can be specified by using <code class="code-inline">-ah-border-triple-thickness</code>. For instance, the thickness can be specified like: <code class="code-inline">-ah-border-triple-thickness: 3pt 1pt 3pt 1pt 3pt</code>. The values are outside line width, spacing, middle line width, spacing, and inside line width in order from left to right. If the value is omitted, it is considered to be equivalent to the preceding value. Negative values are not available. Borders with triple lines is available in Antenna House Formatter V7.3 and later.
+  </div>
+
+  <div class="borderTripleDemo">
+    border: triple 15pt; -ah-border-triple-thickness: 1;
+  </div>
+
+  <div class="borderTripleDemo" id="bTD_0">
+    border: triple 15pt; -ah-border-triple-thickness: 1pt;
+  </div>
+
+  <div class="borderTripleDemo" id="bTD_1">
+    border: triple 15pt; -ah-border-triple-thickness: 1pt 3pt;
+  </div>
+
+  <div class="borderTripleDemo" id="bTD_2">
+    border: triple 15pt; -ah-border-triple-thickness: 1pt 3pt 1pt 3pt 1pt;
+  </div>
+
+  <div class="borderTripleDemo" id="bTD_3">
+    border: triple 15pt; -ah-border-triple-thickness: 3pt 1pt 3pt 1pt 3pt;
+  </div>
+</body>
 </html>

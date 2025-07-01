@@ -1,109 +1,129 @@
 <!DOCTYPE html>
 <!-- $Id$ -->
 <html lang="en" data-cat="block" data-order="0" data-ver="6.3">
-	<head>
-    <meta charset="UTF-8"/>
-    <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
-    <meta name="specification" content=""/>
-<link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
-<link rel="stylesheet" href="../../css/booklet-page-en.css"/>
-<link rel="stylesheet" href="../../css/css-sample-en.css"/>
-			<style>
-				@page
-				{
-				
-				}
-				.codePrint
-				{
-					font-weight: bold;
-					font-family: 'Courier New', 'DejaVu Sans', monospace;
-				}
-				.columnBox
-				{
-					-ah-margin-before: 0.5em;
-					border: solid #7777FF 4pt;
-					padding: 4pt;
-					column-count: 4;
-					column-gap: 8pt;
-					-ah-column-rule: solid #7777FF 1.5pt;
-					orphans: 1;
-					widows: 1;
-					hyphens: false;
-					max-height: calc(7lh + 8pt);
-					margin-bottom: 2em;
-				}
-				img
-				{
-					
-					-ah-content-width: scale-down-to-fit;
-					width: 100%;
-				}
-			</style>
-	</head>
-	<body>
-<div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div id = "topImage">
-		</div>
-		<div class="main-content">
-		</div>
-		<div class="title">
-			Filling Columns
-		</div>
-		<div class="subheading">
-			Depending on the <span class = "codePrint">-ah-column-fill</span> value, the content in an &lt;div&gt; that has multiple columns can either fill the columns sequentially or be balanced, as much as possible, across the columns. When <span class = "codePrint">-ah-column-fill</span> is <span class = "codePrint">balance</span> (default), the columns are balanced as much as possible. When it is <span class = "codePrint">auto</span>, the columns are filled sequentially.
-		</div>
-		<div>
-			Unless stated otherwise, these samples have orphans: 1;, widows = 1;, and max-height: 7lh + 8pt;
-		</div>
-		<div>
-			<span class = "codePrint">-ah-column-fill</span>
-			<div class = "columnBox" style="-ah-column-fill: balance;">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.
-			</div>
-			<div class = "columnBox" style="-ah-column-fill: balance;">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
-			</div>
-			The available content might not fill balanced columns.
-			<div class = "columnBox" style="-ah-column-fill: balance;">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.
-			</div>
-			Content that cannot break, such as a graphic, can affect column heights.
-			<div class = "columnBox" style="-ah-column-fill: balance;">
-				<img src = "../../img/sunflower-2.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.
-			</div>
-		</div>
-		<div>
-			<span class = "codePrint">-ah-column-fill</span>
-			'orphans', 'widows', and properties causing keeps or breaks can effect column heights
-			<div class = "columnBox"  style="-ah-column-fill: balance; widows: 3;">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.
-			</div>
-		</div>
-		<div style = "page-break-before: always;">
-			<span class = "codePrint">-ah-column-fill: auto;</span>
-			Columns are sequentially filled up to the maximum available height.
-			<div class = "columnBox" style = "-ah-column-fill: auto;">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.
-			</div>
-			<div class = "columnBox" style = "-ah-column-fill: auto;">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur. Sed viverra metus quis nibh pulvinar, at dignissim nibh adipiscing.
-			</div>
-			<div class = "columnBox" style = "-ah-column-fill: auto;">
-				<img src = "../../img/sunflower-2.jpg">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit.
-			</div>
-		</div>
-		<div>
-			Content before a spanning block is balanced.
-			<div class = "columnBox" style = "-ah-column-fill: auto; -ah-column-rule-length: 80%;">
-				Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur.
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, column fill"/>
+  <meta name="specification" content="AH-Formatter-Extensions"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
 
-				<div style = "-ah-column-span: all; color: white; background-color: #7777FF; font-weight: bold;">Lorem Ipsum</div>
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
 
-				Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu. Ut tincidunt lorem erat, at elementum nibh varius consectetur.
-				
-			</div>
-		</div>
-	</body>
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
 
+    /* Paragraph styling */
+    p {
+      text-indent: 1.5em;
+      text-align: justify;
+      line-height: 1.3;
+      margin-bottom: 0.5em;
+    }
+
+    .description, p:first-of-type {
+      text-indent: 0;
+    }
+
+    /* Column demonstration boxes */
+    .columnBox {
+      -ah-margin-before: 0.3em;
+      border: solid #7777FF 3pt;
+      padding: 3pt;
+      column-count: 4;
+      column-gap: 6pt;
+      -ah-column-rule: solid #7777FF 1pt;
+      orphans: 1;
+      widows: 1;
+      hyphens: false;
+      max-height: calc(6lh + 6pt);
+      margin-bottom: 1em;
+      font-size: 0.9em;
+    }
+
+    /* Section headers */
+    .demo-section {
+      font-weight: 600;
+      font-size: 1em;
+      color: #333;
+      margin-bottom: 0.3em;
+      margin-top: 0.8em;
+    }
+
+    .demo-section:first-of-type {
+      margin-top: 0.5em;
+    }
+
+    /* Image styling */
+    img {
+      -ah-content-width: scale-down-to-fit;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Filling Columns</h1>
+
+  <div class="description" lang="en">
+    The <code class="code-inline">-ah-column-fill</code> property specifies whether to balance the column height. When <code class="code-inline">-ah-column-fill</code> is <code class="code-inline">balance</code> (default), the columns are balanced as much as possible. When it is <code class="code-inline">auto</code>, columns are not balanced, but content before a spanned column is still balanced.
+  </div>
+
+  <p>Unless stated otherwise, these samples have orphans: 1;, widows = 1;, and max-height: 6lh + 6pt;</p>
+
+  <div class="demo-section"><code class="code-inline">-ah-column-fill: balance</code> (default)</div>
+  <div class="columnBox" style="-ah-column-fill: balance;">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id. Integer ut porttitor felis, vel tincidunt velit. Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.
+  </div>
+
+  <p>Available content might not fill balanced columns.</p>
+  <div class="columnBox" style="-ah-column-fill: balance;">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante.
+  </div>
+
+  <p>Graphics can affect column heights. Orphans/widows also impact balancing.</p>
+  <div class="columnBox" style="-ah-column-fill: balance;">
+    <img src="../../img/sunflower-2.jpg"> Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.
+  </div>
+
+  <div class="columnBox" style="-ah-column-fill: balance; widows: 3;">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.
+  </div>
+
+  <div style="page-break-before: always;">
+    <div class="demo-section"><code class="code-inline">-ah-column-fill: auto</code></div>
+    <p>With auto, columns are not balanced and fill sequentially to maximum height.</p>
+
+    <div class="columnBox" style="-ah-column-fill: auto;">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra. Aenean ultricies molestie ante, sit amet ultricies nunc mollis id.
+    </div>
+
+    <div class="columnBox" style="-ah-column-fill: auto;">
+      <img src="../../img/sunflower-2.jpg">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit bibendum tincidunt pharetra.
+    </div>
+
+    <p>Important: With auto, content before a spanning block is still balanced.</p>
+    <div class="columnBox" style="-ah-column-fill: auto; -ah-column-rule-length: 80%;">
+      Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.
+
+      <div style="-ah-column-span: all; color: white; background-color: #7777FF; font-weight: bold; padding: 2pt;">Spanning Element</div>
+
+      Duis volutpat, quam quis aliquet tristique, nulla dui malesuada velit, et consectetur tellus ipsum et arcu.
+    </div>
+  </div>
+</body>
 </html>
