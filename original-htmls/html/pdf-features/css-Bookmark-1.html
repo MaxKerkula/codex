@@ -22,15 +22,6 @@ body {
     line-height: 1.4;
 }
 
-/* Head title block */
-.head-title {
-    font-family: sans-serif;
-    font-size: 2em;
-    font-weight: bold;
-    padding: 0.3em;
-    margin: 1em 0;
-    background-color: #EEEEEE;
-}
 
 /* Description block */
 .description {
@@ -116,7 +107,7 @@ body {
 </head>
 <body>
 <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-    <h1 class="head-title" id="pdf-bookmarks">PDF Bookmarks</h1>
+    <h1 id="pdf-bookmarks">PDF Bookmarks</h1>
     
     <div class="description">
     PDF has a 'bookmark' feature for creating a hierarchical table of contents. By clicking a bookmark when viewing the PDF, you can jump to its target location. In CSS for paged media, bookmarks are created by adding -ah-outline-* properties to block-level elements. The level is specified by -ah-outline-level (1 being highest), titles are set with -ah-outline-title, and bookmarks can be organized using -ah-outline-group. These properties can be applied to any block-level HTML element like div, h1, p, etc.
