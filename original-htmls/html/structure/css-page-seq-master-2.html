@@ -49,12 +49,10 @@
 </head>
 <body>
 <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-    <div id="topImage"></div>
-    <div class="main-content"></div>
-    <div class="title">Page layout for first, last, and only pages</div>
-    <div class="subheading">
+    <h1>Page layout for first, last, and only pages</div>
+    <div class="description"><p>
 		In CSS, using the <span class ="codePrint">@page</span> rule, you can define properties such as color or order for different pages. Through specific selectors like <span class ="codePrint">:first, :last</span>, and <span class ="codePrint">:only</span>, you can target the first, last, or sole pages in a sequence, respectively. Additionally, there's a default selector that targets any page in the sequence. By applying different styles and leveraging these selectors, page styles and format may be effectively controled and sequencing of pages in print-friendly stylesheets may be set.
-    </div>
+    </h1>
     <div class = "textBody">
 		In CSS, while using the <span class ="codePrint">@page</span> pseudo-class the order in which it's definied is not always important. Four pages are made each with a seperate color, the pages are called in order within the <span class ="codePrint">&lt;body&gt;</span>,we are able to specify the conditions for selecting four page masters that each have a different background color:    
         <ul>
@@ -65,7 +63,7 @@
         </ul>
         This page is the only page in its page sequence (because the following page is the start of a new page sequence), so this page has no background color.  
         The following three pages have blue, yellow, and pink background colors, respectively, because of their positions in the second page sequence.
-    </div>
+    </p></div>
     <div class="colorBreak">
         For the first page in its page sequence, a page with a blue background.
     </div>

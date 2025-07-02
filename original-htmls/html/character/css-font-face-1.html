@@ -33,16 +33,12 @@
 	</head>
 	<body>
 <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div id = "topImage">
-		</div>
-		<div class="main-content">
-		</div>
-		<div class="title">
+		<h1>
 				Using additional fonts in CSS with the <span class = "codePrint">@font-face</span> @-rule.
-		</div>
-		<div class="subheading">
+		</h1>
+		<div class="description"><p>
 				<span class = "codePrint">@font-face</span> lets you use additional fonts in a document without altering your Antenna House Formatter settings and without installing the font in your operating system. <span class = "codePrint">@font-face</span> has <span class = "codePrint">font-family, font-style, font-weight, and src</span> attributes. ‘font-family’ is the name that is used in font family name matching. Its value overrides the family name from the font data. The optional <span class = "codePrint">font-style</span> and <span class = "codePrint">font-weight</span> attributes specify the style and weight of the font. These, like <span class = "codePrint">font-family</span>, are matched on when selecting the font in font-related properties. ‘src’ is a comma-separated list of alternative locations for the font file. ‘src’ may also include aliases of installed fonts as alternatives for the font. Antenna House Formatter uses the first available font from the ‘src’ list. See also <span class = "codePrint">@font-face</span> in the Online Manual for details.
-		</div>
+		</p></div>
 		<h2>Declare and use an additional font</h2>
 		<p>
 			Specify the font using <span class = "codePrint">@font-face</span> within &lt;fo:declarations&gt;. Each URL may also have a ‘format()’ hint describing the format of the font resource. Antenna House Formatter supports “woff” (Web Open Font Format), “woff2”, “truetype”, and “opentype”.

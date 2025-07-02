@@ -42,16 +42,12 @@
 	</head>
 	<body>
 <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div id = "topImage">
-		</div>
-		<div class="main-content">
-		</div>
-		<div class="title">
+		<h1>
 			Inheriting properties from table row and column
-		</div>
-		<div class="subheading">
+		</h1>
+		<div class="description"><p>
 			Inheriting property values from an &lt;tr&gt; to an &lt;td&gt; is simple, and inheriting property values from an &lt;col&gt; to an &lt;td&gt; is only slightly more complicated. &lt;tr&gt; contains one or more &lt;td&gt;, so the normal CSS rules for property inheritance apply.  &lt;col&gt; is an empty element and, obviously, is not an ancestor of &lt;td&gt;. However, any inherited property can be specified on an &lt;col&gt; and used by the &lt;td&gt; (or any of its descendants) in that column by specifying ‘from-table-column()’ as the property’s value on the FO. Specifying ‘from-table-column()’ returns the inherited value of the current property. Also specifying a property name (for example, color="from-table-column(background-color)") returns the inherited value of the named property.
-		</div>
+		</p></div>
 		<div style = "text-indent: 1em; text-align: justify; margin-bottom: 2em;">
 			In the following table, Row 1 inherits the value of the &lt;tr&gt; property to &lt;td&gt;. From Row 2 onwards, &lt;td&gt; uses ‘from-table-column()’ to inherit properties such as character thickness, size, and color of &lt;col&gt; in each column.
 		</div>

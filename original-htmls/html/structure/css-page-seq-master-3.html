@@ -32,16 +32,12 @@
 	</head>
 	<body>
 <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div id = "topImage">
-		</div>
-		<div class="main-content">
-		</div>
-		<div class="title">
+		<h1>
 				Page layout for blank pages
-		</div>
-		<div class="subheading">
+		</h1>
+		<div class="description"><p>
 				The properties such as <span class = "codePrint">blank, not-blank, odd-or-even, and page-position</span> define criteria for applying specific styling rules. For 'blank-or-not-blank', it determines if the webpage contains actual content or if it's a blank page rendered because of a style instruction like <span class = "codePrint">break-before: odd-page or force-page-count: end-on-even</span> in CSS. A page that inherits content from an HTML element, even if the content is something like a &lt;div&gt;&lt;/div&gt; that doesn't display anything, is considered non-blank. The values for 'blank-or-not-blank' are: 'blank' (page rendered just to fulfill style requirements); 'not-blank' (page has content); and 'any' (any page). By default, the value is 'any', which always holds true, so 'blank-or-not-blank' is typically left out unless defining styles specifically for blank pages.
-		</div>
+		</p></div>
 		<p>
 			This document has only enough text for one page, but <span class = "codePrint">-ah-force-page-count: 3;</span> is specified to force this page sequence to generate three pages. Two blank pages were generated to satisfy the constraint. @-rules for this document specify separate page layout for blank and non-blank pages. The page layout for blank pages specifies a blue background.
 		</p>

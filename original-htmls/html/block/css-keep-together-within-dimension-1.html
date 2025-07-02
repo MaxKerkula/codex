@@ -42,16 +42,12 @@
 	</head>
 	<body>
 <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div id = "topImage">
-		</div>
-		<div class="main-content">
-		</div>
-		<div class="title">
+		<h1>
 				Limiting the height to which 'keep-together' applies
-		</div>
-		<div class="subheading" >
+		</h1>
+		<div class="description"><p>
 			When ‘keep-together.within-page’ or ‘keep-together.within-column’ is not ‘auto’, specify ‘axf:keep-together-within-dimension’ to limit the height for which the ‘keep-together’ applies. See “axf:keep-together-within-dimension” in the Online Manual. ‘axf:keep-together-within-dimension’ is available in AH Formatter V6.5 and later.
-		</div>
+		</p></div>
 		<div style = "page-break-after: always;">
 			For example, if you want to specify keep-together.within-page="always" for a block but you also want the block to break if it exceeds the height of the page, then specify it as follows: <span class = "codePrint">&lt;fo:block keep-together.within-page="always" axf:keep-together-within-dimension="100vh"&gt;</span>
 		</div>

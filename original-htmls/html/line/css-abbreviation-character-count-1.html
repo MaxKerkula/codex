@@ -27,16 +27,12 @@
 	</head>
 	<body>
 <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div id = "topImage">
-		</div>
-		<div class="main-content">
-		</div>
-		<div class="title">
+		<h1>
 			Controlling line breaking at abbreviations
-		</div>
-		<div class="subheading">
+		</h1>
+		<div class="description"><p>
 			The maximum number of characters considered to be an abbreviation can be specified using <span class = "codePrint"><a href="https://www.antenna.co.jp/AHF/help/en/ahf-ext.html#axf.abbreviation-character-count">-ah-abbreviation-character-count</a></span>. Line breaks can normally occur within “km/h”, “w/o”, etc. as a line break is allowed immediately after the “/”, but it can be avoided by setting -ah-abbreviation-character-count. The number of characters of the word right after “/” is less than or equal the specified number with -ah-abbreviation-character-count, the word is considered as the abbreviation and the line does not break. The default -ah-abbreviation-character-count value of ‘auto’ uses the ‘abbreviation-character-count’ value from the Option Setting File, which defaults to 3.
-		</div>
+		</p></div>
 		<div style="-ah-margin-after: 2em;">
 			<div class = "codePrint">
 				-ah-abbreviation-character-count: auto;

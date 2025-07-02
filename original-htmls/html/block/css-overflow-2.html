@@ -33,16 +33,12 @@
 	</head>
 	<body>
 <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div id = "topImage">
-		</div>
-		<div class="main-content">
-		</div>
-		<div class="title">
+		<h1>
 				Specifying multiple condensing processes when text overflows
-		</div>
-		<div class="subheading">
+		</h1>
+		<div class="description"><p>
 			Specifies how to condense the overflowed text into the area by <span class = "codePrint">-ah-overflow-condense</span>. Possible values are <span class = "codePrint">font-size, font-stretch, line-height</span> and <span class = "codePrint">letter-spacing</span>. You can specify multiple condensing processes such as <span class = "codePrint">-ah-overflow: font-size font-stretch</span>. Usually you will often use <span class = "codePrint">-ah-overflow-condense-limit-font-size</span> or <span class = "codePrint">-ah-overflow-condense-limit-font-stretch</span> etc. in combination with the setting of the lower limit of each value. When condensing text with multiple values, if the overflow is not resolved by the first specified condensing process, then the next specified condensing process is attempted. The setting of multiple condensing processes is available from AH Formatter V7.1.
-		</div>
+		</p></div>
 		<div>
 			In this sample, multiple condensing processes with <span class = "codePrint">-ah-overflow-condense: font-size font-stretch;</span> and the lower limit value with <span class = "codePrint">-ah-overflow-condense-limit-font-size: 10pt;</span> are specified. If the first ‘font-size’ condensing does not resolve the overflow even with the lower limit of 10pt, then the condensing by ‘font-stretch’ will be attempted.
 		</div>
