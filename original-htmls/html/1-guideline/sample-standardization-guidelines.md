@@ -14,7 +14,8 @@
 
 ## 2. Typography
 
-* **Do not** declare `font-size` or `font-family` on `html` or `body` – inherit the 12 pt baseline from the shared style‑sheets.
+*Avoid declaring font-size or font-family on html or body unless required for the sample's demonstration functionality – inherit the 12 pt baseline from the shared style‑sheets when possible.
+Exception: Keep typography declarations that are functionally necessary for the sample (e.g., CJK fonts, font demonstrations, specific rendering requirements).
 * Leave inline hyphenation tweaks if already present:
 
 ```css
