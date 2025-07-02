@@ -25,6 +25,8 @@ for xml_path in glob.glob('xml-base/**/*.xml', recursive=True):
 attr_re = re.compile(r'data-(cat|order|ver|prefix)="[^"]*"')
 
 for html_path in glob.glob('original-htmls/html/**/*.html', recursive=True):
+    if '/1-guideline/' in html_path:
+        continue
     with open(html_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
@@ -91,6 +93,67 @@ for html_path in glob.glob('original-htmls/html/**/*.html', recursive=True):
                 lines.insert(i+1, footer)
                 changed = True
             break
+
+    # Replace title and description blocks and remove empty placeholders
+    i = 0
+    inside_title = False
+    inside_sub = False
+    while i < len(lines):
+        line = lines[i]
+
+        if re.search(r'<div\s+id\s*=\s*["\']topImage["\']', line):
+            next_line = lines[i+1] if i+1 < len(lines) else ''
+            if re.search(r'</div>', next_line):
+                del lines[i:i+2]
+            else:
+                del lines[i]
+            changed = True
+            continue
+
+        if re.search(r'<div\s+class\s*=\s*["\']main-content["\']', line):
+            next_line = lines[i+1] if i+1 < len(lines) else ''
+            if re.search(r'</div>', next_line):
+                del lines[i:i+2]
+            else:
+                del lines[i]
+            changed = True
+            continue
+
+        if inside_title:
+            if '</div>' in line:
+                indent = re.match(r'\s*', line).group(0)
+                lines[i] = indent + '</h1>\n'
+                inside_title = False
+            i += 1
+            continue
+
+        if inside_sub:
+            if '</div>' in line:
+                indent = re.match(r'\s*', line).group(0)
+                lines[i] = indent + '</p></div>\n'
+                inside_sub = False
+            i += 1
+            continue
+
+        if re.search(r'<div\s+class\s*=\s*["\']title["\']', line):
+            lines[i] = re.sub(r'<div\s+class\s*=\s*["\']title["\']\s*>', '<h1>', line)
+            if not lines[i].endswith('\n'):
+                lines[i] += '\n'
+            inside_title = True
+            changed = True
+            i += 1
+            continue
+
+        if re.search(r'<div\s+class\s*=\s*["\']subheading["\']', line):
+            lines[i] = re.sub(r'<div\s+class\s*=\s*["\']subheading["\']\s*>', '<div class="description"><p>', line)
+            if not lines[i].endswith('\n'):
+                lines[i] += '\n'
+            inside_sub = True
+            changed = True
+            i += 1
+            continue
+
+        i += 1
 
     if changed:
         with open(html_path, 'w', encoding='utf-8') as f:
