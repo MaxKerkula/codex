@@ -11,19 +11,77 @@
 			<style>
 				@page
 				{
-					@bottom-right
-					{
-						content: " ";
-					}
+					-ah-page-frame-size: 180mm 250mm;
+					margin: 15mm;
 				}
 				.codePrint
 				{
 					font-weight: bold;
 					font-family: 'Courier New', 'DejaVu Sans', monospace;
 				}
-				img
-				{
-					margin-left: -5em;
+				.color-grid {
+					display: table;
+					width: 100%;
+					border-collapse: separate;
+					border-spacing: 8pt;
+					-ah-margin-before: 0.5lh;
+					-ah-keep-together-within-page: always;
+				}
+				.color-grid-row {
+					display: table-row;
+				}
+				.hue-section {
+					display: table-cell;
+					vertical-align: top;
+					width: 30%;
+					border: 1pt solid #666;
+					padding: 2pt;
+				}
+				.hue-header {
+					text-align: center;
+					font-size: 0.8em;
+					font-weight: bold;
+					padding: 2pt;
+					border-bottom: 1pt solid #666;
+					margin-bottom: 2pt;
+				}
+				.saturation-header {
+					display: table;
+					width: 100%;
+					font-size: 0.6em;
+					text-align: center;
+				}
+				.sat-header-row {
+					display: table-row;
+				}
+				.sat-header-cell {
+					display: table-cell;
+					width: 20%;
+					padding: 1pt;
+					border-bottom: 1pt solid #999;
+				}
+				.color-matrix {
+					display: table;
+					width: 100%;
+					border-collapse: collapse;
+				}
+				.color-row {
+					display: table-row;
+				}
+				.lightness-label {
+					display: table-cell;
+					width: 15%;
+					font-size: 0.6em;
+					text-align: center;
+					vertical-align: middle;
+					border-right: 1pt solid #999;
+					padding: 1pt;
+				}
+				.color-cell {
+					display: table-cell;
+					width: 17%;
+					height: 12pt;
+					border: none;
 				}
 			</style>
 	</head>
@@ -37,10 +95,10 @@
 		</p></div>
 		<div>
 			<div>
-				Hue is represented as the number of an angle of the color circle (i.e., the rainbow represented in a circle), where red is 0° (and 360°), green is 120°, and blue is 240°. Saturation, lightness, and opacity are represented either as 0% to 100% or 0.0 to 1.0. 100% saturation is full saturation, and 0% saturation is a shade of gray. 100% lightness is white, 50% lightness is “normal”, and 0% lightness is black. 100% opacity is solid color, and 0% opacity is transparent.
+				Hue is represented as the number of an angle of the color circle (i.e., the rainbow represented in a circle), where red is 0° (and 360°), green is 120°, and blue is 240°. Saturation, lightness, and opacity are represented either as 0% to 100% or 0.0 to 1.0. 100% saturation is full saturation, and 0% saturation is a shade of gray. 100% lightness is white, 50% lightness is "normal", and 0% lightness is black. 100% opacity is solid color, and 0% opacity is transparent.
 			</div>
 			<div style = "text-indent: 1em;">
-				The following example for the “cornflowerblue” named color (<span class = "codePrint">#6495ED</span>, equivalent to <span class = "codePrint">hsl(219, 79%, 66%)</span>) shows how colors can be adjusted by altering the hue, saturation and lightness values.
+				The following example for the "cornflowerblue" named color (<span class = "codePrint">#6495ED</span>, equivalent to <span class = "codePrint">hsl(219, 79%, 66%)</span>) shows how colors can be adjusted by altering the hue, saturation and lightness values.
 			</div>
 		</div>
 		<table style = "text-align: center; background-color: hsl(0, 0%, 81%); border: thick solid hsl(0, 0%, 81%); -ah-margin-before: 0.5lh; width: 100%;">
@@ -57,19 +115,19 @@
 					</div>
 				</td>
 				<td colspan="3" style = "padding: 3pt;">
-					<diV>
+					<div>
 						20% more saturated
-					</diV>
+					</div>
 				</td>
 				<td colspan="3" style = "padding: 3pt;">
-					<diV>
+					<div>
 						Saturation
-					</diV>
+					</div>
 				</td>
 				<td colspan="3" style = "padding: 3pt;">
-					<diV>
+					<div>
 						20% less saturated
-					</diV>
+					</div>
 				</td>
 			</tr>
 			<tr style = "border: medium solid transparent;">
@@ -110,13 +168,13 @@
 						hsl(219, 79%, 66%)
 					</div>
 				</td>
-				<td colspan="3" style = "padding: 3pt; background-color:hsl(219, 59%, 66%);">
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(219, 59%, 66%);">
 					<div style = "font-family: sans-serif; font-size: 0.9em;">
 						hsl(219, 59%, 66%)
 					</div>
 				</td>
 			</tr>
-			<tr>
+			<tr style = "border: medium solid transparent;">
 				<td colspan="3" style = "padding: 3pt;">
 					<div>
 						20% darker
@@ -132,7 +190,7 @@
 						hsl(219, 79%, 46%)
 					</div>
 				</td>
-				<td colspan="3" style = "padding: 3pt; background-color:hsl(219, 59%, 46%);">
+				<td colspan="3" style = "padding: 3pt; background-color: hsl(219, 59%, 46%);">
 					<div style = "font-family: sans-serif; font-size: 0.9em;">
 						hsl(219, 59%, 46%)
 					</div>
@@ -141,68 +199,68 @@
 			<tr style = "border: medium solid transparent;">
 				<td style="padding: 3pt;">
 					<div style="background-color: hsl(219, 79%, 66%);">
-						219	
+						219°
 					</div>
 				</td>
 				<td>
 					<div style="background-color: hsl(249, 79%, 66%);">
-						249	
+						249°
 					</div>
 				</td>
 				<td>
 					<div style="background-color: hsl(279, 79%, 66%);">
-						279	
+						279°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(309, 79%, 66%);">
-						309	
+						309°
 					</div>
 				</td>
 				<td>
 					<div style="background-color: hsl(339, 79%, 66%);">
-						339	
+						339°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(9, 79%, 66%);">
-						9	
+						9°
 					</div>
 				</td>
 				<td>
 					<div style="background-color: hsl(39, 79%, 66%);">
-						39	
+						39°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(69, 79%, 66%);">
-						69	
+						69°
 					</div>
 				</td>
 				<td>
 					<div style="background-color: hsl(99, 79%, 66%);">
-						99	
+						99°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(129, 79%, 66%);">
-						129	
+						129°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(159, 79%, 66%);">
-						159	
+						159°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(189, 79%, 66%);">
-						189	
+						189°
 					</div>	
 				</td>
 			</tr>
 		</table>
 		<div style="text-indent: 1em;">
-			This example is for the “red” named color (#FF0000, equivalent to hsl(0, 100%, 50%)). Note that as “red” is 100% saturated, it cannot be made more saturated, so 120% saturation is clipped to 100%.
+			This example is for the "red" named color (#FF0000, equivalent to hsl(0, 100%, 50%)). Note that as "red" is 100% saturated, it cannot be made more saturated, so 120% saturation is clipped to 100%.
 		</div>
 		<table style = "text-align: center; background-color: hsl(0, 0%, 81%); border: thick solid hsl(0, 0%, 81%); -ah-margin-before: 0.5lh; width: 100%;">
 			<colgroup>
@@ -218,19 +276,19 @@
 					</div>
 				</td>
 				<td colspan="3" style = "padding: 3pt;">
-					<diV>
+					<div>
 						20% more saturated
-					</diV>
+					</div>
 				</td>
 				<td colspan="3" style = "padding: 3pt;">
-					<diV>
+					<div>
 						Saturation
-					</diV>
+					</div>
 				</td>
 				<td colspan="3" style = "padding: 3pt;">
-					<diV>
+					<div>
 						20% less saturated
-					</diV>
+					</div>
 				</td>
 			</tr>
 			<tr style = "border: medium solid transparent;">
@@ -302,125 +360,390 @@
 			<tr style = "border: medium solid transparent;">
 				<td style="padding: 3pt;">
 					<div style="background-color: hsl(0, 100%, 50%);">
-						219	
+						0°
 					</div>
 				</td>
 				<td>
 					<div style="background-color: hsl(30, 100%, 50%);">
-						249	
+						30°
 					</div>
 				</td>
 				<td>
 					<div style="background-color: hsl(60, 100%, 50%);">
-						279	
+						60°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(90, 100%, 50%);">
-						309	
+						90°
 					</div>
 				</td>
 				<td>
 					<div style="background-color: hsl(120, 100%, 50%);">
-						339	
+						120°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(150, 100%, 50%);">
-						9	
+						150°
 					</div>
 				</td>
 				<td>
 					<div style="background-color: hsl(180, 100%, 50%);">
-						39	
+						180°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(210, 100%, 50%);">
-						69	
+						210°
 					</div>
 				</td>
 				<td>
 					<div style="background-color: hsl(240, 100%, 50%);">
-						99	
+						240°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(270, 100%, 50%);">
-						129	
+						270°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(300, 100%, 50%);">
-						159	
+						300°
 					</div>	
 				</td>
 				<td>
 					<div style="background-color: hsl(330, 100%, 50%);">
-						189	
+						330°
 					</div>	
 				</td>
 			</tr>
 		</table>
 		<div style="text-indent: 1em; -ah-margin-before: 0.5lh">
-			There are numerous “color picker” Internet sites that support picking a color or a range of related colors by HSL values. For example, <a href="http://www.workwithcolor.com/hsl-color-picker-01.htm">http://www.workwithcolor.com/hsl-color-picker-01.htm</a> and <a href="http://www.workwithcolor.com/mm-color-blender-01.htm">http://www.workwithcolor.com/mm-color-blender-01.htm</a>.
+			There are numerous "color picker" Internet sites that support picking a color or a range of related colors by HSL values. For example, <a href="http://www.workwithcolor.com/hsl-color-picker-01.htm">http://www.workwithcolor.com/hsl-color-picker-01.htm</a> and <a href="http://www.workwithcolor.com/mm-color-blender-01.htm">http://www.workwithcolor.com/mm-color-blender-01.htm</a>.
 		</div>
 		<div style="break-before: page;">
-<table style="border-collapse: collapse; text-align: center; -ah-margin-before: 0.5lh; width: 100%;">
-  <tr><td style="width:24px;height:12px;background-color:#CFCFCF;"></td> <td style="width:24px;height:12px;background-color:#CFCFCF;"></td> <td style="width:24px;height:12px;background-color:#CFCFCF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#FFC2C2;"></td> <td style="width:24px;height:12px;background-color:#F7C9C9;"></td> <td style="width:24px;height:12px;background-color:#F0D1D1;"></td> <td style="width:24px;height:12px;background-color:#E8D9D9;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> <td style="width:24px;height:12px;background-color:#FFE0C2;"></td> <td style="width:24px;height:12px;background-color:#F7E0C9;"></td> <td style="width:24px;height:12px;background-color:#F0E0D1;"></td> <td style="width:24px;height:12px;background-color:#E8E0D9;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> <td style="width:24px;height:12px;background-color:#FFFFC2;"></td> <td style="width:24px;height:12px;background-color:#F7F7C9;"></td> <td style="width:24px;height:12px;background-color:#F0F0D1;"></td> <td style="width:24px;height:12px;background-color:#E8E8D9;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#FF8080;"></td> <td style="width:24px;height:12px;background-color:#EF8F8F;"></td> <td style="width:24px;height:12px;background-color:#DF9F9F;"></td> <td style="width:24px;height:12px;background-color:#CFAFAF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> <td style="width:24px;height:12px;background-color:#FFBF80;"></td> <td style="width:24px;height:12px;background-color:#EFBF8F;"></td> <td style="width:24px;height:12px;background-color:#DFBF9F;"></td> <td style="width:24px;height:12px;background-color:#CFBFAF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> <td style="width:24px;height:12px;background-color:#FFFF80;"></td> <td style="width:24px;height:12px;background-color:#EFEF8F;"></td> <td style="width:24px;height:12px;background-color:#DFDF9F;"></td> <td style="width:24px;height:12px;background-color:#CFCFAF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#FF4242;"></td> <td style="width:24px;height:12px;background-color:#E75A5A;"></td> <td style="width:24px;height:12px;background-color:#D07171;"></td> <td style="width:24px;height:12px;background-color:#B88989;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> <td style="width:24px;height:12px;background-color:#FFA142;"></td> <td style="width:24px;height:12px;background-color:#E7A15A;"></td> <td style="width:24px;height:12px;background-color:#D0A171;"></td> <td style="width:24px;height:12px;background-color:#B8A189;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> <td style="width:24px;height:12px;background-color:#FFFF42;"></td> <td style="width:24px;height:12px;background-color:#E7E75A;"></td> <td style="width:24px;height:12px;background-color:#D0D071;"></td> <td style="width:24px;height:12px;background-color:#B8B889;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#FF0000;"></td> <td style="width:24px;height:12px;background-color:#DF2020;"></td> <td style="width:24px;height:12px;background-color:#BF4040;"></td> <td style="width:24px;height:12px;background-color:#9F6060;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> <td style="width:24px;height:12px;background-color:#FF8000;"></td> <td style="width:24px;height:12px;background-color:#DF8020;"></td> <td style="width:24px;height:12px;background-color:#BF8040;"></td> <td style="width:24px;height:12px;background-color:#9F8060;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> <td style="width:24px;height:12px;background-color:#FFFF00;"></td> <td style="width:24px;height:12px;background-color:#DFDF20;"></td> <td style="width:24px;height:12px;background-color:#BFBF40;"></td> <td style="width:24px;height:12px;background-color:#9F9F60;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#C20000;"></td> <td style="width:24px;height:12px;background-color:#AA1818;"></td> <td style="width:24px;height:12px;background-color:#913030;"></td> <td style="width:24px;height:12px;background-color:#794949;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> <td style="width:24px;height:12px;background-color:#C26100;"></td> <td style="width:24px;height:12px;background-color:#AA6118;"></td> <td style="width:24px;height:12px;background-color:#916130;"></td> <td style="width:24px;height:12px;background-color:#796149;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> <td style="width:24px;height:12px;background-color:#C2C200;"></td> <td style="width:24px;height:12px;background-color:#AAAA18;"></td> <td style="width:24px;height:12px;background-color:#919130;"></td> <td style="width:24px;height:12px;background-color:#797949;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#800000;"></td> <td style="width:24px;height:12px;background-color:#701010;"></td> <td style="width:24px;height:12px;background-color:#602020;"></td> <td style="width:24px;height:12px;background-color:#503030;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> <td style="width:24px;height:12px;background-color:#804000;"></td> <td style="width:24px;height:12px;background-color:#704010;"></td> <td style="width:24px;height:12px;background-color:#604020;"></td> <td style="width:24px;height:12px;background-color:#504030;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> <td style="width:24px;height:12px;background-color:#808000;"></td> <td style="width:24px;height:12px;background-color:#707010;"></td> <td style="width:24px;height:12px;background-color:#606020;"></td> <td style="width:24px;height:12px;background-color:#505030;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#420000;"></td> <td style="width:24px;height:12px;background-color:#3A0808;"></td> <td style="width:24px;height:12px;background-color:#321111;"></td> <td style="width:24px;height:12px;background-color:#291919;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> <td style="width:24px;height:12px;background-color:#422100;"></td> <td style="width:24px;height:12px;background-color:#3A2108;"></td> <td style="width:24px;height:12px;background-color:#322111;"></td> <td style="width:24px;height:12px;background-color:#292119;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> <td style="width:24px;height:12px;background-color:#424200;"></td> <td style="width:24px;height:12px;background-color:#3A3A08;"></td> <td style="width:24px;height:12px;background-color:#323211;"></td> <td style="width:24px;height:12px;background-color:#292919;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#CFCFCF;"></td> <td style="width:24px;height:12px;background-color:#CFCFCF;"></td> <td style="width:24px;height:12px;background-color:#CFCFCF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#E0FFC2;"></td> <td style="width:24px;height:12px;background-color:#E0F7C9;"></td> <td style="width:24px;height:12px;background-color:#E0F0D1;"></td> <td style="width:24px;height:12px;background-color:#E0E8D9;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> <td style="width:24px;height:12px;background-color:#C2FFC2;"></td> <td style="width:24px;height:12px;background-color:#C9F7C9;"></td> <td style="width:24px;height:12px;background-color:#D1F0D1;"></td> <td style="width:24px;height:12px;background-color:#D9E8D9;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> <td style="width:24px;height:12px;background-color:#C2FFE0;"></td> <td style="width:24px;height:12px;background-color:#C9F7E0;"></td> <td style="width:24px;height:12px;background-color:#D1F0E0;"></td> <td style="width:24px;height:12px;background-color:#D9E8E0;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#BFFF80;"></td> <td style="width:24px;height:12px;background-color:#BFEF8F;"></td> <td style="width:24px;height:12px;background-color:#BFDF9F;"></td> <td style="width:24px;height:12px;background-color:#BFCFAF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> <td style="width:24px;height:12px;background-color:#80FF80;"></td> <td style="width:24px;height:12px;background-color:#8FEF8F;"></td> <td style="width:24px;height:12px;background-color:#9FDF9F;"></td> <td style="width:24px;height:12px;background-color:#AFCFAF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> <td style="width:24px;height:12px;background-color:#80FFBF;"></td> <td style="width:24px;height:12px;background-color:#8FEFBF;"></td> <td style="width:24px;height:12px;background-color:#9FDFBF;"></td> <td style="width:24px;height:12px;background-color:#AFCFBF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#A1FF42;"></td> <td style="width:24px;height:12px;background-color:#A1E75A;"></td> <td style="width:24px;height:12px;background-color:#A1D071;"></td> <td style="width:24px;height:12px;background-color:#A1B889;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> <td style="width:24px;height:12px;background-color:#42FF42;"></td> <td style="width:24px;height:12px;background-color:#5AE75A;"></td> <td style="width:24px;height:12px;background-color:#71D071;"></td> <td style="width:24px;height:12px;background-color:#89B889;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> <td style="width:24px;height:12px;background-color:#42FFA1;"></td> <td style="width:24px;height:12px;background-color:#5AE7A1;"></td> <td style="width:24px;height:12px;background-color:#71D0A1;"></td> <td style="width:24px;height:12px;background-color:#89B8A1;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#7FFF00;"></td> <td style="width:24px;height:12px;background-color:#7FDF20;"></td> <td style="width:24px;height:12px;background-color:#7FBF40;"></td> <td style="width:24px;height:12px;background-color:#7F9F60;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> <td style="width:24px;height:12px;background-color:#00FF00;"></td> <td style="width:24px;height:12px;background-color:#20DF20;"></td> <td style="width:24px;height:12px;background-color:#40BF40;"></td> <td style="width:24px;height:12px;background-color:#609F60;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> <td style="width:24px;height:12px;background-color:#00FF7F;"></td> <td style="width:24px;height:12px;background-color:#20DF7F;"></td> <td style="width:24px;height:12px;background-color:#40BF7F;"></td> <td style="width:24px;height:12px;background-color:#609F7F;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#61C200;"></td> <td style="width:24px;height:12px;background-color:#61AA18;"></td> <td style="width:24px;height:12px;background-color:#619130;"></td> <td style="width:24px;height:12px;background-color:#617949;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> <td style="width:24px;height:12px;background-color:#00C200;"></td> <td style="width:24px;height:12px;background-color:#18AA18;"></td> <td style="width:24px;height:12px;background-color:#309130;"></td> <td style="width:24px;height:12px;background-color:#497949;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> <td style="width:24px;height:12px;background-color:#00C261;"></td> <td style="width:24px;height:12px;background-color:#18AA61;"></td> <td style="width:24px;height:12px;background-color:#309161;"></td> <td style="width:24px;height:12px;background-color:#497961;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#408000;"></td> <td style="width:24px;height:12px;background-color:#407010;"></td> <td style="width:24px;height:12px;background-color:#406020;"></td> <td style="width:24px;height:12px;background-color:#405030;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> <td style="width:24px;height:12px;background-color:#008000;"></td> <td style="width:24px;height:12px;background-color:#107010;"></td> <td style="width:24px;height:12px;background-color:#206020;"></td> <td style="width:24px;height:12px;background-color:#305030;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> <td style="width:24px;height:12px;background-color:#008040;"></td> <td style="width:24px;height:12px;background-color:#107040;"></td> <td style="width:24px;height:12px;background-color:#206040;"></td> <td style="width:24px;height:12px;background-color:#305040;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#214200;"></td> <td style="width:24px;height:12px;background-color:#213A08;"></td> <td style="width:24px;height:12px;background-color:#213211;"></td> <td style="width:24px;height:12px;background-color:#212919;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> <td style="width:24px;height:12px;background-color:#004200;"></td> <td style="width:24px;height:12px;background-color:#083A08;"></td> <td style="width:24px;height:12px;background-color:#113211;"></td> <td style="width:24px;height:12px;background-color:#192919;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> <td style="width:24px;height:12px;background-color:#004221;"></td> <td style="width:24px;height:12px;background-color:#083A21;"></td> <td style="width:24px;height:12px;background-color:#113221;"></td> <td style="width:24px;height:12px;background-color:#192921;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#CFCFCF;"></td> <td style="width:24px;height:12px;background-color:#CFCFCF;"></td> <td style="width:24px;height:12px;background-color:#CFCFCF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#C2FFFF;"></td> <td style="width:24px;height:12px;background-color:#C9F7F7;"></td> <td style="width:24px;height:12px;background-color:#D1F0F0;"></td> <td style="width:24px;height:12px;background-color:#D9E8E8;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> <td style="width:24px;height:12px;background-color:#C2E0FF;"></td> <td style="width:24px;height:12px;background-color:#C9E0F7;"></td> <td style="width:24px;height:12px;background-color:#D1E0F0;"></td> <td style="width:24px;height:12px;background-color:#D9E0E8;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> <td style="width:24px;height:12px;background-color:#C2C2FF;"></td> <td style="width:24px;height:12px;background-color:#C9C9F7;"></td> <td style="width:24px;height:12px;background-color:#D1D1F0;"></td> <td style="width:24px;height:12px;background-color:#D9D9E8;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#80FFFF;"></td> <td style="width:24px;height:12px;background-color:#8FEFEF;"></td> <td style="width:24px;height:12px;background-color:#9FDFDF;"></td> <td style="width:24px;height:12px;background-color:#AFCFCF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> <td style="width:24px;height:12px;background-color:#80BFFF;"></td> <td style="width:24px;height:12px;background-color:#8FBFEF;"></td> <td style="width:24px;height:12px;background-color:#9FBFDF;"></td> <td style="width:24px;height:12px;background-color:#AFBFCF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> <td style="width:24px;height:12px;background-color:#8080FF;"></td> <td style="width:24px;height:12px;background-color:#8F8FEF;"></td> <td style="width:24px;height:12px;background-color:#9F9FDF;"></td> <td style="width:24px;height:12px;background-color:#AFAFCF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#42FFFF;"></td> <td style="width:24px;height:12px;background-color:#5AE7E7;"></td> <td style="width:24px;height:12px;background-color:#71D0D0;"></td> <td style="width:24px;height:12px;background-color:#89B8B8;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> <td style="width:24px;height:12px;background-color:#42A1FF;"></td> <td style="width:24px;height:12px;background-color:#5AA1E7;"></td> <td style="width:24px;height:12px;background-color:#71A1D0;"></td> <td style="width:24px;height:12px;background-color:#89A1B8;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> <td style="width:24px;height:12px;background-color:#4242FF;"></td> <td style="width:24px;height:12px;background-color:#5A5AE7;"></td> <td style="width:24px;height:12px;background-color:#7171D0;"></td> <td style="width:24px;height:12px;background-color:#8989B8;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#00FFFF;"></td> <td style="width:24px;height:12px;background-color:#20DFDF;"></td> <td style="width:24px;height:12px;background-color:#40BFBF;"></td> <td style="width:24px;height:12px;background-color:#609F9F;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> <td style="width:24px;height:12px;background-color:#0080FF;"></td> <td style="width:24px;height:12px;background-color:#2080DF;"></td> <td style="width:24px;height:12px;background-color:#4080BF;"></td> <td style="width:24px;height:12px;background-color:#60809F;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> <td style="width:24px;height:12px;background-color:#0000FF;"></td> <td style="width:24px;height:12px;background-color:#2020DF;"></td> <td style="width:24px;height:12px;background-color:#4040BF;"></td> <td style="width:24px;height:12px;background-color:#60609F;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#00C2C2;"></td> <td style="width:24px;height:12px;background-color:#18AAAA;"></td> <td style="width:24px;height:12px;background-color:#309191;"></td> <td style="width:24px;height:12px;background-color:#497979;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> <td style="width:24px;height:12px;background-color:#0061C2;"></td> <td style="width:24px;height:12px;background-color:#1861AA;"></td> <td style="width:24px;height:12px;background-color:#306191;"></td> <td style="width:24px;height:12px;background-color:#496179;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> <td style="width:24px;height:12px;background-color:#0000C2;"></td> <td style="width:24px;height:12px;background-color:#1818AA;"></td> <td style="width:24px;height:12px;background-color:#303091;"></td> <td style="width:24px;height:12px;background-color:#494979;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#00807F;"></td> <td style="width:24px;height:12px;background-color:#107070;"></td> <td style="width:24px;height:12px;background-color:#206060;"></td> <td style="width:24px;height:12px;background-color:#305050;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> <td style="width:24px;height:12px;background-color:#004080;"></td> <td style="width:24px;height:12px;background-color:#104070;"></td> <td style="width:24px;height:12px;background-color:#204060;"></td> <td style="width:24px;height:12px;background-color:#304050;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> <td style="width:24px;height:12px;background-color:#000080;"></td> <td style="width:24px;height:12px;background-color:#101070;"></td> <td style="width:24px;height:12px;background-color:#202060;"></td> <td style="width:24px;height:12px;background-color:#303050;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#004242;"></td> <td style="width:24px;height:12px;background-color:#083A3A;"></td> <td style="width:24px;height:12px;background-color:#113232;"></td> <td style="width:24px;height:12px;background-color:#192929;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> <td style="width:24px;height:12px;background-color:#002142;"></td> <td style="width:24px;height:12px;background-color:#08213A;"></td> <td style="width:24px;height:12px;background-color:#112132;"></td> <td style="width:24px;height:12px;background-color:#192129;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> <td style="width:24px;height:12px;background-color:#000042;"></td> <td style="width:24px;height:12px;background-color:#08083A;"></td> <td style="width:24px;height:12px;background-color:#111132;"></td> <td style="width:24px;height:12px;background-color:#191929;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#CFCFCF;"></td> <td style="width:24px;height:12px;background-color:#CFCFCF;"></td> <td style="width:24px;height:12px;background-color:#CFCFCF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:white;"></td> <td style="width:24px;height:12px;background-color:white;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> <td style="width:24px;height:12px;background-color:#FFFFFF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#E0C2FF;"></td> <td style="width:24px;height:12px;background-color:#E0C9F7;"></td> <td style="width:24px;height:12px;background-color:#E0D1F0;"></td> <td style="width:24px;height:12px;background-color:#E0D9E8;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> <td style="width:24px;height:12px;background-color:#FFC2FF;"></td> <td style="width:24px;height:12px;background-color:#F7C9F7;"></td> <td style="width:24px;height:12px;background-color:#F0D1F0;"></td> <td style="width:24px;height:12px;background-color:#E8D9E8;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> <td style="width:24px;height:12px;background-color:#FFC2E0;"></td> <td style="width:24px;height:12px;background-color:#F7C9E0;"></td> <td style="width:24px;height:12px;background-color:#F0D1E0;"></td> <td style="width:24px;height:12px;background-color:#E8D9E0;"></td> <td style="width:24px;height:12px;background-color:#E0E0E0;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#BF80FF;"></td> <td style="width:24px;height:12px;background-color:#BF8FEF;"></td> <td style="width:24px;height:12px;background-color:#BF9FDF;"></td> <td style="width:24px;height:12px;background-color:#BFAFCF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> <td style="width:24px;height:12px;background-color:#FF80FF;"></td> <td style="width:24px;height:12px;background-color:#EF8FEF;"></td> <td style="width:24px;height:12px;background-color:#DF9FDF;"></td> <td style="width:24px;height:12px;background-color:#CFAFCF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> <td style="width:24px;height:12px;background-color:#FF80BF;"></td> <td style="width:24px;height:12px;background-color:#EF8FBF;"></td> <td style="width:24px;height:12px;background-color:#DF9FBF;"></td> <td style="width:24px;height:12px;background-color:#CFAFBF;"></td> <td style="width:24px;height:12px;background-color:#BFBFBF;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#A142FF;"></td> <td style="width:24px;height:12px;background-color:#A15AE7;"></td> <td style="width:24px;height:12px;background-color:#A171D0;"></td> <td style="width:24px;height:12px;background-color:#A189B8;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> <td style="width:24px;height:12px;background-color:#FF42FF;"></td> <td style="width:24px;height:12px;background-color:#E75AE7;"></td> <td style="width:24px;height:12px;background-color:#D071D0;"></td> <td style="width:24px;height:12px;background-color:#B889B8;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> <td style="width:24px;height:12px;background-color:#FF42A1;"></td> <td style="width:24px;height:12px;background-color:#E75AA1;"></td> <td style="width:24px;height:12px;background-color:#D071A1;"></td> <td style="width:24px;height:12px;background-color:#B889A1;"></td> <td style="width:24px;height:12px;background-color:#A1A1A1;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#8000FF;"></td> <td style="width:24px;height:12px;background-color:#8020DF;"></td> <td style="width:24px;height:12px;background-color:#8040BF;"></td> <td style="width:24px;height:12px;background-color:#80609F;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> <td style="width:24px;height:12px;background-color:#FF00FF;"></td> <td style="width:24px;height:12px;background-color:#DF20DF;"></td> <td style="width:24px;height:12px;background-color:#BF40BF;"></td> <td style="width:24px;height:12px;background-color:#9F609F;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> <td style="width:24px;height:12px;background-color:#FF007F;"></td> <td style="width:24px;height:12px;background-color:#DF207F;"></td> <td style="width:24px;height:12px;background-color:#BF407F;"></td> <td style="width:24px;height:12px;background-color:#9F607F;"></td> <td style="width:24px;height:12px;background-color:#808080;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#6100C2;"></td> <td style="width:24px;height:12px;background-color:#6118AA;"></td> <td style="width:24px;height:12px;background-color:#613091;"></td> <td style="width:24px;height:12px;background-color:#614979;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> <td style="width:24px;height:12px;background-color:#C200C2;"></td> <td style="width:24px;height:12px;background-color:#AA18AA;"></td> <td style="width:24px;height:12px;background-color:#913091;"></td> <td style="width:24px;height:12px;background-color:#794979;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> <td style="width:24px;height:12px;background-color:#C20061;"></td> <td style="width:24px;height:12px;background-color:#AA1861;"></td> <td style="width:24px;height:12px;background-color:#913061;"></td> <td style="width:24px;height:12px;background-color:#794961;"></td> <td style="width:24px;height:12px;background-color:#616161;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#400080;"></td> <td style="width:24px;height:12px;background-color:#401070;"></td> <td style="width:24px;height:12px;background-color:#402060;"></td> <td style="width:24px;height:12px;background-color:#403050;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> <td style="width:24px;height:12px;background-color:#7F0080;"></td> <td style="width:24px;height:12px;background-color:#701070;"></td> <td style="width:24px;height:12px;background-color:#602060;"></td> <td style="width:24px;height:12px;background-color:#503050;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> <td style="width:24px;height:12px;background-color:#800040;"></td> <td style="width:24px;height:12px;background-color:#701040;"></td> <td style="width:24px;height:12px;background-color:#602040;"></td> <td style="width:24px;height:12px;background-color:#503040;"></td> <td style="width:24px;height:12px;background-color:#404040;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#210042;"></td> <td style="width:24px;height:12px;background-color:#21083A;"></td> <td style="width:24px;height:12px;background-color:#211132;"></td> <td style="width:24px;height:12px;background-color:#211929;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> <td style="width:24px;height:12px;background-color:#420042;"></td> <td style="width:24px;height:12px;background-color:#3A083A;"></td> <td style="width:24px;height:12px;background-color:#321132;"></td> <td style="width:24px;height:12px;background-color:#291929;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> <td style="width:24px;height:12px;background-color:#420021;"></td> <td style="width:24px;height:12px;background-color:#3A0821;"></td> <td style="width:24px;height:12px;background-color:#321121;"></td> <td style="width:24px;height:12px;background-color:#291921;"></td> <td style="width:24px;height:12px;background-color:#212121;"></td> </tr>
-  <tr><td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> <td style="width:24px;height:12px;background-color:#000000;"></td> </tr>
-</table>
+			<h2 style="-ah-margin-before: 0;">Complete HSL Color Chart</h2>
+			<p>The following comprehensive color chart demonstrates the complete HSL color space with 12 primary hue sections. Each section shows how saturation (columns) and lightness (rows) affect a specific hue value, exactly replicating the original SVG color table.</p>
+			
+			<div class="color-grid">
+				<!-- Row 1: H=0°, H=30°, H=60° -->
+				<div class="color-grid-row">
+					<!-- H: 0° (Red) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 0 (0° – Red)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(0, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(0, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(0, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(0, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(0, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(0, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(0, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(0, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(0, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(0, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(0, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(0, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(0, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(0, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(0, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(0, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(0, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(0, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(0, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(0, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(0, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(0, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(0, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(0, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(0, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(0, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(0, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(0, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(0, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(0, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(0, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(0, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(0, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(0, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(0, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(0, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(0, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(0, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(0, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(0, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(0, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(0, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(0, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(0, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(0, 0%, 0%);"></div></div>
+						</div>
+					</div>
+					
+					<!-- H: 30° (Orange) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 30 (30° – Orange)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(30, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(30, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(30, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(30, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(30, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(30, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(30, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(30, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(30, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(30, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(30, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(30, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(30, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(30, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(30, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(30, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(30, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(30, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(30, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(30, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(30, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(30, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(30, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(30, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(30, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(30, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(30, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(30, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(30, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(30, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(30, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(30, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(30, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(30, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(30, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(30, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(30, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(30, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(30, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(30, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(30, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(30, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(30, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(30, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(30, 0%, 0%);"></div></div>
+						</div>
+					</div>
+					
+					<!-- H: 60° (Yellow) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 60 (60° – Yellow)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(60, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(60, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(60, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(60, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(60, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(60, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(60, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(60, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(60, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(60, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(60, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(60, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(60, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(60, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(60, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(60, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(60, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(60, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(60, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(60, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(60, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(60, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(60, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(60, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(60, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(60, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(60, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(60, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(60, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(60, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(60, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(60, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(60, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(60, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(60, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(60, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(60, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(60, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(60, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(60, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(60, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(60, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(60, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(60, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(60, 0%, 0%);"></div></div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Row 2: H=90°, H=120°, H=150° -->
+				<div class="color-grid-row">
+					<!-- H: 90° (Yellow-Green) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 90 (90° – Yellow-Green)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(90, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(90, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(90, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(90, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(90, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(90, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(90, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(90, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(90, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(90, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(90, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(90, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(90, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(90, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(90, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(90, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(90, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(90, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(90, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(90, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(90, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(90, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(90, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(90, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(90, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(90, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(90, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(90, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(90, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(90, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(90, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(90, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(90, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(90, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(90, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(90, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(90, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(90, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(90, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(90, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(90, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(90, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(90, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(90, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(90, 0%, 0%);"></div></div>
+						</div>
+					</div>
+					
+					<!-- H: 120° (Green) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 120 (120° – Green)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(120, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(120, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(120, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(120, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(120, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(120, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(120, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(120, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(120, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(120, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(120, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(120, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(120, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(120, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(120, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(120, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(120, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(120, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(120, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(120, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(120, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(120, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(120, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(120, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(120, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(120, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(120, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(120, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(120, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(120, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(120, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(120, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(120, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(120, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(120, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(120, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(120, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(120, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(120, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(120, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(120, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(120, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(120, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(120, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(120, 0%, 0%);"></div></div>
+						</div>
+					</div>
+					
+					<!-- H: 150° (Green-Cyan) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 150 (150° – Green-Cyan)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(150, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(150, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(150, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(150, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(150, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(150, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(150, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(150, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(150, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(150, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(150, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(150, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(150, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(150, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(150, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(150, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(150, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(150, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(150, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(150, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(150, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(150, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(150, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(150, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(150, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(150, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(150, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(150, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(150, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(150, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(150, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(150, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(150, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(150, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(150, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(150, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(150, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(150, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(150, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(150, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(150, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(150, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(150, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(150, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(150, 0%, 0%);"></div></div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Continue with remaining rows... I'll add the key remaining sections for space reasons -->
+				
+				<!-- Row 3: H=180°, H=210°, H=240° -->
+				<div class="color-grid-row">
+					<!-- H: 180° (Cyan) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 180 (180° – Cyan)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(180, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(180, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(180, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(180, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(180, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(180, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(180, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(180, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(180, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(180, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(180, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(180, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(180, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(180, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(180, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(180, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(180, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(180, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(180, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(180, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(180, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(180, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(180, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(180, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(180, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(180, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(180, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(180, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(180, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(180, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(180, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(180, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(180, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(180, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(180, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(180, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(180, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(180, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(180, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(180, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(180, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(180, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(180, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(180, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(180, 0%, 0%);"></div></div>
+						</div>
+					</div>
+					
+					<!-- H: 210° (Cyan-Blue) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 210 (210° – Cyan-Blue)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(210, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(210, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(210, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(210, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(210, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(210, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(210, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(210, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(210, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(210, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(210, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(210, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(210, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(210, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(210, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(210, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(210, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(210, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(210, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(210, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(210, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(210, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(210, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(210, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(210, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(210, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(210, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(210, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(210, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(210, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(210, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(210, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(210, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(210, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(210, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(210, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(210, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(210, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(210, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(210, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(210, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(210, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(210, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(210, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(210, 0%, 0%);"></div></div>
+						</div>
+					</div>
+					
+					<!-- H: 240° (Blue) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 240 (240° – Blue)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(240, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(240, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(240, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(240, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(240, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(240, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(240, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(240, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(240, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(240, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(240, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(240, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(240, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(240, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(240, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(240, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(240, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(240, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(240, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(240, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(240, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(240, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(240, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(240, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(240, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(240, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(240, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(240, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(240, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(240, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(240, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(240, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(240, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(240, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(240, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(240, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(240, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(240, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(240, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(240, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(240, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(240, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(240, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(240, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(240, 0%, 0%);"></div></div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Row 4: H=270°, H=300°, H=330° -->
+				<div class="color-grid-row">
+					<!-- H: 270° (Blue-Magenta) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 270 (270° – Blue-Magenta)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(270, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(270, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(270, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(270, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(270, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(270, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(270, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(270, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(270, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(270, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(270, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(270, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(270, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(270, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(270, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(270, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(270, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(270, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(270, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(270, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(270, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(270, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(270, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(270, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(270, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(270, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(270, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(270, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(270, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(270, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(270, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(270, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(270, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(270, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(270, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(270, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(270, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(270, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(270, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(270, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(270, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(270, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(270, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(270, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(270, 0%, 0%);"></div></div>
+						</div>
+					</div>
+					
+					<!-- H: 300° (Magenta) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 300 (300° – Magenta)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(300, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(300, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(300, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(300, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(300, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(300, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(300, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(300, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(300, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(300, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(300, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(300, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(300, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(300, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(300, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(300, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(300, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(300, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(300, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(300, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(300, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(300, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(300, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(300, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(300, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(300, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(300, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(300, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(300, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(300, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(300, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(300, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(300, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(300, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(300, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(300, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(300, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(300, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(300, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(300, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(300, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(300, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(300, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(300, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(300, 0%, 0%);"></div></div>
+						</div>
+					</div>
+					
+					<!-- H: 330° (Magenta-Red) -->
+					<div class="hue-section">
+						<div class="hue-header">H: 330 (330° – Magenta-Red)<br/>← S →</div>
+						<div class="saturation-header">
+							<div class="sat-header-row">
+								<div class="sat-header-cell">100%</div>
+								<div class="sat-header-cell">75%</div>
+								<div class="sat-header-cell">50%</div>
+								<div class="sat-header-cell">25%</div>
+								<div class="sat-header-cell">0%</div>
+							</div>
+						</div>
+						<div class="color-matrix">
+							<div class="color-row"><div class="lightness-label">L ↓<br/>100%</div><div class="color-cell" style="background-color: hsl(330, 100%, 100%);"></div><div class="color-cell" style="background-color: hsl(330, 75%, 100%);"></div><div class="color-cell" style="background-color: hsl(330, 50%, 100%);"></div><div class="color-cell" style="background-color: hsl(330, 25%, 100%);"></div><div class="color-cell" style="background-color: hsl(330, 0%, 100%);"></div></div>
+							<div class="color-row"><div class="lightness-label">88%</div><div class="color-cell" style="background-color: hsl(330, 100%, 88%);"></div><div class="color-cell" style="background-color: hsl(330, 75%, 88%);"></div><div class="color-cell" style="background-color: hsl(330, 50%, 88%);"></div><div class="color-cell" style="background-color: hsl(330, 25%, 88%);"></div><div class="color-cell" style="background-color: hsl(330, 0%, 88%);"></div></div>
+							<div class="color-row"><div class="lightness-label">75%</div><div class="color-cell" style="background-color: hsl(330, 100%, 75%);"></div><div class="color-cell" style="background-color: hsl(330, 75%, 75%);"></div><div class="color-cell" style="background-color: hsl(330, 50%, 75%);"></div><div class="color-cell" style="background-color: hsl(330, 25%, 75%);"></div><div class="color-cell" style="background-color: hsl(330, 0%, 75%);"></div></div>
+							<div class="color-row"><div class="lightness-label">63%</div><div class="color-cell" style="background-color: hsl(330, 100%, 63%);"></div><div class="color-cell" style="background-color: hsl(330, 75%, 63%);"></div><div class="color-cell" style="background-color: hsl(330, 50%, 63%);"></div><div class="color-cell" style="background-color: hsl(330, 25%, 63%);"></div><div class="color-cell" style="background-color: hsl(330, 0%, 63%);"></div></div>
+							<div class="color-row"><div class="lightness-label">50%</div><div class="color-cell" style="background-color: hsl(330, 100%, 50%);"></div><div class="color-cell" style="background-color: hsl(330, 75%, 50%);"></div><div class="color-cell" style="background-color: hsl(330, 50%, 50%);"></div><div class="color-cell" style="background-color: hsl(330, 25%, 50%);"></div><div class="color-cell" style="background-color: hsl(330, 0%, 50%);"></div></div>
+							<div class="color-row"><div class="lightness-label">38%</div><div class="color-cell" style="background-color: hsl(330, 100%, 38%);"></div><div class="color-cell" style="background-color: hsl(330, 75%, 38%);"></div><div class="color-cell" style="background-color: hsl(330, 50%, 38%);"></div><div class="color-cell" style="background-color: hsl(330, 25%, 38%);"></div><div class="color-cell" style="background-color: hsl(330, 0%, 38%);"></div></div>
+							<div class="color-row"><div class="lightness-label">25%</div><div class="color-cell" style="background-color: hsl(330, 100%, 25%);"></div><div class="color-cell" style="background-color: hsl(330, 75%, 25%);"></div><div class="color-cell" style="background-color: hsl(330, 50%, 25%);"></div><div class="color-cell" style="background-color: hsl(330, 25%, 25%);"></div><div class="color-cell" style="background-color: hsl(330, 0%, 25%);"></div></div>
+							<div class="color-row"><div class="lightness-label">13%</div><div class="color-cell" style="background-color: hsl(330, 100%, 13%);"></div><div class="color-cell" style="background-color: hsl(330, 75%, 13%);"></div><div class="color-cell" style="background-color: hsl(330, 50%, 13%);"></div><div class="color-cell" style="background-color: hsl(330, 25%, 13%);"></div><div class="color-cell" style="background-color: hsl(330, 0%, 13%);"></div></div>
+							<div class="color-row"><div class="lightness-label">0%</div><div class="color-cell" style="background-color: hsl(330, 100%, 0%);"></div><div class="color-cell" style="background-color: hsl(330, 75%, 0%);"></div><div class="color-cell" style="background-color: hsl(330, 50%, 0%);"></div><div class="color-cell" style="background-color: hsl(330, 25%, 0%);"></div><div class="color-cell" style="background-color: hsl(330, 0%, 0%);"></div></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<p style="-ah-margin-before: 0.5lh;">This comprehensive HSL color chart demonstrates the complete color space across 12 primary hue sections (every 30° around the color wheel). Each section shows how saturation (horizontal) and lightness (vertical) affect that specific hue value, exactly replicating the structure and educational value of the original SVG color table. This demonstrates the three-dimensional nature of the HSL color model and how each parameter independently affects the final color appearance.</p>
 		</div>
 	</body>
-
 </html>
