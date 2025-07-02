@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html lang="en" data-cat="block" data-order="0" data-ver="6.3">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
+  <meta name="specification" content="CSS2.1-Positioning"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+  
+  <!-- Page geometry & demo‑specific rules -->
+  <style>
+    /* Booklet default frame */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+    
+    /* Inline code style */
+    .codePrint {
+      font-weight: bold;
+      font-family: "Courier New", "DejaVu Sans", monospace;
+      font-size: 0.8em;
+      color: #333;
+    }
+    
+    /* Base block style */
+    .textBlockFormat {
+      position: absolute;
+      text-indent: 0;
+      padding: 1em;
+      text-align: justify;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 4px;
+    }
+    
+    /* Supporting blocks - two horizontal, two diagonal */
+    #tbID_0 {
+       top: 50mm; 
+       left: 5mm;
+       width: 50mm;
+       height: 35mm;
+       background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      z-index: 2;
+    }
+        
+    #tbID_1 {
+       top: 50mm;
+       left: 60mm;
+       width: 50mm;
+       height: 35mm;
+       background: #fff3cd;
+      border: 1px solid #ffeaa7;
+      z-index: 1;
+    }
+        
+    #tbID_2 {
+       top: 95mm;
+       left: 15mm; 
+       width: 50mm;
+       height: 35mm;
+       background: #d1ecf1;
+      border: 1px solid #bee5eb;
+      z-index: 1;
+    }
+        
+    #tbID_3 {
+       top: 115mm;
+       left: 40mm;
+       width: 50mm;
+       height: 35mm;
+       background: #f8d7da;
+      border: 1px solid #f5c6cb;
+      z-index: 2;
+    }
+    
+    /* Code snippet styling */
+    .code-snippet {
+      background: rgba(0,0,0,0.1);
+      padding: 0.5em;
+      border-radius: 3px;
+      margin-bottom: 0.5em;
+      font-size: 0.75em;
+    }
+    
+    .hero .code-snippet {
+      background: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+  
+  <h1 lang="en">Block Container</h1>
+  
+  <div class="description" lang="en">
+    <p>This sample demonstrates absolute positioning of block‑level elements. Each colored block is a <code>&lt;div&gt;</code> with <code>position: absolute</code>; its location and size are defined in millimetres to illustrate precise placement on the page.</p>
+  </div>
+  
+  <div class="textBlockFormat" id="tbID_0">
+    <div class="code-snippet">
+      <span class="codePrint">position: absolute; top: 50mm; left: 5mm;<br>width: 50mm; height: 35mm; z-index: 2;</span>
+    </div>
+     
+  </div>
+  
+  <div class="textBlockFormat" id="tbID_1">
+    <div class="code-snippet">
+      <span class="codePrint">position: absolute; top: 50mm; left: 60mm;<br>width: 50mm; height: 35mm; z-index: 1;</span>
+    </div>
+ </div>
+  
+  <div class="textBlockFormat" id="tbID_2">
+    <div class="code-snippet">
+      <span class="codePrint">position: absolute; top: 95mm; left: 15mm;<br>width: 50mm; height: 35mm; z-index: 1;</span>
+    </div>
+ </div>
+  
+  <div class="textBlockFormat" id="tbID_3">
+    <div class="code-snippet">
+      <span class="codePrint">position: absolute; top: 115mm; left: 40mm;<br>width: 50mm; height: 35mm; z-index: 2;</span>
+    </div>
+ </div>
+</body>
+</html>

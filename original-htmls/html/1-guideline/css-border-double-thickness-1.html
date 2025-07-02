@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html lang="en" data-cat="block" data-order="0" data-ver="6.3">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, border thickness"/>
+  <meta name="specification" content="Block-Extensions"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+
+    /* Spacing helpers */
+    .text-block {
+      -ah-margin-before: 0;
+      -ah-margin-after: 0;
+    }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Double border demonstration boxes */
+    .doubleBorderBox {
+      border-style: double;
+      border-width: 12pt;
+      border-color: #333;
+      padding: 0.5em;
+      margin-bottom: 1em;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    /* Border thickness variations */
+    #dBB_0 {
+      -ah-border-double-thickness: 1;
+    }
+    #dBB_1 {
+      -ah-border-double-thickness: 3pt;
+    }
+    #dBB_2 {
+      -ah-border-double-thickness: 3pt 3pt 3pt;
+    }
+    #dBB_3 {
+      -ah-border-double-thickness: 3pt 1pt 3pt;
+    }
+    #dBB_4 {
+      -ah-border-double-thickness: 3pt 1pt 1pt;
+    }
+    #dBB_5 {
+      -ah-border-double-thickness: 1pt 3pt 1pt;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Double Border Line Thickness</h1>
+
+  <div class="description" lang="en">
+    The line thickness of <code class="code-inline">border-style: double;</code> can be specified by using <code class="code-inline">-ah-border-double-thickness</code>. For instance, the thickness can be specified like <code class="code-inline">-ah-border-double-thickness: 1pt 1pt 1pt</code>. The three values in order from left to right are: outside line width, spacing and inside line width. If a value is omitted, it is regarded as equivalent to the preceding value. Negative values are not available. Borders with double lines is available in AH Formatter V6.3 and later.
+  </div>
+
+  <div class="doubleBorderBox">
+    <code class="code-inline">border-style: double;</code>
+  </div>
+
+  <div class="doubleBorderBox" id="dBB_0">
+    <code class="code-inline">border-style: double; -ah-border-double-thickness: 1;</code>
+  </div>
+
+  <div class="doubleBorderBox" id="dBB_1">
+    <code class="code-inline">border-style: double; -ah-border-double-thickness: 3pt;</code>
+  </div>
+
+  <div class="doubleBorderBox" id="dBB_2">
+    <code class="code-inline">border-style: double; -ah-border-double-thickness: 3pt 3pt 3pt;</code>
+  </div>
+
+  <div class="doubleBorderBox" id="dBB_3">
+    <code class="code-inline">border-style: double; -ah-border-double-thickness: 3pt 1pt 3pt;</code>
+  </div>
+
+  <div class="doubleBorderBox" id="dBB_4">
+    <code class="code-inline">border-style: double; -ah-border-double-thickness: 3pt 1pt 1pt;</code>
+  </div>
+
+  <div class="doubleBorderBox" id="dBB_5">
+    <code class="code-inline">border-style: double; -ah-border-double-thickness: 1pt 3pt 1pt;</code>
+  </div>
+</body>
+</html>

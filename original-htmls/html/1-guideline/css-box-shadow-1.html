@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html lang="en" data-cat="block" data-order="0" data-ver="6.3">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, box shadow"/>
+  <meta name="specification" content="Block-Extensions"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Section headers */
+    .demo-section {
+      font-weight: 600;
+      font-size: 1em;
+      color: #333;
+      margin-bottom: 0.3em;
+      margin-top: 1em;
+    }
+
+    .demo-section:first-of-type {
+      margin-top: 0.5em;
+    }
+
+    /* Box shadow demonstration boxes */
+    .boxShadow_0 {
+      border: thin solid black;
+      height: 3.5em;
+      width: 50%;
+      margin-bottom: 1.5em;
+      -ah-box-shadow: 10px 10px 0px 0px darkgray;
+    }
+
+    .boxShadow_1 {
+      border: thin solid black;
+      height: 3.5em;
+      width: 50%;
+      margin-bottom: 1.5em;
+      -ah-box-shadow: 10px 10px 5px 0px darkgray;
+    }
+
+    .boxShadow_2 {
+      border: thin solid black;
+      height: 3.5em;
+      width: 50%;
+      margin-bottom: 1.5em;
+      -ah-box-shadow: 10px 10px 0px 8px darkgray;
+    }
+
+    .boxShadow_3 {
+      border: thin solid black;
+      height: 3.5em;
+      width: 50%;
+      margin-bottom: 1.5em;
+      -ah-box-shadow: inset 10px 10px 0px 0px darkgray;
+    }
+
+    .boxShadow_4 {
+      border: thin solid black;
+      height: 3.5em;
+      width: 50%;
+      margin-bottom: 1.5em;
+      -ah-box-shadow: -10px -10px darkgray;
+    }
+
+    .boxShadow_5 {
+      border: thin solid black;
+      height: 3.5em;
+      width: 50%;
+      margin-bottom: 1.5em;
+      -ah-box-shadow: 10px 10px dimgray, 20px 20px darkgray, 30px 30px lightgray;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Box Shadow</h1>
+
+  <div class="description" lang="en">
+    Shadows can be added to a box using <code class="code-inline">-ah-box-shadow</code>. For <code class="code-inline">-ah-box-shadow: 10px 10px 10px 10px darkgray</code>, the values, in order, are: horizontal offset of the shadow; vertical offset of the shadow; blur radius; shadow expansion; shadow color. By adding <code class="code-inline">inset</code> to the value, an inner shadow can be created.
+  </div>
+
+  <div class="demo-section"><code class="code-inline">-ah-box-shadow: 10px 10px 0px 0px darkgray;</code></div>
+  <div class="boxShadow_0"></div>
+
+  <div class="demo-section"><code class="code-inline">-ah-box-shadow: 10px 10px 5px 0px darkgray;</code></div>
+  <div class="boxShadow_1"></div>
+
+  <div class="demo-section"><code class="code-inline">-ah-box-shadow: 10px 10px 0px 8px darkgray;</code></div>
+  <div class="boxShadow_2"></div>
+
+  <div class="demo-section"><code class="code-inline">-ah-box-shadow: inset 10px 10px 0px 0px darkgray;</code></div>
+  <div class="boxShadow_3"></div>
+
+  <div class="demo-section"><code class="code-inline">-ah-box-shadow: -10px -10px darkgray;</code></div>
+  <div class="boxShadow_4"></div>
+
+  <div class="demo-section"><code class="code-inline">-ah-box-shadow: 10px 10px dimgray, 20px 20px darkgray, 30px 30px lightgray;</code></div>
+  <div class="boxShadow_5"></div>
+</body>
+</html>

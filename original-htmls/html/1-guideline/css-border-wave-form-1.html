@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html lang="en" data-cat="block" data-order="0" data-ver="6.3">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, border wave"/>
+  <meta name="specification" content="Block-Extensions"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Wavy border demonstration boxes */
+    .borderWavy {
+      -ah-margin-after: 1.5em;
+      border-style: wave;
+      border-width: 8pt;
+      border-color: #333;
+      padding: 5pt;
+      margin-bottom: 1.2em;
+      font-size: 0.9em;
+      background-color: #f9f9f9;
+    }
+
+    #bW_1 {
+      -ah-border-wave-form: auto;
+    }
+
+    #bW_2 {
+      -ah-border-wave-form: 6 0.125;
+    }
+
+    #bW_3 {
+      -ah-border-wave-form: 2;
+    }
+
+    #bW_4 {
+      -ah-border-wave-form: 5;
+    }
+
+    #bW_5 {
+      -ah-border-wave-form: 10;
+    }
+
+    #bW_6 {
+      -ah-border-wave-form: 10 3pt;
+    }
+
+    #bW_7 {
+      -ah-border-wave-form: 10 5pt;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Generating Wavy Borders</h1>
+
+  <div class="description" lang="en">
+    The border of <code class="code-inline">border-style: wave;</code> can be specified like <code class="code-inline">-ah-border-wave-form: 10 3pt;</code>. One or two values may be specified. The values in order from left to right are wave form length and line width. Each value may be a number, a length, or 'auto'. Numeric values are proportional to the border width. If a value is 'auto' or omitted, it is regarded as either 6 or 0.125, respectively. Negative values are not available. <code class="code-inline">border-style: wave;</code> is available in AH Formatter V6.3 and later.
+  </div>
+
+  <div class="borderWavy">
+    <code class="code-inline">border-style: wave;</code>
+  </div>
+
+  <div class="borderWavy" id="bW_1">
+    <code class="code-inline">border-style: wave; -ah-border-wave-form: auto;</code>
+  </div>
+
+  <div class="borderWavy" id="bW_2">
+    <code class="code-inline">border-style: wave; -ah-border-wave-form: 6 0.125;</code>
+  </div>
+
+  <div class="borderWavy" id="bW_3">
+    <code class="code-inline">border-style: wave; -ah-border-wave-form: 2;</code>
+  </div>
+
+  <div class="borderWavy" id="bW_4">
+    <code class="code-inline">border-style: wave; -ah-border-wave-form: 5;</code>
+  </div>
+
+  <div class="borderWavy" id="bW_5">
+    <code class="code-inline">border-style: wave; -ah-border-wave-form: 10;</code>
+  </div>
+
+  <div class="borderWavy" id="bW_6">
+    <code class="code-inline">border-style: wave; -ah-border-wave-form: 10 3pt;</code>
+  </div>
+
+  <div class="borderWavy" id="bW_7">
+    <code class="code-inline">border-style: wave; -ah-border-wave-form: 10 5pt;</code>
+  </div>
+</body>
+</html>

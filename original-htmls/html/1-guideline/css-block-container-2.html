@@ -1,0 +1,170 @@
+
+
+  <!DOCTYPE html>
+<!-- $Id$ -->
+<html lang="en" data-cat="block" data-order="0" data-ver="6.3">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, block container"/>
+  <meta name="specification" content="CSS2.1-Positioning"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+
+    /* Spacing helpers */
+    .text-block-mb1 {
+      -ah-margin-before: 1em;
+      -ah-margin-after: 0;
+    }
+    .text-block-mb05 {
+      -ah-margin-before: 0.5em;
+      -ah-margin-after: 0;
+    }
+    .text-block {
+      -ah-margin-before: 0;
+      -ah-margin-after: 0;
+    }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Block container base style - more compact */
+    .blockContainer {
+      border-style: solid;
+      border-width: 1pt;
+      border-color: gray;
+      margin-bottom: 0.8em;
+      padding: 0.5em;
+      background-color: #f9f9f9;
+    }
+
+    /* Block container variations */
+    #dBC_0 {
+      -ah-logical-width: 50%;
+    }
+    #dBC_1 {
+      -ah-logical-width: 50%;
+      -ah-logical-height: 15mm;
+    }
+    #dBC_2 {
+      -ah-logical-width: 50%;
+      -ah-logical-height: 20mm;
+    }
+    #dBC_3 {
+      -ah-min-logical-width: 30em;
+      -ah-min-logical-height: 1.5em;
+    }
+    #dBC_4 {
+      -ah-max-logical-width: 30em;
+      -ah-max-logical-height: 1.5em;
+    }
+    #dBC_5 {
+      -ah-logical-width: 50%;
+      background-color: lightyellow;
+    }
+
+    /* Section headers - more compact */
+    .demo-section {
+      -ah-margin-before: 0.8em;
+      -ah-margin-after: 0.3em;
+      font-weight: 600;
+      font-size: 1.05em;
+      color: #333;
+    }
+
+    /* Keep sections together */
+    .block-demo {
+      -ah-keep-together-within-page: always;
+      break-inside: avoid-page;
+      page-break-inside: avoid;
+      margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Position and Size of a Block Container</h1>
+
+  <div class="description" lang="en">
+    When the position of a block container is not specified, it is positioned after its previous block. The width and height will change based on values optionally specified and the contents included in the area. This sample demonstrates various sizing properties for block containers including logical width, logical height, minimum and maximum constraints, and overflow behavior using Antenna House Formatter's <code class="code-inline">-ah-logical-*</code> properties.
+  </div>
+
+
+
+  <div class="block-demo">
+    <div class="demo-section">Default Block Container</div>
+    <p class="text-block">This is a block area before the block container whose position isn't specified.</p>
+    <div class="blockContainer">
+      This is the contents of the block container whose position isn't specified. It's arranged following the previous block because the position isn't specified. Because the width and the height aren't specified, the size reflects the contents included in the area.
+    </div>
+  </div>
+
+  <div class="block-demo">
+    <div class="demo-section">Width-Only Specification</div>
+    <p class="text-block">This block container has <code class="code-inline">-ah-logical-width: 50%</code>:</p>
+    <div class="blockContainer" id="dBC_0">
+      This is the contents of the block container whose position isn't specified. It's arranged following the previous block because the position isn't specified. The width is set to 50% of the containing block, while height adjusts to content.
+    </div>
+  </div>
+
+  <div class="block-demo">
+    <div class="demo-section">Width and Height Specification</div>
+    <p class="text-block">This block container has <code class="code-inline">-ah-logical-width: 50%</code> and <code class="code-inline">-ah-logical-height: 20%</code>:</p>
+    <div class="blockContainer" id="dBC_1">
+      This is the contents of the block container with both width and height specified. The container is constrained to 50% width and 20% height of its containing block.
+    </div>
+  </div>
+
+  <div class="block-demo">
+    <div class="demo-section">Fixed Height Specification</div>
+    <p class="text-block">This block container has <code class="code-inline">-ah-logical-width: 50%</code> and <code class="code-inline">-ah-logical-height: 30mm</code>:</p>
+    <div class="blockContainer" id="dBC_2">
+      This is the contents of the block container with a fixed height of 30mm. The width is percentage-based while the height uses absolute units (millimeters).
+    </div>
+  </div>
+
+  <div class="block-demo">
+    <div class="demo-section">Minimum Size Constraints</div>
+    <p class="text-block">This block container has minimum constraints with <code class="code-inline">-ah-min-logical-width: 30em</code> and <code class="code-inline">-ah-min-logical-height: 2em</code>:</p>
+    <div class="blockContainer" id="dBC_3">
+      This is the contents of the block container with minimum size constraints. The container will not shrink below 30em width or 2em height, ensuring content remains readable.
+    </div>
+    <div class="blockContainer">
+      The minimum values are specified the same as the block container just before this area.
+    </div>
+  </div>
+
+  <div class="block-demo">
+    <div class="demo-section">Maximum Size Constraints</div>
+    <p class="text-block">This block container has maximum constraints with <code class="code-inline">-ah-max-logical-width: 30em</code> and <code class="code-inline">-ah-max-logical-height: 2em</code>:</p>
+    <div class="blockContainer" id="dBC_4">
+      This is the contents of the block container whose position isn't specified. By specifying the width as <code class="code-inline">-ah-max-logical-width: 30em</code> and the height as <code class="code-inline">-ah-max-logical-height: 2em</code>, maximum values of the width and height can be specified.
+    </div>
+    <div class="blockContainer" id="dBC_4">
+      The maximum values are specified the same as the block container just before this area.
+    </div>
+  </div>
+
+  <div class="block-demo">
+    <div class="demo-section">Overflow Behavior</div>
+    <p class="text-block">This block container demonstrates overflow behavior when height is not specified:</p>
+    <div class="blockContainer" id="dBC_5">
+      When the height is not specified to the block container, a page break occurs within the block container if the contents overflow. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample. block-container sample.
+    </div>
+  </div>
+</body>
+</html>

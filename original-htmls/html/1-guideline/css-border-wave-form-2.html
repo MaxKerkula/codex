@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html lang="en" data-cat="block" data-order="0" data-ver="6.3">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, border double wave"/>
+  <meta name="specification" content="Block-Extensions"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+
+  <style>
+    /* Page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Double-wave border demonstration boxes */
+    .borderWave {
+      border-color: black;
+      border-style: double-wave;
+      border-width: 8pt;
+      margin-bottom: 1.5em;
+      padding: 0.8em;
+      background-color: #f9f9f9;
+    }
+
+    #bW_0 {
+      -ah-border-wave-form: 6 0.125 0.5;
+    }
+
+    #bW_1 {
+      -ah-border-wave-form: 2;
+    }
+
+    #bW_2 {
+      -ah-border-wave-form: 5;
+    }
+
+    #bW_3 {
+      -ah-border-wave-form: 10;
+    }
+
+    #bW_4 {
+      -ah-border-wave-form: 10 0.7;
+    }
+
+    #bW_5 {
+      -ah-border-wave-form: 10 0.3;
+    }
+
+    #bW_6 {
+      -ah-border-wave-form: 10 0.3 2;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Double-Wave Border Form</h1>
+
+  <div class="description" lang="en">
+    In Antenna House Formatter V7.3 and later, <code class="code-inline">-ah-border-wave-form:</code> can also be used to specify the double-wave form. The third attribute value is valid for <code class="code-inline">border-style: double-wave;</code> and indicates the wave width. If the value is omitted or is auto, it is assumed to be 0.5.
+  </div>
+
+  <div class="borderWave">
+    <code class="code-inline">border-style: double-wave;</code>
+  </div>
+
+  <div class="borderWave" id="bW_0">
+    <code class="code-inline">border-style: double-wave; -ah-border-wave-form: 6 0.125 0.5;</code>
+  </div>
+
+  <div class="borderWave" id="bW_1">
+    <code class="code-inline">border-style: double-wave; -ah-border-wave-form: 2;</code>
+  </div>
+
+  <div class="borderWave" id="bW_2">
+    <code class="code-inline">border-style: double-wave; -ah-border-wave-form: 5;</code>
+  </div>
+
+  <div class="borderWave" id="bW_3">
+    <code class="code-inline">border-style: double-wave; -ah-border-wave-form: 10;</code>
+  </div>
+
+  <div class="borderWave" id="bW_4">
+    <code class="code-inline">border-style: double-wave; -ah-border-wave-form: 10 0.7;</code>
+  </div>
+
+  <div class="borderWave" id="bW_5">
+    <code class="code-inline">border-style: double-wave; -ah-border-wave-form: 10 0.3;</code>
+  </div>
+
+  <div class="borderWave" id="bW_6">
+    <code class="code-inline">border-style: double-wave; -ah-border-wave-form: 10 0.3 2;</code>
+  </div>
+</body>
+</html>

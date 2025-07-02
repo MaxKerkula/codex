@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!-- $Id$ -->
+<html lang="en" data-cat="block" data-order="0" data-ver="6.3">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, break distance"/>
+  <meta name="specification" content="Block-Extensions"/>
+  <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+  <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+  <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+
+  <style>
+    /* Standard booklet page geometry */
+    @page {
+      -ah-page-frame-size: 180mm 250mm;
+      margin: 15mm;
+    }
+
+    /* Inline code styling */
+    .code-inline {
+      font-family: sans-serif;
+      font-size: 0.9em;
+      -ah-pdftag: Code;
+    }
+
+    /* Paragraph styling with indents */
+    p {
+      text-indent: 1.5em;
+      text-align: justify;
+      line-height: 1.4;
+      margin-bottom: 0.8em;
+    }
+
+    /* First paragraph and description no indent */
+    .description, p:first-of-type {
+      text-indent: 0;
+    }
+
+    /* Demo block styling */
+    .demoBlock {
+      column-count: 2;
+      -ah-column-rule: 2pt burlywood solid all;
+      background-color: #faf8f0;
+      border: 1pt solid #d4b896;
+      border-radius: 4px;
+      margin-bottom: 15mm;
+      padding: 8pt;
+      widows: 1;
+      orphans: 1;
+      font-size: 1.05em;
+      hyphens: false;
+      height: 45%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .demoBlock div {
+      text-align: justify;
+      line-height: 1.3;
+    }
+
+    .demoBlock:first-of-type {
+      page-break-before: always;
+    }
+  </style>
+</head>
+<body>
+  <!-- Running footers -->
+  <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+  <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
+
+  <h1>Reduce Unnecessary Forced Breaks</h1>
+
+  <div class="description" lang="en">
+    <code class="code-inline">break-before</code> and <code class="code-inline">break-after</code> force a page break or column break. However, 'axf:break-distance' reduces unnecessary breaks by disabling 'break-before' and 'break-after' if there is sufficient space on the page. 'axf:break-distance' is specified as either a length or a percentage of the height of the containing block.
+  
+
+  <p>A page break or column break specified by 'break-before' or 'break-after' is enabled only when the height of the remaining area is less than the 'axf:break-distance' height. If the height of the remaining area is greater than the height specified by 'axf:break-distance', no page breaks or column breaks are made. 'axf: break-distance' is available in Antenna House Formatter V7.3 and later.</p>
+</div>
+  <p>In the next page, <code class="code-inline">break-before: column;</code> is specified on blocks in a two-column page. If only <code class="code-inline">break-before: column;</code> is specified, the column breaks there. However, if 'axf:break-distance' is also specified, the height of the column will determine whether or not to break the column.</p>
+
+  <div class="demoBlock">
+    <div>
+      There are two columns here.
+    </div>
+    <div style="break-before: column; -ah-margin-before: 1.5em;">
+      The block has <code class="code-inline">break-before: column</code>, which normally forces a column break. This caused the large space in the previous column.
+    </div>
+    <div style="-ah-margin-before: 1.5em">
+      The following three blocks are identical.
+    </div>
+    <div style="-ah-break-distance: 30%; -ah-margin-before: 1.5em;">
+      This block has <code class="code-inline">-ah-break-distance: 30%;</code>. A forced break occurs only if the height of the remaining area is less than the <code class="code-inline">-ah-break-distance</code> value.
+    </div>
+    <div style="-ah-margin-before: 1.5em; -ah-margin-before: 1.5em;">
+      This block has <code class="code-inline">break-before: column;</code> and <code class="code-inline">-ah-break-distance: 30%;</code> A forced break occurs only if the height of the remaining area is less than the <code class="code-inline">-ah-break-distance</code> value.
+    </div>
+  </div>
+
+  <div class="demoBlock">
+    <div style="break-before: column; -ah-break-distance: 30%;">
+      This block has <code class="code-inline">break-before: column;</code> and <code class="code-inline">-ah-break-distance: 30%</code>. A forced break occurs only if the height of the remaining area is less than the <code class="code-inline">-ah-break-distance</code> value.
+    </div>
+  </div>
+</body>
+</html>
