@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, forms, field-name-suffix-page-number"/>
-    <meta name="specification" content="CSS-AH-Extensions"/>
+    <meta name="specification" content="axf:field-name-suffix-page-number"/>
     <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
     <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
     <link rel="stylesheet" href="../../css/css-sample-en.css"/>
@@ -14,7 +14,7 @@
             -ah-page-frame-size: 180mm 250mm;
             margin: 15mm;
         }
-        
+
         .demo-field {
             -ah-field-submit-method: post;
             -ah-field-submit-coordinates: true;
@@ -29,7 +29,7 @@
             background-color: #ffff88;
             border: 1pt silver inset;
         }
-        
+
         .form-demo-container {
             text-align: right;
             background-color: #ffa500;
@@ -37,11 +37,11 @@
             margin: 1em 0;
             border: 1pt solid #999;
         }
-        
+
         .page-break-demo {
             break-before: page;
         }
-        
+
         .result-explanation {
             background-color: #f0f8ff;
             padding: 0.5em;
@@ -51,11 +51,11 @@
     </style>
 </head>
 <body>
-    <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div>
-    <div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
+    <div class="page-number-footer page-number-footer-right"><span class="title"></span><span class="separator"></span><span class="page-number"></span></div>
+    <div class="page-number-footer page-number-footer-left"><span class="page-number"></span><span class="separator"></span><span class="title"></span></div>
 
     <h1>Form Field with Page Number Suffix</h1>
-    
+
     <div class="description">
         <p>The <code class="code-inline">-ah-field-name-suffix-page-number</code> property adds a page number to the name specified by <code class="code-inline">-ah-field-name</code>. This creates unique field names for each page, which is useful when the same form field appears on multiple pages.</p>
         <p>This feature is available in AH Formatter V6.6 and later versions.</p>
@@ -71,7 +71,7 @@
         <strong>Page 1 Form Field:</strong><br>
         <input class="demo-field">
     </div>
-    
+
     <div class="result-explanation">
         <strong>Result:</strong> The field name on this page becomes "InputText-Page1"
     </div>
@@ -81,11 +81,11 @@
             <strong>Page 2 Form Field:</strong><br>
             <input class="demo-field">
         </div>
-        
+
         <div class="result-explanation">
             <strong>Result:</strong> The field name on this page becomes "InputText-Page2"
         </div>
-        
+
         <p>Each page automatically gets a unique field name by appending the page number to the base name specified in <code class="code-inline">-ah-field-name</code>.</p>
     </div>
 </body>

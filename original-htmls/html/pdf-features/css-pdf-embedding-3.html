@@ -25,7 +25,7 @@
         @page PageMaster2 {
             size: 210mm 297mm;
             margin: 10mm 20mm 10mm 20mm;
-            background-image: url("order.pdf");
+            background-image: url("../../img/order.pdf");
        }
 
 
@@ -190,7 +190,7 @@
             <p>First, create a template PDF and the HTML/CSS to be merged data. Next, specify the template PDF in the 'background-image' CSS property of the <a href="https://www.w3.org/TR/css-page-3/#at-page-rule" title="@page rule">@page rule</a> definition as follows:</p>
             <pre class="code-block" lang="en">@page PageMaster-* {
     size: 210mm 297mm; /* Example */
-    background-image: url("order.pdf");
+    background-image: url("../../img/order.pdf");
 }</pre>
             <p class="example-para">The above example uses a page with a height of 297 mm and a width of 210 mm (via the `size` property), and displays order.pdf as the background on the entire page via the `background-image` property.</p>
             <p class="info-para">In most cases, the data to be inserted into the template is placed by specifying the absolute position on the page. Include the merged data in a `div` element (or similar block container), specify the <span class="code-inline">position: absolute;</span> CSS property, and then use the `left`, `right`, `top`, and `bottom` CSS properties to determine the absolute position of the `div` element as follows:</p>
@@ -204,7 +204,7 @@
             <p class="absolute-info">In the above example, the `div` element is positioned 10mm from the left, 30mm from the right, 50mm from the top, and 20mm from the bottom relative to its containing block.</p>
             <p class="break-before-col">In this sample, the following PDF is embedded as the background of the second page as a template, and the data is inserted into that PDF.</p>
             <p class="image-block">
-                <img class="embedded-graphic" src="order.pdf" alt="Embedded PDF sample">
+                <img class="embedded-graphic" src="../../img/order.pdf" alt="Embedded PDF sample">
             </p>
         </div> <!-- end multi-col-container -->
     </div>
