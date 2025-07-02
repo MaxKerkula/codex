@@ -39,7 +39,7 @@ body {
 
   * `<meta charset="UTF-8"/>`
   * `<meta name="keywords" …>` – keep original keywords
-  * `<meta name="specification" …>` – fill in with specific w3 spec being demonstrated in sample or antennahouse css formatter extension being demonstrated:
+  * `<meta name="specification" …>` – fill in with specific w3 spec being demonstrated in sample or antennahouse css formatter extension name being demonstrated:
 
     ```html
     <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
