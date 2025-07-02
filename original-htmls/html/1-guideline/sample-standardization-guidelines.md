@@ -39,8 +39,7 @@ body {
 
   * `<meta charset="UTF-8"/>`
   * `<meta name="keywords" …>` – keep original keywords
-  * `<meta name="specification" …>` – fill in when missing
-  * Links to external CSS (exact paths):
+  * `<meta name="specification" …>` – fill in with specific w3 spec being demonstrated in sample or antennahouse css formatter extension being demonstrated:
 
     ```html
     <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
@@ -80,7 +79,18 @@ Inside `<body>` (in order):
 <div class="main-content"></div>
 ```
 
-## 6. General Utility & Layout Conventions (all samples)
+## 6. Asset Links
+
+**Update image and asset paths:**
+```html
+<!-- Ensure correct relative paths -->
+<img src="../../img/image-name.png" alt="description">
+```
+
+* All asset references should use the `../../img/` path prefix
+* Update any broken or incorrect asset links to follow this pattern
+
+## 7. General Utility & Layout Conventions (all samples)
 
 1. **Semantic grouping & page integrity** – group each logical demo in a container (typically a `<div>`). Apply `-ah-keep-together-within-page` and `-ah-margin-*` helpers so related content stays together and maintains consistent vertical rhythm across categories.
 2. **Running footers pattern** – insert the right and left `page-number-footer` `<div>` elements immediately after `<body>` for every sample.
@@ -89,7 +99,7 @@ Inside `<body>` (in order):
 5. **Preserve functional specifics** – never alter proprietary `-ah-*` CSS, embedded data URIs, form field names, JavaScript, or any demo values that illustrate a feature. Visual consistency is secondary to functional integrity.
 6. **Do not override global utility classes** – avoid redefining shared helpers such as `.description`, `.code-inline`, etc. These are already defined in `css/css-sample-en.css` and other common style‑sheets. Local overrides will break consistency across samples.
 
-## 7. Source Code Excerpt Block
+## 8. Source Code Excerpt Block
 
 Use when a sample relies on JavaScript or non‑trivial markup that is not obvious from the visual demo.
 
@@ -101,18 +111,18 @@ Use when a sample relies on JavaScript or non‑trivial markup that is not obvio
 
 * Copy/paste the key portion **verbatim**; ellipsis `…` acceptable for long blocks.
 
-## 8. Preservation Rules
+## 9. Preservation Rules
 
 * **Never** change or delete proprietary `-ah-`‑prefixed CSS properties.
 * Keep functional attributes (`name`, `id`, `value`, `checked`, etc.) unchanged.
 * Ensure any embedded scripts or PDF form actions continue to work.
 
-## 9. What NOT to Touch
+## 10. What NOT to Touch
 
 * Internal functional JavaScript.
 * Data attributes on the root `<html>` element.
 * Demonstration values that illustrate a feature (e.g., colour swatches, barcode content).
 
-## 10. Verification Workflow
+## 11. Verification Workflow
 
 The user will verify the html files for correctness.
