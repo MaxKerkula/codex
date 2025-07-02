@@ -1,80 +1,92 @@
 <!DOCTYPE html>
 <!-- $Id$ -->
 <html lang="en" data-cat="pdf-features" data-order="0" data-ver="6.3">
-	<head>
+<head>
     <meta charset="UTF-8"/>
-    <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting"/>
-    <meta name="specification" content=""/>
-<link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
-<link rel="stylesheet" href="../../css/booklet-page-en.css"/>
-<link rel="stylesheet" href="../../css/css-sample-en.css"/>
-			<style>
-				@page
-				{
-					
-				}
-				.codePrint
-				{
-					font-weight: bold;
-					font-family: 'Courier New', 'DejaVu Sans', monospace;
-				}
-				.demoField
-				{
-					-ah-field-submit-method: post;
-					-ah-field-submit-coordinates: true;
-					-ah-field-type: text;
-					-ah-field-name: "InputText-Page";
-					-ah-field-default-text: 'yyyy/mm/dd';
-					-ah-field-multiline: false;
-					-ah-field-maxlen: 32;
-					width: 10em;
-					height: 1.2em;
-					background-color: #ff8;
-					border: 1pt silver inset;
-				}
-			</style>
-	</head>
-	<body>
-<div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
-		<div>
-			<div style = "text-align: right; background-color: orange; height: 5em; z-index: 10;">
-				Text Field: <input class="demoField">
-			</div>
-		</div>
-		
-	
-		<div class="title" style="background-color: rgba(186,228,185,0.65);; color: green; margin-top: 2em;">
-				Adds a page number to the field name
-		</h1>
-		<div class="description"><p>
-			By using <span class = "codePrint">-ah-field-name-suffix-page-number</span>, Adds a page number to the name specified by <span class = "codePrint">-ah-field-name</span>. <span class = "codePrint">-ah-field-name-suffix-page-number</span> is available in AH Formatter V6.6.
-		</h1>
-		<div>
-			The unique name can be specified to the form field by ‘axf:field-name’. Use ‘axf:field-name-suffix-page-number’ to create a form in &lt;fo:static-content&gt; and specify a unique name for each page. The page number is appended to the name of the form field on each page.
-		</div>
-		<div style="white-space: pre; font-size: 0.9em; background-color: #eee;">
-    &lt;fo:static-content flow-name="xsl-region-before" &gt;
-    &lt;fo:block text-align="right"&gt;
-    &lt;axf:form field-submit-method="post" field-submit-coordinates="true"&gt;
-    &lt;fo:block space-before="0.5em"&gt;
-    Text Field:&lt;axf:form-field field-type="text" field-name="InputText-Page"
-    axf:field-name-suffix-page-number="1"
-    field-default-text="yyyy/mm/dd"
-    width="10em" height="1.2em"
-    background-color="#ff8" border="1pt silver inset" /&gt;
-    &lt;/fo:block&gt;
-    &lt;/axf:form&gt;
-    &lt;/fo:block&gt;
-    &lt;/fo:static-content&gt;
-		</div>
-		<div>
-			The name of the form in the first page is "InputText-Page1".
-		</div>
-		<div style="break-before: page;">
-			<div style = "text-align: right; background-color: orange; height: 5em;">
-				Text Field: <input class="demoField">
-			</div>
-			The name of the form in the 2nd page is "InputText-Page2".
-		</div>
-	</body>
+    <meta name="keywords" content="Antenna House Formatter, CSS, Paged Media, formatting, forms, field-name-suffix-page-number"/>
+    <meta name="specification" content="CSS-AH-Extensions"/>
+    <link rel="stylesheet" href="../../css/booklet-print-4th.css"/>
+    <link rel="stylesheet" href="../../css/booklet-page-en.css"/>
+    <link rel="stylesheet" href="../../css/css-sample-en.css"/>
+    <title>Form Field with Page Number Suffix – Antenna House, Inc.</title>
+    <style>
+        @page {
+            -ah-page-frame-size: 180mm 250mm;
+            margin: 15mm;
+        }
+        
+        .demo-field {
+            -ah-field-submit-method: post;
+            -ah-field-submit-coordinates: true;
+            -ah-field-type: text;
+            -ah-field-name: "InputText-Page";
+            -ah-field-name-suffix-page-number: 1;
+            -ah-field-default-text: 'yyyy/mm/dd';
+            -ah-field-multiline: false;
+            -ah-field-maxlen: 32;
+            width: 10em;
+            height: 1.2em;
+            background-color: #ffff88;
+            border: 1pt silver inset;
+        }
+        
+        .form-demo-container {
+            text-align: right;
+            background-color: #ffa500;
+            padding: 1em;
+            margin: 1em 0;
+            border: 1pt solid #999;
+        }
+        
+        .page-break-demo {
+            break-before: page;
+        }
+        
+        .result-explanation {
+            background-color: #f0f8ff;
+            padding: 0.5em;
+            margin: 0.5em 0;
+            border-left: 3pt solid #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div>
+    <div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
+
+    <h1>Form Field with Page Number Suffix</h1>
+    
+    <div class="description">
+        <p>The <code class="code-inline">-ah-field-name-suffix-page-number</code> property adds a page number to the name specified by <code class="code-inline">-ah-field-name</code>. This creates unique field names for each page, which is useful when the same form field appears on multiple pages.</p>
+        <p>This feature is available in AH Formatter V6.6 and later versions.</p>
+    </div>
+
+    <div class="source" lang="en">
+        <pre class="code-block">&lt;input class="demo-field" style="
+    -ah-field-name: 'InputText-Page';
+    -ah-field-name-suffix-page-number: 1;"&gt;</pre>
+    </div>
+
+    <div class="form-demo-container">
+        <strong>Page 1 Form Field:</strong><br>
+        <input class="demo-field">
+    </div>
+    
+    <div class="result-explanation">
+        <strong>Result:</strong> The field name on this page becomes "InputText-Page1"
+    </div>
+
+    <div class="page-break-demo">
+        <div class="form-demo-container">
+            <strong>Page 2 Form Field:</strong><br>
+            <input class="demo-field">
+        </div>
+        
+        <div class="result-explanation">
+            <strong>Result:</strong> The field name on this page becomes "InputText-Page2"
+        </div>
+        
+        <p>Each page automatically gets a unique field name by appending the page number to the base name specified in <code class="code-inline">-ah-field-name</code>.</p>
+    </div>
+</body>
 </html>
