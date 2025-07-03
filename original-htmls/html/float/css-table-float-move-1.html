@@ -168,24 +168,21 @@
 <body>
 <div class="page-number-footer page-number-footer-right"><span class="title"/><span class="separator"/><span class="page-number"/></div><div class="page-number-footer page-number-footer-left"><span class="page-number"/><span class="separator"/><span class="title"/></div>
 
-  <!-- 1) Big heading, substituting "fo:float" references in the text with HTML/CSS references, 
-         but preserving the line structure. -->
-  <div class="big-heading">
-    <div class="inner">Float move examples</div>
-  </div>
+  <h1 lang="en">Float move examples</h1>
 
-  <!-- 2) Bordered box text, substituting "fo:float" with "the container with -ah-float" 
-         & "axf:float-move" with "-ah-float-move," etc. 
-         EXACT lines, no omissions. -->
-  <div class="bordered-box">
-    If a table starts in the middle of the page but doesn’t fit within its page, the table is split into two parts:
-    the first part stays on the first page and the second part is sent to the next page.  There is a way to avoid
-    that happening by using the container with -ah-float.  First, enclose the entire table within the container
+  <div class="description" lang="en">
+    <p>If a table starts in the middle of the page but doesn’t fit within its page, the table is split into two parts:
+    the first part stays on the first page and the second part is sent to the next page. There is a way to avoid
+    that happening by using the container with -ah-float. First, enclose the entire table within the container
     with -ah-float. In addition, you can move the table enclosed within the container with -ah-float to its next
     page (or column) by specifying -ah-float-move with the value auto-next or move the table to its next page
-    only if it would be split if on its current page by using auto-move.  The following page explains -ah-float-move
-    and its values, and the third and following pages are illustrative examples.
+    only if it would be split if on its current page by using auto-move. The following page explains -ah-float-move
+    and its values, and the third and following pages are illustrative examples.</p>
   </div>
+
+  <!-- 2) Bordered box text, substituting "fo:float" with "the container with -ah-float"
+         & "axf:float-move" with "-ah-float-move," etc.
+         EXACT lines, no omissions. -->
 
   <!-- <fo:block break-after="page"></fo:block> -->
   <div class="page-break"></div>
